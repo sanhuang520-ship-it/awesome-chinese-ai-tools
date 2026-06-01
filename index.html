@@ -633,19 +633,58 @@ document.getElementById('btn-cn').addEventListener('click',function(){onlyCN=!on
 document.getElementById('btn-rec').addEventListener('click',function(){onlyRec=!onlyRec;this.classList.toggle('active',onlyRec);render();});
 
 /* ══════════════════════════════════════
-   AI 日报（静态示例，后续从 news/ 读取）
+   AI 日报 — 动态从 GitHub 读取最新内容
 ══════════════════════════════════════ */
-const newsItems = [
-  {date:'2026-06-01',headline:'DeepSeek 发布 R2 预告，推理能力再提升',body:'官方透露下一代 R2 模型将大幅提升长推理链稳定性，预计 Q3 发布，API 定价维持低价策略。'},
-  {date:'2026-06-01',headline:'Kimi 上线文件对比功能',body:'支持两份 PDF 文档直接上传对比差异，法律和合同审核场景效率大幅提升，免费用户可用。'},
-  {date:'2026-06-01',headline:'即梦 AI 更新视频生成模型，最长支持 10 秒',body:'此前最长 6 秒，新版本提升至 10 秒，运动流畅度也有明显改善，免费积分额度不变。'},
-];
-document.getElementById('news-grid').innerHTML = newsItems.map(n=>`
-  <div class="news-card">
-    <div class="news-date">📅 ${n.date}</div>
-    <div class="news-headline">${n.headline}</div>
-    <div class="news-body">${n.body}</div>
-  </div>`).join('');
+async function loadNews() {
+  const grid = document.getElementById('news-grid');
+  const REPO = 'sanhuang520-ship-it/awesome-chinese-ai-tools';
+  try {
+    // 获取 news/ 目录文件列表
+    const res = await fetch(`https://api.github.com/repos/${REPO}/contents/news`);
+    const files = await res.json();
+    // 只取日期格式的 md 文件，按日期倒序取最新 3 篇
+    const dated = files
+      .filter(f => /^\d{4}-\d{2}-\d{2}\.md$/.test(f.name))
+      .sort((a, b) => b.name.localeCompare(a.name))
+      .slice(0, 3);
+    if (!dated.length) { renderFallback(); return; }
+    // 并发拉取文件内容
+    const texts = await Promise.all(dated.map(f =>
+      fetch(f.download_url).then(r => r.text())
+    ));
+    grid.innerHTML = texts.map((text, i) => {
+      const date = dated[i].name.replace('.md', '');
+      // 提取「今日重点」下的前 2 条 bullet
+      const lines = text.split('\n');
+      const hotIdx = lines.findIndex(l => l.includes('今日重点'));
+      const bullets = hotIdx >= 0
+        ? lines.slice(hotIdx + 1).filter(l => l.trim().startsWith('-')).slice(0, 2)
+        : [];
+      const body = bullets.map(l => l.replace(/^-\s*/, '• ')).join('<br>') || '今日暂无更新';
+      // 取第一条 bullet 作为标题
+      const headline = bullets[0]
+        ? bullets[0].replace(/^-\s*\*\*/, '').replace(/\*\*.*/, '').replace(/^-\s*/, '').trim()
+        : date + ' 日报';
+      return `
+        <div class="news-card" onclick="window.open('https://github.com/${REPO}/blob/main/news/${dated[i].name}','_blank')" style="cursor:pointer">
+          <div class="news-date">📅 ${date}</div>
+          <div class="news-headline">${headline}</div>
+          <div class="news-body">${body}</div>
+        </div>`;
+    }).join('');
+  } catch(e) { renderFallback(); }
+}
+
+function renderFallback() {
+  document.getElementById('news-grid').innerHTML = `
+    <div class="news-card">
+      <div class="news-date">📅 持续更新中</div>
+      <div class="news-headline">AI 日报每日更新</div>
+      <div class="news-body">记录模型更新、免费额度变化、新工具上线，每天一篇</div>
+    </div>`;
+}
+
+loadNews();
 
 document.getElementById('tc').textContent = tools.length + '+';
 render();
