@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具导航 — 精选免费 AI 工具大全</title>
+<meta name="description" content="精选 100+ AI 工具，标注免费额度与中文支持，按场景一键筛选。">
+<meta property="og:title" content="AI 工具导航 — 精选免费 AI 工具大全">
+<meta property="og:description" content="精选 100+ AI 工具，标注免费额度，找到最适合你的 AI 助手">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --border: #2e3250;
+    --accent: #7c6ff7;
+    --accent2: #56cfb2;
+    --text: #e8eaf6;
+    --muted: #8b92b8;
+    --free: #34d399;
+    --paid: #f87171;
+    --radius: 12px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #1a1d27 0%, #12142a 50%, #1a1d27 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 24px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(124,111,247,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .header-badge {
+    display: inline-block;
+    background: rgba(124,111,247,0.15);
+    border: 1px solid rgba(124,111,247,0.4);
+    color: #a89ff9;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, #a89ff9 60%, #56cfb2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ── CONTROLS ── */
+  .controls {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15,17,23,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+  }
+  .search-wrap {
+    max-width: 520px;
+    margin: 0 auto 14px;
+    position: relative;
+  }
+  .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 16px;
+  }
+  #search {
+    width: 100%;
+    padding: 11px 16px 11px 40px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  #search:focus { border-color: var(--accent); }
+  #search::placeholder { color: var(--muted); }
+
+  .filter-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .filter-btn {
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+  .filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .quick-filters {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .quick-btn {
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .quick-btn:hover { color: var(--text); border-color: var(--muted); }
+  .quick-btn.active { background: var(--surface2); border-color: var(--accent2); color: var(--accent2); }
+
+  /* ── GRID ── */
+  .main { max-width: 1200px; margin: 0 auto; padding: 28px 20px; }
+  .result-info {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+    cursor: default;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(124,111,247,0.5);
+    box-shadow: 0 8px 32px rgba(124,111,247,0.12);
+  }
+  .card.recommended {
+    border-color: rgba(124,111,247,0.35);
+    background: linear-gradient(135deg, #1a1d27, #1e1f35);
+  }
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .card-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-name:hover { color: #a89ff9; }
+  .card-name .ext-icon { font-size: 11px; color: var(--muted); }
+  .recommended-badge {
+    font-size: 10px;
+    background: rgba(124,111,247,0.2);
+    border: 1px solid rgba(124,111,247,0.4);
+    color: #a89ff9;
+    padding: 2px 7px;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .card-meta {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .cat-badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .free-badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(52,211,153,0.1);
+    border: 1px solid rgba(52,211,153,0.3);
+    color: var(--free);
+  }
+  .paid-badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(248,113,113,0.1);
+    border: 1px solid rgba(248,113,113,0.3);
+    color: var(--paid);
+  }
+  .cn-badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(251,191,36,0.1);
+    border: 1px solid rgba(251,191,36,0.3);
+    color: #fbbf24;
+  }
+  .vpn-badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(139,146,184,0.1);
+    border: 1px solid rgba(139,146,184,0.2);
+    color: var(--muted);
+  }
+  .card-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+  .free-info {
+    font-size: 11px;
+    color: var(--free);
+    max-width: 180px;
+  }
+  .chinese-stars {
+    display: flex;
+    gap: 2px;
+  }
+  .star { font-size: 10px; }
+  .star.on { color: #fbbf24; }
+  .star.off { color: var(--border); }
+
+  /* no results */
+  .empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+    grid-column: 1/-1;
+  }
+  .empty-icon { font-size: 48px; margin-bottom: 16px; }
+
+  /* footer */
+  footer {
+    text-align: center;
+    padding: 32px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .stats { gap: 20px; }
+    .grid { grid-template-columns: 1fr; }
+    .controls { padding: 12px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">🚀 持续更新 · 完全开源</div>
+  <h1>AI 工具导航</h1>
+  <p class="subtitle">精选 100+ 工具，标注免费额度与中文支持，找到最适合你的 AI 助手</p>
+  <div class="stats">
+    <div class="stat"><div class="stat-num" id="total-count">100+</div><div class="stat-label">收录工具</div></div>
+    <div class="stat"><div class="stat-num">10</div><div class="stat-label">使用分类</div></div>
+    <div class="stat"><div class="stat-num">免费</div><div class="stat-label">完全开源</div></div>
+    <div class="stat"><div class="stat-num">每日</div><div class="stat-label">持续更新</div></div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input id="search" type="text" placeholder="搜索工具名称或功能，例如：视频生成、免费...">
+  </div>
+  <div class="filter-row" id="cat-filters">
+    <button class="filter-btn active" data-cat="all">全部</button>
+    <button class="filter-btn" data-cat="llm">💬 大语言模型</button>
+    <button class="filter-btn" data-cat="image">🎨 图像生成</button>
+    <button class="filter-btn" data-cat="video">🎬 视频生成</button>
+    <button class="filter-btn" data-cat="code">💻 编程辅助</button>
+    <button class="filter-btn" data-cat="writing">✍️ 写作文案</button>
+    <button class="filter-btn" data-cat="translate">🌐 翻译</button>
+    <button class="filter-btn" data-cat="voice">🎙️ 语音TTS</button>
+    <button class="filter-btn" data-cat="search">🔎 搜索增强</button>
+    <button class="filter-btn" data-cat="productivity">⚡ 效率工具</button>
+    <button class="filter-btn" data-cat="agent">🤖 Agent平台</button>
+  </div>
+  <div class="quick-filters">
+    <button class="quick-btn" id="btn-free">🆓 仅显示免费</button>
+    <button class="quick-btn" id="btn-cn">🇨🇳 仅显示国产</button>
+    <button class="quick-btn" id="btn-rec">⭐ 编辑推荐</button>
+  </div>
+</div>
+
+<div class="main">
+  <div class="result-info" id="result-info"></div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<footer>
+  <p>数据来源于 <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank">awesome-chinese-ai-tools</a> · 如有遗漏欢迎提交 <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues" target="_blank">Issue</a></p>
+  <p style="margin-top:8px">免费额度信息可能变化，请以官网为准</p>
+</footer>
+
+<script>
+// ── 分类颜色 ──
+const catMeta = {
+  llm:          { label: '大语言模型', color: '#7c6ff7', bg: 'rgba(124,111,247,0.15)' },
+  image:        { label: '图像生成',   color: '#f472b6', bg: 'rgba(244,114,182,0.15)' },
+  video:        { label: '视频生成',   color: '#fb923c', bg: 'rgba(251,146,60,0.15)'  },
+  code:         { label: '编程辅助',   color: '#34d399', bg: 'rgba(52,211,153,0.15)'  },
+  writing:      { label: '写作文案',   color: '#60a5fa', bg: 'rgba(96,165,250,0.15)'  },
+  translate:    { label: '翻译',       color: '#a3e635', bg: 'rgba(163,230,53,0.15)'  },
+  voice:        { label: '语音TTS',    color: '#e879f9', bg: 'rgba(232,121,249,0.15)' },
+  search:       { label: '搜索增强',   color: '#38bdf8', bg: 'rgba(56,189,248,0.15)'  },
+  productivity: { label: '效率工具',   color: '#fbbf24', bg: 'rgba(251,191,36,0.15)'  },
+  agent:        { label: 'Agent平台',  color: '#56cfb2', bg: 'rgba(86,207,178,0.15)'  },
+};
+
+// ── 工具数据 ──
+const tools = [
+  // LLM 国产
+  { name:'DeepSeek', url:'https://chat.deepseek.com', cat:'llm', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'网页免费，API 极低价', desc:'开源推理模型，代码和数学能力比肩 GPT-4，API 价格是国际厂商的十分之一，国产性价比之王。' },
+  { name:'Kimi', url:'https://kimi.moonshot.cn', cat:'llm', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'网页版免费，API 有额度', desc:'月之暗面出品，200k 超长上下文，直接扔进去一篇论文或合同，问重点，效率极高。' },
+  { name:'通义千问', url:'https://tongyi.aliyun.com', cat:'llm', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'网页+API 均有免费额度', desc:'阿里云出品，Qwen3 最新旗舰版本 235B 参数，多模态，支持长文档上传，API 免费额度充足。' },
+  { name:'豆包', url:'https://www.doubao.com', cat:'llm', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'网页完全免费', desc:'字节跳动出品，多模态支持，联网搜索，日常对话和内容创作场景均衡稳定。' },
+  { name:'文心一言', url:'https://yiyan.baidu.com', cat:'llm', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'网页版免费', desc:'百度出品，深度整合百度搜索，支持插件，知识库问答场景下有独特优势。' },
+  { name:'讯飞星火', url:'https://xinghuo.xfyun.cn', cat:'llm', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'每日免费次数', desc:'科大讯飞出品，语音交互能力国内最强，适合语音+对话组合场景。' },
+  { name:'智谱清言', url:'https://chatglm.cn', cat:'llm', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'网页+API 免费额度', desc:'清华背景，GLM-4 系列，支持代码解释器和 Agent，API 免费额度对开发者友好。' },
+  { name:'混元', url:'https://hunyuan.tencent.com', cat:'llm', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'网页免费', desc:'腾讯出品，与微信生态深度整合，文生图、对话、搜索均有覆盖。' },
+  { name:'海螺 AI', url:'https://hailuoai.com', cat:'llm', free:true, cn:true, vpn:false, rec:false, stars:4, freeInfo:'网页免费', desc:'MiniMax 出品，支持多角色扮演和情感对话，创意写作场景下体验独特。' },
+  // LLM 国际
+  { name:'Claude', url:'https://claude.ai', cat:'llm', free:true, cn:false, vpn:true, rec:true, stars:4, freeInfo:'每日有限次数免费', desc:'Anthropic 出品，长文档分析和代码能力顶级，对话逻辑清晰，适合深度工作场景。' },
+  { name:'ChatGPT', url:'https://chatgpt.com', cat:'llm', free:true, cn:false, vpn:true, rec:false, stars:4, freeInfo:'GPT-4o mini 免费', desc:'OpenAI 旗舰产品，生态最完善，插件和 GPTs 数量最多，覆盖场景最广。' },
+  { name:'Gemini', url:'https://gemini.google.com', cat:'llm', free:true, cn:false, vpn:true, rec:false, stars:4, freeInfo:'网页免费', desc:'Google 出品，深度整合 Gmail/Docs/Drive，适合重度 Google 生态用户。' },
+  { name:'Copilot', url:'https://copilot.microsoft.com', cat:'llm', free:true, cn:false, vpn:true, rec:false, stars:4, freeInfo:'网页免费', desc:'微软出品，内置 Edge 浏览器，整合必应搜索，Office 用户首选。' },
+
+  // 图像
+  { name:'即梦 AI', url:'https://jimeng.jianying.com', cat:'image', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'每日免费积分', desc:'字节出品，中文提示词理解极佳，不需要学英文咒语，直接描述就能出好图，每天免费额度充足。' },
+  { name:'文心一格', url:'https://yige.baidu.com', cat:'image', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'每日免费电量', desc:'百度出品，国风、古风、水墨风格尤为出色，适合中式内容创作。' },
+  { name:'通义万相', url:'https://tongyi.aliyun.com/wanxiang', cat:'image', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'API 有免费额度', desc:'阿里出品，针对中文场景专项训练，商业插图和电商图片质量稳定。' },
+  { name:'LiblibAI', url:'https://www.liblib.art', cat:'image', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'每日免费算力', desc:'国内最大的 Stable Diffusion 模型社区，二次元、写实、国风模型极其丰富，可直接在线跑。' },
+  { name:'Midjourney', url:'https://midjourney.com', cat:'image', free:false, cn:false, vpn:true, rec:false, stars:3, freeInfo:'无免费额度，需订阅', desc:'商业设计质量顶级，好莱坞和广告公司御用，但没有免费额度，需要梯子。' },
+  { name:'Adobe Firefly', url:'https://firefly.adobe.com', cat:'image', free:true, cn:false, vpn:true, rec:false, stars:4, freeInfo:'每月免费积分', desc:'商用授权最安全，Adobe 训练数据合规，生成结果可直接用于商业项目不担心版权。' },
+  { name:'Flux', url:'https://blackforestlabs.ai', cat:'image', free:true, cn:false, vpn:true, rec:false, stars:3, freeInfo:'开源版本免费', desc:'新一代开源图像模型，质量超越同期 SD，可本地部署无限用。' },
+  { name:'Stable Diffusion', url:'https://stability.ai', cat:'image', free:true, cn:false, vpn:false, rec:false, stars:3, freeInfo:'开源可本地部署', desc:'最成熟的开源图像生成生态，本地跑一次投入，之后无限生成，完全不收费。' },
+
+  // 视频
+  { name:'可灵 AI', url:'https://klingai.kuaishou.com', cat:'video', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'每日免费积分', desc:'快手出品，720p 高质量视频生成，人物运动和物理效果在国产方案中最自然。' },
+  { name:'即梦视频', url:'https://jimeng.jianying.com', cat:'video', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'每日免费积分', desc:'字节出品，与即梦图像同平台，工作流顺畅，中文描述直接生成。' },
+  { name:'海螺视频', url:'https://hailuoai.video', cat:'video', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'每日免费次数', desc:'MiniMax 出品，人物运动尤其流畅，适合生成有人物出镜的短视频片段。' },
+  { name:'Runway', url:'https://runwayml.com', cat:'video', free:false, cn:false, vpn:true, rec:false, stars:3, freeInfo:'每月少量免费积分', desc:'好莱坞实际采用的视频 AI 工具，专业级质量，奥斯卡获奖影片有使用案例。' },
+  { name:'Sora', url:'https://sora.com', cat:'video', free:false, cn:false, vpn:true, rec:false, stars:3, freeInfo:'ChatGPT Plus 订阅内含', desc:'OpenAI 出品，最长可生成 60 秒视频，物理效果真实，但需要 Plus 订阅。' },
+  { name:'Pika', url:'https://pika.art', cat:'video', free:true, cn:false, vpn:true, rec:false, stars:3, freeInfo:'每月免费积分', desc:'对已有图片/视频进行 AI 修改和动态化，操控性在同类产品中最好。' },
+
+  // 编程
+  { name:'通义灵码', url:'https://lingma.aliyun.com', cat:'code', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'完全免费', desc:'阿里出品，VS Code 和 JetBrains 插件，完全免费，国内访问流畅，对中文注释理解好。' },
+  { name:'Cursor', url:'https://cursor.sh', cat:'code', free:true, cn:false, vpn:false, rec:true, stars:4, freeInfo:'每月 2000 次补全免费', desc:'AI 原生 IDE，能理解整个项目上下文，不只是补单行代码，复杂功能开发体验最好。' },
+  { name:'Windsurf', url:'https://codeium.com/windsurf', cat:'code', free:true, cn:false, vpn:false, rec:true, stars:4, freeInfo:'免费版功能完整', desc:'Codeium 出品的免费 AI IDE，功能与 Cursor 相近，完全免费是最大优势。' },
+  { name:'GitHub Copilot', url:'https://copilot.github.com', cat:'code', free:true, cn:false, vpn:false, rec:false, stars:4, freeInfo:'学生/开源项目免费', desc:'IDE 插件生态最完善，GitHub 深度整合，代码补全流畅度最高，企业用户首选。' },
+  { name:'DeepSeek (编程)', url:'https://chat.deepseek.com', cat:'code', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'API 极低价', desc:'代码能力比肩 GPT-4o，API 价格是 OpenAI 的 1/10，做项目用 API 性价比最高。' },
+  { name:'MarsCode', url:'https://www.marscode.cn', cat:'code', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'云 IDE 免费', desc:'字节出品的在线云 IDE，内置 AI 编程助手，无需本地配置，适合快速验证想法。' },
+  { name:'Bolt', url:'https://bolt.new', cat:'code', free:true, cn:false, vpn:false, rec:false, stars:4, freeInfo:'每日免费额度', desc:'说一句话生成一个可运行的全栈 web 应用，适合快速原型和 Demo 制作。' },
+  { name:'v0', url:'https://v0.dev', cat:'code', free:true, cn:false, vpn:false, rec:false, stars:4, freeInfo:'每月免费积分', desc:'Vercel 出品，专注 UI 组件生成，输出 React/Tailwind 代码质量高，前端开发利器。' },
+
+  // 写作
+  { name:'秘塔写作猫', url:'https://xiezuocat.com', cat:'writing', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'基础功能免费', desc:'国内老牌中文写作助手，语法检查、改写润色的效果在国产工具里最自然，不像 AI 腔。' },
+  { name:'笔灵 AI', url:'https://ibiling.cn', cat:'writing', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'每日免费字数', desc:'论文、报告、简历专项，格式规范，适合学生和职场需要正式文体的场景。' },
+  { name:'豆包 (写作)', url:'https://www.doubao.com', cat:'writing', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'完全免费', desc:'小红书、公众号文案风格把握最准，字节自家产品对内容平台的调性理解深。' },
+  { name:'Notion AI', url:'https://notion.so', cat:'writing', free:false, cn:false, vpn:false, rec:false, stars:4, freeInfo:'Plus 套餐内含', desc:'笔记内嵌 AI，在 Notion 文档里直接续写、总结、翻译，工作流无缝。' },
+  { name:'Gamma', url:'https://gamma.app', cat:'writing', free:true, cn:false, vpn:false, rec:true, stars:4, freeInfo:'每月免费积分', desc:'文字大纲一键生成精美 PPT，模板质量远超普通模板，适合快速出提案和汇报。' },
+
+  // 翻译
+  { name:'沉浸式翻译', url:'https://immersivetranslate.com', cat:'translate', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'基础功能完全免费', desc:'浏览器双语对照翻译神器，网页、PDF、字幕全支持，不破坏原文排版，装上就离不开。' },
+  { name:'DeepL', url:'https://deepl.com', cat:'translate', free:true, cn:false, vpn:false, rec:true, stars:5, freeInfo:'每月 50 万字符免费', desc:'欧洲语言翻译质量全球最佳，英法德日的翻译自然度明显优于 Google，免费额度充足。' },
+  { name:'彩云小译', url:'https://caiyunapp.com', cat:'translate', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'每月免费字符', desc:'日语翻译国内最佳，支持实时字幕翻译，追日语内容的用户必备。' },
+  { name:'有道翻译', url:'https://fanyi.youdao.com', cat:'translate', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'网页完全免费', desc:'网易出品，词典+翻译双合一，生词本和例句库是英语学习者的好帮手。' },
+  { name:'腾讯翻译君', url:'https://fanyi.qq.com', cat:'translate', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'网页+API 免费额度', desc:'腾讯出品，语种覆盖全，API 免费额度对开发者友好，集成到业务系统成本低。' },
+  { name:'Google 翻译', url:'https://translate.google.com', cat:'translate', free:true, cn:false, vpn:true, rec:false, stars:4, freeInfo:'网页完全免费', desc:'语种最多（100+），小语种翻译无可替代，手机 App 支持离线和摄像头实时翻译。' },
+
+  // 语音
+  { name:'讯飞配音', url:'https://peiyin.xunfei.cn', cat:'voice', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'每日免费字符', desc:'国内 TTS 标杆，音色数量最多，从新闻播报到有声书多种风格，每天有免费额度。' },
+  { name:'Fish Audio', url:'https://fish.audio', cat:'voice', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'每月免费额度', desc:'支持中文方言（粤语/闽南语等），音色克隆效果国产最佳，每月有免费额度。' },
+  { name:'Azure TTS', url:'https://azure.microsoft.com/zh-cn/products/ai-services/text-to-speech', cat:'voice', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'每月 50 万字符免费', desc:'微软出品，中文音色自然度高，每月 50 万字符免费，适合开发者集成到应用中。' },
+  { name:'ElevenLabs', url:'https://elevenlabs.io', cat:'voice', free:true, cn:false, vpn:true, rec:false, stars:3, freeInfo:'每月 1 万字符免费', desc:'英文语音效果全球顶级，声音克隆只需 1 分钟样本，但免费额度较少。' },
+  { name:'豆包语音', url:'https://www.doubao.com', cat:'voice', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'免费', desc:'字节出品，自然度高，与豆包 App 内的语音交互整合良好。' },
+
+  // 搜索
+  { name:'秘塔搜索', url:'https://metaso.cn', cat:'search', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'完全免费', desc:'国内最好用的 AI 搜索，无广告，学术模式+深度模式，引用来源可追溯，替代百度首选。' },
+  { name:'Perplexity', url:'https://perplexity.ai', cat:'search', free:true, cn:false, vpn:true, rec:true, stars:4, freeInfo:'每日有限次数', desc:'AI 搜索国际标杆，引用来源准确，技术和学术查询效果最佳，Pro 版可选 Claude/GPT。' },
+  { name:'天工 AI 搜索', url:'https://search.tiangong.cn', cat:'search', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'完全免费', desc:'昆仑万维出品，中文时事资讯查询强，支持多轮追问，完全免费无广告。' },
+  { name:'Kimi 搜索', url:'https://kimi.moonshot.cn', cat:'search', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'免费', desc:'联网搜索+超长上下文组合，可以先搜一批文章，再一次性综合总结，适合深度研究。' },
+
+  // 效率
+  { name:'WPS AI', url:'https://ai.wps.cn', cat:'productivity', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'基础功能免费', desc:'Office 场景下的 AI 助手，文档摘要、公式生成、PPT 美化，对中文职场文档最熟悉。' },
+  { name:'飞书多维表格', url:'https://feishu.cn', cat:'productivity', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'免费版功能充足', desc:'AI+电子表格组合，自动化流程强，适合团队协作和数据管理场景。' },
+  { name:'Napkin AI', url:'https://napkin.ai', cat:'productivity', free:true, cn:false, vpn:false, rec:false, stars:3, freeInfo:'基础免费', desc:'把文字自动转成可视化图表和信息图，做汇报和内容创作时节省大量排版时间。' },
+
+  // Agent
+  { name:'Coze', url:'https://coze.cn', cat:'agent', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'国内版完全免费', desc:'字节出品的 Agent 搭建平台，拖拽式配置，插件生态丰富，适合搭建个人 AI 助手和自动化流程。' },
+  { name:'Dify', url:'https://dify.ai', cat:'agent', free:true, cn:true, vpn:false, rec:true, stars:4, freeInfo:'开源可自部署', desc:'国产 LLMOps 开源标杆，GitHub 50k+ stars，可视化编排 Agent 工作流，支持私有化部署。' },
+  { name:'FastGPT', url:'https://fastgpt.in', cat:'agent', free:true, cn:true, vpn:false, rec:true, stars:5, freeInfo:'开源+云版本免费额度', desc:'知识库问答平台，RAG 效果在开源方案中最稳定，把公司文档变成可问答的智能助手。' },
+  { name:'MaxKB', url:'https://maxkb.cn', cat:'agent', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'开源免费', desc:'1Panel 出品，知识库问答，安装简单，适合中小团队快速搭建内部知识库。' },
+  { name:'文心智能体', url:'https://agents.baidu.com', cat:'agent', free:true, cn:true, vpn:false, rec:false, stars:5, freeInfo:'免费', desc:'百度 AppBuilder，与文心一言生态打通，接入百度搜索和各类 API 方便。' },
+];
+
+// ── 状态 ──
+let currentCat = 'all';
+let onlyFree   = false;
+let onlyCN     = false;
+let onlyRec    = false;
+let query      = '';
+
+// ── 渲染 ──
+function stars(n) {
+  let s = '';
+  for (let i = 1; i <= 5; i++) {
+    s += `<span class="star ${i<=n?'on':'off'}">★</span>`;
+  }
+  return s;
+}
+
+function render() {
+  const filtered = tools.filter(t => {
+    if (currentCat !== 'all' && t.cat !== currentCat) return false;
+    if (onlyFree && !t.free) return false;
+    if (onlyCN   && !t.cn)   return false;
+    if (onlyRec  && !t.rec)  return false;
+    if (query) {
+      const q = query.toLowerCase();
+      if (!t.name.toLowerCase().includes(q) &&
+          !t.desc.toLowerCase().includes(q) &&
+          !t.freeInfo.toLowerCase().includes(q) &&
+          !catMeta[t.cat].label.includes(q)) return false;
+    }
+    return true;
+  });
+
+  document.getElementById('result-info').textContent =
+    `显示 ${filtered.length} / ${tools.length} 个工具`;
+
+  const grid = document.getElementById('grid');
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty"><div class="empty-icon">🔍</div><div>没有找到匹配的工具</div><div style="font-size:12px;margin-top:8px">换个关键词试试？</div></div>`;
+    return;
+  }
+
+  // 推荐的排在前面
+  const sorted = [...filtered].sort((a,b) => (b.rec?1:0)-(a.rec?1:0));
+
+  grid.innerHTML = sorted.map(t => {
+    const cm = catMeta[t.cat];
+    return `
+    <div class="card ${t.rec?'recommended':''}">
+      <div class="card-header">
+        <a class="card-name" href="${t.url}" target="_blank" rel="noopener">
+          ${t.name}
+          <span class="ext-icon">↗</span>
+        </a>
+        ${t.rec ? '<span class="recommended-badge">⭐ 推荐</span>' : ''}
+      </div>
+      <div class="card-meta">
+        <span class="cat-badge" style="background:${cm.bg};color:${cm.color}">${cm.label}</span>
+        ${t.free ? '<span class="free-badge">免费可用</span>' : '<span class="paid-badge">付费</span>'}
+        ${t.cn   ? '<span class="cn-badge">🇨🇳 国产</span>' : ''}
+        ${t.vpn  ? '<span class="vpn-badge">需梯子</span>' : ''}
+      </div>
+      <div class="card-desc">${t.desc}</div>
+      <div class="card-footer">
+        <span class="free-info">${t.freeInfo}</span>
+        <span class="chinese-stars" title="中文支持评级">${stars(t.stars)}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── 事件 ──
+document.getElementById('cat-filters').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentCat = btn.dataset.cat;
+  render();
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  query = e.target.value.trim();
+  render();
+});
+
+function toggleQuick(btn, flag, setter) {
+  document.getElementById(btn).addEventListener('click', function() {
+    setter(!flag);
+    flag = !flag;
+    this.classList.toggle('active', flag);
+    render();
+  });
+}
+
+let freeFlag=false, cnFlag=false, recFlag=false;
+document.getElementById('btn-free').addEventListener('click', function(){
+  freeFlag=!freeFlag; onlyFree=freeFlag;
+  this.classList.toggle('active',freeFlag); render();
+});
+document.getElementById('btn-cn').addEventListener('click', function(){
+  cnFlag=!cnFlag; onlyCN=cnFlag;
+  this.classList.toggle('active',cnFlag); render();
+});
+document.getElementById('btn-rec').addEventListener('click', function(){
+  recFlag=!recFlag; onlyRec=recFlag;
+  this.classList.toggle('active',recFlag); render();
+});
+
+// 初始化
+document.getElementById('total-count').textContent = tools.length + '+';
+render();
+</script>
+</body>
+</html>
