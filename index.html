@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 工具导航 — 工作流推荐 · 免费额度大全</title>
-<meta name="description" content="输入你的项目，秒得 AI 工作流推荐。收录 100+ 工具，标注免费额度与中文支持。">
+<title>AI工具导航 — 免费AI工具推荐 · 工作流自动匹配 | 65+工具收录</title>
+<meta name="description" content="收录65+国内外AI工具，标注每个工具的免费额度与中文支持评级。输入你的任务自动推荐AI工作流，覆盖学生/程序员/内容创作者/职场等18种场景。每日更新AI工具动态。">
+<meta name="keywords" content="AI工具,免费AI工具,AI工具推荐,大模型推荐,AI工具导航,DeepSeek,Kimi,通义千问,AI工作流,免费额度,国产AI">
+<meta name="author" content="awesome-chinese-ai-tools">
+<meta name="robots" content="index, follow">
+<!-- Open Graph（微信/朋友圈分享预览） -->
+<meta property="og:title" content="AI工具导航 — 免费AI工具推荐 · 工作流自动匹配">
+<meta property="og:description" content="65+工具收录，标注免费额度。输入你的任务自动推荐AI工作流，覆盖18种场景。每日更新AI动态。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/">
+<meta property="og:image" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/og-cover.png">
+<meta property="og:locale" content="zh_CN">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI工具导航 — 免费AI工具推荐 · 工作流自动匹配">
+<meta name="twitter:description" content="65+工具，标注免费额度，输入任务自动推荐工作流，每日AI日报。">
+<link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/">
 <style>
 :root{
   --bg:#0f1117;--surface:#1a1d27;--surface2:#22263a;--border:#2e3250;
@@ -94,9 +109,14 @@ h1{font-size:clamp(26px,5vw,46px);font-weight:700;
   text-align:center;padding:24px;color:var(--muted);font-size:14px;
   background:var(--surface);border-radius:var(--r);border:1px solid var(--border)
 }
-.wf-clear{margin-top:14px;background:transparent;border:1px solid var(--border);
+.wf-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.wf-clear{background:transparent;border:1px solid var(--border);
   color:var(--muted);padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer}
 .wf-clear:hover{border-color:var(--muted);color:var(--text)}
+.wf-card-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border:none;color:#fff;padding:6px 16px;border-radius:6px;font-size:12px;
+  cursor:pointer;font-weight:600;transition:opacity .15s}
+.wf-card-btn:hover{opacity:.85}
 
 /* ─── CONTROLS ─── */
 .controls{
@@ -225,7 +245,10 @@ footer a:hover{text-decoration:underline}
       <div class="wf-result-title" id="wf-rtitle"></div>
       <div class="wf-result-desc" id="wf-rdesc"></div>
       <div class="wf-steps" id="wf-steps"></div>
-      <button class="wf-clear" id="wf-clear">✕ 清除结果</button>
+      <div class="wf-actions">
+        <button class="wf-card-btn" id="wf-card-btn">📤 生成分享卡片</button>
+        <button class="wf-clear" id="wf-clear">✕ 清除</button>
+      </div>
     </div>
   </div>
 </div>
@@ -463,6 +486,7 @@ function matchWorkflow(input) {
 }
 
 function showWorkflow(wf) {
+  currentWf = wf;
   const result = document.getElementById('wf-result');
   document.getElementById('wf-rtitle').innerHTML = `${wf.emoji} ${wf.title}`;
   document.getElementById('wf-rdesc').textContent = wf.desc;
@@ -505,6 +529,126 @@ document.querySelectorAll('.wf-tag').forEach(t => {
 document.getElementById('wf-clear').addEventListener('click', () => {
   document.getElementById('wf-result').classList.remove('show');
   document.getElementById('wf-input').value = '';
+  currentWf = null;
+});
+
+// ── 分享卡片生成器 ──────────────────────────────────────
+let currentWf = null;
+
+function generateCard(wf) {
+  const W = 800, H = 460;
+  const canvas = document.createElement('canvas');
+  canvas.width = W; canvas.height = H;
+  const c = canvas.getContext('2d');
+
+  // 背景渐变
+  const bg = c.createLinearGradient(0, 0, W, H);
+  bg.addColorStop(0, '#12142a'); bg.addColorStop(1, '#1e2040');
+  c.fillStyle = bg; c.fillRect(0, 0, W, H);
+
+  // 顶部装饰线
+  const line = c.createLinearGradient(0, 0, W, 0);
+  line.addColorStop(0, '#7c6ff7'); line.addColorStop(1, '#56cfb2');
+  c.fillStyle = line; c.fillRect(0, 0, W, 4);
+
+  // 左上角 badge
+  c.fillStyle = 'rgba(124,111,247,0.2)';
+  roundRect(c, 32, 28, 160, 28, 14); c.fill();
+  c.fillStyle = '#a89ff9'; c.font = '13px PingFang SC, sans-serif';
+  c.fillText('🧭 AI 工作流推荐', 48, 47);
+
+  // 右上角网站
+  c.fillStyle = '#56cfb2'; c.font = '12px PingFang SC, sans-serif';
+  c.textAlign = 'right';
+  c.fillText('aitools.guide', W - 32, 47);
+  c.textAlign = 'left';
+
+  // 工作流标题
+  c.fillStyle = '#ffffff';
+  c.font = 'bold 26px PingFang SC, sans-serif';
+  c.fillText(wf.emoji + ' ' + wf.title, 32, 102);
+
+  // 副标题
+  c.fillStyle = '#8b92b8'; c.font = '14px PingFang SC, sans-serif';
+  c.fillText(wf.desc, 32, 128);
+
+  // 分割线
+  c.strokeStyle = '#2e3250'; c.lineWidth = 1;
+  c.beginPath(); c.moveTo(32, 148); c.lineTo(W - 32, 148); c.stroke();
+
+  // 步骤卡片
+  const stepW = (W - 64 - (wf.steps.length - 1) * 14) / wf.steps.length;
+  wf.steps.forEach((s, i) => {
+    const x = 32 + i * (stepW + 14), y = 164;
+    // 卡片底色
+    c.fillStyle = 'rgba(255,255,255,0.04)';
+    roundRect(c, x, y, stepW, 220, 10); c.fill();
+    c.strokeStyle = 'rgba(124,111,247,0.25)'; c.lineWidth = 1;
+    roundRect(c, x, y, stepW, 220, 10); c.stroke();
+
+    // 步骤编号圆圈
+    const cx2 = x + 24, cy2 = y + 28;
+    c.fillStyle = 'rgba(124,111,247,0.25)';
+    c.beginPath(); c.arc(cx2, cy2, 14, 0, Math.PI * 2); c.fill();
+    c.fillStyle = '#a89ff9'; c.font = 'bold 12px PingFang SC, sans-serif';
+    c.textAlign = 'center';
+    c.fillText(i + 1, cx2, cy2 + 4);
+    c.textAlign = 'left';
+
+    // 步骤 emoji + action
+    c.fillStyle = '#8b92b8'; c.font = '12px PingFang SC, sans-serif';
+    c.fillText(s.emoji + ' ' + s.action, x + 12, y + 66);
+
+    // 工具名
+    c.fillStyle = '#56cfb2'; c.font = 'bold 15px PingFang SC, sans-serif';
+    wrapText(c, s.tool, x + 12, y + 90, stepW - 20, 20);
+
+    // tip 文字（自动换行）
+    c.fillStyle = '#6b7296'; c.font = '11px PingFang SC, sans-serif';
+    wrapText(c, s.tip, x + 12, y + 120, stepW - 20, 16);
+  });
+
+  // 底部
+  c.fillStyle = '#3a3f6b';
+  c.fillRect(0, H - 44, W, 44);
+  c.fillStyle = '#8b92b8'; c.font = '12px PingFang SC, sans-serif';
+  c.fillText('🌐 sanhuang520-ship-it.github.io/awesome-chinese-ai-tools', 32, H - 17);
+  c.textAlign = 'right';
+  c.fillStyle = '#56cfb2';
+  c.fillText('免费 · 无广告 · 每日更新', W - 32, H - 17);
+
+  // 下载
+  const a = document.createElement('a');
+  a.download = `ai-workflow-${wf.id}.png`;
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y); ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r); ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h); ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r); ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+}
+
+function wrapText(ctx, text, x, y, maxW, lineH) {
+  const words = text.split('');
+  let line = '', ly = y;
+  for (let i = 0; i < words.length; i++) {
+    const test = line + words[i];
+    if (ctx.measureText(test).width > maxW && line) {
+      ctx.fillText(line, x, ly); line = words[i]; ly += lineH;
+      if (ly > y + lineH * 5) { ctx.fillText(line + '…', x, ly); return; }
+    } else { line = test; }
+  }
+  if (line) ctx.fillText(line, x, ly);
+}
+
+document.getElementById('wf-card-btn').addEventListener('click', () => {
+  if (currentWf) generateCard(currentWf);
 });
 
 /* ══════════════════════════════════════
