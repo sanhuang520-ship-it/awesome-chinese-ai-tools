@@ -107,6 +107,7 @@
 | [GitHub Copilot](https://copilot.github.com) 🌐 💰 ⭐ | 学生/开源项目免费 | ★★★★☆ | IDE 集成最佳 |
 | [Cursor](https://cursor.sh) 🌐 💰 ⭐ | 每月 2000 次补全免费 | ★★★★☆ | AI 原生 IDE，体验极佳 |
 | [Claude Code](https://claude.ai/code) 🌐 💰 | 按用量计费 | ★★★★☆ | 终端 AI 编程，复杂任务强 |
+| [CoderPlan](https://coderplan.ai) 🇨🇳 💰 🔑 | 注册送体验余额 | ★★★★★ | LLM API 中转，一行配置接 Claude Code/Codex CLI，按量付费 |
 | [Windsurf](https://codeium.com/windsurf) 🌐 🆓 ⭐ | 免费版功能完整 | ★★★★☆ | Codeium 出品，免费竞品 |
 | [通义灵码](https://lingma.aliyun.com) 🆓 🇨🇳 ⭐ | 完全免费 | ★★★★★ | 阿里，VS Code/JetBrains 插件 |
 | [代码小浣熊](https://raccoon.sensetime.com) 🆓 🇨🇳 | 完全免费 | ★★★★★ | 商汤，代码补全稳定 |
