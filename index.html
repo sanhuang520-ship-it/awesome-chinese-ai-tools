@@ -186,6 +186,7 @@ h1{font-size:clamp(26px,5vw,46px);font-weight:700;
 .paid-b{font-size:10px;padding:2px 7px;border-radius:4px;background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.25);color:var(--paid)}
 .cn-b{font-size:10px;padding:2px 7px;border-radius:4px;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.25);color:#fbbf24}
 .vpn-b{font-size:10px;padding:2px 7px;border-radius:4px;background:rgba(139,146,184,.08);border:1px solid rgba(139,146,184,.18);color:var(--muted)}
+.dead-b{font-size:10px;padding:2px 7px;border-radius:4px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.3);color:#fbbf24;cursor:help}
 .card-desc{font-size:12px;color:var(--muted);line-height:1.65;flex:1}
 .card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px solid var(--border)}
 .free-info{font-size:11px;color:var(--free);max-width:175px}
@@ -812,6 +813,7 @@ function render(){
         ${t.free?'<span class="free-b">免费可用</span>':'<span class="paid-b">付费</span>'}
         ${t.cn?'<span class="cn-b">🇨🇳 国产</span>':''}
         ${t.vpn?'<span class="vpn-b">需梯子</span>':''}
+        ${(t.linkOk===false && (t.linkFailCount||0)>=2)?`<span class="dead-b" title="链接检测异常·${t.linkCheckedAt||''}·连续${t.linkFailCount}次">⚠️ 链接可能失效</span>`:''}
       </div>
       <div class="card-desc">${t.desc}</div>
       <div class="card-footer">
