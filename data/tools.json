@@ -4,7 +4,8 @@
     "source": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools",
     "note": "工具数据单一可信源。新增/修改工具只改这里，前端自动渲染。免费额度信息可能变化，以官网为准。",
     "linkCheckedAt": "2026-06-07",
-    "linkDeadCount": 1
+    "linkDeadCount": 1,
+    "pricingUpdated": "2026-06-09"
   },
   "categories": {
     "llm": {
@@ -73,7 +74,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "网页永久免费",
+      "pricePro": null,
+      "priceProNote": "API 按量计费，无需订阅"
     },
     {
       "name": "Kimi",
@@ -89,7 +93,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "基础功能免费",
+      "pricePro": "¥39/月",
+      "priceProNote": "更多对话次数+优先响应"
     },
     {
       "name": "通义千问 Qwen3",
@@ -105,7 +112,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "网页+API赠额",
+      "pricePro": null,
+      "priceProNote": "API 按量，无订阅"
     },
     {
       "name": "豆包",
@@ -121,7 +131,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "基础版免费",
+      "pricePro": "¥68/月",
+      "priceProNote": "复杂任务/PPT/数据分析，2026-05起"
     },
     {
       "name": "文心一言",
@@ -137,7 +150,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "网页免费",
+      "pricePro": null,
+      "priceProNote": "API 按量计费"
     },
     {
       "name": "讯飞星火",
@@ -153,7 +169,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每日限次免费",
+      "pricePro": "¥49/月",
+      "priceProNote": "语音交互+无限对话+API"
     },
     {
       "name": "智谱清言",
@@ -169,7 +188,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "网页+API赠额",
+      "pricePro": null,
+      "priceProNote": "API 按量计费"
     },
     {
       "name": "Claude",
@@ -185,7 +207,10 @@
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每日有限次",
+      "pricePro": "$20/月",
+      "priceProNote": "Pro：5× 配额+Projects+Opus"
     },
     {
       "name": "ChatGPT",
@@ -201,7 +226,10 @@
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "GPT-4o mini免费",
+      "pricePro": "$20/月",
+      "priceProNote": "Plus：GPT-5.5+无限制+插件"
     },
     {
       "name": "Gemini",
@@ -217,7 +245,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "网页免费",
+      "pricePro": "$19.99/月",
+      "priceProNote": "AI Premium：Gemini Advanced+2TB"
     },
     {
       "name": "即梦 AI",
@@ -233,7 +264,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每日积分",
+      "pricePro": "¥69/月",
+      "priceProNote": "基础会员：月1000+积分，去水印"
     },
     {
       "name": "文心一格",
@@ -249,7 +283,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每日电量",
+      "pricePro": null,
+      "priceProNote": "百度账号内含"
     },
     {
       "name": "通义万相",
@@ -265,7 +302,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "API赠额",
+      "pricePro": null,
+      "priceProNote": "API 按量计费"
     },
     {
       "name": "LiblibAI",
@@ -281,7 +321,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每日算力",
+      "pricePro": "¥35/月",
+      "priceProNote": "VIP：15000点/月+专属模型"
     },
     {
       "name": "Midjourney",
@@ -297,7 +340,10 @@
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "无免费额度",
+      "pricePro": "$10/月",
+      "priceProNote": "Basic：200次生成/月"
     },
     {
       "name": "Adobe Firefly",
@@ -313,7 +359,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每月25积分",
+      "pricePro": "$4.99/月",
+      "priceProNote": "含CC套件+商用授权完整"
     },
     {
       "name": "Flux",
@@ -329,7 +378,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "开源版免费",
+      "pricePro": null,
+      "priceProNote": "本地部署无限制"
     },
     {
       "name": "可灵 AI",
@@ -345,7 +397,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每日积分",
+      "pricePro": "¥58/月",
+      "priceProNote": "黄金会员：积分9折优惠"
     },
     {
       "name": "即梦视频",
@@ -361,7 +416,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每日积分",
+      "pricePro": "¥69/月",
+      "priceProNote": "与即梦图像同套餐"
     },
     {
       "name": "海螺视频",
@@ -377,7 +435,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每日次数",
+      "pricePro": "¥49/月",
+      "priceProNote": "会员：更多次数+优先队列"
     },
     {
       "name": "Runway",
@@ -393,7 +454,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每月125积分",
+      "pricePro": "$15/月",
+      "priceProNote": "Standard：625积分/月"
     },
     {
       "name": "通义灵码",
@@ -409,7 +473,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "完全免费",
+      "pricePro": null,
+      "priceProNote": "企业版另议"
     },
     {
       "name": "Cursor",
@@ -425,7 +492,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每月2000次补全",
+      "pricePro": "$20/月",
+      "priceProNote": "Pro：无限补全+高级模型"
     },
     {
       "name": "Windsurf",
@@ -441,7 +511,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "免费版功能完整",
+      "pricePro": "$20/月",
+      "priceProNote": "Pro：更多请求+高级功能"
     },
     {
       "name": "MarsCode",
@@ -457,7 +530,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "完全免费",
+      "pricePro": null,
+      "priceProNote": "企业版另议"
     },
     {
       "name": "Bolt",
@@ -473,7 +549,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每日额度",
+      "pricePro": "$20/月",
+      "priceProNote": "Pro：无限项目生成"
     },
     {
       "name": "v0",
@@ -489,7 +568,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每月免费积分",
+      "pricePro": "$20/月",
+      "priceProNote": "Pro：无限生成+私有项目"
     },
     {
       "name": "秘塔写作猫",
@@ -505,7 +587,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "基础功能免费",
+      "pricePro": "¥19/月",
+      "priceProNote": "会员：无限润色+AI续写"
     },
     {
       "name": "笔灵 AI",
@@ -521,7 +606,10 @@
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每日免费字数",
+      "pricePro": "¥29/月",
+      "priceProNote": "会员：论文/报告无限生成"
     },
     {
       "name": "Gamma",
@@ -537,7 +625,10 @@
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每月400积分",
+      "pricePro": "$8/月",
+      "priceProNote": "Starter：无限幻灯片+自定义域"
     },
     {
       "name": "沉浸式翻译",
@@ -553,7 +644,10 @@
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "基础功能完全免费",
+      "pricePro": "¥9/月",
+      "priceProNote": "Pro：DeepL+OpenAI引擎不限量"
     },
     {
       "name": "DeepL",
@@ -569,7 +663,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每月50万字符",
+      "pricePro": "€8.74/月",
+      "priceProNote": "Pro：不限字符+API访问"
     },
     {
       "name": "彩云小译",
@@ -585,7 +682,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每月字符额度",
+      "pricePro": null,
+      "priceProNote": "超出按¥39/100万词计费"
     },
     {
       "name": "有道翻译",
@@ -601,7 +701,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "完全免费",
+      "pricePro": null,
+      "priceProNote": "词典会员另计"
     },
     {
       "name": "讯飞配音",
@@ -617,7 +720,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每日字符额度",
+      "pricePro": "¥49/月",
+      "priceProNote": "会员：更多音色+无限字符"
     },
     {
       "name": "Fish Audio",
@@ -633,7 +739,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每月免费额度",
+      "pricePro": "$29/月",
+      "priceProNote": "Pro：200+音色+50次克隆+商用"
     },
     {
       "name": "Azure TTS",
@@ -649,7 +758,10 @@
       "linkOk": false,
       "linkStatus": "connection_error",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 4
+      "linkFailCount": 4,
+      "priceFree": "每月50万字符",
+      "pricePro": null,
+      "priceProNote": "按量付费（超出后计费）"
     },
     {
       "name": "秘塔搜索",
@@ -665,7 +777,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "完全免费",
+      "pricePro": null,
+      "priceProNote": "无付费版"
     },
     {
       "name": "Perplexity",
@@ -681,7 +796,10 @@
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每日有限次",
+      "pricePro": "$20/月",
+      "priceProNote": "Pro：无限搜索+GPT-5/Claude"
     },
     {
       "name": "天工 AI 搜索",
@@ -697,7 +815,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "完全免费",
+      "pricePro": null,
+      "priceProNote": "无付费版"
     },
     {
       "name": "WPS AI",
@@ -713,7 +834,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "基础功能免费",
+      "pricePro": "¥9.9/月",
+      "priceProNote": "WPS超级会员含，AI功能无限次"
     },
     {
       "name": "飞书多维表格",
@@ -729,7 +853,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "免费版功能充足",
+      "pricePro": "¥12/人/月",
+      "priceProNote": "高级版：AI自动化+更多容量"
     },
     {
       "name": "Gamma",
@@ -745,7 +872,10 @@
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "每月400积分",
+      "pricePro": "$8/月",
+      "priceProNote": "Starter：无限幻灯片+自定义域"
     },
     {
       "name": "Coze",
@@ -761,7 +891,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "国内版完全免费",
+      "pricePro": null,
+      "priceProNote": "企业版联系商务"
     },
     {
       "name": "Dify",
@@ -777,7 +910,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "开源可自部署",
+      "pricePro": "$59/月",
+      "priceProNote": "云端Professional版"
     },
     {
       "name": "FastGPT",
@@ -793,7 +929,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "开源+云有赠额",
+      "pricePro": "¥39/月",
+      "priceProNote": "基础版：5个知识库+1000万tokens"
     },
     {
       "name": "MaxKB",
@@ -809,7 +948,10 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-06-07",
-      "linkFailCount": 0
+      "linkFailCount": 0,
+      "priceFree": "开源免费",
+      "pricePro": null,
+      "priceProNote": "企业版联系"
     }
   ]
 }
