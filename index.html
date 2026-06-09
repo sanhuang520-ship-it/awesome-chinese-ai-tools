@@ -468,6 +468,85 @@ footer a{color:var(--accent);text-decoration:none}
 footer a:hover{text-decoration:underline}
 
 /* ══════════════════════════════════════
+   PRICE TAB 特殊样式
+══════════════════════════════════════ */
+.cat-tab-price{
+  margin-left:auto;flex-shrink:0;
+  border-color:rgba(251,191,36,.3) !important;
+  color:var(--text2) !important;
+}
+.cat-tab-price:hover,.cat-tab-price.active{
+  background:rgba(251,191,36,.12) !important;
+  border-color:#fbbf24 !important;
+  color:#fbbf24 !important;
+}
+
+/* ══════════════════════════════════════
+   PRICING VIEW
+══════════════════════════════════════ */
+.pricing-view{
+  max-width:1100px;margin:0 auto;padding:20px 20px 40px;
+  display:none;
+}
+.pricing-view.active{display:block}
+
+.pricing-summary{
+  display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;
+}
+.pricing-stat{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 16px;border-radius:10px;
+  background:var(--surface);border:1px solid var(--border);
+  font-size:13px;
+}
+.pricing-stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.pricing-stat-dot.free{background:#34d399}
+.pricing-stat-dot.freemium{background:#fbbf24}
+.pricing-stat-dot.paid{background:#f87171}
+.pricing-stat-num{font-weight:700;font-size:16px;color:var(--text)}
+.pricing-stat-label{color:var(--muted)}
+
+.pricing-section{margin-bottom:28px}
+.pricing-section-title{
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;color:var(--muted);
+  padding:8px 0 10px;border-bottom:1px solid var(--border);margin-bottom:0;
+  text-transform:uppercase;letter-spacing:.04em;
+}
+.pricing-section-badge{
+  font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;
+}
+.ps-free  .pricing-section-badge{background:rgba(52,211,153,.15);color:#34d399}
+.ps-freemium .pricing-section-badge{background:rgba(251,191,36,.15);color:#f59e0b}
+.ps-paid  .pricing-section-badge{background:rgba(248,113,113,.15);color:#f87171}
+
+.pricing-table{width:100%;border-collapse:collapse}
+.pricing-table th{
+  text-align:left;font-size:11px;font-weight:600;color:var(--muted);
+  padding:8px 12px;border-bottom:1px solid var(--border);
+  background:var(--surface);
+  text-transform:uppercase;letter-spacing:.04em;
+}
+.pricing-table tr:not(:last-child) td{border-bottom:1px solid var(--border)}
+.pricing-table td{
+  padding:11px 12px;font-size:13px;vertical-align:middle;
+}
+.pricing-table tr:hover td{background:var(--surface2)}
+.pt-name a{
+  color:var(--text);text-decoration:none;font-weight:600;
+}
+.pt-name a:hover{color:var(--accent)}
+.pt-name a::after{content:" ↗";font-size:10px;color:var(--muted);font-weight:400}
+.pt-free-desc{color:var(--text2);font-size:12px}
+.pt-pro-price{
+  font-weight:700;font-size:13px;white-space:nowrap;
+}
+.pt-pro-price.has-price{color:var(--paid)}
+.pt-pro-price.no-price{color:var(--muted)}
+.pt-pro-note{font-size:11px;color:var(--muted);margin-top:2px}
+.pt-badges{display:flex;gap:4px;flex-wrap:wrap}
+
+/* ══════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════ */
 @media(max-width:640px){
@@ -478,6 +557,8 @@ footer a:hover{text-decoration:underline}
   .row-badges{display:none}
   .hero{padding-top:calc(var(--navbar-h) + 16px)}
   .wf-fab{right:14px;bottom:18px;padding:9px 14px;font-size:12px}
+  .pricing-table th:nth-child(3),.pricing-table td:nth-child(3){display:none}
+  .pt-pro-note{display:none}
 }
 </style>
 </head>
@@ -507,7 +588,7 @@ footer a:hover{text-decoration:underline}
 <!-- ══════════════════════════════════════
      HERO — 今日精选
 ══════════════════════════════════════ -->
-<section class="hero" id="hero-section">
+<section class="hero" id="hero-section" data-view="list">
   <div class="hero-label">
     <span class="hero-label-dot"></span>
     <span class="hero-label-text">编辑精选</span>
@@ -534,17 +615,25 @@ footer a:hover{text-decoration:underline}
     <button class="cat-tab" data-cat="search">🔎 搜索</button>
     <button class="cat-tab" data-cat="productivity">⚡ 效率</button>
     <button class="cat-tab" data-cat="agent">🤖 Agent</button>
+    <button class="cat-tab cat-tab-price" id="tab-price" data-special="price">💰 价格对比</button>
   </div>
 </div>
 
 <!-- ══════════════════════════════════════
      TOOL LIST
 ══════════════════════════════════════ -->
-<div class="browse">
+<div class="browse" id="browse-section">
   <div class="list-header">
     <span class="list-info" id="list-info"></span>
   </div>
   <div class="tool-list" id="tool-list"><!-- JS 填充 --></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PRICING VIEW
+══════════════════════════════════════ -->
+<div class="pricing-view" id="pricing-view">
+  <!-- JS 填充 -->
 </div>
 
 <!-- ══════════════════════════════════════
@@ -927,6 +1016,90 @@ async function loadTools() {
 }
 
 /* ══════════════════════════════════════
+   定价视图渲染
+══════════════════════════════════════ */
+let pricingView = false;
+
+function renderPricing() {
+  const view = document.getElementById('pricing-view');
+  const cm = t => catMeta[t.cat] || {label:'—',color:'#8b92b8',bg:'rgba(139,146,184,.12)'};
+
+  // 分组
+  const freeOnly   = tools.filter(t => !t.pricePro && t.priceFree !== '无免费额度');
+  const freemium   = tools.filter(t =>  t.pricePro && t.priceFree !== '无免费额度');
+  const paidOnly   = tools.filter(t => t.priceFree === '无免费额度');
+
+  const tableRows = (list) => list.map(t => `
+    <tr>
+      <td class="pt-name"><a href="${t.url}" target="_blank" rel="noopener">${t.name}</a></td>
+      <td><span class="badge b-cat" style="--cat-bg:${cm(t).bg};--cat-c:${cm(t).color}">${cm(t).label}</span></td>
+      <td class="pt-free-desc">${t.priceFree || '—'}</td>
+      <td>
+        ${t.pricePro
+          ? `<div class="pt-pro-price has-price">${t.pricePro}</div><div class="pt-pro-note">${t.priceProNote||''}</div>`
+          : `<div class="pt-pro-price no-price">—</div>`}
+      </td>
+    </tr>`).join('');
+
+  const section = (cls, title, badge, count, list) => `
+    <div class="pricing-section ${cls}">
+      <div class="pricing-section-title">
+        ${title} <span class="pricing-section-badge">${count} 个工具</span>
+      </div>
+      <table class="pricing-table">
+        <thead><tr>
+          <th style="width:160px">工具</th>
+          <th style="width:90px">类别</th>
+          <th>免费可用内容</th>
+          <th style="width:160px">付费价格</th>
+        </tr></thead>
+        <tbody>${tableRows(list)}</tbody>
+      </table>
+    </div>`;
+
+  view.innerHTML = `
+    <div class="pricing-summary">
+      <div class="pricing-stat">
+        <span class="pricing-stat-dot free"></span>
+        <span class="pricing-stat-num">${freeOnly.length}</span>
+        <span class="pricing-stat-label">完全免费</span>
+      </div>
+      <div class="pricing-stat">
+        <span class="pricing-stat-dot freemium"></span>
+        <span class="pricing-stat-num">${freemium.length}</span>
+        <span class="pricing-stat-label">免费 + 付费版</span>
+      </div>
+      <div class="pricing-stat">
+        <span class="pricing-stat-dot paid"></span>
+        <span class="pricing-stat-num">${paidOnly.length}</span>
+        <span class="pricing-stat-label">无免费额度</span>
+      </div>
+      <div class="pricing-stat" style="margin-left:auto;font-size:11px;color:var(--muted);background:transparent;border:none">
+        价格以官网为准，可能随时变动
+      </div>
+    </div>
+    ${section('ps-free',     '🟢 完全免费 — 无付费版', 'free',     freeOnly.length, freeOnly)}
+    ${section('ps-freemium', '🟡 免费 + 付费版 — 可升级', 'freemium', freemium.length, freemium)}
+    ${paidOnly.length ? section('ps-paid', '🔴 无免费额度 — 需付费才能用', 'paid', paidOnly.length, paidOnly) : ''}
+  `;
+}
+
+function showPricingView() {
+  pricingView = true;
+  document.getElementById('hero-section').style.display = 'none';
+  document.getElementById('browse-section').style.display = 'none';
+  document.getElementById('pricing-view').classList.add('active');
+  renderPricing();
+}
+
+function showListView() {
+  pricingView = false;
+  document.getElementById('hero-section').style.display = '';
+  document.getElementById('browse-section').style.display = '';
+  document.getElementById('pricing-view').classList.remove('active');
+}
+
+/* ══════════════════════════════════════
    分类 Tab
 ══════════════════════════════════════ */
 document.getElementById('cat-tabs').addEventListener('click', e => {
@@ -934,6 +1107,12 @@ document.getElementById('cat-tabs').addEventListener('click', e => {
   if (!tab) return;
   document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
   tab.classList.add('active');
+
+  if (tab.dataset.special === 'price') {
+    showPricingView();
+    return;
+  }
+  showListView();
   currentCat = tab.dataset.cat;
   render();
 });
