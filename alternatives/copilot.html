@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Copilot 免费替代 — 3 个完全免费的 AI 编程助手</title>
+<meta name="description" content="GitHub Copilot 需每月 $10，推荐 3 个完全免费的 AI 编程助手：通义灵码（完全免费）、Windsurf（功能完整）、MarsCode（云 IDE 免费）。">
+<meta name="keywords" content="GitHub Copilot替代,免费AI编程,通义灵码,Windsurf,MarsCode,AI代码补全,免费编程助手">
+<link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/alternatives/copilot.html">
+<style>
+:root{--bg:#0d0f18;--surface:#141720;--surface2:#1c2030;--surface3:#232840;--border:#252a42;--border2:#2e3558;--accent:#34d399;--accent2:#60a5fa;--text:#e8eaf6;--text2:#b0b7d8;--muted:#6b7296;--free:#34d399;--r:10px;--r2:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.navbar{height:52px;background:rgba(13,15,24,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:12px;position:sticky;top:0;z-index:100}
+.nav-logo{font-size:14px;font-weight:700}.nav-logo span{background:linear-gradient(90deg,#34d399,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-back{font-size:12px;color:var(--muted);text-decoration:none;margin-left:auto;transition:color .15s}.nav-back:hover{color:var(--accent)}
+.hero{max-width:860px;margin:0 auto;padding:40px 20px 0}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:16px}.breadcrumb a{color:var(--muted);text-decoration:none}.breadcrumb a:hover{color:var(--accent)}
+h1{font-size:28px;font-weight:800;line-height:1.25;margin-bottom:10px}
+h1 em{font-style:normal;background:linear-gradient(90deg,#34d399,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:12px}
+.meta{font-size:11px;color:var(--muted);margin-bottom:32px}
+.tl-dr{background:var(--surface2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:var(--r);padding:14px 16px;margin-bottom:36px;font-size:13px;color:var(--text2);line-height:1.7}
+.tl-dr b{color:var(--text)}
+.section-title{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.6px;text-transform:uppercase;margin-bottom:14px}
+.tools{max-width:860px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
+.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:20px;transition:border-color .15s}.tool-card:hover{border-color:var(--border2)}
+.tool-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+.tool-name{font-size:18px;font-weight:700}.tool-name a{color:var(--text);text-decoration:none}.tool-name a:hover{color:var(--accent)}
+.tool-rank{font-size:11px;font-weight:700;color:var(--accent);background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.22);padding:2px 8px;border-radius:5px;white-space:nowrap;flex-shrink:0}
+.badges{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.badge{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:500}
+.b-free{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);color:var(--free)}
+.b-cn{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.18);color:#fbbf24}
+.b-novpn{background:rgba(86,207,178,.1);border:1px solid rgba(86,207,178,.2);color:#56cfb2}
+.tool-desc{font-size:13px;color:var(--text2);line-height:1.75;margin-bottom:12px}
+.vs-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.vs-box{background:var(--surface2);border-radius:8px;padding:10px 12px;font-size:12px}
+.vs-label{color:var(--muted);font-weight:600;margin-bottom:4px;font-size:11px}
+.vs-text{color:var(--text2);line-height:1.5}
+.tool-free{font-size:12px;color:var(--free);font-weight:500;margin-top:10px}
+.cta-btn{display:inline-block;margin-top:12px;padding:7px 16px;background:var(--surface2);border:1px solid var(--border2);border-radius:8px;font-size:12px;font-weight:600;color:var(--accent);text-decoration:none;transition:all .15s}.cta-btn:hover{background:var(--surface3)}
+.summary{max-width:860px;margin:0 auto;padding:0 20px 40px}
+.summary-table{width:100%;border-collapse:collapse;font-size:13px}
+.summary-table th{text-align:left;padding:9px 12px;border-bottom:2px solid var(--border2);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+.summary-table td{padding:10px 12px;border-bottom:1px solid var(--border)}.summary-table tr:last-child td{border-bottom:none}.summary-table tr:hover td{background:var(--surface2)}
+footer{border-top:1px solid var(--border);padding:20px;font-size:12px;color:var(--muted);text-align:center;max-width:860px;margin:0 auto}
+footer a{color:var(--muted);text-decoration:none}footer a:hover{color:var(--accent)}
+@media(max-width:560px){.vs-row{grid-template-columns:1fr}.tool-top{flex-direction:column;gap:6px}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-logo"><span>AI</span> 工具导航</div>
+  <a class="nav-back" href="../">← 返回首页</a>
+</nav>
+<div class="hero">
+  <div class="breadcrumb"><a href="../">首页</a> / <a href="./">替代品导航</a> / Copilot 替代</div>
+  <h1>GitHub Copilot <em>免费替代</em></h1>
+  <p class="subtitle">GitHub Copilot 个人版 $10/月，Business 版 $19/月。以下 3 个工具提供几乎同等的代码补全体验，且完全免费。</p>
+  <div class="meta">更新于 2026-06-10 · 收录 3 个工具 · 均完全免费</div>
+  <div class="tl-dr">
+    <b>结论先说：</b>本地 VS Code / JetBrains 开发首选 <b>通义灵码</b>（完全免费、国内网络最快）；想要完整 AI IDE 体验选 <b>Windsurf</b>；不想配置本地环境选 <b>MarsCode</b> 云 IDE。
+  </div>
+</div>
+<div class="tools">
+  <div class="section-title">推荐工具（按适用性排序）</div>
+  <div class="tool-card">
+    <div class="tool-top">
+      <div class="tool-name"><a href="https://lingma.aliyun.com" target="_blank" rel="noopener">通义灵码 ↗</a></div>
+      <span class="tool-rank">🏆 首选</span>
+    </div>
+    <div class="badges"><span class="badge b-free">完全免费</span><span class="badge b-cn">🇨🇳 国产</span><span class="badge b-novpn">无需梯子</span></div>
+    <p class="tool-desc">阿里云出品的 AI 编程插件，支持 VS Code 和所有 JetBrains IDE（IntelliJ、PyCharm、GoLand 等）。代码补全速度快、中文注释和文档生成自然，对国内开发者网络环境优化好，基本无延迟。完全免费，无次数限制。</p>
+    <div class="vs-row">
+      <div class="vs-box"><div class="vs-label">相比 Copilot</div><div class="vs-text">代码补全质量接近，国内网络下响应更快。中文注释生成比 Copilot 更自然。单次补全长度略短，但完全免费弥补了差距。</div></div>
+      <div class="vs-box"><div class="vs-label">最适合场景</div><div class="vs-text">日常开发补全、中文注释生成、重构建议、单元测试生成</div></div>
+    </div>
+    <div class="tool-free">💚 免费额度：完全免费，无次数限制，支持 VS Code + 全系 JetBrains</div>
+    <a class="cta-btn" href="https://lingma.aliyun.com" target="_blank" rel="noopener">立即安装 →</a>
+  </div>
+  <div class="tool-card">
+    <div class="tool-top">
+      <div class="tool-name"><a href="https://codeium.com/windsurf" target="_blank" rel="noopener">Windsurf ↗</a></div>
+      <span class="tool-rank">✦ 精选 #2</span>
+    </div>
+    <div class="badges"><span class="badge b-free">免费版功能完整</span><span class="badge b-novpn">需梯子访问官网</span></div>
+    <p class="tool-desc">Codeium 出品的独立 AI IDE（基于 VS Code），功能与 Cursor 高度接近。Cascade（对话式编程）可理解整个项目上下文，直接描述需求让它修改代码。免费版每月有 Premium 模型调用额度，代码补全无限制。</p>
+    <div class="vs-row">
+      <div class="vs-box"><div class="vs-label">相比 Copilot</div><div class="vs-text">远超 Copilot 的 AI 能力：不只是代码补全，还能理解整个代码库、执行多文件修改。免费版比 Copilot 功能更强。</div></div>
+      <div class="vs-box"><div class="vs-label">最适合场景</div><div class="vs-text">全栈开发、重构大型项目、AI 辅助新功能开发</div></div>
+    </div>
+    <div class="tool-free">💚 免费额度：代码补全无限次，Premium 模型（Claude/GPT）每月约 25 次对话</div>
+    <a class="cta-btn" href="https://codeium.com/windsurf" target="_blank" rel="noopener">立即下载 →</a>
+  </div>
+  <div class="tool-card">
+    <div class="tool-top">
+      <div class="tool-name"><a href="https://www.marscode.cn" target="_blank" rel="noopener">MarsCode ↗</a></div>
+      <span class="tool-rank">✦ 精选 #3</span>
+    </div>
+    <div class="badges"><span class="badge b-free">完全免费</span><span class="badge b-cn">🇨🇳 国产</span><span class="badge b-novpn">无需梯子</span></div>
+    <p class="tool-desc">字节跳动出品的云端 IDE，浏览器直接打开即用，内置 AI 编程助手，无需本地安装配置。适合需要在多设备切换、临时机器开发、或环境配置有困难的场景。免费版功能已完整。</p>
+    <div class="vs-row">
+      <div class="vs-box"><div class="vs-label">相比 Copilot</div><div class="vs-text">云端免安装是独特优势，任何设备打开浏览器即可开发。AI 补全能力略逊于 Copilot，但零成本、无需配置。</div></div>
+      <div class="vs-box"><div class="vs-label">最适合场景</div><div class="vs-text">临时设备开发、学习编程、快速原型验证、无本地环境场景</div></div>
+    </div>
+    <div class="tool-free">💚 免费额度：云 IDE 完全免费，AI 补全包含在免费版中</div>
+    <a class="cta-btn" href="https://www.marscode.cn" target="_blank" rel="noopener">立即使用 →</a>
+  </div>
+</div>
+<div class="summary">
+  <div class="section-title">快速对比一览</div>
+  <table class="summary-table">
+    <thead><tr><th>工具</th><th>使用方式</th><th>免费额度</th><th>核心优势</th></tr></thead>
+    <tbody>
+      <tr><td><b>通义灵码</b></td><td>VS Code / JetBrains 插件</td><td>完全免费无限次</td><td>国内网络最快，JetBrains 支持</td></tr>
+      <tr><td><b>Windsurf</b></td><td>独立 IDE（VS Code 内核）</td><td>补全无限 + 25次/月对话</td><td>整个项目上下文理解，接近 Cursor</td></tr>
+      <tr><td><b>MarsCode</b></td><td>浏览器云 IDE</td><td>完全免费</td><td>零安装，任意设备可用</td></tr>
+    </tbody>
+  </table>
+</div>
+<footer><a href="../">← AI 工具导航</a> · <a href="./">替代品导航</a> · <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank">GitHub</a></footer>
+</body>
+</html>
