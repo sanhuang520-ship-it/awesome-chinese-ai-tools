@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT 国内免费替代 — 5 个无需梯子的大模型推荐</title>
+<meta name="description" content="推荐 5 个无需梯子的 ChatGPT 国内替代：DeepSeek、Kimi、豆包、通义千问、智谱清言，标注免费额度与实际体验差异。">
+<meta name="keywords" content="ChatGPT替代,ChatGPT国内版,DeepSeek,Kimi,豆包,免费AI对话,国产大模型推荐">
+<link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/alternatives/chatgpt.html">
+<style>
+:root{--bg:#0d0f18;--surface:#141720;--surface2:#1c2030;--surface3:#232840;--border:#252a42;--border2:#2e3558;--accent:#7c6ff7;--accent2:#56cfb2;--accent3:#f472b6;--text:#e8eaf6;--text2:#b0b7d8;--muted:#6b7296;--free:#34d399;--paid:#f87171;--r:10px;--r2:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.navbar{height:52px;background:rgba(13,15,24,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:12px;position:sticky;top:0;z-index:100}
+.nav-logo{font-size:14px;font-weight:700}
+.nav-logo span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-back{font-size:12px;color:var(--muted);text-decoration:none;margin-left:auto;transition:color .15s}
+.nav-back:hover{color:var(--accent)}
+.hero{max-width:860px;margin:0 auto;padding:40px 20px 0}
+.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:16px}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--accent)}
+h1{font-size:28px;font-weight:800;line-height:1.25;margin-bottom:10px}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:12px}
+.meta{font-size:11px;color:var(--muted);margin-bottom:32px}
+.tl-dr{background:var(--surface2);border:1px solid var(--border2);border-left:3px solid var(--accent2);border-radius:var(--r);padding:14px 16px;margin-bottom:36px;font-size:13px;color:var(--text2);line-height:1.7}
+.tl-dr b{color:var(--text)}
+.section-title{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.6px;text-transform:uppercase;margin-bottom:14px}
+.tools{max-width:860px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
+.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:20px;transition:border-color .15s}
+.tool-card:hover{border-color:var(--border2)}
+.tool-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+.tool-name{font-size:18px;font-weight:700}
+.tool-name a{color:var(--text);text-decoration:none}
+.tool-name a:hover{color:var(--accent)}
+.tool-rank{font-size:11px;font-weight:700;color:var(--accent);background:rgba(124,111,247,.12);border:1px solid rgba(124,111,247,.22);padding:2px 8px;border-radius:5px;white-space:nowrap;flex-shrink:0}
+.badges{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.badge{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:500}
+.b-free{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);color:var(--free)}
+.b-cn{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.18);color:#fbbf24}
+.b-novpn{background:rgba(86,207,178,.1);border:1px solid rgba(86,207,178,.2);color:var(--accent2)}
+.tool-desc{font-size:13px;color:var(--text2);line-height:1.75;margin-bottom:12px}
+.vs-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.vs-box{background:var(--surface2);border-radius:8px;padding:10px 12px;font-size:12px}
+.vs-label{color:var(--muted);font-weight:600;margin-bottom:4px;font-size:11px}
+.vs-text{color:var(--text2);line-height:1.5}
+.tool-free{font-size:12px;color:var(--free);font-weight:500;margin-top:10px}
+.cta-btn{display:inline-block;margin-top:12px;padding:7px 16px;background:var(--surface2);border:1px solid var(--border2);border-radius:8px;font-size:12px;font-weight:600;color:var(--accent);text-decoration:none;transition:all .15s}
+.cta-btn:hover{background:var(--surface3);border-color:var(--accent)}
+.summary{max-width:860px;margin:0 auto;padding:0 20px 40px}
+.summary-table{width:100%;border-collapse:collapse;font-size:13px}
+.summary-table th{text-align:left;padding:9px 12px;border-bottom:2px solid var(--border2);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+.summary-table td{padding:10px 12px;border-bottom:1px solid var(--border)}
+.summary-table tr:last-child td{border-bottom:none}
+.summary-table tr:hover td{background:var(--surface2)}
+footer{border-top:1px solid var(--border);padding:20px;font-size:12px;color:var(--muted);text-align:center;max-width:860px;margin:0 auto}
+footer a{color:var(--muted);text-decoration:none}footer a:hover{color:var(--accent)}
+@media(max-width:560px){.vs-row{grid-template-columns:1fr}.tool-top{flex-direction:column;gap:6px}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-logo"><span>AI</span> 工具导航</div>
+  <a class="nav-back" href="../">← 返回首页</a>
+</nav>
+
+<div class="hero">
+  <div class="breadcrumb"><a href="../">首页</a> / <a href="./">替代品导航</a> / ChatGPT 替代</div>
+  <h1>ChatGPT <em>国内免费替代</em></h1>
+  <p class="subtitle">无需梯子、无需信用卡，每天可用的大模型推荐。<br>覆盖日常问答、文档分析、写作辅助、代码调试场景。</p>
+  <div class="meta">更新于 2026-06-10 · 收录 5 个工具 · 均可免费使用</div>
+
+  <div class="tl-dr">
+    <b>结论先说：</b>日常对话和写作选 <b>DeepSeek</b>（完全免费、推理强）；长文档/PDF 选 <b>Kimi</b>（200k 上下文）；手机端日常用 <b>豆包</b>（App 体验最顺）。三个都免费，搭配着用就够了。
+  </div>
+</div>
+
+<div class="tools">
+  <div class="section-title">推荐工具（按综合评分排序）</div>
+
+  <!-- DeepSeek -->
+  <div class="tool-card">
+    <div class="tool-top">
+      <div class="tool-name"><a href="https://chat.deepseek.com" target="_blank" rel="noopener">DeepSeek ↗</a></div>
+      <span class="tool-rank">🏆 首选</span>
+    </div>
+    <div class="badges">
+      <span class="badge b-free">完全免费</span>
+      <span class="badge b-cn">🇨🇳 国产</span>
+      <span class="badge b-novpn">无需梯子</span>
+    </div>
+    <p class="tool-desc">深度求索出品的开源推理模型。数学推导、代码生成、逻辑分析能力可与 GPT-4o 相媲美，API 价格是 OpenAI 的 1/10。网页端永久免费、不限次数。思维链（Thinking Mode）可看到推理过程，解释力强。</p>
+    <div class="vs-row">
+      <div class="vs-box"><div class="vs-label">相比 ChatGPT</div><div class="vs-text">推理和代码能力接近 GPT-4o，中文表达更自然，完全免费无限次。弱项：联网功能和多模态上传不如 ChatGPT Plus。</div></div>
+      <div class="vs-box"><div class="vs-label">适合场景</div><div class="vs-text">写代码、数学解题、逻辑推理、论文写作、复杂问题分析</div></div>
+    </div>
+    <div class="tool-free">💚 免费额度：网页端完全免费，无次数限制 · API ¥0.27/百万token起</div>
+    <a class="cta-btn" href="https://chat.deepseek.com" target="_blank" rel="noopener">立即体验 →</a>
+  </div>
+
+  <!-- Kimi -->
+  <div class="tool-card">
+    <div class="tool-top">
+      <div class="tool-name"><a href="https://kimi.moonshot.cn" target="_blank" rel="noopener">Kimi ↗</a></div>
+      <span class="tool-rank">✦ 精选 #2</span>
+    </div>
+    <div class="badges">
+      <span class="badge b-free">基础免费</span>
+      <span class="badge b-cn">🇨🇳 国产</span>
+      <span class="badge b-novpn">无需梯子</span>
+    </div>
+    <p class="tool-desc">月之暗面出品，最大亮点是 200k 超长上下文窗口，可一次性上传整本书、多份合同、数十篇论文直接提问。联网搜索默认开启，回答引用来源可查。</p>
+    <div class="vs-row">
+      <div class="vs-box"><div class="vs-label">相比 ChatGPT</div><div class="vs-text">文档处理上下文窗口远大于 ChatGPT 免费版（4k），长文档分析是核心优势。对话质量略逊于 GPT-4o，但免费。</div></div>
+      <div class="vs-box"><div class="vs-label">适合场景</div><div class="vs-text">阅读长 PDF、分析合同、研究文献、整理会议录音文字稿</div></div>
+    </div>
+    <div class="tool-free">💚 免费额度：网页版基础功能免费，每日有限次数（约 20-30 条）</div>
+    <a class="cta-btn" href="https://kimi.moonshot.cn" target="_blank" rel="noopener">立即体验 →</a>
+  </div>
+
+  <!-- 豆包 -->
+  <div class="tool-card">
+    <div class="tool-top">
+      <div class="tool-name"><a href="https://www.doubao.com" target="_blank" rel="noopener">豆包 ↗</a></div>
+      <span class="tool-rank">✦ 精选 #3</span>
+    </div>
+    <div class="badges">
+      <span class="badge b-free">完全免费</span>
+      <span class="badge b-cn">🇨🇳 国产</span>
+      <span class="badge b-novpn">无需梯子</span>
+    </div>
+    <p class="tool-desc">字节跳动出品，多模态支持最全面（图片/语音/视频），App 体验流畅，日常对话和内容创作表现均衡。内置联网搜索，对娱乐/生活/职场场景理解好。</p>
+    <div class="vs-row">
+      <div class="vs-box"><div class="vs-label">相比 ChatGPT</div><div class="vs-text">App 体验接近 ChatGPT，完全免费无需梯子。日常对话和创作场景够用，深度推理不如 DeepSeek。</div></div>
+      <div class="vs-box"><div class="vs-label">适合场景</div><div class="vs-text">日常问答、文案写作、内容创作、手机端日常助手</div></div>
+    </div>
+    <div class="tool-free">💚 免费额度：网页 + App 完全免费，无次数限制</div>
+    <a class="cta-btn" href="https://www.doubao.com" target="_blank" rel="noopener">立即体验 →</a>
+  </div>
+
+  <!-- 通义千问 -->
+  <div class="tool-card">
+    <div class="tool-top">
+      <div class="tool-name"><a href="https://tongyi.aliyun.com" target="_blank" rel="noopener">通义千问 Qwen3 ↗</a></div>
+      <span class="tool-rank">✦ 精选 #4</span>
+    </div>
+    <div class="badges">
+      <span class="badge b-free">网页+API 有额度</span>
+      <span class="badge b-cn">🇨🇳 国产</span>
+      <span class="badge b-novpn">无需梯子</span>
+    </div>
+    <p class="tool-desc">阿里云出品，Qwen3 旗舰版 235B 参数，思维链推理强，支持上传文档/图片/表格。与飞书、WPS、钉钉有深度集成，职场场景使用方便。API 有免费额度，适合开发者。</p>
+    <div class="vs-row">
+      <div class="vs-box"><div class="vs-label">相比 ChatGPT</div><div class="vs-text">中文创作和职场文档场景表现好，与阿里系产品集成方便。推理能力在国产模型中较强，API 性价比高。</div></div>
+      <div class="vs-box"><div class="vs-label">适合场景</div><div class="vs-text">职场文档、数据分析、上传 Excel 提问、API 开发测试</div></div>
+    </div>
+    <div class="tool-free">💚 免费额度：网页免费使用，API 新用户赠送额度（具体以官网为准）</div>
+    <a class="cta-btn" href="https://tongyi.aliyun.com" target="_blank" rel="noopener">立即体验 →</a>
+  </div>
+
+  <!-- 智谱清言 -->
+  <div class="tool-card">
+    <div class="tool-top">
+      <div class="tool-name"><a href="https://chatglm.cn" target="_blank" rel="noopener">智谱清言 ↗</a></div>
+      <span class="tool-rank">✦ 精选 #5</span>
+    </div>
+    <div class="badges">
+      <span class="badge b-free">网页+API 免费额度</span>
+      <span class="badge b-cn">🇨🇳 国产</span>
+      <span class="badge b-novpn">无需梯子</span>
+    </div>
+    <p class="tool-desc">清华技术背景，GLM-4 模型，内置代码解释器和 Agent 工作流，适合需要执行代码、处理数据的场景。API 每月赠送免费额度，开发者友好。</p>
+    <div class="vs-row">
+      <div class="vs-box"><div class="vs-label">相比 ChatGPT</div><div class="vs-text">代码解释器功能类似 ChatGPT Plus 的 Advanced Data Analysis，但免费使用。学术背景带来的专业知识密度较高。</div></div>
+      <div class="vs-box"><div class="vs-label">适合场景</div><div class="vs-text">代码执行与数据分析、学术内容、API 开发</div></div>
+    </div>
+    <div class="tool-free">💚 免费额度：网页端免费，API 每月赠送 Token 额度</div>
+    <a class="cta-btn" href="https://chatglm.cn" target="_blank" rel="noopener">立即体验 →</a>
+  </div>
+</div>
+
+<div class="summary">
+  <div class="section-title">快速对比一览</div>
+  <table class="summary-table">
+    <thead><tr><th>工具</th><th>免费额度</th><th>最大优势</th><th>适合谁</th></tr></thead>
+    <tbody>
+      <tr><td><b>DeepSeek</b></td><td>无限次</td><td>推理/代码强，完全免费</td><td>学生、开发者、重度用户</td></tr>
+      <tr><td><b>Kimi</b></td><td>每日有限次</td><td>200k 长上下文</td><td>处理长文档、合同、论文</td></tr>
+      <tr><td><b>豆包</b></td><td>无限次</td><td>App 体验最流畅</td><td>手机端日常使用</td></tr>
+      <tr><td><b>通义千问</b></td><td>网页免费+API 赠额</td><td>职场生态集成</td><td>职场、数据分析、开发者</td></tr>
+      <tr><td><b>智谱清言</b></td><td>网页免费+API 赠额</td><td>代码执行器</td><td>数据分析、API 开发</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <a href="../">← AI 工具导航</a> · <a href="./">替代品导航</a> · <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank">GitHub</a>
+</footer>
+</body>
+</html>
