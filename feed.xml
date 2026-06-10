@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI 工具导航 — 每日 AI 动态</title>
+    <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/</link>
+    <description>收录国内外 47+ AI 工具，每日记录模型更新、免费额度变化、新工具上线。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 10 Jun 2026 09:00:00 +0800</lastBuildDate>
+    <atom:link href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/favicon.ico</url>
+      <title>AI 工具导航</title>
+      <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/</link>
+    </image>
+
+    <item>
+      <title>AI 日报 · 2026-06-10 — Apple WWDC 2026 Siri 接入 Google Gemini，MiniMax M3 开源倒计时</title>
+      <link>https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/news/2026-06-10.md</link>
+      <guid isPermaLink="true">https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/news/2026-06-10.md</guid>
+      <pubDate>Wed, 10 Jun 2026 09:00:00 +0800</pubDate>
+      <description><![CDATA[
+        <p><strong>今日重点：</strong></p>
+        <ul>
+          <li>Apple WWDC 2026：Siri 全面重建，接入 Google Gemini，每年授权费约 10 亿美元。iOS 27 / macOS 27（Golden Gate）同步发布。</li>
+          <li>MiniMax M3 开源权重明日（6月11日）到期：支持 1M 超长上下文、原生多模态，SWE-Bench Pro 得分 59.0%。</li>
+        </ul>
+        <p><strong>工具更新：</strong>MiniMax M3 Token Plan 上线 · Gemini 3.5 Flash GA · Microsoft MAI-Code-1-Flash 发布</p>
+      ]]></description>
+    </item>
+
+    <item>
+      <title>AI 日报 · 2026-06-09 — 新增「价格对比」视图，按免费/Freemium/付费三档展示所有工具定价</title>
+      <link>https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/news/2026-06-09.md</link>
+      <guid isPermaLink="true">https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/news/2026-06-09.md</guid>
+      <pubDate>Tue, 09 Jun 2026 09:00:00 +0800</pubDate>
+      <description><![CDATA[
+        <p>网站新增「💰 价格对比」视图，点击导航栏 Tab 可按免费 / Freemium / 付费三档查看所有收录工具的详细定价信息。</p>
+      ]]></description>
+    </item>
+
+    <item>
+      <title>今日推荐 · 2026-06-10 — 海螺视频（MiniMax出品视频生成工具）</title>
+      <link>https://hailuoai.video</link>
+      <guid isPermaLink="false">spotlight-2026-06-10</guid>
+      <pubDate>Wed, 10 Jun 2026 09:00:00 +0800</pubDate>
+      <description><![CDATA[
+        <p><strong>今日推荐：海螺视频</strong></p>
+        <p>MiniMax 出品的视频生成工具，人物运动流畅，每日免费次数可用。在人物表情和动作连贯性上表现突出。</p>
+        <p><a href="https://hailuoai.video">立即体验 →</a></p>
+      ]]></description>
+    </item>
+
+    <item>
+      <title>免费额度变化 · Azure TTS 链接持续异常（2026-06-10）</title>
+      <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/</link>
+      <guid isPermaLink="false">changelog-azure-tts-2026-06-10</guid>
+      <pubDate>Wed, 10 Jun 2026 09:00:00 +0800</pubDate>
+      <description><![CDATA[
+        <p>Azure TTS 官方入口页面连续 5 天 connection_error，疑似官方已迁移页面但未更新链接。建议替代使用：</p>
+        <ul>
+          <li><a href="https://peiyin.xunfei.cn">讯飞配音</a> — 每日免费字符额度，音色最丰富</li>
+          <li><a href="https://fish.audio">Fish Audio</a> — 每月免费额度，支持声音克隆</li>
+        </ul>
+      ]]></description>
+    </item>
+
+  </channel>
+</rss>
