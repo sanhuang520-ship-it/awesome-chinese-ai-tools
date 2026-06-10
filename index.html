@@ -560,6 +560,55 @@ footer a:hover{text-decoration:underline}
   .pricing-table th:nth-child(3),.pricing-table td:nth-child(3){display:none}
   .pt-pro-note{display:none}
 }
+
+/* ══════════════════════════════════════
+   SCENARIO CARDS — 身份快速入口
+══════════════════════════════════════ */
+.scenario-section{max-width:1200px;margin:0 auto;padding:16px 20px 0}
+.scenario-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;font-weight:600;margin-bottom:10px}
+.scenario-cards{display:flex;gap:8px;flex-wrap:wrap}
+.sc-card{
+  display:flex;align-items:center;gap:6px;
+  padding:7px 14px;border-radius:20px;
+  background:var(--surface2);border:1px solid var(--border);
+  color:var(--text2);font-size:12px;font-weight:500;cursor:pointer;
+  transition:all .15s;white-space:nowrap
+}
+.sc-card:hover{background:var(--surface3);border-color:var(--accent);color:var(--accent)}
+.sc-card-emoji{font-size:14px;line-height:1}
+
+/* ══════════════════════════════════════
+   CHANGELOG VIEW — 额度追踪
+══════════════════════════════════════ */
+.changelog-view{display:none;max-width:1200px;margin:0 auto;padding:20px 20px 40px}
+.changelog-view.active{display:block}
+.cl-header{margin-bottom:20px}
+.cl-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px}
+.cl-subtitle{font-size:12px;color:var(--muted);line-height:1.6}
+.cl-list{display:flex;flex-direction:column;gap:0}
+.cl-item{
+  display:grid;grid-template-columns:108px 110px 1fr;gap:14px;align-items:start;
+  padding:13px 0;border-bottom:1px solid var(--border)
+}
+.cl-item:last-child{border-bottom:none}
+.cl-date{font-size:11px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.cl-tool{font-size:13px;font-weight:600;color:var(--text)}
+.cl-change{font-size:13px;color:var(--text2);line-height:1.6}
+.cl-tag{
+  display:inline-block;font-size:10px;padding:1px 6px;border-radius:4px;font-weight:700;
+  margin-right:6px;vertical-align:middle;letter-spacing:.3px
+}
+.cl-tag.up{background:rgba(52,211,153,.12);color:#34d399;border:1px solid rgba(52,211,153,.2)}
+.cl-tag.down{background:rgba(248,113,113,.12);color:#f87171;border:1px solid rgba(248,113,113,.2)}
+.cl-tag.new{background:rgba(124,111,247,.12);color:#a89ff9;border:1px solid rgba(124,111,247,.2)}
+.cl-tag.dead{background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.25)}
+.cl-tag.note{background:rgba(56,189,248,.1);color:#38bdf8;border:1px solid rgba(56,189,248,.2)}
+@media(max-width:640px){
+  .cl-item{grid-template-columns:86px 1fr;gap:8px}
+  .cl-tool{display:none}
+  .cl-change::before{content:attr(data-tool)' — ';font-weight:600;color:var(--text)}
+  .scenario-section{padding:12px 14px 0}
+}
 </style>
 </head>
 <body>
@@ -599,6 +648,24 @@ footer a:hover{text-decoration:underline}
   </div>
 </section>
 
+
+<!-- ══════════════════════════════════════
+     SCENARIO CARDS — 按身份快速找工具
+══════════════════════════════════════ -->
+<div class="scenario-section" id="scenario-section">
+  <div class="scenario-label">按你的身份快速找工具</div>
+  <div class="scenario-cards">
+    <button class="sc-card" data-q="写毕业论文"><span class="sc-card-emoji">🎓</span>学生党</button>
+    <button class="sc-card" data-q="开发网站"><span class="sc-card-emoji">💻</span>程序员</button>
+    <button class="sc-card" data-q="写小红书"><span class="sc-card-emoji">📱</span>自媒体人</button>
+    <button class="sc-card" data-q="做PPT汇报"><span class="sc-card-emoji">💼</span>职场人</button>
+    <button class="sc-card" data-q="创业BP"><span class="sc-card-emoji">🚀</span>创业者</button>
+    <button class="sc-card" data-q="图片设计"><span class="sc-card-emoji">🎨</span>设计师</button>
+    <button class="sc-card" data-q="数据分析"><span class="sc-card-emoji">📊</span>数据分析</button>
+    <button class="sc-card" data-q="企业知识库"><span class="sc-card-emoji">🏢</span>企业团队</button>
+  </div>
+</div>
+
 <!-- ══════════════════════════════════════
      CATEGORY TABS
 ══════════════════════════════════════ -->
@@ -616,6 +683,7 @@ footer a:hover{text-decoration:underline}
     <button class="cat-tab" data-cat="productivity">⚡ 效率</button>
     <button class="cat-tab" data-cat="agent">🤖 Agent</button>
     <button class="cat-tab cat-tab-price" id="tab-price" data-special="price">💰 价格对比</button>
+    <button class="cat-tab cat-tab-price" id="tab-changelog" data-special="changelog">📋 额度变化</button>
   </div>
 </div>
 
@@ -633,6 +701,13 @@ footer a:hover{text-decoration:underline}
      PRICING VIEW
 ══════════════════════════════════════ -->
 <div class="pricing-view" id="pricing-view">
+  <!-- JS 填充 -->
+</div>
+
+<!-- ══════════════════════════════════════
+     CHANGELOG VIEW — 免费额度追踪
+══════════════════════════════════════ -->
+<div class="changelog-view" id="changelog-view">
   <!-- JS 填充 -->
 </div>
 
@@ -656,7 +731,7 @@ footer a:hover{text-decoration:underline}
 <footer>
   <p>数据来源：<a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank">awesome-chinese-ai-tools</a>
   · 发现遗漏？欢迎 <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues" target="_blank">提交 Issue</a></p>
-  <p style="margin-top:5px">免费额度信息可能随时变化，请以官网为准 · <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/DESIGN.md" target="_blank">设计文档</a></p>
+  <p style="margin-top:5px">免费额度信息可能随时变化，请以官网为准 · <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/DESIGN.md" target="_blank">设计文档</a> · <a href="alternatives/">替代品导航</a> · <a href="feed.xml">RSS 🔔</a></p>
 </footer>
 
 <!-- ══════════════════════════════════════
@@ -1019,6 +1094,7 @@ async function loadTools() {
    定价视图渲染
 ══════════════════════════════════════ */
 let pricingView = false;
+let changelogView = false;
 
 function renderPricing() {
   const view = document.getElementById('pricing-view');
@@ -1086,17 +1162,23 @@ function renderPricing() {
 
 function showPricingView() {
   pricingView = true;
+  changelogView = false;
   document.getElementById('hero-section').style.display = 'none';
   document.getElementById('browse-section').style.display = 'none';
+  document.getElementById('scenario-section').style.display = 'none';
   document.getElementById('pricing-view').classList.add('active');
+  document.getElementById('changelog-view').classList.remove('active');
   renderPricing();
 }
 
 function showListView() {
   pricingView = false;
+  changelogView = false;
   document.getElementById('hero-section').style.display = '';
   document.getElementById('browse-section').style.display = '';
+  document.getElementById('scenario-section').style.display = '';
   document.getElementById('pricing-view').classList.remove('active');
+  document.getElementById('changelog-view').classList.remove('active');
 }
 
 /* ══════════════════════════════════════
@@ -1110,6 +1192,10 @@ document.getElementById('cat-tabs').addEventListener('click', e => {
 
   if (tab.dataset.special === 'price') {
     showPricingView();
+    return;
+  }
+  if (tab.dataset.special === 'changelog') {
+    showChangelogView();
     return;
   }
   showListView();
@@ -1332,6 +1418,90 @@ document.getElementById('wf-clear').addEventListener('click', () => {
 document.getElementById('news-toggle').addEventListener('click', function() {
   this.classList.toggle('open');
   document.getElementById('news-body').classList.toggle('show');
+});
+
+
+/* ══════════════════════════════════════
+   额度变化视图
+══════════════════════════════════════ */
+function showChangelogView() {
+  changelogView = true;
+  pricingView = false;
+  document.getElementById('hero-section').style.display = 'none';
+  document.getElementById('browse-section').style.display = 'none';
+  document.getElementById('scenario-section').style.display = 'none';
+  document.getElementById('pricing-view').classList.remove('active');
+  document.getElementById('changelog-view').classList.add('active');
+  if (!document.getElementById('changelog-view').dataset.loaded) {
+    loadChangelog();
+  }
+}
+
+async function loadChangelog() {
+  const view = document.getElementById('changelog-view');
+  view.dataset.loaded = '1';
+  view.innerHTML = `
+    <div class="cl-header">
+      <div class="cl-title">📋 免费额度变化追踪</div>
+      <div class="cl-subtitle">记录各工具免费层的调整历史 · 额度变化时此处优先更新<br>防止被悄悄缩减的免费额度坑到</div>
+    </div>
+    <div class="cl-list" id="cl-list"><div style="color:var(--muted);padding:20px 0">加载中…</div></div>`;
+  const REPO = 'sanhuang520-ship-it/awesome-chinese-ai-tools';
+  try {
+    const res = await fetch(`https://raw.githubusercontent.com/${REPO}/main/changelog/free-tiers.md`, {cache:'no-cache'});
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    renderChangelog(await res.text());
+  } catch(e) {
+    document.getElementById('cl-list').innerHTML = '<div style="color:var(--muted)">加载失败，请刷新重试</div>';
+  }
+}
+
+function renderChangelog(md) {
+  const lines = md.split('\n');
+  const items = [];
+  let cur = null;
+  for (const raw of lines) {
+    const line = raw.trimEnd();
+    const m = line.match(/^##\s+(\d{4}-\d{2}-\d{2})\s+·\s+(.+)/);
+    if (m) {
+      if (cur) items.push(cur);
+      cur = { date: m[1], tool: m[2].trim(), change: '', tag: '' };
+      continue;
+    }
+    if (!cur) continue;
+    if (line.match(/^tag:\s*/)) { cur.tag = line.replace(/^tag:\s*/,'').trim(); continue; }
+    const txt = line.replace(/^[-*]\s*/,'').trim();
+    if (txt && !line.startsWith('#')) cur.change = (cur.change ? cur.change + ' ' : '') + txt;
+  }
+  if (cur) items.push(cur);
+  const tagClass = { '降低':'down','涨价':'down','提升':'up','新增':'new','异常':'dead','恢复':'up','取消':'down','注意':'note' };
+  const html = items.slice().reverse().map(item => {
+    const tc = tagClass[item.tag] || 'note';
+    return `<div class="cl-item">
+      <div class="cl-date">${item.date}</div>
+      <div class="cl-tool">${item.tool}</div>
+      <div class="cl-change" data-tool="${item.tool}">
+        ${item.tag ? `<span class="cl-tag ${tc}">${item.tag}</span>` : ''}${item.change}
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('cl-list').innerHTML =
+    html || '<div style="color:var(--muted);padding:20px 0">暂无记录</div>';
+}
+
+/* ══════════════════════════════════════
+   场景快速入口
+══════════════════════════════════════ */
+document.querySelectorAll('.sc-card').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('wf-input').value = btn.dataset.q;
+    document.getElementById('wf-result').classList.remove('show');
+    openDrawer();
+    setTimeout(() => {
+      const wf = matchWorkflow(btn.dataset.q);
+      wf ? showWorkflow(wf) : showNoMatch();
+    }, 80);
+  });
 });
 
 /* ══════════════════════════════════════
