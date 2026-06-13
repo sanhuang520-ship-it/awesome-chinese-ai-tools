@@ -13,7 +13,9 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/og.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/og.png">
 <link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/">
 <style>
 /* ══════════════════════════════════════
@@ -167,7 +169,13 @@ body{
 .hero-card[data-cat="productivity"]{--hero-grad:linear-gradient(135deg,#fbbf24,#fb923c);border-color:rgba(251,191,36,.25)}
 .hero-card[data-cat="agent"]    {--hero-grad:linear-gradient(135deg,#56cfb2,#34d399);border-color:rgba(86,207,178,.25)}
 
-.hero-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.hero-logo{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  background:var(--surface2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.hero-logo img{width:32px;height:32px;object-fit:contain;display:block}
+.hero-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
 .hero-card-name{
   font-size:22px;font-weight:700;color:var(--text);
   display:flex;align-items:center;gap:6px;line-height:1.2;
@@ -261,11 +269,17 @@ body{
   transform:translateX(3px);
   box-shadow:var(--shadow-sm);
 }
-.row-rank{
-  font-size:12px;font-weight:700;color:var(--muted);
-  text-align:center;flex-shrink:0
+.row-logo{
+  width:32px;height:32px;border-radius:9px;flex-shrink:0;
+  background:var(--surface2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
 }
-.row-rank.top{color:var(--accent)}
+.row-logo img{width:24px;height:24px;object-fit:contain;display:block}
+.logo-fb{
+  font-size:13px;font-weight:700;color:var(--text2);
+  display:none;align-items:center;justify-content:center;
+  width:100%;height:100%;line-height:1
+}
 .row-main{display:flex;flex-direction:column;gap:3px;min-width:0}
 .row-name-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .row-name{
@@ -953,7 +967,10 @@ function renderHero() {
   heroGrid.innerHTML = recTools.map((t, i) => `
     <a class="hero-card" data-cat="${t.cat}" href="${t.url}" target="_blank" rel="noopener">
       <div class="hero-card-top">
-        <div class="hero-card-name">${t.name}<span class="hero-ext">↗</span></div>
+        <div style="display:flex;align-items:center;gap:10px;min-width:0">
+          ${logoHTML(t,'hero-logo')}
+          <div class="hero-card-name">${t.name}<span class="hero-ext">↗</span></div>
+        </div>
         <span class="hero-card-rank">${i === 0 ? '🏆 编辑首选' : `✦ 精选 #${i+1}`}</span>
       </div>
       <div class="hero-card-badges">
@@ -973,6 +990,20 @@ function renderHero() {
 /* ══════════════════════════════════════
    渲染 — 工具列表行
 ══════════════════════════════════════ */
+function faviconUrl(url) {
+  try { return `https://www.google.com/s2/favicons?domain=${new URL(url).hostname}&sz=64`; }
+  catch { return ''; }
+}
+function logoHTML(t, cls='row-logo') {
+  const src = faviconUrl(t.url);
+  const letter = t.name[0].toUpperCase();
+  return `<div class="${cls}">
+    <img src="${src}" alt="" loading="lazy"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <span class="logo-fb">${letter}</span>
+  </div>`;
+}
+
 function starsHTML(n) {
   return '<span class="stars-sm">' +
     Array.from({length:5}, (_,i) => `<span class="${i<n?'on':''}">★</span>`).join('') +
@@ -1012,7 +1043,7 @@ function renderList() {
 
   list.innerHTML = sorted.map((t, i) => `
     <div class="tool-row" data-id="${t._id}">
-      <span class="row-rank ${i<3?'top':''}">${i+1}</span>
+      ${logoHTML(t)}
       <div class="row-main">
         <div class="row-name-line">
           <a class="row-name" href="${t.url}" target="_blank" rel="noopener"
