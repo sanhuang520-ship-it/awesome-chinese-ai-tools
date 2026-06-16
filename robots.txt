@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/sitemap.xml
