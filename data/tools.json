@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-19",
+    "updated": "2026-06-21",
     "source": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools",
     "note": "工具数据单一可信源。新增/修改工具只改这里，前端自动渲染。免费额度信息可能变化，以官网为准。",
     "linkCheckedAt": "2026-06-19",
@@ -458,6 +458,25 @@
       "priceFree": "每月125积分",
       "pricePro": "$15/月",
       "priceProNote": "Standard：625积分/月"
+    },
+    {
+      "name": "ImagineClip",
+      "url": "https://imagineclip.com",
+      "cat": "video",
+      "free": true,
+      "cn": false,
+      "vpn": false,
+      "rec": false,
+      "stars": 4,
+      "freeInfo": "免费计划可用",
+      "desc": "AI 视频生成工具，可从提示词、图片和效果生成头像短片、风格化场景和适合社交平台分享的视频。",
+      "linkOk": true,
+      "linkStatus": "ok",
+      "linkCheckedAt": "2026-06-21",
+      "linkFailCount": 0,
+      "priceFree": "免费计划可用",
+      "pricePro": null,
+      "priceProNote": "高级额度按官网为准"
     },
     {
       "name": "通义灵码",
