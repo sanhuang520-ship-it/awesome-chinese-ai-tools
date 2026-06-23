@@ -1,0 +1,12 @@
+{
+  "updated": "2026-06-23",
+  "events": [
+    {"date": "2026-06-23", "type": "site", "title": "全站杂志编辑风改版", "desc": "暖色调（赤陶/墨绿/金）+ 衬线标题，更精致的阅读体验"},
+    {"date": "2026-06-23", "type": "price", "title": "Claude Fable 5 转 usage credits 计费", "desc": "套餐内免费窗口结束，日常推荐改用 Opus 4.8 更划算"},
+    {"date": "2026-06-22", "type": "site", "title": "上线「3 秒选工具」决策器", "desc": "回答 3 个小问题，直接推荐最适合你的工具"},
+    {"date": "2026-06-21", "type": "model", "title": "MiniMax M3 开源发布", "desc": "MSA 稀疏注意力，长上下文推理成本降至 1/20"},
+    {"date": "2026-06-18", "type": "alert", "title": "Gemini CLI 停服", "desc": "个人版迁移至 Antigravity CLI（命令 agy）"},
+    {"date": "2026-06-17", "type": "model", "title": "智谱 GLM-5.2 开源", "desc": "1M 无损上下文，Code Arena 开源模型第一"},
+    {"date": "2026-06-13", "type": "site", "title": "上线价格对比 + 工具图标", "desc": "47 个工具按免费/付费分组，一眼看清成本"}
+  ]
+}
