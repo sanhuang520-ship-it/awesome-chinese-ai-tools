@@ -4,7 +4,7 @@
     "source": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools",
     "note": "工具数据单一可信源。新增/修改工具只改这里，前端自动渲染。免费额度信息可能变化，以官网为准。",
     "linkCheckedAt": "2026-06-23",
-    "linkDeadCount": 0,
+    "linkDeadCount": 2,
     "pricingUpdated": "2026-06-09"
   },
   "categories": {
@@ -337,10 +337,10 @@
       "stars": 3,
       "freeInfo": "无免费额度，需订阅",
       "desc": "商业设计质量顶级，好莱坞和广告公司御用，但无免费额度，需梯子。",
-      "linkOk": true,
-      "linkStatus": "ok_bot_blocked",
+      "linkOk": false,
+      "linkStatus": "url_error",
       "linkCheckedAt": "2026-06-23",
-      "linkFailCount": 0,
+      "linkFailCount": 1,
       "priceFree": "无免费额度",
       "pricePro": "$10/月",
       "priceProNote": "Basic：200次生成/月"
@@ -508,10 +508,10 @@
       "stars": 4,
       "freeInfo": "免费版功能完整",
       "desc": "AI 原生 IDE，功能与 Cursor 相近，免费版完整；原 Codeium 出品，现已被 Cognition（Devin 母公司）收购，以 Windsurf 品牌延续。",
-      "linkOk": true,
-      "linkStatus": "ok",
+      "linkOk": false,
+      "linkStatus": "http_308",
       "linkCheckedAt": "2026-06-23",
-      "linkFailCount": 0,
+      "linkFailCount": 1,
       "priceFree": "免费版功能完整",
       "pricePro": "$20/月",
       "priceProNote": "Pro：更多请求+高级功能"
