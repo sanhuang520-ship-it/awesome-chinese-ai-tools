@@ -17,44 +17,56 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/og.png">
 <link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="favicon-48.png" sizes="48x48">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
 /* ══════════════════════════════════════
    CSS 变量 & 主题
 ══════════════════════════════════════ */
 :root{
-  --bg:#090b12;--surface:#111420;--surface2:#171b2c;--surface3:#1d2236;
-  --border:#1e2338;--border2:#272e48;
-  --accent:#7c6ff7;--accent2:#56cfb2;--accent3:#f472b6;
-  --text:#e8eaf6;--text2:#b0b7d8;--muted:#6b7296;
-  --free:#34d399;--paid:#f87171;
-  --r:12px;--r2:18px;
-  --navbar-h:60px;
-  --shadow-sm:0 1px 8px rgba(0,0,0,.35);
-  --shadow-md:0 4px 24px rgba(0,0,0,.5);
-  --shadow-lg:0 16px 56px rgba(0,0,0,.65);
+  /* 暖深「黑胶杂志」风（默认深色） */
+  --bg:#1b1713;--surface:#252019;--surface2:#2d2720;--surface3:#372f25;
+  --border:#3a3329;--border2:#4c4234;
+  --accent:#e0795a;        /* 赤陶橙红 — 编辑强调色 */
+  --accent2:#86b894;       /* 柔墨绿 */
+  --accent3:#d6a84e;       /* 暖金 */
+  --text:#efe8da;--text2:#c2b8a4;--muted:#8a7f6b;
+  --free:#86b894;--paid:#e0795a;
+  --r:10px;--r2:16px;
+  --navbar-h:62px;
+  --shadow-sm:0 1px 8px rgba(0,0,0,.32);
+  --shadow-md:0 6px 26px rgba(0,0,0,.44);
+  --shadow-lg:0 18px 56px rgba(0,0,0,.6);
   --spring:cubic-bezier(.34,1.56,.64,1);
   --ease-out:cubic-bezier(.2,0,0,1);
+  --glow:rgba(224,121,90,.18);
+  --font-serif:"Songti SC","Noto Serif SC",STSong,STZhongsong,"SimSun",Georgia,"Times New Roman",serif;
+  --font-sans:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
 }
 [data-theme="light"]{
-  --bg:#f0f1f8;--surface:#ffffff;--surface2:#f5f6fc;--surface3:#eaedf8;
-  --border:#e0e3f0;--border2:#d0d4ea;
-  --accent:#5f50e8;--accent2:#0f9471;--accent3:#db2777;
-  --text:#0d0f1a;--text2:#3a4268;--muted:#7880a8;
-  --free:#0a7c4f;--paid:#b91c1c;
-  --shadow-sm:0 1px 8px rgba(0,0,0,.06);
-  --shadow-md:0 4px 24px rgba(0,0,0,.1);
-  --shadow-lg:0 16px 56px rgba(0,0,0,.14);
+  /* 暖纸张杂志风（浅色） */
+  --bg:#f4efe4;--surface:#fffdf7;--surface2:#efe9db;--surface3:#e7dfcd;
+  --border:#e2dac8;--border2:#cfc5ad;
+  --accent:#b8442c;        /* 印刷赤陶红 */
+  --accent2:#3c6b4d;       /* 墨绿 */
+  --accent3:#a8791f;       /* 暖金 */
+  --text:#2b2419;--text2:#5e5446;--muted:#9a8f7a;
+  --free:#3c6b4d;--paid:#b8442c;
+  --glow:rgba(184,68,44,.14);
+  --shadow-sm:0 1px 8px rgba(90,70,40,.08);
+  --shadow-md:0 6px 24px rgba(90,70,40,.12);
+  --shadow-lg:0 18px 50px rgba(90,70,40,.18);
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
 body{
-  font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-family:var(--font-sans);
   background:var(--bg);color:var(--text);min-height:100vh;
   transition:background .25s,color .25s;
   -webkit-font-smoothing:antialiased;
+}
+/* 杂志衬线标题 — 编辑风的灵魂 */
+.nav-logo,.hero-card-name,.hero-label-text,.picker-q,.picker-result-tt,
+.picker-banner-tt,.modal-title,.wf-drawer-title,.pricing-title,.news-toggle-title{
+  font-family:var(--font-serif);
 }
 /* Apple 细滚动条 */
 *{scrollbar-width:thin;scrollbar-color:var(--border2) transparent}
@@ -68,20 +80,17 @@ body{
 .navbar{
   position:fixed;top:0;left:0;right:0;z-index:200;
   height:var(--navbar-h);
-  background:rgba(13,15,24,.88);
+  background:rgba(27,23,19,.86);
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
   border-bottom:1px solid var(--border);
   display:flex;align-items:center;gap:14px;padding:0 20px;
 }
-[data-theme="light"] .navbar{background:rgba(244,245,251,.88)}
+[data-theme="light"] .navbar{background:rgba(244,239,228,.86)}
 .nav-logo{
-  font-size:15px;font-weight:700;color:var(--text);
-  white-space:nowrap;flex-shrink:0;letter-spacing:-.3px
+  font-size:18px;font-weight:700;color:var(--text);
+  white-space:nowrap;flex-shrink:0;letter-spacing:.2px
 }
-.nav-logo span{
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
-}
+.nav-logo span{color:var(--accent)}
 .nav-search-wrap{flex:1;max-width:360px;position:relative}
 .nav-search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:13px;pointer-events:none}
 #search{
@@ -90,7 +99,7 @@ body{
   border-radius:20px;color:var(--text);font-size:13px;outline:none;
   transition:border-color .2s,box-shadow .2s
 }
-#search:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,111,247,.15)}
+#search:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
 #search::placeholder{color:var(--muted)}
 .nav-chips{display:flex;gap:8px;align-items:center;flex-shrink:0}
 .nav-chip{
@@ -154,23 +163,23 @@ body{
   border-color:var(--border2);
 }
 .hero-card::before{
-  content:'';position:absolute;inset:0;opacity:.07;
-  background:var(--hero-grad,linear-gradient(135deg,#7c6ff7,#56cfb2));
+  content:'';position:absolute;inset:0;opacity:.09;
+  background:var(--hero-grad,linear-gradient(135deg,#e0795a,#d6a84e));
   pointer-events:none;transition:opacity .3s;
 }
-.hero-card:hover::before{opacity:.15}
+.hero-card:hover::before{opacity:.16}
 
-/* 按分类给 hero 卡片着色 */
-.hero-card[data-cat="llm"]      {--hero-grad:linear-gradient(135deg,#7c6ff7,#56cfb2);border-color:rgba(124,111,247,.25)}
-.hero-card[data-cat="image"]    {--hero-grad:linear-gradient(135deg,#f472b6,#fb923c);border-color:rgba(244,114,182,.25)}
-.hero-card[data-cat="video"]    {--hero-grad:linear-gradient(135deg,#fb923c,#fbbf24);border-color:rgba(251,146,60,.25)}
-.hero-card[data-cat="code"]     {--hero-grad:linear-gradient(135deg,#34d399,#60a5fa);border-color:rgba(52,211,153,.25)}
-.hero-card[data-cat="writing"]  {--hero-grad:linear-gradient(135deg,#60a5fa,#a78bfa);border-color:rgba(96,165,250,.25)}
-.hero-card[data-cat="translate"]{--hero-grad:linear-gradient(135deg,#a3e635,#56cfb2);border-color:rgba(163,230,53,.25)}
-.hero-card[data-cat="voice"]    {--hero-grad:linear-gradient(135deg,#e879f9,#7c6ff7);border-color:rgba(232,121,249,.25)}
-.hero-card[data-cat="search"]   {--hero-grad:linear-gradient(135deg,#38bdf8,#56cfb2);border-color:rgba(56,189,248,.25)}
-.hero-card[data-cat="productivity"]{--hero-grad:linear-gradient(135deg,#fbbf24,#fb923c);border-color:rgba(251,191,36,.25)}
-.hero-card[data-cat="agent"]    {--hero-grad:linear-gradient(135deg,#56cfb2,#34d399);border-color:rgba(86,207,178,.25)}
+/* 按分类给 hero 卡片着色 — 暖色编辑调，克制和谐 */
+.hero-card[data-cat="llm"]      {--hero-grad:linear-gradient(135deg,#e0795a,#d6a84e);border-color:rgba(224,121,90,.3)}
+.hero-card[data-cat="image"]    {--hero-grad:linear-gradient(135deg,#d8694a,#c9803f);border-color:rgba(216,105,74,.3)}
+.hero-card[data-cat="video"]    {--hero-grad:linear-gradient(135deg,#c9803f,#d6a84e);border-color:rgba(201,128,63,.3)}
+.hero-card[data-cat="code"]     {--hero-grad:linear-gradient(135deg,#86b894,#5a9b7a);border-color:rgba(134,184,148,.3)}
+.hero-card[data-cat="writing"]  {--hero-grad:linear-gradient(135deg,#c98a5e,#d6a84e);border-color:rgba(201,138,94,.3)}
+.hero-card[data-cat="translate"]{--hero-grad:linear-gradient(135deg,#9bab6a,#86b894);border-color:rgba(155,171,106,.3)}
+.hero-card[data-cat="voice"]    {--hero-grad:linear-gradient(135deg,#c77b6a,#d6a84e);border-color:rgba(199,123,106,.3)}
+.hero-card[data-cat="search"]   {--hero-grad:linear-gradient(135deg,#7aa896,#86b894);border-color:rgba(122,168,150,.3)}
+.hero-card[data-cat="productivity"]{--hero-grad:linear-gradient(135deg,#d6a84e,#c9803f);border-color:rgba(214,168,78,.3)}
+.hero-card[data-cat="agent"]    {--hero-grad:linear-gradient(135deg,#86b894,#9bab6a);border-color:rgba(134,184,148,.3)}
 
 .hero-logo{
   width:44px;height:44px;border-radius:12px;flex-shrink:0;
@@ -187,7 +196,7 @@ body{
 .hero-card-name .hero-ext{font-size:13px;color:var(--muted);font-weight:400}
 .hero-card-rank{
   font-size:11px;font-weight:700;color:var(--accent);
-  background:rgba(124,111,247,.12);border:1px solid rgba(124,111,247,.25);
+  background:var(--glow);border:1px solid var(--accent);
   padding:3px 9px;border-radius:20px;flex-shrink:0;white-space:nowrap
 }
 .hero-card-badges{display:flex;gap:5px;flex-wrap:wrap}
@@ -211,12 +220,12 @@ body{
 ══════════════════════════════════════ */
 .cat-tabs-wrap{
   position:sticky;top:var(--navbar-h);z-index:100;
-  background:rgba(9,11,18,.92);
+  background:rgba(27,23,19,.9);
   backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
   border-bottom:1px solid var(--border);
   padding:0 20px;
 }
-[data-theme="light"] .cat-tabs-wrap{background:rgba(240,241,248,.92)}
+[data-theme="light"] .cat-tabs-wrap{background:rgba(244,239,228,.9)}
 .cat-tabs{
   max-width:1200px;margin:0 auto;
   display:flex;gap:4px;overflow-x:auto;
@@ -297,16 +306,16 @@ body{
 
 /* badge 通用 */
 .badge{font-size:10px;padding:3px 8px;border-radius:20px;font-weight:500;white-space:nowrap;letter-spacing:.1px}
-.b-cat{background:var(--cat-bg,rgba(124,111,247,.12));color:var(--cat-c,#a89ff9)}
-.b-free{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);color:var(--free)}
-.b-paid{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.2);color:var(--paid)}
-.b-cn{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.18);color:#fbbf24}
-.b-vpn{background:rgba(107,114,150,.08);border:1px solid rgba(107,114,150,.18);color:var(--muted)}
-.b-dead{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.3);color:#fbbf24;cursor:help}
-.b-rec{background:rgba(124,111,247,.12);border:1px solid rgba(124,111,247,.22);color:#a89ff9}
+.b-cat{background:var(--cat-bg,var(--glow));color:var(--cat-c,var(--accent))}
+.b-free{background:rgba(134,184,148,.12);border:1px solid rgba(134,184,148,.28);color:var(--free)}
+.b-paid{background:rgba(224,121,90,.12);border:1px solid rgba(224,121,90,.28);color:var(--paid)}
+.b-cn{background:rgba(214,168,78,.12);border:1px solid rgba(214,168,78,.28);color:var(--accent3)}
+.b-vpn{background:rgba(138,127,107,.1);border:1px solid rgba(138,127,107,.22);color:var(--muted)}
+.b-dead{background:rgba(214,168,78,.1);border:1px solid rgba(214,168,78,.32);color:var(--accent3);cursor:help}
+.b-rec{background:var(--glow);border:1px solid var(--accent);color:var(--accent)}
 
 .stars-sm{font-size:10px;color:var(--muted);white-space:nowrap}
-.stars-sm .on{color:#fbbf24}
+.stars-sm .on{color:var(--accent3)}
 
 /* icon 操作按钮 */
 .icon-btn{
@@ -350,7 +359,7 @@ body{
   padding:14px 16px;display:flex;flex-direction:column;gap:5px;
   transition:border-color .15s;cursor:pointer
 }
-.news-card:hover{border-color:rgba(86,207,178,.35)}
+.news-card:hover{border-color:var(--accent)}
 .news-date{font-size:11px;color:var(--muted)}
 .news-headline{font-size:13px;font-weight:600;color:var(--text);line-height:1.5}
 .news-body-text{font-size:12px;color:var(--muted);line-height:1.6}
@@ -363,11 +372,11 @@ body{
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   border:none;color:#fff;padding:10px 18px;border-radius:50px;
   font-size:13px;font-weight:700;cursor:pointer;
-  box-shadow:0 6px 24px rgba(124,111,247,.4);
+  box-shadow:0 6px 24px rgba(224,121,90,.42);
   display:flex;align-items:center;gap:7px;
   transition:transform .15s,box-shadow .15s
 }
-.wf-fab:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(124,111,247,.5)}
+.wf-fab:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(224,121,90,.55)}
 .wf-fab-icon{font-size:16px}
 
 .wf-overlay{
@@ -429,8 +438,8 @@ body{
 }
 .wf-step-num{
   min-width:26px;height:26px;border-radius:50%;
-  background:rgba(124,111,247,.18);border:1px solid rgba(124,111,247,.35);
-  color:#a89ff9;font-size:11px;font-weight:700;
+  background:var(--glow);border:1px solid var(--accent);
+  color:var(--accent);font-size:11px;font-weight:700;
   display:flex;align-items:center;justify-content:center;flex-shrink:0
 }
 .wf-step-body{flex:1}
@@ -537,13 +546,12 @@ footer a:hover{text-decoration:underline}
 ══════════════════════════════════════ */
 .cat-tab-price{
   margin-left:auto;flex-shrink:0;
-  color:#b8922a !important;
+  color:var(--accent3) !important;
 }
-[data-theme="dark"] .cat-tab-price{color:rgba(251,191,36,.7) !important}
 .cat-tab-price:hover,.cat-tab-price.active{
-  background:rgba(251,191,36,.12) !important;
-  color:#fbbf24 !important;
-  box-shadow:0 0 0 1px rgba(251,191,36,.25) !important;
+  background:rgba(214,168,78,.14) !important;
+  color:var(--accent3) !important;
+  box-shadow:0 0 0 1px rgba(214,168,78,.32) !important;
 }
 
 /* ══════════════════════════════════════
@@ -565,9 +573,9 @@ footer a:hover{text-decoration:underline}
   font-size:13px;
 }
 .pricing-stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.pricing-stat-dot.free{background:#34d399}
-.pricing-stat-dot.freemium{background:#fbbf24}
-.pricing-stat-dot.paid{background:#f87171}
+.pricing-stat-dot.free{background:var(--free)}
+.pricing-stat-dot.freemium{background:var(--accent3)}
+.pricing-stat-dot.paid{background:var(--paid)}
 .pricing-stat-num{font-weight:700;font-size:16px;color:var(--text)}
 .pricing-stat-label{color:var(--muted)}
 
@@ -581,9 +589,9 @@ footer a:hover{text-decoration:underline}
 .pricing-section-badge{
   font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;
 }
-.ps-free  .pricing-section-badge{background:rgba(52,211,153,.15);color:#34d399}
-.ps-freemium .pricing-section-badge{background:rgba(251,191,36,.15);color:#f59e0b}
-.ps-paid  .pricing-section-badge{background:rgba(248,113,113,.15);color:#f87171}
+.ps-free  .pricing-section-badge{background:rgba(134,184,148,.16);color:var(--free)}
+.ps-freemium .pricing-section-badge{background:rgba(214,168,78,.16);color:var(--accent3)}
+.ps-paid  .pricing-section-badge{background:rgba(224,121,90,.16);color:var(--paid)}
 
 .pricing-table{width:100%;border-collapse:collapse}
 .pricing-table th{
@@ -624,11 +632,111 @@ footer a:hover{text-decoration:underline}
   .wf-fab{right:14px;bottom:18px;padding:9px 14px;font-size:12px}
   .pricing-table th:nth-child(3),.pricing-table td:nth-child(3){display:none}
   .pt-pro-note{display:none}
+  .picker-banner{flex-direction:column;align-items:flex-start;gap:8px}
+  .picker-opts{grid-template-columns:1fr 1fr}
 }
+
+/* ══════════════════════════════════════
+   决策器 — 3秒选工具
+══════════════════════════════════════ */
+.picker-banner{
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  margin-bottom:18px;padding:16px 20px;border-radius:var(--r2);
+  background:linear-gradient(120deg,rgba(224,121,90,.14),rgba(214,168,78,.1));
+  border:1px solid var(--border2);cursor:pointer;
+  transition:transform .35s var(--spring),box-shadow .35s var(--spring),border-color .25s;
+}
+.picker-banner::before{
+  content:'';position:absolute;top:0;left:-60%;width:45%;height:100%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,247,237,.12),transparent);
+  transform:skewX(-20deg);animation:pk-shimmer 5s ease-in-out infinite;
+}
+@keyframes pk-shimmer{0%,55%{left:-60%}100%{left:135%}}
+.picker-banner:hover{transform:translateY(-3px);box-shadow:0 12px 38px rgba(224,121,90,.26);border-color:var(--accent)}
+.picker-banner-l{display:flex;align-items:center;gap:14px;min-width:0;position:relative;z-index:1}
+.picker-banner-icon{
+  font-size:22px;flex-shrink:0;width:46px;height:46px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(224,121,90,.26),rgba(214,168,78,.2));
+  border:1px solid rgba(224,121,90,.3);box-shadow:0 0 20px rgba(224,121,90,.22);
+}
+.picker-banner-tt{font-size:16px;font-weight:700;color:var(--text);letter-spacing:.2px}
+.picker-banner-sub{font-size:12px;color:var(--text2);margin-top:3px}
+.picker-banner-cta{
+  position:relative;z-index:1;
+  font-size:13px;font-weight:700;white-space:nowrap;flex-shrink:0;
+  padding:9px 20px;border-radius:20px;color:#fff;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  box-shadow:0 4px 16px rgba(224,121,90,.36);
+  transition:transform .3s var(--spring);
+}
+.picker-banner:hover .picker-banner-cta{transform:translateX(4px)}
+
+.picker-modal{
+  position:fixed;inset:0;z-index:450;display:none;
+  align-items:center;justify-content:center;padding:20px;
+  background:rgba(0,0,0,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.picker-modal.show{display:flex}
+.picker-card{
+  background:var(--surface);border:1px solid var(--border2);border-radius:var(--r2);
+  width:100%;max-width:560px;padding:26px;box-shadow:var(--shadow-lg);
+  animation:modal-in .35s var(--spring);max-height:90vh;overflow-y:auto;
+}
+.picker-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.picker-progress{display:flex;gap:6px}
+.picker-dot{width:22px;height:4px;border-radius:4px;background:var(--border2);transition:background .3s}
+.picker-dot.on{background:var(--accent)}
+.picker-close{
+  background:var(--surface2);border:1px solid var(--border);color:var(--muted);
+  width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:16px;
+  display:flex;align-items:center;justify-content:center;transition:all .2s;
+}
+.picker-close:hover{color:var(--text);transform:rotate(90deg)}
+.picker-q{font-size:20px;font-weight:700;color:var(--text);margin:18px 0 4px;letter-spacing:-.3px}
+.picker-q-sub{font-size:13px;color:var(--muted);margin-bottom:18px}
+.picker-opts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.picker-opt{
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  padding:16px 10px;border-radius:var(--r);cursor:pointer;
+  background:var(--surface2);border:1.5px solid var(--border);
+  transition:all .25s var(--spring);text-align:center;
+}
+.picker-opt:hover{border-color:var(--accent);transform:translateY(-3px);background:var(--surface3)}
+.picker-opt-emoji{font-size:26px;line-height:1}
+.picker-opt-label{font-size:13px;font-weight:600;color:var(--text)}
+.picker-back{
+  margin-top:18px;background:none;border:none;color:var(--muted);
+  font-size:13px;cursor:pointer;padding:4px;transition:color .2s;
+}
+.picker-back:hover{color:var(--text)}
+
+.picker-result-head{display:flex;align-items:center;gap:10px;margin:8px 0 4px}
+.picker-result-emoji{font-size:30px}
+.picker-result-tt{font-size:20px;font-weight:700;color:var(--text);letter-spacing:-.3px}
+.picker-result-sub{font-size:13px;color:var(--muted);margin-bottom:18px}
+.picker-rec{
+  display:flex;align-items:center;gap:13px;padding:14px 16px;margin-bottom:10px;
+  border-radius:var(--r);background:var(--surface2);border:1px solid var(--border);
+  text-decoration:none;transition:all .25s var(--spring);
+}
+.picker-rec:hover{border-color:var(--accent);transform:translateX(4px);box-shadow:var(--shadow-sm)}
+.picker-rec-rank{
+  width:30px;height:30px;flex-shrink:0;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:800;color:#fff;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+}
+.picker-rec.r2 .picker-rec-rank{background:var(--surface3);color:var(--text2)}
+.picker-rec.r3 .picker-rec-rank{background:var(--surface3);color:var(--text2)}
+.picker-rec-main{flex:1;min-width:0}
+.picker-rec-name{font-size:15px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:7px}
+.picker-rec-desc{font-size:12px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.picker-rec-go{font-size:18px;color:var(--accent);flex-shrink:0}
+.picker-empty{text-align:center;padding:30px 10px;color:var(--muted);font-size:14px}
+.picker-result-actions{display:flex;gap:10px;margin-top:16px}
 </style>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "ItemList", "name": "免费 AI 工具精选 · AI 工具导航", "description": "收录 47+ 国内外 AI 工具，标注免费额度与中文支持评级。", "url": "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/", "numberOfItems": 47, "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "SoftwareApplication", "name": "DeepSeek", "url": "https://chat.deepseek.com", "applicationCategory": "大语言模型", "description": "开源推理模型，代码和数学能力比肩 GPT-4，API 价格是 OpenAI 的 1/10，国产性价比之王。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 2, "item": {"@type": "SoftwareApplication", "name": "Kimi", "url": "https://kimi.moonshot.cn", "applicationCategory": "大语言模型", "description": "200k 超长上下文，直接上传论文 / 合同 / 报告问重点，月之暗面出品。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "SoftwareApplication", "name": "通义千问 Qwen3", "url": "https://tongyi.aliyun.com", "applicationCategory": "大语言模型", "description": "阿里云旗舰，Qwen3-235B 参数，推理能力强，多模态，API 免费额度充足。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 4, "item": {"@type": "SoftwareApplication", "name": "豆包", "url": "https://www.doubao.com", "applicationCategory": "大语言模型", "description": "字节跳动出品，多模态联网，日常创作和对话场景均衡稳定，完全免费。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 5, "item": {"@type": "SoftwareApplication", "name": "文心一言", "url": "https://yiyan.baidu.com", "applicationCategory": "大语言模型", "description": "百度出品，整合百度搜索，知识库问答和搜索增强场景有独特优势。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 6, "item": {"@type": "SoftwareApplication", "name": "讯飞星火", "url": "https://xinghuo.xfyun.cn", "applicationCategory": "大语言模型", "description": "科大讯飞，语音交互能力国内最强，适合语音+对话组合场景。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 7, "item": {"@type": "SoftwareApplication", "name": "智谱清言", "url": "https://chatglm.cn", "applicationCategory": "大语言模型", "description": "清华背景，GLM-4，支持代码解释器和 Agent，API 免费额度开发者友好。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 8, "item": {"@type": "SoftwareApplication", "name": "Claude", "url": "https://claude.ai", "applicationCategory": "大语言模型", "description": "Anthropic 出品，长文档分析和代码能力顶级，对话逻辑清晰，需要梯子。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 9, "item": {"@type": "SoftwareApplication", "name": "ChatGPT", "url": "https://chatgpt.com", "applicationCategory": "大语言模型", "description": "OpenAI 旗舰，生态最完善，插件和 GPTs 数量最多，覆盖场景最广。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 10, "item": {"@type": "SoftwareApplication", "name": "Gemini", "url": "https://gemini.google.com", "applicationCategory": "大语言模型", "description": "Google 出品，深度整合 Gmail/Docs/Drive，重度 Google 生态用户首选。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 11, "item": {"@type": "SoftwareApplication", "name": "即梦 AI", "url": "https://jimeng.jianying.com", "applicationCategory": "图像生成", "description": "字节出品，中文提示词理解极佳，不需要学英文，每天免费额度充足，上手最快。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 12, "item": {"@type": "SoftwareApplication", "name": "文心一格", "url": "https://yige.baidu.com", "applicationCategory": "图像生成", "description": "百度出品，国风、古风、水墨风格尤为出色，适合中式内容创作。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 13, "item": {"@type": "SoftwareApplication", "name": "通义万相", "url": "https://tongyi.aliyun.com/wanxiang", "applicationCategory": "图像生成", "description": "阿里出品，针对中文场景专项训练，商业插图和电商图片质量稳定。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 14, "item": {"@type": "SoftwareApplication", "name": "LiblibAI", "url": "https://www.liblib.art", "applicationCategory": "图像生成", "description": "国内最大的 SD 模型社区，二次元、写实、国风模型极其丰富，可在线直接跑。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 15, "item": {"@type": "SoftwareApplication", "name": "Midjourney", "url": "https://midjourney.com", "applicationCategory": "图像生成", "description": "商业设计质量顶级，好莱坞和广告公司御用，但无免费额度，需梯子。", "offers": {"@type": "Offer", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 16, "item": {"@type": "SoftwareApplication", "name": "Adobe Firefly", "url": "https://firefly.adobe.com", "applicationCategory": "图像生成", "description": "商用授权最安全，Adobe 合规训练数据，生成结果可直接用于商业项目。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 17, "item": {"@type": "SoftwareApplication", "name": "Flux", "url": "https://blackforestlabs.ai", "applicationCategory": "图像生成", "description": "新一代开源图像模型，质量超越同期 SD，可本地部署无限生成。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 18, "item": {"@type": "SoftwareApplication", "name": "可灵 AI", "url": "https://klingai.kuaishou.com", "applicationCategory": "视频生成", "description": "快手出品，720p 高质量，人物运动和物理效果在国产方案中最自然，每天有免费积分。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 19, "item": {"@type": "SoftwareApplication", "name": "即梦视频", "url": "https://jimeng.jianying.com", "applicationCategory": "视频生成", "description": "字节出品，与即梦图像同平台，工作流顺畅，中文描述直接生成视频。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 20, "item": {"@type": "SoftwareApplication", "name": "海螺视频", "url": "https://hailuoai.video", "applicationCategory": "视频生成", "description": "MiniMax 出品，人物运动尤其流畅，适合有人物出镜的短视频片段。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 21, "item": {"@type": "SoftwareApplication", "name": "Runway", "url": "https://runwayml.com", "applicationCategory": "视频生成", "description": "好莱坞采用的专业视频 AI 工具，奥斯卡获奖影片有实际使用案例。", "offers": {"@type": "Offer", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 22, "item": {"@type": "SoftwareApplication", "name": "通义灵码", "url": "https://lingma.aliyun.com", "applicationCategory": "编程辅助", "description": "阿里出品，VS Code 和 JetBrains 插件，完全免费，国内访问流畅，中文注释理解好。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 23, "item": {"@type": "SoftwareApplication", "name": "Cursor", "url": "https://cursor.com", "applicationCategory": "编程辅助", "description": "AI 原生 IDE，能理解整个项目上下文，复杂功能开发体验远超普通补全工具。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 24, "item": {"@type": "SoftwareApplication", "name": "Windsurf", "url": "https://windsurf.com", "applicationCategory": "编程辅助", "description": "AI 原生 IDE，功能与 Cursor 相近，免费版完整；原 Codeium 出品，现已被 Cognition（Devin 母公司）收购，以 Windsurf 品牌延续。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 25, "item": {"@type": "SoftwareApplication", "name": "MarsCode", "url": "https://www.marscode.cn", "applicationCategory": "编程辅助", "description": "字节出品的在线云 IDE，内置 AI 助手，无需本地配置，适合快速验证想法。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 26, "item": {"@type": "SoftwareApplication", "name": "Bolt", "url": "https://bolt.new", "applicationCategory": "编程辅助", "description": "一句话生成可运行的全栈 web 应用，适合快速原型，当天可上线演示。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 27, "item": {"@type": "SoftwareApplication", "name": "v0", "url": "https://v0.dev", "applicationCategory": "编程辅助", "description": "Vercel 出品，专注 UI 组件生成，输出 React/Tailwind 代码质量高，前端神器。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 28, "item": {"@type": "SoftwareApplication", "name": "秘塔写作猫", "url": "https://xiezuocat.com", "applicationCategory": "写作文案", "description": "国内老牌中文写作助手，语法检查、改写润色效果自然，不像 AI 腔，学生和职场必备。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 29, "item": {"@type": "SoftwareApplication", "name": "笔灵 AI", "url": "https://ibiling.cn", "applicationCategory": "写作文案", "description": "论文、报告、简历专项，格式规范，学生和需要正式文体的职场人适用。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 30, "item": {"@type": "SoftwareApplication", "name": "Gamma", "url": "https://gamma.app", "applicationCategory": "写作文案", "description": "文字大纲一键生成精美 PPT，模板质量远超普通模板，适合快速出提案。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 31, "item": {"@type": "SoftwareApplication", "name": "沉浸式翻译", "url": "https://immersivetranslate.com", "applicationCategory": "翻译", "description": "浏览器双语对照神器，网页、PDF、字幕全支持，不破坏原文排版，装上就离不开。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 32, "item": {"@type": "SoftwareApplication", "name": "DeepL", "url": "https://deepl.com", "applicationCategory": "翻译", "description": "欧洲语言翻译质量全球最佳，中英互译自然度也高，每月 50 万字符免费。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 33, "item": {"@type": "SoftwareApplication", "name": "彩云小译", "url": "https://caiyunapp.com", "applicationCategory": "翻译", "description": "日语翻译国内最佳，支持实时字幕翻译，追日语内容的用户必备。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 34, "item": {"@type": "SoftwareApplication", "name": "有道翻译", "url": "https://fanyi.youdao.com", "applicationCategory": "翻译", "description": "网易出品，词典+翻译双合一，生词本和例句库是英语学习者的好帮手。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 35, "item": {"@type": "SoftwareApplication", "name": "讯飞配音", "url": "https://peiyin.xunfei.cn", "applicationCategory": "语音TTS", "description": "国内 TTS 标杆，音色数量最多，新闻播报到有声书多种风格，每天有免费额度。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 36, "item": {"@type": "SoftwareApplication", "name": "Fish Audio", "url": "https://fish.audio", "applicationCategory": "语音TTS", "description": "支持中文方言，音色克隆效果国产最佳，上传 1 分钟样本就能克隆你的声音。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 37, "item": {"@type": "SoftwareApplication", "name": "Azure TTS", "url": "https://azure.microsoft.com/zh-cn/products/ai-foundry/tools/speech", "applicationCategory": "语音TTS", "description": "微软出品，中文音色自然度高，每月 50 万字符免费，适合开发者集成到应用。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 38, "item": {"@type": "SoftwareApplication", "name": "秘塔搜索", "url": "https://metaso.cn", "applicationCategory": "搜索增强", "description": "国内最好用的 AI 搜索，无广告，学术模式+深度模式，引用可追溯，替代百度首选。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 39, "item": {"@type": "SoftwareApplication", "name": "Perplexity", "url": "https://perplexity.ai", "applicationCategory": "搜索增强", "description": "AI 搜索国际标杆，引用来源准确，技术和学术查询效果最佳，需要梯子。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 40, "item": {"@type": "SoftwareApplication", "name": "天工 AI 搜索", "url": "https://search.tiangong.cn", "applicationCategory": "搜索增强", "description": "昆仑万维出品，中文时事资讯查询强，支持多轮追问，完全免费无广告。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 41, "item": {"@type": "SoftwareApplication", "name": "WPS AI", "url": "https://ai.wps.cn", "applicationCategory": "效率工具", "description": "Office 场景 AI 助手，文档摘要、公式生成、PPT 美化，对中文职场文档最熟悉。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 42, "item": {"@type": "SoftwareApplication", "name": "飞书多维表格", "url": "https://feishu.cn", "applicationCategory": "效率工具", "description": "AI+电子表格组合，自动化流程强，适合团队协作和数据管理场景。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 43, "item": {"@type": "SoftwareApplication", "name": "Gamma", "url": "https://gamma.app", "applicationCategory": "效率工具", "description": "AI 一键生成 PPT 和文档，模板精美，适合快速出提案，每月有免费积分。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 44, "item": {"@type": "SoftwareApplication", "name": "Coze", "url": "https://coze.cn", "applicationCategory": "Agent平台", "description": "字节出品 Agent 平台，拖拽式配置，插件生态丰富，搭建个人 AI 助手和自动化流程首选。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 45, "item": {"@type": "SoftwareApplication", "name": "Dify", "url": "https://dify.ai", "applicationCategory": "Agent平台", "description": "国产 LLMOps 开源标杆，GitHub 50k+ stars，可视化编排 Agent，支持私有化部署。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 46, "item": {"@type": "SoftwareApplication", "name": "FastGPT", "url": "https://fastgpt.in", "applicationCategory": "Agent平台", "description": "知识库问答平台，RAG 效果在开源方案中最稳定，把内部文档变成智能助手。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}, {"@type": "ListItem", "position": 47, "item": {"@type": "SoftwareApplication", "name": "MaxKB", "url": "https://maxkb.cn", "applicationCategory": "Agent平台", "description": "1Panel 出品，知识库问答，安装简单，中小团队快速搭建内部知识库。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}}}]}
-</script>
 </head>
 <body>
 
@@ -784,6 +892,23 @@ footer a:hover{text-decoration:underline}
       <button class="btn-primary" id="cmp-copy">📋 复制为 Markdown</button>
       <button class="btn-ghost" id="cmp-modal-close2">✕ 关闭</button>
     </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     决策器 MODAL
+══════════════════════════════════════ -->
+<div class="picker-modal" id="picker-modal">
+  <div class="picker-card">
+    <div class="picker-head">
+      <div class="picker-progress">
+        <span class="picker-dot" id="pdot-0"></span>
+        <span class="picker-dot" id="pdot-1"></span>
+        <span class="picker-dot" id="pdot-2"></span>
+      </div>
+      <button class="picker-close" id="picker-close">×</button>
+    </div>
+    <div id="picker-body"><!-- JS 填充 --></div>
   </div>
 </div>
 
@@ -969,7 +1094,7 @@ function renderHero() {
 
   if (!recTools.length) { heroGrid.innerHTML = ''; return; }
 
-  const cm = t => catMeta[t.cat] || {label:'',color:'#8b92b8',bg:'rgba(139,146,184,.12)'};
+  const cm = t => catMeta[t.cat] || {label:'',color:'#a89880',bg:'rgba(168,152,128,.14)'};
   heroGrid.innerHTML = recTools.map((t, i) => `
     <a class="hero-card" data-cat="${t.cat}" href="${t.url}" target="_blank" rel="noopener">
       <div class="hero-card-top">
@@ -1044,7 +1169,7 @@ function renderList() {
   }
 
   const sorted = [...filtered].sort((a,b) => (b.rec?1:0)-(a.rec?1:0));
-  const cm = t => catMeta[t.cat] || {label:'',color:'#8b92b8',bg:'rgba(139,146,184,.12)'};
+  const cm = t => catMeta[t.cat] || {label:'',color:'#a89880',bg:'rgba(168,152,128,.14)'};
   const isDead = t => t.linkOk === false && (t.linkFailCount||0) >= 2;
 
   list.innerHTML = sorted.map((t, i) => `
@@ -1107,7 +1232,7 @@ let pricingView = false;
 
 function renderPricing() {
   const view = document.getElementById('pricing-view');
-  const cm = t => catMeta[t.cat] || {label:'—',color:'#8b92b8',bg:'rgba(139,146,184,.12)'};
+  const cm = t => catMeta[t.cat] || {label:'—',color:'#a89880',bg:'rgba(168,152,128,.14)'};
 
   // 分组
   const freeOnly   = tools.filter(t => !t.pricePro && t.priceFree !== '无免费额度');
@@ -1476,6 +1601,160 @@ function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   document.getElementById('theme-toggle').textContent = theme === 'light' ? '☀️' : '🌙';
 }
+
+/* ══════════════════════════════════════
+   决策器 — 3秒选工具
+══════════════════════════════════════ */
+const PICKER_CATS = [
+  {v:'llm',          e:'💬', l:'聊天问答'},
+  {v:'image',        e:'🎨', l:'AI 画图'},
+  {v:'video',        e:'🎬', l:'做视频'},
+  {v:'code',         e:'💻', l:'写代码'},
+  {v:'writing',      e:'✍️', l:'写文案'},
+  {v:'translate',    e:'🌐', l:'翻译'},
+  {v:'voice',        e:'🎙️', l:'语音配音'},
+  {v:'search',       e:'🔎', l:'AI 搜索'},
+  {v:'productivity', e:'⚡', l:'提升效率'},
+  {v:'agent',        e:'🤖', l:'搭智能体'},
+];
+let pkState = {step:0, cat:null, free:false, vpn:false};
+
+function pkProgress(n){
+  for(let i=0;i<3;i++) document.getElementById('pdot-'+i).classList.toggle('on', i<=n);
+}
+function openPicker(){
+  pkState = {step:0, cat:null, free:false, vpn:false};
+  pkRenderStep(0);
+  document.getElementById('picker-modal').classList.add('show');
+}
+function closePicker(){
+  document.getElementById('picker-modal').classList.remove('show');
+}
+function pkRenderStep(step){
+  pkState.step = step;
+  pkProgress(step);
+  const body = document.getElementById('picker-body');
+  if(step===0){
+    body.innerHTML = `
+      <div class="picker-q">你想用 AI 做什么？</div>
+      <div class="picker-q-sub">选一个最贴近的方向</div>
+      <div class="picker-opts">
+        ${PICKER_CATS.map(c=>`
+          <div class="picker-opt" data-field="cat" data-val="${c.v}">
+            <span class="picker-opt-emoji">${c.e}</span>
+            <span class="picker-opt-label">${c.l}</span>
+          </div>`).join('')}
+      </div>`;
+  } else if(step===1){
+    body.innerHTML = `
+      <div class="picker-q">预算怎么样？</div>
+      <div class="picker-q-sub">帮你过滤掉不合适的</div>
+      <div class="picker-opts" style="grid-template-columns:1fr 1fr">
+        <div class="picker-opt" data-field="free" data-val="1">
+          <span class="picker-opt-emoji">🆓</span>
+          <span class="picker-opt-label">只看免费的</span>
+        </div>
+        <div class="picker-opt" data-field="free" data-val="0">
+          <span class="picker-opt-emoji">💎</span>
+          <span class="picker-opt-label">付费也没关系</span>
+        </div>
+      </div>
+      <button class="picker-back" data-back="0">← 上一步</button>`;
+  } else if(step===2){
+    body.innerHTML = `
+      <div class="picker-q">网络环境？</div>
+      <div class="picker-q-sub">国内直连 = 不用梯子就能访问</div>
+      <div class="picker-opts" style="grid-template-columns:1fr 1fr">
+        <div class="picker-opt" data-field="vpn" data-val="1">
+          <span class="picker-opt-emoji">🇨🇳</span>
+          <span class="picker-opt-label">要国内直连</span>
+        </div>
+        <div class="picker-opt" data-field="vpn" data-val="0">
+          <span class="picker-opt-emoji">🌍</span>
+          <span class="picker-opt-label">有梯子，都行</span>
+        </div>
+      </div>
+      <button class="picker-back" data-back="1">← 上一步</button>`;
+  }
+}
+function pkRenderResult(){
+  pkProgress(2);
+  let res = tools.filter(t=>
+    (pkState.cat==='all' || t.cat===pkState.cat) &&
+    (!pkState.free || t.free) &&
+    (!pkState.vpn  || !t.vpn)
+  );
+  res.sort((a,b)=> ((b.rec?1:0)-(a.rec?1:0)) || ((b.stars||0)-(a.stars||0)));
+  const top = res.slice(0,3);
+  const catMt = PICKER_CATS.find(c=>c.v===pkState.cat) || {e:'✨', l:'AI 工具'};
+  const body = document.getElementById('picker-body');
+  if(!top.length){
+    body.innerHTML = `
+      <div class="picker-result-head">
+        <span class="picker-result-emoji">😅</span>
+        <span class="picker-result-tt">没找到完全匹配的</span>
+      </div>
+      <div class="picker-empty">试试放宽条件，比如允许付费、或接受需要梯子的工具</div>
+      <div class="picker-result-actions">
+        <button class="btn-primary" id="pk-restart">↺ 重新选择</button>
+      </div>`;
+    return;
+  }
+  body.innerHTML = `
+    <div class="picker-result-head">
+      <span class="picker-result-emoji">${catMt.e}</span>
+      <span class="picker-result-tt">为你推荐这 ${top.length} 个</span>
+    </div>
+    <div class="picker-result-sub">按精选程度和热度排序，点击直达官网</div>
+    ${top.map((t,i)=>`
+      <a class="picker-rec r${i+1}" href="${t.url}" target="_blank" rel="noopener">
+        <span class="picker-rec-rank">${i+1}</span>
+        <span class="picker-rec-main">
+          <span class="picker-rec-name">${t.name}
+            ${t.rec?'<span class="badge b-rec">⭐ 精选</span>':''}
+            ${t.free?'<span class="badge b-free">免费</span>':'<span class="badge b-paid">付费</span>'}
+          </span>
+          <span class="picker-rec-desc">${t.freeInfo || t.desc || ''}</span>
+        </span>
+        <span class="picker-rec-go">→</span>
+      </a>`).join('')}
+    <div class="picker-result-actions">
+      <button class="btn-ghost" id="pk-restart">↺ 重新选</button>
+      <button class="btn-primary" id="pk-browse">浏览全部 ${res.length} 个 →</button>
+    </div>`;
+}
+
+document.getElementById('picker-banner').addEventListener('click', openPicker);
+document.getElementById('picker-close').addEventListener('click', closePicker);
+document.getElementById('picker-modal').addEventListener('click', e=>{
+  if(e.target.id==='picker-modal') closePicker();
+});
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape') closePicker();
+});
+document.getElementById('picker-body').addEventListener('click', e=>{
+  const opt     = e.target.closest('.picker-opt');
+  const back    = e.target.closest('.picker-back');
+  const restart = e.target.closest('#pk-restart');
+  const browse  = e.target.closest('#pk-browse');
+  if(opt){
+    const f = opt.dataset.field, v = opt.dataset.val;
+    if(f==='cat')  pkState.cat  = v;
+    if(f==='free') pkState.free = v==='1';
+    if(f==='vpn')  pkState.vpn  = v==='1';
+    if(pkState.step<2) pkRenderStep(pkState.step+1);
+    else pkRenderResult();
+  } else if(back){
+    pkRenderStep(parseInt(back.dataset.back,10));
+  } else if(restart){
+    openPicker();
+  } else if(browse){
+    closePicker();
+    const catTab = document.querySelector(`.cat-tab[data-cat="${pkState.cat}"]`);
+    if(catTab) catTab.click();
+    document.getElementById('browse-section').scrollIntoView({behavior:'smooth'});
+  }
+});
 
 /* ══════════════════════════════════════
    启动
