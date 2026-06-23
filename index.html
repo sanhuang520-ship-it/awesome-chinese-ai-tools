@@ -736,6 +736,57 @@ footer a:hover{text-decoration:underline}
 .picker-rec-go{font-size:18px;color:var(--accent);flex-shrink:0}
 .picker-empty{text-align:center;padding:30px 10px;color:var(--muted);font-size:14px}
 .picker-result-actions{display:flex;gap:10px;margin-top:16px}
+
+/* ══════════════════════════════════════
+   本周动态时间线
+══════════════════════════════════════ */
+.timeline-section{max-width:1200px;margin:0 auto;padding:8px 20px 24px}
+.timeline-head{display:flex;align-items:baseline;gap:10px;margin-bottom:18px}
+.timeline-title{
+  font-family:var(--font-serif);font-size:21px;font-weight:700;
+  color:var(--text);letter-spacing:.3px;
+}
+.timeline-sub{font-size:12px;color:var(--muted)}
+.timeline{position:relative;padding-left:26px}
+.timeline::before{
+  content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--border2),transparent);
+}
+.tl-item{
+  position:relative;padding:0 0 20px;
+  animation:tl-in .5s var(--ease-out) backwards;
+}
+.tl-item:last-child{padding-bottom:0}
+.tl-item:nth-child(1){animation-delay:.04s}
+.tl-item:nth-child(2){animation-delay:.09s}
+.tl-item:nth-child(3){animation-delay:.14s}
+.tl-item:nth-child(4){animation-delay:.19s}
+.tl-item:nth-child(5){animation-delay:.24s}
+.tl-item:nth-child(6){animation-delay:.29s}
+.tl-item:nth-child(7){animation-delay:.34s}
+@keyframes tl-in{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+.tl-dot{
+  position:absolute;left:-26px;top:3px;width:16px;height:16px;border-radius:50%;
+  background:var(--surface);border:3px solid var(--accent);
+  box-shadow:0 0 0 3px var(--bg);
+}
+.tl-dot.t-site{border-color:var(--accent)}
+.tl-dot.t-tool{border-color:var(--free)}
+.tl-dot.t-price{border-color:var(--accent3)}
+.tl-dot.t-model{border-color:var(--accent)}
+.tl-dot.t-alert{border-color:var(--paid)}
+.tl-meta{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.tl-date{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl-tag{
+  font-size:10px;font-weight:600;padding:1.5px 8px;border-radius:20px;letter-spacing:.2px;
+}
+.tl-tag.t-site{background:var(--glow);color:var(--accent)}
+.tl-tag.t-tool{background:rgba(134,184,148,.14);color:var(--free)}
+.tl-tag.t-price{background:rgba(214,168,78,.14);color:var(--accent3)}
+.tl-tag.t-model{background:var(--glow);color:var(--accent)}
+.tl-tag.t-alert{background:rgba(224,121,90,.14);color:var(--paid)}
+.tl-title{font-size:14px;font-weight:600;color:var(--text);line-height:1.4}
+.tl-desc{font-size:12.5px;color:var(--text2);line-height:1.6;margin-top:2px}
 </style>
 </head>
 <body>
@@ -765,6 +816,16 @@ footer a:hover{text-decoration:underline}
      HERO — 今日精选
 ══════════════════════════════════════ -->
 <section class="hero" id="hero-section" data-view="list">
+  <div class="picker-banner" id="picker-banner">
+    <div class="picker-banner-l">
+      <span class="picker-banner-icon">🎯</span>
+      <div>
+        <div class="picker-banner-tt">不知道用哪个？3 秒帮你选</div>
+        <div class="picker-banner-sub">回答 3 个小问题，直接告诉你最该用的工具</div>
+      </div>
+    </div>
+    <span class="picker-banner-cta">开始 →</span>
+  </div>
   <div class="hero-label">
     <span class="hero-label-dot"></span>
     <span class="hero-label-text">编辑精选</span>
@@ -810,6 +871,17 @@ footer a:hover{text-decoration:underline}
 ══════════════════════════════════════ -->
 <div class="pricing-view" id="pricing-view">
   <!-- JS 填充 -->
+</div>
+
+<!-- ══════════════════════════════════════
+     本周动态时间线
+══════════════════════════════════════ -->
+<div class="timeline-section" id="timeline-section" style="display:none">
+  <div class="timeline-head">
+    <span class="timeline-title">本周动态</span>
+    <span class="timeline-sub" id="timeline-sub"></span>
+  </div>
+  <div class="timeline" id="timeline"><!-- JS 填充 --></div>
 </div>
 
 <!-- ══════════════════════════════════════
@@ -1587,6 +1659,41 @@ function renderNewsFallback() {
 }
 
 /* ══════════════════════════════════════
+   本周动态时间线
+══════════════════════════════════════ */
+const TL_TAGS = {
+  site:  '站点更新',
+  tool:  '新增工具',
+  price: '价格变动',
+  model: '模型动态',
+  alert: '失效提醒',
+};
+async function loadUpdates() {
+  const sec = document.getElementById('timeline-section');
+  const tl  = document.getElementById('timeline');
+  try {
+    const res = await fetch('data/updates.json', {cache:'no-cache'});
+    const data = await res.json();
+    const events = (data.events || []).slice(0, 7);
+    if (!events.length) return;
+    tl.innerHTML = events.map(ev => {
+      const t = ev.type in TL_TAGS ? ev.type : 'site';
+      return `<div class="tl-item">
+        <span class="tl-dot t-${t}"></span>
+        <div class="tl-meta">
+          <span class="tl-date">${ev.date}</span>
+          <span class="tl-tag t-${t}">${TL_TAGS[t]}</span>
+        </div>
+        <div class="tl-title">${ev.title}</div>
+        ${ev.desc ? `<div class="tl-desc">${ev.desc}</div>` : ''}
+      </div>`;
+    }).join('');
+    document.getElementById('timeline-sub').textContent = '— 持续记录工具与价格变化';
+    sec.style.display = 'block';
+  } catch(e) { /* 静默：无数据则不显示 */ }
+}
+
+/* ══════════════════════════════════════
    主题切换
 ══════════════════════════════════════ */
 (function initTheme() {
@@ -1761,6 +1868,7 @@ document.getElementById('picker-body').addEventListener('click', e=>{
 ══════════════════════════════════════ */
 loadTools();
 loadNews();
+loadUpdates();
 </script>
 </body>
 </html>
