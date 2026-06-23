@@ -313,6 +313,10 @@ body{
 .b-vpn{background:rgba(138,127,107,.1);border:1px solid rgba(138,127,107,.22);color:var(--muted)}
 .b-dead{background:rgba(214,168,78,.1);border:1px solid rgba(214,168,78,.32);color:var(--accent3);cursor:help}
 .b-rec{background:var(--glow);border:1px solid var(--accent);color:var(--accent)}
+.b-hot{
+  background:linear-gradient(135deg,var(--accent),var(--accent3));color:#fff;
+  border:none;font-weight:700;box-shadow:0 2px 8px rgba(224,121,90,.32)
+}
 
 .stars-sm{font-size:10px;color:var(--muted);white-space:nowrap}
 .stars-sm .on{color:var(--accent3)}
@@ -805,6 +809,7 @@ footer a:hover{text-decoration:underline}
     <span class="nav-chip">每日更新</span>
   </div>
   <div class="nav-actions">
+    <button class="nav-quick-btn" id="btn-hot">🔥 热门</button>
     <button class="nav-quick-btn" id="btn-free">🆓 免费</button>
     <button class="nav-quick-btn" id="btn-cn">🇨🇳 国产</button>
     <button class="nav-quick-btn" id="btn-rec">⭐ 精选</button>
@@ -1143,7 +1148,7 @@ const workflows = [
 /* ══════════════════════════════════════
    状态
 ══════════════════════════════════════ */
-let currentCat = 'all', onlyFree = false, onlyCN = false, onlyRec = false, query = '';
+let currentCat = 'all', onlyFree = false, onlyCN = false, onlyRec = false, onlyHot = false, query = '';
 const compareSet = new Set();
 const MAX_COMPARE = 4;
 
@@ -1157,6 +1162,7 @@ function renderHero() {
     if (currentCat !== 'all' && t.cat !== currentCat) return false;
     if (onlyFree && !t.free) return false;
     if (onlyCN && !t.cn) return false;
+    if (onlyHot && !t.hot) return false;
     if (query) {
       const q = query.toLowerCase();
       if (!t.name.toLowerCase().includes(q) && !t.desc.toLowerCase().includes(q)) return false;
@@ -1177,6 +1183,7 @@ function renderHero() {
         <span class="hero-card-rank">${i === 0 ? '🏆 编辑首选' : `✦ 精选 #${i+1}`}</span>
       </div>
       <div class="hero-card-badges">
+        ${t.hot ? '<span class="badge b-hot">🔥 热门</span>' : ''}
         <span class="badge b-cat" style="--cat-bg:${cm(t).bg};--cat-c:${cm(t).color}">${cm(t).label}</span>
         ${t.free ? '<span class="badge b-free">免费可用</span>' : '<span class="badge b-paid">付费</span>'}
         ${t.cn ? '<span class="badge b-cn">🇨🇳 国产</span>' : ''}
@@ -1219,6 +1226,7 @@ function renderList() {
     if (onlyFree && !t.free) return false;
     if (onlyCN && !t.cn) return false;
     if (onlyRec && !t.rec) return false;
+    if (onlyHot && !t.hot) return false;
     if (query) {
       const q = query.toLowerCase();
       if (!t.name.toLowerCase().includes(q) &&
@@ -1240,7 +1248,8 @@ function renderList() {
     return;
   }
 
-  const sorted = [...filtered].sort((a,b) => (b.rec?1:0)-(a.rec?1:0));
+  const heat = t => (t.hot?2:0) + (t.rec?1:0);
+  const sorted = [...filtered].sort((a,b) => heat(b)-heat(a) || (b.stars||0)-(a.stars||0));
   const cm = t => catMeta[t.cat] || {label:'',color:'#a89880',bg:'rgba(168,152,128,.14)'};
   const isDead = t => t.linkOk === false && (t.linkFailCount||0) >= 2;
 
@@ -1251,6 +1260,7 @@ function renderList() {
         <div class="row-name-line">
           <a class="row-name" href="${t.url}" target="_blank" rel="noopener"
              onclick="event.stopPropagation()">${t.name}<span class="row-ext"> ↗</span></a>
+          ${t.hot ? '<span class="badge b-hot">🔥 热门</span>' : ''}
           ${t.rec ? '<span class="badge b-rec">⭐ 精选</span>' : ''}
           ${isDead(t) ? `<span class="badge b-dead" title="链接异常·${t.linkCheckedAt}·连续${t.linkFailCount}次">⚠️ 链接可能失效</span>` : ''}
         </div>
@@ -1413,6 +1423,9 @@ document.getElementById('btn-cn').addEventListener('click', function(){
 });
 document.getElementById('btn-rec').addEventListener('click', function(){
   onlyRec = !onlyRec; this.classList.toggle('active', onlyRec); render();
+});
+document.getElementById('btn-hot').addEventListener('click', function(){
+  onlyHot = !onlyHot; this.classList.toggle('active', onlyHot); render();
 });
 
 /* ══════════════════════════════════════
@@ -1725,6 +1738,7 @@ const PICKER_CATS = [
   {v:'agent',        e:'🤖', l:'搭智能体'},
 ];
 let pkState = {step:0, cat:null, free:false, vpn:false};
+let pkLastResult = null;
 
 function pkProgress(n){
   for(let i=0;i<3;i++) document.getElementById('pdot-'+i).classList.toggle('on', i<=n);
@@ -1794,6 +1808,7 @@ function pkRenderResult(){
   res.sort((a,b)=> ((b.rec?1:0)-(a.rec?1:0)) || ((b.stars||0)-(a.stars||0)));
   const top = res.slice(0,3);
   const catMt = PICKER_CATS.find(c=>c.v===pkState.cat) || {e:'✨', l:'AI 工具'};
+  pkLastResult = {top, catMt};
   const body = document.getElementById('picker-body');
   if(!top.length){
     body.innerHTML = `
@@ -1827,6 +1842,7 @@ function pkRenderResult(){
       </a>`).join('')}
     <div class="picker-result-actions">
       <button class="btn-ghost" id="pk-restart">↺ 重新选</button>
+      <button class="btn-ghost" id="pk-share">📸 保存卡片</button>
       <button class="btn-primary" id="pk-browse">浏览全部 ${res.length} 个 →</button>
     </div>`;
 }
@@ -1844,6 +1860,7 @@ document.getElementById('picker-body').addEventListener('click', e=>{
   const back    = e.target.closest('.picker-back');
   const restart = e.target.closest('#pk-restart');
   const browse  = e.target.closest('#pk-browse');
+  const share   = e.target.closest('#pk-share');
   if(opt){
     const f = opt.dataset.field, v = opt.dataset.val;
     if(f==='cat')  pkState.cat  = v;
@@ -1855,6 +1872,8 @@ document.getElementById('picker-body').addEventListener('click', e=>{
     pkRenderStep(parseInt(back.dataset.back,10));
   } else if(restart){
     openPicker();
+  } else if(share){
+    if(pkLastResult) generateShareCard(pkLastResult.top, pkLastResult.catMt);
   } else if(browse){
     closePicker();
     const catTab = document.querySelector(`.cat-tab[data-cat="${pkState.cat}"]`);
@@ -1862,6 +1881,99 @@ document.getElementById('picker-body').addEventListener('click', e=>{
     document.getElementById('browse-section').scrollIntoView({behavior:'smooth'});
   }
 });
+
+/* ══════════════════════════════════════
+   一键分享卡片（Canvas）
+══════════════════════════════════════ */
+function rrect(x,xx,y,w,h,r){
+  x.beginPath();
+  x.moveTo(xx+r,y);
+  x.arcTo(xx+w,y,xx+w,y+h,r);
+  x.arcTo(xx+w,y+h,xx,y+h,r);
+  x.arcTo(xx,y+h,xx,y,r);
+  x.arcTo(xx,y,xx+w,y,r);
+  x.closePath();
+}
+function generateShareCard(top, catMt){
+  const W=1080, H=1350;
+  const c=document.createElement('canvas'); c.width=W; c.height=H;
+  const x=c.getContext('2d');
+  const SERIF='"Songti SC","Noto Serif SC",STSong,Georgia,serif';
+  const SANS='-apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+  const P={bg:'#f4efe4',panel:'#fffdf7',text:'#2b2419',text2:'#5e5446',
+           muted:'#9a8f7a',accent:'#b8442c',gold:'#a8791f',free:'#3c6b4d',border:'#e2dac8'};
+  // 背景 + 顶部暖色渐变条
+  x.fillStyle=P.bg; x.fillRect(0,0,W,H);
+  const g=x.createLinearGradient(0,0,W,0);
+  g.addColorStop(0,'#e0795a'); g.addColorStop(1,'#d6a84e');
+  x.fillStyle=g; x.fillRect(0,0,W,14);
+  // 主面板
+  const px=70, py=92, pw=W-140, ph=H-184;
+  x.save();
+  x.shadowColor='rgba(90,70,40,.16)'; x.shadowBlur=44; x.shadowOffsetY=18;
+  x.fillStyle=P.panel; rrect(x,px,py,pw,ph,34); x.fill();
+  x.restore();
+  x.strokeStyle=P.border; x.lineWidth=1.5; rrect(x,px,py,pw,ph,34); x.stroke();
+  const ix=px+64, iw=pw-128;
+  let cy=py+100;
+  // 标签
+  x.fillStyle=P.accent;
+  x.beginPath(); x.arc(ix+7, cy-8, 8, 0, Math.PI*2); x.fill();
+  x.font=`600 27px ${SANS}`; x.fillStyle=P.muted;
+  x.fillText('AI 工具导航 · 编辑精选', ix+30, cy);
+  cy+=86;
+  // 标题（衬线）
+  x.fillStyle=P.text; x.font=`700 70px ${SERIF}`;
+  x.fillText(`${catMt.e} 做${catMt.l}`, ix, cy);
+  cy+=88;
+  x.fillStyle=P.accent; x.font=`700 70px ${SERIF}`;
+  x.fillText('用这几个就够了', ix, cy);
+  cy+=66;
+  x.strokeStyle=P.border; x.lineWidth=2;
+  x.beginPath(); x.moveTo(ix,cy); x.lineTo(ix+iw,cy); x.stroke();
+  cy+=74;
+  // 工具行
+  top.forEach((t,i)=>{
+    const rg=x.createLinearGradient(ix,cy,ix+66,cy+66);
+    rg.addColorStop(0,'#e0795a'); rg.addColorStop(1,'#d6a84e');
+    x.fillStyle=(i===0)?rg:P.border;
+    rrect(x,ix,cy,66,66,18); x.fill();
+    x.fillStyle=(i===0)?'#fff':P.text2;
+    x.font=`800 36px ${SANS}`; x.textAlign='center';
+    x.fillText(String(i+1), ix+33, cy+45); x.textAlign='left';
+    // 名称（衬线）
+    x.fillStyle=P.text; x.font=`700 46px ${SERIF}`;
+    x.fillText(t.name, ix+96, cy+36);
+    const nw=x.measureText(t.name).width;
+    // 免费/付费 标签
+    const tag=t.free?'免费':'付费', tc=t.free?P.free:P.accent;
+    x.font=`600 25px ${SANS}`;
+    const tw=x.measureText(tag).width, pillX=ix+96+nw+22;
+    x.fillStyle=tc+'22'; rrect(x,pillX,cy+4,tw+28,38,19); x.fill();
+    x.fillStyle=tc; x.fillText(tag, pillX+14, cy+30);
+    // 描述
+    x.fillStyle=P.muted; x.font=`400 27px ${SANS}`;
+    x.fillText((t.freeInfo||t.desc||'').slice(0,24), ix+96, cy+80);
+    cy+=138;
+  });
+  // 页脚
+  const fy=py+ph-58;
+  x.textAlign='center';
+  x.fillStyle=P.accent; x.font=`700 31px ${SANS}`;
+  x.fillText('47+ 精选 AI 工具 · 标注免费额度 · 每日更新', W/2, fy-14);
+  x.fillStyle=P.muted; x.font=`500 26px ${SANS}`;
+  x.fillText('sanhuang520-ship-it.github.io/awesome-chinese-ai-tools', W/2, fy+30);
+  x.textAlign='left';
+  // 导出下载
+  c.toBlob(b=>{
+    const url=URL.createObjectURL(b);
+    const a=document.createElement('a');
+    a.href=url; a.download=`AI工具推荐-${catMt.l}.png`;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url), 1000);
+    toast('✅ 卡片已保存，去分享吧');
+  }, 'image/png');
+}
 
 /* ══════════════════════════════════════
    启动
