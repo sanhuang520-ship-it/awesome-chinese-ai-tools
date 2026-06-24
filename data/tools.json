@@ -4,7 +4,7 @@
     "source": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools",
     "note": "工具数据单一可信源。新增/修改工具只改这里，前端自动渲染。免费额度信息可能变化，以官网为准。",
     "linkCheckedAt": "2026-06-24",
-    "linkDeadCount": 0,
+    "linkDeadCount": 3,
     "hotUpdated": "2026-06-23"
   },
   "categories": {
@@ -300,10 +300,10 @@
       "stars": 3,
       "freeInfo": "无免费额度，需订阅",
       "desc": "商业设计质量顶级，好莱坞和广告公司御用，但无免费额度，需梯子。",
-      "linkOk": true,
-      "linkStatus": "ok_bot_blocked",
+      "linkOk": false,
+      "linkStatus": "url_error",
       "linkCheckedAt": "2026-06-24",
-      "linkFailCount": 0
+      "linkFailCount": 1
     },
     {
       "name": "Adobe Firefly",
@@ -429,10 +429,10 @@
       "stars": 4,
       "freeInfo": "每月 2000 次补全免费",
       "desc": "AI 原生 IDE，能理解整个项目上下文，复杂功能开发体验远超普通补全工具。",
-      "linkOk": true,
-      "linkStatus": "ok",
+      "linkOk": false,
+      "linkStatus": "http_308",
       "linkCheckedAt": "2026-06-24",
-      "linkFailCount": 0,
+      "linkFailCount": 1,
       "hot": true
     },
     {
@@ -446,10 +446,10 @@
       "stars": 4,
       "freeInfo": "免费版功能完整",
       "desc": "Codeium 出品，功能与 Cursor 相近，完全免费是最大优势，国内可直接用。",
-      "linkOk": true,
-      "linkStatus": "ok",
+      "linkOk": false,
+      "linkStatus": "http_308",
       "linkCheckedAt": "2026-06-24",
-      "linkFailCount": 0
+      "linkFailCount": 1
     },
     {
       "name": "MarsCode",
