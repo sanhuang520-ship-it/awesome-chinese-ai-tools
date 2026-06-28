@@ -1,6 +1,24 @@
 {
-  "updated": "2026-06-25",
+  "updated": "2026-06-28",
   "events": [
+    {
+      "date": "2026-06-28",
+      "type": "alert",
+      "title": "Midjourney 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-06-28",
+      "type": "alert",
+      "title": "Cursor 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-06-28",
+      "type": "alert",
+      "title": "Windsurf 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
     {
       "date": "2026-06-25",
       "type": "alert",
