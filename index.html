@@ -2059,13 +2059,6 @@ function generateShareCard(top, catMt){
 /* ══════════════════════════════════════
    我的 AI 工具栈
 ══════════════════════════════════════ */
-// 月成本估算表（CNY/月，付费基础订阅；未列出 = 免费）
-const MONTHLY_COST = {
-  'ChatGPT':150,'Claude':150,'Gemini':150,'Midjourney':70,'Adobe Firefly':80,'Runway':110,
-  'Perplexity':150,'Cursor':150,'Windsurf':110,'v0':150,'Bolt':150,
-  'Gamma':80,'DeepL':50,'Fish Audio':70,'Azure TTS':80,
-  'Notion AI':70,'Coze':30,'Dify':30,
-};
 const CAT_LABELS = {llm:'聊天',image:'画图',video:'视频',code:'编程',writing:'写作',
   translate:'翻译',voice:'语音',search:'搜索',productivity:'效率',agent:'Agent'};
 const stack = new Set(JSON.parse(localStorage.getItem('stack') || '[]'));
@@ -2085,7 +2078,7 @@ function renderStack(){
     return;
   }
   const items = [...stack].map(stackToolByName).filter(Boolean);
-  const cost  = items.reduce((s,t) => s + (MONTHLY_COST[t.name] || 0), 0);
+  const recCount = items.filter(t => t.rec).length;
   const cats  = new Set(items.map(t => t.cat));
   // 补全建议：找还没有的分类
   const missing = Object.keys(CAT_LABELS).filter(c => !cats.has(c));
@@ -2105,8 +2098,8 @@ function renderStack(){
         <div class="stack-stat-label">收藏工具</div>
       </div>
       <div class="stack-stat">
-        <div class="stack-stat-num cost">${cost===0?'¥0':'¥'+cost}</div>
-        <div class="stack-stat-label">估算月支出</div>
+        <div class="stack-stat-num cost">${recCount}</div>
+        <div class="stack-stat-label">编辑精选</div>
       </div>
       <div class="stack-stat">
         <div class="stack-stat-num">${cats.size}/10</div>
@@ -2187,11 +2180,11 @@ function generateStackCard(){
   x.fillText('我的 AI 工具栈', ix, cy);
   cy+=78;
   // 统计三栏
-  const cost = items.reduce((s,t) => s + (MONTHLY_COST[t.name] || 0), 0);
+  const recCount = items.filter(t => t.rec).length;
   const cats = new Set(items.map(t => t.cat));
   const stats = [
     {n:items.length, l:'收藏工具'},
-    {n:cost===0?'¥0':'¥'+cost, l:'月支出'},
+    {n:recCount,     l:'编辑精选'},
     {n:cats.size+'/10', l:'覆盖分类'},
   ];
   const sw=(iw-24)/3;
