@@ -791,6 +791,82 @@ footer a:hover{text-decoration:underline}
 .tl-tag.t-alert{background:rgba(224,121,90,.14);color:var(--paid)}
 .tl-title{font-size:14px;font-weight:600;color:var(--text);line-height:1.4}
 .tl-desc{font-size:12.5px;color:var(--text2);line-height:1.6;margin-top:2px}
+
+/* ══════════════════════════════════════
+   我的 AI 工具栈
+══════════════════════════════════════ */
+.stack-panel{
+  position:relative;overflow:hidden;
+  margin-bottom:18px;padding:18px 22px 16px;border-radius:var(--r2);
+  background:linear-gradient(135deg,rgba(214,168,78,.12),rgba(134,184,148,.1));
+  border:1px solid var(--border2);
+}
+.stack-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.stack-title{
+  font-family:var(--font-serif);font-size:18px;font-weight:700;color:var(--text);
+  display:flex;align-items:center;gap:8px;letter-spacing:.3px;
+}
+.stack-title-icon{font-size:20px}
+.stack-empty-tip{font-size:12.5px;color:var(--muted);margin-top:2px}
+.stack-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+.stack-stat{
+  padding:11px 14px;border-radius:var(--r);
+  background:var(--surface);border:1px solid var(--border);
+}
+.stack-stat-num{
+  font-family:var(--font-serif);font-size:23px;font-weight:700;color:var(--text);
+  line-height:1.1;letter-spacing:.3px;
+}
+.stack-stat-num.cost{color:var(--accent)}
+.stack-stat-label{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:.2px}
+.stack-tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.stack-chip{
+  font-size:12px;padding:5px 11px;border-radius:20px;
+  background:var(--surface);border:1px solid var(--border);
+  color:var(--text);display:flex;align-items:center;gap:5px;
+}
+.stack-chip-x{
+  color:var(--muted);cursor:pointer;font-size:14px;line-height:1;
+  transition:color .15s;
+}
+.stack-chip-x:hover{color:var(--paid)}
+.stack-suggest{
+  font-size:12.5px;color:var(--text2);
+  padding:10px 14px;border-radius:var(--r);
+  background:rgba(214,168,78,.1);border:1px dashed rgba(168,121,31,.32);
+  margin-bottom:14px;
+}
+.stack-suggest b{color:var(--accent3);font-weight:700}
+.stack-actions{display:flex;gap:8px;flex-wrap:wrap}
+.stack-actions .btn-ghost,.stack-actions .btn-primary{font-size:12.5px;padding:7px 16px}
+
+/* 收藏按钮（工具行 + Hero 卡） */
+.fav-btn{
+  background:transparent;border:1px solid var(--border);color:var(--muted);
+  min-width:28px;height:28px;padding:0 6px;border-radius:50%;cursor:pointer;
+  font-size:14px;display:flex;align-items:center;justify-content:center;
+  transition:all .25s var(--spring);flex-shrink:0;
+}
+.fav-btn:hover{border-color:var(--accent3);color:var(--accent3);transform:scale(1.12)}
+.fav-btn.on{
+  background:var(--accent3);border-color:var(--accent3);color:#fff;
+  box-shadow:0 0 0 3px rgba(214,168,78,.18);
+}
+.hero-fav-btn{
+  position:absolute;top:14px;right:14px;
+  background:rgba(255,253,247,.92);border:1px solid var(--border);
+  width:32px;height:32px;border-radius:50%;cursor:pointer;
+  font-size:15px;display:flex;align-items:center;justify-content:center;
+  transition:all .25s var(--spring);z-index:2;color:var(--muted);
+}
+.hero-fav-btn:hover{color:var(--accent3);transform:scale(1.1)}
+.hero-fav-btn.on{background:var(--accent3);color:#fff;border-color:var(--accent3)}
+[data-theme="dark"] .hero-fav-btn{background:rgba(37,32,25,.92)}
+
+@media(max-width:640px){
+  .stack-stats{grid-template-columns:1fr 1fr}
+  .stack-stat:nth-child(3){grid-column:1/-1}
+}
 </style>
 </head>
 <body>
@@ -821,6 +897,7 @@ footer a:hover{text-decoration:underline}
      HERO — 今日精选
 ══════════════════════════════════════ -->
 <section class="hero" id="hero-section" data-view="list">
+  <div class="stack-panel" id="stack-panel"><!-- JS 填充 --></div>
   <div class="picker-banner" id="picker-banner">
     <div class="picker-banner-l">
       <span class="picker-banner-icon">🎯</span>
@@ -1175,6 +1252,7 @@ function renderHero() {
   const cm = t => catMeta[t.cat] || {label:'',color:'#a89880',bg:'rgba(168,152,128,.14)'};
   heroGrid.innerHTML = recTools.map((t, i) => `
     <a class="hero-card" data-cat="${t.cat}" href="${t.url}" target="_blank" rel="noopener">
+      <button class="hero-fav-btn ${stack.has(t.name)?'on':''}" data-name="${t.name}" title="加入我的工具栈" onclick="event.preventDefault();event.stopPropagation()">${stack.has(t.name)?'★':'☆'}</button>
       <div class="hero-card-top">
         <div style="display:flex;align-items:center;gap:10px;min-width:0">
           ${logoHTML(t,'hero-logo')}
@@ -1274,6 +1352,7 @@ function renderList() {
         ${starsHTML(t.stars)}
       </div>
       <div class="row-actions">
+        <button class="fav-btn ${stack.has(t.name)?'on':''}" data-name="${t.name}" title="加入我的工具栈" onclick="event.stopPropagation()">${stack.has(t.name)?'★':'☆'}</button>
         <button class="icon-btn cmp-btn ${compareSet.has(t._id)?'active':''}" data-id="${t._id}" title="加入对比" onclick="event.stopPropagation()">⇄</button>
         <button class="icon-btn copy-btn" data-id="${t._id}" title="复制信息" onclick="event.stopPropagation()">⧉</button>
       </div>
@@ -1297,6 +1376,7 @@ async function loadTools() {
     tools = (data.tools || []).map((t,i) => ({...t, _id:i}));
     document.getElementById('tc').textContent = tools.length;
     render();
+    renderStack();
   } catch(e) {
     document.getElementById('tool-list').innerHTML =
       `<div class="list-empty"><div class="list-empty-icon">⚠️</div>
@@ -1436,8 +1516,9 @@ document.getElementById('tool-list').addEventListener('click', e => {
   if (!row) return;
   const cmp = e.target.closest('.cmp-btn');
   const cp  = e.target.closest('.copy-btn');
+  const fav = e.target.closest('.fav-btn');
   const link = e.target.closest('a');
-  if (cmp || cp || link) return; // 由各自处理器处理
+  if (cmp || cp || fav || link) return; // 由各自处理器处理
   const id = +row.dataset.id;
   const t = tools.find(x => x._id === id);
   if (t) window.open(t.url, '_blank', 'noopener');
@@ -1972,6 +2053,197 @@ function generateShareCard(top, catMt){
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(()=>URL.revokeObjectURL(url), 1000);
     toast('✅ 卡片已保存，去分享吧');
+  }, 'image/png');
+}
+
+/* ══════════════════════════════════════
+   我的 AI 工具栈
+══════════════════════════════════════ */
+// 月成本估算表（CNY/月，付费基础订阅；未列出 = 免费）
+const MONTHLY_COST = {
+  'ChatGPT':150,'Claude':150,'Gemini':150,'Midjourney':70,'Adobe Firefly':80,'Runway':110,
+  'Perplexity':150,'Cursor':150,'Windsurf':110,'v0':150,'Bolt':150,
+  'Gamma':80,'DeepL':50,'Fish Audio':70,'Azure TTS':80,
+  'Notion AI':70,'Coze':30,'Dify':30,
+};
+const CAT_LABELS = {llm:'聊天',image:'画图',video:'视频',code:'编程',writing:'写作',
+  translate:'翻译',voice:'语音',search:'搜索',productivity:'效率',agent:'Agent'};
+const stack = new Set(JSON.parse(localStorage.getItem('stack') || '[]'));
+function stackSave(){ localStorage.setItem('stack', JSON.stringify([...stack])); }
+function stackToolByName(n){ return tools.find(t => t.name === n); }
+function renderStack(){
+  const el = document.getElementById('stack-panel');
+  if(!el) return;
+  if(stack.size === 0){
+    el.innerHTML = `
+      <div class="stack-head">
+        <div>
+          <div class="stack-title"><span class="stack-title-icon">⭐</span>我的 AI 工具栈</div>
+          <div class="stack-empty-tip">点击任意工具右侧的 ☆ 收藏，自动追踪月成本、搭配建议</div>
+        </div>
+      </div>`;
+    return;
+  }
+  const items = [...stack].map(stackToolByName).filter(Boolean);
+  const cost  = items.reduce((s,t) => s + (MONTHLY_COST[t.name] || 0), 0);
+  const cats  = new Set(items.map(t => t.cat));
+  // 补全建议：找还没有的分类
+  const missing = Object.keys(CAT_LABELS).filter(c => !cats.has(c));
+  let suggest = '';
+  if(missing.length){
+    const pick = missing[0];
+    const rec  = tools.find(t => t.cat === pick && t.rec) || tools.find(t => t.cat === pick);
+    if(rec) suggest = `<div class="stack-suggest">💡 你的栈还缺一个 <b>${CAT_LABELS[pick]}</b> 类工具，试试「${rec.name}」</div>`;
+  }
+  el.innerHTML = `
+    <div class="stack-head">
+      <div class="stack-title"><span class="stack-title-icon">⭐</span>我的 AI 工具栈</div>
+    </div>
+    <div class="stack-stats">
+      <div class="stack-stat">
+        <div class="stack-stat-num">${items.length}</div>
+        <div class="stack-stat-label">收藏工具</div>
+      </div>
+      <div class="stack-stat">
+        <div class="stack-stat-num cost">${cost===0?'¥0':'¥'+cost}</div>
+        <div class="stack-stat-label">估算月支出</div>
+      </div>
+      <div class="stack-stat">
+        <div class="stack-stat-num">${cats.size}/10</div>
+        <div class="stack-stat-label">覆盖分类</div>
+      </div>
+    </div>
+    <div class="stack-tools">
+      ${items.map(t => `<span class="stack-chip">${t.name}<span class="stack-chip-x" data-name="${t.name}">×</span></span>`).join('')}
+    </div>
+    ${suggest}
+    <div class="stack-actions">
+      <button class="btn-primary" id="stack-share">📸 生成我的工具栈图片</button>
+      <button class="btn-ghost" id="stack-clear">清空</button>
+    </div>`;
+}
+function toggleFav(name){
+  if(stack.has(name)) stack.delete(name);
+  else stack.add(name);
+  stackSave();
+  renderStack();
+  // 同步所有同名收藏按钮的视觉状态
+  document.querySelectorAll(`.fav-btn[data-name="${CSS.escape(name)}"], .hero-fav-btn[data-name="${CSS.escape(name)}"]`).forEach(b => {
+    const on = stack.has(name);
+    b.classList.toggle('on', on);
+    b.textContent = on ? '★' : '☆';
+  });
+  toast(stack.has(name) ? `⭐ 已加入工具栈：${name}` : `已移除：${name}`);
+}
+// 事件委托：收藏按钮（列表 + Hero + Stack 内的 chip 删除）
+document.addEventListener('click', e => {
+  const fav     = e.target.closest('.fav-btn, .hero-fav-btn');
+  const chipX   = e.target.closest('.stack-chip-x');
+  const share   = e.target.closest('#stack-share');
+  const clear   = e.target.closest('#stack-clear');
+  if(fav)   { toggleFav(fav.dataset.name); }
+  if(chipX) { toggleFav(chipX.dataset.name); }
+  if(share) { generateStackCard(); }
+  if(clear) {
+    if(confirm('确定清空所有收藏？')){
+      stack.clear(); stackSave(); renderStack();
+      document.querySelectorAll('.fav-btn.on, .hero-fav-btn.on').forEach(b => {
+        b.classList.remove('on'); b.textContent = '☆';
+      });
+    }
+  }
+});
+
+/* 工具栈分享卡（暖色杂志风） */
+function generateStackCard(){
+  const items = [...stack].map(stackToolByName).filter(Boolean);
+  if(!items.length){ toast('先收藏几个工具吧'); return; }
+  const W=1080, H=1350;
+  const c=document.createElement('canvas'); c.width=W; c.height=H;
+  const x=c.getContext('2d');
+  const SERIF='"Songti SC","Noto Serif SC",STSong,Georgia,serif';
+  const SANS='-apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+  const P={bg:'#f4efe4',panel:'#fffdf7',text:'#2b2419',text2:'#5e5446',
+           muted:'#9a8f7a',accent:'#b8442c',gold:'#a8791f',free:'#3c6b4d',border:'#e2dac8'};
+  x.fillStyle=P.bg; x.fillRect(0,0,W,H);
+  const g=x.createLinearGradient(0,0,W,0);
+  g.addColorStop(0,'#e0795a'); g.addColorStop(1,'#d6a84e');
+  x.fillStyle=g; x.fillRect(0,0,W,14);
+  // 主面板
+  const px=70, py=92, pw=W-140, ph=H-184;
+  x.save();
+  x.shadowColor='rgba(90,70,40,.16)'; x.shadowBlur=44; x.shadowOffsetY=18;
+  x.fillStyle=P.panel; rrect(x,px,py,pw,ph,34); x.fill();
+  x.restore();
+  x.strokeStyle=P.border; x.lineWidth=1.5; rrect(x,px,py,pw,ph,34); x.stroke();
+  const ix=px+64, iw=pw-128;
+  let cy=py+96;
+  x.fillStyle=P.accent;
+  x.beginPath(); x.arc(ix+7, cy-8, 8, 0, Math.PI*2); x.fill();
+  x.font=`600 27px ${SANS}`; x.fillStyle=P.muted;
+  x.fillText('AI 工具导航 · 个人栈', ix+30, cy);
+  cy+=88;
+  x.fillStyle=P.text; x.font=`700 64px ${SERIF}`;
+  x.fillText('我的 AI 工具栈', ix, cy);
+  cy+=78;
+  // 统计三栏
+  const cost = items.reduce((s,t) => s + (MONTHLY_COST[t.name] || 0), 0);
+  const cats = new Set(items.map(t => t.cat));
+  const stats = [
+    {n:items.length, l:'收藏工具'},
+    {n:cost===0?'¥0':'¥'+cost, l:'月支出'},
+    {n:cats.size+'/10', l:'覆盖分类'},
+  ];
+  const sw=(iw-24)/3;
+  stats.forEach((s,i) => {
+    const sx=ix+i*(sw+12);
+    x.fillStyle='#f9f3e3'; rrect(x,sx,cy,sw,110,18); x.fill();
+    x.strokeStyle=P.border; x.lineWidth=1; rrect(x,sx,cy,sw,110,18); x.stroke();
+    x.textAlign='center';
+    x.fillStyle=i===1?P.accent:P.text;
+    x.font=`700 42px ${SERIF}`;
+    x.fillText(String(s.n), sx+sw/2, cy+50);
+    x.fillStyle=P.muted; x.font=`500 22px ${SANS}`;
+    x.fillText(s.l, sx+sw/2, cy+85);
+    x.textAlign='left';
+  });
+  cy+=140;
+  // 工具列表（最多 10 个）
+  x.fillStyle=P.muted; x.font=`600 22px ${SANS}`;
+  x.fillText('— 收藏清单 —', ix, cy);
+  cy+=42;
+  const list = items.slice(0, 10);
+  list.forEach((t, i) => {
+    x.fillStyle=P.text; x.font=`600 32px ${SERIF}`;
+    x.fillText(`${i+1}. ${t.name}`, ix, cy);
+    const nw = x.measureText(`${i+1}. ${t.name}`).width;
+    const tag = t.free ? '免费' : '付费';
+    const tc  = t.free ? P.free : P.accent;
+    x.font=`600 20px ${SANS}`;
+    const tw = x.measureText(tag).width;
+    x.fillStyle = tc+'22'; rrect(x, ix+nw+18, cy-24, tw+22, 30, 15); x.fill();
+    x.fillStyle = tc; x.fillText(tag, ix+nw+29, cy-3);
+    cy += 46;
+  });
+  if(items.length > 10){
+    x.fillStyle=P.muted; x.font=`500 22px ${SANS}`;
+    x.fillText(`...还有 ${items.length-10} 个`, ix, cy);
+  }
+  // 页脚
+  const fy=py+ph-58;
+  x.textAlign='center';
+  x.fillStyle=P.accent; x.font=`700 30px ${SANS}`;
+  x.fillText('我在用的 AI 工具栈', W/2, fy-14);
+  x.fillStyle=P.muted; x.font=`500 24px ${SANS}`;
+  x.fillText('sanhuang520-ship-it.github.io/awesome-chinese-ai-tools', W/2, fy+30);
+  x.textAlign='left';
+  c.toBlob(b => {
+    const url=URL.createObjectURL(b);
+    const a=document.createElement('a');
+    a.href=url; a.download='我的 AI 工具栈.png';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    toast('✅ 已保存，去分享吧');
   }, 'image/png');
 }
 
