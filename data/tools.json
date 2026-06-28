@@ -654,10 +654,10 @@
       "stars": 5,
       "freeInfo": "每月 50 万字符免费",
       "desc": "微软出品，中文音色自然度高，每月 50 万字符免费，适合开发者集成到应用。",
-      "linkOk": false,
-      "linkStatus": "connection_error",
+      "linkOk": true,
+      "linkStatus": "ok_whitelisted",
       "linkCheckedAt": "2026-06-29",
-      "linkFailCount": 1
+      "linkFailCount": 0
     },
     {
       "name": "秘塔搜索",
