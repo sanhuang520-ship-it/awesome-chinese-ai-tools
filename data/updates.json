@@ -4,6 +4,24 @@
     {
       "date": "2026-06-28",
       "type": "alert",
+      "title": "Windsurf Cascade 即将 EOL",
+      "desc": "7月1日停服，已并入 Devin Desktop（cognition.com），本周迁移"
+    },
+    {
+      "date": "2026-06-28",
+      "type": "tool",
+      "title": "Cursor 域名迁移到 cursor.com",
+      "desc": "原 cursor.sh 已 308 重定向，站内链接已更新"
+    },
+    {
+      "date": "2026-06-27",
+      "type": "alert",
+      "title": "OpenAI GPT-4.5 正式退役",
+      "desc": "ChatGPT 现有对话自动迁移到 GPT-5.5，API 调用方需切换型号名"
+    },
+    {
+      "date": "2026-06-28",
+      "type": "alert",
       "title": "Midjourney 链接异常",
       "desc": "已连续检测失败，访问前请留意，或改用同类工具"
     },
