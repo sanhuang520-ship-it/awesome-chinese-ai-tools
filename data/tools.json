@@ -300,10 +300,10 @@
       "stars": 3,
       "freeInfo": "无免费额度，需订阅",
       "desc": "商业设计质量顶级，好莱坞和广告公司御用，但无免费额度，需梯子。",
-      "linkOk": true,
-      "linkStatus": "ok_bot_blocked",
+      "linkOk": false,
+      "linkStatus": "url_error",
       "linkCheckedAt": "2026-06-29",
-      "linkFailCount": 0
+      "linkFailCount": 1
     },
     {
       "name": "Adobe Firefly",
