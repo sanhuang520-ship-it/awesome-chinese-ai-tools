@@ -323,7 +323,7 @@
     },
     {
       "name": "Flux",
-      "url": "https://blackforestlabs.ai",
+      "url": "https://bfl.ai",
       "cat": "image",
       "free": true,
       "cn": false,
@@ -332,10 +332,10 @@
       "stars": 3,
       "freeInfo": "开源版本免费",
       "desc": "新一代开源图像模型，质量超越同期 SD，可本地部署无限生成。",
-      "linkOk": false,
-      "linkStatus": "url_error",
+      "linkOk": true,
+      "linkStatus": "ok",
       "linkCheckedAt": "2026-07-04",
-      "linkFailCount": 1
+      "linkFailCount": 0
     },
     {
       "name": "可灵 AI",
