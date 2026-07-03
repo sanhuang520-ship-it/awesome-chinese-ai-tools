@@ -1,6 +1,18 @@
 {
-  "updated": "2026-06-30",
+  "updated": "2026-07-04",
   "events": [
+    {
+      "date": "2026-07-04",
+      "type": "tool",
+      "title": "Flux 官网域名迁移",
+      "desc": "blackforestlabs.ai → bfl.ai，站内链接已更新"
+    },
+    {
+      "date": "2026-07-04",
+      "type": "model",
+      "title": "Claude Sonnet 5 发布",
+      "desc": "免费版默认可用，API 尝鲜价 $2/$10 至 8月31日"
+    },
     {
       "date": "2026-06-30",
       "type": "site",
