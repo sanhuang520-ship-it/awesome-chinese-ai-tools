@@ -109,6 +109,20 @@ body{
 }
 .nav-chip b{color:var(--accent);font-weight:700}
 .nav-actions{display:flex;gap:8px;align-items:center;margin-left:auto;flex-shrink:0}
+.gh-star-btn{
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));color:#fff;
+  text-decoration:none;white-space:nowrap;
+  box-shadow:0 3px 12px rgba(224,121,90,.32);
+  transition:transform .3s var(--spring),box-shadow .3s;
+}
+.gh-star-btn:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 6px 20px rgba(224,121,90,.45)}
+.gh-star-btn .gh-count{
+  background:rgba(255,255,255,.22);padding:1px 8px;border-radius:12px;
+  font-variant-numeric:tabular-nums;
+}
+@media(max-width:640px){.gh-star-btn .gh-label{display:none}}
 .nav-quick-btn{
   font-size:11px;padding:5px 12px;border-radius:20px;border:1px solid var(--border);
   background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap
@@ -889,6 +903,9 @@ footer a:hover{text-decoration:underline}
     <button class="nav-quick-btn" id="btn-free">🆓 免费</button>
     <button class="nav-quick-btn" id="btn-cn">🇨🇳 国产</button>
     <button class="nav-quick-btn" id="btn-rec">⭐ 精选</button>
+    <a class="gh-star-btn" href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank" rel="noopener" title="在 GitHub 上给我们一颗星">
+      <span>⭐</span><span class="gh-label">Star</span><span class="gh-count" id="gh-count">—</span>
+    </a>
     <button class="theme-toggle" id="theme-toggle" title="切换主题">🌙</button>
   </div>
 </nav>
@@ -984,6 +1001,10 @@ footer a:hover{text-decoration:underline}
 </div>
 
 <footer>
+  <p style="margin-bottom:10px;font-size:13px">
+    每天早上 9 点自动更新 · 已连续维护 <b id="ft-days" style="color:var(--accent)">30+</b> 天
+    · 觉得有用？<a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank" style="font-weight:700">给个 ⭐ 让更多人看到 →</a>
+  </p>
   <p>数据来源：<a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank">awesome-chinese-ai-tools</a>
   · 发现遗漏？欢迎 <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues" target="_blank">提交 Issue</a></p>
   <p style="margin-top:5px">免费额度信息可能随时变化，请以官网为准 · <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/DESIGN.md" target="_blank">设计文档</a></p>
@@ -2043,7 +2064,7 @@ function generateShareCard(top, catMt){
   x.fillStyle=P.accent; x.font=`700 31px ${SANS}`;
   x.fillText('47+ 精选 AI 工具 · 标注免费额度 · 每日更新', W/2, fy-14);
   x.fillStyle=P.muted; x.font=`500 26px ${SANS}`;
-  x.fillText('sanhuang520-ship-it.github.io/awesome-chinese-ai-tools', W/2, fy+30);
+  x.fillText('⭐ github.com/sanhuang520-ship-it/awesome-chinese-ai-tools', W/2, fy+30);
   x.textAlign='left';
   // 导出下载
   c.toBlob(b=>{
@@ -2228,7 +2249,7 @@ function generateStackCard(){
   x.fillStyle=P.accent; x.font=`700 30px ${SANS}`;
   x.fillText('我在用的 AI 工具栈', W/2, fy-14);
   x.fillStyle=P.muted; x.font=`500 24px ${SANS}`;
-  x.fillText('sanhuang520-ship-it.github.io/awesome-chinese-ai-tools', W/2, fy+30);
+  x.fillText('⭐ github.com/sanhuang520-ship-it/awesome-chinese-ai-tools', W/2, fy+30);
   x.textAlign='left';
   c.toBlob(b => {
     const url=URL.createObjectURL(b);
@@ -2239,6 +2260,18 @@ function generateStackCard(){
     toast('✅ 已保存，去分享吧');
   }, 'image/png');
 }
+
+/* ══════════════════════════════════════
+   GitHub 星数 + 维护天数
+══════════════════════════════════════ */
+fetch('https://api.github.com/repos/sanhuang520-ship-it/awesome-chinese-ai-tools')
+  .then(r => r.json())
+  .then(d => {
+    if (typeof d.stargazers_count === 'number')
+      document.getElementById('gh-count').textContent = d.stargazers_count;
+  }).catch(() => {});
+document.getElementById('ft-days').textContent =
+  Math.floor((Date.now() - new Date('2026-06-01')) / 864e5) + 1;
 
 /* ══════════════════════════════════════
    启动
