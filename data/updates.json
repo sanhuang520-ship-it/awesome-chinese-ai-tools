@@ -1,6 +1,12 @@
 {
-  "updated": "2026-07-04",
+  "updated": "2026-07-07",
   "events": [
+    {
+      "date": "2026-07-07",
+      "type": "model",
+      "title": "Gemini 3.5 Pro 定档 7 月 17 日",
+      "desc": "200 万 token 上下文 + Deep Think 推理层，与 WAIC 开幕同日"
+    },
     {
       "date": "2026-07-04",
       "type": "tool",
@@ -114,12 +120,6 @@
       "type": "model",
       "title": "智谱 GLM-5.2 开源",
       "desc": "1M 无损上下文，Code Arena 开源模型第一"
-    },
-    {
-      "date": "2026-06-13",
-      "type": "site",
-      "title": "上线价格对比 + 工具图标",
-      "desc": "47 个工具按免费/付费分组，一眼看清成本"
     }
   ]
 }
