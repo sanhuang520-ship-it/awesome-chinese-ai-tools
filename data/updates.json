@@ -1,6 +1,12 @@
 {
-  "updated": "2026-07-07",
+  "updated": "2026-07-08",
   "events": [
+    {
+      "date": "2026-07-08",
+      "type": "alert",
+      "title": "Midjourney 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
     {
       "date": "2026-07-07",
       "type": "model",
@@ -114,12 +120,6 @@
       "type": "alert",
       "title": "Gemini CLI 停服",
       "desc": "个人版迁移至 Antigravity CLI（命令 agy）"
-    },
-    {
-      "date": "2026-06-17",
-      "type": "model",
-      "title": "智谱 GLM-5.2 开源",
-      "desc": "1M 无损上下文，Code Arena 开源模型第一"
     }
   ]
 }
