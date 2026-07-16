@@ -1,6 +1,12 @@
 {
-  "updated": "2026-07-08",
+  "updated": "2026-07-16",
   "events": [
+    {
+      "date": "2026-07-16",
+      "type": "alert",
+      "title": "Midjourney 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
     {
       "date": "2026-07-08",
       "type": "alert",
@@ -114,12 +120,6 @@
       "type": "model",
       "title": "MiniMax M3 开源发布",
       "desc": "MSA 稀疏注意力，长上下文推理成本降至 1/20"
-    },
-    {
-      "date": "2026-06-18",
-      "type": "alert",
-      "title": "Gemini CLI 停服",
-      "desc": "个人版迁移至 Antigravity CLI（命令 agy）"
     }
   ]
 }
