@@ -1,0 +1,157 @@
+{
+  "updated": "2026-08-04",
+  "note": "官方 skills 描述译自 anthropics/skills 各 SKILL.md 的 description 字段；安装路径经本机实测验证",
+  "installPath": "~/.claude/skills/",
+  "categories": {
+    "doc": { "label": "📄 文档办公", "color": "#e0795a" },
+    "dev": { "label": "💻 开发工程", "color": "#86b894" },
+    "design": { "label": "🎨 创意设计", "color": "#d6a84e" },
+    "biz": { "label": "💼 办公协作", "color": "#c98a5e" }
+  },
+  "skills": [
+    {
+      "name": "docx",
+      "cat": "doc",
+      "official": true,
+      "desc": "Word 文档全流程：创建、读取、编辑、修订标记、批注、排版",
+      "descEn": "Create, read, edit, or manipulate Word documents",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/docx"
+    },
+    {
+      "name": "pdf",
+      "cat": "doc",
+      "official": true,
+      "desc": "PDF 处理：提取文字/表格/元数据、合并、拆分、批注",
+      "descEn": "Anything with PDF files — extract, merge, annotate",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/pdf"
+    },
+    {
+      "name": "pptx",
+      "cat": "doc",
+      "official": true,
+      "desc": "PPT 演示文稿：读取、生成幻灯片、调整版式与模板",
+      "descEn": "Any time a .pptx or .potx file is involved",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/pptx"
+    },
+    {
+      "name": "xlsx",
+      "cat": "doc",
+      "official": true,
+      "desc": "Excel 表格：公式计算、图表生成、数据转换",
+      "descEn": "Any time a spreadsheet is the primary input or output",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx"
+    },
+    {
+      "name": "doc-coauthoring",
+      "cat": "doc",
+      "official": true,
+      "desc": "结构化文档协作撰写流程，引导多人共同完成文档",
+      "descEn": "Structured workflow for co-authoring documentation",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring"
+    },
+    {
+      "name": "skill-creator",
+      "cat": "dev",
+      "official": true,
+      "desc": "写 Skill 的 Skill —— 创建、改进、评估技能，新手从这个开始",
+      "descEn": "Create new skills, modify and improve existing skills",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+      "rec": true
+    },
+    {
+      "name": "mcp-builder",
+      "cat": "dev",
+      "official": true,
+      "desc": "构建高质量 MCP（Model Context Protocol）服务的完整指南",
+      "descEn": "Guide for creating high-quality MCP servers",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder"
+    },
+    {
+      "name": "web-artifacts-builder",
+      "cat": "dev",
+      "official": true,
+      "desc": "构建复杂多组件网页应用（React / Tailwind / shadcn-ui 技术栈）",
+      "descEn": "Elaborate multi-component HTML artifacts with modern frontend tech",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+      "rec": true
+    },
+    {
+      "name": "webapp-testing",
+      "cat": "dev",
+      "official": true,
+      "desc": "本地 Web 应用的交互测试工具集",
+      "descEn": "Interacting with and testing local web applications",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing"
+    },
+    {
+      "name": "frontend-design",
+      "cat": "dev",
+      "official": true,
+      "desc": "前端视觉设计指导，做出有辨识度、有意图的界面",
+      "descEn": "Distinctive, intentional visual design for new interfaces",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design"
+    },
+    {
+      "name": "claude-api",
+      "cat": "dev",
+      "official": true,
+      "desc": "Claude API 使用参考：模型 ID、定价、参数、流式、工具调用、缓存",
+      "descEn": "Reference for the Claude API / Anthropic SDK",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/claude-api"
+    },
+    {
+      "name": "canvas-design",
+      "cat": "design",
+      "official": true,
+      "desc": "用设计原理创作视觉作品，输出 PNG / PDF",
+      "descEn": "Beautiful visual art in .png and .pdf using design philosophy",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design"
+    },
+    {
+      "name": "algorithmic-art",
+      "cat": "design",
+      "official": true,
+      "desc": "用 p5.js 创作算法艺术，支持随机种子与交互",
+      "descEn": "Algorithmic art using p5.js with seeded randomness",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art"
+    },
+    {
+      "name": "theme-factory",
+      "cat": "design",
+      "official": true,
+      "desc": "为作品套用主题配色的工具集（幻灯片、网页等）",
+      "descEn": "Toolkit for styling artifacts with a theme",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory"
+    },
+    {
+      "name": "brand-guidelines",
+      "cat": "design",
+      "official": true,
+      "desc": "把品牌配色与字体规范应用到各类产出物",
+      "descEn": "Applies official brand colors and typography",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines"
+    },
+    {
+      "name": "slack-gif-creator",
+      "cat": "design",
+      "official": true,
+      "desc": "制作适配 Slack 的动图 GIF",
+      "descEn": "Animated GIFs optimized for Slack",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator"
+    },
+    {
+      "name": "internal-comms",
+      "cat": "biz",
+      "official": true,
+      "desc": "撰写各类内部沟通文案的资源集",
+      "descEn": "Resources to help write all kinds of internal communications",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms"
+    }
+  ],
+  "resources": [
+    { "name": "anthropics/skills", "stars": 166200, "desc": "官方仓库，质量最有保证", "url": "https://github.com/anthropics/skills" },
+    { "name": "punkpeye/awesome-mcp-servers", "stars": 91811, "desc": "MCP 服务大全（连接外部系统）", "url": "https://github.com/punkpeye/awesome-mcp-servers" },
+    { "name": "addyosmani/agent-skills", "stars": 81564, "desc": "生产级工程类 skills", "url": "https://github.com/addyosmani/agent-skills" },
+    { "name": "ComposioHQ/awesome-claude-skills", "stars": 71763, "desc": "社区精选列表，分类齐全", "url": "https://github.com/ComposioHQ/awesome-claude-skills" }
+  ]
+}
