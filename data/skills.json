@@ -3,10 +3,30 @@
   "note": "官方 skills 描述译自 anthropics/skills 各 SKILL.md 的 description 字段；安装路径经本机实测验证",
   "installPath": "~/.claude/skills/",
   "categories": {
-    "doc": { "label": "📄 文档办公", "color": "#e0795a" },
-    "dev": { "label": "💻 开发工程", "color": "#86b894" },
-    "design": { "label": "🎨 创意设计", "color": "#d6a84e" },
-    "biz": { "label": "💼 办公协作", "color": "#c98a5e" }
+    "doc": {
+      "label": "📄 文档办公",
+      "color": "#e0795a"
+    },
+    "dev": {
+      "label": "💻 开发工程",
+      "color": "#86b894"
+    },
+    "design": {
+      "label": "🎨 创意设计",
+      "color": "#d6a84e"
+    },
+    "biz": {
+      "label": "💼 办公协作",
+      "color": "#c98a5e"
+    },
+    "data": {
+      "label": "📊 数据研究",
+      "color": "#7aa896"
+    },
+    "sec": {
+      "label": "🔐 安全取证",
+      "color": "#c77b6a"
+    }
   },
   "skills": [
     {
@@ -146,12 +166,400 @@
       "desc": "撰写各类内部沟通文案的资源集",
       "descEn": "Resources to help write all kinds of internal communications",
       "url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms"
+    },
+    {
+      "name": "test-driven-development",
+      "cat": "dev",
+      "official": false,
+      "stars": 266215,
+      "desc": "测试驱动开发全流程指导，写代码前先写测试",
+      "descEn": "Use when implementing any feature or bugfix, before writing implementation code.",
+      "url": "https://github.com/obra/superpowers/tree/main/skills/test-driven-development"
+    },
+    {
+      "name": "using-git-worktrees",
+      "cat": "dev",
+      "official": false,
+      "stars": 266215,
+      "desc": "自动创建隔离的 git worktree，多分支并行开发不打架",
+      "descEn": "Creates isolated git worktrees with smart directory selection and safety verification.",
+      "url": "https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/"
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "cat": "dev",
+      "official": false,
+      "stars": 266215,
+      "desc": "开发分支收尾：合并、清理、发布的标准流程",
+      "descEn": "Guides completion of development work by presenting clear options and handling chosen workflow.",
+      "url": "https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch"
+    },
+    {
+      "name": "subagent-driven-development",
+      "cat": "dev",
+      "official": false,
+      "stars": 1299,
+      "desc": "把任务拆给多个子智能体并行处理，加速复杂开发",
+      "descEn": "Dispatches independent subagents for individual tasks with code review checkpoints between iterations for rapid, controlled development.",
+      "url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/sadd/skills/subagent-driven-development"
+    },
+    {
+      "name": "software-architecture",
+      "cat": "dev",
+      "official": false,
+      "stars": 1299,
+      "desc": "实现整洁架构、SOLID 等设计模式",
+      "descEn": "Implements design patterns including Clean Architecture, SOLID principles, and comprehensive software design best practices.",
+      "url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/ddd/skills/software-architecture"
+    },
+    {
+      "name": "prompt-engineering",
+      "cat": "dev",
+      "official": false,
+      "stars": 1299,
+      "desc": "系统讲解提示词工程的技巧与模式",
+      "descEn": "Teaches well-known prompt engineering techniques and patterns, including Anthropic best practices and agent persuasion principles.",
+      "url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/customaize-agent/skills/prompt-engineering"
+    },
+    {
+      "name": "Skill Seekers",
+      "cat": "dev",
+      "official": false,
+      "stars": 14697,
+      "desc": "把任意文档网站自动转成 Claude Skill —— 造 skill 的利器",
+      "descEn": "Automatically converts any documentation website into a Claude AI skill in minutes.",
+      "url": "https://github.com/yusufkaraaslan/Skill_Seekers"
+    },
+    {
+      "name": "Playwright Browser Automation",
+      "cat": "dev",
+      "official": false,
+      "stars": 2971,
+      "desc": "用 Playwright 做浏览器自动化测试与验证",
+      "descEn": "Model-invoked Playwright automation for testing and validating web applications.",
+      "url": "https://github.com/lackeyjb/playwright-skill"
+    },
+    {
+      "name": "lean-ctx",
+      "cat": "dev",
+      "official": false,
+      "stars": 3487,
+      "desc": "AI 编程代理的上下文运行时，管理会话与上下文",
+      "descEn": "MCP server and context runtime for AI coding agents: session caching, AST-aware compression, and 90+ shell patterns to reduce token usage. Supports Cl",
+      "url": "https://github.com/yvgude/lean-ctx"
+    },
+    {
+      "name": "iOS Simulator",
+      "cat": "dev",
+      "official": false,
+      "stars": 1199,
+      "desc": "操作 iOS 模拟器做 App 测试",
+      "descEn": "Enables Claude to interact with iOS Simulator for testing and debugging iOS applications.",
+      "url": "https://github.com/conorluddy/ios-simulator-skill"
+    },
+    {
+      "name": "aws-skills",
+      "cat": "dev",
+      "official": false,
+      "stars": 342,
+      "desc": "AWS 开发：CDK 最佳实践、成本优化、Serverless 架构",
+      "descEn": "AWS development with CDK best practices, cost optimization MCP servers, and serverless/event-driven architecture patterns.",
+      "url": "https://github.com/zxkane/aws-skills"
+    },
+    {
+      "name": "D3.js Visualization",
+      "cat": "dev",
+      "official": false,
+      "stars": 217,
+      "desc": "用 D3 做交互式数据可视化图表",
+      "descEn": "Teaches Claude to produce D3 charts and interactive data visualizations.",
+      "url": "https://github.com/chrisvoncsefalvay/claude-d3js-skill"
+    },
+    {
+      "name": "great_cto",
+      "cat": "dev",
+      "official": false,
+      "stars": 73,
+      "desc": "7 个专业子智能体（技术负责人、资深工程师等）组成的技术团队",
+      "descEn": "Claude Code plugin: 7 specialised subagents (tech-lead, senior-dev, qa-engineer, security-officer, devops, l3-support, project-auditor) orchestrating ",
+      "url": "https://github.com/avelikiy/great_cto"
+    },
+    {
+      "name": "reddit-fetch",
+      "cat": "dev",
+      "official": false,
+      "stars": 9539,
+      "desc": "当 WebFetch 被拦时，通过 Gemini CLI 抓取 Reddit 内容",
+      "descEn": "Fetches Reddit content via Gemini CLI when WebFetch is blocked or returns 403 errors.",
+      "url": "https://github.com/ykdojo/claude-code-tips/tree/main/skills/reddit-fetch"
+    },
+    {
+      "name": "root-cause-tracing",
+      "cat": "data",
+      "official": false,
+      "stars": 266215,
+      "desc": "错误深藏在执行链路时，追溯根本原因",
+      "descEn": "Use when errors occur deep in execution and you need to trace back to find the original trigger.",
+      "url": "https://github.com/obra/superpowers/tree/main/skills/root-cause-tracing"
+    },
+    {
+      "name": "deep-research",
+      "cat": "data",
+      "official": false,
+      "stars": 364,
+      "desc": "调用 Gemini Deep Research 做自主多步研究",
+      "descEn": "Execute autonomous multi-step research using Gemini Deep Research Agent for market analysis, competitive landscaping, and literature reviews.",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research"
+    },
+    {
+      "name": "CSV Data Summarizer",
+      "cat": "data",
+      "official": false,
+      "stars": 442,
+      "desc": "自动分析 CSV 文件并生成完整数据报告",
+      "descEn": "Automatically analyzes CSV files and generates comprehensive insights with visualizations without requiring user prompts.",
+      "url": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill"
+    },
+    {
+      "name": "postgres",
+      "cat": "data",
+      "official": false,
+      "stars": 364,
+      "desc": "对 PostgreSQL 执行安全的只读 SQL 查询",
+      "descEn": "Execute safe read-only SQL queries against PostgreSQL databases with multi-connection support and defense-in-depth security.",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres"
+    },
+    {
+      "name": "recursive-research",
+      "cat": "data",
+      "official": false,
+      "stars": 37,
+      "desc": "跨领域递归研究，可深入到博士级别",
+      "descEn": "Recursive research up to PhD level across any domain (science, tech, business, arts, humanities) with source tiering, WDM + Munger inversion for auton",
+      "url": "https://github.com/Anjos2/recursive-research"
+    },
+    {
+      "name": "swiftui-design-skill",
+      "cat": "design",
+      "official": false,
+      "stars": 163,
+      "desc": "SwiftUI 前端设计（中文）：反 AI 味六条铁律、设计顾问、五维评审",
+      "descEn": "SwiftUI 前端设计 skill — 反 AI Slop 六条铁律、设计方向顾问、品牌资产协议、五维评审。支持 Claude Code / Cursor / Codex / OpenCode 等全部 AI agent 平台。",
+      "url": "https://github.com/wholiver/swiftui-design-skill"
+    },
+    {
+      "name": "imagen",
+      "cat": "design",
+      "official": false,
+      "stars": 364,
+      "desc": "调用 Google Gemini 图像生成 API 出图",
+      "descEn": "Generate images using Google Gemini's image generation API for UI mockups, icons, illustrations, and visual assets.",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen"
+    },
+    {
+      "name": "anydesign",
+      "cat": "design",
+      "official": false,
+      "stars": 150,
+      "desc": "分析任意图片/网址/Figma 文件，生成结构化设计规范",
+      "descEn": "Analyzes any image, URL, or Figma file and generates a structured `design.md` with the full design system, component inventory, and reconstruction not",
+      "url": "https://github.com/uxKero/anydesign"
+    },
+    {
+      "name": "youtube-transcript",
+      "cat": "design",
+      "official": false,
+      "stars": 511,
+      "desc": "抓取 YouTube 视频字幕并整理成摘要",
+      "descEn": "Fetch transcripts from YouTube videos and prepare summaries.",
+      "url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/youtube-transcript"
+    },
+    {
+      "name": "Markdown to EPUB Converter",
+      "cat": "doc",
+      "official": false,
+      "stars": 147,
+      "desc": "把 Markdown 文档转成专业 EPUB 电子书",
+      "descEn": "Converts markdown documents and chat summaries into professional EPUB ebook files.",
+      "url": "https://github.com/smerchek/claude-epub-skill"
+    },
+    {
+      "name": "Master Claude for Legal",
+      "cat": "doc",
+      "official": false,
+      "stars": 52,
+      "desc": "法务技能包：NDA 审阅、多方版本对比、引用核验",
+      "descEn": "Skill pack for legal teams. NDA triage, multi-party version diff, citation verifier, meeting brief, and the Friday-newsletter status synthesis pattern",
+      "url": "https://github.com/sboghossian/master-claude-for-legal"
+    },
+    {
+      "name": "article-extractor",
+      "cat": "doc",
+      "official": false,
+      "stars": 511,
+      "desc": "从网页提取完整文章正文与元数据",
+      "descEn": "Extract full article text and metadata from web pages.",
+      "url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/article-extractor"
+    },
+    {
+      "name": "NotebookLM Integration",
+      "cat": "doc",
+      "official": false,
+      "stars": 7566,
+      "desc": "让 Claude Code 直接对话 NotebookLM，做有出处的问答",
+      "descEn": "Lets Claude Code chat directly with NotebookLM for source-grounded answers based exclusively on uploaded documents.",
+      "url": "https://github.com/PleasePrompto/notebooklm-skill"
+    },
+    {
+      "name": "brainstorming",
+      "cat": "biz",
+      "official": false,
+      "stars": 266215,
+      "desc": "把粗略想法通过结构化提问变成完整方案",
+      "descEn": "Transform rough ideas into fully-formed designs through structured questioning and alternative exploration.",
+      "url": "https://github.com/obra/superpowers/tree/main/skills/brainstorming"
+    },
+    {
+      "name": "google-workspace-skills",
+      "cat": "biz",
+      "official": false,
+      "stars": 364,
+      "desc": "Google 全家桶集成：Gmail、日历、Chat 等",
+      "descEn": "Suite of Google Workspace integrations: Gmail, Calendar, Chat, Docs, Sheets, Slides, and Drive with cross-platform OAuth.",
+      "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills"
+    },
+    {
+      "name": "n8n-skills",
+      "cat": "biz",
+      "official": false,
+      "stars": 381,
+      "desc": "让 AI 直接理解和操作 n8n 工作流",
+      "descEn": "Enables AI assistants to directly understand and operate n8n workflows.",
+      "url": "https://github.com/haunchen/n8n-skills"
+    },
+    {
+      "name": "kaizen",
+      "cat": "biz",
+      "official": false,
+      "stars": 1299,
+      "desc": "持续改进方法论，多种分析框架",
+      "descEn": "Applies continuous improvement methodology with multiple analytical approaches, based on Japanese Kaizen philosophy and Lean methodology.",
+      "url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/kaizen/skills/kaizen"
+    },
+    {
+      "name": "tapestry",
+      "cat": "biz",
+      "official": false,
+      "stars": 511,
+      "desc": "把相关文档互联并总结成知识网络",
+      "descEn": "Interlink and summarize related documents into knowledge networks.",
+      "url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/tapestry"
+    },
+    {
+      "name": "ship-learn-next",
+      "cat": "biz",
+      "official": false,
+      "stars": 511,
+      "desc": "基于进展帮你决定下一步该做什么/学什么",
+      "descEn": "Skill to help iterate on what to build or learn next, based on feedback loops.",
+      "url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/ship-learn-next"
+    },
+    {
+      "name": "solo-skills",
+      "cat": "biz",
+      "official": false,
+      "stars": 6,
+      "desc": "独立开发者双语（中英）技能包：7 个 solo 场景",
+      "descEn": "7 bilingual (EN+中文) skills for solo founders and indie devs: launch tweets, customer emails, decision frameworks, postmortems. Each skill includes an ",
+      "url": "https://github.com/rockscy/solo-skills"
+    },
+    {
+      "name": "Brand Build Skills",
+      "cat": "biz",
+      "official": false,
+      "stars": 515,
+      "desc": "59 个 skill 的品牌与网站全生命周期库",
+      "descEn": "59-skill library covering the full website lifecycle: brand, design, content, SEO, dev, ops, growth, and research. Stack-agnostic with an Ahrefs MCP-p",
+      "url": "https://github.com/rampstackco/claude-skills"
+    },
+    {
+      "name": "computer-forensics",
+      "cat": "sec",
+      "official": false,
+      "stars": 656,
+      "desc": "数字取证分析与调查技术",
+      "descEn": "Digital forensics analysis and investigation techniques.",
+      "url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/computer-forensics"
+    },
+    {
+      "name": "metadata-extraction",
+      "cat": "sec",
+      "official": false,
+      "stars": 656,
+      "desc": "提取分析文件元数据用于取证",
+      "descEn": "Extract and analyze file metadata for forensic purposes.",
+      "url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/metadata-extraction"
+    },
+    {
+      "name": "file-deletion",
+      "cat": "sec",
+      "official": false,
+      "stars": 656,
+      "desc": "安全删除文件与数据清除方法",
+      "descEn": "Secure file deletion and data sanitization methods.",
+      "url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/file-deletion"
+    },
+    {
+      "name": "FFUF Web Fuzzing",
+      "cat": "sec",
+      "official": false,
+      "stars": 204,
+      "desc": "集成 ffuf 做 Web 模糊测试",
+      "descEn": "Integrates the ffuf web fuzzer so Claude can run fuzzing tasks and analyze results for vulnerabilities.",
+      "url": "https://github.com/jthack/ffuf_claude_skill"
+    },
+    {
+      "name": "pakco-html",
+      "cat": "design",
+      "official": false,
+      "stars": 64,
+      "desc": "HTML 审美库（中文）：60+ 视觉风格、演示页/长页模板，一键复制 Prompt",
+      "descEn": "60+ styles · presentation & vertical pages · one-click copy prompt",
+      "url": "https://github.com/pakco77/pakco-html",
+      "rec": true
     }
   ],
   "resources": [
-    { "name": "anthropics/skills", "stars": 166200, "desc": "官方仓库，质量最有保证", "url": "https://github.com/anthropics/skills" },
-    { "name": "punkpeye/awesome-mcp-servers", "stars": 91811, "desc": "MCP 服务大全（连接外部系统）", "url": "https://github.com/punkpeye/awesome-mcp-servers" },
-    { "name": "addyosmani/agent-skills", "stars": 81564, "desc": "生产级工程类 skills", "url": "https://github.com/addyosmani/agent-skills" },
-    { "name": "ComposioHQ/awesome-claude-skills", "stars": 71763, "desc": "社区精选列表，分类齐全", "url": "https://github.com/ComposioHQ/awesome-claude-skills" }
-  ]
+    {
+      "name": "anthropics/skills",
+      "stars": 166200,
+      "desc": "官方仓库，质量最有保证",
+      "url": "https://github.com/anthropics/skills"
+    },
+    {
+      "name": "obra/superpowers",
+      "stars": 266215,
+      "desc": "agentic skills 框架与开发方法论",
+      "url": "https://github.com/obra/superpowers"
+    },
+    {
+      "name": "punkpeye/awesome-mcp-servers",
+      "stars": 91811,
+      "desc": "MCP 服务大全（连接外部系统）",
+      "url": "https://github.com/punkpeye/awesome-mcp-servers"
+    },
+    {
+      "name": "addyosmani/agent-skills",
+      "stars": 81564,
+      "desc": "生产级工程类 skills",
+      "url": "https://github.com/addyosmani/agent-skills"
+    },
+    {
+      "name": "ComposioHQ/awesome-claude-skills",
+      "stars": 71763,
+      "desc": "社区精选列表，分类齐全",
+      "url": "https://github.com/ComposioHQ/awesome-claude-skills"
+    }
+  ],
+  "installCmd": "npx skills add <仓库地址>"
 }
