@@ -1642,13 +1642,13 @@ async function showSkillsView() {
 let skQuery = '', skFilter = 'all';
 function renderSkillGrid() {
   const d = skillsData, cats = d.categories;
-  const q = skQuery.trim().toLowerCase();
+  const norm = t => (t || '').toLowerCase().replace(/\s+/g, '');
+  const q = norm(skQuery);
   const list = d.skills.filter(s => {
     if (skFilter === 'official' && !s.official) return false;
-    if (skFilter === 'cn' && !/[一-龥]/.test(s.desc || '')) return false;
-    if (skFilter !== 'all' && skFilter !== 'official' && skFilter !== 'cn' && s.cat !== skFilter) return false;
+    if (skFilter !== 'all' && skFilter !== 'official' && s.cat !== skFilter) return false;
     if (!q) return true;
-    return (s.name + ' ' + (s.desc||'') + ' ' + (s.descEn||'')).toLowerCase().includes(q);
+    return norm(s.name + (s.desc||'') + (s.descEn||'') + (s.repo||'')).includes(q);
   });
   document.getElementById('sk-count').textContent = `${list.length} / ${d.skills.length} 个`;
   const byCat = {};
@@ -1685,7 +1685,8 @@ function renderSkills() {
     <div class="sk-hero">
       <h2>🧩 AI Agent Skills</h2>
       <p>Skills 是给 AI 助手加的「专业技能包」—— 一个文件夹 + 一份说明书，教 AI 怎么做某类任务。
-         AI 会自动判断何时激活，无需手动切换。共收录 <b>${d.skills.length}</b> 个，全部已验证仓库真实存在。</p>
+         AI 会自动判断何时激活，无需手动切换。共收录 <b>${d.skills.length}</b> 个（其中
+         <b style="color:var(--accent)">${d.skills.filter(s=>s.cat==='cn').length} 个中文原创</b>），全部已验证仓库真实存在。</p>
       <div class="sk-install">
         <div class="sk-install-label">一键安装（推荐）</div>
         <code>npx skills add &lt;GitHub 仓库地址&gt;</code>
