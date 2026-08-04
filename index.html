@@ -627,6 +627,7 @@ footer a:hover{text-decoration:underline}
 }
 .sk-desc{font-size:12.5px;color:var(--text2);line-height:1.65;flex:1}
 .sk-desc-en{font-size:11px;color:var(--muted);line-height:1.5;font-style:italic}
+.sk-star{font-size:10.5px;color:var(--accent3);font-variant-numeric:tabular-nums;margin-left:auto}
 .sk-res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
 .sk-res{
   display:flex;flex-direction:column;gap:4px;padding:13px 15px;
@@ -1627,6 +1628,7 @@ function renderSkills() {
               <span class="sk-name">${s.name}</span>
               ${s.official ? '<span class="badge b-rec">官方</span>' : ''}
               ${s.rec ? '<span class="badge b-hot">🔥 推荐</span>' : ''}
+              ${s.stars ? `<span class="sk-star">⭐ ${s.stars.toLocaleString()}</span>` : ''}
             </div>
             <div class="sk-desc">${s.desc}</div>
             <div class="sk-desc-en">${s.descEn || ''}</div>
@@ -1639,7 +1641,9 @@ function renderSkills() {
       <p>Skills 是给 AI 助手加的「专业技能包」—— 一个文件夹 + 一份说明书，教 AI 怎么做某类任务。
          AI 会自动判断何时激活，无需手动切换。</p>
       <div class="sk-install">
-        <div class="sk-install-label">安装位置（本机实测有效）</div>
+        <div class="sk-install-label">一键安装（推荐）</div>
+        <code>npx skills add &lt;GitHub 仓库地址&gt;</code>
+        <div class="sk-install-label" style="margin-top:10px">安装位置（本机实测有效）</div>
         <code>${d.installPath}</code>
       </div>
       <div class="sk-warn">
