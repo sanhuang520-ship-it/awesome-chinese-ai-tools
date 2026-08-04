@@ -628,6 +628,31 @@ footer a:hover{text-decoration:underline}
 .sk-desc{font-size:12.5px;color:var(--text2);line-height:1.65;flex:1}
 .sk-desc-en{font-size:11px;color:var(--muted);line-height:1.5;font-style:italic}
 .sk-star{font-size:10.5px;color:var(--accent3);font-variant-numeric:tabular-nums;margin-left:auto}
+/* Skills 搜索与筛选 */
+.sk-toolbar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  margin-bottom:18px;position:sticky;top:calc(var(--navbar-h) + 46px);z-index:60;
+  padding:10px 0;background:var(--bg);
+}
+.sk-search-wrap{position:relative;flex:1;min-width:200px;max-width:340px}
+.sk-search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--muted);pointer-events:none}
+#sk-search{
+  width:100%;padding:9px 14px 9px 34px;border-radius:20px;
+  background:var(--surface2);border:1px solid var(--border);
+  color:var(--text);font-size:13px;outline:none;
+  transition:border-color .2s,box-shadow .2s;
+}
+#sk-search:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(134,184,148,.15)}
+#sk-search::placeholder{color:var(--muted)}
+.sk-filters{display:flex;gap:6px;flex-wrap:wrap}
+.sk-filter{
+  font-size:12px;padding:5px 13px;border-radius:20px;cursor:pointer;
+  background:transparent;border:1px solid var(--border);color:var(--muted);
+  transition:all .2s;white-space:nowrap;
+}
+.sk-filter:hover{color:var(--text);background:var(--surface2)}
+.sk-filter.on{background:rgba(134,184,148,.14);border-color:var(--accent2);color:var(--accent2);font-weight:600}
+.sk-count{font-size:12px;color:var(--muted);margin-left:auto;white-space:nowrap}
 .sk-res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
 .sk-res{
   display:flex;flex-direction:column;gap:4px;padding:13px 15px;
@@ -1614,11 +1639,27 @@ async function showSkillsView() {
   }
   renderSkills();
 }
-function renderSkills() {
+let skQuery = '', skFilter = 'all';
+function renderSkillGrid() {
   const d = skillsData, cats = d.categories;
+  const q = skQuery.trim().toLowerCase();
+  const list = d.skills.filter(s => {
+    if (skFilter === 'official' && !s.official) return false;
+    if (skFilter === 'cn' && !/[一-龥]/.test(s.desc || '')) return false;
+    if (skFilter !== 'all' && skFilter !== 'official' && skFilter !== 'cn' && s.cat !== skFilter) return false;
+    if (!q) return true;
+    return (s.name + ' ' + (s.desc||'') + ' ' + (s.descEn||'')).toLowerCase().includes(q);
+  });
+  document.getElementById('sk-count').textContent = `${list.length} / ${d.skills.length} 个`;
   const byCat = {};
-  d.skills.forEach(s => { (byCat[s.cat] = byCat[s.cat] || []).push(s); });
-  const sections = Object.keys(cats).filter(c => byCat[c]).map(c => `
+  list.forEach(s => { (byCat[s.cat] = byCat[s.cat] || []).push(s); });
+  const grid = document.getElementById('sk-body');
+  if (!list.length) {
+    grid.innerHTML = `<div class="list-empty"><div class="list-empty-icon">🔍</div>
+      <div>没有匹配的 Skill，换个关键词试试</div></div>`;
+    return;
+  }
+  grid.innerHTML = Object.keys(cats).filter(c => byCat[c]).map(c => `
     <div class="sk-section">
       <div class="sk-section-title">${cats[c].label} · ${byCat[c].length} 个</div>
       <div class="sk-grid">
@@ -1635,11 +1676,16 @@ function renderSkills() {
           </a>`).join('')}
       </div>
     </div>`).join('');
+}
+
+function renderSkills() {
+  const d = skillsData, cats = d.categories;
+  const cnCount = d.skills.filter(s => /[一-龥]/.test(s.desc || '')).length;
   document.getElementById('skills-view').innerHTML = `
     <div class="sk-hero">
       <h2>🧩 AI Agent Skills</h2>
       <p>Skills 是给 AI 助手加的「专业技能包」—— 一个文件夹 + 一份说明书，教 AI 怎么做某类任务。
-         AI 会自动判断何时激活，无需手动切换。</p>
+         AI 会自动判断何时激活，无需手动切换。共收录 <b>${d.skills.length}</b> 个，全部已验证仓库真实存在。</p>
       <div class="sk-install">
         <div class="sk-install-label">一键安装（推荐）</div>
         <code>npx skills add &lt;GitHub 仓库地址&gt;</code>
@@ -1651,7 +1697,19 @@ function renderSkills() {
         经实测 macOS 上实际生效的是上面这个路径。Skills 可包含可执行脚本，安装第三方 skill 前请先查看其内容。
       </div>
     </div>
-    ${sections}
+    <div class="sk-toolbar">
+      <div class="sk-search-wrap">
+        <span class="sk-search-icon">🔍</span>
+        <input id="sk-search" type="text" placeholder="搜索 Skill 名称或功能…">
+      </div>
+      <div class="sk-filters">
+        <button class="sk-filter on" data-f="all">全部</button>
+        <button class="sk-filter" data-f="official">官方</button>
+        ${Object.keys(cats).map(c => `<button class="sk-filter" data-f="${c}">${cats[c].label}</button>`).join('')}
+      </div>
+      <span class="sk-count" id="sk-count"></span>
+    </div>
+    <div id="sk-body"></div>
     <div class="sk-section">
       <div class="sk-section-title">📚 资源大全 · 想找更多</div>
       <div class="sk-res-grid">
@@ -1668,6 +1726,18 @@ function renderSkills() {
       <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/SKILLS.md"
          target="_blank" style="color:var(--accent2)">SKILLS.md</a>
     </p>`;
+  // 绑定搜索与筛选
+  document.getElementById('sk-search').addEventListener('input', e => {
+    skQuery = e.target.value; renderSkillGrid();
+  });
+  document.querySelectorAll('.sk-filter').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.sk-filter').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      skFilter = b.dataset.f; renderSkillGrid();
+    });
+  });
+  renderSkillGrid();
 }
 
 /* ══════════════════════════════════════
