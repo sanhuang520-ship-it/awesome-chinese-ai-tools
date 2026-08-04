@@ -1,8 +1,12 @@
 {
-  "updated": "2026-08-04",
+  "updated": "2026-08-05",
   "note": "官方 skills 描述译自 anthropics/skills 各 SKILL.md 的 description 字段；安装路径经本机实测验证",
   "installPath": "~/.claude/skills/",
   "categories": {
+    "cn": {
+      "label": "🇨🇳 中文原创",
+      "color": "#e0795a"
+    },
     "doc": {
       "label": "📄 文档办公",
       "color": "#e0795a"
@@ -527,6 +531,306 @@
       "descEn": "60+ styles · presentation & vertical pages · one-click copy prompt",
       "url": "https://github.com/pakco77/pakco-html",
       "rec": true
+    },
+    {
+      "name": "superpowers-zh",
+      "cat": "cn",
+      "official": false,
+      "stars": 7458,
+      "desc": "superpowers 中文版：26万⭐框架完整汉化 + 6 个中国原创 skill",
+      "descEn": "🦸 AI 编程超能力 · 中文增强版 — superpowers（116k+ ⭐）完整汉化 + 6 个中国原创 skills，让 Claude Code / Copilot CLI / Hermes Agent / Cu",
+      "url": "https://github.com/jnMetaCode/superpowers-zh",
+      "repo": "jnMetaCode/superpowers-zh"
+    },
+    {
+      "name": "codex-claude-academic-skills",
+      "cat": "cn",
+      "official": false,
+      "stars": 2556,
+      "desc": "学术科研三件套：文献阅读、论文写作、科学计算全流程",
+      "descEn": "本仓库包含三个面向学术科研人员的Skills，覆盖从文献阅读、论文写作到科学计算的完整研究工作流。office-academic-skill 负责论文阅读报告与学术 PPT/Word 文档生成；research-writ",
+      "url": "https://github.com/zLanqing/codex-claude-academic-skills",
+      "repo": "zLanqing/codex-claude-academic-skills"
+    },
+    {
+      "name": "everything-claude-code-zh",
+      "cat": "cn",
+      "official": false,
+      "stars": 1807,
+      "desc": "Claude Code 完整配置中文翻译（agents/skills/hooks/commands）",
+      "descEn": "everything-claude-code 中文翻译项目：完整的 Claude Code 配置集合（agents, skills, hooks, commands, rules, MCPs）。源自 Anthropic ",
+      "url": "https://github.com/xu-xiang/everything-claude-code-zh",
+      "repo": "xu-xiang/everything-claude-code-zh"
+    },
+    {
+      "name": "agent-skills-with-anthropic",
+      "cat": "cn",
+      "official": false,
+      "stars": 1435,
+      "desc": "吴恩达 DeepLearning.AI 课程的中文翻译与知识整理",
+      "descEn": "本项目围绕吴恩达老师在DeepLearning.AI出品的agent-skills-with-anthropic系列课程，为学习者打造中文翻译与知识整理教程。项目提供课程内容翻译、知识点梳理和示例代码解读等内容，欢迎大家",
+      "url": "https://github.com/datawhalechina/agent-skills-with-anthropic",
+      "repo": "datawhalechina/agent-skills-with-anthropic"
+    },
+    {
+      "name": "shuorenhua",
+      "cat": "cn",
+      "official": false,
+      "stars": 928,
+      "desc": "「说人话」去 AI 味改写：保事实、分场景、改完可直接发",
+      "descEn": "说人话｜中文优先的去 AI 味改写 skill：保事实、分场景、改完可直接发。Chinese-first rewrite skill for Codex / Claude Code / Cursor / ChatGPT ",
+      "url": "https://github.com/MrGeDiao/shuorenhua",
+      "repo": "MrGeDiao/shuorenhua"
+    },
+    {
+      "name": "Awesome-Journal-Skills",
+      "cat": "cn",
+      "official": false,
+      "stars": 909,
+      "desc": "主流期刊投稿技能包（AER、QJE 等经济学顶刊）",
+      "descEn": "Journal-specific Claude Code/Codex skill packs covering mainstream journals — AER, QJE, Nature, Cell, 管理世界, 经济",
+      "url": "https://github.com/brycewang-stanford/Awesome-Journal-Skills",
+      "repo": "brycewang-stanford/Awesome-Journal-Skills"
+    },
+    {
+      "name": "speak-human-tw",
+      "cat": "cn",
+      "official": false,
+      "stars": 744,
+      "desc": "繁体中文去 AI 味：抓 38 种 AI 写作痕迹，校正用语与标点",
+      "descEn": "「說人話」：繁體中文的去 AI 味改寫 skill。抓 38 種 AI 寫作痕跡，順手校正中國用語與半形標點，給 Claude Code / Codex / Cursor 用。",
+      "url": "https://github.com/Raymondhou0917/speak-human-tw",
+      "repo": "Raymondhou0917/speak-human-tw"
+    },
+    {
+      "name": "claude-code-skills-zh",
+      "cat": "cn",
+      "official": false,
+      "stars": 725,
+      "desc": "面向中文开发者的技能库，按场景分类、复制即装",
+      "descEn": "面向中文开发者的 Claude Code Skills / Agents / Plugins 精选与原创技能库｜按场景分类｜复制即装｜持续更新",
+      "url": "https://github.com/laolaoshiren/claude-code-skills-zh",
+      "repo": "laolaoshiren/claude-code-skills-zh"
+    },
+    {
+      "name": "higgsfield-seedance2-jineng",
+      "cat": "cn",
+      "official": false,
+      "stars": 722,
+      "desc": "AI 视频生成 15 个 prompt skill（Seedance 2.0 × Higgsfield）",
+      "descEn": "Seedance 2.0 × Higgsfield 技能集 | 15 Claude prompt skills for AI video generation — cinematic, 3D CGI, anime, e-",
+      "url": "https://github.com/beshuaxian/higgsfield-seedance2-jineng",
+      "repo": "beshuaxian/higgsfield-seedance2-jineng"
+    },
+    {
+      "name": "xiaohu-wechat-format",
+      "cat": "cn",
+      "official": false,
+      "stars": 679,
+      "desc": "公众号一键排版发布：Markdown → 微信 HTML，30 套主题",
+      "descEn": "Claude Code 公众号一键排版+发布技能 | Markdown → 微信兼容 HTML → 推送草稿箱 | 30 套主题 + 可视化画廊",
+      "url": "https://github.com/xiaohuailabs/xiaohu-wechat-format",
+      "repo": "xiaohuailabs/xiaohu-wechat-format"
+    },
+    {
+      "name": "Claude_skills_zh-CN",
+      "cat": "cn",
+      "official": false,
+      "stars": 557,
+      "desc": "官方 anthropics/skills 的中文学习版",
+      "descEn": "Anthropics/skills中文学习版本 来自：https://github.com/anthropics/skills",
+      "url": "https://github.com/LeastBit/Claude_skills_zh-CN",
+      "repo": "LeastBit/Claude_skills_zh-CN"
+    },
+    {
+      "name": "cuimao-translator",
+      "cat": "cn",
+      "official": false,
+      "stars": 459,
+      "desc": "一键把英文 PDF 翻译成流畅中文",
+      "descEn": "一键将英文PDF翻译为流畅中文的Claude Code技能",
+      "url": "https://github.com/Cuimao777/cuimao-translator",
+      "repo": "Cuimao777/cuimao-translator"
+    },
+    {
+      "name": "video-recap-skills",
+      "cat": "cn",
+      "official": false,
+      "stars": 438,
+      "desc": "把任意视频剪成解说式短片",
+      "descEn": "Clip any video into a narration recap with claude code skill｜用 claude code skill 把任何视频剪辑成中文解说视频，支持剪映导出",
+      "url": "https://github.com/worldwonderer/video-recap-skills",
+      "repo": "worldwonderer/video-recap-skills"
+    },
+    {
+      "name": "yupi-skill",
+      "cat": "cn",
+      "official": false,
+      "stars": 403,
+      "desc": "程序员鱼皮技能包：编程学习、求职面试、技术选型、创业经验",
+      "descEn": "🐟 程序员鱼皮 Agent Skill｜把自己蒸馏成 AI 技能包，用我的思维方式和表达风格回答编程学习、求职面试、AI 编程、简历优化、技术选型、创业经验等问题。支持 Claude Code / Cursor / Op",
+      "url": "https://github.com/liyupi/yupi-skill",
+      "repo": "liyupi/yupi-skill"
+    },
+    {
+      "name": "docx-skill-4-cn-paper",
+      "cat": "cn",
+      "official": false,
+      "stars": 348,
+      "desc": "中文论文排版规范：课程论文、数模竞赛、毕业论文",
+      "descEn": "中文论文常用排版格式Skills，适用于课程论文、数模竞赛、毕业论文等场景，让llm agent写word论文或者将.md转.docx时可调用",
+      "url": "https://github.com/Gostyan/docx-skill-4-cn-paper",
+      "repo": "Gostyan/docx-skill-4-cn-paper"
+    },
+    {
+      "name": "xiaohongshu-skills",
+      "cat": "cn",
+      "official": false,
+      "stars": 346,
+      "desc": "139 个小红书运营技能：内容创作、账号运营、电商转化等 9 大类",
+      "descEn": "139个完整的小红书运营技能 - Claude Code 技能插件系统。覆盖内容创作、账号运营、互动运营、数据分析、电商转化、平台规则、工具生态、营销推广、增长策略9大分类。",
+      "url": "https://github.com/vivy-yi/xiaohongshu-skills",
+      "repo": "vivy-yi/xiaohongshu-skills"
+    },
+    {
+      "name": "opencode-skills",
+      "cat": "cn",
+      "official": false,
+      "stars": 263,
+      "desc": "技能库：视频生成、图片生成、Agent 互联、智能问数",
+      "descEn": "OpenCode/Claude Code 技能库 。特色技能：视频生成、图片生成、AI Agent 互联、智能问数等等各场景，持续开发更新中",
+      "url": "https://github.com/zrt-ai-lab/opencode-skills",
+      "repo": "zrt-ai-lab/opencode-skills"
+    },
+    {
+      "name": "universal-examprep-skill",
+      "cat": "cn",
+      "official": false,
+      "stars": 263,
+      "desc": "考前突击教练：把课件资料变成应试重点",
+      "descEn": "Last-night exam-cram coach as a Claude Agent Skill: turns your slides, notes and past papers into a chaptered ",
+      "url": "https://github.com/ZeKaiNie/universal-examprep-skill",
+      "repo": "ZeKaiNie/universal-examprep-skill"
+    },
+    {
+      "name": "skills_collection",
+      "cat": "cn",
+      "official": false,
+      "stars": 257,
+      "desc": "个人实用技能集，覆盖开发效率与内容创作",
+      "descEn": "本项目是个人开发的 Claude Code Skills 集合，提供实用的技能工具，助力提升开发效率和内容创作。  分享一些好用的 Claude Code Skills，自用、学习两相宜，适用于 Claude Code ",
+      "url": "https://github.com/wwwzhouhui/skills_collection",
+      "repo": "wwwzhouhui/skills_collection"
+    },
+    {
+      "name": "humanizer-zh-academic",
+      "cat": "cn",
+      "official": false,
+      "stars": 234,
+      "desc": "降低中文学术写作 AIGC 检测率",
+      "descEn": "🎓 降低中文学术写作 AIGC 检测率的 Claude Code Skill | Reduce AIGC detection rate for Chinese academic writing",
+      "url": "https://github.com/redbaronyyyyy-eng/humanizer-zh-academic",
+      "repo": "redbaronyyyyy-eng/humanizer-zh-academic"
+    },
+    {
+      "name": "awesome-skills-cn",
+      "cat": "cn",
+      "official": false,
+      "stars": 224,
+      "desc": "热门 Skills 中文学习版 + 教程，7000+ 收录",
+      "descEn": "热门Skills中文cn学习版+教程，提供7000+Skills，集成claude skills (11w+Star) | awesome-openclaw-skills (4w+Star) | ui-ux-pro-ma",
+      "url": "https://github.com/lingxling/awesome-skills-cn",
+      "repo": "lingxling/awesome-skills-cn"
+    },
+    {
+      "name": "niubiskill",
+      "cat": "cn",
+      "official": false,
+      "stars": 208,
+      "desc": "中文变现决策：判断一件事是否接近收入再投入",
+      "descEn": "中文变现决策 Skill：在你继续开发、发内容或追加投入之前，先判断这件事是否接近收入。Chinese monetization decision skill for Claude Code — finds the on",
+      "url": "https://github.com/nathanskill/niubiskill",
+      "repo": "nathanskill/niubiskill"
+    },
+    {
+      "name": "Vibe_coding_guide",
+      "cat": "cn",
+      "official": false,
+      "stars": 205,
+      "desc": "中文优先的 Vibe Coding 工程化流程指南",
+      "descEn": "中文优先的 Vibe Coding / AI coding engineering workflow guide: specs, agents, worktrees, skills, CI, and review.",
+      "url": "https://github.com/Lling0000/Vibe_coding_guide",
+      "repo": "Lling0000/Vibe_coding_guide"
+    },
+    {
+      "name": "technical-writing",
+      "cat": "cn",
+      "official": false,
+      "stars": 204,
+      "desc": "中文技术写作：设计文档、评审稿、复盘、分享稿",
+      "descEn": "中文内部技术写作的 agent skill，约束设计文档 / 评审稿 / postmortem / 分享稿场景的语气、句法、结构",
+      "url": "https://github.com/luoling8192/technical-writing",
+      "repo": "luoling8192/technical-writing"
+    },
+    {
+      "name": "SecSkills",
+      "cat": "cn",
+      "official": false,
+      "stars": 200,
+      "desc": "渗透测试技能模块，遵循 PTES 标准全阶段覆盖",
+      "descEn": "面向 Claude Code 的专业渗透测试技能模块。严格遵循 PTES 标准，覆盖信息收集、漏洞利用、后渗透与免杀规避全阶段。不定期更新skill，以达到优化skill。",
+      "url": "https://github.com/Arenbai/SecSkills",
+      "repo": "Arenbai/SecSkills"
+    },
+    {
+      "name": "makeownsrt",
+      "cat": "cn",
+      "official": false,
+      "stars": 175,
+      "desc": "从 MKV 提取英文字幕并翻成繁中双语 SRT",
+      "descEn": "Claude Code skill: 從 MKV 提取英文字幕並翻譯成繁體中文雙語 SRT",
+      "url": "https://github.com/joshhu/makeownsrt",
+      "repo": "joshhu/makeownsrt"
+    },
+    {
+      "name": "Auto-CV",
+      "cat": "cn",
+      "official": false,
+      "stars": 163,
+      "desc": "LaTeX 中文简历模板 + 自动提取内容生成",
+      "descEn": "一个基于 LaTeX 的中文简历模板，配合 Claude Code 的 /Auto-CV Agent Skill，支持导入简历，自动提取内容并转换和交互式自然语言描述制作简历两个功能",
+      "url": "https://github.com/flamingoTOM/Auto-CV",
+      "repo": "flamingoTOM/Auto-CV"
+    },
+    {
+      "name": "JobOK",
+      "cat": "cn",
+      "official": false,
+      "stars": 115,
+      "desc": "中文求职：优势挖掘、岗位匹配、简历优化、面试训练",
+      "descEn": "Job OK: 面向中文求职者的证据驱动求职 Agent Skill，支持优势挖掘、岗位匹配、简历优化、面试训练和投递跟踪。",
+      "url": "https://github.com/GresonKwan/JobOK",
+      "repo": "GresonKwan/JobOK"
+    },
+    {
+      "name": "wechat-writing-style",
+      "cat": "cn",
+      "official": false,
+      "stars": 73,
+      "desc": "微信公众号中文写作风格",
+      "descEn": "微信公众号中文写作风格 Claude Code Skill",
+      "url": "https://github.com/yaoleifly/wechat-writing-style",
+      "repo": "yaoleifly/wechat-writing-style"
+    },
+    {
+      "name": "refine-legal-chinese",
+      "cat": "cn",
+      "official": false,
+      "stars": 13,
+      "desc": "法言法语：把口语化表述改写为规范法律中文",
+      "descEn": "法言法语 · A Claude Skill for legal Chinese writing. 在不改变事实、立场与法律效果的前提下，把口语或 AI 生成的中文改写、润色、审校为准确规范的法律中文。Refines co",
+      "url": "https://github.com/katejianglaw/refine-legal-chinese",
+      "repo": "katejianglaw/refine-legal-chinese"
     }
   ],
   "resources": [
