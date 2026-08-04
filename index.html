@@ -658,6 +658,29 @@ footer a:hover{text-decoration:underline}
 /* ══════════════════════════════════════
    决策器 — 3秒选工具
 ══════════════════════════════════════ */
+/* Skills 指南入口 */
+.skills-banner{
+  display:flex;align-items:center;gap:14px;margin-bottom:18px;
+  padding:14px 20px;border-radius:var(--r2);text-decoration:none;
+  background:linear-gradient(120deg,rgba(134,184,148,.14),rgba(214,168,78,.1));
+  border:1px solid var(--border2);
+  transition:transform .3s var(--spring),box-shadow .3s,border-color .25s;
+}
+.skills-banner:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--accent2)}
+.skills-banner-icon{
+  font-size:20px;flex-shrink:0;width:42px;height:42px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(134,184,148,.26),rgba(214,168,78,.2));
+  border:1px solid rgba(134,184,148,.3);
+}
+.skills-banner-txt{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.skills-banner-txt b{font-family:var(--font-serif);font-size:15px;color:var(--text);letter-spacing:.2px}
+.skills-banner-txt span{font-size:12px;color:var(--text2)}
+.skills-banner-cta{
+  font-size:12.5px;font-weight:700;color:var(--accent2);white-space:nowrap;flex-shrink:0;
+}
+@media(max-width:640px){.skills-banner-txt span{display:none}}
+
 .picker-banner{
   position:relative;overflow:hidden;
   display:flex;align-items:center;justify-content:space-between;gap:14px;
@@ -926,6 +949,14 @@ footer a:hover{text-decoration:underline}
     </div>
     <span class="picker-banner-cta">开始 →</span>
   </div>
+  <a class="skills-banner" href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/SKILLS.md" target="_blank" rel="noopener">
+    <span class="skills-banner-icon">🧩</span>
+    <span class="skills-banner-txt">
+      <b>AI Skills 中文指南</b>
+      <span>官方 17 个 Skills 中文说明 · 实测安装方法 · 社区精选</span>
+    </span>
+    <span class="skills-banner-cta">查看 →</span>
+  </a>
   <div class="hero-label">
     <span class="hero-label-dot"></span>
     <span class="hero-label-text">编辑精选</span>
