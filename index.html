@@ -375,9 +375,10 @@ body{
 .news-card{
   background:var(--surface);border:1px solid var(--border);border-radius:10px;
   padding:14px 16px;display:flex;flex-direction:column;gap:5px;
-  transition:border-color .15s;cursor:pointer
+  transition:border-color .15s,transform .2s var(--spring);cursor:pointer;
+  text-decoration:none;
 }
-.news-card:hover{border-color:var(--accent)}
+.news-card:hover{border-color:var(--accent);transform:translateY(-2px)}
 .news-date{font-size:11px;color:var(--muted)}
 .news-headline{font-size:13px;font-weight:600;color:var(--text);line-height:1.5}
 .news-body-text{font-size:12px;color:var(--muted);line-height:1.6}
@@ -984,14 +985,14 @@ footer a:hover{text-decoration:underline}
 </div>
 
 <!-- ══════════════════════════════════════
-     AI 日报（可折叠）
+     AI 官方信源（可折叠）
 ══════════════════════════════════════ -->
 <div class="news-section">
   <div class="news-toggle" id="news-toggle">
     <div class="news-toggle-title">
       <span class="news-dot"></span>
-      AI 日报 · 最近更新
-      <a class="news-more" href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/news" target="_blank" onclick="event.stopPropagation()">查看全部 →</a>
+      AI 官方信源 · 直达各家权威公告
+      <span class="news-more" style="cursor:default">不转述 · 不追热点 · 只给官方原文</span>
     </div>
     <span class="news-toggle-arrow">▼</span>
   </div>
@@ -1734,43 +1735,27 @@ document.getElementById('news-toggle').addEventListener('click', function() {
 /* ══════════════════════════════════════
    AI 日报加载
 ══════════════════════════════════════ */
-async function loadNews() {
+/* 官方信源：固定渲染各家 AI 官方公告页，不拉取任何日期文件、不转述新闻。
+   —— 从机制上杜绝无法核实的内容出现在首页。 */
+const OFFICIAL_SOURCES = [
+  {name:'OpenAI',        note:'ChatGPT / GPT 官方新闻', url:'https://openai.com/news/'},
+  {name:'Anthropic',     note:'Claude 官方新闻',        url:'https://www.anthropic.com/news'},
+  {name:'Google DeepMind', note:'Gemini 官方博客',      url:'https://deepmind.google/'},
+  {name:'DeepSeek',      note:'国产 · 更新日志',        url:'https://api-docs.deepseek.com/'},
+  {name:'月之暗面 Kimi',  note:'国产 · 官网',           url:'https://kimi.moonshot.cn/'},
+  {name:'通义千问',       note:'国产 · 阿里官网',        url:'https://tongyi.aliyun.com/'},
+  {name:'智谱 GLM',       note:'国产 · 官网',           url:'https://www.zhipuai.cn/'},
+  {name:'字节豆包',       note:'国产 · 官网',           url:'https://www.doubao.com/'},
+];
+function loadNews() {
   const grid = document.getElementById('news-grid');
-  const REPO = 'sanhuang520-ship-it/awesome-chinese-ai-tools';
-  try {
-    const res = await fetch(`https://api.github.com/repos/${REPO}/contents/news`);
-    const files = await res.json();
-    const dated = files
-      .filter(f => /^\d{4}-\d{2}-\d{2}\.md$/.test(f.name))
-      .sort((a,b) => b.name.localeCompare(a.name))
-      .slice(0, 3);
-    if (!dated.length) { renderNewsFallback(); return; }
-    const texts = await Promise.all(dated.map(f => fetch(f.download_url).then(r => r.text())));
-    grid.innerHTML = texts.map((text, i) => {
-      const date = dated[i].name.replace('.md','');
-      const lines = text.split('\n');
-      const hotIdx = lines.findIndex(l => l.includes('今日重点'));
-      const bullets = hotIdx >= 0
-        ? lines.slice(hotIdx+1).filter(l => l.trim().startsWith('-')).slice(0,2) : [];
-      const body = bullets.map(l => l.replace(/^-\s*/,'• ')).join('<br>') || '今日暂无更新';
-      const headline = bullets[0]
-        ? bullets[0].replace(/^-\s*\*\*/, '').replace(/\*\*.*/, '').replace(/^-\s*/,'').trim()
-        : date + ' 日报';
-      return `<div class="news-card" onclick="window.open('https://github.com/${REPO}/blob/main/news/${dated[i].name}','_blank')">
-        <div class="news-date">📅 ${date}</div>
-        <div class="news-headline">${headline}</div>
-        <div class="news-body-text">${body}</div>
-      </div>`;
-    }).join('');
-  } catch(e) { renderNewsFallback(); }
-}
-function renderNewsFallback() {
-  document.getElementById('news-grid').innerHTML = `
-    <div class="news-card">
-      <div class="news-date">📅 持续更新中</div>
-      <div class="news-headline">AI 日报每日更新</div>
-      <div class="news-body-text">记录模型更新、免费额度变化、新工具上线，每天一篇</div>
-    </div>`;
+  if (!grid) return;
+  grid.innerHTML = OFFICIAL_SOURCES.map(s => `
+    <a class="news-card" href="${s.url}" target="_blank" rel="noopener">
+      <div class="news-date">🔗 官方信源</div>
+      <div class="news-headline">${s.name} ↗</div>
+      <div class="news-body-text">${s.note}</div>
+    </a>`).join('');
 }
 
 /* ══════════════════════════════════════
