@@ -26,6 +26,8 @@
 - Windsurf 被 Cognition 收购、并入 Devin Desktop
 - Flux `blackforestlabs.ai` → `bfl.ai` 迁移
 
+> 🧩 **新增**：[AI Skills 中文指南](SKILLS.md) —— 官方 17 个 Skills 中文说明 + 实测安装方法
+
 ---
 
 ## 📊 数据概览
@@ -63,6 +65,7 @@
 - [⚡ 效率工具](#效率工具)
 - [🤖 多模态与 Agent](#多模态与)
 - [🗺️ 按场景选工具](SCENARIOS.md) —— 学生 / 程序员 / 创作者 / 打工人
+- [🧩 AI Skills 中文指南](SKILLS.md) —— Skills 是什么、怎么装、哪些值得用
 - [📰 AI 官方信源](#-ai-官方信源)
 
 ---
