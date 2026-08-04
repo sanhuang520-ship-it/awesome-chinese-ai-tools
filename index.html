@@ -576,6 +576,68 @@ footer a:hover{text-decoration:underline}
 /* ══════════════════════════════════════
    PRICING VIEW
 ══════════════════════════════════════ */
+/* ══════════════════════════════════════
+   SKILLS 视图
+══════════════════════════════════════ */
+.skills-view{display:none;max-width:1200px;margin:0 auto;padding:20px}
+.skills-view.active{display:block}
+.cat-tab-skills{color:var(--accent2) !important}
+.cat-tab-skills:hover,.cat-tab-skills.active{
+  background:rgba(134,184,148,.14) !important;color:var(--accent2) !important;
+  box-shadow:0 0 0 1px rgba(134,184,148,.32) !important;
+}
+.sk-hero{
+  padding:20px 24px;border-radius:var(--r2);margin-bottom:20px;
+  background:linear-gradient(120deg,rgba(134,184,148,.13),rgba(214,168,78,.09));
+  border:1px solid var(--border2);
+}
+.sk-hero h2{font-family:var(--font-serif);font-size:22px;color:var(--text);margin-bottom:6px;letter-spacing:.3px}
+.sk-hero p{font-size:13px;color:var(--text2);line-height:1.7}
+.sk-install{
+  margin-top:14px;padding:12px 14px;border-radius:var(--r);
+  background:var(--surface);border:1px solid var(--border);
+}
+.sk-install-label{font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.3px}
+.sk-install code{
+  display:block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12.5px;color:var(--accent2);word-break:break-all;line-height:1.6;
+}
+.sk-warn{
+  margin-top:10px;font-size:11.5px;color:var(--accent3);line-height:1.6;
+  padding:9px 12px;border-radius:var(--r);
+  background:rgba(214,168,78,.1);border:1px dashed rgba(168,121,31,.3);
+}
+.sk-section{margin-bottom:26px}
+.sk-section-title{
+  display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
+  color:var(--muted);padding:8px 0 10px;border-bottom:1px solid var(--border);
+  margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em;
+}
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.sk-card{
+  display:flex;flex-direction:column;gap:7px;padding:15px 17px;
+  border-radius:var(--r);background:var(--surface);border:1px solid var(--border);
+  text-decoration:none;transition:all .25s var(--spring);
+}
+.sk-card:hover{border-color:var(--accent2);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.sk-card-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sk-name{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:14px;font-weight:700;color:var(--text);
+}
+.sk-desc{font-size:12.5px;color:var(--text2);line-height:1.65;flex:1}
+.sk-desc-en{font-size:11px;color:var(--muted);line-height:1.5;font-style:italic}
+.sk-res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.sk-res{
+  display:flex;flex-direction:column;gap:4px;padding:13px 15px;
+  border-radius:var(--r);background:var(--surface2);border:1px solid var(--border);
+  text-decoration:none;transition:all .2s;
+}
+.sk-res:hover{border-color:var(--accent2)}
+.sk-res-name{font-size:13px;font-weight:600;color:var(--text)}
+.sk-res-star{font-size:11px;color:var(--accent3);font-variant-numeric:tabular-nums}
+.sk-res-desc{font-size:11.5px;color:var(--muted)}
+
 .pricing-view{
   max-width:1100px;margin:0 auto;padding:20px 20px 40px;
   display:none;
@@ -983,6 +1045,7 @@ footer a:hover{text-decoration:underline}
     <button class="cat-tab" data-cat="search">🔎 搜索</button>
     <button class="cat-tab" data-cat="productivity">⚡ 效率</button>
     <button class="cat-tab" data-cat="agent">🤖 Agent</button>
+    <button class="cat-tab cat-tab-skills" id="tab-skills" data-special="skills">🧩 Skills</button>
     <button class="cat-tab cat-tab-price" id="tab-price" data-special="price">💰 价格对比</button>
   </div>
 </div>
@@ -1000,6 +1063,8 @@ footer a:hover{text-decoration:underline}
 <!-- ══════════════════════════════════════
      PRICING VIEW
 ══════════════════════════════════════ -->
+<div class="skills-view" id="skills-view"><!-- JS 填充 --></div>
+
 <div class="pricing-view" id="pricing-view">
   <!-- JS 填充 -->
 </div>
@@ -1513,6 +1578,7 @@ function showPricingView() {
   pricingView = true;
   document.getElementById('hero-section').style.display = 'none';
   document.getElementById('browse-section').style.display = 'none';
+  document.getElementById('skills-view').classList.remove('active');
   document.getElementById('pricing-view').classList.add('active');
   renderPricing();
 }
@@ -1522,6 +1588,82 @@ function showListView() {
   document.getElementById('hero-section').style.display = '';
   document.getElementById('browse-section').style.display = '';
   document.getElementById('pricing-view').classList.remove('active');
+  document.getElementById('skills-view').classList.remove('active');
+}
+
+/* ══════════════════════════════════════
+   Skills 视图
+══════════════════════════════════════ */
+let skillsData = null;
+async function showSkillsView() {
+  document.getElementById('hero-section').style.display = 'none';
+  document.getElementById('browse-section').style.display = 'none';
+  document.getElementById('pricing-view').classList.remove('active');
+  const view = document.getElementById('skills-view');
+  view.classList.add('active');
+  if (!skillsData) {
+    try {
+      const r = await fetch('data/skills.json', {cache:'no-cache'});
+      skillsData = await r.json();
+    } catch(e) {
+      view.innerHTML = `<div class="list-empty"><div class="list-empty-icon">⚠️</div>
+        <div>Skills 数据加载失败</div></div>`;
+      return;
+    }
+  }
+  renderSkills();
+}
+function renderSkills() {
+  const d = skillsData, cats = d.categories;
+  const byCat = {};
+  d.skills.forEach(s => { (byCat[s.cat] = byCat[s.cat] || []).push(s); });
+  const sections = Object.keys(cats).filter(c => byCat[c]).map(c => `
+    <div class="sk-section">
+      <div class="sk-section-title">${cats[c].label} · ${byCat[c].length} 个</div>
+      <div class="sk-grid">
+        ${byCat[c].map(s => `
+          <a class="sk-card" href="${s.url}" target="_blank" rel="noopener">
+            <div class="sk-card-top">
+              <span class="sk-name">${s.name}</span>
+              ${s.official ? '<span class="badge b-rec">官方</span>' : ''}
+              ${s.rec ? '<span class="badge b-hot">🔥 推荐</span>' : ''}
+            </div>
+            <div class="sk-desc">${s.desc}</div>
+            <div class="sk-desc-en">${s.descEn || ''}</div>
+          </a>`).join('')}
+      </div>
+    </div>`).join('');
+  document.getElementById('skills-view').innerHTML = `
+    <div class="sk-hero">
+      <h2>🧩 AI Agent Skills</h2>
+      <p>Skills 是给 AI 助手加的「专业技能包」—— 一个文件夹 + 一份说明书，教 AI 怎么做某类任务。
+         AI 会自动判断何时激活，无需手动切换。</p>
+      <div class="sk-install">
+        <div class="sk-install-label">安装位置（本机实测有效）</div>
+        <code>${d.installPath}</code>
+      </div>
+      <div class="sk-warn">
+        ⚠️ 注意：部分英文教程写的是 <code style="display:inline">~/.config/claude-code/skills/</code>，
+        经实测 macOS 上实际生效的是上面这个路径。Skills 可包含可执行脚本，安装第三方 skill 前请先查看其内容。
+      </div>
+    </div>
+    ${sections}
+    <div class="sk-section">
+      <div class="sk-section-title">📚 资源大全 · 想找更多</div>
+      <div class="sk-res-grid">
+        ${d.resources.map(r => `
+          <a class="sk-res" href="${r.url}" target="_blank" rel="noopener">
+            <div class="sk-res-name">${r.name} ↗</div>
+            <div class="sk-res-star">⭐ ${r.stars.toLocaleString()}</div>
+            <div class="sk-res-desc">${r.desc}</div>
+          </a>`).join('')}
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--muted);text-align:center;padding:8px 0 4px">
+      完整中文指南（含「怎么自己写 Skill」模板）→
+      <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/SKILLS.md"
+         target="_blank" style="color:var(--accent2)">SKILLS.md</a>
+    </p>`;
 }
 
 /* ══════════════════════════════════════
@@ -1535,6 +1677,10 @@ document.getElementById('cat-tabs').addEventListener('click', e => {
 
   if (tab.dataset.special === 'price') {
     showPricingView();
+    return;
+  }
+  if (tab.dataset.special === 'skills') {
+    showSkillsView();
     return;
   }
   showListView();
