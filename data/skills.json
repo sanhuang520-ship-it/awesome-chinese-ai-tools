@@ -34,6 +34,17 @@
   },
   "skills": [
     {
+      "name": "chinese-typography",
+      "cat": "cn",
+      "official": false,
+      "rec": true,
+      "ours": true,
+      "desc": "中文排版助手（本站原创）：中英间距、CJK 断行避头尾、字体栈、标点全半角、行高行宽，附可直接用的 CSS 与公众号排版规则",
+      "descEn": "",
+      "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-typography",
+      "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/chinese-typography"
+    },
+    {
       "name": "guochao-visual-cn",
       "cat": "cn",
       "official": false,
