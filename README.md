@@ -25,6 +25,7 @@
 - `cursor.sh` → `cursor.com` 域名迁移
 - Windsurf 被 Cognition 收购、并入 Devin Desktop
 - Flux `blackforestlabs.ai` → `bfl.ai` 迁移
+- Runway `runwayml.com` → `runway.com` 迁移
 
 ---
 
