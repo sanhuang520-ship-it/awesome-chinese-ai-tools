@@ -9,6 +9,9 @@
 
 🌐 **在线使用**：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/
 
+
+> 📝 **踩坑记录**：[7 万星仓库教的安装路径是错的——整理 112 个 AI Skill 的踩坑记录](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/blog/skill-pitfalls.md)
+
 ---
 
 ## 🎯 为什么用这个导航
