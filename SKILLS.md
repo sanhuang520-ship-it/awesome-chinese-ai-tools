@@ -31,6 +31,19 @@ AI 会**自动判断**何时激活，不需要手动切换。
 npx skills add <GitHub 仓库地址>
 ```
 
+**装本站原创 Skill**（已实测可用）：
+
+```bash
+# 先看看仓库里有哪些（不安装）
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
+
+# 装单个（推荐）
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-lesson-plan
+
+# 全部装上
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'
+```
+
 ### 方式二：手动放置
 
 ```bash
