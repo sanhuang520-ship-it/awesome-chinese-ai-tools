@@ -181,7 +181,14 @@
 **安装**：
 
 ```bash
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools
+# 先看看仓库里有哪些（不安装）
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
+
+# 装单个（推荐）
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-lesson-plan
+
+# 全部装上
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'
 ```
 
 或手动复制 `skills/<名称>/` 到 `~/.claude/skills/`
