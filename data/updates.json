@@ -1,6 +1,12 @@
 {
-  "updated": "2026-08-01",
+  "updated": "2026-08-05",
   "events": [
+    {
+      "date": "2026-08-05",
+      "type": "tool",
+      "title": "Runway 官网域名迁移",
+      "desc": "runwayml.com → runway.com，站内链接已更新（链接检测发现）"
+    },
     {
       "date": "2026-08-01",
       "type": "alert",
@@ -114,12 +120,6 @@
       "type": "alert",
       "title": "OpenAI GPT-4.5 正式退役",
       "desc": "ChatGPT 现有对话自动迁移到 GPT-5.5，API 调用方需切换型号名"
-    },
-    {
-      "date": "2026-06-28",
-      "type": "alert",
-      "title": "Midjourney 链接异常",
-      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
     }
   ]
 }
