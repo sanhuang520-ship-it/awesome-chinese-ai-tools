@@ -1,4 +1,4 @@
-# 我整理了 110 个 AI Skill，还自己写了 5 个，踩了这些坑
+# 7 万星仓库教的安装路径是错的——整理 110 个 AI Skill 的踩坑记录
 
 最近在做一个中文 AI Skills 库。整理过程中发现，这个领域的中文资源基本是空白——英文那边 `anthropics/skills` 16 万星、`awesome-claude-skills` 7 万星，但中文用户既看不懂说明，也不知道有哪些中文 skill 可用。
 
