@@ -34,6 +34,50 @@
   },
   "skills": [
     {
+      "name": "bookkeeping-cn",
+      "cat": "cn",
+      "official": false,
+      "rec": true,
+      "ours": true,
+      "desc": "记账整理助手（本站原创）：流水分类、收支表、预算跟踪；明确不做税务与投资建议",
+      "descEn": "",
+      "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/bookkeeping-cn",
+      "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/bookkeeping-cn"
+    },
+    {
+      "name": "homework-tutor-cn",
+      "cat": "cn",
+      "official": false,
+      "rec": true,
+      "ours": true,
+      "desc": "家长辅导作业助手（本站原创）：不给答案给引导话术，分学科方法，含情绪对抗处理",
+      "descEn": "",
+      "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn",
+      "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/homework-tutor-cn"
+    },
+    {
+      "name": "chinese-work-report",
+      "cat": "cn",
+      "official": false,
+      "rec": true,
+      "ours": true,
+      "desc": "职场汇报助手（本站原创）：周报/月报/述职/项目汇报，结论先行、卖点翻价值，含 PPT 大纲",
+      "descEn": "",
+      "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-work-report",
+      "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/chinese-work-report"
+    },
+    {
+      "name": "ecommerce-copywriting",
+      "cat": "cn",
+      "official": false,
+      "rec": true,
+      "ours": true,
+      "desc": "电商文案助手（本站原创）：商品标题/详情页/卖点提炼，分平台规则，含广告法违禁词红线",
+      "descEn": "",
+      "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting",
+      "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/ecommerce-copywriting"
+    },
+    {
       "name": "chinese-lesson-plan",
       "cat": "cn",
       "official": false,
