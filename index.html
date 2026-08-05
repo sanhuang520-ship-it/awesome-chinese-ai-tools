@@ -1699,6 +1699,7 @@ function renderSkills() {
       </div>
     </div>
     <div class="sk-toolbar">
+      <button class="btn-primary" id="sk-share" style="font-size:12.5px;padding:8px 16px;flex-shrink:0">📸 生成分享图</button>
       <div class="sk-search-wrap">
         <span class="sk-search-icon">🔍</span>
         <input id="sk-search" type="text" placeholder="搜索 Skill 名称或功能…">
@@ -1731,6 +1732,7 @@ function renderSkills() {
   document.getElementById('sk-search').addEventListener('input', e => {
     skQuery = e.target.value; renderSkillGrid();
   });
+  document.getElementById('sk-share').addEventListener('click', generateSkillsCard);
   document.querySelectorAll('.sk-filter').forEach(b => {
     b.addEventListener('click', () => {
       document.querySelectorAll('.sk-filter').forEach(x => x.classList.remove('on'));
@@ -2496,6 +2498,94 @@ function generateStackCard(){
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     toast('✅ 已保存，去分享吧');
   }, 'image/png');
+}
+
+/* ══════════════════════════════════════
+   Skills 分享卡（Canvas）
+══════════════════════════════════════ */
+function generateSkillsCard(){
+  if(!skillsData){ toast('数据未加载'); return; }
+  const d=skillsData, all=d.skills, cats=d.categories;
+  const W=1080,H=1350;
+  const c=document.createElement('canvas'); c.width=W; c.height=H;
+  const x=c.getContext('2d');
+  const SERIF='"Songti SC","Noto Serif SC",STSong,Georgia,serif';
+  const SANS='-apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+  const P={bg:'#f4efe4',panel:'#fffdf7',text:'#2b2419',text2:'#5e5446',
+           muted:'#9a8f7a',accent:'#b8442c',gold:'#a8791f',green:'#3c6b4d',border:'#e2dac8'};
+  x.fillStyle=P.bg; x.fillRect(0,0,W,H);
+  const g=x.createLinearGradient(0,0,W,0);
+  g.addColorStop(0,'#86b894'); g.addColorStop(1,'#d6a84e');
+  x.fillStyle=g; x.fillRect(0,0,W,14);
+  const px=70,py=92,pw=W-140,ph=H-184;
+  x.save(); x.shadowColor='rgba(90,70,40,.16)'; x.shadowBlur=44; x.shadowOffsetY=18;
+  x.fillStyle=P.panel; rrect(x,px,py,pw,ph,34); x.fill(); x.restore();
+  x.strokeStyle=P.border; x.lineWidth=1.5; rrect(x,px,py,pw,ph,34); x.stroke();
+  const ix=px+64, iw=pw-128;
+  let cy=py+96;
+  x.fillStyle=P.green; x.beginPath(); x.arc(ix+7,cy-8,8,0,Math.PI*2); x.fill();
+  x.font=`600 27px ${SANS}`; x.fillStyle=P.muted;
+  x.fillText('AI 工具导航 · Skills 合集', ix+30, cy);
+  cy+=90;
+  x.fillStyle=P.text; x.font=`700 66px ${SERIF}`;
+  x.fillText('🧩 AI Agent Skills', ix, cy); cy+=80;
+  x.fillStyle=P.accent; x.font=`700 66px ${SERIF}`;
+  x.fillText('中文合集', ix, cy); cy+=58;
+  x.strokeStyle=P.border; x.lineWidth=2;
+  x.beginPath(); x.moveTo(ix,cy); x.lineTo(ix+iw,cy); x.stroke(); cy+=64;
+  // 三栏统计
+  const cnN=all.filter(s=>s.cat==='cn').length;
+  const stats=[{n:all.length,l:'总收录'},{n:cnN,l:'中文原创'},
+               {n:all.filter(s=>s.official).length,l:'官方出品'}];
+  const sw=(iw-24)/3;
+  stats.forEach((s,i)=>{
+    const sx=ix+i*(sw+12);
+    x.fillStyle='#f9f3e3'; rrect(x,sx,cy,sw,116,18); x.fill();
+    x.strokeStyle=P.border; x.lineWidth=1; rrect(x,sx,cy,sw,116,18); x.stroke();
+    x.textAlign='center';
+    x.fillStyle=i===1?P.accent:P.text; x.font=`700 48px ${SERIF}`;
+    x.fillText(String(s.n), sx+sw/2, cy+56);
+    x.fillStyle=P.muted; x.font=`500 22px ${SANS}`;
+    x.fillText(s.l, sx+sw/2, cy+90);
+    x.textAlign='left';
+  });
+  cy+=152;
+  // 分类分布
+  x.fillStyle=P.muted; x.font=`600 23px ${SANS}`;
+  x.fillText('— 分类分布 —', ix, cy); cy+=44;
+  const byc={}; all.forEach(s=>byc[s.cat]=(byc[s.cat]||0)+1);
+  Object.keys(cats).filter(k=>byc[k]).forEach(k=>{
+    const label=cats[k].label, n=byc[k];
+    const barMax=iw-260, bw=Math.max(24,(n/all.length)*barMax*2.4);
+    x.fillStyle=P.text; x.font=`500 26px ${SANS}`;
+    x.fillText(label, ix, cy+22);
+    x.fillStyle=k==='cn'?P.accent:'#d9cdb4';
+    rrect(x,ix+230,cy+2,Math.min(bw,barMax),26,13); x.fill();
+    x.fillStyle=P.text2; x.font=`600 22px ${SANS}`;
+    x.fillText(String(n), ix+238+Math.min(bw,barMax), cy+22);
+    cy+=44;
+  });
+  cy+=16;
+  // 亮点
+  x.fillStyle=P.green; x.font=`600 24px ${SANS}`;
+  x.fillText('中文原创覆盖：去 AI 味改写 · 学术降重 · 小红书运营', ix, cy); cy+=36;
+  x.fillText('公众号排版 · 求职简历 · 中文论文排版 · 技术写作', ix, cy);
+  // 页脚
+  const fy=py+ph-58;
+  x.textAlign='center';
+  x.fillStyle=P.accent; x.font=`700 30px ${SANS}`;
+  x.fillText('每个仓库都验证过真实存在 · 无广告无跟踪', W/2, fy-14);
+  x.fillStyle=P.muted; x.font=`500 24px ${SANS}`;
+  x.fillText('⭐ github.com/sanhuang520-ship-it/awesome-chinese-ai-tools', W/2, fy+30);
+  x.textAlign='left';
+  c.toBlob(b=>{
+    const url=URL.createObjectURL(b);
+    const a=document.createElement('a');
+    a.href=url; a.download='AI-Skills-中文合集.png';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    toast('✅ 分享图已保存');
+  },'image/png');
 }
 
 /* ══════════════════════════════════════
