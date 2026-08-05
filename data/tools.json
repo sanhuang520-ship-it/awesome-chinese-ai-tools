@@ -300,10 +300,10 @@
       "stars": 3,
       "freeInfo": "无免费额度，需订阅",
       "desc": "商业设计质量顶级，好莱坞和广告公司御用，但无免费额度，需梯子。",
-      "linkOk": false,
-      "linkStatus": "url_error",
+      "linkOk": true,
+      "linkStatus": "ok_bot_blocked",
       "linkCheckedAt": "2026-08-05",
-      "linkFailCount": 7
+      "linkFailCount": 0
     },
     {
       "name": "Adobe Firefly",
@@ -388,7 +388,7 @@
     },
     {
       "name": "Runway",
-      "url": "https://runwayml.com",
+      "url": "https://runway.com",
       "cat": "video",
       "free": false,
       "cn": false,
@@ -397,10 +397,10 @@
       "stars": 3,
       "freeInfo": "每月少量免费积分",
       "desc": "好莱坞采用的专业视频 AI 工具，奥斯卡获奖影片有实际使用案例。",
-      "linkOk": false,
-      "linkStatus": "http_308",
+      "linkOk": true,
+      "linkStatus": "ok",
       "linkCheckedAt": "2026-08-05",
-      "linkFailCount": 7
+      "linkFailCount": 0
     },
     {
       "name": "通义灵码",
