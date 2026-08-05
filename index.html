@@ -327,6 +327,10 @@ body{
 .b-vpn{background:rgba(138,127,107,.1);border:1px solid rgba(138,127,107,.22);color:var(--muted)}
 .b-dead{background:rgba(214,168,78,.1);border:1px solid rgba(214,168,78,.32);color:var(--accent3);cursor:help}
 .b-rec{background:var(--glow);border:1px solid var(--accent);color:var(--accent)}
+.b-ours{
+  background:linear-gradient(135deg,var(--accent2),var(--accent3));color:#fff;
+  border:none;font-weight:700;box-shadow:0 2px 8px rgba(134,184,148,.35)
+}
 .b-hot{
   background:linear-gradient(135deg,var(--accent),var(--accent3));color:#fff;
   border:none;font-weight:700;box-shadow:0 2px 8px rgba(224,121,90,.32)
@@ -621,6 +625,7 @@ footer a:hover{text-decoration:underline}
   text-decoration:none;transition:all .25s var(--spring);
 }
 .sk-card:hover{border-color:var(--accent2);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.sk-card.ours{border-color:var(--accent2);background:linear-gradient(135deg,rgba(134,184,148,.07),transparent)}
 .sk-card-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .sk-name{
   font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -1665,11 +1670,12 @@ function renderSkillGrid() {
       <div class="sk-section-title">${cats[c].label} · ${byCat[c].length} 个</div>
       <div class="sk-grid">
         ${byCat[c].map(s => `
-          <a class="sk-card" href="${s.url}" target="_blank" rel="noopener">
+          <a class="sk-card ${s.ours?'ours':''}" href="${s.url}" target="_blank" rel="noopener">
             <div class="sk-card-top">
               <span class="sk-name">${s.name}</span>
+              ${s.ours ? '<span class="badge b-ours">✍️ 本站原创</span>' : ''}
               ${s.official ? '<span class="badge b-rec">官方</span>' : ''}
-              ${s.rec ? '<span class="badge b-hot">🔥 推荐</span>' : ''}
+              ${s.rec && !s.ours ? '<span class="badge b-hot">🔥 推荐</span>' : ''}
               ${s.stars ? `<span class="sk-star">⭐ ${s.stars.toLocaleString()}</span>` : ''}
             </div>
             <div class="sk-desc">${s.desc}</div>
@@ -1687,7 +1693,7 @@ function renderSkills() {
       <h2>🧩 AI Agent Skills</h2>
       <p>Skills 是给 AI 助手加的「专业技能包」—— 一个文件夹 + 一份说明书，教 AI 怎么做某类任务。
          AI 会自动判断何时激活，无需手动切换。共收录 <b>${d.skills.length}</b> 个（其中
-         <b style="color:var(--accent)">${d.skills.filter(s=>s.cat==='cn').length} 个中文原创</b>），全部已验证仓库真实存在。</p>
+         <b style="color:var(--accent)">${d.skills.filter(s=>s.cat==='cn').length} 个中文原创</b>），全部已验证仓库真实存在，其中 <b style="color:var(--accent2)">✍️ 本站原创</b> 由我们自己编写维护。</p>
       <div class="sk-install">
         <div class="sk-install-label">一键安装（推荐）</div>
         <code>npx skills add &lt;GitHub 仓库地址&gt;</code>
