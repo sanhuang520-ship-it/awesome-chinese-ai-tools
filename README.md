@@ -49,10 +49,19 @@
 **安装任意一个**：
 
 ```bash
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools
+# 先看看仓库里有哪些（不安装）
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
+
+# 装单个（推荐）
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-lesson-plan
+
+# 全部装上
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'
 ```
 
 或手动把 `skills/<名称>/` 复制到 `~/.claude/skills/` 下。
+
+> ✅ 上述命令已用 `skills@1.5.21` 实测验证，能正确识别本仓库的 5 个 Skill。
 
 > 这些 Skill 都写了明确的**边界与红线**——比如电商那个列了广告法违禁词，
 > 记账那个明确不做税务筹划，辅导作业那个坚持不直接给答案。
