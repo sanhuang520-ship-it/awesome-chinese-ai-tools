@@ -1,10 +1,9 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **112 个 Skill｜53 个中文｜✍️ 7 个本站原创**
+> **114 个 Skill｜55 个中文｜✍️ 9 个本站原创**
 > 每一个都经 GitHub API 验证仓库真实存在
-> 在线浏览（可搜索筛选）：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/
 
-📋 **[看看原创 Skill 实际输出什么 → EXAMPLES.md](EXAMPLES.md)**
+📋 **[看原创 Skill 实际输出什么 → EXAMPLES.md](EXAMPLES.md)**　🌐 [在线浏览](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
 
 ---
 
@@ -12,50 +11,35 @@
 
 **一句话：Skills 是给 AI 助手加的「专业技能包」。**
 
-技术上就是**一个文件夹**，里面有个 `SKILL.md` 说明书，告诉 AI：什么时候该用、按什么步骤做。
-AI 会**自动判断**何时激活，不需要手动切换。
+一个文件夹 + 一份 `SKILL.md` 说明书，告诉 AI 什么时候该用、按什么步骤做。AI 自动判断何时激活。
 
 | | 是什么 | 解决什么 |
 |---|--------|---------|
-| **Skills** | 一份工作说明书（Markdown + 可选脚本） | 教 AI **怎么做**某类任务 |
-| **MCP** | 一个后台服务 | 让 AI **连上**外部系统 |
-| **插件** | 打包分发的组合 | 把 skills + MCP 打包一键装 |
+| **Skills** | 工作说明书（Markdown + 可选脚本） | 教 AI **怎么做**某类任务 |
+| **MCP** | 后台服务 | 让 AI **连上**外部系统 |
+| **插件** | 打包组合 | skills + MCP 一键装 |
 
 ---
 
 ## 怎么安装
 
-### 一键安装（已实测）
-
 ```bash
-# 先看看有哪些（不安装）
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
-
-# 装单个（推荐）
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ai-learning-coach
-
-# 全部装上
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list          # 先看有哪些
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill guochao-visual-cn
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'             # 全部
 ```
 
-### 手动放置
+> ⚠️ **实测提醒**：部分英文教程（包括 7 万星仓库）写的路径是 `~/.config/claude-code/skills/`，
+> 经本机实测，macOS 上**实际生效的是 `~/.claude/skills/`**。
 
-```bash
-mkdir -p ~/.claude/skills/
-ls ~/.claude/skills/<skill-name>/   # 确认里面有 SKILL.md
-```
-
-> ⚠️ **实测提醒**：部分英文教程（包括 7 万星的高星仓库）写的安装路径是
-> `~/.config/claude-code/skills/`，经本机实测，macOS 上**实际生效的是 `~/.claude/skills/`**。
-
-装好后重启 Claude Code 即可，**无需手动调用**——描述任务，AI 自动激活。
+装好后重启 Claude Code，**无需手动调用**——描述任务，AI 自动激活。
 
 ---
 
 ## Skill 清单
 
 
-### 🇨🇳 中文原创（53 个）
+### 🇨🇳 中文原创（55 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -63,8 +47,10 @@ ls ~/.claude/skills/<skill-name>/   # 确认里面有 SKILL.md
 | [book-digest-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/book-digest-cn) | **✍️ 本站原创** | 拆书助手（本站原创）：三层拆解（作者在答什么问题→核心主张→对我有什么用），拒绝抄目录式笔记 |
 | [bookkeeping-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/bookkeeping-cn) | **✍️ 本站原创** | 记账整理助手（本站原创）：流水分类、收支表、预算跟踪；明确不做税务与投资建议 |
 | [chinese-lesson-plan](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-lesson-plan) | **✍️ 本站原创** | 中文教案助手（本站原创）：按新课标三维目标生成中小学教案，含分层作业、板书设计、说课稿 |
+| [chinese-typography](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-typography) | **✍️ 本站原创** | 中文排版助手（本站原创）：中英间距、CJK 断行避头尾、字体栈、标点全半角、行高行宽，附可直接用的 CSS 与公众号排版规则 |
 | [chinese-work-report](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-work-report) | **✍️ 本站原创** | 职场汇报助手（本站原创）：周报/月报/述职/项目汇报，结论先行、卖点翻价值，含 PPT 大纲 |
 | [ecommerce-copywriting](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting) | **✍️ 本站原创** | 电商文案助手（本站原创）：商品标题/详情页/卖点提炼，分平台规则，含广告法违禁词红线 |
+| [guochao-visual-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guochao-visual-cn) | **✍️ 本站原创** | 国潮视觉助手（本站原创）：12 种中国美学画风配方（水墨/工笔/青绿/敦煌/年画/剪纸/国漫等），输出可直接用的提示词，附纹样寓意与传统配色速查 |
 | [homework-tutor-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn) | **✍️ 本站原创** | 家长辅导作业助手（本站原创）：不给答案给引导话术，分学科方法，含情绪对抗处理 |
 | [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | ⭐7,458 | superpowers 中文版：26万⭐框架完整汉化 + 6 个中国原创 skill |
 | [codex-claude-academic-skills](https://github.com/zLanqing/codex-claude-academic-skills) | ⭐2,556 | 学术科研三件套：文献阅读、论文写作、科学计算全流程 |
@@ -229,12 +215,11 @@ ls ~/.claude/skills/<skill-name>/   # 确认里面有 SKILL.md
 my-skill/
 └── SKILL.md          # 必需
     references/       # 可选
-    scripts/          # 可选
 ```
 
 **一个建议**：写清楚「不做什么」和「能做什么」同样重要。
-我们的 7 个原创 Skill 都写明了边界——记账那个不做税务筹划，
-辅导作业那个不给答案，学习教练那个不替你完成输出、进度如实反馈。
+我们 9 个原创 Skill 都写明了边界——记账不做税务筹划、辅导作业不给答案、
+学习教练不替你完成输出、国潮视觉不伪造文物。
 
 推荐用官方 [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) 生成。
 
@@ -242,7 +227,7 @@ my-skill/
 
 ## ⚠️ 安全提醒
 
-Skills 可包含**可执行脚本**。安装第三方 skill 前先看 `SKILL.md` 和 `scripts/` 内容。
+Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts/` 内容。
 
 ---
 
