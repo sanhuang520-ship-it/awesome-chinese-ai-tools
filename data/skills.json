@@ -831,6 +831,186 @@
       "descEn": "法言法语 · A Claude Skill for legal Chinese writing. 在不改变事实、立场与法律效果的前提下，把口语或 AI 生成的中文改写、润色、审校为准确规范的法律中文。Refines co",
       "url": "https://github.com/katejianglaw/refine-legal-chinese",
       "repo": "katejianglaw/refine-legal-chinese"
+    },
+    {
+      "name": "reverse-skill",
+      "cat": "sec",
+      "official": false,
+      "stars": 17460,
+      "desc": "逆向工程与授权渗透测试的 Skill 路由包",
+      "descEn": "Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing ",
+      "url": "https://github.com/zhaoxuya520/reverse-skill",
+      "repo": "zhaoxuya520/reverse-skill"
+    },
+    {
+      "name": "AppGenesisForge",
+      "cat": "dev",
+      "official": false,
+      "stars": 413,
+      "desc": "19 个角色协作的 AI Agent 团队脚手架，按阶段门禁推进",
+      "descEn": "AI Agent Team scaffold for Claude Code — 19 roles collaborate through stage gates, enforced by mandatory skill",
+      "url": "https://github.com/pcliangx/AppGenesisForge",
+      "repo": "pcliangx/AppGenesisForge"
+    },
+    {
+      "name": "humanities-writing-companion",
+      "cat": "cn",
+      "official": false,
+      "stars": 325,
+      "desc": "人文学科写作助手：11 种模式覆盖构思到成稿",
+      "descEn": "End-to-end humanities writing assistant — an Agent Skill (open SKILL.md format). 11 modes from Socratic resear",
+      "url": "https://github.com/tizzy916/humanities-writing-companion",
+      "repo": "tizzy916/humanities-writing-companion"
+    },
+    {
+      "name": "Bloom",
+      "cat": "cn",
+      "official": false,
+      "stars": 218,
+      "desc": "私人 AI 家教：识别你的学习方式，安排下一课",
+      "descEn": "Hire a private AI tutor for anything — it reads how you actually learn and teaches the next lesson just for yo",
+      "url": "https://github.com/Li-Evan/Bloom",
+      "repo": "Li-Evan/Bloom"
+    },
+    {
+      "name": "openclaw-guide",
+      "cat": "cn",
+      "official": false,
+      "stars": 185,
+      "desc": "OpenClaw 中文文档站：安装部署、Agent 架构、Skills 配置",
+      "descEn": "开源OpenClaw中文文档站，OpenClaw中文指南，支持小龙虾 AI 智能体安装部署、消息渠道接入、Agent 架构、Skills 技能配置、模型提供商、CLI 命令参考、网关运维、安全沙箱等全方位文档。覆盖 Wh",
+      "url": "https://github.com/liyupi/openclaw-guide",
+      "repo": "liyupi/openclaw-guide"
+    },
+    {
+      "name": "hermes-arxiv-agent",
+      "cat": "cn",
+      "official": false,
+      "stars": 107,
+      "desc": "每天自动抓 arXiv 论文，生成中文摘要推送到飞书",
+      "descEn": "一个基于 Hermes 的 agent skill：每天自动从 arXiv 抓取论文，用 AI 生成中文摘要和作者单位，推送到飞书，并提供本地静态阅读网站。 ",
+      "url": "https://github.com/genggng/hermes-arxiv-agent",
+      "repo": "genggng/hermes-arxiv-agent"
+    },
+    {
+      "name": "kc_ai_skills",
+      "cat": "cn",
+      "official": false,
+      "stars": 77,
+      "desc": "中文优先的 Claude Code / Codex skills 合集",
+      "descEn": "AI Skills That Actually Do Things — 中文優先的 Claude Code / Codex agent skills 合集 · Reusable bilingual skills for ",
+      "url": "https://github.com/KerberosClaw/kc_ai_skills",
+      "repo": "KerberosClaw/kc_ai_skills"
+    },
+    {
+      "name": "stop-slop-zh",
+      "cat": "cn",
+      "official": false,
+      "stars": 60,
+      "desc": "消除中文 AI 写作痕迹：拆排比、去名词化、换具体细节",
+      "descEn": "消除中文 AI 写作痕迹的 Claude Skill：拆排比三件套、去名词化、换抽象主语为具体细节。灵感来自 hardikpandya/stop-slop。",
+      "url": "https://github.com/VincentOld/stop-slop-zh",
+      "repo": "VincentOld/stop-slop-zh"
+    },
+    {
+      "name": "cnki-aigc---skill",
+      "cat": "cn",
+      "official": false,
+      "stars": 33,
+      "desc": "知网 AIGC 降重：实测把 AI 率从 20.6% 降到 10.1%",
+      "descEn": "Claude Skill | 中文学术论文知网AIGC降重 | 实战将AI率20.6%降至10.1% | A Claude Skill for rewriting CNKI AIGC-flagged Chinese ac",
+      "url": "https://github.com/qingshanliuci/cnki-aigc---skill",
+      "repo": "qingshanliuci/cnki-aigc---skill"
+    },
+    {
+      "name": "awesome-skills-zh",
+      "cat": "cn",
+      "official": false,
+      "stars": 25,
+      "desc": "精选 Claude / Agent / LLM Skills 中文资源列表",
+      "descEn": "🚀 精选 Claude Skills、Agent Skills、LLM Skills 及 AI 智能体开发资源列表（中文）。A curated list of awesome Claude / Agent / LLM S",
+      "url": "https://github.com/yzfly/awesome-skills-zh",
+      "repo": "yzfly/awesome-skills-zh"
+    },
+    {
+      "name": "scholar-wendao-skill",
+      "cat": "cn",
+      "official": false,
+      "stars": 20,
+      "desc": "学者问道：把学者视角提炼成可复用框架",
+      "descEn": "Scholar-Wendao (学者问道) — open-source Claude Skill framework for distilling scholar perspectives into runnable a",
+      "url": "https://github.com/tizzy916/scholar-wendao-skill",
+      "repo": "tizzy916/scholar-wendao-skill"
+    },
+    {
+      "name": "awesome-claude-skills-zh",
+      "cat": "cn",
+      "official": false,
+      "stars": 14,
+      "desc": "中文社区优先的 Claude skills 精选收录",
+      "descEn": "中文社区优先的 Claude skills 精选收录 · A Chinese-first curated list of Claude skills",
+      "url": "https://github.com/shishirui/awesome-claude-skills-zh",
+      "repo": "shishirui/awesome-claude-skills-zh"
+    },
+    {
+      "name": "ip-character-designer",
+      "cat": "cn",
+      "official": false,
+      "stars": 11,
+      "desc": "自媒体 IP 配图生成器：10 种画风 × 双版本 × 中文提示词",
+      "descEn": "🎨 自媒体 IP 配图生成器 — 10种画风 × 双版本输出 × 中文提示词 | Cola/Claude Skill for IP image generation with Dreamina",
+      "url": "https://github.com/Beatatata/ip-character-designer",
+      "repo": "Beatatata/ip-character-designer"
+    },
+    {
+      "name": "cn-humanizer-academic",
+      "cat": "cn",
+      "official": false,
+      "stars": 5,
+      "desc": "中文学术论文降 AI 痕迹，针对 BERT 语义检测器",
+      "descEn": "中文学术论文降 AI 痕迹的 Claude Skill，专门针对 BERT 语义检测器",
+      "url": "https://github.com/ranranrannervous/cn-humanizer-academic",
+      "repo": "ranranrannervous/cn-humanizer-academic"
+    },
+    {
+      "name": "CN-The-Complete-Guide-to-Building-Skill-for-Claude",
+      "cat": "cn",
+      "official": false,
+      "stars": 5,
+      "desc": "《为 Claude 构建技能的完整指南》中文翻译：结构、模式、测试、分发",
+      "descEn": "本仓库包含《为 Claude 构建技能的完整指南》的中文翻译与排版稿，详细介绍 Skill 结构、设计模式、测试迭代、分发方案及故障排查。适合希望快速上手 Claude Skill 开发的个人和团队。",
+      "url": "https://github.com/chenqing0106/CN-The-Complete-Guide-to-Building-Skill-for-Claude",
+      "repo": "chenqing0106/CN-The-Complete-Guide-to-Building-Skill-for-Claude"
+    },
+    {
+      "name": "ai-video-creator",
+      "cat": "cn",
+      "official": false,
+      "stars": 5,
+      "desc": "把生活妙招选题端到端做成可发布的竖屏 AI 短视频（含配音）",
+      "descEn": "Claude skill: 把一个生活妙招选题端到端做成可直接发布的竖屏 AI 短视频(自带 AI 配音)。双锚定一致性 + 全中文分镜 + 火山 ARK 单网关。End-to-end AI short-video sk",
+      "url": "https://github.com/Frank-oll/ai-video-creator",
+      "repo": "Frank-oll/ai-video-creator"
+    },
+    {
+      "name": "awesome-claude-skills-zh-TW",
+      "cat": "cn",
+      "official": false,
+      "stars": 24,
+      "desc": "awesome-claude-skills 繁体中文化版本",
+      "descEn": "中文化的 awesome-claude-skills",
+      "url": "https://github.com/ammosu/awesome-claude-skills-zh-TW",
+      "repo": "ammosu/awesome-claude-skills-zh-TW"
+    },
+    {
+      "name": "awesome-claude-skills-cn",
+      "cat": "cn",
+      "official": false,
+      "stars": 9,
+      "desc": "Awesome Claude Skills 中文版",
+      "descEn": "Awesome Claude Skills（精选 Claude 技能）中文",
+      "url": "https://github.com/bbylw/awesome-claude-skills-cn",
+      "repo": "bbylw/awesome-claude-skills-cn"
     }
   ],
   "resources": [
