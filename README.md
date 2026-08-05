@@ -1,6 +1,6 @@
 # Awesome Chinese AI Tools 🇨🇳
 
-> **一个不追热点、不造假的 AI 工具导航** —— 只标真实免费额度，链接每日自动实测
+> **AI 工具导航 + Skills 中文合集** —— 47 个工具标注真实免费额度、链接每日实测；87 个 Agent Skill 全部验证真实（含 30 个中文原创）
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![GitHub Stars](https://img.shields.io/github/stars/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/stargazers)
@@ -26,7 +26,30 @@
 - Windsurf 被 Cognition 收购、并入 Devin Desktop
 - Flux `blackforestlabs.ai` → `bfl.ai` 迁移
 
-> 🧩 **新增**：[AI Skills 中文指南](SKILLS.md) —— 官方 17 个 Skills 中文说明 + 实测安装方法
+---
+
+## 🧩 AI Agent Skills 中文合集（87 个）
+
+Skills 是给 AI 助手加的「专业技能包」。这块资源目前基本都是英文的，中文用户既看不懂说明、
+也不知道有哪些中文 skill 可用 —— 所以我们做了 **87 个 Skill 的中文合集，其中 30 个中文原创**。
+
+| 分类 | 代表 Skill |
+|------|-----------|
+| 🇨🇳 **中文原创（30 个）** | 去 AI 味改写、中文论文排版、学术降 AIGC、小红书运营 139 技能、公众号一键排版、求职简历 |
+| 📄 文档办公 | docx / pdf / pptx / xlsx（官方）、Markdown→EPUB、法务技能包 |
+| 💻 开发工程 | 测试驱动开发、git worktrees、MCP 构建、Playwright 自动化 |
+| 🎨 创意设计 | 算法艺术、主题配色、HTML 审美库、AI 视频生成 |
+
+**一键安装**：
+
+```bash
+npx skills add <GitHub 仓库地址>
+```
+
+> ⚠️ **实测纠错**：多个高星英文仓库把安装路径写成 `~/.config/claude-code/skills/`，
+> 经本机实测，macOS 上**实际生效的是 `~/.claude/skills/`**。
+
+📖 [完整清单与安装指南 → SKILLS.md](SKILLS.md) ｜ 🌐 [在线浏览（可搜索筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
 
 ---
 
@@ -38,6 +61,7 @@
 | 有免费额度 | **45** 个 |
 | 中文支持优秀 | **32** 个 |
 | 分类 | **10** 类 |
+| 🧩 Agent Skills | **87** 个（30 中文原创 / 17 官方） |
 | 最近链接检测 | 2026-08-04 |
 
 ---
@@ -65,7 +89,7 @@
 - [⚡ 效率工具](#效率工具)
 - [🤖 多模态与 Agent](#多模态与)
 - [🗺️ 按场景选工具](SCENARIOS.md) —— 学生 / 程序员 / 创作者 / 打工人
-- [🧩 AI Skills 中文指南](SKILLS.md) —— Skills 是什么、怎么装、哪些值得用
+- [🧩 AI Skills 中文合集](SKILLS.md) —— 87 个 Skill，30 个中文原创
 - [📰 AI 官方信源](#-ai-官方信源)
 
 ---
