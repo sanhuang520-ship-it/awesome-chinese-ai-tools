@@ -34,6 +34,28 @@
   },
   "skills": [
     {
+      "name": "book-digest-cn",
+      "cat": "cn",
+      "official": false,
+      "rec": true,
+      "ours": true,
+      "desc": "拆书助手（本站原创）：三层拆解（作者在答什么问题→核心主张→对我有什么用），拒绝抄目录式笔记",
+      "descEn": "",
+      "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/book-digest-cn",
+      "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/book-digest-cn"
+    },
+    {
+      "name": "ai-learning-coach",
+      "cat": "cn",
+      "official": false,
+      "rec": true,
+      "ours": true,
+      "desc": "AI 学习教练（本站原创）：不直接给答案，带你走完整学习循环——定目标→主动回忆→输出→纠错→间隔复习→项目交付，含错因分析模板",
+      "descEn": "",
+      "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ai-learning-coach",
+      "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/ai-learning-coach"
+    },
+    {
       "name": "bookkeeping-cn",
       "cat": "cn",
       "official": false,
