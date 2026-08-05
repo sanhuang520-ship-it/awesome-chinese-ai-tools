@@ -29,7 +29,36 @@
 
 ---
 
-## 🧩 AI Agent Skills 中文合集（87 个）
+---
+
+## ✍️ 本站原创 Skill（5 个）
+
+市面上的 Skill 资源基本都是英文的，中文场景几乎是空白。所以我们**自己写了这些**，
+不是翻译、不是搬运，是针对中文用户的真实工作场景从零编写并持续维护的。
+
+| Skill | 面向 | 做什么 |
+|-------|------|--------|
+| **[💰 记账整理助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/bookkeeping-cn)** | 个人 / 小店主 | 流水分类、收支表、预算跟踪；明确不做税务与投资建议 |
+| **[📚 家长辅导助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn)** | 中小学生家长 | 不给答案给引导话术，分学科方法；含「家长要发火时怎么办」 |
+| **[📊 职场汇报助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-work-report)** | 全体职场人 | 周报/月报/述职/项目汇报，结论先行、卖点翻价值，含汇报 PPT 大纲 |
+| **[🛒 电商文案助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting)** | 淘宝/拼多多/抖音卖家 | 商品标题、详情页、卖点提炼，分平台规则；内置广告法违禁词红线 |
+| **[👩‍🏫 中文教案助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-lesson-plan)** | 中小学教师 | 按新课标三维目标出教案，含学情分析、分层作业、板书设计、说课稿。内置防套话机制 |
+
+**安装任意一个**：
+
+```bash
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools
+```
+
+或手动把 `skills/<名称>/` 复制到 `~/.claude/skills/` 下。
+
+> 这些 Skill 都写了明确的**边界与红线**——比如电商那个列了广告法违禁词，
+> 记账那个明确不做税务筹划，辅导作业那个坚持不直接给答案。
+> 我们认为一个好的 Skill 不只是"会做什么"，更要清楚"不做什么"。
+
+📖 [完整 110 个 Skill 合集 → SKILLS.md](SKILLS.md)
+
+## 🧩 AI Agent Skills 中文合集（110 个）
 
 Skills 是给 AI 助手加的「专业技能包」。这块资源目前基本都是英文的，中文用户既看不懂说明、
 也不知道有哪些中文 skill 可用 —— 所以我们做了 **87 个 Skill 的中文合集，其中 30 个中文原创**。
