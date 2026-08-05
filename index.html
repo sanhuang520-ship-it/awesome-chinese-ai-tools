@@ -1731,7 +1731,8 @@ function renderSkills() {
          <b style="color:var(--accent)">${d.skills.filter(s=>s.cat==='cn').length} 个中文原创</b>），全部已验证仓库真实存在，其中 <b style="color:var(--accent2)">✍️ 本站原创</b> 由我们自己编写维护。</p>
       <div class="sk-install">
         <div class="sk-install-label">一键安装（推荐）</div>
-        <code>npx skills add &lt;GitHub 仓库地址&gt;</code>
+        <code>npx skills add &lt;仓库地址&gt; --list　　# 先看有哪些</code>
+        <code style="margin-top:6px">npx skills add &lt;仓库地址&gt; --skill &lt;名称&gt;　　# 装指定的</code>
         <div class="sk-install-label" style="margin-top:10px">安装位置（本机实测有效）</div>
         <code>${d.installPath}</code>
       </div>
