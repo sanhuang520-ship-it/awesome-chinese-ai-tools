@@ -44,6 +44,8 @@
 | **[🛒 电商文案助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting)** | 淘宝/拼多多/抖音卖家 | 商品标题、详情页、卖点提炼，分平台规则；内置广告法违禁词红线 |
 | **[👩‍🏫 中文教案助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-lesson-plan)** | 中小学教师 | 按新课标三维目标出教案，含学情分析、分层作业、板书设计、说课稿。内置防套话机制 |
 
+📋 **[看看它们实际输出什么 → EXAMPLES.md](EXAMPLES.md)**（真实片段：教案目标怎么写、电商文案怎么避违禁词、辅导话术长什么样）
+
 **安装任意一个**：
 
 ```bash
