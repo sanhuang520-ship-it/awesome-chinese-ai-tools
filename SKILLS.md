@@ -1,7 +1,10 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **87 个 Skill，其中 30 个中文原创** —— 每一个都经 GitHub API 验证仓库真实存在
-> 在线浏览（可搜索/筛选）：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/ → 点「🧩 Skills」
+> **110 个 Skill｜51 个中文｜✍️ 5 个本站原创**
+> 每一个都经 GitHub API 验证仓库真实存在
+> 在线浏览（可搜索筛选）：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/
+
+📋 **[看看原创 Skill 实际输出什么 → EXAMPLES.md](EXAMPLES.md)**
 
 ---
 
@@ -36,8 +39,9 @@ mkdir -p ~/.claude/skills/
 ls ~/.claude/skills/<skill-name>/
 ```
 
-> ⚠️ **实测提醒**：部分英文教程（包括一些高星仓库）写的安装路径是 `~/.config/claude-code/skills/`，
-> 经本机实测，macOS 上**实际生效的是 `~/.claude/skills/`**。以你机器上实际存在的目录为准。
+> ⚠️ **实测提醒**：部分英文教程（包括 7 万星的高星仓库）写的安装路径是
+> `~/.config/claude-code/skills/`，经本机实测，macOS 上**实际生效的是 `~/.claude/skills/`**。
+> 用 `npx skills add` 安装同样落在这个目录。以你机器上实际存在的目录为准。
 
 装好后重启 Claude Code 即可，**无需手动调用**——描述任务，AI 自动激活。
 
@@ -46,10 +50,15 @@ ls ~/.claude/skills/<skill-name>/
 ## Skill 清单
 
 
-### 🇨🇳 中文原创（30 个）
+### 🇨🇳 中文原创（51 个）
 
-| Skill | 星数 | 说明 |
+| Skill | 来源 | 说明 |
 |-------|------|------|
+| [bookkeeping-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/bookkeeping-cn) | **✍️ 本站原创** | 记账整理助手（本站原创）：流水分类、收支表、预算跟踪；明确不做税务与投资建议 |
+| [chinese-lesson-plan](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-lesson-plan) | **✍️ 本站原创** | 中文教案助手（本站原创）：按新课标三维目标生成中小学教案，含分层作业、板书设计、说课稿 |
+| [chinese-work-report](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-work-report) | **✍️ 本站原创** | 职场汇报助手（本站原创）：周报/月报/述职/项目汇报，结论先行、卖点翻价值，含 PPT 大纲 |
+| [ecommerce-copywriting](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting) | **✍️ 本站原创** | 电商文案助手（本站原创）：商品标题/详情页/卖点提炼，分平台规则，含广告法违禁词红线 |
+| [homework-tutor-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn) | **✍️ 本站原创** | 家长辅导作业助手（本站原创）：不给答案给引导话术，分学科方法，含情绪对抗处理 |
 | [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | ⭐7,458 | superpowers 中文版：26万⭐框架完整汉化 + 6 个中国原创 skill |
 | [codex-claude-academic-skills](https://github.com/zLanqing/codex-claude-academic-skills) | ⭐2,556 | 学术科研三件套：文献阅读、论文写作、科学计算全流程 |
 | [everything-claude-code-zh](https://github.com/xu-xiang/everything-claude-code-zh) | ⭐1,807 | Claude Code 完整配置中文翻译（agents/skills/hooks/commands） |
@@ -66,25 +75,41 @@ ls ~/.claude/skills/<skill-name>/
 | [yupi-skill](https://github.com/liyupi/yupi-skill) | ⭐403 | 程序员鱼皮技能包：编程学习、求职面试、技术选型、创业经验 |
 | [docx-skill-4-cn-paper](https://github.com/Gostyan/docx-skill-4-cn-paper) | ⭐348 | 中文论文排版规范：课程论文、数模竞赛、毕业论文 |
 | [xiaohongshu-skills](https://github.com/vivy-yi/xiaohongshu-skills) | ⭐346 | 139 个小红书运营技能：内容创作、账号运营、电商转化等 9 大类 |
+| [humanities-writing-companion](https://github.com/tizzy916/humanities-writing-companion) | ⭐325 | 人文学科写作助手：11 种模式覆盖构思到成稿 |
 | [opencode-skills](https://github.com/zrt-ai-lab/opencode-skills) | ⭐263 | 技能库：视频生成、图片生成、Agent 互联、智能问数 |
 | [universal-examprep-skill](https://github.com/ZeKaiNie/universal-examprep-skill) | ⭐263 | 考前突击教练：把课件资料变成应试重点 |
 | [skills_collection](https://github.com/wwwzhouhui/skills_collection) | ⭐257 | 个人实用技能集，覆盖开发效率与内容创作 |
 | [humanizer-zh-academic](https://github.com/redbaronyyyyy-eng/humanizer-zh-academic) | ⭐234 | 降低中文学术写作 AIGC 检测率 |
 | [awesome-skills-cn](https://github.com/lingxling/awesome-skills-cn) | ⭐224 | 热门 Skills 中文学习版 + 教程，7000+ 收录 |
+| [Bloom](https://github.com/Li-Evan/Bloom) | ⭐218 | 私人 AI 家教：识别你的学习方式，安排下一课 |
 | [niubiskill](https://github.com/nathanskill/niubiskill) | ⭐208 | 中文变现决策：判断一件事是否接近收入再投入 |
 | [Vibe_coding_guide](https://github.com/Lling0000/Vibe_coding_guide) | ⭐205 | 中文优先的 Vibe Coding 工程化流程指南 |
 | [technical-writing](https://github.com/luoling8192/technical-writing) | ⭐204 | 中文技术写作：设计文档、评审稿、复盘、分享稿 |
 | [SecSkills](https://github.com/Arenbai/SecSkills) | ⭐200 | 渗透测试技能模块，遵循 PTES 标准全阶段覆盖 |
+| [openclaw-guide](https://github.com/liyupi/openclaw-guide) | ⭐185 | OpenClaw 中文文档站：安装部署、Agent 架构、Skills 配置 |
 | [makeownsrt](https://github.com/joshhu/makeownsrt) | ⭐175 | 从 MKV 提取英文字幕并翻成繁中双语 SRT |
 | [Auto-CV](https://github.com/flamingoTOM/Auto-CV) | ⭐163 | LaTeX 中文简历模板 + 自动提取内容生成 |
 | [JobOK](https://github.com/GresonKwan/JobOK) | ⭐115 | 中文求职：优势挖掘、岗位匹配、简历优化、面试训练 |
+| [hermes-arxiv-agent](https://github.com/genggng/hermes-arxiv-agent) | ⭐107 | 每天自动抓 arXiv 论文，生成中文摘要推送到飞书 |
+| [kc_ai_skills](https://github.com/KerberosClaw/kc_ai_skills) | ⭐77 | 中文优先的 Claude Code / Codex skills 合集 |
 | [wechat-writing-style](https://github.com/yaoleifly/wechat-writing-style) | ⭐73 | 微信公众号中文写作风格 |
+| [stop-slop-zh](https://github.com/VincentOld/stop-slop-zh) | ⭐60 | 消除中文 AI 写作痕迹：拆排比、去名词化、换具体细节 |
+| [cnki-aigc---skill](https://github.com/qingshanliuci/cnki-aigc---skill) | ⭐33 | 知网 AIGC 降重：实测把 AI 率从 20.6% 降到 10.1% |
+| [awesome-skills-zh](https://github.com/yzfly/awesome-skills-zh) | ⭐25 | 精选 Claude / Agent / LLM Skills 中文资源列表 |
+| [awesome-claude-skills-zh-TW](https://github.com/ammosu/awesome-claude-skills-zh-TW) | ⭐24 | awesome-claude-skills 繁体中文化版本 |
+| [scholar-wendao-skill](https://github.com/tizzy916/scholar-wendao-skill) | ⭐20 | 学者问道：把学者视角提炼成可复用框架 |
+| [awesome-claude-skills-zh](https://github.com/shishirui/awesome-claude-skills-zh) | ⭐14 | 中文社区优先的 Claude skills 精选收录 |
 | [refine-legal-chinese](https://github.com/katejianglaw/refine-legal-chinese) | ⭐13 | 法言法语：把口语化表述改写为规范法律中文 |
+| [ip-character-designer](https://github.com/Beatatata/ip-character-designer) | ⭐11 | 自媒体 IP 配图生成器：10 种画风 × 双版本 × 中文提示词 |
+| [awesome-claude-skills-cn](https://github.com/bbylw/awesome-claude-skills-cn) | ⭐9 | Awesome Claude Skills 中文版 |
+| [CN-The-Complete-Guide-to-Building-Skill-for-Claude](https://github.com/chenqing0106/CN-The-Complete-Guide-to-Building-Skill-for-Claude) | ⭐5 | 《为 Claude 构建技能的完整指南》中文翻译：结构、模式、测试、分发 |
+| [ai-video-creator](https://github.com/Frank-oll/ai-video-creator) | ⭐5 | 把生活妙招选题端到端做成可发布的竖屏 AI 短视频（含配音） |
+| [cn-humanizer-academic](https://github.com/ranranrannervous/cn-humanizer-academic) | ⭐5 | 中文学术论文降 AI 痕迹，针对 BERT 语义检测器 |
 
 
 ### 📄 文档办公（9 个）
 
-| Skill | 星数 | 说明 |
+| Skill | 来源 | 说明 |
 |-------|------|------|
 | [NotebookLM Integration](https://github.com/PleasePrompto/notebooklm-skill) | ⭐7,566 | 让 Claude Code 直接对话 NotebookLM，做有出处的问答 |
 | [article-extractor](https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/article-extractor) | ⭐511 | 从网页提取完整文章正文与元数据 |
@@ -97,9 +122,9 @@ ls ~/.claude/skills/<skill-name>/
 | [xlsx](https://github.com/anthropics/skills/tree/main/skills/xlsx) | 官方 | Excel 表格：公式计算、图表生成、数据转换 |
 
 
-### 💻 开发工程（20 个）
+### 💻 开发工程（21 个）
 
-| Skill | 星数 | 说明 |
+| Skill | 来源 | 说明 |
 |-------|------|------|
 | [finishing-a-development-branch](https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch) | ⭐266,215 | 开发分支收尾：合并、清理、发布的标准流程 |
 | [test-driven-development](https://github.com/obra/superpowers/tree/main/skills/test-driven-development) | ⭐266,215 | 测试驱动开发全流程指导，写代码前先写测试 |
@@ -112,6 +137,7 @@ ls ~/.claude/skills/<skill-name>/
 | [software-architecture](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/ddd/skills/software-architecture) | ⭐1,299 | 实现整洁架构、SOLID 等设计模式 |
 | [subagent-driven-development](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/sadd/skills/subagent-driven-development) | ⭐1,299 | 把任务拆给多个子智能体并行处理，加速复杂开发 |
 | [iOS Simulator](https://github.com/conorluddy/ios-simulator-skill) | ⭐1,199 | 操作 iOS 模拟器做 App 测试 |
+| [AppGenesisForge](https://github.com/pcliangx/AppGenesisForge) | ⭐413 | 19 个角色协作的 AI Agent 团队脚手架，按阶段门禁推进 |
 | [aws-skills](https://github.com/zxkane/aws-skills) | ⭐342 | AWS 开发：CDK 最佳实践、成本优化、Serverless 架构 |
 | [D3.js Visualization](https://github.com/chrisvoncsefalvay/claude-d3js-skill) | ⭐217 | 用 D3 做交互式数据可视化图表 |
 | [great_cto](https://github.com/avelikiy/great_cto) | ⭐73 | 7 个专业子智能体（技术负责人、资深工程师等）组成的技术团队 |
@@ -125,7 +151,7 @@ ls ~/.claude/skills/<skill-name>/
 
 ### 🎨 创意设计（10 个）
 
-| Skill | 星数 | 说明 |
+| Skill | 来源 | 说明 |
 |-------|------|------|
 | [youtube-transcript](https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/youtube-transcript) | ⭐511 | 抓取 YouTube 视频字幕并整理成摘要 |
 | [imagen](https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen) | ⭐364 | 调用 Google Gemini 图像生成 API 出图 |
@@ -141,7 +167,7 @@ ls ~/.claude/skills/<skill-name>/
 
 ### 💼 办公协作（9 个）
 
-| Skill | 星数 | 说明 |
+| Skill | 来源 | 说明 |
 |-------|------|------|
 | [brainstorming](https://github.com/obra/superpowers/tree/main/skills/brainstorming) | ⭐266,215 | 把粗略想法通过结构化提问变成完整方案 |
 | [kaizen](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/kaizen/skills/kaizen) | ⭐1,299 | 持续改进方法论，多种分析框架 |
@@ -156,7 +182,7 @@ ls ~/.claude/skills/<skill-name>/
 
 ### 📊 数据研究（5 个）
 
-| Skill | 星数 | 说明 |
+| Skill | 来源 | 说明 |
 |-------|------|------|
 | [root-cause-tracing](https://github.com/obra/superpowers/tree/main/skills/root-cause-tracing) | ⭐266,215 | 错误深藏在执行链路时，追溯根本原因 |
 | [CSV Data Summarizer](https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill) | ⭐442 | 自动分析 CSV 文件并生成完整数据报告 |
@@ -165,10 +191,11 @@ ls ~/.claude/skills/<skill-name>/
 | [recursive-research](https://github.com/Anjos2/recursive-research) | ⭐37 | 跨领域递归研究，可深入到博士级别 |
 
 
-### 🔐 安全取证（4 个）
+### 🔐 安全取证（5 个）
 
-| Skill | 星数 | 说明 |
+| Skill | 来源 | 说明 |
 |-------|------|------|
+| [reverse-skill](https://github.com/zhaoxuya520/reverse-skill) | ⭐17,460 | 逆向工程与授权渗透测试的 Skill 路由包 |
 | [computer-forensics](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/computer-forensics) | ⭐656 | 数字取证分析与调查技术 |
 | [file-deletion](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/file-deletion) | ⭐656 | 安全删除文件与数据清除方法 |
 | [metadata-extraction](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/metadata-extraction) | ⭐656 | 提取分析文件元数据用于取证 |
@@ -210,6 +237,10 @@ description: 一句话说明何时该用（AI 靠这句判断是否激活）
 ## 怎么做
 ## 注意事项
 ```
+
+**一个建议**：写清楚「不做什么」和「能做什么」同样重要。
+我们的 5 个原创 Skill 都写明了边界——比如记账那个明确不做税务筹划，
+辅导作业那个坚持不直接给答案。这让 Skill 更可用，而不是更受限。
 
 推荐用官方 [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) 生成。
 
