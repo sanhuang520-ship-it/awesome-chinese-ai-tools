@@ -34,6 +34,17 @@
   },
   "skills": [
     {
+      "name": "guochao-visual-cn",
+      "cat": "cn",
+      "official": false,
+      "rec": true,
+      "ours": true,
+      "desc": "国潮视觉助手（本站原创）：12 种中国美学画风配方（水墨/工笔/青绿/敦煌/年画/剪纸/国漫等），输出可直接用的提示词，附纹样寓意与传统配色速查",
+      "descEn": "",
+      "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guochao-visual-cn",
+      "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/guochao-visual-cn"
+    },
+    {
       "name": "book-digest-cn",
       "cat": "cn",
       "official": false,
