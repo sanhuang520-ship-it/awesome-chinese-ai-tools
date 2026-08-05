@@ -1,6 +1,6 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **110 个 Skill｜51 个中文｜✍️ 5 个本站原创**
+> **112 个 Skill｜53 个中文｜✍️ 7 个本站原创**
 > 每一个都经 GitHub API 验证仓库真实存在
 > 在线浏览（可搜索筛选）：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/
 
@@ -12,49 +12,41 @@
 
 **一句话：Skills 是给 AI 助手加的「专业技能包」。**
 
-技术上就是**一个文件夹**，里面有个 `SKILL.md` 说明书，告诉 AI：什么时候该用、按什么步骤做、有哪些参考资料。
+技术上就是**一个文件夹**，里面有个 `SKILL.md` 说明书，告诉 AI：什么时候该用、按什么步骤做。
 AI 会**自动判断**何时激活，不需要手动切换。
 
 | | 是什么 | 解决什么 |
 |---|--------|---------|
 | **Skills** | 一份工作说明书（Markdown + 可选脚本） | 教 AI **怎么做**某类任务 |
-| **MCP** | 一个后台服务 | 让 AI **连上**外部系统（数据库、浏览器） |
+| **MCP** | 一个后台服务 | 让 AI **连上**外部系统 |
 | **插件** | 打包分发的组合 | 把 skills + MCP 打包一键装 |
 
 ---
 
 ## 怎么安装
 
-### 方式一：一键安装（推荐）
+### 一键安装（已实测）
 
 ```bash
-npx skills add <GitHub 仓库地址>
-```
-
-**装本站原创 Skill**（已实测可用）：
-
-```bash
-# 先看看仓库里有哪些（不安装）
+# 先看看有哪些（不安装）
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
 
 # 装单个（推荐）
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-lesson-plan
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ai-learning-coach
 
 # 全部装上
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'
 ```
 
-### 方式二：手动放置
+### 手动放置
 
 ```bash
 mkdir -p ~/.claude/skills/
-# 把 skill 文件夹放进去，确认里面有 SKILL.md
-ls ~/.claude/skills/<skill-name>/
+ls ~/.claude/skills/<skill-name>/   # 确认里面有 SKILL.md
 ```
 
 > ⚠️ **实测提醒**：部分英文教程（包括 7 万星的高星仓库）写的安装路径是
 > `~/.config/claude-code/skills/`，经本机实测，macOS 上**实际生效的是 `~/.claude/skills/`**。
-> 用 `npx skills add` 安装同样落在这个目录。以你机器上实际存在的目录为准。
 
 装好后重启 Claude Code 即可，**无需手动调用**——描述任务，AI 自动激活。
 
@@ -63,10 +55,12 @@ ls ~/.claude/skills/<skill-name>/
 ## Skill 清单
 
 
-### 🇨🇳 中文原创（51 个）
+### 🇨🇳 中文原创（53 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
+| [ai-learning-coach](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ai-learning-coach) | **✍️ 本站原创** | AI 学习教练（本站原创）：不直接给答案，带你走完整学习循环——定目标→主动回忆→输出→纠错→间隔复习→项目交付，含错因分析模板 |
+| [book-digest-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/book-digest-cn) | **✍️ 本站原创** | 拆书助手（本站原创）：三层拆解（作者在答什么问题→核心主张→对我有什么用），拒绝抄目录式笔记 |
 | [bookkeeping-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/bookkeeping-cn) | **✍️ 本站原创** | 记账整理助手（本站原创）：流水分类、收支表、预算跟踪；明确不做税务与投资建议 |
 | [chinese-lesson-plan](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-lesson-plan) | **✍️ 本站原创** | 中文教案助手（本站原创）：按新课标三维目标生成中小学教案，含分层作业、板书设计、说课稿 |
 | [chinese-work-report](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-work-report) | **✍️ 本站原创** | 职场汇报助手（本站原创）：周报/月报/述职/项目汇报，结论先行、卖点翻价值，含 PPT 大纲 |
@@ -234,26 +228,13 @@ ls ~/.claude/skills/<skill-name>/
 ```
 my-skill/
 └── SKILL.md          # 必需
-    references/       # 可选：参考资料
-    scripts/          # 可选：脚本
-```
-
-`SKILL.md` 基本结构：
-
-```markdown
----
-name: my-skill
-description: 一句话说明何时该用（AI 靠这句判断是否激活）
----
-
-## 什么时候用
-## 怎么做
-## 注意事项
+    references/       # 可选
+    scripts/          # 可选
 ```
 
 **一个建议**：写清楚「不做什么」和「能做什么」同样重要。
-我们的 5 个原创 Skill 都写明了边界——比如记账那个明确不做税务筹划，
-辅导作业那个坚持不直接给答案。这让 Skill 更可用，而不是更受限。
+我们的 7 个原创 Skill 都写明了边界——记账那个不做税务筹划，
+辅导作业那个不给答案，学习教练那个不替你完成输出、进度如实反馈。
 
 推荐用官方 [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) 生成。
 
@@ -261,11 +242,7 @@ description: 一句话说明何时该用（AI 靠这句判断是否激活）
 
 ## ⚠️ 安全提醒
 
-Skills 可包含**可执行脚本**。安装第三方 skill 前：
-
-1. 先看 `SKILL.md` 内容，确认行为符合预期
-2. 检查 `scripts/` 目录，里面的脚本会被执行
-3. 优先选官方仓库或星数高、有活跃维护的来源
+Skills 可包含**可执行脚本**。安装第三方 skill 前先看 `SKILL.md` 和 `scripts/` 内容。
 
 ---
 
