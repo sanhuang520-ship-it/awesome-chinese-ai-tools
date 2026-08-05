@@ -625,6 +625,12 @@ footer a:hover{text-decoration:underline}
   text-decoration:none;transition:all .25s var(--spring);
 }
 .sk-card:hover{border-color:var(--accent2);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.sk-ours-wrap{
+  padding:16px 18px;border-radius:var(--r2);margin-bottom:24px;
+  background:linear-gradient(120deg,rgba(134,184,148,.08),transparent);
+  border:1px solid var(--accent2);
+}
+.sk-ours-wrap .sk-section-title{border-bottom-color:rgba(134,184,148,.3)}
 .sk-card.ours{border-color:var(--accent2);background:linear-gradient(135deg,rgba(134,184,148,.07),transparent)}
 .sk-card-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .sk-name{
@@ -1013,8 +1019,8 @@ footer a:hover{text-decoration:underline}
     <input id="search" type="text" placeholder="搜索工具、功能…">
   </div>
   <div class="nav-chips">
-    <span class="nav-chip"><b id="tc">47</b>+ 工具</span>
-    <span class="nav-chip">每日更新</span>
+    <span class="nav-chip"><b id="skc">110</b> Skills</span>
+    <span class="nav-chip"><b id="tc">47</b> 工具</span>
   </div>
   <div class="nav-actions">
     <button class="nav-quick-btn" id="btn-hot">🔥 热门</button>
@@ -1066,7 +1072,8 @@ footer a:hover{text-decoration:underline}
 ══════════════════════════════════════ -->
 <div class="cat-tabs-wrap">
   <div class="cat-tabs" id="cat-tabs">
-    <button class="cat-tab active" data-cat="all">全部</button>
+    <button class="cat-tab cat-tab-skills active" id="tab-skills" data-special="skills">🧩 Skills</button>
+    <button class="cat-tab" data-cat="all">🔧 工具导航</button>
     <button class="cat-tab" data-cat="llm">💬 LLM</button>
     <button class="cat-tab" data-cat="image">🎨 图像</button>
     <button class="cat-tab" data-cat="video">🎬 视频</button>
@@ -1077,7 +1084,6 @@ footer a:hover{text-decoration:underline}
     <button class="cat-tab" data-cat="search">🔎 搜索</button>
     <button class="cat-tab" data-cat="productivity">⚡ 效率</button>
     <button class="cat-tab" data-cat="agent">🤖 Agent</button>
-    <button class="cat-tab cat-tab-skills" id="tab-skills" data-special="skills">🧩 Skills</button>
     <button class="cat-tab cat-tab-price" id="tab-price" data-special="price">💰 价格对比</button>
   </div>
 </div>
@@ -1525,6 +1531,7 @@ async function loadTools() {
     catMeta = data.categories || {};
     tools = (data.tools || []).map((t,i) => ({...t, _id:i}));
     document.getElementById('tc').textContent = tools.length;
+    if (skillsData) document.getElementById('skc').textContent = skillsData.skills.length;
     render();
     renderStack();
   } catch(e) {
@@ -1643,6 +1650,8 @@ async function showSkillsView() {
       return;
     }
   }
+  const el = document.getElementById('skc');
+  if (el) el.textContent = skillsData.skills.length;
   renderSkills();
 }
 let skQuery = '', skFilter = 'all';
@@ -1658,14 +1667,33 @@ function renderSkillGrid() {
   });
   document.getElementById('sk-count').textContent = `${list.length} / ${d.skills.length} 个`;
   const byCat = {};
-  list.forEach(s => { (byCat[s.cat] = byCat[s.cat] || []).push(s); });
+  const skipOurs = !skQuery && skFilter === 'all';
+  list.forEach(s => { if (skipOurs && s.ours) return; (byCat[s.cat] = byCat[s.cat] || []).push(s); });
   const grid = document.getElementById('sk-body');
   if (!list.length) {
     grid.innerHTML = `<div class="list-empty"><div class="list-empty-icon">🔍</div>
       <div>没有匹配的 Skill，换个关键词试试</div></div>`;
     return;
   }
-  grid.innerHTML = Object.keys(cats).filter(c => byCat[c]).map(c => `
+  // 本站原创单独置顶
+  const oursList = list.filter(s => s.ours);
+  const oursHtml = (!skQuery && skFilter === 'all' && oursList.length) ? `
+    <div class="sk-section sk-ours-wrap">
+      <div class="sk-section-title" style="color:var(--accent2)">
+        ✍️ 本站原创 · ${oursList.length} 个 —— 我们自己写的，不是搬运
+      </div>
+      <div class="sk-grid">
+        ${oursList.map(s => `
+          <a class="sk-card ours" href="${s.url}" target="_blank" rel="noopener">
+            <div class="sk-card-top">
+              <span class="sk-name">${s.name}</span>
+              <span class="badge b-ours">✍️ 原创</span>
+            </div>
+            <div class="sk-desc">${s.desc}</div>
+          </a>`).join('')}
+      </div>
+    </div>` : '';
+  grid.innerHTML = oursHtml + Object.keys(cats).filter(c => byCat[c]).map(c => `
     <div class="sk-section">
       <div class="sk-section-title">${cats[c].label} · ${byCat[c].length} 个</div>
       <div class="sk-grid">
@@ -2613,6 +2641,8 @@ document.getElementById('ft-days').textContent =
 loadTools();
 loadNews();
 loadUpdates();
+// 默认落在 Skills（主打栏目）
+showSkillsView();
 </script>
 </body>
 </html>
