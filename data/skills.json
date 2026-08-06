@@ -34,6 +34,17 @@
   },
   "skills": [
     {
+      "name": "chinese-web-themes",
+      "cat": "cn",
+      "official": false,
+      "rec": true,
+      "ours": true,
+      "desc": "中式网页主题库（本站原创）：8 套中国美学 CSS 主题（水墨/青绿/宋韵/敦煌/朱砂/新中式/竹韵/夜宴），内置中文排版规范，对比度均超 WCAG AA。可在线预览",
+      "descEn": "",
+      "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-web-themes",
+      "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/chinese-web-themes"
+    },
+    {
       "name": "chinese-typography",
       "cat": "cn",
       "official": false,
