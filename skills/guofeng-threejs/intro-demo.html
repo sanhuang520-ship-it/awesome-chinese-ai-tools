@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>国风开场特效 · 三种方案对比</title>
+<style>
+  :root{
+    --bg:#F7F5F0; --ink:#2E2A26; --soft:#6E6860; --line:#DDD7CC; --paper:#EFEBE3;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:#3A3733;
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75;
+  }
+  /* ── 页面内容（特效之下，始终可用）── */
+  .page{max-width:38em;margin:0 auto;padding:4rem 1.5rem}
+  h1{font-family:"Songti SC",serif;font-size:2em;color:#1C1A17;margin:0 0 .5em}
+  .sub{color:var(--soft);margin-bottom:2.5em}
+  .picker{display:flex;gap:.5rem;flex-wrap:wrap;margin:2em 0}
+  .picker button{
+    font:inherit;font-size:13px;padding:.5rem 1.1rem;border-radius:999px;
+    border:1px solid var(--line);background:#fff;color:#3A3733;cursor:pointer;
+    transition:all .2s;
+  }
+  .picker button:hover{border-color:var(--ink)}
+  .note{background:var(--paper);border-left:3px solid var(--ink);
+        padding:.8em 1.2em;font-size:14px;color:var(--soft);margin:2em 0}
+  table{width:100%;border-collapse:collapse;margin:2em 0;font-size:14px}
+  th,td{padding:.6em .8em;border-bottom:1px solid var(--line);text-align:left}
+  th{color:#1C1A17}
+  code{background:var(--paper);padding:.15em .4em;border-radius:3px;font-size:.9em}
+
+  /* ── 开场覆盖层 ── */
+  #intro{
+    position:fixed; inset:0; z-index:99;
+    pointer-events:none;               /* 不挡交互 */
+    opacity:1; transition:opacity .45s ease-out;
+  }
+  #intro.done{opacity:0}
+  #intro canvas{width:100%;height:100%;display:block}
+  #skip{
+    position:fixed;right:20px;bottom:20px;z-index:100;
+    font:inherit;font-size:12px;color:var(--soft);
+    background:rgba(247,245,240,.85);border:1px solid var(--line);
+    padding:.35rem 1rem;border-radius:999px;cursor:pointer;
+  }
+  @media (prefers-reduced-motion: reduce){ #intro{display:none} }
+</style>
+</head>
+<body>
+
+<div id="intro"><canvas id="fx"></canvas></div>
+<button id="skip" hidden>跳过</button>
+
+<div class="page">
+  <h1>国风开场特效</h1>
+  <p class="sub">三种方案对比 —— 点按钮重播，观察哪种最合适。</p>
+
+  <div class="picker">
+    <button data-fx="bloom">💧 水墨晕开</button>
+    <button data-fx="stroke">🖌️ 落笔一挥</button>
+    <button data-fx="scroll">📜 卷轴展开</button>
+  </div>
+
+  <div class="note">
+    注意：特效播放时这段文字<strong>一直是可读、可选中、可点击的</strong>——
+    覆盖层设了 <code>pointer-events:none</code>，内容从不被阻塞。
+  </div>
+
+  <h2 style="font-family:'Songti SC',serif;color:#1C1A17">设计约束</h2>
+  <table>
+    <tr><th>约束</th><th>做法</th></tr>
+    <tr><td>不阻塞内容</td><td>覆盖层 <code>pointer-events:none</code></td></tr>
+    <tr><td>回访不烦</td><td><code>sessionStorage</code> 一次会话只播一次</td></tr>
+    <tr><td>可跳过</td><td>点击任意处 / 右下角按钮</td></tr>
+    <tr><td>时长克制</td><td>1.2–1.5 秒，自动消失</td></tr>
+    <tr><td>无障碍</td><td>尊重 <code>prefers-reduced-motion</code></td></tr>
+    <tr><td>不拖慢首屏</td><td>内容渲染后才加载 Three.js</td></tr>
+  </table>
+</div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.170.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+const wrap = document.getElementById('intro');
+const canvas = document.getElementById('fx');
+const skip = document.getElementById('skip');
+
+const renderer = new THREE.WebGLRenderer({ canvas, alpha:true, antialias:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+
+const scene = new THREE.Scene();
+const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+
+const uniforms = {
+  uT:    { value: 0 },
+  uMode: { value: 0 },                    // 0 晕开 1 落笔 2 卷轴
+  uRes:  { value: new THREE.Vector2(innerWidth, innerHeight) },
+  uPaper:{ value: new THREE.Color('#F7F5F0') },
+  uInk:  { value: new THREE.Color('#2E2A26') },
+};
+
+const mat = new THREE.ShaderMaterial({
+  uniforms, transparent: true,
+  vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position,1.0); }`,
+  fragmentShader: `
+    uniform float uT; uniform int uMode;
+    uniform vec2 uRes; uniform vec3 uPaper, uInk;
+    varying vec2 vUv;
+
+    float hash(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5); }
+    float noise(vec2 p){
+      vec2 i=floor(p), f=fract(p); f=f*f*(3.0-2.0*f);
+      return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),
+                 mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x), f.y);
+    }
+    float fbm(vec2 p){
+      float v=0.0, a=0.5;
+      for(int i=0;i<4;i++){ v+=a*noise(p); p*=2.0; a*=0.5; }
+      return v;
+    }
+
+    void main(){
+      vec2 uv = vUv;
+      vec2 asp = vec2(uRes.x/uRes.y, 1.0);
+      float alpha = 1.0;    // 覆盖层不透明度：1=全遮 0=全透
+      vec3  col   = uPaper;
+
+      if (uMode == 0) {
+        // 水墨晕开：从中心扩散的不规则边界
+        float d = length((uv - 0.5) * asp);
+        float edge = uT * 1.25;
+        float wob  = fbm(uv * 6.0 + uT * 0.6) * 0.16;      // 边界扰动
+        float m = smoothstep(edge - 0.10, edge + 0.02, d + wob);
+        alpha = m;
+        // 扩散前沿压一层浓墨，像墨在纸上洇开
+        float front = smoothstep(0.14, 0.0, abs(d + wob - edge));
+        col = mix(uPaper, uInk, front * 0.55 * m);
+      }
+      else if (uMode == 1) {
+        // 落笔一挥：一道带笔锋的斜向擦除
+        float t = uT * 1.35;
+        float diag = uv.x * 0.78 + (1.0 - uv.y) * 0.22;
+        float wob = fbm(vec2(uv.y * 9.0, uv.x * 3.0)) * 0.10;   // 笔触毛边
+        float m = smoothstep(t - 0.16, t + 0.02, diag + wob);
+        alpha = m;
+        float front = smoothstep(0.13, 0.0, abs(diag + wob - t));
+        col = mix(uPaper, uInk, front * 0.6 * m);
+      }
+      else {
+        // 卷轴展开：从中间向两侧拉开，边缘留墨线
+        float t = uT * 1.15;
+        float d = abs(uv.x - 0.5) * 2.0;
+        float m = smoothstep(t - 0.05, t + 0.01, d);
+        alpha = m;
+        float front = smoothstep(0.045, 0.0, abs(d - t));
+        col = mix(uPaper, uInk, front * 0.75 * m);           // 卷轴边的墨线
+      }
+
+      if (alpha < 0.002) discard;
+      gl_FragColor = vec4(col, alpha);
+    }`,
+});
+scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2), mat));
+
+let start = 0, running = false, raf = 0;
+const DURATION = 1400;                        // 1.4 秒
+
+function play(mode) {
+  uniforms.uMode.value = mode;
+  uniforms.uT.value = 0;
+  wrap.classList.remove('done');
+  skip.hidden = false;
+  start = performance.now();
+  running = true;
+  cancelAnimationFrame(raf);
+  raf = requestAnimationFrame(tick);
+}
+function tick(now) {
+  const p = Math.min((now - start) / DURATION, 1);
+  uniforms.uT.value = p;
+  renderer.render(scene, camera);
+  if (p < 1) { raf = requestAnimationFrame(tick); }
+  else { finish(); }
+}
+function finish() {
+  running = false;
+  wrap.classList.add('done');
+  skip.hidden = true;
+}
+function bail() { if (running) { uniforms.uT.value = 1; finish(); } }
+
+skip.addEventListener('click', bail);
+addEventListener('click', e => { if (!e.target.closest('button[data-fx]')) bail(); });
+document.querySelector('.picker').addEventListener('click', e => {
+  const b = e.target.closest('button[data-fx]');
+  if (!b) return;
+  play({ bloom:0, stroke:1, scroll:2 }[b.dataset.fx]);
+});
+addEventListener('resize', () => {
+  renderer.setSize(innerWidth, innerHeight);
+  uniforms.uRes.value.set(innerWidth, innerHeight);
+});
+
+// 一次会话只自动播一次
+if (!sessionStorage.getItem('introPlayed')) {
+  sessionStorage.setItem('introPlayed', '1');
+  play(0);
+} else {
+  finish();
+}
+
+window.__fx = { play, info: () => ({
+  mode: uniforms.uMode.value, t: uniforms.uT.value,
+  running, glError: renderer.getContext().getError(),
+  calls: renderer.info.render.calls,
+}) };
+window.__ready = true;
+</script>
+</body>
+</html>
