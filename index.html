@@ -2693,13 +2693,25 @@ loadUpdates();
   skip.textContent = '跳过';
   document.body.appendChild(skip);
 
+  let cleaned = false;
   const cleanup = () => {
+    if (cleaned) return;                    // 幂等，多次调用安全
+    cleaned = true;
+    if (typeof hardStop !== 'undefined') clearTimeout(hardStop);
     wrap.classList.add('done');
     skip.remove();
     setTimeout(() => wrap.remove(), 600);   // 播完就移除，零常驻开销
   };
 
+  // 迟到的开场比不播更糟：超过 800ms 没加载好就直接放弃
+  let aborted = false;
+  const giveUp = setTimeout(() => { aborted = true; cleanup(); }, 800);
+  // 兜底：无论如何 5 秒后必定清理，杜绝残留
+  const hardStop = setTimeout(cleanup, 5000);
+
   import('https://unpkg.com/three@0.170.0/build/three.module.js').then(THREE => {
+    clearTimeout(giveUp);
+    if (aborted) return;                    // 已放弃就不再播
     const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
     const paper = isDark ? '#17171a' : '#f6f5f3';
     const ink   = isDark ? '#0a0a0c' : '#2e2a26';
