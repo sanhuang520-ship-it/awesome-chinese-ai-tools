@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>国风 Three.js · 水墨渲染演示</title>
+<style>
+  body { margin:0; background:#F7F5F0; font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; }
+  #app { width:100vw; height:100vh; display:block; }
+  .hud {
+    position:fixed; top:16px; left:16px; z-index:5;
+    background:rgba(247,245,240,.9); border:1px solid #DDD7CC;
+    border-radius:8px; padding:12px 16px; max-width:280px;
+  }
+  .hud h1 { font-family:"Songti SC",serif; font-size:18px; margin:0 0 6px; color:#1C1A17; }
+  .hud p { font-size:12px; line-height:1.7; color:#6E6860; margin:0 0 10px; }
+  .hud button {
+    font:inherit; font-size:12px; padding:4px 12px; margin:2px;
+    border:1px solid #DDD7CC; background:#fff; border-radius:999px;
+    color:#3A3733; cursor:pointer;
+  }
+  .hud button.on { background:#2E2A26; color:#F7F5F0; border-color:#2E2A26; }
+  #err { position:fixed; bottom:16px; left:16px; color:#B23A2E; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="hud">
+  <h1>水墨渲染</h1>
+  <p>Three.js 自定义 shader：墨分五色（色阶量化）+ 边缘积墨 + 宣纸纹理</p>
+  <div>
+    <button data-m="ink" class="on">水墨</button>
+    <button data-m="azurite">青绿</button>
+    <button data-m="vermilion">朱砂</button>
+  </div>
+</div>
+<canvas id="app"></canvas>
+<div id="err"></div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.170.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+const err = document.getElementById('err');
+window.addEventListener('error', e => err.textContent = '❌ ' + e.message);
+
+const canvas = document.getElementById('app');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#F7F5F0');
+
+const camera = new THREE.PerspectiveCamera(45, innerWidth/innerHeight, .1, 100);
+camera.position.set(0, 1.2, 4.2);
+camera.lookAt(0, 0, 0);
+
+/* ── 水墨材质：核心三件事 ──────────────────────────────
+   1. 墨分五色 —— 把连续光照量化成 5 个色阶
+   2. 边缘积墨 —— 视线与法线夹角越大，墨越浓（rim）
+   3. 笔触扰动 —— 用噪声扰动色阶边界，避免机械感
+   ──────────────────────────────────────────────── */
+const PALETTES = {
+  ink:       { paper:'#F7F5F0', ink:new THREE.Color('#2E2A26'), tint:new THREE.Color('#5A5550') },
+  azurite:   { paper:'#F2F5F2', ink:new THREE.Color('#14322B'), tint:new THREE.Color('#2F6B5E') },
+  vermilion: { paper:'#FBF7F4', ink:new THREE.Color('#3A1512'), tint:new THREE.Color('#B23A2E') },
+};
+
+const uniforms = {
+  uTime:  { value: 0 },
+  uInk:   { value: PALETTES.ink.ink },
+  uTint:  { value: PALETTES.ink.tint },
+  uPaper: { value: new THREE.Color(PALETTES.ink.paper) },
+  uLight: { value: new THREE.Vector3(1.2, 1.6, .9).normalize() },
+};
+
+const inkMaterial = new THREE.ShaderMaterial({
+  uniforms,
+  vertexShader: `
+    varying vec3 vN;
+    varying vec3 vV;
+    varying vec3 vP;
+    void main() {
+      vN = normalize(normalMatrix * normal);
+      vec4 mv = modelViewMatrix * vec4(position, 1.0);
+      vV = normalize(-mv.xyz);
+      vP = position;
+      gl_Position = projectionMatrix * mv;
+    }`,
+  fragmentShader: `
+    uniform float uTime;
+    uniform vec3  uInk, uTint, uPaper, uLight;
+    varying vec3  vN, vV, vP;
+
+    // 简易 hash 噪声（笔触扰动用）
+    float hash(vec3 p){ return fract(sin(dot(p, vec3(12.9898,78.233,45.164))) * 43758.5453); }
+    float noise(vec3 p){
+      vec3 i = floor(p), f = fract(p);
+      f = f*f*(3.0-2.0*f);
+      float n = mix(
+        mix(mix(hash(i), hash(i+vec3(1,0,0)), f.x), mix(hash(i+vec3(0,1,0)), hash(i+vec3(1,1,0)), f.x), f.y),
+        mix(mix(hash(i+vec3(0,0,1)), hash(i+vec3(1,0,1)), f.x), mix(hash(i+vec3(0,1,1)), hash(i+vec3(1,1,1)), f.x), f.y),
+        f.z);
+      return n;
+    }
+
+    void main() {
+      vec3 N = normalize(vN);
+      float lam = max(dot(N, normalize(uLight)), 0.0);
+
+      // 笔触扰动：让色阶边界不整齐，像手绘
+      float n = noise(vP * 5.5 + uTime * 0.06);
+      lam += (n - 0.5) * 0.16;
+
+      // 墨分五色：量化成 5 阶
+      float steps = 5.0;
+      float q = floor(clamp(lam, 0.0, 1.0) * steps) / (steps - 1.0);
+
+      // 边缘积墨：视线与法线夹角大的地方墨更浓
+      float rim = 1.0 - max(dot(N, normalize(vV)), 0.0);
+      float edge = smoothstep(0.45, 0.95, rim);
+
+      // 从纸白 → 淡墨 → 浓墨
+      vec3 col = mix(uInk, uPaper, q);
+      col = mix(col, uTint, (1.0 - q) * 0.35);      // 中间调带一点色
+      col = mix(col, uInk, edge * 0.85);             // 边缘压深
+
+      // 宣纸颗粒
+      col *= 0.97 + 0.03 * noise(vP * 40.0);
+
+      gl_FragColor = vec4(col, 1.0);
+    }`,
+});
+
+// 主体：环+球，形体简单但能看出明暗层次
+const group = new THREE.Group();
+group.add(new THREE.Mesh(new THREE.TorusKnotGeometry(.85, .28, 180, 32), inkMaterial));
+const ball = new THREE.Mesh(new THREE.SphereGeometry(.42, 48, 32), inkMaterial);
+ball.position.set(1.9, -.7, -.6);
+group.add(ball);
+scene.add(group);
+
+let raf;
+function loop(t) {
+  uniforms.uTime.value = t * .001;
+  group.rotation.y = t * .00025;
+  group.rotation.x = Math.sin(t * .0002) * .18;
+  renderer.render(scene, camera);
+  raf = requestAnimationFrame(loop);
+}
+raf = requestAnimationFrame(loop);
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+document.querySelector('.hud').addEventListener('click', e => {
+  const b = e.target.closest('button[data-m]');
+  if (!b) return;
+  const p = PALETTES[b.dataset.m];
+  uniforms.uInk.value.copy(p.ink);
+  uniforms.uTint.value.copy(p.tint);
+  uniforms.uPaper.value.set(p.paper);
+  scene.background.set(p.paper);
+  document.body.style.background = p.paper;
+  document.querySelectorAll('.hud button').forEach(x => x.classList.toggle('on', x === b));
+});
+
+// 供自动化检查
+window.__ready = true;
+window.__info = () => ({
+  three: THREE.REVISION,
+  drawCalls: renderer.info.render.calls,
+  triangles: renderer.info.render.triangles,
+  glError: renderer.getContext().getError(),
+  programs: renderer.info.programs?.length ?? -1,
+});
+</script>
+</body>
+</html>
