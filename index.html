@@ -582,6 +582,26 @@ footer a:hover{text-decoration:underline}
 /* ══════════════════════════════════════
    PRICING VIEW
 ══════════════════════════════════════ */
+
+/* ══════════════════════════════════════
+   水墨开场（一次会话一次，不阻塞内容）
+══════════════════════════════════════ */
+#ink-intro{
+  position:fixed; inset:0; z-index:900;
+  pointer-events:none;               /* 关键：内容始终可交互 */
+  opacity:1; transition:opacity .5s ease-out;
+}
+#ink-intro.done{opacity:0}
+#ink-intro canvas{width:100%;height:100%;display:block}
+#ink-skip{
+  position:fixed; right:20px; bottom:80px; z-index:901;
+  font-size:12px; color:var(--muted);
+  background:var(--surface); border:1px solid var(--border);
+  padding:5px 14px; border-radius:20px; cursor:pointer;
+  transition:opacity .3s;
+}
+@media (prefers-reduced-motion: reduce){ #ink-intro,#ink-skip{display:none!important} }
+
 /* ══════════════════════════════════════
    SKILLS 视图
 ══════════════════════════════════════ */
@@ -2649,6 +2669,92 @@ document.getElementById('ft-days').textContent =
 loadTools();
 loadNews();
 loadUpdates();
+
+/* ══════════════════════════════════════
+   水墨开场特效
+   · 一次会话只播一次（sessionStorage）
+   · pointer-events:none —— 从不阻塞内容
+   · 点击任意处跳过，1.4s 自动结束
+   · 内容渲染后才动态加载 Three.js
+══════════════════════════════════════ */
+(function initInkIntro(){
+  if (sessionStorage.getItem('inkIntroPlayed')) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  sessionStorage.setItem('inkIntroPlayed','1');
+
+  const wrap = document.createElement('div');
+  wrap.id = 'ink-intro';
+  const cv = document.createElement('canvas');
+  wrap.appendChild(cv);
+  document.body.appendChild(wrap);
+
+  const skip = document.createElement('button');
+  skip.id = 'ink-skip';
+  skip.textContent = '跳过';
+  document.body.appendChild(skip);
+
+  const cleanup = () => {
+    wrap.classList.add('done');
+    skip.remove();
+    setTimeout(() => wrap.remove(), 600);   // 播完就移除，零常驻开销
+  };
+
+  import('https://unpkg.com/three@0.170.0/build/three.module.js').then(THREE => {
+    const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+    const paper = isDark ? '#17171a' : '#f6f5f3';
+    const ink   = isDark ? '#0a0a0c' : '#2e2a26';
+
+    const renderer = new THREE.WebGLRenderer({canvas:cv, alpha:true, antialias:true});
+    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    renderer.setSize(innerWidth, innerHeight);
+    const scene = new THREE.Scene();
+    const cam = new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+    const U = {
+      uT:{value:0},
+      uRes:{value:new THREE.Vector2(innerWidth,innerHeight)},
+      uPaper:{value:new THREE.Color(paper)},
+      uInk:{value:new THREE.Color(ink)},
+    };
+    scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2), new THREE.ShaderMaterial({
+      uniforms:U, transparent:true,
+      vertexShader:'varying vec2 vUv; void main(){vUv=uv; gl_Position=vec4(position,1.);}',
+      fragmentShader:`
+        uniform float uT; uniform vec2 uRes; uniform vec3 uPaper,uInk;
+        varying vec2 vUv;
+        float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5);}
+        float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
+          return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x),f.y);}
+        float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<4;i++){v+=a*noise(p);p*=2.;a*=.5;}return v;}
+        void main(){
+          vec2 asp=vec2(uRes.x/uRes.y,1.);
+          float d=length((vUv-.5)*asp);
+          float edge=uT*1.25;
+          float wob=fbm(vUv*6.+uT*.6)*.16;
+          float m=smoothstep(edge-.10, edge+.02, d+wob);
+          if(m<.002) discard;
+          float front=smoothstep(.14,0.,abs(d+wob-edge));
+          gl_FragColor=vec4(mix(uPaper,uInk,front*.55*m), m);
+        }`,
+    })));
+
+    const DUR=1400; let start=performance.now(), raf=0, live=true;
+    (function tick(now){
+      if(!live) return;
+      const p=Math.min((now-start)/DUR,1);
+      U.uT.value=p;
+      renderer.render(scene,cam);
+      if(p<1) raf=requestAnimationFrame(tick);
+      else { live=false; renderer.dispose(); cleanup(); }
+    })(start);
+
+    const bail=()=>{ if(live){ live=false; cancelAnimationFrame(raf); renderer.dispose(); cleanup(); } };
+    skip.addEventListener('click', bail);
+    addEventListener('click', bail, {once:true});
+    addEventListener('resize', ()=>{ if(live){
+      renderer.setSize(innerWidth,innerHeight); U.uRes.value.set(innerWidth,innerHeight);} });
+  }).catch(()=>cleanup());   // 加载失败静默移除，不影响站点
+})();
+
 // 默认落在 Skills（主打栏目）
 showSkillsView();
 </script>
