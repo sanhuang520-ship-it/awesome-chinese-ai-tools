@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="ink">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中式网页主题库 · 演示</title>
+<link rel="stylesheet" href="themes.css">
+<style>
+  .switcher {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; gap: .4rem; flex-wrap: wrap;
+    padding: .8rem 1.5rem;
+    background: var(--surface); border-bottom: 1px solid var(--line);
+  }
+  .switcher button {
+    font: inherit; font-size: 13px;
+    padding: .3rem .8rem; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--bg);
+    color: var(--ink); cursor: pointer; transition: all .2s;
+  }
+  .switcher button:hover { border-color: var(--accent); }
+  .switcher button[aria-pressed="true"] {
+    background: var(--accent); color: var(--bg); border-color: var(--accent);
+  }
+  .swatch { display: flex; gap: .5rem; margin: 1.5em 0; }
+  .swatch i {
+    width: 40px; height: 40px; border-radius: 6px;
+    border: 1px solid var(--line); display: block;
+  }
+</style>
+</head>
+<body>
+
+<nav class="switcher" id="sw">
+  <button data-t="ink" aria-pressed="true">水墨</button>
+  <button data-t="azurite">青绿</button>
+  <button data-t="song">宋韵</button>
+  <button data-t="dunhuang">敦煌</button>
+  <button data-t="vermilion">朱砂</button>
+  <button data-t="neo">新中式</button>
+  <button data-t="bamboo">竹韵</button>
+  <button data-t="night">夜宴</button>
+</nav>
+
+<article>
+  <h1>中式网页主题库</h1>
+  <p>8 套基于中国传统美学的网页主题，内置中文排版规范。切换上方按钮查看效果。</p>
+
+  <div class="swatch">
+    <i style="background:var(--bg)"></i>
+    <i style="background:var(--surface)"></i>
+    <i style="background:var(--accent-weak)"></i>
+    <i style="background:var(--accent)"></i>
+    <i style="background:var(--ink)"></i>
+  </div>
+
+  <h2>为什么要单独做中式主题</h2>
+  <p>主流主题库（如 pakco-html 的 32 套）里有 <code>japanese-minimal</code>，却<strong>没有一套中式的</strong>。中文网页直接套西文模板，会同时踩到行高不够、中英文挤在一起、标点跑到行首等问题。</p>
+
+  <blockquote>
+    这套主题把<em>中文排版规范</em>写进了基础样式：行高 1.75、行宽 38em、CJK 避头尾、着重号代替斜体。
+  </blockquote>
+
+  <h3>中英混排测试</h3>
+  <p>我用 Python 写了一个爬虫，部署在 Cloudflare Workers 上，每天抓取 100 条数据。这段文字用来检验中英文之间的间距是否舒适，以及 <a href="#">链接样式</a> 在当前主题下是否协调。</p>
+
+  <h3>代码块</h3>
+  <pre><code>&lt;html data-theme="azurite"&gt;
+  &lt;link rel="stylesheet" href="themes.css"&gt;
+&lt;/html&gt;</code></pre>
+
+  <h3>表格</h3>
+  <table>
+    <thead><tr><th>主题</th><th>色系</th><th class="num">适合</th></tr></thead>
+    <tbody>
+      <tr><td>水墨</td><td>素白 · 墨黑</td><td class="num">随笔 · 诗词</td></tr>
+      <tr><td>青绿</td><td>石青 · 石绿</td><td class="num">文旅 · 山水</td></tr>
+      <tr><td>敦煌</td><td>土红 · 石青</td><td class="num">文化 IP</td></tr>
+      <tr><td>夜宴</td><td>墨底 · 暗金</td><td class="num">深色模式</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+  <p style="color:var(--ink-soft);font-size:.9em">
+    切换主题只需改 <code>data-theme</code> 属性，无需重新加载样式。
+  </p>
+</article>
+
+<script>
+document.getElementById('sw').addEventListener('click', e => {
+  const b = e.target.closest('button[data-t]');
+  if (!b) return;
+  document.documentElement.dataset.theme = b.dataset.t;
+  document.querySelectorAll('#sw button').forEach(x =>
+    x.setAttribute('aria-pressed', x === b));
+});
+</script>
+</body>
+</html>
