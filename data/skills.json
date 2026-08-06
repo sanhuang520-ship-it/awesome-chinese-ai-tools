@@ -34,6 +34,17 @@
   },
   "skills": [
     {
+      "name": "guofeng-threejs",
+      "cat": "cn",
+      "official": false,
+      "rec": true,
+      "ours": true,
+      "desc": "国风 Three.js 渲染（本站原创）：水墨 shader 三技法（墨分五色/边缘积墨/笔触扰动），含可运行 demo 与移动端性能要点。只做中式渲染，不做通用 Three.js 教程",
+      "descEn": "",
+      "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guofeng-threejs",
+      "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/guofeng-threejs"
+    },
+    {
       "name": "chinese-web-themes",
       "cat": "cn",
       "official": false,
