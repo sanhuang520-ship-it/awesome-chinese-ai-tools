@@ -1854,7 +1854,8 @@ async function spOpen(name, url){
   e.panel.querySelector('#sp-title').textContent = name;
   e.panel.querySelector('#sp-gh').href = url;
   // 有配套可视化页面的 skill，在抽屉里直接给入口
-  const VIS = {'guochao-visual-cn':'guochao/', 'chinese-web-themes':'themes/'};
+  const VIS = {'guochao-visual-cn':'guochao/', 'chinese-web-themes':'shots/',
+               'guofeng-threejs':'shots/', 'chinese-typography':'themes/'};
   let vis = e.panel.querySelector('#sp-vis');
   if (VIS[name]) {
     if (!vis) {
@@ -1863,7 +1864,8 @@ async function spOpen(name, url){
       e.panel.querySelector('#sp-gh').after(vis);
     }
     vis.href = VIS[name];
-    vis.textContent = name === 'guochao-visual-cn' ? '🎨 12 种画风对照' : '🎨 在线预览主题';
+    vis.textContent = name === 'guochao-visual-cn' ? '🎨 12 种画风对照'
+      : (VIS[name] === 'shots/' ? '📸 看真实渲染截图' : '🎨 在线预览主题');
     vis.style.display = '';
   } else if (vis) { vis.style.display = 'none'; }
   e.panel.querySelector('#sp-cmd').textContent =
@@ -1916,6 +1918,9 @@ function renderSkillGrid() {
         <a href="guochao/" style="font-size:12px;color:var(--accent3);text-decoration:none;
            border:1px solid var(--accent3);padding:3px 12px;border-radius:20px;margin-left:8px">
           🎨 12 种画风对照 →</a>
+        <a href="shots/" style="font-size:12px;color:var(--accent2);text-decoration:none;
+           border:1px solid var(--accent2);padding:3px 12px;border-radius:20px;margin-left:8px">
+          📸 真实渲染截图 →</a>
       </div>
       <div class="sk-grid">
         ${oursList.map(s => `
