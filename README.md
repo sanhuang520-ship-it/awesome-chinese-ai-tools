@@ -2,7 +2,7 @@
 
 # 中文 AI Skills 库
 
-**116 个 AI Agent 技能包 · 其中 11 个我们自己写的**
+**121 个 AI Agent 技能包 · 其中 11 个我们自己写的**
 
 每一个都调 GitHub API 验证过仓库真实存在，**并且每天自动复检一次**
 
@@ -111,10 +111,10 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 | 分类 | 数量 |
 |------|------|
-| 🇨🇳 中文原创仓库 | 57 |
+| 🇨🇳 中文原创仓库 | 56 |
 | 📄 官方（anthropics/skills） | 17 |
 | ✍️ 本站原创 | 11 |
-| **合计** | **116** |
+| **合计** | **121** |
 
 **[→ 看完整清单 SKILLS.md](SKILLS.md)**（每天从数据自动重建，不会和实际对不上）
 
@@ -129,7 +129,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 1 | 今日工具推荐 |
 | 2 | 核对 [SOURCES.md](SOURCES.md) 里各家 AI 官方公告页链接 |
 | 3 | 47 个工具链接实测可访问性 |
-| 4 | **116 个 skill 仓库复检**：还在不在、星数、最后更新时间 |
+| 4 | **121 个 skill 仓库复检**：还在不在、星数、最后更新时间 |
 | 5 | 从数据重建 SKILLS.md |
 
 最近复检：**2026-08-07**，失效 0 个。
@@ -156,7 +156,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 早期那批内容归档在 [archive/news-2026/](archive/news-2026/)，附了说明——
 保留是为了留下记录，但**请不要把那里的内容当作可靠信息使用**。
 
-详见 [内容准则与维护说明](CONTENT_POLICY.md)。
+详见 [内容准则与维护说明.md](内容准则与维护说明.md)。
 
 ---
 
