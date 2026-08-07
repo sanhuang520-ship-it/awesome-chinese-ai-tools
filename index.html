@@ -613,6 +613,8 @@ footer a:hover{text-decoration:underline}
   background:rgba(134,184,148,.14) !important;color:var(--accent2) !important;
   box-shadow:0 0 0 1px rgba(134,184,148,.32) !important;
 }
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .sk-hero{
   padding:20px 24px;border-radius:var(--r2);margin-bottom:20px;
   background:linear-gradient(120deg,rgba(134,184,148,.09),rgba(224,121,90,.05));
@@ -629,6 +631,14 @@ footer a:hover{text-decoration:underline}
   display:block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
   font-size:12.5px;color:var(--accent2);word-break:break-all;line-height:1.6;
 }
+.sk-install-sum{cursor:pointer;list-style:none;padding:9px 13px;margin-top:10px;
+  border:1px solid var(--border2);border-radius:10px;font-size:13.5px;color:var(--text2);
+  font-weight:600;user-select:none;transition:border-color .18s,color .18s}
+.sk-install-sum::-webkit-details-marker{display:none}
+.sk-install-sum::after{content:'  ▾';color:var(--muted)}
+details[open] .sk-install-sum::after{content:'  ▴'}
+.sk-install-sum:hover{border-color:var(--accent2);color:var(--text)}
+details[open] .sk-install-sum{margin-bottom:2px}
 .sk-warn{
   margin-top:10px;font-size:11.5px;color:var(--text2);line-height:1.65;
   padding:10px 13px;border-radius:var(--r);
@@ -1032,6 +1042,7 @@ footer a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
+<h1 class="sr-only">中文 AI Skills 库 —— AI Agent Skills 中文合集与工具导航</h1>
 
 <!-- ══════════════════════════════════════
      NAVBAR
@@ -1459,14 +1470,16 @@ function renderHero() {
    渲染 — 工具列表行
 ══════════════════════════════════════ */
 function faviconUrl(url) {
-  try { return `https://www.google.com/s2/favicons?domain=${new URL(url).hostname}&sz=64`; }
+  // 不用 google.com/s2/favicons —— 国内访问不到，50 个请求要等超时才回退，
+  // 白屏一片。改成直接取站点自己的 favicon，取不到就用首字母色块。
+  try { return `https://${new URL(url).hostname}/favicon.ico`; }
   catch { return ''; }
 }
 function logoHTML(t, cls='row-logo') {
   const src = faviconUrl(t.url);
   const letter = t.name[0].toUpperCase();
   return `<div class="${cls}">
-    <img src="${src}" alt="" loading="lazy"
+    <img src="${src}" alt="${t.name} 图标" loading="lazy" width="32" height="32"
       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <span class="logo-fb">${letter}</span>
   </div>`;
@@ -1756,6 +1769,8 @@ function renderSkills() {
       <p>Skills 是给 AI 助手加的「专业技能包」—— 一个文件夹 + 一份说明书，教 AI 怎么做某类任务。
          AI 会自动判断何时激活，无需手动切换。共收录 <b>${d.skills.length}</b> 个（其中
          <b style="color:var(--accent)">${d.skills.filter(s=>s.cat==='cn').length} 个中文原创</b>），全部已验证仓库真实存在，其中 <b style="color:var(--accent2)">✍️ 本站原创</b> 由我们自己编写维护。<br><span style="font-size:12px;color:var(--muted)">🔄 每日自动复检仓库存活与星数 · 最近复检 <b id="sk-checked">—</b> · 超半年未更新的会标 🕰</span></p>
+      <details class="sk-install-wrap" id="sk-install-details" open>
+      <summary class="sk-install-sum">📦 怎么安装（点开看命令与路径）</summary>
       <div class="sk-install">
         <div class="sk-install-label">一键安装（推荐）</div>
         <code>npx skills add &lt;仓库地址&gt; --list　　# 先看有哪些</code>
@@ -1767,6 +1782,7 @@ function renderSkills() {
         ⚠️ 注意：部分英文教程写的是 <code style="display:inline">~/.config/claude-code/skills/</code>，
         经实测 macOS 上实际生效的是上面这个路径。Skills 可包含可执行脚本，安装第三方 skill 前请先查看其内容。
       </div>
+      </details>
     </div>
     <div class="sk-toolbar">
       <button class="btn-primary" id="sk-share" style="font-size:12.5px;padding:8px 16px;flex-shrink:0">📸 生成分享图</button>
@@ -1799,6 +1815,9 @@ function renderSkills() {
          target="_blank" style="color:var(--accent2)">SKILLS.md</a>
     </p>`;
   // 绑定搜索与筛选
+  // 手机屏幕上安装说明默认收起 —— 展开时要滚过近 600px 才看得到第一个 skill
+  const dt = document.getElementById('sk-install-details');
+  if (dt && innerWidth < 768) dt.open = false;
   const ck = document.getElementById('sk-checked');
   if (ck) ck.textContent = skillsData.skillsCheckedAt || '—';
   document.getElementById('sk-search').addEventListener('input', e => {
