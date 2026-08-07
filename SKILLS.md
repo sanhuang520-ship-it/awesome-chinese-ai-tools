@@ -1,6 +1,6 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **121 个 Skill｜56 个中文原创｜✍️ 11 个本站原创**  
+> **129 个 Skill｜58 个中文原创｜✍️ 11 个本站原创**  
 > 每一个都经 GitHub API 验证仓库真实存在  
 > 🔄 最近自动复检：**2026-08-07**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
@@ -57,11 +57,12 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [guofeng-threejs](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guofeng-threejs) | 国风 Three.js 渲染（本站原创）：水墨 shader 三技法（墨分五色/边缘积墨/笔触扰动），含可运行 demo 与移动端性能要点。只做中式渲染，不做通用 Three.js 教程 |
 | [homework-tutor-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn) | 家长辅导作业助手（本站原创）：不给答案给引导话术，分学科方法，含情绪对抗处理 |
 
-### 🇨🇳 中文原创（46 个）
+### 🇨🇳 中文原创（48 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
 | [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | ⭐7,522 | superpowers 中文版：26万⭐框架完整汉化 + 6 个中国原创 skill |
+| [gzh-design-skill](https://github.com/isjiamu/gzh-design-skill) | ⭐2,901 | 微信公众号排版引擎：Markdown → 可直接粘进公众号编辑器的 HTML。6 套主题 + 主题生成器，自动章节编号、引言卡片、目录导航，支持 Word/PDF 输入 |
 | [codex-claude-academic-skills](https://github.com/zLanqing/codex-claude-academic-skills) | ⭐2,625 | 学术科研三件套：文献阅读、论文写作、科学计算全流程 |
 | [everything-claude-code-zh](https://github.com/xu-xiang/everything-claude-code-zh) | ⭐1,826 | Claude Code 完整配置中文翻译（agents/skills/hooks/commands） |
 | [agent-skills-with-anthropic](https://github.com/datawhalechina/agent-skills-with-anthropic) | ⭐1,443 | 吴恩达 DeepLearning.AI 课程的中文翻译与知识整理 |
@@ -71,6 +72,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [claude-code-skills-zh](https://github.com/laolaoshiren/claude-code-skills-zh) | ⭐738 | 面向中文开发者的技能库，按场景分类、复制即装 |
 | [higgsfield-seedance2-jineng](https://github.com/beshuaxian/higgsfield-seedance2-jineng) | ⭐730 | AI 视频生成 15 个 prompt skill（Seedance 2.0 × Higgsfield） |
 | [xiaohu-wechat-format](https://github.com/xiaohuailabs/xiaohu-wechat-format) | ⭐679 | 公众号一键排版发布：Markdown → 微信 HTML，30 套主题 |
+| [Enterprise-ai-scenario-map-skill](https://github.com/MetaInFLow/Enterprise-ai-scenario-map-skill) | ⭐625 | 咨询向：为任何企业自动生成 AI 应用场景地图报告。含企业画像、业务诊断、行业实践、场景全量表、实施路径 |
 | [Claude_skills_zh-CN](https://github.com/LeastBit/Claude_skills_zh-CN) | ⭐560 | 官方 anthropics/skills 的中文学习版 🕰<sub>2026-01-19 后未更新</sub> |
 | [cuimao-translator](https://github.com/Cuimao777/cuimao-translator) | ⭐461 | 一键把英文 PDF 翻译成流畅中文 |
 | [video-recap-skills](https://github.com/worldwonderer/video-recap-skills) | ⭐442 | 把任意视频剪成解说式短片 |
@@ -122,7 +124,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [Markdown to EPUB Converter](https://github.com/smerchek/claude-epub-skill) | ⭐147 | 把 Markdown 文档转成专业 EPUB 电子书 🕰<sub>2025-10-18 后未更新</sub> |
 | [Master Claude for Legal](https://github.com/sboghossian/master-claude-for-legal) | ⭐52 | 法务技能包：NDA 审阅、多方版本对比、引用核验 |
 
-### 💻 开发工程（21 个）
+### 💻 开发工程（22 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -137,6 +139,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [finishing-a-development-branch](https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch) | ⭐268,114 | 开发分支收尾：合并、清理、发布的标准流程 |
 | [Skill Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | ⭐14,717 | 把任意文档网站自动转成 Claude Skill —— 造 skill 的利器 |
 | [reddit-fetch](https://github.com/ykdojo/claude-code-tips/tree/main/skills/reddit-fetch) | ⭐9,560 | 当 WebFetch 被拦时，通过 Gemini CLI 抓取 Reddit 内容 |
+| [drawio-skill](https://github.com/Agents365-ai/drawio-skill) | ⭐7,284 | 用自然语言生成 draw.io 图表：11 种预设（UML、SysML/MBSE、BPMN、网络拓扑、C4 架构等），36 个工具 |
 | [lean-ctx](https://github.com/yvgude/lean-ctx) | ⭐3,533 | AI 编程代理的上下文运行时，管理会话与上下文 |
 | [Playwright Browser Automation](https://github.com/lackeyjb/playwright-skill) | ⭐2,981 | 用 Playwright 做浏览器自动化测试与验证 🕰<sub>2025-12-19 后未更新</sub> |
 | [subagent-driven-development](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/sadd/skills/subagent-driven-development) | ⭐1,305 | 把任务拆给多个子智能体并行处理，加速复杂开发 |
