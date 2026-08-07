@@ -1,0 +1,291 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>12 种中国美学画风 · 配色与纹样对照 | 中文 AI Skills 库</title>
+<meta name="description" content="12 种中国美学画风的配色体系、纹样语法与可直接复制的 AI 绘图提示词：水墨写意、工笔重彩、青绿山水、敦煌壁画、年画、剪纸、皮影、国潮插画、新中式、国漫、Q 版国风、港风复古。">
+<link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/">
+<style>
+:root{
+  --bg:#17171a;--surface:#1f1f23;--surface2:#26262b;--border:#33333a;--border2:#43434c;
+  --text:#eceaf0;--text2:#b5b2be;--muted:#83808d;--accent:#e0795a;--accent2:#86b894;
+  --r:10px;--r2:16px;
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  --font-serif:"Songti SC","SimSun","Source Han Serif SC","Noto Serif SC",Georgia,serif;
+  --font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+:root[data-theme="light"],
+html:not([data-theme="dark"]) body{}
+@media(prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --bg:#f6f5f3;--surface:#fff;--surface2:#efedea;--border:#e0dcd6;--border2:#d3cec6;
+    --text:#232228;--text2:#55535f;--muted:#83808d;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f6f5f3;--surface:#fff;--surface2:#efedea;--border:#e0dcd6;--border2:#d3cec6;
+  --text:#232228;--text2:#55535f;--muted:#83808d;
+}
+:root[data-theme="dark"]{
+  --bg:#17171a;--surface:#1f1f23;--surface2:#26262b;--border:#33333a;--border2:#43434c;
+  --text:#eceaf0;--text2:#b5b2be;--muted:#83808d;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);
+  font-size:16px;line-height:1.75;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:34px 20px 70px}
+a{color:var(--accent)}
+
+/* ── 页头 ── */
+.back{display:inline-block;font-size:13px;color:var(--muted);text-decoration:none;margin-bottom:18px}
+.back:hover{color:var(--accent)}
+h1{font-family:var(--font-serif);font-size:clamp(25px,5vw,38px);margin:0 0 10px;line-height:1.3}
+.lede{color:var(--text2);font-size:15.5px;max-width:40em;margin:0 0 18px}
+.note{border-left:3px solid var(--accent);background:var(--surface);padding:12px 16px;
+  border-radius:0 var(--r) var(--r) 0;font-size:14px;color:var(--text2);margin:0 0 26px;max-width:46em}
+.note b{color:var(--text)}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 26px}
+.chip{background:var(--surface);border:1px solid var(--border2);color:var(--text2);
+  border-radius:20px;padding:6px 14px;font-size:13px;cursor:pointer;transition:.18s}
+.chip:hover{border-color:var(--accent2);color:var(--text)}
+.chip.on{background:var(--accent2);border-color:var(--accent2);color:#14231a;font-weight:700}
+
+/* ── 画风卡 ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);
+  overflow:hidden;display:flex;flex-direction:column}
+.swatchbar{display:flex;height:76px}
+.swatchbar i{flex:1;position:relative;display:block}
+.swatchbar i::after{content:attr(data-n);position:absolute;left:0;right:0;bottom:5px;
+  text-align:center;font-size:9.5px;letter-spacing:.04em;color:rgba(255,255,255,.92);
+  text-shadow:0 1px 3px rgba(0,0,0,.6);font-weight:600}
+.swatchbar i.dark::after{color:rgba(0,0,0,.78);text-shadow:0 1px 2px rgba(255,255,255,.5)}
+.body{padding:15px 17px 17px;display:flex;flex-direction:column;flex:1}
+.ttl{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}
+.num{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.name{font-family:var(--font-serif);font-size:19px;font-weight:700}
+.meta{font-size:13.2px;color:var(--text2);margin:0 0 4px}
+.meta b{color:var(--text);font-weight:600}
+.warn{font-size:12.6px;color:var(--accent);margin:7px 0 0}
+.hexrow{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 0}
+.hex{font-family:var(--font-mono);font-size:10.5px;background:var(--surface2);
+  border:1px solid var(--border);border-radius:5px;padding:2px 6px;color:var(--text2);cursor:pointer}
+.hex:hover{border-color:var(--accent);color:var(--accent)}
+.prompt{margin-top:auto;padding-top:12px}
+.plabel{font-size:11px;color:var(--muted);letter-spacing:.06em;margin-bottom:5px}
+.pbox{position:relative;background:var(--surface2);border:1px solid var(--border);
+  border-radius:9px;padding:9px 11px;font-family:var(--font-mono);font-size:11.4px;
+  line-height:1.6;color:var(--text2);max-height:78px;overflow:auto}
+.copy{width:100%;margin-top:8px;background:transparent;border:1px solid var(--border2);
+  color:var(--text2);border-radius:8px;padding:7px;font-size:12.5px;font-weight:600;
+  cursor:pointer;transition:.18s;font-family:inherit}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+.copy.done{border-color:var(--accent2);color:var(--accent2)}
+
+/* ── 纹样 ── */
+h2{font-family:var(--font-serif);font-size:24px;margin:46px 0 8px}
+.sub{color:var(--text2);font-size:14.5px;margin:0 0 18px;max-width:42em}
+.motifs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.motif{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  padding:12px;text-align:center}
+.motif svg{width:100%;height:78px;display:block}
+.motif .mn{font-size:13.5px;font-weight:700;margin-top:7px}
+.motif .mm{font-size:11.5px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:13.6px;margin:0 0 8px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--border);padding:8px 11px;text-align:left;white-space:nowrap}
+th{background:var(--surface2);font-weight:700}
+td:first-child{font-weight:600}
+footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--border);
+  font-size:13px;color:var(--muted)}
+@media(max-width:520px){.wrap{padding:22px 15px 50px}.grid{grid-template-columns:1fr}}
+</style>
+
+<div class="wrap">
+<a class="back" href="../">← 回中文 AI Skills 库</a>
+
+<h1>12 种中国美学画风 · 配色与纹样对照</h1>
+<p class="lede">
+想要"中国风"，生成出来却是日式和风、或者塑料感的伪国风——
+原因通常是提示词里只写了 <code>Chinese style</code>，这个词太宽，模型会往日漫或泛东方风格跑。
+<b>必须指定具体的美学传统。</b>
+</p>
+
+<div class="note">
+⚠️ <b>这一页展示的是配色体系与纹样语法，不是模型生成结果的示例。</b><br>
+每种画风的实际出图效果取决于你用的模型（Midjourney / 即梦 / 可灵 / Nano Banana 各不相同）。
+我们不放"效果图"，是因为无法保证你用同样的提示词能得到同样的画面——
+放了反而误导。下面的色值和提示词都是可以直接验证的。
+</div>
+
+<div class="toolbar">
+  <span class="chip on" data-f="all">全部 12 种</span>
+  <span class="chip" data-f="trad">传统绘画</span>
+  <span class="chip" data-f="folk">民间艺术</span>
+  <span class="chip" data-f="modern">现代国潮</span>
+  <span class="chip" id="theme-btn" style="margin-left:auto">🌙 切换主题</span>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<h2>纹样是语法，不是装饰</h2>
+<p class="sub">
+把祥云、龙凤、回纹一股脑堆上去，得到的不是国潮，是庙会摊位。
+传统纹样是<b>有含义</b>的，用错比不用更糟。
+</p>
+<div class="motifs" id="motifs"></div>
+
+<h2>朝代服饰速查</h2>
+<p class="sub">⚠️ 不要混搭朝代再说是"汉服"，这是最常见的错误，懂行的一眼看出。</p>
+<table>
+<tr><th>朝代</th><th>特征</th><th>提示词</th></tr>
+<tr><td>唐</td><td>圆润丰腴、齐胸襦裙、披帛</td><td><code>Tang dynasty, high-waist ruqun, draped silk shawl</code></td></tr>
+<tr><td>宋</td><td>素雅、褙子、简洁</td><td><code>Song dynasty, beizi jacket, understated elegance</code></td></tr>
+<tr><td>明</td><td>立领、马面裙、端庄</td><td><code>Ming dynasty, stand collar, mamian pleated skirt</code></td></tr>
+<tr><td>清</td><td>旗装、马蹄袖</td><td><code>Qing dynasty, qipao-precursor robe</code></td></tr>
+</table>
+
+<h2>出问题时对照这张表</h2>
+<table>
+<tr><th>问题</th><th>原因</th><th>解法</th></tr>
+<tr><td>出来是日漫</td><td>用了 anime / Chinese style 太泛</td><td>换具体画风词，加 <code>not anime</code></td></tr>
+<tr><td>塑料感、廉价</td><td>元素堆砌、颜色乱</td><td>减元素，锁定 3 色以内</td></tr>
+<tr><td>人物脸不对</td><td>没指定面部特征</td><td>加 <code>East Asian facial features</code></td></tr>
+<tr><td>服饰乱穿</td><td>朝代没指定</td><td>明确唐 / 宋 / 明制</td></tr>
+<tr><td>太满没气口</td><td>缺留白意识</td><td>加 <code>generous negative space</code></td></tr>
+</table>
+
+<h2>节日配色的文化红线</h2>
+<table>
+<tr><th>场景</th><th>配色方向</th><th>避免</th></tr>
+<tr><td>春节</td><td>中国红 + 金 + 少量墨</td><td>白、黑为主</td></tr>
+<tr><td>中秋</td><td>黛蓝 + 月白 + 秋香</td><td>高饱和红</td></tr>
+<tr><td>清明</td><td>青绿 + 素白 + 淡墨</td><td><b>大红、大金</b></td></tr>
+<tr><td>端午</td><td>艾绿 + 朱砂 + 藤黄</td><td>—</td></tr>
+<tr><td>茶饮 / 中医</td><td>天青 + 木色 + 素白</td><td>荧光色</td></tr>
+</table>
+<p class="sub" style="margin-top:10px">
+⚠️ <b>清明、中元等祭祀节日不要用大红大金</b>——这是文化常识错误，比配色难看严重得多。
+</p>
+
+<footer>
+本页内容来自本站原创 Skill <code>guochao-visual-cn</code>，
+色值取自其 <code>references/motifs.md</code>。<br>
+安装：<code>npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill guochao-visual-cn</code><br><br>
+该 Skill 明确不做的事：不模仿在世艺术家个人风格 · 不生成宗教造像用于商业 ·
+不把生成图标注为真实文物 · 少数民族元素不随意混搭。
+</footer>
+</div>
+
+<script>
+const STYLES=[
+ {n:1,g:"trad",name:"水墨写意",feat:"留白大、笔触洒脱、墨分五色、意到笔不到",use:"山水、竹石、禅意、茶文化",
+  avoid:"过度细节、饱和色彩",
+  pal:[["宣纸","#F5F2EA",1],["淡墨","#9A9A96",1],["中墨","#5A5A5A",0],["浓墨","#2E2E2E",0],["焦墨","#1C1C1C",0]],
+  p:"Chinese ink wash painting, xieyi freehand style, generous negative space, varied ink tones from pale wash to deep black, expressive brushstrokes, rice paper texture"},
+ {n:2,g:"trad",name:"工笔重彩",feat:"线条精细、层层渲染、色彩浓丽、一丝不苟",use:"花鸟、仕女、宫廷题材、精致产品图",
+  avoid:"写意笔触、留白过多",
+  pal:[["绢底","#EDE4D3",1],["藤黄","#E8B647",1],["朱砂","#B93A32",0],["石绿","#5A8C6E",0],["石青","#3A5C8C",0]],
+  p:"Chinese gongbi painting, meticulous fine-line brushwork, layered mineral pigments, ornate detail, silk scroll texture"},
+ {n:3,g:"trad",name:"青绿山水",feat:"石青石绿为主、金线勾勒、装饰性强",use:"大场景、国潮海报、文旅宣传",
+  avoid:"低饱和灰调",ref:"《千里江山图》的色彩体系",
+  pal:[["绢底","#EDE4D3",1],["泥金","#D4A24C",1],["石绿","#5A8C6E",0],["石青","#3A5C8C",0],["赭石","#8C5A3C",0]],
+  p:"Chinese blue-green landscape painting, azurite and malachite mineral pigments, gold outline, layered mountains, decorative composition"},
+ {n:4,g:"trad",name:"敦煌壁画",feat:"土红/石青/土黄、飞天飘带、装饰图案、斑驳质感",use:"文化 IP、神话题材、国潮联名",
+  avoid:"干净平滑的现代质感",
+  pal:[["壁白","#E8DFD0",1],["土黄","#E8B647",1],["赭石","#8C5A3C",0],["胭脂","#9B3A4D",0],["石青","#3A5C8C",0]],
+  p:"Dunhuang mural style, earthy ochre and azurite palette, flying apsaras with flowing ribbons, weathered wall texture, Tang dynasty decorative patterns"},
+ {n:5,g:"folk",name:"年画",feat:"色彩鲜艳、人物饱满、寓意吉祥、平面化",use:"春节、喜庆主题、复古国潮",
+  avoid:"低饱和、写实光影",
+  pal:[["纸底","#F5F2EA",1],["藤黄","#E8B647",1],["中国红","#D02B2B",0],["翠绿","#5A8C6E",0],["墨","#1C1C1C",0]],
+  p:"Chinese New Year woodblock print style, vivid red yellow green palette, plump auspicious figures, flat decorative composition, folk art"},
+ {n:6,g:"folk",name:"剪纸",feat:"单色（多为红）、镂空、对称、线条连续",use:"节日、极简设计、图标",
+  avoid:"渐变、阴影、多色",
+  pal:[["白底","#FFFFFF",1],["中国红","#D02B2B",0]],
+  p:"Chinese paper-cut art, single red color on white, intricate symmetrical negative space, continuous connected lines, silhouette style"},
+ {n:7,g:"folk",name:"皮影",feat:"剪影、关节分明、暖光透射感、装饰镂空",use:"叙事插画、戏剧感场景",
+  avoid:"冷光、写实材质",
+  pal:[["暖光","#F6D28C",1],["琥珀","#E8B647",1],["朱砂","#B93A32",0],["深褐","#5C3A24",0],["墨","#1C1C1C",0]],
+  p:"Chinese shadow puppet style, backlit translucent silhouette, jointed figures, ornate cutout patterns, warm amber glow"},
+ {n:8,g:"modern",name:"国潮插画",feat:"传统元素 + 现代平面设计、高饱和撞色、几何化重构",use:"品牌营销、包装、电商主图",
+  avoid:"泛泛的龙凤祥云堆砌",warn:"最容易做「塑料」的一种，关键是传统元素要具体",
+  pal:[["素白","#F5F5F0",1],["泥金","#D4A24C",1],["中国红","#D02B2B",0],["青花蓝","#2A5CAA",0],["墨黑","#1C1C1C",0]],
+  p:"modern Chinese guochao illustration, traditional motifs reimagined in flat geometric shapes, bold contrasting colors, contemporary graphic design"},
+ {n:9,g:"modern",name:"新中式",feat:"留白、低饱和、木质与青瓷色、线条简洁、克制",use:"家居、茶饮、高端品牌",
+  avoid:"高饱和、元素密集",
+  pal:[["素白","#F5F5F0",1],["月白","#EEF0F2",1],["天青","#8FB8AC",1],["木色","#B08D6A",1],["黛","#4A4266",0]],
+  p:"neo-Chinese minimalist design, restrained palette of celadon and warm wood tones, generous white space, clean lines, understated elegance"},
+ {n:10,g:"modern",name:"国漫风格",feat:"中式面部结构、水墨或工笔质感融入动画、飘带与服饰细节",use:"角色设计、故事插画",
+  avoid:"日式大眼、赛璐璐平涂",warn:"不要写 anime，会直接跑到日式",
+  pal:[["月白","#EEF0F2",1],["天青","#8FB8AC",1],["石青","#3A5C8C",0],["朱砂","#B93A32",0],["墨","#1C1C1C",0]],
+  p:"Chinese animation style, ink-wash texture blended with cel shading, East Asian facial features, flowing hanfu garments with detailed patterns, not anime"},
+ {n:11,g:"modern",name:"Q 版国风",feat:"三头身、圆润、传统服饰简化、色彩明快",use:"表情包、IP 形象、儿童向",
+  avoid:"写实比例、暗沉配色",
+  pal:[["奶白","#FBF7F0",1],["藕荷","#C4A8A8",1],["天青","#8FB8AC",1],["藤黄","#E8B647",1],["中国红","#D02B2B",0]],
+  p:"chibi Chinese style, three-head-tall proportions, simplified hanfu, rounded soft shapes, cheerful bright colors"},
+ {n:12,g:"modern",name:"港风复古",feat:"霓虹、90 年代港片调色、市井烟火、胶片颗粒",use:"怀旧主题、餐饮、潮流",
+  avoid:"干净现代的数码感",
+  pal:[["霓虹粉","#FF4D8D",0],["品红","#C2185B",0],["青","#0F8B8D",0],["暗青","#0B3B3C",0],["夜","#1C1C1C",0]],
+  p:"1990s Hong Kong retro aesthetic, neon signage, film grain, nostalgic teal and magenta grading, bustling street scene"}
+];
+
+const MOTIFS=[
+ {n:"祥云",m:"吉祥、高升 · 最百搭",svg:`<path d="M18 52c-7 0-12-5-12-11s5-11 12-11c1-8 8-14 16-14 7 0 13 4 16 10 2-1 4-2 7-2 7 0 13 6 13 13s-6 13-13 13H18z" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M30 40c4-3 9-3 13 0" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".6"/>`},
+ {n:"回纹",m:"富贵不断头 · 边框器物",svg:`<path d="M10 20h56v40H10z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 30h36v20H20zM28 38h20v4H28z" fill="none" stroke="currentColor" stroke-width="2"/>`},
+ {n:"缠枝莲",m:"生生不息 · 通用装饰",svg:`<path d="M8 55c12 0 12-30 24-30s12 30 24 30 12-30 24-30" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="32" cy="30" r="4.5" fill="currentColor" opacity=".55"/><circle cx="56" cy="42" r="4.5" fill="currentColor" opacity=".55"/>`},
+ {n:"龙纹",m:"皇权 · ⚠️ 五爪为帝王专用",svg:`<path d="M10 48c10-4 14-16 24-16s10 12 20 12 12-10 20-10" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="22" cy="38" r="2.4" fill="currentColor"/><path d="M60 34l6-6M66 40l7-3" stroke="currentColor" stroke-width="2" fill="none"/>`},
+ {n:"蝙蝠",m:"福（谐音）· ⚠️ 出海慎用",svg:`<path d="M40 30c-6-8-18-10-26-4 4 4 4 10 2 14 8 4 18 2 24-4 6 6 16 8 24 4-2-4-2-10 2-14-8-6-20-4-26 4z" fill="none" stroke="currentColor" stroke-width="2"/>`},
+ {n:"梅兰竹菊",m:"四君子·气节 · 商业娱乐略违和",svg:`<path d="M20 62V22M20 40l-9-8M20 48l9-8" stroke="currentColor" stroke-width="2" fill="none"/><path d="M52 62V26M52 40l-8-7M52 50l9-8M52 34l8-7" stroke="currentColor" stroke-width="2" fill="none"/>`}
+];
+
+const grid=document.getElementById('grid');
+function render(f){
+  grid.innerHTML=STYLES.filter(s=>f==='all'||s.g===f).map(s=>`
+  <div class="card">
+    <div class="swatchbar">${s.pal.map(p=>
+      `<i style="background:${p[1]}" class="${p[2]?'dark':''}" data-n="${p[0]}"></i>`).join('')}</div>
+    <div class="body">
+      <div class="ttl"><span class="num">${String(s.n).padStart(2,'0')}</span>
+        <span class="name">${s.name}</span></div>
+      <p class="meta"><b>特征</b>　${s.feat}</p>
+      <p class="meta"><b>适合</b>　${s.use}</p>
+      ${s.ref?`<p class="meta"><b>参考</b>　${s.ref}</p>`:''}
+      <p class="warn">⚠️ 避免：${s.avoid}${s.warn?`　·　${s.warn}`:''}</p>
+      <div class="hexrow">${s.pal.map(p=>
+        `<span class="hex" data-c="${p[1]}">${p[0]} ${p[1]}</span>`).join('')}</div>
+      <div class="prompt">
+        <div class="plabel">提示词核心（点下方按钮复制）</div>
+        <div class="pbox">${s.p}</div>
+        <button class="copy" data-p="${s.p.replace(/"/g,'&quot;')}">复制提示词</button>
+      </div>
+    </div>
+  </div>`).join('');
+}
+render('all');
+
+document.getElementById('motifs').innerHTML=MOTIFS.map(m=>`
+  <div class="motif">
+    <svg viewBox="0 0 80 80" style="color:var(--accent2)">${m.svg}</svg>
+    <div class="mn">${m.n}</div><div class="mm">${m.m}</div>
+  </div>`).join('');
+
+document.querySelectorAll('.chip[data-f]').forEach(c=>c.onclick=()=>{
+  document.querySelectorAll('.chip[data-f]').forEach(x=>x.classList.remove('on'));
+  c.classList.add('on'); render(c.dataset.f);
+});
+
+function flash(el,txt){const o=el.textContent;el.textContent=txt;el.classList.add('done');
+  setTimeout(()=>{el.textContent=o;el.classList.remove('done')},1500);}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('.copy');
+  if(b){navigator.clipboard.writeText(b.dataset.p).then(()=>flash(b,'已复制 ✓'));return;}
+  const h=e.target.closest('.hex');
+  if(h){navigator.clipboard.writeText(h.dataset.c).then(()=>{
+    const o=h.textContent;h.textContent='已复制 ✓';
+    setTimeout(()=>h.textContent=o,1200);});}
+});
+
+const tb=document.getElementById('theme-btn');
+tb.onclick=()=>{
+  const cur=document.documentElement.dataset.theme
+    || (matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.dataset.theme = cur==='dark'?'light':'dark';
+};
+</script>
