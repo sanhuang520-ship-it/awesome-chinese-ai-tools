@@ -304,9 +304,10 @@ body{
   display:flex;align-items:center;justify-content:center;overflow:hidden;
 }
 .row-logo img{width:24px;height:24px;object-fit:contain;display:block}
+.logo-img{display:none}
 .logo-fb{
   font-size:13px;font-weight:700;color:var(--text2);
-  display:none;align-items:center;justify-content:center;
+  display:flex;align-items:center;justify-content:center;
   width:100%;height:100%;line-height:1
 }
 .row-main{display:flex;flex-direction:column;gap:3px;min-width:0}
@@ -1496,9 +1497,10 @@ function logoHTML(t, cls='row-logo') {
   const src = faviconUrl(t.url);
   const letter = t.name[0].toUpperCase();
   return `<div class="${cls}">
-    <img src="${src}" alt="${t.name} 图标" loading="lazy" width="32" height="32"
-      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <span class="logo-fb">${letter}</span>
+    <img src="${src}" alt="${t.name} 图标" loading="lazy" width="32" height="32" class="logo-img"
+      onload="this.previousElementSibling.style.display='none';this.style.display='block'"
+      onerror="this.remove()">
   </div>`;
 }
 
