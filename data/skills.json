@@ -1,7 +1,7 @@
 {
   "updated": "2026-08-08",
   "note": "官方 skills 描述译自 anthropics/skills 各 SKILL.md 的 description 字段；安装路径经本机实测验证",
-  "installPath": "~/.claude/skills/",
+  "installPath": "~/.agents/skills/",
   "categories": {
     "cn": {
       "label": "🇨🇳 中文原创",
@@ -1797,5 +1797,6 @@
     }
   ],
   "installCmd": "npx skills add <仓库地址>",
-  "skillsCheckedAt": "2026-08-07"
+  "skillsCheckedAt": "2026-08-07",
+  "installNote": "实测 skills CLI 1.5.22（2026-08-08）：`npx skills add` 把文件装到 `~/.agents/skills/`（多家 agent 共用），再在 `~/.claude/skills/` 建符号链接指过去。Claude Code 读的是 `~/.claude/skills/`，所以两个路径都能看到 skill。而部分教程写的 `~/.config/claude-code/skills/` 本机实测并不存在、也不生效。"
 }
