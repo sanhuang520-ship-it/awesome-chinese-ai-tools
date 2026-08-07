@@ -1,0 +1,136 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>原创 Skill 的真实渲染结果 | 中文 AI Skills 库</title>
+<meta name="description" content="chinese-web-themes 8 套中式网页主题与 guofeng-threejs 水墨 shader 的真实渲染截图，全部由 headless Chrome 实跑生成，非示意图。">
+<link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/">
+<style>
+:root{--bg:#17171a;--surface:#1f1f23;--border:#33333a;--border2:#43434c;
+ --text:#eceaf0;--text2:#b5b2be;--muted:#83808d;--accent:#e0795a;--accent2:#86b894;
+ --fs:"Songti SC","Source Han Serif SC","Noto Serif SC",Georgia,serif;
+ --fm:ui-monospace,SFMono-Regular,Menlo,monospace}
+@media(prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#f6f5f3;--surface:#fff;
+ --border:#e0dcd6;--border2:#d3cec6;--text:#232228;--text2:#55535f}}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);line-height:1.75;
+ font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.w{max-width:1180px;margin:0 auto;padding:34px 20px 70px}
+a{color:var(--accent)}
+.back{font-size:13px;color:var(--muted);text-decoration:none}
+h1{font-family:var(--fs);font-size:clamp(24px,5vw,36px);margin:16px 0 10px}
+.lede{color:var(--text2);max-width:42em;margin:0 0 18px}
+.note{border-left:3px solid var(--accent2);background:var(--surface);padding:12px 16px;
+ border-radius:0 10px 10px 0;font-size:14px;color:var(--text2);margin:0 0 30px;max-width:46em}
+.note b{color:var(--text)}
+h2{font-family:var(--fs);font-size:23px;margin:44px 0 6px}
+.sub{color:var(--text2);font-size:14.5px;margin:0 0 20px;max-width:44em}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+.s{margin:0;background:var(--surface);border:1px solid var(--border);
+ border-radius:14px;overflow:hidden}
+.s img{width:100%;height:auto;display:block;border-bottom:1px solid var(--border)}
+figcaption{padding:11px 14px;font-size:13.5px;color:var(--text2)}
+figcaption b{color:var(--text);font-family:var(--fs);font-size:15px}
+figcaption code{font-family:var(--fm);font-size:11.5px;color:var(--accent2)}
+figcaption span{font-size:12.5px;color:var(--muted)}
+.wide{grid-column:1/-1}
+footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--border);
+ font-size:13px;color:var(--muted)}
+code.i{background:var(--surface);border:1px solid var(--border);border-radius:5px;
+ padding:1px 6px;font-family:var(--fm);font-size:12.5px}
+@media(max-width:520px){.w{padding:22px 15px 50px}.g{grid-template-columns:1fr}}
+</style>
+<div class="w">
+<a class="back" href="../">← 回中文 AI Skills 库</a>
+<h1>原创 Skill 的真实渲染结果</h1>
+<p class="lede">这一页的每张图都是 <b>headless Chrome 实跑生成的</b>，不是示意图、不是设计稿。
+你可以自己打开源文件复现。</p>
+
+<div class="note">
+✅ <b>为什么这一页有图，而 12 种画风那一页没有？</b><br>
+因为这两个 skill 的产出是<b>代码</b>——CSS 和 GLSL shader，同样的代码在任何浏览器里跑出的结果一致，
+所以截图能代表真实效果。而画风类 skill 的产出是<b>提示词</b>，实际出图取决于你用哪个模型，
+我们没法用一张图替你保证结果，就不放。
+</div>
+
+<h2>chinese-web-themes · 8 套中式网页主题</h2>
+<p class="sub">八张样张的 HTML 内容<b>完全相同</b>，只切换 <code class="i">&lt;html data-theme="…"&gt;</code>，
+所以看到的每一处差别都来自主题本身。点图看大图。</p>
+<div class="g">
+  <figure class="s">
+    <a href="../assets/shots/theme-ink.webp" target="_blank">
+      <img src="../assets/shots/theme-ink.webp" alt="chinese-web-themes 的水墨主题渲染截图"
+           loading="lazy" width="1400" height="1272"></a>
+    <figcaption><b>水墨</b> <code>data-theme="ink"</code><br><span>墨色为骨，宣纸为底</span></figcaption>
+  </figure>
+  <figure class="s">
+    <a href="../assets/shots/theme-azurite.webp" target="_blank">
+      <img src="../assets/shots/theme-azurite.webp" alt="chinese-web-themes 的青绿主题渲染截图"
+           loading="lazy" width="1400" height="1272"></a>
+    <figcaption><b>青绿</b> <code>data-theme="azurite"</code><br><span>石青石绿，金线勾勒</span></figcaption>
+  </figure>
+  <figure class="s">
+    <a href="../assets/shots/theme-song.webp" target="_blank">
+      <img src="../assets/shots/theme-song.webp" alt="chinese-web-themes 的宋韵主题渲染截图"
+           loading="lazy" width="1400" height="1272"></a>
+    <figcaption><b>宋韵</b> <code>data-theme="song"</code><br><span>素雅克制，文人气</span></figcaption>
+  </figure>
+  <figure class="s">
+    <a href="../assets/shots/theme-dunhuang.webp" target="_blank">
+      <img src="../assets/shots/theme-dunhuang.webp" alt="chinese-web-themes 的敦煌主题渲染截图"
+           loading="lazy" width="1400" height="1272"></a>
+    <figcaption><b>敦煌</b> <code>data-theme="dunhuang"</code><br><span>土红石青，斑驳壁色</span></figcaption>
+  </figure>
+  <figure class="s">
+    <a href="../assets/shots/theme-vermilion.webp" target="_blank">
+      <img src="../assets/shots/theme-vermilion.webp" alt="chinese-web-themes 的朱砂主题渲染截图"
+           loading="lazy" width="1400" height="1272"></a>
+    <figcaption><b>朱砂</b> <code>data-theme="vermilion"</code><br><span>正红偏橙，硬朗有力</span></figcaption>
+  </figure>
+  <figure class="s">
+    <a href="../assets/shots/theme-neo.webp" target="_blank">
+      <img src="../assets/shots/theme-neo.webp" alt="chinese-web-themes 的新中式主题渲染截图"
+           loading="lazy" width="1400" height="1272"></a>
+    <figcaption><b>新中式</b> <code>data-theme="neo"</code><br><span>低饱和，木与青瓷</span></figcaption>
+  </figure>
+  <figure class="s">
+    <a href="../assets/shots/theme-bamboo.webp" target="_blank">
+      <img src="../assets/shots/theme-bamboo.webp" alt="chinese-web-themes 的竹韵主题渲染截图"
+           loading="lazy" width="1400" height="1272"></a>
+    <figcaption><b>竹韵</b> <code>data-theme="bamboo"</code><br><span>竹青素白，清爽</span></figcaption>
+  </figure>
+  <figure class="s">
+    <a href="../assets/shots/theme-night.webp" target="_blank">
+      <img src="../assets/shots/theme-night.webp" alt="chinese-web-themes 的夜宴主题渲染截图"
+           loading="lazy" width="1400" height="1272"></a>
+    <figcaption><b>夜宴</b> <code>data-theme="night"</code><br><span>深色底，暖金点缀</span></figcaption>
+  </figure>
+</div>
+
+<h2>guofeng-threejs · 水墨 shader</h2>
+<p class="sub">Three.js 自定义 GLSL：墨分五色（色阶量化）+ 边缘积墨 + 笔触扰动。
+下面是 WebGL 的真实渲染输出。</p>
+<div class="g">
+  <figure class="s wide">
+    <a href="../assets/shots/threejs-ink.webp" target="_blank">
+      <img src="../assets/shots/threejs-ink.webp" alt="guofeng-threejs 水墨 shader 渲染结果"
+           loading="lazy" width="1400" height="933"></a>
+    <figcaption><b>水墨渲染 demo</b> <code>skills/guofeng-threejs/demo.html</code><br>
+      <span>色阶量化把连续光照压成五档墨色，边缘处加深模拟积墨　·
+      <a href="../skills/guofeng-threejs/demo.html" target="_blank">打开可交互版本 →</a></span></figcaption>
+  </figure>
+  <figure class="s wide">
+    <a href="../assets/shots/threejs-intro.webp" target="_blank">
+      <img src="../assets/shots/threejs-intro.webp" alt="guofeng-threejs 开场水墨扩散效果"
+           loading="lazy" width="1400" height="933"></a>
+    <figcaption><b>开场水墨扩散</b> <code>skills/guofeng-threejs/intro-demo.html</code><br>
+      <span>网页首次打开时的入场效果　·
+      <a href="../skills/guofeng-threejs/intro-demo.html" target="_blank">打开可交互版本 →</a></span></figcaption>
+  </figure>
+</div>
+
+<footer>
+截图生成于 2026-08-07，用 headless Chrome（2× 像素密度）实跑，转 WebP 压缩。<br>
+安装：<code class="i">npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-web-themes</code><br>
+另见：<a href="../guochao/">12 种中国美学画风 · 配色与纹样对照</a>　·
+<a href="../themes/">主题在线切换预览</a>
+</footer>
+</div>
