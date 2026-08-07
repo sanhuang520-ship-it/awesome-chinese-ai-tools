@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05",
+  "updated": "2026-08-07",
   "note": "官方 skills 描述译自 anthropics/skills 各 SKILL.md 的 description 字段；安装路径经本机实测验证",
   "installPath": "~/.claude/skills/",
   "categories": {
@@ -30,12 +30,16 @@
     "sec": {
       "label": "🔐 安全取证",
       "color": "#c77b6a"
+    },
+    "3d": {
+      "label": "🧊 3D 与图形",
+      "color": "#7a9ec2"
     }
   },
   "skills": [
     {
       "name": "guofeng-threejs",
-      "cat": "cn",
+      "cat": "3d",
       "official": false,
       "rec": true,
       "ours": true,
@@ -1573,6 +1577,71 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-01-14",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "img2threejs",
+      "cat": "3d",
+      "official": false,
+      "stars": 10146,
+      "desc": "把参考图还原成纯代码的程序化 Three.js 模型，带质量门禁、可直接做动画。用于图生 3D、物体精细重建、风格化人物",
+      "descEn": "Turn an object or character reference image into a quality-gated, animation-ready procedural Three.js model built in code.",
+      "url": "https://github.com/img2threejs/img2threejs",
+      "lastPush": "2026-08-06",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "threejs-skills",
+      "cat": "3d",
+      "official": false,
+      "stars": 2932,
+      "desc": "Three.js 分领域技能包（10 个子技能）：场景与相机基础、几何体、材质、贴图、光照、动画、交互、着色器、后期处理、模型加载",
+      "descEn": "Three.js scene setup, cameras, renderer, Object3D hierarchy, coordinate systems, geometry, materials, textures, lighting, animation, interaction, shaders, postprocessing, loaders.",
+      "url": "https://github.com/CloudAI-X/threejs-skills",
+      "lastPush": "2026-07-09",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "threejs-game-skills",
+      "cat": "3d",
+      "official": false,
+      "stars": 1229,
+      "desc": "用 Three.js 做浏览器游戏的 9 个技能：玩法系统、AAA 级画面、游戏 UI、3D/图像/音频资产生成、调试与性能分析、QA 与发布",
+      "descEn": "Agent skills for building playable, polished Three.js browser games with gameplay, AAA-style graphics, UI, debug/profile, and QA/release.",
+      "url": "https://github.com/majidmanzarpour/threejs-game-skills",
+      "lastPush": "2026-07-16",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "img2obj",
+      "cat": "3d",
+      "official": false,
+      "stars": 1566,
+      "desc": "Codex 插件：给一张物体图，校验并把它重建为可编辑的程序化 Three.js 资产",
+      "descEn": "Use when the user provides or references an object image and wants Codex to validate, reconstruct, review, or refine it as an editable procedural Three.js asset.",
+      "url": "https://github.com/vinhhien112/img2obj",
+      "lastPush": "2026-08-06",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "auteur",
+      "cat": "3d",
+      "official": false,
+      "stars": 898,
+      "desc": "把网页当电影来导：整站从零设计构建，滚动驱动的电影感叙事页，多屏产品（应用/仪表盘/后台/引导/文档）共用一套设计系统",
+      "descEn": "Design and build complete web experiences from scratch — award-level pages, cinematic scroll-directed sites where the page is directed like a film.",
+      "url": "https://github.com/agiwhitelist/auteur",
+      "lastPush": "2026-08-06",
+      "skillOk": true,
+      "skillStatus": "ok",
       "skillCheckedAt": "2026-08-07"
     }
   ],
