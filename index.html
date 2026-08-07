@@ -661,6 +661,7 @@ footer a:hover{text-decoration:underline}
 }
 .sk-desc{font-size:12.5px;color:var(--text2);line-height:1.65;flex:1}
 .sk-desc-en{font-size:11px;color:var(--muted);line-height:1.5;font-style:italic}
+.b-stale{background:rgba(214,164,65,.14);border:1px solid rgba(214,164,65,.3);color:var(--accent3)}
 .sk-star{font-size:10.5px;color:var(--accent3);font-variant-numeric:tabular-nums;margin-left:auto}
 /* Skills 搜索与筛选 */
 .sk-toolbar{
@@ -1678,6 +1679,11 @@ async function showSkillsView() {
   renderSkills();
 }
 let skQuery = '', skFilter = 'all';
+// 超过 180 天未更新 → 提示用户可能已停止维护
+function skStale(s){
+  if (!s.lastPush) return false;
+  return (Date.now() - new Date(s.lastPush)) / 864e5 > 180;
+}
 function renderSkillGrid() {
   const d = skillsData, cats = d.categories;
   const norm = t => (t || '').toLowerCase().replace(/\s+/g, '');
@@ -1732,6 +1738,7 @@ function renderSkillGrid() {
               ${s.official ? '<span class="badge b-rec">官方</span>' : ''}
               ${s.rec && !s.ours ? '<span class="badge b-hot">🔥 推荐</span>' : ''}
               ${s.stars ? `<span class="sk-star">⭐ ${s.stars.toLocaleString()}</span>` : ''}
+              ${skStale(s) ? `<span class="badge b-stale" title="最后更新 ${s.lastPush}">🕰 久未更新</span>` : ''}
             </div>
             <div class="sk-desc">${s.desc}</div>
             <div class="sk-desc-en">${s.descEn || ''}</div>
@@ -1743,12 +1750,13 @@ function renderSkillGrid() {
 function renderSkills() {
   const d = skillsData, cats = d.categories;
   const cnCount = d.skills.filter(s => /[一-龥]/.test(s.desc || '')).length;
+  const checkedAt = d.skillsCheckedAt || '—';
   document.getElementById('skills-view').innerHTML = `
     <div class="sk-hero">
       <h2>🧩 AI Agent Skills</h2>
       <p>Skills 是给 AI 助手加的「专业技能包」—— 一个文件夹 + 一份说明书，教 AI 怎么做某类任务。
          AI 会自动判断何时激活，无需手动切换。共收录 <b>${d.skills.length}</b> 个（其中
-         <b style="color:var(--accent)">${d.skills.filter(s=>s.cat==='cn').length} 个中文原创</b>），全部已验证仓库真实存在，其中 <b style="color:var(--accent2)">✍️ 本站原创</b> 由我们自己编写维护。</p>
+         <b style="color:var(--accent)">${d.skills.filter(s=>s.cat==='cn').length} 个中文原创</b>），全部已验证仓库真实存在，其中 <b style="color:var(--accent2)">✍️ 本站原创</b> 由我们自己编写维护。<br><span style="font-size:12px;color:var(--muted)">🔄 每日自动复检仓库存活与星数 · 最近复检 <b id="sk-checked">—</b> · 超半年未更新的会标 🕰</span></p>
       <div class="sk-install">
         <div class="sk-install-label">一键安装（推荐）</div>
         <code>npx skills add &lt;仓库地址&gt; --list　　# 先看有哪些</code>
@@ -1792,6 +1800,8 @@ function renderSkills() {
          target="_blank" style="color:var(--accent2)">SKILLS.md</a>
     </p>`;
   // 绑定搜索与筛选
+  const ck = document.getElementById('sk-checked');
+  if (ck) ck.textContent = skillsData.skillsCheckedAt || '—';
   document.getElementById('sk-search').addEventListener('input', e => {
     skQuery = e.target.value; renderSkillGrid();
   });
