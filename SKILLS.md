@@ -1,6 +1,6 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **129 个 Skill｜58 个中文原创｜✍️ 11 个本站原创**  
+> **130 个 Skill｜59 个中文原创｜✍️ 12 个本站原创**  
 > 每一个都经 GitHub API 验证仓库真实存在  
 > 🔄 最近自动复检：**2026-08-07**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
@@ -39,7 +39,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 ## Skill 清单
 
-### ✍️ 本站原创（11 个）
+### ✍️ 本站原创（12 个）
 
 > 我们自己编写维护，每个都写明「不做什么」。可直接 `npx skills add` 安装。
 
@@ -53,6 +53,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [chinese-web-themes](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-web-themes) | 中式网页主题库（本站原创）：8 套中国美学 CSS 主题（水墨/青绿/宋韵/敦煌/朱砂/新中式/竹韵/夜宴），内置中文排版规范，对比度均超 WCAG AA。可在线预览 |
 | [chinese-work-report](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-work-report) | 职场汇报助手（本站原创）：周报/月报/述职/项目汇报，结论先行、卖点翻价值，含 PPT 大纲 |
 | [ecommerce-copywriting](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting) | 电商文案助手（本站原创）：商品标题/详情页/卖点提炼，分平台规则，含广告法违禁词红线 |
+| [github-readme-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/github-readme-cn) | GitHub 中文项目门面优化（本站原创）：首屏结构、真实截图怎么截、命名与 topics、发布前自查清单。附 15 个高增长仓库的实测数据，明确区分相关性与不可验证的部分，不承诺涨星 |
 | [guochao-visual-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guochao-visual-cn) | 国潮视觉助手（本站原创）：12 种中国美学画风配方（水墨/工笔/青绿/敦煌/年画/剪纸/国漫等），输出可直接用的提示词，附纹样寓意与传统配色速查 |
 | [guofeng-threejs](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guofeng-threejs) | 国风 Three.js 渲染（本站原创）：水墨 shader 三技法（墨分五色/边缘积墨/笔触扰动），含可运行 demo 与移动端性能要点。只做中式渲染，不做通用 Three.js 教程 |
 | [homework-tutor-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn) | 家长辅导作业助手（本站原创）：不给答案给引导话术，分学科方法，含情绪对抗处理 |
@@ -211,7 +212,7 @@ my-skill/
 ```
 
 **一个建议**：写清楚「不做什么」和「能做什么」同样重要。
-我们 11 个原创 Skill 都写明了边界——记账不做税务筹划、辅导作业不给答案、
+我们 12 个原创 Skill 都写明了边界——记账不做税务筹划、辅导作业不给答案、
 学习教练不替你完成输出、国潮视觉不伪造文物。
 
 推荐用官方 [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) 生成。
@@ -224,5 +225,5 @@ Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts
 
 ---
 
-*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-08-07。*  
+*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-08-08。*  
 *收录有误或想推荐新 Skill？欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)*
