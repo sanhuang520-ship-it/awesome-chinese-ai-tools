@@ -1,276 +1,190 @@
-# Awesome Chinese AI Tools 🇨🇳
+<div align="center">
 
-> **AI 工具导航 + Skills 中文合集** —— 47 个工具标注真实免费额度、链接每日实测；87 个 Agent Skill 全部验证真实（含 30 个中文原创）
+# 中文 AI Skills 库
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![GitHub Stars](https://img.shields.io/github/stars/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/stargazers)
-[![Last Update](https://img.shields.io/github/last-commit/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&label=最近更新)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/commits)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
+**116 个 AI Agent 技能包 · 其中 11 个我们自己写的**
 
-🌐 **在线使用**：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/
+每一个都调 GitHub API 验证过仓库真实存在，**并且每天自动复检一次**
 
+[🌐 在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)　·　[📋 完整清单](SKILLS.md)　·　[📸 真实渲染截图](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)　·　[🎨 12 种画风对照](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/)
 
-> 📝 **踩坑记录**：[7 万星仓库教的安装路径是错的——整理 112 个 AI Skill 的踩坑记录](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/blog/skill-pitfalls.md)
+</div>
 
 ---
 
-## 🎯 为什么用这个导航
+## 这是什么
 
-市面上的 AI 导航站，要么堆满广告，要么信息过时、链接早就失效。这个项目只做三件事：
+**Skills 是给 AI 助手加的「专业技能包」。**
 
-| 我们做的 | 别人常见的做法 |
-|----------|----------------|
-| ✅ **链接每天自动实测**，失效/迁移立刻修 | ❌ 收录后就不管了，点进去 404 |
-| ✅ **只标真实免费额度**，付费明确写出来 | ❌ 模糊写「免费试用」，进去才发现要付费 |
-| ✅ **不转述新闻**，只给官方公告页链接 | ❌ 转载未经核实的「今日爆炸新闻」 |
+技术上就是一个文件夹 + 一份 `SKILL.md` 说明书，告诉 AI：什么时候该用、按什么步骤做。
+AI 会自动判断何时激活，不需要手动切换。
 
-**真实修复记录**（都是自动检测发现的）：
-- `cursor.sh` → `cursor.com` 域名迁移
-- Windsurf 被 Cognition 收购、并入 Devin Desktop
-- Flux `blackforestlabs.ai` → `bfl.ai` 迁移
-- Runway `runwayml.com` → `runway.com` 迁移
+|  | 是什么 | 解决什么 |
+|---|--------|---------|
+| **Skills** | 一份工作说明书（Markdown + 可选脚本） | 教 AI **怎么做**某类任务 |
+| **MCP** | 一个后台服务 | 让 AI **连上**外部系统（数据库、浏览器） |
+| **插件** | 打包分发的组合 | 把 skills + MCP 打包一键装 |
 
 ---
 
----
+## ⚠️ 一个实测发现：很多教程写的安装路径是错的
 
-## ✍️ 本站原创 Skill（9 个）
+7 万星的 `awesome-claude-skills` 教你装到 `~/.config/claude-code/skills/`。
+**我照做，装完没生效。**
 
-市面上的 Skill 资源基本都是英文的，中文场景几乎空白。所以我们**自己写了这些**——
-不是翻译、不是搬运，是针对中文用户的真实场景从零编写并持续维护的。
-
-| Skill | 面向 | 做什么 |
-|-------|------|--------|
-| **[📐 中文排版助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-typography)** | 写网页 / 做排版的人 | 中英间距、CJK 断行避头尾、字体栈、标点全半角；附可直接用的 CSS |
-| **[🎨 国潮视觉助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guochao-visual-cn)** | 设计 / 自媒体 | 12 种中国美学画风配方（水墨/工笔/青绿/敦煌/年画/剪纸/国漫），附纹样寓意与传统配色 |
-| **[📖 拆书助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/book-digest-cn)** | 读书 / 做分享的人 | 三层拆解：作者在答什么问题→核心主张→对我有什么用 |
-| **[🎓 AI 学习教练](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ai-learning-coach)** | 想学任何东西的人 | 带走完整学习循环：主动回忆→输出→纠错归因→间隔复习，含错因分析模板 |
-| **[💰 记账整理助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/bookkeeping-cn)** | 个人 / 小店主 | 流水分类、收支表、预算跟踪；明确不做税务与投资建议 |
-| **[📚 家长辅导助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn)** | 中小学生家长 | 不给答案给引导话术，分学科方法；含「家长要发火时怎么办」 |
-| **[📊 职场汇报助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-work-report)** | 职场人 | 周报/月报/述职，结论先行、卖点翻价值，含汇报 PPT 大纲 |
-| **[🛒 电商文案助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting)** | 电商卖家 | 商品标题、详情页、卖点提炼，分平台规则；内置广告法违禁词红线 |
-| **[👩‍🏫 中文教案助手](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-lesson-plan)** | 中小学教师 | 按新课标三维目标出教案，含学情分析、分层作业、板书设计、说课稿 |
-
-📋 **[看看它们实际输出什么 → EXAMPLES.md](EXAMPLES.md)**（真实片段：教案目标怎么写、电商文案怎么避违禁词、辅导话术长什么样）
-
-**安装任意一个**：
+本机实测（macOS）实际生效的是：
 
 ```bash
-# 先看看仓库里有哪些（不安装）
+~/.claude/skills/
+```
+
+用官方 `npx skills add` CLI 装，落盘位置也是这里。
+**高星不等于正确——路径、命令这类可验证的东西，花 10 秒实测比信任星数靠谱。**
+
+---
+
+## 怎么装
+
+```bash
+# 先看仓库里有哪些
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
 
 # 装单个（推荐）
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-lesson-plan
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography
 
 # 全部装上
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'
 ```
 
-或手动把 `skills/<名称>/` 复制到 `~/.claude/skills/` 下。
+装好后重启 Claude Code，**无需手动调用**——描述任务，AI 自动激活。
 
-> ✅ 上述命令已用 `skills@1.5.21` 实测验证，能正确识别本仓库的 5 个 Skill。
+---
 
-> 这些 Skill 都写了明确的**边界与红线**——比如电商那个列了广告法违禁词，
-> 记账那个明确不做税务筹划，辅导作业那个坚持不直接给答案。
-> 我们认为一个好的 Skill 不只是"会做什么"，更要清楚"不做什么"。
+## ✍️ 本站原创 Skill（11 个）
 
-📖 [完整 110 个 Skill 合集 → SKILLS.md](SKILLS.md)
+这是这个仓库和其他 awesome 列表的区别：**下面这些是我们自己写的，不是搬运的。**
 
-## 🧩 AI Agent Skills 中文合集（114 个）
+| Skill | 做什么 |
+|-------|--------|
+| [`ai-learning-coach`](skills/ai-learning-coach/) | 学习教练：定目标 → 主动回忆 → 输出 → 纠错归因 → 间隔复习。不直接给答案 |
+| [`book-digest-cn`](skills/book-digest-cn/) | 拆书三层法：作者在答什么问题 → 核心主张 → 对我有什么用。拒绝抄目录式笔记 |
+| [`bookkeeping-cn`](skills/bookkeeping-cn/) | 记账整理。**明确不做**税务筹划、投资建议，不替代会计 |
+| [`chinese-lesson-plan`](skills/chinese-lesson-plan/) | 中小学教案。含防套话机制：学情分析要写这个年龄段的具体特征 |
+| [`chinese-typography`](skills/chinese-typography/) | 中文排版：中英间距、CJK 断行避头尾、字体栈、标点全半角，输出可直接用的 CSS |
+| [`chinese-web-themes`](skills/chinese-web-themes/) | 8 套中式网页主题（水墨/青绿/宋韵/敦煌/朱砂/新中式/竹韵/夜宴），对比度全过 WCAG AA |
+| [`chinese-work-report`](skills/chinese-work-report/) | 周报 / 述职 / 项目汇报，讲清楚做了什么、结果如何、下一步 |
+| [`ecommerce-copywriting`](skills/ecommerce-copywriting/) | 电商文案，内置《广告法》违禁词红线。**不编造**材质、成分、认证参数 |
+| [`guochao-visual-cn`](skills/guochao-visual-cn/) | 12 种中国美学画风配方，输出可直接用的 AI 绘图提示词 |
+| [`guofeng-threejs`](skills/guofeng-threejs/) | 国风 Three.js 渲染：水墨 shader 三技法。只做中式渲染，不做通用 Three.js 教程 |
+| [`homework-tutor-cn`](skills/homework-tutor-cn/) | 家长辅导作业。**不给答案**，给引导话术；还处理「家长自己要发火」的场景 |
 
-Skills 是给 AI 助手加的「专业技能包」。这块资源目前基本都是英文的，中文用户既看不懂说明、
-也不知道有哪些中文 skill 可用 —— 所以我们做了 **87 个 Skill 的中文合集，其中 30 个中文原创**。
+📋 **[看它们实际输出什么 → EXAMPLES.md](EXAMPLES.md)**
 
-| 分类 | 代表 Skill |
-|------|-----------|
-| 🇨🇳 **中文原创（30 个）** | 去 AI 味改写、中文论文排版、学术降 AIGC、小红书运营 139 技能、公众号一键排版、求职简历 |
-| 📄 文档办公 | docx / pdf / pptx / xlsx（官方）、Markdown→EPUB、法务技能包 |
-| 💻 开发工程 | 测试驱动开发、git worktrees、MCP 构建、Playwright 自动化 |
-| 🎨 创意设计 | 算法艺术、主题配色、HTML 审美库、AI 视频生成 |
+### 统一的设计原则：写清楚「不做什么」
 
-**一键安装**：
+写这些 skill 时最大的领悟是——**真正决定一个 skill 好不好用的，往往是它的边界。**
 
-```bash
-npx skills add <GitHub 仓库地址>
+> 记账不做税务筹划 · 辅导作业不给答案 · 学习教练不替你完成输出 · 国潮视觉不伪造文物
+
+一个只写"能做什么"的 skill，用起来会发现它在你没问的地方也给意见，
+在它不该确定的地方也很确定。
+
+---
+
+## 📸 真实渲染结果
+
+两个代码类 Skill 的产出可以直接截图验证（**headless Chrome 实跑生成，不是示意图**）：
+
+![chinese-web-themes 水墨主题真实渲染](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/assets/shots/theme-ink.webp)
+
+![guofeng-threejs 水墨 shader 真实渲染](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/assets/shots/threejs-ink.webp)
+
+**[看全部 8 套主题 + shader →](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)**
+
+> 为什么画风类 Skill 那一页没有效果图？因为它的产出是**提示词**，
+> 实际出图取决于你用哪个模型，我们没法用一张图替你保证结果，就不放。
+> 能给的是[配色体系与纹样对照](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/)——那些是可以直接验证的。
+
+---
+
+## 收录了什么
+
+| 分类 | 数量 |
+|------|------|
+| 🇨🇳 中文原创仓库 | 57 |
+| 📄 官方（anthropics/skills） | 17 |
+| ✍️ 本站原创 | 11 |
+| **合计** | **116** |
+
+**[→ 看完整清单 SKILLS.md](SKILLS.md)**（每天从数据自动重建，不会和实际对不上）
+
+另附 **47 个 AI 工具导航**，链接每日自动实测。
+
+---
+
+## 🔄 每天自动做的事
+
+| 步骤 | 做什么 |
+|------|--------|
+| 1 | 今日工具推荐 |
+| 2 | 核对 [SOURCES.md](SOURCES.md) 里各家 AI 官方公告页链接 |
+| 3 | 47 个工具链接实测可访问性 |
+| 4 | **116 个 skill 仓库复检**：还在不在、星数、最后更新时间 |
+| 5 | 从数据重建 SKILLS.md |
+
+最近复检：**2026-08-07**，失效 0 个。
+超过半年没更新的会在站内标 🕰——停止维护不等于没价值，但你有权在点进去之前就知道。
+
+### 检测抓到过的真实域名迁移
+
+- `cursor.sh` → `cursor.com`
+- Windsurf 被 Cognition 收购，并入 Devin Desktop
+- `blackforestlabs.ai` → `bfl.ai`（Flux）
+- `runwayml.com` → `runway.com`
+
+---
+
+## 📌 内容原则：不转述新闻
+
+**我们不转述任何 AI 新闻。**
+
+原因很实际：无法核实时效性新闻的真伪。这个项目早期干过这事，
+出现过把几个月前的旧消息当作"今日新闻"发布的情况。
+
+现在改为**只提供各家 AI 官方公告页的直达链接**（[SOURCES.md](SOURCES.md)），
+读者点过去看原文，我们不做任何转述和担保。
+早期那批内容归档在 [archive/news-2026/](archive/news-2026/)，附了说明——
+保留是为了留下记录，但**请不要把那里的内容当作可靠信息使用**。
+
+详见 [内容准则与维护说明.md](内容准则与维护说明.md)。
+
+---
+
+## 想写自己的 Skill
+
+```
+my-skill/
+└── SKILL.md          # 必需
+    references/       # 可选
+    scripts/          # 可选
 ```
 
-> ⚠️ **实测纠错**：多个高星英文仓库把安装路径写成 `~/.config/claude-code/skills/`，
-> 经本机实测，macOS 上**实际生效的是 `~/.claude/skills/`**。
+推荐用官方 [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) 生成。
 
-📖 [完整清单与安装指南 → SKILLS.md](SKILLS.md) ｜ 🌐 [在线浏览（可搜索筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
-
----
-
-## 📊 数据概览
-
-| 指标 | 数值 |
-|------|------|
-| 收录工具 | **47** 个 |
-| 有免费额度 | **45** 个 |
-| 中文支持优秀 | **32** 个 |
-| 分类 | **10** 类 |
-| 🧩 Agent Skills | **87** 个（30 中文原创 / 17 官方） |
-| 最近链接检测 | 2026-08-04 |
+⚠️ **安全提醒**：Skills 可以包含**可执行脚本**。装第三方 skill 前，
+先看一眼它的 `SKILL.md` 和 `scripts/` 内容。
 
 ---
 
-## 图例
+## 贡献
 
-| 标记 | 含义 |  | 标记 | 含义 |
-|------|------|--|------|------|
-| ⭐ | 编辑推荐 |  | 🆓 | 有免费额度 |
-| 💰 | 付费为主 |  | 🇨🇳 | 中文支持优秀 |
-| 🌐 | 需科学上网 |  | ★★★★★ | 综合评级 |
+收录有误、链接失效、想推荐新 Skill，欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)
+或看 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
----
-
-## 目录
-
-- [💬 大语言模型](#大语言模型)
-- [🎨 图像生成](#图像生成)
-- [🎬 视频生成](#视频生成)
-- [💻 编程辅助](#编程辅助)
-- [✍️ 写作与文案](#写作与文案)
-- [🌐 翻译工具](#翻译工具)
-- [🎙️ 语音与 TTS](#语音与)
-- [🔎 搜索增强](#搜索增强)
-- [⚡ 效率工具](#效率工具)
-- [🤖 多模态与 Agent](#多模态与)
-- [🗺️ 按场景选工具](SCENARIOS.md) —— 学生 / 程序员 / 创作者 / 打工人
-- [🧩 AI Skills 中文合集](SKILLS.md) —— 87 个 Skill，30 个中文原创
-- [📰 AI 官方信源](#-ai-官方信源)
+**发现事实错误请一定告诉我们** —— 这个项目全部的价值就在"可信"两个字上。
 
 ---
 
-## 工具清单
-
-### 💬 大语言模型
-
-| 工具 | 免费额度 | 评级 | 说明 |
-|------|----------|------|------|
-| [DeepSeek](https://chat.deepseek.com) ⭐🆓🇨🇳 | 网页免费，API 极低价 | ★★★★★ | 开源推理模型，代码和数学能力比肩 GPT-4，API 价格是 OpenAI 的 1/10，国产性价比之王。 |
-| [Kimi](https://kimi.moonshot.cn) ⭐🆓🇨🇳 | 网页版免费，API 有额度 | ★★★★★ | 200k 超长上下文，直接上传论文 / 合同 / 报告问重点，月之暗面出品。 |
-| [通义千问 Qwen3](https://tongyi.aliyun.com) ⭐🆓🇨🇳 | 网页+API 有免费额度 | ★★★★★ | 阿里云旗舰，Qwen3-235B 参数，推理能力强，多模态，API 免费额度充足。 |
-| [Claude](https://claude.ai) ⭐🆓🌐 | 每日有限次数免费 | ★★★★ | Anthropic 出品，长文档分析和代码能力顶级，对话逻辑清晰，需要梯子。 |
-| [豆包](https://www.doubao.com) 🆓🇨🇳 | 网页完全免费 | ★★★★★ | 字节跳动出品，多模态联网，日常创作和对话场景均衡稳定，完全免费。 |
-| [文心一言](https://yiyan.baidu.com) 🆓🇨🇳 | 网页版免费 | ★★★★★ | 百度出品，整合百度搜索，知识库问答和搜索增强场景有独特优势。 |
-| [讯飞星火](https://xinghuo.xfyun.cn) 🆓🇨🇳 | 每日免费次数 | ★★★★★ | 科大讯飞，语音交互能力国内最强，适合语音+对话组合场景。 |
-| [智谱清言](https://chatglm.cn) 🆓🇨🇳 | 网页+API 免费额度 | ★★★★★ | 清华背景，GLM-4，支持代码解释器和 Agent，API 免费额度开发者友好。 |
-| [ChatGPT](https://chatgpt.com) 🆓🌐 | GPT-4o mini 免费 | ★★★★ | OpenAI 旗舰，生态最完善，插件和 GPTs 数量最多，覆盖场景最广。 |
-| [Gemini](https://gemini.google.com) 🆓🌐 | 网页免费 | ★★★★ | Google 出品，深度整合 Gmail/Docs/Drive，重度 Google 生态用户首选。 |
-
-### 🎨 图像生成
-
-| 工具 | 免费额度 | 评级 | 说明 |
-|------|----------|------|------|
-| [即梦 AI](https://jimeng.jianying.com) ⭐🆓🇨🇳 | 每日免费积分 | ★★★★★ | 字节出品，中文提示词理解极佳，不需要学英文，每天免费额度充足，上手最快。 |
-| [LiblibAI](https://www.liblib.art) ⭐🆓🇨🇳 | 每日免费算力 | ★★★★★ | 国内最大的 SD 模型社区，二次元、写实、国风模型极其丰富，可在线直接跑。 |
-| [文心一格](https://yige.baidu.com) 🆓🇨🇳 | 每日免费电量 | ★★★★★ | 百度出品，国风、古风、水墨风格尤为出色，适合中式内容创作。 |
-| [通义万相](https://tongyi.aliyun.com/wanxiang) 🆓🇨🇳 | API 有免费额度 | ★★★★★ | 阿里出品，针对中文场景专项训练，商业插图和电商图片质量稳定。 |
-| [Adobe Firefly](https://firefly.adobe.com) 🆓🌐 | 每月免费积分 | ★★★★ | 商用授权最安全，Adobe 合规训练数据，生成结果可直接用于商业项目。 |
-| [Midjourney](https://midjourney.com) 💰🌐 | 无免费额度，需订阅 | ★★★ | 商业设计质量顶级，好莱坞和广告公司御用，但无免费额度，需梯子。 |
-| [Flux](https://bfl.ai) 🆓🌐 | 开源版本免费 | ★★★ | 新一代开源图像模型，质量超越同期 SD，可本地部署无限生成。 |
-
-### 🎬 视频生成
-
-| 工具 | 免费额度 | 评级 | 说明 |
-|------|----------|------|------|
-| [可灵 AI](https://klingai.kuaishou.com) ⭐🆓🇨🇳 | 每日免费积分 | ★★★★★ | 快手出品，720p 高质量，人物运动和物理效果在国产方案中最自然，每天有免费积分。 |
-| [即梦视频](https://jimeng.jianying.com) 🆓🇨🇳 | 每日免费积分 | ★★★★★ | 字节出品，与即梦图像同平台，工作流顺畅，中文描述直接生成视频。 |
-| [海螺视频](https://hailuoai.video) 🆓🇨🇳 | 每日免费次数 | ★★★★★ | MiniMax 出品，人物运动尤其流畅，适合有人物出镜的短视频片段。 |
-| [Runway](https://runwayml.com) 💰🌐 | 每月少量免费积分 | ★★★ | 好莱坞采用的专业视频 AI 工具，奥斯卡获奖影片有实际使用案例。 |
-
-### 💻 编程辅助
-
-| 工具 | 免费额度 | 评级 | 说明 |
-|------|----------|------|------|
-| [通义灵码](https://lingma.aliyun.com) ⭐🆓🇨🇳 | 完全免费 | ★★★★★ | 阿里出品，VS Code 和 JetBrains 插件，完全免费，国内访问流畅，中文注释理解好。 |
-| [Cursor](https://cursor.com) ⭐🆓 | 每月 2000 次补全免费 | ★★★★ | AI 原生 IDE，能理解整个项目上下文，复杂功能开发体验远超普通补全工具。 |
-| [Windsurf](https://devin.ai/desktop) ⭐🆓 | 已并入 Devin Desktop（Cascade 7/1 EOL） | ★★★★ | Codeium 出品，功能与 Cursor 相近，完全免费是最大优势，国内可直接用。 |
-| [MarsCode](https://www.marscode.cn) 🆓🇨🇳 | 云 IDE 免费 | ★★★★★ | 字节出品的在线云 IDE，内置 AI 助手，无需本地配置，适合快速验证想法。 |
-| [Bolt](https://bolt.new) 🆓 | 每日免费额度 | ★★★★ | 一句话生成可运行的全栈 web 应用，适合快速原型，当天可上线演示。 |
-| [v0](https://v0.dev) 🆓 | 每月免费积分 | ★★★★ | Vercel 出品，专注 UI 组件生成，输出 React/Tailwind 代码质量高，前端神器。 |
-
-### ✍️ 写作与文案
-
-| 工具 | 免费额度 | 评级 | 说明 |
-|------|----------|------|------|
-| [秘塔写作猫](https://xiezuocat.com) ⭐🆓🇨🇳 | 基础功能免费 | ★★★★★ | 国内老牌中文写作助手，语法检查、改写润色效果自然，不像 AI 腔，学生和职场必备。 |
-| [Gamma](https://gamma.app) ⭐🆓 | 每月免费积分 | ★★★★ | 文字大纲一键生成精美 PPT，模板质量远超普通模板，适合快速出提案。 |
-| [笔灵 AI](https://ibiling.cn) 🆓🇨🇳 | 每日免费字数 | ★★★★★ | 论文、报告、简历专项，格式规范，学生和需要正式文体的职场人适用。 |
-
-### 🌐 翻译工具
-
-| 工具 | 免费额度 | 评级 | 说明 |
-|------|----------|------|------|
-| [沉浸式翻译](https://immersivetranslate.com) ⭐🆓🇨🇳 | 基础功能完全免费 | ★★★★★ | 浏览器双语对照神器，网页、PDF、字幕全支持，不破坏原文排版，装上就离不开。 |
-| [DeepL](https://deepl.com) ⭐🆓 | 每月 50 万字符免费 | ★★★★★ | 欧洲语言翻译质量全球最佳，中英互译自然度也高，每月 50 万字符免费。 |
-| [彩云小译](https://caiyunapp.com) 🆓🇨🇳 | 每月免费字符 | ★★★★★ | 日语翻译国内最佳，支持实时字幕翻译，追日语内容的用户必备。 |
-| [有道翻译](https://fanyi.youdao.com) 🆓🇨🇳 | 网页完全免费 | ★★★★★ | 网易出品，词典+翻译双合一，生词本和例句库是英语学习者的好帮手。 |
-
-### 🎙️ 语音与 TTS
-
-| 工具 | 免费额度 | 评级 | 说明 |
-|------|----------|------|------|
-| [讯飞配音](https://peiyin.xunfei.cn) ⭐🆓🇨🇳 | 每日免费字符 | ★★★★★ | 国内 TTS 标杆，音色数量最多，新闻播报到有声书多种风格，每天有免费额度。 |
-| [Fish Audio](https://fish.audio) ⭐🆓🇨🇳 | 每月免费额度 | ★★★★★ | 支持中文方言，音色克隆效果国产最佳，上传 1 分钟样本就能克隆你的声音。 |
-| [Azure TTS](https://azure.microsoft.com/zh-cn/products/ai-services/text-to-speech) 🆓🇨🇳 | 每月 50 万字符免费 | ★★★★★ | 微软出品，中文音色自然度高，每月 50 万字符免费，适合开发者集成到应用。 |
-
-### 🔎 搜索增强
-
-| 工具 | 免费额度 | 评级 | 说明 |
-|------|----------|------|------|
-| [秘塔搜索](https://metaso.cn) ⭐🆓🇨🇳 | 完全免费 | ★★★★★ | 国内最好用的 AI 搜索，无广告，学术模式+深度模式，引用可追溯，替代百度首选。 |
-| [Perplexity](https://perplexity.ai) ⭐🆓🌐 | 每日有限次数 | ★★★★ | AI 搜索国际标杆，引用来源准确，技术和学术查询效果最佳，需要梯子。 |
-| [天工 AI 搜索](https://search.tiangong.cn) 🆓🇨🇳 | 完全免费 | ★★★★★ | 昆仑万维出品，中文时事资讯查询强，支持多轮追问，完全免费无广告。 |
-
-### ⚡ 效率工具
-
-| 工具 | 免费额度 | 评级 | 说明 |
-|------|----------|------|------|
-| [WPS AI](https://ai.wps.cn) ⭐🆓🇨🇳 | 基础功能免费 | ★★★★★ | Office 场景 AI 助手，文档摘要、公式生成、PPT 美化，对中文职场文档最熟悉。 |
-| [飞书多维表格](https://feishu.cn) 🆓🇨🇳 | 免费版功能充足 | ★★★★★ | AI+电子表格组合，自动化流程强，适合团队协作和数据管理场景。 |
-| [Gamma](https://gamma.app) 🆓 | 每月免费积分 | ★★★★ | AI 一键生成 PPT 和文档，模板精美，适合快速出提案，每月有免费积分。 |
-
-### 🤖 多模态与 Agent
-
-| 工具 | 免费额度 | 评级 | 说明 |
-|------|----------|------|------|
-| [Coze](https://coze.cn) ⭐🆓🇨🇳 | 国内版完全免费 | ★★★★★ | 字节出品 Agent 平台，拖拽式配置，插件生态丰富，搭建个人 AI 助手和自动化流程首选。 |
-| [FastGPT](https://fastgpt.in) ⭐🆓🇨🇳 | 开源+云版本有免费额度 | ★★★★★ | 知识库问答平台，RAG 效果在开源方案中最稳定，把内部文档变成智能助手。 |
-| [Dify](https://dify.ai) ⭐🆓🇨🇳 | 开源可自部署 | ★★★★ | 国产 LLMOps 开源标杆，GitHub 50k+ stars，可视化编排 Agent，支持私有化部署。 |
-| [MaxKB](https://maxkb.cn) 🆓🇨🇳 | 开源免费 | ★★★★★ | 1Panel 出品，知识库问答，安装简单，中小团队快速搭建内部知识库。 |
-
----
-
-## 📰 AI 官方信源
-
-本站**不转述任何新闻**。想看最新动态，请直接访问官方公告页：
-
-| 厂商 | 官方公告 |
-|------|----------|
-| OpenAI | https://openai.com/news/ |
-| Anthropic (Claude) | https://www.anthropic.com/news |
-| Google DeepMind | https://deepmind.google/ |
-| DeepSeek | https://api-docs.deepseek.com/ |
-| 月之暗面 Kimi | https://kimi.moonshot.cn/ |
-| 通义千问 | https://tongyi.aliyun.com/ |
-| 智谱 GLM | https://www.zhipuai.cn/ |
-| 字节豆包 | https://www.doubao.com/ |
-
-> 为什么这么做？见 [内容准则与维护说明](内容准则与维护说明.md)
-
----
-
-## 🤝 参与贡献
-
-发现工具信息有误、链接失效、或想推荐新工具？
-欢迎 [提交 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues) 或 PR，我每天都在维护。
-
-## ⚠️ 免责声明
-
-免费额度政策变动频繁，**付费前请务必到官网确认当前政策**。本站为个人维护的公益导航，不对第三方信息准确性负责。
-
----
-
-**觉得有用？点个 ⭐ Star 让更多人看到**
+<div align="center">
+<sub>MIT License · 数据最后复检 2026-08-07 · README 由脚本从实际数据生成于 2026-08-07</sub>
+</div>
