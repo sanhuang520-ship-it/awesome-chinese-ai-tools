@@ -1977,8 +1977,9 @@ function renderSkills() {
         <code>${d.installPath}</code>
       </div>
       <div class="sk-warn">
-        ⚠️ 注意：部分英文教程写的是 <code style="display:inline">~/.config/claude-code/skills/</code>，
-        经实测 macOS 上实际生效的是上面这个路径。Skills 可包含可执行脚本，安装第三方 skill 前请先查看其内容。
+        ⚠️ 实测（skills CLI 1.5.22）：<code style="display:inline">npx skills add</code> 把文件装到上面这个通用目录，
+        再在 <code style="display:inline">~/.claude/skills/</code> 建<b>符号链接</b>指过去 —— Claude Code 读的是后者，两处都能看到。
+        而部分教程写的 <code style="display:inline">~/.config/claude-code/skills/</code> 本机实测<b>并不存在</b>。Skills 可包含可执行脚本，安装第三方 skill 前请先查看其内容。
       </div>
       </details>
     </div>
