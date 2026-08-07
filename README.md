@@ -6,8 +6,8 @@
 
 **给 AI 助手装上中文场景的专业技能包**
 
-[![Skills](https://img.shields.io/badge/Skills-129%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
-[![原创](https://img.shields.io/badge/本站原创-11%20个-86b894?style=flat-square)](EXAMPLES.md)
+[![Skills](https://img.shields.io/badge/Skills-130%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
+[![原创](https://img.shields.io/badge/本站原创-12%20个-86b894?style=flat-square)](EXAMPLES.md)
 [![复检](https://img.shields.io/badge/仓库复检-每日自动-d9a441?style=flat-square)](#-每天自动做的事)
 [![Stars](https://img.shields.io/github/stars/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=e0795a)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
@@ -18,8 +18,8 @@
 </div>
 
 > **和别的 awesome 列表有什么不一样**<br>
-> ① 11 个 Skill 是我们自己写的，不是搬运<br>
-> ② 129 个仓库**每天自动复检**一次还在不在<br>
+> ① 12 个 Skill 是我们自己写的，不是搬运<br>
+> ② 130 个仓库**每天自动复检**一次还在不在<br>
 > ③ 不转述任何 AI 新闻——[原因](CONTENT_POLICY.md)
 
 ```bash
@@ -76,7 +76,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 ---
 
-## ✍️ 本站原创 Skill（11 个）
+## ✍️ 本站原创 Skill（12 个）
 
 这是这个仓库和其他 awesome 列表的区别：**下面这些是我们自己写的，不是搬运的。**
 
@@ -90,6 +90,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [`chinese-web-themes`](skills/chinese-web-themes/) | 8 套中式网页主题（水墨/青绿/宋韵/敦煌/朱砂/新中式/竹韵/夜宴），对比度全过 WCAG AA |
 | [`chinese-work-report`](skills/chinese-work-report/) | 周报 / 述职 / 项目汇报，讲清楚做了什么、结果如何、下一步 |
 | [`ecommerce-copywriting`](skills/ecommerce-copywriting/) | 电商文案，内置《广告法》违禁词红线。**不编造**材质、成分、认证参数 |
+| [`github-readme-cn`](skills/github-readme-cn/) | GitHub 中文项目门面优化（本站原创）：首屏结构、真实截图怎么截、命名与 topics、发布前自查清单。附 15 个高增长仓库的实测数据，明确区分相关性与不可验证的部分，不承诺涨星 |
 | [`guochao-visual-cn`](skills/guochao-visual-cn/) | 12 种中国美学画风配方，输出可直接用的 AI 绘图提示词 |
 | [`guofeng-threejs`](skills/guofeng-threejs/) | 国风 Three.js 渲染：水墨 shader 三技法。只做中式渲染，不做通用 Three.js 教程 |
 | [`homework-tutor-cn`](skills/homework-tutor-cn/) | 家长辅导作业。**不给答案**，给引导话术；还处理「家长自己要发火」的场景 |
@@ -127,10 +128,10 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 | 分类 | 数量 |
 |------|------|
-| 🇨🇳 中文原创仓库 | 58 |
+| 🇨🇳 中文原创仓库 | 59 |
 | 📄 官方（anthropics/skills） | 17 |
-| ✍️ 本站原创 | 11 |
-| **合计** | **129** |
+| ✍️ 本站原创 | 12 |
+| **合计** | **130** |
 
 **[→ 看完整清单 SKILLS.md](SKILLS.md)**（每天从数据自动重建，不会和实际对不上）
 
@@ -145,7 +146,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 1 | 今日工具推荐 |
 | 2 | 核对 [SOURCES.md](SOURCES.md) 里各家 AI 官方公告页链接 |
 | 3 | 47 个工具链接实测可访问性 |
-| 4 | **129 个 skill 仓库复检**：还在不在、星数、最后更新时间 |
+| 4 | **130 个 skill 仓库复检**：还在不在、星数、最后更新时间 |
 | 5 | 从数据重建 SKILLS.md |
 
 最近复检：**2026-08-07**，失效 0 个。
@@ -202,5 +203,5 @@ my-skill/
 ---
 
 <div align="center">
-<sub>MIT License · 数据最后复检 2026-08-07 · README 由脚本从实际数据生成于 2026-08-07</sub>
+<sub>MIT License · 数据最后复检 2026-08-07 · README 由脚本从实际数据生成于 2026-08-08</sub>
 </div>
