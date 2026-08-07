@@ -30,8 +30,9 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'             # 全部
 ```
 
-> ⚠️ **实测提醒**：部分英文教程（包括 7 万星仓库）写的路径是 `~/.config/claude-code/skills/`，
-> 经本机实测，macOS 上**实际生效的是 `~/.claude/skills/`**。
+> ⚠️ **实测提醒（CLI 1.5.22）**：`npx skills add` 把文件装到 `~/.agents/skills/`（多家 agent 共用），
+> 再在 `~/.claude/skills/` 建符号链接指过去 —— Claude Code 读的是后者，两处都能看到。
+> 而部分教程（包括 7 万星仓库）写的 `~/.config/claude-code/skills/`，本机实测**并不存在**。
 
 装好后重启 Claude Code，**无需手动调用**——描述任务，AI 自动激活。
 
