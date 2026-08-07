@@ -1779,7 +1779,7 @@ function spMd(src){
   const blocks = [];
   src = src.replace(/```(\w*)\n([\s\S]*?)```/g, function(m,l,c){
     blocks.push('<pre><code>'+spEsc(c.replace(/\n$/,''))+'</code></pre>');
-    return ' B'+(blocks.length-1)+' ';
+    return ' \u0001B'+(blocks.length-1)+' ';
   });
   src = spEsc(src);
   const lines = src.split('\n'), out = [];
@@ -1792,7 +1792,7 @@ function spMd(src){
   const closeTable = function(){ if (inTable) { out.push('</table>'); inTable = false; } };
   for (let raw of lines) {
     const line = raw.trimEnd();
-    if (/^B\d+$/.test(line.trim())) { closeList(); closeTable(); out.push(line.trim()); continue; }
+    if (/^\u0001B\d+$/.test(line.trim())) { closeList(); closeTable(); out.push(line.trim()); continue; }
     if (!line.trim()) { closeList(); closeTable(); continue; }
     if (/^\|(.+)\|$/.test(line)) {
       const cells = line.slice(1,-1).split('|').map(function(c){return c.trim();});
@@ -1818,7 +1818,7 @@ function spMd(src){
     out.push('<p>'+inline(line)+'</p>');
   }
   closeList(); closeTable();
-  return out.join('\n').replace(/B(\d+)/g, function(m,i){ return blocks[i]; });
+  return out.join('\n').replace(/\u0001B(\d+)/g, function(m,i){ return blocks[i]; });
 }
 
 let spEls = null;
