@@ -27,7 +27,22 @@ $ ls ~/.config/claude-code/skills/
 ls: 该目录不存在
 ```
 
-后来用 `npx skills add` 这个官方 CLI 安装，验证了一下它装到哪：**也是 `~/.claude/skills/`**。
+后来用 `npx skills add` 这个官方 CLI 安装，验证了一下它装到哪。
+
+**补充更正（2026-08-07 复测，CLI 1.5.22）**：现在的行为比我最初写的更细一层——
+文件实际落在 `~/.agents/skills/`（多家 agent 共用的通用目录），
+然后在 `~/.claude/skills/` 建一个符号链接指过去：
+
+```bash
+$ ls -l ~/.claude/skills/
+lrwxr-xr-x  github-readme-cn -> ../../.agents/skills/github-readme-cn
+```
+
+Claude Code 读的是 `~/.claude/skills/`，所以两个路径下都能看到 skill。
+**但 `~/.config/claude-code/skills/` 依然不存在、依然不生效**——最初那个结论没变，
+只是我把话说得更准了。
+
+这件事本身也是个教训：**工具会变，写死的结论要定期复测。**
 
 **教训**：高星不等于正确。这类文档在社区里互相抄，很少有人真的跑一遍。**遇到路径、命令这种可验证的东西，花 10 秒实测比信任星数靠谱。**
 
