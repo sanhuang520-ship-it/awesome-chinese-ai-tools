@@ -1,0 +1,46 @@
+name: 推荐一个 Skill 或工具
+description: 收录新的 Agent Skill、AI 工具，或报告失效链接
+labels: ["收录建议"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提交前请注意：**带推广或追踪参数的链接（`?from=` `?ref=` `utm_*`）一律不收录。**
+        如果这是你自己的产品，完全可以推荐，但请在下面勾选说明。
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 类型
+      options:
+        - Agent Skill（仓库里有 SKILL.md）
+        - AI 工具
+        - 报告失效链接 / 事实错误
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: 链接
+      description: 干净的官网或 GitHub 地址，不要带任何追踪参数
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 它做什么
+      description: 一两句话。如果是 Skill，请贴上对方 SKILL.md 里 frontmatter 的 description
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: disclosure
+    attributes:
+      label: 利益相关声明
+      options:
+        - label: 这是我自己（或我所在团队）做的产品
+        - label: 链接不含推广、返利或追踪参数
+          required: true
