@@ -611,7 +611,9 @@ footer a:hover{text-decoration:underline}
 /* ══════════════════════════════════════
    SKILLS 视图
 ══════════════════════════════════════ */
-.skills-view{display:none;max-width:1200px;margin:0 auto;padding:20px}
+.skills-view{display:none;max-width:1200px;margin:0 auto;
+  /* 顶部让出固定导航栏高度，否则内容会钻到 navbar + 吸顶分类条下面 */
+  padding:calc(var(--navbar-h) + 8px) 20px 20px}
 .skills-view.active{display:block}
 .cat-tab-skills{color:var(--accent2) !important}
 .cat-tab-skills:hover,.cat-tab-skills.active{
@@ -726,7 +728,7 @@ details[open] .sk-install-sum{margin-bottom:2px}
 .sk-res-desc{font-size:11.5px;color:var(--muted)}
 
 .pricing-view{
-  max-width:1100px;margin:0 auto;padding:20px 20px 40px;
+  max-width:1100px;margin:0 auto;padding:calc(var(--navbar-h) + 8px) 20px 40px;
   display:none;
 }
 .pricing-view.active{display:block}
