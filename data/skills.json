@@ -34,6 +34,10 @@
     "3d": {
       "label": "🧊 3D 与图形",
       "color": "#7a9ec2"
+    },
+    "game": {
+      "label": "🎮 游戏开发",
+      "color": "#b98ac9"
     }
   },
   "skills": [
@@ -1640,6 +1644,110 @@
       "descEn": "Design and build complete web experiences from scratch — award-level pages, cinematic scroll-directed sites where the page is directed like a film.",
       "url": "https://github.com/agiwhitelist/auteur",
       "lastPush": "2026-08-06",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "Claude-Code-Game-Studios",
+      "cat": "game",
+      "desc": "把 Claude Code 变成完整游戏工作室：49 个 AI 智能体 + 72 个工作流技能 + 一套协调系统。仓库含 74 个 SKILL.md",
+      "descEn": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system.",
+      "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "official": false,
+      "stars": 23683,
+      "lastPush": "2026-05-21",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "GD-Agentic-Skills",
+      "cat": "game",
+      "desc": "Godot 4.7+ 专用技能库：97 个专家技能 + 27 个指南，覆盖 2D/3D 动画、物理、光照、材质、世界构建、能力系统等",
+      "descEn": "The official \"Long-Term Memory\" for Godot 4.7+ AI Agents. A high-density library of 97 expert skills and 27 guides.",
+      "url": "https://github.com/thedivergentai/GD-Agentic-Skills",
+      "official": false,
+      "stars": 471,
+      "lastPush": "2026-07-28",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "awesome-gamedev-agent-skills",
+      "cat": "game",
+      "desc": "游戏开发技能路由：装一次，主路由自动识别引擎（Godot/Unity/Unreal/Bevy/Phaser/PixiJS/three.js/LÖVE/pygame/Roblox）并调用对应技能。含 67 个 SKILL.md",
+      "descEn": "Game-development Agent Skills for AI coding agents: install once and a master router loads the right skill for the engine and task.",
+      "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
+      "official": false,
+      "stars": 426,
+      "lastPush": "2026-07-25",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "novel-to-game",
+      "cat": "game",
+      "desc": "把小说变成有据可依、可实际游玩的游戏：7 个技能覆盖小说分析、游戏概念、世界设计、美术指导、构建与 QA",
+      "descEn": "Agent Skills that turn novels into source-grounded, fully playable games for Claude Code, Codex, and Kimi Code.",
+      "url": "https://github.com/worldwonderer/novel-to-game",
+      "official": false,
+      "stars": 591,
+      "lastPush": "2026-08-07",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "sprite-gen",
+      "cat": "game",
+      "desc": "生成干净的 2D 游戏精灵图与动画图集：状态分行、去除杂边、逐帧对齐的流水线",
+      "descEn": "Generate clean 2D game sprites and animation atlases with a component-row pipeline: base identity, per-state layout guides, chroma-key alpha cleanup.",
+      "url": "https://github.com/aldegad/sprite-gen",
+      "official": false,
+      "stars": 637,
+      "lastPush": "2026-08-06",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "gzh-design-skill",
+      "cat": "cn",
+      "desc": "微信公众号排版引擎：Markdown → 可直接粘进公众号编辑器的 HTML。6 套主题 + 主题生成器，自动章节编号、引言卡片、目录导航，支持 Word/PDF 输入",
+      "descEn": "An AI-agent skill that turns Markdown into paste-ready WeChat Official Account HTML with 6 curated themes.",
+      "url": "https://github.com/isjiamu/gzh-design-skill",
+      "official": false,
+      "stars": 2901,
+      "lastPush": "2026-07-08",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "drawio-skill",
+      "cat": "dev",
+      "desc": "用自然语言生成 draw.io 图表：11 种预设（UML、SysML/MBSE、BPMN、网络拓扑、C4 架构等），36 个工具",
+      "descEn": "Generate draw.io diagrams from natural language — 11 presets (UML, SysML/MBSE, BPMN, network, C4…), 36 tools.",
+      "url": "https://github.com/Agents365-ai/drawio-skill",
+      "official": false,
+      "stars": 7284,
+      "lastPush": "2026-08-05",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "Enterprise-ai-scenario-map-skill",
+      "cat": "cn",
+      "desc": "咨询向：为任何企业自动生成 AI 应用场景地图报告。含企业画像、业务诊断、行业实践、场景全量表、实施路径",
+      "descEn": "Auto-generate AI scenario map reports for any enterprise.",
+      "url": "https://github.com/MetaInFLow/Enterprise-ai-scenario-map-skill",
+      "official": false,
+      "stars": 625,
+      "lastPush": "2026-04-01",
       "skillOk": true,
       "skillStatus": "ok",
       "skillCheckedAt": "2026-08-07"
