@@ -172,7 +172,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 早期那批内容归档在 [archive/news-2026/](archive/news-2026/)，附了说明——
 保留是为了留下记录，但**请不要把那里的内容当作可靠信息使用**。
 
-详见 [内容准则与维护说明.md](内容准则与维护说明.md)。
+详见 [内容准则与维护说明](CONTENT_POLICY.md)。
 
 ---
 
