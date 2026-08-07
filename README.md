@@ -46,16 +46,22 @@ AI 会自动判断何时激活，不需要手动切换。
 ## ⚠️ 一个实测发现：很多教程写的安装路径是错的
 
 7 万星的 `awesome-claude-skills` 教你装到 `~/.config/claude-code/skills/`。
-**我照做，装完没生效。**
+**我照做，装完没生效——那个目录在我这台 macOS 上根本不存在。**
 
-本机实测（macOS）实际生效的是：
+用官方 CLI 实测（skills 1.5.22）：
 
 ```bash
-~/.claude/skills/
+$ npx skills add <repo> --skill <name>
+✓ ~/.agents/skills/<name>          # 文件实际在这里（多家 agent 共用）
+
+$ ls -l ~/.claude/skills/
+lrwxr-xr-x  <name> -> ../../.agents/skills/<name>   # 这里是符号链接
 ```
 
-用官方 `npx skills add` CLI 装，落盘位置也是这里。
-**高星不等于正确——路径、命令这类可验证的东西，花 10 秒实测比信任星数靠谱。**
+Claude Code 读的是 `~/.claude/skills/`，所以两个路径下都能看到。
+
+**两条经验**：高星不等于正确，路径命令这类可验证的东西花 10 秒实测比信任星数靠谱；
+**而且工具会变——这个结论我们复测过一次才发现要补细节。**
 
 ---
 
