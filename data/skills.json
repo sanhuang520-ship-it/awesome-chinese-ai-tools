@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07",
+  "updated": "2026-08-08",
   "note": "官方 skills 描述译自 anthropics/skills 各 SKILL.md 的 description 字段；安装路径经本机实测验证",
   "installPath": "~/.claude/skills/",
   "categories": {
@@ -1751,6 +1751,17 @@
       "skillOk": true,
       "skillStatus": "ok",
       "skillCheckedAt": "2026-08-07"
+    },
+    {
+      "name": "github-readme-cn",
+      "cat": "cn",
+      "official": false,
+      "ours": true,
+      "desc": "GitHub 中文项目门面优化（本站原创）：首屏结构、真实截图怎么截、命名与 topics、发布前自查清单。附 15 个高增长仓库的实测数据，明确区分相关性与不可验证的部分，不承诺涨星",
+      "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/github-readme-cn",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-08"
     }
   ],
   "resources": [
