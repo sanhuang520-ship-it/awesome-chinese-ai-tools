@@ -1,14 +1,30 @@
 <div align="center">
 
+<img src="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/assets/readme-banner.webp" alt="chinese-web-themes 的 4 套中式主题与 guofeng-threejs 水墨 shader 的真实渲染" width="100%">
+
 # 中文 AI Skills 库
 
-**129 个 AI Agent 技能包 · 其中 11 个我们自己写的**
+**给 AI 助手装上中文场景的专业技能包**
 
-每一个都调 GitHub API 验证过仓库真实存在，**并且每天自动复检一次**
+[![Skills](https://img.shields.io/badge/Skills-129%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
+[![原创](https://img.shields.io/badge/本站原创-11%20个-86b894?style=flat-square)](EXAMPLES.md)
+[![复检](https://img.shields.io/badge/仓库复检-每日自动-d9a441?style=flat-square)](#-每天自动做的事)
+[![Stars](https://img.shields.io/github/stars/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=e0795a)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/stargazers)
+[![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
 
-[🌐 在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)　·　[📋 完整清单](SKILLS.md)　·　[📸 真实渲染截图](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)　·　[🎨 12 种画风对照](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/)
+**[🌐 在线浏览（可搜索筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[📋 完整清单](SKILLS.md)　·
+[📸 真实渲染截图](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)　·　[🎨 12 种画风对照](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/)
 
 </div>
+
+> **和别的 awesome 列表有什么不一样**
+> ① 11 个 Skill 是我们自己写的，不是搬运
+> ② 129 个仓库**每天自动复检**一次还在不在
+> ③ 不转述任何 AI 新闻——[原因](CONTENT_POLICY.md)
+
+```bash
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
+```
 
 ---
 
