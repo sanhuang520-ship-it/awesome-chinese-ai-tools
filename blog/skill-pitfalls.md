@@ -1,8 +1,8 @@
-# 7 万星仓库教的安装路径是错的——整理 116 个 AI Skill 的踩坑记录
+# 7 万星仓库教的安装路径是错的——整理 130 个 AI Skill 的踩坑记录
 
 最近在做一个中文 AI Skills 库。整理过程中发现，这个领域的中文资源基本是空白——英文那边 `anthropics/skills` 16 万星、`awesome-claude-skills` 7 万星，但中文用户既看不懂说明，也不知道有哪些中文 skill 可用。
 
-于是我收录了 116 个（其中 57 个中文原创），又自己写了 11 个填补空白场景。下面是这个过程中真实踩到的坑，有些可能对你有用。
+于是我收录了 130 个（其中 59 个中文原创），又自己写了 12 个填补空白场景。下面是这个过程中真实踩到的坑，有些可能对你有用。
 
 ---
 
@@ -175,7 +175,7 @@ touch .nojekyll && git add -f .nojekyll && git commit -m "fix pages" && git push
 补上之后第一次全量复检的结果：
 
 ```
-✅ 存活 105 | ✍️ 本站原创 11 | ❌ 失效 0
+✅ 存活 118 | ✍️ 本站原创 12 | ❌ 失效 0
 ⭐ 星数已过时的：63 个
 🕰 超过半年没更新的：10 个
 ```
@@ -193,7 +193,7 @@ touch .nojekyll && git add -f .nojekyll && git commit -m "fix pages" && git push
 
 前面都是技术坑，这条是设计上的。
 
-写那 11 个原创 skill 时，我一开始只写"能做什么"。后来发现，**真正决定一个 skill 好不好用的，往往是它的边界**。
+写那 12 个原创 skill 时，我一开始只写"能做什么"。后来发现，**真正决定一个 skill 好不好用的，往往是它的边界**。
 
 举几个实际的例子：
 
@@ -258,9 +258,9 @@ AI 现在什么都敢答，所以**告诉它什么时候该停下来**，可能�
 
 - 仓库：https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools
 - 在线浏览（可搜索筛选）：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/
-- 11 个原创 skill 的实际输出示例：[EXAMPLES.md](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/EXAMPLES.md)
+- 12 个原创 skill 的实际输出示例：[EXAMPLES.md](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/EXAMPLES.md)
 
-收录的 116 个 skill 每个都调 API 验证过仓库真实存在，而且现在每天自动复检一次。信息有误欢迎指出，我会尽快改。
+收录的 130 个 skill 每个都调 API 验证过仓库真实存在，而且现在每天自动复检一次。信息有误欢迎指出，我会尽快改。
 
 ---
 
