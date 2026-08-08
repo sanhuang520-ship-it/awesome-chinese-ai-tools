@@ -65,7 +65,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 |-------|------|------|
 | [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | ⭐7,544 | superpowers 中文版：26万⭐框架完整汉化 + 6 个中国原创 skill |
 | [gzh-design-skill](https://github.com/isjiamu/gzh-design-skill) | ⭐2,905 | 微信公众号排版引擎：Markdown → 可直接粘进公众号编辑器的 HTML。6 套主题 + 主题生成器，自动章节编号、引言卡片、目录导航，支持 Word/PDF 输入 |
-| [codex-claude-academic-skills](https://github.com/zLanqing/codex-claude-academic-skills) | ⭐2,658 | 学术科研三件套：文献阅读、论文写作、科学计算全流程 |
+| [codex-claude-academic-skills](https://github.com/zLanqing/codex-claude-academic-skills) | ⭐2,660 | 学术科研三件套：文献阅读、论文写作、科学计算全流程 |
 | [everything-claude-code-zh](https://github.com/xu-xiang/everything-claude-code-zh) | ⭐1,832 | Claude Code 完整配置中文翻译（agents/skills/hooks/commands） |
 | [agent-skills-with-anthropic](https://github.com/datawhalechina/agent-skills-with-anthropic) | ⭐1,447 | 吴恩达 DeepLearning.AI 课程的中文翻译与知识整理 |
 | [shuorenhua](https://github.com/MrGeDiao/shuorenhua) | ⭐972 | 「说人话」去 AI 味改写：保事实、分场景、改完可直接发 |
@@ -136,12 +136,12 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [webapp-testing](https://github.com/anthropics/skills/tree/main/skills/webapp-testing) | 官方 | 本地 Web 应用的交互测试工具集 |
 | [frontend-design](https://github.com/anthropics/skills/tree/main/skills/frontend-design) | 官方 | 前端视觉设计指导，做出有辨识度、有意图的界面 |
 | [claude-api](https://github.com/anthropics/skills/tree/main/skills/claude-api) | 官方 | Claude API 使用参考：模型 ID、定价、参数、流式、工具调用、缓存 |
-| [test-driven-development](https://github.com/obra/superpowers/tree/main/skills/test-driven-development) | ⭐268,747 | 测试驱动开发全流程指导，写代码前先写测试 |
-| [using-git-worktrees](https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/) | ⭐268,747 | 自动创建隔离的 git worktree，多分支并行开发不打架 |
-| [finishing-a-development-branch](https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch) | ⭐268,747 | 开发分支收尾：合并、清理、发布的标准流程 |
+| [test-driven-development](https://github.com/obra/superpowers/tree/main/skills/test-driven-development) | ⭐268,757 | 测试驱动开发全流程指导，写代码前先写测试 |
+| [using-git-worktrees](https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/) | ⭐268,757 | 自动创建隔离的 git worktree，多分支并行开发不打架 |
+| [finishing-a-development-branch](https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch) | ⭐268,757 | 开发分支收尾：合并、清理、发布的标准流程 |
 | [Skill Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | ⭐14,722 | 把任意文档网站自动转成 Claude Skill —— 造 skill 的利器 |
 | [reddit-fetch](https://github.com/ykdojo/claude-code-tips/tree/main/skills/reddit-fetch) | ⭐9,564 | 当 WebFetch 被拦时，通过 Gemini CLI 抓取 Reddit 内容 |
-| [drawio-skill](https://github.com/Agents365-ai/drawio-skill) | ⭐7,291 | 用自然语言生成 draw.io 图表：11 种预设（UML、SysML/MBSE、BPMN、网络拓扑、C4 架构等），36 个工具 |
+| [drawio-skill](https://github.com/Agents365-ai/drawio-skill) | ⭐7,292 | 用自然语言生成 draw.io 图表：11 种预设（UML、SysML/MBSE、BPMN、网络拓扑、C4 架构等），36 个工具 |
 | [lean-ctx](https://github.com/yvgude/lean-ctx) | ⭐3,543 | AI 编程代理的上下文运行时，管理会话与上下文 |
 | [Playwright Browser Automation](https://github.com/lackeyjb/playwright-skill) | ⭐2,994 | 用 Playwright 做浏览器自动化测试与验证 🕰<sub>2025-12-19 后未更新</sub> |
 | [subagent-driven-development](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/sadd/skills/subagent-driven-development) | ⭐1,307 | 把任务拆给多个子智能体并行处理，加速复杂开发 |
@@ -173,7 +173,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | Skill | 来源 | 说明 |
 |-------|------|------|
 | [internal-comms](https://github.com/anthropics/skills/tree/main/skills/internal-comms) | 官方 | 撰写各类内部沟通文案的资源集 |
-| [brainstorming](https://github.com/obra/superpowers/tree/main/skills/brainstorming) | ⭐268,747 | 把粗略想法通过结构化提问变成完整方案 |
+| [brainstorming](https://github.com/obra/superpowers/tree/main/skills/brainstorming) | ⭐268,757 | 把粗略想法通过结构化提问变成完整方案 |
 | [kaizen](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/kaizen/skills/kaizen) | ⭐1,307 | 持续改进方法论，多种分析框架 |
 | [Brand Build Skills](https://github.com/rampstackco/claude-skills) | ⭐519 | 59 个 skill 的品牌与网站全生命周期库 |
 | [tapestry](https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/tapestry) | ⭐513 | 把相关文档互联并总结成知识网络 |
@@ -186,7 +186,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
-| [root-cause-tracing](https://github.com/obra/superpowers/tree/main/skills/root-cause-tracing) | ⭐268,747 | 错误深藏在执行链路时，追溯根本原因 |
+| [root-cause-tracing](https://github.com/obra/superpowers/tree/main/skills/root-cause-tracing) | ⭐268,757 | 错误深藏在执行链路时，追溯根本原因 |
 | [CSV Data Summarizer](https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill) | ⭐444 | 自动分析 CSV 文件并生成完整数据报告 🕰<sub>2025-10-16 后未更新</sub> |
 | [deep-research](https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research) | ⭐382 | 调用 Gemini Deep Research 做自主多步研究 |
 | [postgres](https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres) | ⭐382 | 对 PostgreSQL 执行安全的只读 SQL 查询 |
@@ -196,7 +196,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
-| [reverse-skill](https://github.com/zhaoxuya520/reverse-skill) | ⭐20,543 | 逆向工程与授权渗透测试的 Skill 路由包 |
+| [reverse-skill](https://github.com/zhaoxuya520/reverse-skill) | ⭐20,555 | 逆向工程与授权渗透测试的 Skill 路由包 |
 | [computer-forensics](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/computer-forensics) | ⭐656 | 数字取证分析与调查技术 |
 | [metadata-extraction](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/metadata-extraction) | ⭐656 | 提取分析文件元数据用于取证 |
 | [file-deletion](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/file-deletion) | ⭐656 | 安全删除文件与数据清除方法 |
