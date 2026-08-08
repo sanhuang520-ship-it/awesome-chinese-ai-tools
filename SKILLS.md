@@ -99,7 +99,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [makeownsrt](https://github.com/joshhu/makeownsrt) | ⭐175 | 从 MKV 提取英文字幕并翻成繁中双语 SRT |
 | [Auto-CV](https://github.com/flamingoTOM/Auto-CV) | ⭐165 | LaTeX 中文简历模板 + 自动提取内容生成 |
 | [JobOK](https://github.com/GresonKwan/JobOK) | ⭐117 | 中文求职：优势挖掘、岗位匹配、简历优化、面试训练 |
-| [openclaw-xhs](https://github.com/zhjiang22/openclaw-xhs) | ⭐117 | 小红书内容工具：搜笔记、取详情与评论、发图文/视频笔记、点赞收藏、热点话题跟踪、帖子导出长图。**117 星但 1.1 万安装** |
+| [openclaw-xhs](https://github.com/zhjiang22/openclaw-xhs) | ⭐117 | 小红书内容工具：搜笔记、取详情与评论、发图文/视频笔记、点赞收藏、热点话题跟踪、帖子导出长图。117 星但 1.1 万安装 |
 | [hermes-arxiv-agent](https://github.com/genggng/hermes-arxiv-agent) | ⭐111 | 每天自动抓 arXiv 论文，生成中文摘要推送到飞书 |
 | [kc_ai_skills](https://github.com/KerberosClaw/kc_ai_skills) | ⭐77 | 中文优先的 Claude Code / Codex skills 合集 |
 | [wechat-writing-style](https://github.com/yaoleifly/wechat-writing-style) | ⭐76 | 微信公众号中文写作风格 |
@@ -187,7 +187,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [ship-learn-next](https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/ship-learn-next) | ⭐513 | 基于进展帮你决定下一步该做什么/学什么 |
 | [google-workspace-skills](https://github.com/sanjay3290/ai-skills/tree/main/skills) | ⭐382 | Google 全家桶集成：Gmail、日历、Chat 等 |
 | [n8n-skills](https://github.com/haunchen/n8n-skills) | ⭐382 | 让 AI 直接理解和操作 n8n 工作流 |
-| [seo-geo-claude-skills](https://github.com/aaron-he-zhu/seo-geo-claude-skills) | ⭐139 | SEO / GEO（生成式引擎优化）技能集，20 个子技能：外链分析、关键词研究、内容写作等。**139 星但 2.6 万安装** —— 星数完全反映不出使用量 |
+| [seo-geo-claude-skills](https://github.com/aaron-he-zhu/seo-geo-claude-skills) | ⭐139 | SEO / GEO（生成式引擎优化）技能集，20 个子技能：外链分析、关键词研究、内容写作等。139 星但 2.6 万安装 —— 星数完全反映不出使用量 |
 | [solo-skills](https://github.com/rockscy/solo-skills) | ⭐6 | 独立开发者双语（中英）技能包：7 个 solo 场景 |
 
 ### 📊 数据研究（5 个）
