@@ -155,7 +155,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 4 | **130 个 skill 仓库复检**：还在不在、星数、最后更新时间 |
 | 5 | 从数据重建 SKILLS.md |
 
-最近复检：**2026-08-07**，失效 0 个。
+最近复检：**2026-08-08**，失效 0 个。
 超过半年没更新的会在站内标 🕰——停止维护不等于没价值，但你有权在点进去之前就知道。
 
 ### 检测抓到过的真实域名迁移
@@ -180,6 +180,15 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 保留是为了留下记录，但**请不要把那里的内容当作可靠信息使用**。
 
 详见 [内容准则与维护说明](CONTENT_POLICY.md)。
+
+---
+
+## 📝 这个项目踩过的坑
+
+整理这些 skill 的过程写成了一篇文章，包括一个 7 万星仓库文档里的路径错误、
+一次让两个月访问数据全废的静默失败，和一次自己打自己脸的复检漏洞：
+
+**[7 万星仓库教的安装路径是错的——整理 130 个 AI Skill 的踩坑记录](https://juejin.cn/post/7671196739655352339)**
 
 ---
 
@@ -209,5 +218,5 @@ my-skill/
 ---
 
 <div align="center">
-<sub>MIT License · 数据最后复检 2026-08-07 · README 由脚本从实际数据生成于 2026-08-08</sub>
+<sub>MIT License · 数据最后复检 2026-08-08 · README 由脚本从实际数据生成于 2026-08-08</sub>
 </div>
