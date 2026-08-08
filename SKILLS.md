@@ -1,6 +1,6 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **130 个 Skill｜59 个中文原创｜✍️ 12 个本站原创**  
+> **138 个 Skill｜63 个中文原创｜✍️ 12 个本站原创**  
 > 每一个都经 GitHub API 验证仓库真实存在  
 > 🔄 最近自动复检：**2026-08-08**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
@@ -59,10 +59,13 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [guofeng-threejs](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guofeng-threejs) | 国风 Three.js 渲染（本站原创）：水墨 shader 三技法（墨分五色/边缘积墨/笔触扰动），含可运行 demo 与移动端性能要点。只做中式渲染，不做通用 Three.js 教程 |
 | [homework-tutor-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn) | 家长辅导作业助手（本站原创）：不给答案给引导话术，分学科方法，含情绪对抗处理 |
 
-### 🇨🇳 中文原创（48 个）
+### 🇨🇳 中文原创（52 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
+| [humanizer-zh](https://github.com/op7418/humanizer-zh) | ⭐14,866 | 去除文本里的 AI 生成痕迹。基于维基百科「AI 写作特征」整理，检测并修复：夸大的象征意义、宣传性语言、-ing 结尾的肤浅分析、模糊归因、破折号过度使用、三段式法则、AI 词汇、否定式排比 🕰<sub>2026-01-19 后未更新</sub> |
+| [zhangxuefeng-skill](https://github.com/alchaincyf/zhangxuefeng-skill) | ⭐10,094 | 张雪峰的思维框架与表达方式：基于 5 本著作、15+ 篇采访、30+ 条语录整理出 5 个心智模型与 8 条决策启发式。用于分析教育选择、职业规划、阶层流动 |
+| [dbskill](https://github.com/dontbesilent2025/dbskill) | ⭐9,316 | 个人技能合集（30 个）：公众号 HTML 排版、用阿德勒心理学框架诊断执行阻滞（知道该做却拖延时用）等 |
 | [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | ⭐7,544 | superpowers 中文版：26万⭐框架完整汉化 + 6 个中国原创 skill |
 | [gzh-design-skill](https://github.com/isjiamu/gzh-design-skill) | ⭐2,905 | 微信公众号排版引擎：Markdown → 可直接粘进公众号编辑器的 HTML。6 套主题 + 主题生成器，自动章节编号、引言卡片、目录导航，支持 Word/PDF 输入 |
 | [codex-claude-academic-skills](https://github.com/zLanqing/codex-claude-academic-skills) | ⭐2,660 | 学术科研三件套：文献阅读、论文写作、科学计算全流程 |
@@ -96,6 +99,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [makeownsrt](https://github.com/joshhu/makeownsrt) | ⭐175 | 从 MKV 提取英文字幕并翻成繁中双语 SRT |
 | [Auto-CV](https://github.com/flamingoTOM/Auto-CV) | ⭐165 | LaTeX 中文简历模板 + 自动提取内容生成 |
 | [JobOK](https://github.com/GresonKwan/JobOK) | ⭐117 | 中文求职：优势挖掘、岗位匹配、简历优化、面试训练 |
+| [openclaw-xhs](https://github.com/zhjiang22/openclaw-xhs) | ⭐117 | 小红书内容工具：搜笔记、取详情与评论、发图文/视频笔记、点赞收藏、热点话题跟踪、帖子导出长图。**117 星但 1.1 万安装** |
 | [hermes-arxiv-agent](https://github.com/genggng/hermes-arxiv-agent) | ⭐111 | 每天自动抓 arXiv 论文，生成中文摘要推送到飞书 |
 | [kc_ai_skills](https://github.com/KerberosClaw/kc_ai_skills) | ⭐77 | 中文优先的 Claude Code / Codex skills 合集 |
 | [wechat-writing-style](https://github.com/yaoleifly/wechat-writing-style) | ⭐76 | 微信公众号中文写作风格 |
@@ -126,7 +130,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [Markdown to EPUB Converter](https://github.com/smerchek/claude-epub-skill) | ⭐147 | 把 Markdown 文档转成专业 EPUB 电子书 🕰<sub>2025-10-18 后未更新</sub> |
 | [Master Claude for Legal](https://github.com/sboghossian/master-claude-for-legal) | ⭐53 | 法务技能包：NDA 审阅、多方版本对比、引用核验 |
 
-### 💻 开发工程（22 个）
+### 💻 开发工程（25 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -139,7 +143,10 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [test-driven-development](https://github.com/obra/superpowers/tree/main/skills/test-driven-development) | ⭐268,757 | 测试驱动开发全流程指导，写代码前先写测试 |
 | [using-git-worktrees](https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/) | ⭐268,757 | 自动创建隔离的 git worktree，多分支并行开发不打架 |
 | [finishing-a-development-branch](https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch) | ⭐268,757 | 开发分支收尾：合并、清理、发布的标准流程 |
+| [planning-with-files](https://github.com/othmanadi/planning-with-files) | ⭐26,042 | Manus 式的文件化持久规划：把 task_plan.md / findings.md / progress.md 落到磁盘，上下文丢了工作也不丢。含 18 个子技能 |
+| [baoyu-skills](https://github.com/jimliu/baoyu-skills) | ⭐24,710 | 宝玉的技能合集（22 个）：公众号摘要、发布流程自动化（自动识别版本文件与 changelog，支持 Node/Python/Rust/Claude Plugin）等 |
 | [Skill Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | ⭐14,722 | 把任意文档网站自动转成 Claude Skill —— 造 skill 的利器 |
+| [fireworks-tech-graph](https://github.com/yizhiyanhua-ai/fireworks-tech-graph) | ⭐9,782 | 生成技术图表：软件架构、数据流、流程图、时序图、C4 模型、云部署、事件流 |
 | [reddit-fetch](https://github.com/ykdojo/claude-code-tips/tree/main/skills/reddit-fetch) | ⭐9,564 | 当 WebFetch 被拦时，通过 Gemini CLI 抓取 Reddit 内容 |
 | [drawio-skill](https://github.com/Agents365-ai/drawio-skill) | ⭐7,292 | 用自然语言生成 draw.io 图表：11 种预设（UML、SysML/MBSE、BPMN、网络拓扑、C4 架构等），36 个工具 |
 | [lean-ctx](https://github.com/yvgude/lean-ctx) | ⭐3,543 | AI 编程代理的上下文运行时，管理会话与上下文 |
@@ -168,7 +175,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [anydesign](https://github.com/uxKero/anydesign) | ⭐152 | 分析任意图片/网址/Figma 文件，生成结构化设计规范 |
 | [pakco-html](https://github.com/pakco77/pakco-html) | ⭐69 | HTML 审美库（中文）：60+ 视觉风格、演示页/长页模板，一键复制 Prompt |
 
-### 💼 办公协作（9 个）
+### 💼 办公协作（10 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -180,6 +187,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [ship-learn-next](https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/ship-learn-next) | ⭐513 | 基于进展帮你决定下一步该做什么/学什么 |
 | [google-workspace-skills](https://github.com/sanjay3290/ai-skills/tree/main/skills) | ⭐382 | Google 全家桶集成：Gmail、日历、Chat 等 |
 | [n8n-skills](https://github.com/haunchen/n8n-skills) | ⭐382 | 让 AI 直接理解和操作 n8n 工作流 |
+| [seo-geo-claude-skills](https://github.com/aaron-he-zhu/seo-geo-claude-skills) | ⭐139 | SEO / GEO（生成式引擎优化）技能集，20 个子技能：外链分析、关键词研究、内容写作等。**139 星但 2.6 万安装** —— 星数完全反映不出使用量 |
 | [solo-skills](https://github.com/rockscy/solo-skills) | ⭐6 | 独立开发者双语（中英）技能包：7 个 solo 场景 |
 
 ### 📊 数据研究（5 个）
