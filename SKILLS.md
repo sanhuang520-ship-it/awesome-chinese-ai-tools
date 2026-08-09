@@ -140,15 +140,15 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [webapp-testing](https://github.com/anthropics/skills/tree/main/skills/webapp-testing) | 官方 | 本地 Web 应用的交互测试工具集 |
 | [frontend-design](https://github.com/anthropics/skills/tree/main/skills/frontend-design) | 官方 | 前端视觉设计指导，做出有辨识度、有意图的界面 |
 | [claude-api](https://github.com/anthropics/skills/tree/main/skills/claude-api) | 官方 | Claude API 使用参考：模型 ID、定价、参数、流式、工具调用、缓存 |
-| [test-driven-development](https://github.com/obra/superpowers/tree/main/skills/test-driven-development) | ⭐269,334 | 测试驱动开发全流程指导，写代码前先写测试 |
-| [using-git-worktrees](https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/) | ⭐269,334 | 自动创建隔离的 git worktree，多分支并行开发不打架 |
-| [finishing-a-development-branch](https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch) | ⭐269,334 | 开发分支收尾：合并、清理、发布的标准流程 |
+| [test-driven-development](https://github.com/obra/superpowers/tree/main/skills/test-driven-development) | ⭐269,336 | 测试驱动开发全流程指导，写代码前先写测试 |
+| [using-git-worktrees](https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/) | ⭐269,336 | 自动创建隔离的 git worktree，多分支并行开发不打架 |
+| [finishing-a-development-branch](https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch) | ⭐269,336 | 开发分支收尾：合并、清理、发布的标准流程 |
 | [planning-with-files](https://github.com/othmanadi/planning-with-files) | ⭐26,055 | Manus 式的文件化持久规划：把 task_plan.md / findings.md / progress.md 落到磁盘，上下文丢了工作也不丢。含 18 个子技能 |
 | [baoyu-skills](https://github.com/jimliu/baoyu-skills) | ⭐24,729 | 宝玉的技能合集（22 个）：公众号摘要、发布流程自动化（自动识别版本文件与 changelog，支持 Node/Python/Rust/Claude Plugin）等 |
 | [Skill Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | ⭐14,728 | 把任意文档网站自动转成 Claude Skill —— 造 skill 的利器 |
 | [fireworks-tech-graph](https://github.com/yizhiyanhua-ai/fireworks-tech-graph) | ⭐9,783 | 生成技术图表：软件架构、数据流、流程图、时序图、C4 模型、云部署、事件流 |
 | [reddit-fetch](https://github.com/ykdojo/claude-code-tips/tree/main/skills/reddit-fetch) | ⭐9,575 | 当 WebFetch 被拦时，通过 Gemini CLI 抓取 Reddit 内容 |
-| [drawio-skill](https://github.com/Agents365-ai/drawio-skill) | ⭐7,324 | 用自然语言生成 draw.io 图表：11 种预设（UML、SysML/MBSE、BPMN、网络拓扑、C4 架构等），36 个工具 |
+| [drawio-skill](https://github.com/Agents365-ai/drawio-skill) | ⭐7,325 | 用自然语言生成 draw.io 图表：11 种预设（UML、SysML/MBSE、BPMN、网络拓扑、C4 架构等），36 个工具 |
 | [lean-ctx](https://github.com/yvgude/lean-ctx) | ⭐3,551 | AI 编程代理的上下文运行时，管理会话与上下文 |
 | [Playwright Browser Automation](https://github.com/lackeyjb/playwright-skill) | ⭐2,999 | 用 Playwright 做浏览器自动化测试与验证 🕰<sub>2025-12-19 后未更新</sub> |
 | [subagent-driven-development](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/sadd/skills/subagent-driven-development) | ⭐1,308 | 把任务拆给多个子智能体并行处理，加速复杂开发 |
@@ -180,7 +180,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | Skill | 来源 | 说明 |
 |-------|------|------|
 | [internal-comms](https://github.com/anthropics/skills/tree/main/skills/internal-comms) | 官方 | 撰写各类内部沟通文案的资源集 |
-| [brainstorming](https://github.com/obra/superpowers/tree/main/skills/brainstorming) | ⭐269,334 | 把粗略想法通过结构化提问变成完整方案 |
+| [brainstorming](https://github.com/obra/superpowers/tree/main/skills/brainstorming) | ⭐269,336 | 把粗略想法通过结构化提问变成完整方案 |
 | [kaizen](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/kaizen/skills/kaizen) | ⭐1,308 | 持续改进方法论，多种分析框架 |
 | [Brand Build Skills](https://github.com/rampstackco/claude-skills) | ⭐521 | 59 个 skill 的品牌与网站全生命周期库 |
 | [tapestry](https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/tapestry) | ⭐515 | 把相关文档互联并总结成知识网络 |
@@ -194,7 +194,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
-| [root-cause-tracing](https://github.com/obra/superpowers/tree/main/skills/root-cause-tracing) | ⭐269,334 | 错误深藏在执行链路时，追溯根本原因 |
+| [root-cause-tracing](https://github.com/obra/superpowers/tree/main/skills/root-cause-tracing) | ⭐269,336 | 错误深藏在执行链路时，追溯根本原因 |
 | [CSV Data Summarizer](https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill) | ⭐444 | 自动分析 CSV 文件并生成完整数据报告 🕰<sub>2025-10-16 后未更新</sub> |
 | [deep-research](https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research) | ⭐388 | 调用 Gemini Deep Research 做自主多步研究 |
 | [postgres](https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres) | ⭐388 | 对 PostgreSQL 执行安全的只读 SQL 查询 |
@@ -204,7 +204,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
-| [reverse-skill](https://github.com/zhaoxuya520/reverse-skill) | ⭐21,456 | 逆向工程与授权渗透测试的 Skill 路由包 |
+| [reverse-skill](https://github.com/zhaoxuya520/reverse-skill) | ⭐21,462 | 逆向工程与授权渗透测试的 Skill 路由包 |
 | [computer-forensics](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/computer-forensics) | ⭐657 | 数字取证分析与调查技术 |
 | [metadata-extraction](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/metadata-extraction) | ⭐657 | 提取分析文件元数据用于取证 |
 | [file-deletion](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/file-deletion) | ⭐657 | 安全删除文件与数据清除方法 |
