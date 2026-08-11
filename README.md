@@ -8,7 +8,7 @@
 
 [![Skills](https://img.shields.io/badge/Skills-156%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
 [![原创](https://img.shields.io/badge/本站原创-12%20个-86b894?style=flat-square)](EXAMPLES.md)
-[![复检](https://img.shields.io/badge/仓库复检-每日自动-d9a441?style=flat-square)](#-每天自动做的事)
+[![Daily Check](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml/badge.svg)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)
 [![Stars](https://img.shields.io/github/stars/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=e0795a)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
 
@@ -155,7 +155,9 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 4 | **156 个 skill 仓库复检**：还在不在、星数、最后更新时间 |
 | 5 | 从数据重建 SKILLS.md |
 
-最近复检：**2026-08-10**，失效 0 个。
+这套流程跑在 **GitHub Actions** 上，[运行记录公开可查](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)——不依赖任何人的电脑，也不用你相信我说的话。
+
+最近复检：**2026-08-11**，失效 0 个。
 超过半年没更新的会在站内标 🕰——停止维护不等于没价值，但你有权在点进去之前就知道。
 
 ### 检测抓到过的真实域名迁移
@@ -218,5 +220,5 @@ my-skill/
 ---
 
 <div align="center">
-<sub>MIT License · 数据最后复检 2026-08-10 · README 由脚本从实际数据生成于 2026-08-10</sub>
+<sub>MIT License · 数据最后复检 2026-08-11 · README 由脚本从实际数据生成于 2026-08-11</sub>
 </div>
