@@ -26,6 +26,11 @@ class PublicFeedsTest(unittest.TestCase):
             with self.subTest(skill=skill_file.parent.name):
                 self.assertIn(expected, sitemap)
 
+    def test_sitemap_includes_bilingual_project_overviews(self):
+        sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertIn("/README.md", sitemap)
+        self.assertIn("/README.en.md", sitemap)
+
     def test_llms_summary_preserves_client_evidence_boundary(self):
         summary = (ROOT / "llms.txt").read_text(encoding="utf-8")
         self.assertIn("Claude Code 与 Cursor 尚无本仓库运行的任务级实测", summary)

@@ -140,7 +140,7 @@ def sync_index_text(body, stats):
 def sync_sitemap_text(body, checked):
     """仅更新随数据变化的核心页，不伪造其他页面的时间。"""
     base = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
-    core = {base, base + "SKILLS.md", base + "README.md"}
+    core = {base, base + "SKILLS.md", base + "README.md", base + "README.en.md"}
     lines = []
     for line in body.splitlines():
         loc = re.search(r"<loc>(.*?)</loc>", line)
