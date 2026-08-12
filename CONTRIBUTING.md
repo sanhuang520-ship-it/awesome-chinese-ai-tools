@@ -47,6 +47,17 @@
 
 提交前请删除 Token、邮箱、私人路径和未公开业务数据。维护者如需把案例整理进 README 或文档，会保留原讨论链接，并区分“用户反馈”与“已复核事实”。
 
+## 更新社交分享图
+
+`og.svg` 由已提交的目录与兼容性证据生成，不手工填写数量。统计变化后运行：
+
+```bash
+python3 scripts/generate_social_preview.py --write --png
+python3 scripts/generate_social_preview.py --check
+```
+
+生成 PNG 需要本机安装 `rsvg-convert`；完整本地检查也会验证 SVG 是否与当前数据一致，以及 PNG 是否为 1200 × 630。
+
 ---
 
 ## 提交前本地验证
