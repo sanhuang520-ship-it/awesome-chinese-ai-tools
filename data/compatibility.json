@@ -41,16 +41,18 @@
         "chinese-typography",
         "github-readme-cn",
         "chinese-work-report",
-        "bookkeeping-cn"
+        "bookkeeping-cn",
+        "ecommerce-copywriting"
       ],
       "cases": [
         "cases/chinese-typography-codex.md",
         "cases/github-readme-cn-codex.md",
         "cases/chinese-work-report-codex.md",
-        "cases/bookkeeping-cn-codex.md"
+        "cases/bookkeeping-cn-codex.md",
+        "cases/ecommerce-copywriting-codex.md"
       ],
       "clientVersion": "codex-cli 0.147.0-alpha.6.5",
-      "note": "Four task-level automatic activations verified; this is not evidence for every prompt or client version"
+      "note": "Five task-level automatic activations verified; this is not evidence for every prompt or client version"
     },
     "claudeCode": {
       "status": "not-tested"
