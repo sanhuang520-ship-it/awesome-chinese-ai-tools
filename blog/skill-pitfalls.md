@@ -30,7 +30,7 @@ $ ls ~/.config/claude-code/skills/
 ls: 该目录不存在
 ```
 
-后来用 `npx skills add` 这个官方 CLI 安装，验证了一下它装到哪。
+后来用 Vercel Labs 的 `npx skills add` 安装，验证了一下它装到哪。
 
 **补充更正（2026-08-07 复测，CLI 1.5.22）**：现在的行为比我最初写的更细一层——
 文件实际落在 `~/.agents/skills/`（多家 agent 共用的通用目录），
@@ -41,7 +41,7 @@ $ ls -l ~/.claude/skills/
 lrwxr-xr-x  github-readme-cn -> ../../.agents/skills/github-readme-cn
 ```
 
-Claude Code 读的是 `~/.claude/skills/`，所以两个路径下都能看到 skill。
+安装器建立符号链接后，两个路径下都能看到同一份 Skill。这里能确认的是文件布局；当时没有保留 Claude Code 的任务级自动触发记录，因此不把它写成客户端兼容性结论。
 **但 `~/.config/claude-code/skills/` 依然不存在、依然不生效**——最初那个结论没变，
 只是我把话说得更准了。
 

@@ -48,7 +48,7 @@ AI 会自动判断何时激活，不需要手动切换。
 7 万星的 `awesome-claude-skills` 教你装到 `~/.config/claude-code/skills/`。
 **我照做，装完没生效——那个目录在我这台 macOS 上根本不存在。**
 
-用官方 CLI 实测（skills 1.5.22）：
+用 Vercel Labs 的 `skills` CLI 实测（1.5.22）：
 
 ```bash
 $ npx skills add <repo> --skill <name>
@@ -58,7 +58,7 @@ $ ls -l ~/.claude/skills/
 lrwxr-xr-x  <name> -> ../../.agents/skills/<name>   # 这里是符号链接
 ```
 
-Claude Code 读的是 `~/.claude/skills/`，所以两个路径下都能看到。
+安装器同时在 `~/.claude/skills/` 建立了符号链接，所以从两个路径都能看到同一份文件。**这只证明安装结果；本轮没有运行 Claude Code，不能据此声称自动触发。**
 
 **两条经验**：高星不等于正确，路径命令这类可验证的东西花 10 秒实测比信任星数靠谱；
 **而且工具会变——这个结论我们复测过一次才发现要补细节。**
@@ -78,7 +78,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'
 ```
 
-装好后重启 Claude Code，**无需手动调用**——描述任务，AI 自动激活。
+装好后重启你使用的客户端，用一个**不点名 Skill 名称**的自然任务测试是否自动触发。不同客户端与版本的行为可能不同；当前只有 Codex 的任务级实测。
 
 安装与自动触发不是一回事。本站 13 个原创 Skill 已完成 CLI 发现、当前 Codex 安装核验和各 1 次不点名名称的自动触发测试；2 项大任务失败后通过缩小复测，原失败仍公开保留。详见 **[兼容性实测表](COMPATIBILITY.md)**。
 

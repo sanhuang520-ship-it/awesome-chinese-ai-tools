@@ -31,10 +31,10 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 ```
 
 > ⚠️ **实测提醒（CLI 1.5.22）**：`npx skills add` 把文件装到 `~/.agents/skills/`（多家 agent 共用），
-> 再在 `~/.claude/skills/` 建符号链接指过去 —— Claude Code 读的是后者，两处都能看到。
+> 同时在 `~/.claude/skills/` 建立符号链接，因此两处能看到同一份文件；这只证明安装结果，本轮尚未运行 Claude Code。
 > 而部分教程（包括 7 万星仓库）写的 `~/.config/claude-code/skills/`，本机实测**并不存在**。
 
-装好后重启 Claude Code，**无需手动调用**——描述任务，AI 自动激活。
+装好后重启你使用的客户端，用一个**不点名 Skill 名称**的自然任务测试是否自动触发。不同客户端与版本的行为可能不同；当前只有 Codex 的任务级实测。
 
 ---
 

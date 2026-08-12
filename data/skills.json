@@ -2562,6 +2562,6 @@
   ],
   "installCmd": "npx skills add <仓库地址>",
   "skillsCheckedAt": "2026-08-12",
-  "installNote": "实测 skills CLI 1.5.22（2026-08-08）：`npx skills add` 把文件装到 `~/.agents/skills/`（多家 agent 共用），再在 `~/.claude/skills/` 建符号链接指过去。Claude Code 读的是 `~/.claude/skills/`，所以两个路径都能看到 skill。而部分教程写的 `~/.config/claude-code/skills/` 本机实测并不存在、也不生效。",
+  "installNote": "实测 Vercel Labs skills CLI 1.5.22（2026-08-08）：`npx skills add` 把文件装到 `~/.agents/skills/`，并在 `~/.claude/skills/` 建立符号链接，因此两个路径能看到同一份文件。本轮没有运行 Claude Code，符号链接存在不能证明自动触发。部分教程写的 `~/.config/claude-code/skills/` 在本机实测并不存在。",
   "installsNote": "部分条目带 installs（安装量，来源 skills.sh）。安装量比星数更接近真实使用——本库收录时发现过 139 星 / 2.6 万安装的例子。"
 }
