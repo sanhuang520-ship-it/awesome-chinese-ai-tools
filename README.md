@@ -11,6 +11,7 @@
 [![Daily Check](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml/badge.svg)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)
 [![Stars](https://img.shields.io/github/stars/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=e0795a)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
+[![Version](https://img.shields.io/github/v/tag/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=76a88a)](CHANGELOG.md)
 
 **[🌐 在线浏览（可搜索筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[📦 安装排错](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/)　·　[🧪 兼容性实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/)　·　[🛡️ 质量标签](QUALITY.md)　·　[🧰 中文开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)　·　[📋 完整清单](SKILLS.md)　·
 [📸 真实渲染截图](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)　·　[🎨 12 种画风对照](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/)　·　[✒️ 中文排版实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/)
