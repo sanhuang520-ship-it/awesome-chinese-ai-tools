@@ -12,7 +12,7 @@
 [![Stars](https://img.shields.io/github/stars/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=e0795a)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
 
-**[🌐 在线浏览（可搜索筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[🧪 兼容性实测](COMPATIBILITY.md)　·　[🧰 中文开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)　·　[📋 完整清单](SKILLS.md)　·
+**[🌐 在线浏览（可搜索筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[🧪 兼容性实测](COMPATIBILITY.md)　·　[🛡️ 质量与安全标签](QUALITY.md)　·　[🧰 中文开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)　·　[📋 完整清单](SKILLS.md)　·
 [📸 真实渲染截图](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)　·　[🎨 12 种画风对照](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/)　·　[✒️ 中文排版实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/)
 
 </div>
@@ -226,6 +226,8 @@ my-skill/
 
 ⚠️ **安全提醒**：Skills 可以包含**可执行脚本**。装第三方 skill 前，
 先看一眼它的 `SKILL.md` 和 `scripts/` 内容。
+
+本站原创的 13 个 Skill 已完成首轮静态文件检查；当前没有独立可执行脚本，`guofeng-threejs` 浏览器 Demo 存在已披露的 CDN 依赖。完整范围和限制见 **[质量与安全标签](QUALITY.md)**，结论不适用于其余第三方收录。
 
 ---
 

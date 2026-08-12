@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-08-12",
+  "scope": "13 repository-owned skills only",
+  "method": "Static repository inspection; no claim of formal security certification",
+  "skills": {
+    "ai-learning-coach": {"files": "instructions+references", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "medical/legal/investment decisions"},
+    "book-digest-cn": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": null},
+    "bookkeeping-cn": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "financial privacy; tax and investment advice"},
+    "chinese-design-md": {"files": "instructions+templates", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "font licensing"},
+    "chinese-lesson-plan": {"files": "instructions+references", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "curriculum facts require source confirmation"},
+    "chinese-typography": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "font licensing and regional standards"},
+    "chinese-web-themes": {"files": "instructions+local demo assets", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "font licensing"},
+    "chinese-work-report": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "must not invent business data"},
+    "ecommerce-copywriting": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "advertising claims and regulated products"},
+    "github-readme-cn": {"files": "instructions+references", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "growth correlation is not causation"},
+    "guochao-visual-cn": {"files": "instructions+references", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "cultural accuracy and artist-style boundaries"},
+    "guofeng-threejs": {"files": "instructions+browser demos", "executableScripts": false, "runtimeNetwork": true, "networkDetail": "demo HTML imports three@0.170.0 from unpkg.com", "sensitiveBoundary": null},
+    "homework-tutor-cn": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "does not provide answers for copying"}
+  }
+}
