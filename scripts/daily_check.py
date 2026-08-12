@@ -21,6 +21,8 @@ except ImportError:
     _CAFILE = None
 import time
 
+from sync_public_metadata import CAT_ORDER, sync_public_metadata
+
 # ── 配置 ──────────────────────────────────────────────────
 # token 从环境变量读取。GitHub Actions 里用自带的 GITHUB_TOKEN，无需配置密钥；
 # 本地跑： export GITHUB_TOKEN=xxx && python3 scripts/daily_check.py
@@ -353,8 +355,6 @@ def check_skills():
 
 
 # ── SKILLS.md 自动生成 ─────────────────────────────────────
-CAT_ORDER = ["cn", "doc", "dev", "design", "biz", "data", "sec"]
-
 def build_skills_md():
     """
     从 data/skills.json 重新生成 SKILLS.md。
@@ -580,6 +580,7 @@ if __name__ == "__main__":
         ("工具链接实测",   check_tool_links),
         ("Skill 仓库复检", check_skills),
         ("重建 SKILLS.md", build_skills_md),
+        ("同步公开统计", lambda: sync_public_metadata(github_api, REPO)),
     ]
     failed = []
     for name, fn in STEPS:
@@ -595,4 +596,4 @@ if __name__ == "__main__":
         print(f"\n===== {stamp} 完成 {len(STEPS)-len(failed)}/{len(STEPS)} 步，"
               f"失败：{'、'.join(failed)} =====")
     else:
-        print(f"\n===== {stamp} 五步全部完成 =====")
+        print(f"\n===== {stamp} {len(STEPS)} 步全部完成 =====")

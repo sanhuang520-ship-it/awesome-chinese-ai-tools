@@ -4,7 +4,7 @@
 
 | ⚠️ | 说明 |
 |----|------|
-| **别改 README.md 和 SKILLS.md** | 这两个文件**每天由脚本从 `data/` 重新生成**，直接改会被覆盖。改 `data/tools.json` 或 `data/skills.json` |
+| **收录内容改 `data/`** | `SKILLS.md` 由脚本重建；README 只自动同步数量、复检日期等公开统计。新增收录请改 `data/tools.json` 或 `data/skills.json` |
 | **链接不能带推广参数** | `?from=` `?ref=` `utm_*` `aff` 之类一律不收。想被收录就给干净的官网链接 |
 | **自己的产品要说明** | 提交自己做的东西完全可以，但请在 PR 里写一句「这是我做的」。不写而被发现，直接关闭 |
 

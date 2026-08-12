@@ -1,89 +1,39 @@
-# 90 天维护计划
+# 公开维护路线图
 
-> 目标：建立活跃的 GitHub 仓库历史，为申请 OpenAI 研究员/开发者资格提供参考
+> 目标：让中文用户更容易发现、安装和安全使用 Agent Skills。
+> 原则：只记录真实维护和可验证结果；不做空提交、不互换 Star、不伪造安装量或用户案例。
 
-## 时间线
+## 长期维护内容
 
-### Week 1-2：打基础（Day 1–14）
-- [x] 创建仓库，提交初始 README
-- [ ] 补充 LICENSE 文件（CC0 1.0）
-- [ ] 添加 GitHub Actions：每周自动检查死链
-- [ ] 创建 `issues` 模板（新工具建议、信息更新）
-- [ ] 在相关社区发布（V2EX、少数派、掘金）
+- 每日复检 Skill 仓库、官方信源和 AI 工具链接。
+- 从 `data/skills.json` 重建 `SKILLS.md`，并同步 README、首页 SEO 元数据和 Sitemap 中的公开统计。
+- 优先处理失效链接、错误描述、安装问题与安全风险。
+- 对本站原创 Skill 维护清晰触发条件、执行边界、示例和可复现输出。
 
-### Week 3-4：内容扩充（Day 15–30）
-- [ ] 每天新增 1-2 个工具（保持 commit 连续性）
-- [ ] 补充「本地部署」分类（Ollama、LM Studio 等）
-- [ ] 补充「API 聚合平台」分类
-- [ ] 写第一篇配套博客（可发到掘金/少数派）
+## 接下来 30 天
 
-### Month 2：社区建设（Day 31–60）
-- [ ] 回应所有 Issues 和 PR，响应时间 < 24h
-- [ ] 添加「月度更新日志」（每月1日发 Release）
-- [ ] 在 README 添加社区讨论入口（Discussions）
-- [ ] 联系 2-3 个相关项目互相 star/引用
+### 1. 可信度与自动化
 
-### Month 3：申请准备（Day 61–90）
-- [ ] 整理项目数据：star 数、PR 数、commit 数
-- [ ] 写项目总结文档（impact statement）
-- [ ] 截图保存活跃度证明
-- [ ] Day 90：提交 OpenAI API 申请
+- [x] 公开 GitHub Actions 日检记录。
+- [x] 建立收录建议 Issue 模板和 PR 自查清单。
+- [x] 将每日检查步骤相互隔离，避免单个网络错误中断全部任务。
+- [x] 对 README、首页、结构化数据和 Sitemap 增加一致性测试。
+- [ ] 将重要维护变更汇总为月度 Release，减少用户追踪大量自动提交的成本。
 
----
+### 2. 安装与使用验证
 
-## 每日维护 Checklist（5-10 分钟）
+- [ ] 在 macOS、Windows 和 Linux 上复测 `npx skills add`，标注 CLI 版本和实际落盘路径。
+- [ ] 为本站原创 Skill 增加最小可复现示例与验收标准。
+- [ ] 记录用户真实报告的成功安装和兼容性问题，不根据 Clone 或 Star 推断实际使用。
 
-```
-[ ] 检查是否有新 Issue/PR
-[ ] 验证一个工具的免费额度是否变化
-[ ] 如有变化，更新并 commit（哪怕只改一行）
-[ ] 可选：在 Twitter/X 分享一个工具推荐
-```
+### 3. 搜索与内容入口
 
----
+- [ ] 为高需求原创 Skill 建立独立说明页，包含用途、边界、安装、真实输出和常见问题。
+- [ ] 接入站长工具并提交 Sitemap，记录收录数、搜索展示和点击基线。
+- [ ] 每月发布一篇基于可复现实测的长效文章，不转述无法核实的 AI 新闻。
 
-## OpenAI API 申请英文模板
+## 如何贡献
 
-> 适用场景：申请 OpenAI API 访问权限时的 use case 说明
-
----
-
-**Subject:** API Access Request – AI Tools Directory for Chinese Developers
-
-**Use Case Description:**
-
-I am the maintainer of **Awesome Chinese AI Tools** (github.com/sanhuang520-ship-it/awesome-chinese-ai-tools), an open-source directory cataloging 100+ AI tools with a focus on free tiers, Chinese language support, and accessibility for developers in China.
-
-I am requesting API access to:
-
-1. **Automate tool verification** — Use the API to periodically validate tool availability and pricing accuracy across the directory
-2. **Generate structured comparisons** — Build a comparison engine that helps users find the best tool for their specific use case using natural language queries
-3. **Community Q&A** — Power a GitHub Discussions bot that answers questions about tool selection based on the directory content
-
-**Project Details:**
-- Repository: github.com/sanhuang520-ship-it/awesome-chinese-ai-tools
-- Stars: [X] | Commits: [X] | Contributors: [X]
-- Active since: [start date]
-- Community: [link to discussions/issues]
-
-**Expected Usage:**
-- Volume: ~500–1,000 API calls/day
-- Models: GPT-4o mini for cost efficiency, GPT-4o for complex comparisons
-- No user data collection, fully open-source implementation
-
-I am committed to responsible API use and am happy to share my implementation code upon request.
-
-Thank you for considering my application.
-
-[Your Name]
-[GitHub Profile]
-[Optional: Twitter/LinkedIn]
-
----
-
-## 有用的资源
-
-- [GitHub README Badges](https://shields.io)
-- [Awesome Lint](https://github.com/sindresorhus/awesome-lint) — 检查你的列表是否符合 Awesome 规范
-- [All Contributors](https://allcontributors.org) — 自动记录贡献者
-- [Keepachangelog](https://keepachangelog.com/zh-CN) — 更新日志格式规范
+- 发现失效链接、事实错误或安装问题：[提交 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new/choose)。
+- 推荐 Skill 或工具：请提供干净官网链接，并按 [CONTRIBUTING.md](CONTRIBUTING.md) 说明来源和利益相关。
+- 只接受可复核的数据与使用案例；如果一项结论仅是推断，请明确标注。

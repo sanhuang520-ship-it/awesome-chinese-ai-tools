@@ -137,6 +137,30 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [Markdown to EPUB Converter](https://github.com/smerchek/claude-epub-skill) | ⭐150 | 把 Markdown 文档转成专业 EPUB 电子书 🕰<sub>2025-10-18 后未更新</sub> |
 | [Master Claude for Legal](https://github.com/sboghossian/master-claude-for-legal) | ⭐54 | 法务技能包：NDA 审阅、多方版本对比、引用核验 |
 
+### 📊 PPT 演示（19 个）
+
+| Skill | 来源 | 说明 |
+|-------|------|------|
+| [ppt-master](https://github.com/hugohe3/ppt-master) | ⭐44,929 | 生成可编辑的原生 PPTX：原生形状、转场动画、数据图表；可建可复用的品牌/风格/版式工作区，也能填充现有 PPTX 模板或增强已完成的稿子 |
+| [frontend-slides](https://github.com/zarazhangrui/frontend-slides) | ⭐27,330 | 用前端能力做网页幻灯片：从零生成或把 PPT/PPTX 转成网页，动画丰富，面向不做设计的人 |
+| [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) | ⭐23,792 | 横向翻页网页 PPT（单 HTML）：含 WebGL 背景、演讲者视图、观众屏同步、讲稿备注。两种风格——「电子杂志×电子墨水」和「瑞士国际主义」 |
+| [banana-slides](https://github.com/anionex/banana-slides) | ⭐15,436 | 基于 nano banana pro 的 AI PPT 生成应用，支持上传模板图片、一句话/大纲生成、导出可编辑 ppt |
+| [html-ppt-skill](https://github.com/lewislulu/html-ppt-skill) | ⭐7,807 | HTML PPT Studio：24 套主题、31 种版式、20+ 动画，模板驱动的静态 HTML 演示 |
+| [qiaomu-anything-to-notebooklm](https://github.com/joeseesun/qiaomu-anything-to-notebooklm) | ⭐5,736 | 多源内容处理器：公众号、网页、YouTube、播客（小宇宙/喜马拉雅）、PDF、Markdown → 自动上传 NotebookLM 并生成播客/PPT/思维导图 |
+| [dashi-ppt-skill](https://github.com/chuspeeism/dashi-ppt-skill) | ⭐5,031 | 基于预置视觉主题组合页面，生成可离线打开、可在浏览器编辑的 HTML 演示，支持导出 PPTX / PDF |
+| [codex-ppt-skill](https://github.com/ningzimu/codex-ppt-skill) | ⭐4,770 | 用 GPT-Image-2 从文章、报告、论文、笔记或大纲生成视觉统一的图片式 PPTX |
+| [bento](https://github.com/nyblnet/bento) | ⭐3,924 | 把一套办公软件塞进单个文件：.bento.html 演示稿，文档本身是 JSON，双击就能编辑与放映，自带演讲者窗口 |
+| [NanoBanana-PPT-Skills](https://github.com/op7418/NanoBanana-PPT-Skills) | ⭐3,197 | 自动生成高质量 PPT 图片和视频，支持智能转场与交互式播放 🕰<sub>2026-01-19 后未更新</sub> |
+| [GordenPPTSkill](https://github.com/GordenSun/GordenPPTSkill) | ⭐2,925 | 21 套内置中文 PPT 模板（也支持自带 .pptx）：只替换文字、不破坏原排版配色字号，内置出框检测与同级标题字号校验。适合工作汇报、述职竞聘、开题答辩 |
+| [image-to-editable-ppt-skill](https://github.com/ningzimu/image-to-editable-ppt-skill) | ⭐1,945 | 把幻灯片截图、扫描件、图片式 PPTX 和 PDF 还原成对象级可编辑的 PowerPoint |
+| [GordenSuperPPTSkills](https://github.com/GordenSun/GordenSuperPPTSkills) | ⭐1,748 | 把图片格式的 PPT 逆向还原成可编辑 .pptx：复刻背景 + 绿幕抠框架 + 抠元素图标 + GPT 视觉提取文字，再合成（文字是真文本框） |
+| [CyberPPT](https://github.com/crazyykhllc-bit/CyberPPT) | ⭐1,571 | 把 DOCX/PDF/TXT/XLSX、研究报告、原始数据转成高密度、可编辑的咨询风格 PPTX，支持 SCR 叙事、风格确认与渲染质检 |
+| [harness-anything](https://github.com/yb2460/harness-anything) | ⭐1,426 | AI 控制中枢：WPS、MS Office、Zotero、Photoshop，47 个 CLI 命令 + 27 个学术技能。含 JSON 数据驱动的 PPT 自动生成 |
+| [ian-handdrawn-ppt](https://github.com/helloianneo/ian-handdrawn-ppt) | ⭐1,320 | 中文手绘技术 PPT 整页图像生成：21:9 封面 + 16:9 正文配图，PNG 输出 |
+| [ppt-image-first](https://github.com/NyxTides/ppt-image-first) | ⭐1,191 | 对话优先的演示规划：先聊清楚要讲什么，再给多个视觉方向的预览图，最后才写稿 |
+| [gpt-image2-ppt-skills](https://github.com/JuneYaooo/gpt-image2-ppt-skills) | ⭐1,166 | 克隆任意 .pptx 的版式做成自己的稿子：gpt-image-2 模仿版式，你提供内容。内置 10 套风格，输出高清 PNG 与 16:9 .pptx |
+| [ppt-agent-skills](https://github.com/sunbigfly/ppt-agent-skills) | ⭐879 | 像做软件工程一样做演示：模拟顶级 PPT 设计公司的完整流程（需求调研→资料搜集→大纲策划→策划稿→设计稿），输出 HTML |
+
 ### 💻 开发工程（35 个）
 
 | Skill | 来源 | 说明 |
@@ -176,6 +200,18 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [D3.js Visualization](https://github.com/chrisvoncsefalvay/claude-d3js-skill) | ⭐220 | 用 D3 做交互式数据可视化图表 🕰<sub>2025-10-18 后未更新</sub> |
 | [great_cto](https://github.com/avelikiy/great_cto) | ⭐75 | 7 个专业子智能体（技术负责人、资深工程师等）组成的技术团队 |
 | [clone-any-website-skill](https://github.com/promptwhisper/clone-any-website-skill) | ⭐62 | Codex 技能：把公开网站重建成干净可维护的本地项目，讲究视觉、交互、媒体与多端还原度 |
+
+### 🤖 Agent 与调研（7 个）
+
+| Skill | 来源 | 说明 |
+|-------|------|------|
+| [Agent-Reach](https://github.com/Panniantong/Agent-Reach) | ⭐70,785 | 给 AI 装上看全网的眼睛：读取与搜索 Twitter、Reddit、YouTube、GitHub、B 站、小红书。一个 CLI，零 API 费用。中文触发词齐全（全网调研 / 查一下 / 看看大家怎么评价） |
+| [last30days-skill](https://github.com/mvanhorn/last30days-skill) | ⭐57,942 | 调研某个话题最近 30 天大家实际在说什么：抓 Reddit、X、YouTube、TikTok、HN、Polymarket、GitHub 的帖子与互动数据，输出带引用的总结。自带健康检查诊断失效数据源 |
+| [OpenMontage](https://github.com/calesthio/OpenMontage) | ⭐47,439 | 开源的智能体视频生产系统：12 条流水线、100+ 工具、700+ agent 技能，含 130 个 SKILL.md。覆盖配乐生成、素材处理、剪辑决策全流程 |
+| [awesome-claude-code-subagents](https://github.com/voltagent/awesome-claude-code-subagents) | ⭐24,228 | 100+ 个 Claude Code 专用 subagent，覆盖较广的开发场景 |
+| [agent-skills-for-context-engineering](https://github.com/muratcankoylan/agent-skills-for-context-engineering) | ⭐17,696 | 面向上下文工程与多 agent 架构的 skill 集，根目录同时有 SKILL.md 和 skills/ |
+| [watch-skill](https://github.com/oxbshw/watch-skill) | ⭐279 | 让 AI 看懂视频：把视频、直播流、以及 agent 自己的录屏转成可理解的内容并自我校验。含 11 个 SKILL.md，一键装 ffmpeg/yt-dlp 与 MCP |
+| [super-video-maker-skill](https://github.com/Bomx/super-video-maker-skill) | ⭐213 | 端到端 AI 视频生产：HeyGen 数字人、Seedance/字节素材、OpenAI 配图、Remotion 合成，覆盖制作/剪辑/字幕/配乐/导出 |
 
 ### 🎨 创意设计（12 个）
 
@@ -229,6 +265,26 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [metadata-extraction](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/metadata-extraction) | ⭐659 | 提取分析文件元数据用于取证 |
 | [file-deletion](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/file-deletion) | ⭐659 | 安全删除文件与数据清除方法 |
 | [FFUF Web Fuzzing](https://github.com/jthack/ffuf_claude_skill) | ⭐205 | 集成 ffuf 做 Web 模糊测试 🕰<sub>2025-10-16 后未更新</sub> |
+
+### 🧊 3D 与图形（5 个）
+
+| Skill | 来源 | 说明 |
+|-------|------|------|
+| [img2threejs](https://github.com/img2threejs/img2threejs) | ⭐11,074 | 把参考图还原成纯代码的程序化 Three.js 模型，带质量门禁、可直接做动画。用于图生 3D、物体精细重建、风格化人物 |
+| [threejs-skills](https://github.com/CloudAI-X/threejs-skills) | ⭐2,965 | Three.js 分领域技能包（10 个子技能）：场景与相机基础、几何体、材质、贴图、光照、动画、交互、着色器、后期处理、模型加载 |
+| [img2obj](https://github.com/vinhhien112/img2obj) | ⭐1,577 | Codex 插件：给一张物体图，校验并把它重建为可编辑的程序化 Three.js 资产 |
+| [threejs-game-skills](https://github.com/majidmanzarpour/threejs-game-skills) | ⭐1,259 | 用 Three.js 做浏览器游戏的 9 个技能：玩法系统、AAA 级画面、游戏 UI、3D/图像/音频资产生成、调试与性能分析、QA 与发布 |
+| [auteur](https://github.com/agiwhitelist/auteur) | ⭐1,103 | 把网页当电影来导：整站从零设计构建，滚动驱动的电影感叙事页，多屏产品（应用/仪表盘/后台/引导/文档）共用一套设计系统 |
+
+### 🎮 游戏开发（5 个）
+
+| Skill | 来源 | 说明 |
+|-------|------|------|
+| [Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) | ⭐23,795 | 把 Claude Code 变成完整游戏工作室：49 个 AI 智能体 + 72 个工作流技能 + 一套协调系统。仓库含 74 个 SKILL.md |
+| [sprite-gen](https://github.com/aldegad/sprite-gen) | ⭐680 | 生成干净的 2D 游戏精灵图与动画图集：状态分行、去除杂边、逐帧对齐的流水线 |
+| [novel-to-game](https://github.com/worldwonderer/novel-to-game) | ⭐634 | 把小说变成有据可依、可实际游玩的游戏：7 个技能覆盖小说分析、游戏概念、世界设计、美术指导、构建与 QA |
+| [GD-Agentic-Skills](https://github.com/thedivergentai/GD-Agentic-Skills) | ⭐499 | Godot 4.7+ 专用技能库：97 个专家技能 + 27 个指南，覆盖 2D/3D 动画、物理、光照、材质、世界构建、能力系统等 |
+| [awesome-gamedev-agent-skills](https://github.com/gamedev-skills/awesome-gamedev-agent-skills) | ⭐479 | 游戏开发技能路由：装一次，主路由自动识别引擎（Godot/Unity/Unreal/Bevy/Phaser/PixiJS/three.js/LÖVE/pygame/Roblox）并调用对应技能。含 67 个 SKILL.md |
 
 ---
 
