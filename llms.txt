@@ -15,6 +15,7 @@
 ## 原创 Skill 独立说明页
 
 - [AI 学习教练](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/learning/): 先校准目标、基础、时间与验收标准，再进入主动回忆、输出、纠错与间隔复习
+- [中文拆书与读书笔记](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reading/): 作者问题、核心主张与论证、个人行动与质疑；区分作品内容、解释和待核对信息
 - [中文网页排版](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/): 行高、字体栈、中英混排、CJK 断行与可复制 CSS
 - [中式 DESIGN.md](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/design/): 8 套设计系统及可核对的对比度边界
 - [国潮视觉方向](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/): 画风、配色和纹样约束；不承诺不同模型生成相同画面

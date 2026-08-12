@@ -89,5 +89,14 @@ class InternalLinksTest(unittest.TestCase):
         self.assertIn(f'data-copy="{command}"', page)
         self.assertIn("完整计划、执行过程与学习效果尚未验证", page)
 
+    def test_reading_guide_keeps_source_and_copyright_boundaries_visible(self):
+        page = (ROOT / "reading" / "index.html").read_text(encoding="utf-8")
+        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill book-digest-cn"
+        for phrase in ("作者的问题", "主张与论证", "我的判断", "作品内容", "解释", "待核对", "版权与引用边界"):
+            self.assertIn(phrase, page)
+        self.assertIn(f'<code class="command">{command}</code>', page)
+        self.assertIn(f'data-copy="{command}"', page)
+        self.assertIn("不是逐句原文核验", page)
+
 if __name__ == "__main__":
     unittest.main()
