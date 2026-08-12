@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+import re
 import unittest
 from collections import Counter
 from pathlib import Path
@@ -41,6 +42,39 @@ class CatalogIntegrityTest(unittest.TestCase):
         for host in ("cursor.sh", "runwayml.com", "blackforestlabs.ai"):
             with self.subTest(host=host):
                 self.assertNotIn(f"https://{host}", combined)
+
+    def test_tool_fields_are_safe_for_current_html_templates(self):
+        attribute_unsafe = re.compile(r"[<>\"'`]")
+        for tool in self.tools:
+            with self.subTest(tool=tool["name"]):
+                self.assertNotRegex(tool["name"], attribute_unsafe)
+                self.assertNotRegex(tool["url"], attribute_unsafe)
+                self.assertNotRegex(tool.get("desc", ""), r"[<>]")
+                self.assertNotRegex(tool.get("freeInfo", ""), r"[<>]")
+
+    def test_category_style_values_use_expected_formats(self):
+        for name, category in self.data["categories"].items():
+            with self.subTest(category=name):
+                self.assertRegex(name, r"^[a-z][a-z0-9-]*$")
+                self.assertRegex(category["color"], r"^#[0-9a-fA-F]{6}$")
+                self.assertRegex(category["bg"], r"^rgba\(\d{1,3},\d{1,3},\d{1,3},(?:0|1|0?\.\d+)\)$")
+
+    def test_skill_fields_are_safe_for_current_html_templates(self):
+        data = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))
+        for skill in data["skills"]:
+            with self.subTest(skill=skill["name"]):
+                self.assertTrue(skill["name"].strip())
+                self.assertNotRegex(skill["name"], r"[<>\"'`\\]")
+                self.assertNotRegex(skill["url"], r"[<>\"'`]")
+                self.assertNotRegex(skill.get("desc", ""), r"[<>]")
+                self.assertNotRegex(skill.get("descEn", ""), r"[<>]")
+
+    def test_timeline_fields_cannot_inject_markup(self):
+        data = json.loads((ROOT / "data" / "updates.json").read_text(encoding="utf-8"))
+        for event in data.get("events", []):
+            with self.subTest(event=event.get("title")):
+                for field in ("date", "type", "title", "desc"):
+                    self.assertNotRegex(str(event.get(field, "")), r"[<>]")
 
 
 if __name__ == "__main__":
