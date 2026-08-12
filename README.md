@@ -127,7 +127,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [`book-digest-cn`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reading/) | 拆书三层法：作者在回答什么问题 → 核心主张与论证 → 我的行动、质疑和边界；不编造书中内容，不抄目录式笔记 |
 | [`bookkeeping-cn`](skills/bookkeeping-cn/) | 记账整理。**明确不做**税务筹划、投资建议，不替代会计 |
 | [`chinese-design-md`](skills/chinese-design-md/) | 中式 DESIGN.md 设计系统（本站原创）：8 套可直接丢进项目根目录的设计文档，AI 读了就按规范生成界面。含中文排版规则（行高 1.75 / 不用 justify / 着重号代替斜体 / CJK 避头尾），对比度逐项实测并标出不达标项 |
-| [`chinese-lesson-plan`](skills/chinese-lesson-plan/) | 中小学教案。含防套话机制：学情分析要写这个年龄段的具体特征 |
+| [`chinese-lesson-plan`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/lesson-plan/) | 中小学教案：先核对学段、教材版本和适用课标，再按核心素养、学习任务与评价证据组织目标；公开完整任务失败与缩小复测 |
 | [`chinese-typography`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/) | 中文排版：中英间距、CJK 断行避头尾、字体栈、标点全半角，含错误对照与可直接复制的 CSS |
 | [`chinese-web-themes`](skills/chinese-web-themes/) | 8 套中式网页主题（水墨/青绿/宋韵/敦煌/朱砂/新中式/竹韵/夜宴），对比度全过 WCAG AA |
 | [`chinese-work-report`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/work-report/) | 周报 / 述职 / 项目汇报，讲清楚做了什么、结果如何、下一步；没有结果数据时明确留空，不编数字 |

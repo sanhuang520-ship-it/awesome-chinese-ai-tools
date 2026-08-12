@@ -74,7 +74,7 @@ class CatalogIntegrityTest(unittest.TestCase):
         data = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))
         explainers = {skill["name"]: skill["explainer"] for skill in data["skills"] if skill.get("explainer")}
         first_party = {skill["name"] for skill in data["skills"] if skill.get("ours")}
-        self.assertGreaterEqual(len(explainers), 11)
+        self.assertGreaterEqual(len(explainers), 12)
         self.assertEqual(set(), set(explainers) - first_party)
         for name, relative in explainers.items():
             with self.subTest(skill=name):

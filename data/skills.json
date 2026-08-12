@@ -194,10 +194,11 @@
       "official": false,
       "rec": true,
       "ours": true,
-      "desc": "中文教案助手（本站原创）：按新课标三维目标生成中小学教案，含分层作业、板书设计、说课稿",
-      "descEn": "Chinese K-12 lesson plan generator — curriculum-aligned objectives, tiered homework, blackboard design",
+      "desc": "中文教案助手（本站原创）：先核对学段、教材版本和适用课标，再按学科核心素养、学习任务与评价证据组织目标，含分层作业、板书设计和说课稿",
+      "descEn": "Chinese K-12 lesson-plan assistant — verifies curriculum context, then aligns core competencies, learning tasks and assessment evidence",
       "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-lesson-plan",
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/chinese-lesson-plan",
+      "explainer": "lesson-plan/",
       "skillOk": true,
       "skillCheckedAt": "2026-08-12"
     },

@@ -98,5 +98,17 @@ class InternalLinksTest(unittest.TestCase):
         self.assertIn(f'data-copy="{command}"', page)
         self.assertIn("不是逐句原文核验", page)
 
+    def test_lesson_plan_guide_uses_current_curriculum_language_and_keeps_failure_visible(self):
+        page = (ROOT / "lesson-plan" / "index.html").read_text(encoding="utf-8")
+        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-lesson-plan"
+        for phrase in ("核心素养", "学习任务", "评价证据", "完整任务：未完成", "缩小复测：通过", "学生隐私", "实验与活动安全"):
+            self.assertIn(phrase, page)
+        self.assertIn(f'<code class="command">{command}</code>', page)
+        self.assertIn(f'data-copy="{command}"', page)
+        skill = (ROOT / "skills" / "chinese-lesson-plan" / "SKILL.md").read_text(encoding="utf-8")
+        catalog = (ROOT / "data" / "skills.json").read_text(encoding="utf-8")
+        self.assertNotIn("按新课标的教学目标三维度组织", skill)
+        self.assertNotIn("按新课标三维目标", catalog)
+
 if __name__ == "__main__":
     unittest.main()
