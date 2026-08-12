@@ -5,23 +5,40 @@
     <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 12 Aug 2026 19:10:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 22:55:00 +0800</lastBuildDate>
     <atom:link href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>13 个原创中文 Agent Skills 方法与证据总览</title>
+      <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guides/</link>
+      <guid isPermaLink="true">https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guides/</guid>
+      <pubDate>Wed, 12 Aug 2026 22:55:00 +0800</pubDate>
+      <description><![CDATA[
+        <p>按使用场景连接 13 个原创 Skill 的方法说明、Codex 实测状态、原始案例和质量边界；10 项当次任务完成，1 项按流程等待必要输入，2 项大任务失败后缩小复测通过。</p>
+      ]]></description>
+    </item>
+    <item>
+      <title>13 个原创 Skill 均已具备独立说明页</title>
+      <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guides/</link>
+      <guid isPermaLink="false">urn:awesome-chinese-ai-tools:update:first-party-explainers:2026-08-12</guid>
+      <pubDate>Wed, 12 Aug 2026 22:37:00 +0800</pubDate>
+      <description><![CDATA[
+        <p>每个本站原创 Skill 均有独立的方法与证据页面，并接入完整社交分享卡、结构化数据和站内链接；页面不把单次任务结果外推为准确率或认证。</p>
+      ]]></description>
+    </item>
     <item>
       <title>13 个中文 Agent Skills 的 Codex 自动触发实测</title>
       <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/</link>
       <guid isPermaLink="true">https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/</guid>
       <pubDate>Wed, 12 Aug 2026 18:38:00 +0800</pubDate>
       <description><![CDATA[
-        <p>13/13 在未点名 Skill 的任务中发生自动触发；11 项首次完成，2 项大任务失败后缩小复测通过。原始任务、失败与证据边界均公开。</p>
+        <p>13/13 在未点名 Skill 的任务中发生自动触发；任务完成、等待必要输入与缩小复测分别记录，原始任务、失败和证据边界均公开。</p>
       ]]></description>
     </item>
-
     <item>
       <title>本站原创 Skills 增加静态质量与安全标签</title>
-      <link>https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/QUALITY.md</link>
-      <guid isPermaLink="true">https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/QUALITY.md</guid>
+      <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/QUALITY.md</link>
+      <guid isPermaLink="true">https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/QUALITY.md</guid>
       <pubDate>Wed, 12 Aug 2026 17:58:00 +0800</pubDate>
       <description><![CDATA[
         <p>公开 13 个原创 Skill 的脚本、运行时网络、凭据和写文件能力静态检查结果；明确这不是正式安全认证。</p>

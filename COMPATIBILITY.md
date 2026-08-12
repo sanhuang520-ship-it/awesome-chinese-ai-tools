@@ -10,7 +10,7 @@
 |---|---|---|
 | `skills` CLI 发现本站原创 Skill | ✅ 13 / 13 | `npx skills@1.5.22 add . --list` 找到 13 个 Skill |
 | Codex 共享目录安装内容 | ✅ 13 / 13 | 仓库与 `~/.agents/skills/<name>/SKILL.md` 逐字节一致 |
-| Codex 自动触发 | ⚠️ 13 / 13 | 均发生自动触发；2 项大任务失败后通过缩小复测 |
+| Codex 自动触发 | ⚠️ 13 / 13 | 10 项当次任务完成；1 项按流程等待必要输入；2 项大任务失败后通过缩小复测 |
 | Claude Code | ⏳ 待测 | 当前没有运行 Claude Code，不能声称通过 |
 | Cursor | ⏳ 待测 | 当前没有运行 Cursor，不能声称通过 |
 
@@ -49,6 +49,6 @@ Codex 在隔离实测中报告：已安装 Skill 较多时，会为适应 skills
 
 ## 下一轮测试
 
-13 个原创 Skill 已各完成一次自动触发测试，两个失败项也完成缩小复测。下一步补 Claude Code / Cursor 的真实环境证据，并为大任务建立明确输出预算。
+13 个原创 Skill 已各完成一次自动触发测试：10 项当次任务完成，1 项按流程等待必要输入，两个失败项完成缩小复测。下一步补 Claude Code / Cursor 的真实环境证据，并为大任务建立明确输出预算。
 
 如果你能提供 Claude Code 或 Cursor 的实际结果，请用[结构化兼容性表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。表单会分别记录是否点名 Skill、是否触发与任务是否完成；成功和失败都欢迎，但请先删除 Token、邮箱和私人路径。

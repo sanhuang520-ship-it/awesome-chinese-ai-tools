@@ -8,6 +8,8 @@ from html.parser import HTMLParser
 from urllib.parse import urljoin
 from pathlib import Path
 
+from sync_feed import render_feed
+
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
@@ -46,12 +48,19 @@ class PublicFeedsTest(unittest.TestCase):
 
     def test_feed_is_valid_and_contains_only_repository_updates(self):
         feed = (ROOT / "feed.xml").read_text(encoding="utf-8")
+        self.assertEqual(render_feed(), feed)
         root = ET.fromstring(feed)
         items = root.findall("./channel/item")
-        self.assertGreaterEqual(len(items), 1)
+        self.assertGreaterEqual(len(items), 4)
         self.assertNotIn("AI 日报", feed)
         self.assertNotIn("今日推荐", feed)
         self.assertTrue(all("awesome-chinese-ai-tools" in item.findtext("link", "") for item in items))
+        guids = [item.findtext("guid", "") for item in items]
+        self.assertEqual(len(guids), len(set(guids)))
+        self.assertIn("10 项当次任务完成", feed)
+        self.assertIn("1 项按流程等待必要输入", feed)
+        self.assertIn("2 项大任务失败后缩小复测通过", feed)
+        self.assertNotIn("11 项首次完成", feed)
 
     def test_sitemap_contains_every_repository_owned_skill(self):
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
