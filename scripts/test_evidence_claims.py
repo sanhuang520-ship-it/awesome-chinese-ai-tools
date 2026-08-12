@@ -171,6 +171,15 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertIn("[English](README.en.md)", readme)
         self.assertIn("README.en.md", llms)
 
+    def test_stale_alternative_pages_are_not_indexed_as_current_advice(self):
+        sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        for page in sorted((ROOT / "alternatives").glob("*.html")):
+            with self.subTest(page=page.name):
+                body = page.read_text(encoding="utf-8")
+                self.assertIn('<meta name="robots" content="noindex, nofollow">', body)
+                self.assertIn("历史快照", body)
+                self.assertNotIn(f"alternatives/{page.name}", sitemap)
+
     def test_security_policy_routes_sensitive_reports_privately(self):
         policy = (ROOT / "SECURITY.md").read_text(encoding="utf-8")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
