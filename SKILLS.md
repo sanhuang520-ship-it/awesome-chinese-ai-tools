@@ -1,6 +1,6 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **164 个 Skill｜63 个中文原创｜✍️ 13 个本站原创**  
+> **168 个 Skill｜64 个中文原创｜✍️ 13 个本站原创**  
 > 每一个都经 GitHub API 验证仓库真实存在  
 > 🔄 最近自动复检：**2026-08-11**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
@@ -60,7 +60,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [guofeng-threejs](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guofeng-threejs) | 国风 Three.js 渲染（本站原创）：水墨 shader 三技法（墨分五色/边缘积墨/笔触扰动），含可运行 demo 与移动端性能要点。只做中式渲染，不做通用 Three.js 教程 |
 | [homework-tutor-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn) | 家长辅导作业助手（本站原创）：不给答案给引导话术，分学科方法，含情绪对抗处理 |
 
-### 🇨🇳 中文原创（52 个）
+### 🇨🇳 中文原创（53 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -74,6 +74,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [agent-skills-with-anthropic](https://github.com/datawhalechina/agent-skills-with-anthropic) | ⭐1,457 | 吴恩达 DeepLearning.AI 课程的中文翻译与知识整理 |
 | [shuorenhua](https://github.com/MrGeDiao/shuorenhua) | ⭐1,011 | 「说人话」去 AI 味改写：保事实、分场景、改完可直接发 |
 | [Awesome-Journal-Skills](https://github.com/brycewang-stanford/Awesome-Journal-Skills) | ⭐973 | 主流期刊投稿技能包（AER、QJE 等经济学顶刊） |
+| [claude-skill-web-clone](https://github.com/Jane-xiaoer/claude-skill-web-clone) | ⭐937 | 网站复刻方法论：先拿真源码 → 判路径 → 逆向拆解 → 搭工程 → 替换内容。覆盖静态站/React/WebGL/Canvas/Three.js。作者强调不靠 AI 幻觉出来的代码 |
 | [speak-human-tw](https://github.com/Raymondhou0917/speak-human-tw) | ⭐787 | 繁体中文去 AI 味：抓 38 种 AI 写作痕迹，校正用语与标点 |
 | [claude-code-skills-zh](https://github.com/laolaoshiren/claude-code-skills-zh) | ⭐755 | 面向中文开发者的技能库，按场景分类、复制即装 |
 | [higgsfield-seedance2-jineng](https://github.com/beshuaxian/higgsfield-seedance2-jineng) | ⭐744 | AI 视频生成 15 个 prompt skill（Seedance 2.0 × Higgsfield） |
@@ -132,7 +133,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [Markdown to EPUB Converter](https://github.com/smerchek/claude-epub-skill) | ⭐150 | 把 Markdown 文档转成专业 EPUB 电子书 🕰<sub>2025-10-18 后未更新</sub> |
 | [Master Claude for Legal](https://github.com/sboghossian/master-claude-for-legal) | ⭐54 | 法务技能包：NDA 审阅、多方版本对比、引用核验 |
 
-### 💻 开发工程（26 个）
+### 💻 开发工程（27 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -162,6 +163,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [aws-skills](https://github.com/zxkane/aws-skills) | ⭐347 | AWS 开发：CDK 最佳实践、成本优化、Serverless 架构 |
 | [D3.js Visualization](https://github.com/chrisvoncsefalvay/claude-d3js-skill) | ⭐220 | 用 D3 做交互式数据可视化图表 🕰<sub>2025-10-18 后未更新</sub> |
 | [great_cto](https://github.com/avelikiy/great_cto) | ⭐75 | 7 个专业子智能体（技术负责人、资深工程师等）组成的技术团队 |
+| [clone-any-website-skill](https://github.com/promptwhisper/clone-any-website-skill) | ⭐62 | Codex 技能：把公开网站重建成干净可维护的本地项目，讲究视觉、交互、媒体与多端还原度 |
 
 ### 🎨 创意设计（11 个）
 
