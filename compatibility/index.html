@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Codex Agent Skills 中文兼容性实测：13 个 Skill 自动触发记录</title>
+<meta name="description" content="13 个中文 Agent Skills 在 Codex 的安装、自动触发与边界实测：公开成功、失败、缩小复测、原始任务和客户端限制，不把安装成功等同于任务完成。">
+<link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/">
+<meta property="og:type" content="article"><meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="Codex Agent Skills 中文兼容性实测">
+<meta property="og:description" content="13/13 自动触发，2 次大任务失败后缩小复测通过；成功与失败一起公开。">
+<meta property="og:url" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Codex Agent Skills 中文兼容性实测">
+<meta name="twitter:description" content="不把能安装、能触发和能完成任务混为一谈。">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Codex Agent Skills 中文兼容性实测","description":"13 个本站原创 Agent Skills 的 Codex 安装与自动触发记录。","inLanguage":"zh-CN","dateModified":"2026-08-12","mainEntityOfPage":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/","author":{"@type":"Organization","name":"中文 AI Skills 库"}}
+</script>
+<style>
+:root{--paper:#f2eee4;--ink:#18201d;--muted:#66706a;--line:#c9c0ae;--red:#a34438;--green:#315f50;--amber:#b47825;--card:#fbf8f0;--serif:"Songti SC","Noto Serif CJK SC",STSong,serif;--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans)}a{color:var(--green)}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.top{padding:23px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:13px}.top a{text-decoration:none;font-weight:800}.top span{font:11px/1 var(--mono);letter-spacing:.12em;color:var(--muted)}
+.hero{padding:72px 0 58px;display:grid;grid-template-columns:1.25fr .75fr;gap:58px}.eyebrow{font:800 12px/1 var(--mono);letter-spacing:.15em;color:var(--red)}h1,h2,h3{font-family:var(--serif)}h1{font-size:clamp(42px,7vw,82px);line-height:1.08;margin:18px 0 22px;max-width:9.5em}.lead{font-size:clamp(18px,2vw,22px);color:#3d4741;max-width:34em}.stamp{align-self:end;border:1px solid var(--ink);padding:28px;background:var(--card);box-shadow:8px 8px 0 var(--red)}.stamp b{font:800 clamp(42px,7vw,70px)/1 var(--serif);display:block}.stamp span{font:12px var(--mono);color:var(--muted)}
+.warning{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0;background:rgba(255,255,255,.25)}.warning .wrap{display:grid;grid-template-columns:90px 1fr;gap:20px}.warning b{color:var(--red);font:800 12px var(--mono)}.warning p{margin:0}
+.section{padding:65px 0;border-bottom:1px solid var(--line)}h2{font-size:clamp(30px,5vw,52px);line-height:1.2;margin:0 0 10px}.dek{color:var(--muted);margin:0 0 28px;max-width:48em}.steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}.step{padding:24px;background:var(--card);min-height:170px}.step+.step{border-left:1px solid var(--line)}.step i{font:800 11px var(--mono);color:var(--red);font-style:normal}.step h3{font-size:21px;margin:14px 0 7px}.step p{font-size:13px;color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.case{background:var(--card);border:1px solid var(--line);padding:22px;display:grid;grid-template-columns:1fr auto;gap:10px}.case h3{font-size:19px;margin:0}.case p{font-size:13px;color:var(--muted);margin:4px 0 0}.case a{text-decoration:none}.status{font:800 11px/1 var(--mono);padding:7px 9px;border:1px solid var(--green);color:var(--green);height:max-content}.status.partial{border-color:var(--amber);color:#865917}.fail{margin-top:26px;background:#272b28;color:#f2eee4;padding:28px}.fail h3{margin:0 0 8px;color:#efb34f}.fail p{margin:0;color:#ccd1cc}.fail a{color:#f3c979}
+.unknown{display:grid;grid-template-columns:1fr 1fr;gap:18px}.unknown article{border-left:5px solid var(--line);padding:12px 20px}.unknown h3{margin:0}.unknown p{color:var(--muted);margin:5px 0}.cta{margin:64px 0;background:var(--red);color:#fff7e9;padding:clamp(30px,6vw,60px);display:grid;grid-template-columns:1fr auto;gap:25px;align-items:end}.cta h2{margin:0 0 10px}.cta p{margin:0;opacity:.85}.cta a{border:1px solid #fff7e9;color:#fff7e9;text-decoration:none;padding:10px 15px;font-weight:800;white-space:nowrap}footer{padding:0 0 42px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;gap:30px}.steps{grid-template-columns:1fr 1fr}.step:nth-child(3){border-left:0;border-top:1px solid var(--line)}.step:nth-child(4){border-top:1px solid var(--line)}.grid,.unknown,.cta{grid-template-columns:1fr}.warning .wrap{grid-template-columns:1fr}.cta{align-items:start}}@media(max-width:480px){.wrap{width:calc(100% - 28px)}.top span{display:none}.hero{padding-top:44px}.steps{grid-template-columns:1fr}.step+.step{border-left:0;border-top:1px solid var(--line)}.case{grid-template-columns:1fr}.status{width:max-content}}
+</style>
+</head>
+<body>
+<header class="wrap top"><a href="../">← 中文 AI Skills 库</a><span>COMPATIBILITY NOTEBOOK · 2026-08-12</span></header>
+<main>
+<section class="wrap hero"><div><div class="eyebrow">CODEX · AGENT SKILLS · 中文实测</div><h1>能装上，不等于能完成。</h1><p class="lead">我们把发现、安装、自动触发与任务完成拆开测试。13 个本站原创 Skill 均在 Codex 中自动触发过一次，失败记录也保留。</p></div><aside class="stamp"><b>13 / 13</b><span>AUTOMATIC ACTIVATION OBSERVED</span><p>11 项首次完成；2 项大任务失败后，缩小复测通过。</p></aside></section>
+<section class="warning"><div class="wrap"><b>证据边界</b><p>这是 Codex CLI <code>0.147.0-alpha.6.5</code> 的单任务记录，不是官方认证，也不能外推到每一种提示词。Claude Code 与 Cursor 尚未实测。</p></div></section>
+<section class="wrap section"><h2>四层证据，不能混写</h2><p class="dek">普通列表常把“符合格式”写成“兼容”。这里每前进一步，都需要新的证据。</p><div class="steps"><article class="step"><i>01 / DISCOVERY</i><h3>CLI 能发现</h3><p><code>skills@1.5.22</code> 从仓库识别出 13 个 Skill。</p></article><article class="step"><i>02 / INSTALL</i><h3>文件已安装</h3><p>13 份 SKILL.md 与当前 Codex 共享安装目录逐字节一致。</p></article><article class="step"><i>03 / ACTIVATE</i><h3>自动选择</h3><p>提示不点名 Skill，观察 Codex 是否主动读取正确说明。</p></article><article class="step"><i>04 / DELIVER</i><h3>任务完成</h3><p>选对 Skill 后仍可能超时、越界或遗漏；必须单独记录。</p></article></div></section>
+<section class="wrap section"><h2>13 个真实任务</h2><p class="dek">包含中文排版、README、周报、记账、电商、作业辅导、学习、拆书、教案和国风视觉。点击查看原始任务与限制。</p><div class="grid">
+<article class="case"><div><h3><a href="../cases/chinese-typography-codex.md">中文网页排版审查</a></h3><p>识别字体、行高、断词、行宽与中文斜体问题。</p></div><span class="status">通过</span></article>
+<article class="case"><div><h3><a href="../cases/github-readme-cn-codex.md">GitHub 首屏审查</a></h3><p>明确相关性不等于因果，不承诺涨星。</p></div><span class="status">通过</span></article>
+<article class="case"><div><h3><a href="../cases/chinese-work-report-codex.md">无数据周报</a></h3><p>披露数据缺失，没有编造完成率和业务结果。</p></div><span class="status">通过</span></article>
+<article class="case"><div><h3><a href="../cases/bookkeeping-cn-codex.md">流水与荐股请求</a></h3><p>核对金额，拒绝荐股与不当税务建议。</p></div><span class="status">通过</span></article>
+<article class="case"><div><h3><a href="../cases/ecommerce-copywriting-codex.md">面霜功效宣称</a></h3><p>移除极限词、医疗效果、虚假认证和绝对承诺。</p></div><span class="status">通过</span></article>
+<article class="case"><div><h3><a href="../cases/homework-tutor-cn-codex.md">家长要求直接答案</a></h3><p>先给引导话术，答案单独供家长核对。</p></div><span class="status">通过</span></article>
+<article class="case"><div><h3><a href="../cases/ai-learning-coach-codex.md">两周 SQL 学习</a></h3><p>先校准目标、基础、时间和成果，再制定计划。</p></div><span class="status partial">待输入</span></article>
+<article class="case"><div><h3><a href="../cases/book-digest-cn-codex.md">《小王子》拆书</a></h3><p>三层拆解、反面审视和作品未回答的问题。</p></div><span class="status">通过</span></article>
+<article class="case"><div><h3><a href="../cases/chinese-lesson-plan-codex.md">水的三态教案</a></h3><p>大任务未完成；限定 300 字后复测通过。</p></div><span class="status partial">部分</span></article>
+<article class="case"><div><h3><a href="../cases/chinese-design-md-codex.md">茶品牌设计系统</a></h3><p>从 8 套现成 DESIGN.md 中选择宋韵。</p></div><span class="status">通过</span></article>
+<article class="case"><div><h3><a href="../cases/chinese-web-themes-codex.md">博客水墨主题</a></h3><p>提供引入方法、上线检查和字体授权边界。</p></div><span class="status">通过</span></article>
+<article class="case"><div><h3><a href="../cases/guochao-visual-cn-codex.md">端午国潮海报</a></h3><p>收束为青绿山水，限制纹样堆砌。</p></div><span class="status">通过</span></article>
+<article class="case"><div><h3><a href="../cases/guofeng-threejs-codex.md">水墨 3D 技术审查</a></h3><p>首次读源码过多未完成；修订 Skill 后复测通过。</p></div><span class="status partial">部分</span></article>
+</div><aside class="fail"><h3>失败不是脚注，而是改进输入</h3><p>两个大任务的失败暴露了输出规模与读取范围问题。Three.js Skill 因此增加“先给结论、只核对三类证据”的审查流程；原始失败没有删除。</p></aside></section>
+<section class="wrap section"><h2>仍然不知道什么</h2><div class="unknown"><article><h3>Claude Code</h3><p>待真实客户端测试。格式看似兼容不能代替实际运行。</p></article><article><h3>Cursor</h3><p>待真实客户端测试。安装路径和自动触发需要分别验证。</p></article></div></section>
+<section class="wrap cta"><div><h2>复现一个，或者提交一个反例。</h2><p>成功和失败都欢迎。请附客户端版本、原始任务与脱敏输出。</p></div><a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4">参与实测讨论</a></section>
+</main>
+<footer class="wrap"><span>数据与校验：<a href="../data/compatibility.json">compatibility.json</a> · <a href="../COMPATIBILITY.md">Markdown 表</a></span><span><a href="../QUALITY.md">质量与安全标签</a> · <a href="../cases/">全部案例</a></span></footer>
+</body></html>
