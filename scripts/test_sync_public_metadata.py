@@ -49,6 +49,21 @@ class PublicMetadataTest(unittest.TestCase):
         )
         self.assertEqual(original, sync_sitemap_text(original, "2026-08-12"))
 
+    def test_sitemap_core_lastmod_never_moves_backwards(self):
+        original = (
+            "<url><loc>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/</loc>"
+            "<lastmod>2026-08-13</lastmod></url>\n"
+        )
+        self.assertEqual(original, sync_sitemap_text(original, "2026-08-12"))
+
+    def test_sitemap_core_lastmod_moves_forward_with_newer_data(self):
+        original = (
+            "<url><loc>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/</loc>"
+            "<lastmod>2026-08-11</lastmod></url>\n"
+        )
+        expected = original.replace("2026-08-11", "2026-08-12")
+        self.assertEqual(expected, sync_sitemap_text(original, "2026-08-12"))
+
     def test_readme_step_number_does_not_affect_tool_count_sync(self):
         original = "| 2 | 999 个工具链接实测可访问性 |\n"
         self.assertEqual(

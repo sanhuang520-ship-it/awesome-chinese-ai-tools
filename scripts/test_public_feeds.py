@@ -131,6 +131,24 @@ class PublicFeedsTest(unittest.TestCase):
         duplicates = sorted(url for url, count in Counter(locations).items() if count > 1)
         self.assertEqual([], duplicates)
 
+    def test_updated_discovery_pages_have_matching_sitemap_dates(self):
+        root = ET.parse(ROOT / "sitemap.xml").getroot()
+        namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+        lastmods = {
+            node.findtext("s:loc", namespaces=namespace): node.findtext("s:lastmod", namespaces=namespace)
+            for node in root.findall("s:url", namespace)
+        }
+        expected = {
+            BASE_URL: "2026-08-13",
+            BASE_URL + "guides/": "2026-08-13",
+            BASE_URL + "audit-skill/": "2026-08-13",
+            BASE_URL + "install/": "2026-08-13",
+            BASE_URL + "guochao/": "2026-08-12",
+        }
+        for url, date in expected.items():
+            with self.subTest(url=url):
+                self.assertEqual(date, lastmods.get(url))
+
     def test_every_indexable_html_has_one_canonical_and_sitemap_entry(self):
         root = ET.parse(ROOT / "sitemap.xml").getroot()
         namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}

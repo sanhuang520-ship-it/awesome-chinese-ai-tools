@@ -138,18 +138,18 @@ def sync_index_text(body, stats):
 
 
 def sync_sitemap_text(body, checked):
-    """仅更新随数据变化的核心页，不伪造其他页面的时间。"""
+    """核心页 lastmod 只向前推进，避免数据日期覆盖更晚的内容更新。"""
     base = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
     core = {base, base + "SKILLS.md", base + "README.md", base + "README.en.md"}
     lines = []
     for line in body.splitlines():
         loc = re.search(r"<loc>(.*?)</loc>", line)
         if loc and loc.group(1) in core:
-            line = re.sub(
-                r"<lastmod>\d{4}-\d{2}-\d{2}</lastmod>",
-                f"<lastmod>{checked}</lastmod>",
-                line,
-            )
+            lastmod = re.search(r"<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>", line)
+            if not lastmod:
+                raise ValueError(f"核心 Sitemap 条目缺少 lastmod：{loc.group(1)}")
+            newest = max(lastmod.group(1), checked)
+            line = line[: lastmod.start(1)] + newest + line[lastmod.end(1) :]
         lines.append(line)
     return "\n".join(lines) + ("\n" if body.endswith("\n") else "")
 
