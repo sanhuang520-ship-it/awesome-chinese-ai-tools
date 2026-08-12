@@ -14,6 +14,20 @@
 > 本页是本站原创 Skill 的**仓库自测输出片段**，不是外部用户评价。想看或分享真实使用反馈，请前往[置顶 Discussion](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)。
 > 完整源码：[skills/](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills)
 
+## 先看可复现证据
+
+当前 13 个原创 Skill 都有一条 Codex 自动触发记录；记录保留原始任务、客户端版本、观察结果和不能外推的部分。它们是单任务仓库自测，不等于跨客户端准确率，也不代表外部用户评价。
+
+| Skill | Codex 实测记录 | Skill | Codex 实测记录 |
+|---|---|---|---|
+| `ai-learning-coach` | [两周入门 SQL](cases/ai-learning-coach-codex.md) | `book-digest-cn` | [《小王子》拆书](cases/book-digest-cn-codex.md) |
+| `bookkeeping-cn` | [家庭流水边界测试](cases/bookkeeping-cn-codex.md) | `chinese-design-md` | [新中式茶品牌选型](cases/chinese-design-md-codex.md) |
+| `chinese-lesson-plan` | [水的三态变化教案](cases/chinese-lesson-plan-codex.md) | `chinese-typography` | [中文网页 CSS 审查](cases/chinese-typography-codex.md) |
+| `chinese-web-themes` | [博客水墨主题方案](cases/chinese-web-themes-codex.md) | `chinese-work-report` | [无结果数据的周报](cases/chinese-work-report-codex.md) |
+| `ecommerce-copywriting` | [面霜功效宣称边界](cases/ecommerce-copywriting-codex.md) | `github-readme-cn` | [中文仓库首屏审查](cases/github-readme-cn-codex.md) |
+| `guochao-visual-cn` | [端午海报风格方案](cases/guochao-visual-cn-codex.md) | `guofeng-threejs` | [水墨 3D 技术审查](cases/guofeng-threejs-codex.md) |
+| `homework-tutor-cn` | [拒绝直接代答作业](cases/homework-tutor-cn-codex.md) | 全部记录 | [查看 13 / 13 案例索引](cases/README.md) |
+
 ---
 
 ## 👩‍🏫 中文教案助手 `chinese-lesson-plan`

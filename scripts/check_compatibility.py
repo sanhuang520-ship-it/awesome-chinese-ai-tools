@@ -55,9 +55,20 @@ def main() -> None:
     cases = activation.get("cases", [])
     if len(cases) != len(verified_skills):
         fail("every verified activation skill must have one case")
-    for case in cases:
+    expected_cases = [f"cases/{skill}-codex.md" for skill in verified_skills]
+    if cases != expected_cases:
+        fail(f"activation cases must map to verified skills in order: expected={expected_cases}")
+
+    examples = (ROOT / "EXAMPLES.md").read_text(encoding="utf-8")
+    case_index = (ROOT / "cases" / "README.md").read_text(encoding="utf-8")
+    for skill, case in zip(verified_skills, cases):
         if not (ROOT / case).is_file():
             fail(f"activation case does not exist: {case}")
+        relative_case = case.removeprefix("cases/")
+        if f"cases/{relative_case}" not in examples:
+            fail(f"EXAMPLES.md does not link activation case for {skill}")
+        if f"({relative_case})" not in case_index:
+            fail(f"cases/README.md does not link activation case for {skill}")
 
     allowed = {"verified", "failed", "partial", "not-tested"}
     for key, result in data.get("results", {}).items():

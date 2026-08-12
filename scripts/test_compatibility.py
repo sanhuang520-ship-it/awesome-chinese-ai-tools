@@ -31,9 +31,18 @@ class CompatibilityDataTest(unittest.TestCase):
             activation["verifiedSkills"],
             ["chinese-typography", "github-readme-cn", "chinese-work-report", "bookkeeping-cn", "ecommerce-copywriting", "homework-tutor-cn", "ai-learning-coach", "book-digest-cn", "chinese-lesson-plan", "chinese-design-md", "chinese-web-themes", "guochao-visual-cn", "guofeng-threejs"],
         )
-        self.assertEqual(len(activation["verifiedSkills"]), len(activation["cases"]))
-        for case in activation["cases"]:
+        expected_cases = [
+            f"cases/{skill}-codex.md" for skill in activation["verifiedSkills"]
+        ]
+        self.assertEqual(activation["cases"], expected_cases)
+
+        examples = (ROOT / "EXAMPLES.md").read_text(encoding="utf-8")
+        case_index = (ROOT / "cases" / "README.md").read_text(encoding="utf-8")
+        for case in expected_cases:
             self.assertTrue((ROOT / case).is_file())
+            relative_case = case.removeprefix("cases/")
+            self.assertIn(f"cases/{relative_case}", examples)
+            self.assertIn(f"({relative_case})", case_index)
 
     def test_unrun_clients_are_not_claimed_as_verified(self):
         self.assertEqual(self.data["results"]["claudeCode"]["status"], "not-tested")
