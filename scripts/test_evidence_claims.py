@@ -99,6 +99,18 @@ class EvidenceClaimsTest(unittest.TestCase):
             with self.subTest(claim=claim):
                 self.assertNotIn(claim, index)
 
+    def test_picker_is_a_filter_not_a_ranker(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn("按条件筛选工具入口", index)
+        self.assertIn("按目录顺序查看匹配项", index)
+        self.assertNotIn("直接告诉你最该用的工具", index)
+        self.assertNotIn("3 秒帮你选", index)
+
+    def test_nav_counts_wait_for_data_instead_of_showing_stale_defaults(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<b id="skc">—</b> Skills', index)
+        self.assertIn('<b id="tc">—</b> 工具', index)
+
 
 if __name__ == "__main__":
     unittest.main()

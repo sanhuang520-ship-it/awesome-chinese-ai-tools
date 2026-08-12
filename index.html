@@ -1128,8 +1128,8 @@ details[open] .sk-install-sum{margin-bottom:2px}
     <input id="search" type="text" placeholder="搜索工具、功能…">
   </div>
   <div class="nav-chips">
-    <span class="nav-chip"><b id="skc">110</b> Skills</span>
-    <span class="nav-chip"><b id="tc">47</b> 工具</span>
+    <span class="nav-chip"><b id="skc">—</b> Skills</span>
+    <span class="nav-chip"><b id="tc">—</b> 工具</span>
   </div>
   <div class="nav-actions">
     <button class="nav-quick-btn" id="btn-free">🆓 有免费记录</button>
@@ -1150,8 +1150,8 @@ details[open] .sk-install-sum{margin-bottom:2px}
     <div class="picker-banner-l">
       <span class="picker-banner-icon">🎯</span>
       <div>
-        <div class="picker-banner-tt">不知道用哪个？3 秒帮你选</div>
-        <div class="picker-banner-sub">回答 3 个小问题，直接告诉你最该用的工具</div>
+        <div class="picker-banner-tt">按条件筛选工具入口</div>
+        <div class="picker-banner-sub">回答 3 个小问题，按目录顺序查看匹配项</div>
       </div>
     </div>
     <span class="picker-banner-cta">开始 →</span>
@@ -2397,7 +2397,7 @@ function pkRenderStep(step){
   } else if(step===1){
     body.innerHTML = `
       <div class="picker-q">预算怎么样？</div>
-      <div class="picker-q-sub">帮你过滤掉不合适的</div>
+      <div class="picker-q-sub">商业条款仅为历史记录，最终以官网为准</div>
       <div class="picker-opts" style="grid-template-columns:1fr 1fr">
         <div class="picker-opt" data-field="free" data-val="1">
           <span class="picker-opt-emoji">🆓</span>
@@ -2412,7 +2412,7 @@ function pkRenderStep(step){
   } else if(step===2){
     body.innerHTML = `
       <div class="picker-q">网络环境？</div>
-      <div class="picker-q-sub">国内直连 = 不用梯子就能访问</div>
+      <div class="picker-q-sub">访问情况可能随地区、网络和时间变化</div>
       <div class="picker-opts" style="grid-template-columns:1fr 1fr">
         <div class="picker-opt" data-field="vpn" data-val="1">
           <span class="picker-opt-emoji">🇨🇳</span>
@@ -2420,7 +2420,7 @@ function pkRenderStep(step){
         </div>
         <div class="picker-opt" data-field="vpn" data-val="0">
           <span class="picker-opt-emoji">🌍</span>
-          <span class="picker-opt-label">有梯子，都行</span>
+          <span class="picker-opt-label">不限制访问条件</span>
         </div>
       </div>
       <button class="picker-back" data-back="1">← 上一步</button>`;
@@ -2457,7 +2457,7 @@ function pkRenderResult(){
     <div class="picker-result-sub">按目录顺序展示，不代表质量排名；点击直达官网核对</div>
     ${top.map((t,i)=>`
       <a class="picker-rec r${i+1}" href="${t.url}" target="_blank" rel="noopener">
-        <span class="picker-rec-rank">${i+1}</span>
+        <span class="picker-rec-rank">${String.fromCharCode(65+i)}</span>
         <span class="picker-rec-main">
           <span class="picker-rec-name">${t.name}
             ${t.free?'<span class="badge b-free">有免费记录</span>':'<span class="badge b-paid">付费记录</span>'}
