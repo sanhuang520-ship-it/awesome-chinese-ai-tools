@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent Skills 中文安装指南：Codex、Claude Code 与 Cursor 路径排错</title>
+<meta name="description" content="用 skills CLI 安装 Agent Skills 的中文实测指南：先列出、按名称安装、核对实际目录、判断是否自动触发，并区分 Codex、Claude Code 与 Cursor 的已测和待测结论。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/">
+<meta property="og:type" content="article"><meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="Agent Skills 中文安装与排错指南">
+<meta property="og:description" content="安装成功、文件可见、自动触发、任务完成是四件不同的事。">
+<meta property="og:url" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"使用 skills CLI 安装并核对 Agent Skill","description":"在本机列出、安装、核对和触发 Agent Skill。","inLanguage":"zh-CN","dateModified":"2026-08-12","step":[{"@type":"HowToStep","name":"先列出 Skill","text":"运行 npx skills add 仓库地址 --list。"},{"@type":"HowToStep","name":"安装一个 Skill","text":"使用 --skill 名称，只安装当前需要的 Skill。"},{"@type":"HowToStep","name":"核对文件位置","text":"skills CLI 1.5.22 在本机把文件写入 ~/.agents/skills，并为支持的客户端建立入口。"},{"@type":"HowToStep","name":"用自然任务测试触发","text":"描述真实任务但不点名 Skill，观察客户端是否主动读取目标 SKILL.md。"}]}
+</script>
+<style>
+:root{--bg:#101815;--panel:#17221e;--ink:#eef4e8;--muted:#aab8ad;--jade:#76c7a5;--gold:#e6b966;--line:#33443c;--danger:#e78372;--mono:ui-monospace,SFMono-Regular,Menlo,monospace;--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;--serif:"Songti SC","Noto Serif CJK SC",serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 var(--sans)}a{color:var(--jade)}code{font-family:var(--mono)}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}.top{height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-size:13px}.top a{text-decoration:none;font-weight:800}.top span{color:var(--muted);font:11px var(--mono);letter-spacing:.12em}.hero{padding:72px 0 58px;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:end}.eyebrow{color:var(--gold);font:800 12px var(--mono);letter-spacing:.15em}.hero h1{font:700 clamp(40px,7vw,78px)/1.08 var(--serif);margin:16px 0 20px}.hero p{font-size:20px;color:var(--muted);max-width:37em}.terminal{background:#090e0c;border:1px solid var(--line);padding:24px;box-shadow:10px 10px 0 #24352e}.terminal b{display:block;color:var(--jade);font:12px var(--mono);margin-bottom:16px}.terminal code{display:block;white-space:pre-wrap;color:#dce9df;font-size:13px}.truth{border-block:1px solid var(--line);background:#121d19}.truth .wrap{display:grid;grid-template-columns:repeat(4,1fr)}.truth div{padding:24px}.truth div+div{border-left:1px solid var(--line)}.truth b{font:800 11px var(--mono);color:var(--gold)}.truth span{display:block;margin-top:7px}.section{padding:64px 0;border-bottom:1px solid var(--line)}h2{font:700 clamp(29px,4vw,45px)/1.2 var(--serif);margin:0 0 12px}.dek{color:var(--muted);max-width:46em;margin:0 0 28px}.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);padding:26px}.card i{font:800 11px var(--mono);color:var(--jade);font-style:normal}.card h3{font:700 22px var(--serif);margin:11px 0}.cmd{background:#0a100d;border-left:3px solid var(--jade);padding:14px 16px;overflow:auto;color:#eaf4eb}.card p{color:var(--muted);margin-bottom:0}.matrix{width:100%;border-collapse:collapse;background:var(--panel)}th,td{text-align:left;padding:15px;border:1px solid var(--line);vertical-align:top}th{color:var(--gold);font-size:13px}.yes{color:var(--jade);font-weight:800}.wait{color:var(--gold);font-weight:800}.warning{margin-top:20px;border:1px solid var(--danger);padding:20px;color:#f4c4ba}.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.checklist div{background:var(--panel);border-left:4px solid var(--jade);padding:16px 18px}.cta{margin:64px auto;background:var(--gold);color:#18201c;padding:38px;display:flex;justify-content:space-between;align-items:center;gap:24px}.cta h2{margin:0;font-size:30px}.cta a{background:#18201c;color:#fff;padding:11px 16px;text-decoration:none;font-weight:800}footer{padding:0 0 45px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}@media(max-width:760px){.hero{grid-template-columns:1fr}.truth .wrap{grid-template-columns:1fr 1fr}.truth div:nth-child(3){border-left:0;border-top:1px solid var(--line)}.truth div:nth-child(4){border-top:1px solid var(--line)}.steps,.checklist{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column}}@media(max-width:440px){.truth .wrap{grid-template-columns:1fr}.truth div+div{border-left:0;border-top:1px solid var(--line)}.top span{display:none}}
+</style>
+</head>
+<body>
+<header class="wrap top"><a href="../">← 中文 AI Skills 库</a><span>INSTALL NOTE · skills CLI 1.5.22</span></header>
+<main>
+<section class="wrap hero"><div><div class="eyebrow">CODEX · CLAUDE CODE · CURSOR</div><h1>装上 Skill，<br>然后证明它会用。</h1><p>这不是“复制一条命令就结束”的教程。我们把列出、安装、文件位置、自动触发和任务完成分开核对。</p></div><aside class="terminal"><b>最短安装路径</b><code>$ npx skills add &lt;repo&gt; --list
+$ npx skills add &lt;repo&gt; --skill &lt;name&gt;
+
+# 本机 skills CLI 1.5.22
+✓ ~/.agents/skills/&lt;name&gt;</code></aside></section>
+<section class="truth"><div class="wrap"><div><b>01 · DISCOVER</b><span>CLI 能列出来</span></div><div><b>02 · INSTALL</b><span>文件确实落盘</span></div><div><b>03 · ACTIVATE</b><span>AI 主动读取</span></div><div><b>04 · DELIVER</b><span>真实任务完成</span></div></div></section>
+<section class="wrap section"><h2>四步安装与核对</h2><p class="dek">以下命令使用本站仓库作例子。第三方 Skill 可能包含脚本，安装前先读它的 <code>SKILL.md</code> 和 <code>scripts/</code>。</p><div class="steps">
+<article class="card"><i>STEP 01</i><h3>先列出，不要盲装全部</h3><div class="cmd"><code>npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list</code></div><p>确认目标名称，也能及早发现仓库结构不被 CLI 识别。</p></article>
+<article class="card"><i>STEP 02</i><h3>一次只装一个</h3><div class="cmd"><code>npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography</code></div><p>Skill 越多，客户端用于发现描述的上下文预算越紧。本次 Codex 实测出现过 description 被缩短的警告。</p></article>
+<article class="card"><i>STEP 03</i><h3>核对实际文件</h3><div class="cmd"><code>ls -la ~/.agents/skills/chinese-typography
+ls -la ~/.claude/skills/chinese-typography</code></div><p>本机实测文件位于 <code>~/.agents/skills/</code>；Claude 目录可见符号链接。版本变化后请以本机结果为准。</p></article>
+<article class="card"><i>STEP 04</i><h3>测试自动触发</h3><div class="cmd"><code>请审查这个中文网页的字体、行高、断行、标点和中英混排问题。</code></div><p>不要在任务里说出 Skill 名称。观察 AI 是否主动读取正确说明，再检查输出是否真正完成任务。</p></article>
+</div></section>
+<section class="wrap section"><h2>哪些结论已经实测</h2><p class="dek">格式相似不等于跨客户端兼容。没有运行过，就写“待测”。</p><table class="matrix"><thead><tr><th>客户端</th><th>当前证据</th><th>不能外推的部分</th></tr></thead><tbody><tr><td>Codex</td><td><span class="yes">13/13 自动触发过一次</span><br>11 项首次完成；2 项缩小复测通过</td><td>不代表所有提示词、版本或大型任务都通过</td></tr><tr><td>Claude Code</td><td><span class="wait">待真实客户端测试</span></td><td>只看到符号链接不能证明自动触发与完成</td></tr><tr><td>Cursor</td><td><span class="wait">待真实客户端测试</span></td><td>安装入口、发现和触发需要分别验证</td></tr></tbody></table><div class="warning"><strong>常见误判：</strong>命令显示成功，不代表 Skill 被客户端读到；客户端读到了，也不代表任务能在输出预算内完成。</div></section>
+<section class="wrap section"><h2>没有触发时，按这个顺序查</h2><div class="checklist"><div>① CLI 的 <code>--list</code> 是否能看到目标名称</div><div>② <code>~/.agents/skills/&lt;name&gt;/SKILL.md</code> 是否存在</div><div>③ 客户端入口是否能看到同一个 Skill</div><div>④ 重启客户端后，用不点名名称的自然任务复测</div><div>⑤ 减少同时安装的 Skill，避免描述预算拥挤</div><div>⑥ 记录客户端版本、任务原文和错误，不只写“不能用”</div></div></section>
+<section class="wrap cta"><div><h2>复现一次，提交成功或失败。</h2><p>Claude Code 和 Cursor 的真实结果尤其需要。</p></div><a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml">提交实测 →</a></section>
+</main>
+<footer class="wrap"><span><a href="../compatibility/">查看 13 项 Codex 原始实测</a> · <a href="../QUALITY.md">质量与安全标签</a></span><span>最近实测：2026-08-12</span></footer>
+</body>
+</html>
