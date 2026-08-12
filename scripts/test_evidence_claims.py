@@ -99,6 +99,16 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertIn("may include maintainer verification runs", english)
         self.assertIn("not a unique-user count, usage outcome, or quality certification", english)
 
+    def test_agent_skills_directory_is_linked_with_evidence_boundaries(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        english = (ROOT / "README.en.md").read_text(encoding="utf-8")
+        author_url = "https://agent-skills.md/authors/sanhuang520-ship-it"
+        self.assertIn(author_url, readme)
+        self.assertIn(author_url, english)
+        self.assertIn("不代表独立兼容性实测、内容审核或质量认证", readme)
+        self.assertIn("not independent compatibility testing, content review, or quality certification", english)
+        self.assertIn("分类与标签正在刷新复核", readme)
+
     def test_workflow_examples_are_not_presented_as_ranked_recommendations(self):
         index = (ROOT / "index.html").read_text(encoding="utf-8")
         archive = (ROOT / "SCENARIOS.md").read_text(encoding="utf-8")

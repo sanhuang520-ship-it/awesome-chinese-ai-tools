@@ -30,6 +30,8 @@ Installation, discovery, automatic activation, and task completion are separate 
 
 The repository is also [indexed by skills.sh](https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools). Its aggregated install count comes from skills CLI telemetry and may include maintainer verification runs; it is not a unique-user count, usage outcome, or quality certification.
 
+The [Agent-Skills.md author page](https://agent-skills.md/authors/sanhuang520-ship-it) also lists all 13 first-party Skills. It is a third-party directory surface, not independent compatibility testing, content review, or quality certification; category and tag refreshes are still being verified.
+
 ### A 30-second first test
 
 Install only one Skill, restart the client, and give it a natural task without naming the Skill. For example, after installing `chinese-typography`, ask:

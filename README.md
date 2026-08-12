@@ -84,6 +84,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 仓库也已被 [skills.sh 收录](https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools)，可查看 13 个 Skill 的独立页面和该平台记录的聚合安装次数。该数字来自 skills CLI 遥测，可能包含维护者安装核验，不等于独立用户、实际使用效果或质量认证。
 
+[Agent-Skills.md 作者页](https://agent-skills.md/authors/sanhuang520-ship-it)也已展示全部 13 个原创 Skill。它是第三方目录入口，不代表独立兼容性实测、内容审核或质量认证；分类与标签正在刷新复核。
+
 ### 30 秒第一次试用
 
 只装一个当前需要的 Skill，重启客户端，然后直接说一条自然任务。不要在任务里写 Skill 名称，这样才能观察客户端是否会自动选择它。
