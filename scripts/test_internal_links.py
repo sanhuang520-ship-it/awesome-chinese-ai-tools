@@ -49,7 +49,9 @@ class InternalLinksTest(unittest.TestCase):
 
     def test_maintenance_plan_links_to_every_named_explainer(self):
         plan = (ROOT / "MAINTENANCE_PLAN.md").read_text(encoding="utf-8")
-        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/", "themes/", "guofeng-threejs/", "bookkeeping/"):
+        catalog = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))
+        pages = {skill["explainer"] for skill in catalog["skills"] if skill.get("ours") and skill.get("explainer")}
+        for page in pages:
             with self.subTest(page=page):
                 self.assertIn(f"]({page})", plan)
 
@@ -77,6 +79,15 @@ class InternalLinksTest(unittest.TestCase):
         self.assertIn(f"<code>{command}</code>", page)
         self.assertNotIn("投资收益", page)
         self.assertNotIn("节税方案", page)
+
+    def test_learning_guide_keeps_calibration_and_evidence_boundary_visible(self):
+        page = (ROOT / "learning" / "index.html").read_text(encoding="utf-8")
+        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ai-learning-coach"
+        for phrase in ("为什么学", "当前基础", "可用时间", "验收标准", "仍未验证"):
+            self.assertIn(phrase, page)
+        self.assertIn(f'<code class="command">{command}</code>', page)
+        self.assertIn(f'data-copy="{command}"', page)
+        self.assertIn("完整计划、执行过程与学习效果尚未验证", page)
 
 if __name__ == "__main__":
     unittest.main()

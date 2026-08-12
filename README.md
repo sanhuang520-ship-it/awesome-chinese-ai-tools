@@ -123,7 +123,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 | Skill | 做什么 |
 |-------|--------|
-| [`ai-learning-coach`](skills/ai-learning-coach/) | 学习教练：定目标 → 主动回忆 → 输出 → 纠错归因 → 间隔复习。不直接给答案 |
+| [`ai-learning-coach`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/learning/) | 学习教练：先校准目标、基础、时间和验收标准，再进入主动回忆 → 输出 → 纠错归因 → 间隔复习；不直接代做学习产出 |
 | [`book-digest-cn`](skills/book-digest-cn/) | 拆书三层法：作者在答什么问题 → 核心主张 → 对我有什么用。拒绝抄目录式笔记 |
 | [`bookkeeping-cn`](skills/bookkeeping-cn/) | 记账整理。**明确不做**税务筹划、投资建议，不替代会计 |
 | [`chinese-design-md`](skills/chinese-design-md/) | 中式 DESIGN.md 设计系统（本站原创）：8 套可直接丢进项目根目录的设计文档，AI 读了就按规范生成界面。含中文排版规则（行高 1.75 / 不用 justify / 着重号代替斜体 / CJK 避头尾），对比度逐项实测并标出不达标项 |

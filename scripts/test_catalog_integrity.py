@@ -73,20 +73,9 @@ class CatalogIntegrityTest(unittest.TestCase):
     def test_every_declared_skill_explainer_exists_and_is_first_party(self):
         data = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))
         explainers = {skill["name"]: skill["explainer"] for skill in data["skills"] if skill.get("explainer")}
-        self.assertEqual(
-            {
-                "chinese-typography",
-                "guochao-visual-cn",
-                "chinese-work-report",
-                "ecommerce-copywriting",
-                "github-readme-cn",
-                "chinese-design-md",
-                "chinese-web-themes",
-                "guofeng-threejs",
-                "bookkeeping-cn",
-            },
-            set(explainers),
-        )
+        first_party = {skill["name"] for skill in data["skills"] if skill.get("ours")}
+        self.assertGreaterEqual(len(explainers), 10)
+        self.assertEqual(set(), set(explainers) - first_party)
         for name, relative in explainers.items():
             with self.subTest(skill=name):
                 self.assertRegex(relative, r"^[a-z0-9-]+/$")

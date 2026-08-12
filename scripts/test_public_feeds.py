@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import unittest
+import json
 import xml.etree.ElementTree as ET
 from collections import Counter
 from html.parser import HTMLParser
@@ -27,6 +28,15 @@ class DiscoveryParser(HTMLParser):
 
 
 class PublicFeedsTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        catalog = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))
+        cls.explainers = sorted(
+            skill["explainer"].rstrip("/")
+            for skill in catalog["skills"]
+            if skill.get("ours") and skill.get("explainer")
+        )
+
     def test_robots_allows_crawling_and_declares_canonical_sitemap(self):
         robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
         self.assertIn("User-agent: *", robots)
@@ -66,12 +76,12 @@ class PublicFeedsTest(unittest.TestCase):
 
     def test_sitemap_contains_first_party_explainer_pages(self):
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
-        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/", "themes/", "guofeng-threejs/", "bookkeeping/"):
+        for page in self.explainers:
             with self.subTest(page=page):
-                self.assertIn(f"/awesome-chinese-ai-tools/{page}", sitemap)
+                self.assertIn(f"/awesome-chinese-ai-tools/{page}/", sitemap)
 
     def test_first_party_explainers_have_complete_search_metadata(self):
-        for page in ("typography", "design", "guochao", "readme-audit", "work-report", "ecommerce-copywriting", "themes", "guofeng-threejs", "bookkeeping"):
+        for page in self.explainers:
             body = (ROOT / page / "index.html").read_text(encoding="utf-8")
             with self.subTest(page=page):
                 self.assertTrue(body.lower().startswith("<!doctype html>"))
@@ -93,9 +103,9 @@ class PublicFeedsTest(unittest.TestCase):
         self.assertIn("Claude Code 与 Cursor 尚无本仓库运行的任务级实测", summary)
         self.assertIn("区分 CLI 发现、文件安装、自动触发和任务完成", summary)
         self.assertIn("data/compatibility.json", summary)
-        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/", "themes/", "guofeng-threejs/", "bookkeeping/"):
+        for page in self.explainers:
             with self.subTest(page=page):
-                self.assertIn(f"/awesome-chinese-ai-tools/{page}", summary)
+                self.assertIn(f"/awesome-chinese-ai-tools/{page}/", summary)
 
     def test_sitemap_urls_are_unique(self):
         root = ET.parse(ROOT / "sitemap.xml").getroot()
