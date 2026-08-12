@@ -168,6 +168,9 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertNotIn("184 个 Skill 仓库复检", readme)
         index = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertNotIn("每个仓库都验证过真实存在", index)
+        self.assertNotIn("个中文原创", index)
+        self.assertNotIn("全部已验证仓库真实存在", index)
+        self.assertIn("其他条目不等于逐项功能实测", index)
 
     def test_english_overview_preserves_evidence_boundaries(self):
         english = (ROOT / "README.en.md").read_text(encoding="utf-8")
