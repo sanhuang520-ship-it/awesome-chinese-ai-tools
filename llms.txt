@@ -8,6 +8,7 @@
 - [在线搜索与筛选](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/): 浏览全部 Skill 和工具
 - [安装与排错](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/): skills CLI 1.5.22 的本机实测步骤与路径边界
 - [13 个原创 Skill 方法与证据总览](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guides/): 按使用场景比较方法、实测状态、原始案例和安全边界
+- [6 个可逐字复现的测试任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reproduce/): 复制安装命令与案例中保存的逐字任务原文；另外 7 项仅有摘要，不反向补写
 - [Codex 兼容性实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/): 13 个原创 Skill 的自动触发、失败与缩小复测
 - [完整 Skill 清单](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/SKILLS.md): 从 data/skills.json 自动生成
 - [质量与安全标签](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/QUALITY.md): 原创 Skill 的静态检查范围和限制
@@ -51,3 +52,4 @@
 - [tools.json](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/data/tools.json)
 - [compatibility.json](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/data/compatibility.json)
 - [quality.json](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/data/quality.json)
+- [task-evidence.json](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/data/task-evidence.json)

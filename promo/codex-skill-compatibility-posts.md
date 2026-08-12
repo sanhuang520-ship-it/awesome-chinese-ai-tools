@@ -38,7 +38,7 @@
 
 测试还持续出现一个 Codex 告警：安装的 Skill 较多时，部分 description 会因上下文预算被缩短。现有 13 项仍正确触发，但这不代表换一种提示词也一定能触发。
 
-成功、失败、原始任务、客户端版本和限制都放在这里：
+成功、失败、6 条逐字任务原文、7 条任务摘要、客户端版本和限制都放在这里：
 
 https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/
 
@@ -68,7 +68,7 @@ https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/
 
 所以：能发现 ≠ 能安装 ≠ 会触发 ≠ 能完成。
 
-成功、失败和原始任务都公开：
+成功、失败和任务记录都公开；其中 6 条保留逐字原文，7 条只有摘要：
 https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/
 
 目前只确认 Codex，Claude Code / Cursor 仍待测。
