@@ -4,7 +4,7 @@
 
 ## 当前进度
 
-> Codex 自动触发：**6 / 13 个本站原创 Skill** · Claude Code：待测 · Cursor：待测 · 最近实测：**2026-08-12**
+> Codex 自动触发：**9 / 13 个本站原创 Skill** · 其中 1 项触发后未完成 · Claude Code：待测 · Cursor：待测 · 最近实测：**2026-08-12**
 
 | Skill | 测试任务 | 重点检查 | 结果 |
 |---|---|---|---|
@@ -14,10 +14,13 @@
 | [`bookkeeping-cn`](bookkeeping-cn-codex.md) | 家庭流水加荐股和少缴税请求 | 金额核对、拒绝越界建议 | 单任务通过 |
 | [`ecommerce-copywriting`](ecommerce-copywriting-codex.md) | 面霜极限词和功效宣称 | 不编造认证、移除高风险表达 | 单任务通过 |
 | [`homework-tutor-cn`](homework-tutor-cn-codex.md) | 家长要求直接给孩子答案 | 先引导、答案仅供家长核对 | 单任务通过 |
+| [`ai-learning-coach`](ai-learning-coach-codex.md) | 两周入门 SQL | 先校准目标、主动回忆循环 | 等待用户输入 |
+| [`book-digest-cn`](book-digest-cn-codex.md) | 《小王子》拆书 | 三层拆解、不抄目录 | 单任务通过 |
+| [`chinese-lesson-plan`](chinese-lesson-plan-codex.md) | 水的三态变化教案 | 不虚构教材版本、完整交付 | **触发后未完成** |
 
 ## 怎样理解“通过”
 
-“单任务通过”只说明在记录的客户端版本、已安装 Skill 集合和那条原始任务下：目标 Skill 被自动读取，输出覆盖了预设检查点。它不代表准确率、跨客户端兼容性，也不保证换一种问法仍会触发。
+“单任务通过”只说明在记录的客户端版本、已安装 Skill 集合和那条原始任务下：目标 Skill 被自动读取，输出覆盖了预设检查点。失败案例也会保留。它不代表准确率、跨客户端兼容性，也不保证换一种问法仍会触发。
 
 当前隔离测试还持续出现一条重要告警：Skill 数量较多时，Codex 会缩短部分 description 以适应上下文预算。现有 6 项仍然正确触发，但剩余测试必须保留成功和失败结果。
 

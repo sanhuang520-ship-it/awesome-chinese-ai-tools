@@ -43,7 +43,10 @@
         "chinese-work-report",
         "bookkeeping-cn",
         "ecommerce-copywriting",
-        "homework-tutor-cn"
+        "homework-tutor-cn",
+        "ai-learning-coach",
+        "book-digest-cn",
+        "chinese-lesson-plan"
       ],
       "cases": [
         "cases/chinese-typography-codex.md",
@@ -51,10 +54,13 @@
         "cases/chinese-work-report-codex.md",
         "cases/bookkeeping-cn-codex.md",
         "cases/ecommerce-copywriting-codex.md",
-        "cases/homework-tutor-cn-codex.md"
+        "cases/homework-tutor-cn-codex.md",
+        "cases/ai-learning-coach-codex.md",
+        "cases/book-digest-cn-codex.md",
+        "cases/chinese-lesson-plan-codex.md"
       ],
       "clientVersion": "codex-cli 0.147.0-alpha.6.5",
-      "note": "Six task-level automatic activations verified; this is not evidence for every prompt or client version"
+      "note": "Nine task-level automatic activations verified; one activated task did not complete, and this is not evidence for every prompt or client version"
     },
     "claudeCode": {
       "status": "not-tested"
