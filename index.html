@@ -1125,7 +1125,7 @@ details[open] .sk-install-sum{margin-bottom:2px}
   <div class="nav-logo"><span>AI</span> Skills 库</div>
   <div class="nav-search-wrap">
     <span class="nav-search-icon">🔍</span>
-    <input id="search" type="text" placeholder="搜索工具、功能…" aria-label="搜索工具和功能">
+    <input id="search" type="text" placeholder="搜索 Skill、场景…" aria-label="搜索 Skill 和使用场景">
   </div>
   <div class="nav-chips">
     <span class="nav-chip"><b id="skc">—</b> Skills</span>
@@ -1646,6 +1646,19 @@ async function loadTools() {
    商业条款历史记录（不冒充当前价格）
 ══════════════════════════════════════ */
 let pricingView = false;
+let activeView = 'skills';
+
+function syncGlobalSearch() {
+  const search = document.getElementById('search');
+  const toolButtons = [document.getElementById('btn-free'), document.getElementById('btn-cn')];
+  const inTools = activeView === 'tools';
+  const inPrice = activeView === 'price';
+  search.disabled = inPrice;
+  search.placeholder = inPrice ? '额度记录暂不支持搜索' : (inTools ? '搜索工具、功能…' : '搜索 Skill、场景…');
+  search.setAttribute('aria-label', inPrice ? '额度记录暂不支持搜索' : (inTools ? '搜索工具和功能' : '搜索 Skill 和使用场景'));
+  search.value = inPrice ? '' : (inTools ? query : skQuery);
+  toolButtons.forEach(button => { button.hidden = !inTools; });
+}
 
 function renderPricing() {
   const view = document.getElementById('pricing-view');
@@ -1705,19 +1718,23 @@ function renderPricing() {
 
 function showPricingView() {
   pricingView = true;
+  activeView = 'price';
   document.getElementById('hero-section').style.display = 'none';
   document.getElementById('browse-section').style.display = 'none';
   document.getElementById('skills-view').classList.remove('active');
   document.getElementById('pricing-view').classList.add('active');
+  syncGlobalSearch();
   renderPricing();
 }
 
 function showListView() {
   pricingView = false;
+  activeView = 'tools';
   document.getElementById('hero-section').style.display = '';
   document.getElementById('browse-section').style.display = '';
   document.getElementById('pricing-view').classList.remove('active');
   document.getElementById('skills-view').classList.remove('active');
+  syncGlobalSearch();
 }
 
 /* ══════════════════════════════════════
@@ -1725,11 +1742,13 @@ function showListView() {
 ══════════════════════════════════════ */
 let skillsData = null;
 async function showSkillsView() {
+  activeView = 'skills';
   document.getElementById('hero-section').style.display = 'none';
   document.getElementById('browse-section').style.display = 'none';
   document.getElementById('pricing-view').classList.remove('active');
   const view = document.getElementById('skills-view');
   view.classList.add('active');
+  syncGlobalSearch();
   if (!skillsData) {
     try {
       const r = await fetch('data/skills.json', {cache:'no-cache'});
@@ -2025,7 +2044,9 @@ function renderSkills() {
   const ck = document.getElementById('sk-checked');
   if (ck) ck.textContent = skillsData.skillsCheckedAt || '—';
   document.getElementById('sk-search').addEventListener('input', e => {
-    skQuery = e.target.value; renderSkillGrid();
+    skQuery = e.target.value;
+    document.getElementById('search').value = skQuery;
+    renderSkillGrid();
   });
   document.getElementById('sk-share').addEventListener('click', generateSkillsCard);
   document.querySelectorAll('.sk-filter').forEach(b => {
@@ -2064,6 +2085,14 @@ document.getElementById('cat-tabs').addEventListener('click', e => {
    搜索 + 快捷筛选
 ══════════════════════════════════════ */
 document.getElementById('search').addEventListener('input', e => {
+  if (activeView === 'price') return;
+  if (activeView === 'skills') {
+    skQuery = e.target.value.trim();
+    const skillSearch = document.getElementById('sk-search');
+    if (skillSearch) skillSearch.value = skQuery;
+    if (skillsData) renderSkillGrid();
+    return;
+  }
   query = e.target.value.trim(); render();
 });
 document.getElementById('btn-free').addEventListener('click', function(){

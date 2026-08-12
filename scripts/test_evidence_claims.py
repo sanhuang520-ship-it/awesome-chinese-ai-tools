@@ -111,6 +111,15 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertIn('<b id="skc">—</b> Skills', index)
         self.assertIn('<b id="tc">—</b> 工具', index)
 
+    def test_default_global_search_targets_the_primary_skills_view(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('placeholder="搜索 Skill、场景…"', index)
+        self.assertIn("let activeView = 'skills'", index)
+        self.assertIn("if (activeView === 'price') return", index)
+        self.assertIn("if (activeView === 'skills')", index)
+        self.assertIn("search.disabled = inPrice", index)
+        self.assertIn("button.hidden = !inTools", index)
+
     def test_generated_skill_catalog_leads_to_reproducible_evidence(self):
         generator = (ROOT / "scripts" / "daily_check.py").read_text(encoding="utf-8")
         catalog = (ROOT / "SKILLS.md").read_text(encoding="utf-8")

@@ -32,9 +32,11 @@ class InternalLinksTest(unittest.TestCase):
 
     def test_primary_search_and_icon_controls_have_accessible_names(self):
         index = (ROOT / "index.html").read_text(encoding="utf-8")
-        for label in ("搜索工具和功能", "切换明暗主题", "关闭工作流示例", "关闭工具对比", "关闭条件筛选"):
+        for label in ("搜索 Skill 和使用场景", "切换明暗主题", "关闭工作流示例", "关闭工具对比", "关闭条件筛选"):
             with self.subTest(label=label):
                 self.assertIn(f'aria-label="{label}"', index)
+        self.assertIn("'搜索工具和功能'", index)
+        self.assertIn("'额度记录暂不支持搜索'", index)
 
 
 if __name__ == "__main__":
