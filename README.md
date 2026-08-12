@@ -125,6 +125,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 **[→ 复制 7 条有逐字原文的首次测试任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reproduce/)**（另外 6 条只有摘要，不反向补写）
 
+**[→ 参与 6 条前瞻兼容性复测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/retest/)**（任务和成功门槛已公开，`planned` 不等于通过）
+
 | Skill | 做什么 |
 |-------|--------|
 | [`ai-learning-coach`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/learning/) | 学习教练：先校准目标、基础、时间和验收标准，再进入主动回忆 → 输出 → 纠错归因 → 间隔复习；不直接代做学习产出 |

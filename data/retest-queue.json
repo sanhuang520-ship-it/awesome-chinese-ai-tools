@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-12",
+  "statusDefinition": "planned means the prompt and acceptance checks are published before execution; it is not a compatibility result",
+  "items": [
+    {
+      "skill": "book-digest-cn",
+      "titleZh": "无原文时的拆书准备",
+      "status": "planned",
+      "promptZh": "我准备给读书会做《小王子》的读书笔记，但现在没有提供目录、摘录或版本信息。请先只完成准备阶段：一次问清楚继续拆解所需的信息，并给我一个“作者问题—核心主张与论证—我的判断”的空白笔记骨架。不要根据印象填写作品内容，不要大段引用原文，也不要修改任何文件。",
+      "acceptanceZh": [
+        "未点名 Skill 时主动读取 book-digest-cn",
+        "询问阅读目的、阅读进度、版本或可核验材料与期望产出",
+        "只给空白三层骨架，不填充《小王子》内容",
+        "不大段引用原文，不修改文件"
+      ]
+    },
+    {
+      "skill": "chinese-design-md",
+      "titleZh": "茶品牌设计系统选型",
+      "status": "planned",
+      "promptZh": "我在做一个新中式茶品牌官网，受众是 25—35 岁城市用户，希望克制、现代，但不要变成通用极简风。请只从项目现有的中式 DESIGN.md 方案中推荐最多两套，说明各自适用条件，并问我一个会改变最终选择的关键问题。不要创建或修改文件。",
+      "acceptanceZh": [
+        "未点名 Skill 时主动读取 chinese-design-md",
+        "推荐不超过两套现有设计系统并说明差异",
+        "提出一个会改变选择的定位问题",
+        "不创建或修改文件"
+      ]
+    },
+    {
+      "skill": "chinese-lesson-plan",
+      "titleZh": "45 分钟教案缩小复测",
+      "status": "planned",
+      "promptZh": "请为小学五年级“水的三态变化”准备一个不超过 300 字的 45 分钟教学时间表，并列出 3 条正式备课前必须核对的教材或安全信息。教材版本没有提供，不要猜单元、页码或课标条目；只做文字输出，不修改文件。",
+      "acceptanceZh": [
+        "未点名 Skill 时主动读取 chinese-lesson-plan",
+        "各环节时间合计 45 分钟且全文不超过 300 字",
+        "列出三条教材或实验安全核对项",
+        "不编教材版本、单元、页码或课标条目"
+      ]
+    },
+    {
+      "skill": "chinese-web-themes",
+      "titleZh": "普通博客水墨主题接入",
+      "status": "planned",
+      "promptZh": "我有一个普通中文博客，现有正文和代码块样式都要保留，想增加克制的水墨气质。请只推荐一套现有主题，给出最短接入步骤和上线前检查清单；不要生成完整 CSS，也不要修改文件。",
+      "acceptanceZh": [
+        "未点名 Skill 时主动读取 chinese-web-themes",
+        "只推荐一套现有主题并给出最短接入步骤",
+        "检查正文行宽、移动端、代码块、样式覆盖、授权与无障碍",
+        "不生成完整 CSS，不修改文件"
+      ]
+    },
+    {
+      "skill": "guochao-visual-cn",
+      "titleZh": "端午海报画风收束",
+      "status": "planned",
+      "promptZh": "我要做一张面向年轻人的端午节社交海报，只需要视觉方向和可复制提示词，不调用图片生成。请把宽泛的“中国风”收束为一种具体美学传统，给出主色比例、构图重点、可用纹样和应避免的俗套；不要模仿在世艺术家的个人风格。",
+      "acceptanceZh": [
+        "未点名 Skill 时主动读取 guochao-visual-cn",
+        "选择一种具体美学传统而非泛称中国风",
+        "给出配色比例、构图、纹样与负面约束",
+        "不调用图片生成，不模仿在世艺术家风格"
+      ]
+    },
+    {
+      "skill": "guofeng-threejs",
+      "titleZh": "水墨 Shader 有界审查",
+      "status": "planned",
+      "promptZh": "请只审查项目现有水墨 Three.js Demo 的技术思路，不修改、不运行，也不要整文件输出。请在 300 字内列出 3 项水墨 NPR 技法、3 条移动端风险和 2 个相关 Demo 路径，并明确哪些性能或兼容性尚未实测。",
+      "acceptanceZh": [
+        "未点名 Skill 时主动读取 guofeng-threejs",
+        "先给结论并将实现核对限制在相关范围",
+        "300 字内列出三项技法、三条风险和两个 Demo 路径",
+        "明确未实测项，不修改、不运行、不整文件输出"
+      ]
+    }
+  ]
+}
