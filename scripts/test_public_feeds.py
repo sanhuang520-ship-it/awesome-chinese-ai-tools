@@ -39,6 +39,12 @@ class PublicFeedsTest(unittest.TestCase):
             with self.subTest(case=case.name):
                 self.assertIn(expected, sitemap)
 
+    def test_sitemap_contains_first_party_explainer_pages(self):
+        sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/"):
+            with self.subTest(page=page):
+                self.assertIn(f"/awesome-chinese-ai-tools/{page}", sitemap)
+
     def test_llms_summary_preserves_client_evidence_boundary(self):
         summary = (ROOT / "llms.txt").read_text(encoding="utf-8")
         self.assertIn("Claude Code 与 Cursor 尚无本仓库运行的任务级实测", summary)
