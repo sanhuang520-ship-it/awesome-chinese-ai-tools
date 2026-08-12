@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-09",
+    "updated": "2026-08-12",
     "source": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools",
     "note": "工具数据单一可信源。新增/修改工具只改这里，前端自动渲染。免费额度信息可能变化，以官网为准。",
     "linkCheckedAt": "2026-08-09",
@@ -746,22 +746,6 @@
       "desc": "结合电子表格与自动化流程，适合团队协作和数据管理场景。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-09",
-      "linkFailCount": 0
-    },
-    {
-      "name": "Gamma",
-      "url": "https://gamma.app",
-      "cat": "productivity",
-      "free": true,
-      "cn": false,
-      "vpn": false,
-      "rec": false,
-      "stars": 4,
-      "freeInfo": "每月免费积分",
-      "desc": "AI 一键生成 PPT 和文档，模板精美，适合快速出提案，每月有免费积分。",
-      "linkOk": true,
-      "linkStatus": "ok_bot_blocked",
       "linkCheckedAt": "2026-08-09",
       "linkFailCount": 0
     },

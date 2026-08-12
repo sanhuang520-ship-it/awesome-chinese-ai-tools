@@ -43,7 +43,7 @@ def sync_readme_text(body, stats):
         (r"\| ✍️ 本站原创 \| \d+ \|", f"| ✍️ 本站原创 | {ours} |"),
         (r"\| \*\*合计\*\* \| \*\*\d+\*\* \|", f"| **合计** | **{n}** |"),
         (r"另附 \*\*\d+ 个 AI 工具导航\*\*", f"另附 **{tools} 个 AI 工具导航**"),
-        (r"\| 3 \| \d+ 个工具链接实测可访问性 \|", f"| 3 | {tools} 个工具链接实测可访问性 |"),
+        (r"\| (\d+) \| \d+ 个工具链接实测可访问性 \|", rf"| \1 | {tools} 个工具链接实测可访问性 |"),
         (r"\| 4 \| \*\*\d+ 个 skill 仓库复检\*\*", f"| 4 | **{n} 个 skill 仓库复检**"),
         (r"最近复检：\*\*\d{4}-\d{2}-\d{2}\*\*", f"最近复检：**{checked}**"),
         (
@@ -133,6 +133,15 @@ def sync_sitemap_text(body, checked):
     return "\n".join(lines) + ("\n" if body.endswith("\n") else "")
 
 
+def sync_llms_text(body, stats):
+    """同步供语言模型读取的顶层项目统计。"""
+    n, ours, tools = stats["skills"], stats["ours"], stats["tools"]
+    body = re.sub(r"收录 \d+ 个 Skill", f"收录 {n} 个 Skill", body, count=1)
+    body = re.sub(r"其中 \d+ 个由本仓库维护", f"其中 {ours} 个由本仓库维护", body, count=1)
+    body = re.sub(r"另有 \d+ 个 AI 工具入口", f"另有 {tools} 个 AI 工具入口", body, count=1)
+    return body
+
+
 def _repo_text(github_api, repo, path):
     info = github_api("GET", f"/repos/{repo}/contents/{path}")
     if "content" not in info:
@@ -168,6 +177,7 @@ def sync_public_metadata(github_api, repo):
     transforms = {
         "README.md": lambda text: sync_readme_text(text, stats),
         "index.html": lambda text: sync_index_text(text, stats),
+        "llms.txt": lambda text: sync_llms_text(text, stats),
         "sitemap.xml": lambda text: sync_sitemap_text(text, stats["checked"]),
     }
     for path, transform in transforms.items():
@@ -184,6 +194,7 @@ def sync_local(root):
     transforms = {
         "README.md": lambda text: sync_readme_text(text, stats),
         "index.html": lambda text: sync_index_text(text, stats),
+        "llms.txt": lambda text: sync_llms_text(text, stats),
         "sitemap.xml": lambda text: sync_sitemap_text(text, stats["checked"]),
     }
     changed = []

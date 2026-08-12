@@ -161,7 +161,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 **[→ 看完整清单 SKILLS.md](SKILLS.md)**（每天从数据自动重建，不会和实际对不上）
 
-另附 **47 个 AI 工具导航**，链接每日自动实测。
+另附 **46 个 AI 工具导航**，链接每日自动实测。
 
 ---
 
@@ -170,7 +170,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 步骤 | 做什么 |
 |------|--------|
 | 1 | 核对 [SOURCES.md](SOURCES.md) 里各家 AI 官方公告页链接 |
-| 2 | 47 个工具链接实测可访问性 |
+| 2 | 46 个工具链接实测可访问性 |
 | 3 | **184 个 Skill 仓库复检**：还在不在、星数、最后更新时间 |
 | 4 | 从数据重建 SKILLS.md，并同步公开统计 |
 

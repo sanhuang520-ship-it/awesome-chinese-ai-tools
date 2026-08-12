@@ -29,7 +29,7 @@
 | 场景 | 推荐工具 | 为什么 |
 |------|----------|--------|
 | 日常代码补全 | [通义灵码](https://lingma.aliyun.com) | VS Code / JetBrains 插件，完全免费，国内访问不卡顿 |
-| 复杂功能开发 | [Cursor](https://cursor.sh) | 真正理解整个项目上下文，不只是补单行，每月有免费额度 |
+| 复杂功能开发 | [Cursor](https://cursor.com) | 可结合代码库上下文辅助开发；生成结果仍需测试和审查 |
 | 快速搭全栈原型 | [Bolt](https://bolt.new) | 说一句话出一个可运行的 web 应用，适合验证想法 |
 | 技术问题搜索 | [Perplexity](https://perplexity.ai) | 比 Google 快，比 ChatGPT 准，引用 Stack Overflow 和文档原文 |
 | 想省钱用 API | [DeepSeek](https://chat.deepseek.com) | 代码能力接近 GPT-4，API 价格是 OpenAI 的十分之一，性价比最高 |

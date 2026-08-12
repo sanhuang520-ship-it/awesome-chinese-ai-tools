@@ -9,6 +9,7 @@ from sync_public_metadata import (
     CAT_ORDER,
     build_stats,
     sync_index_text,
+    sync_llms_text,
     sync_readme_text,
     sync_sitemap_text,
 )
@@ -28,6 +29,7 @@ class PublicMetadataTest(unittest.TestCase):
         cases = {
             "README.md": lambda text: sync_readme_text(text, self.stats),
             "index.html": lambda text: sync_index_text(text, self.stats),
+            "llms.txt": lambda text: sync_llms_text(text, self.stats),
             "sitemap.xml": lambda text: sync_sitemap_text(text, self.stats["checked"]),
         }
         for relative, transform in cases.items():
@@ -41,6 +43,13 @@ class PublicMetadataTest(unittest.TestCase):
             "<lastmod>2026-01-01</lastmod></url>\n"
         )
         self.assertEqual(original, sync_sitemap_text(original, "2026-08-12"))
+
+    def test_readme_step_number_does_not_affect_tool_count_sync(self):
+        original = "| 2 | 999 个工具链接实测可访问性 |\n"
+        self.assertEqual(
+            f"| 2 | {self.stats['tools']} 个工具链接实测可访问性 |\n",
+            sync_readme_text(original, self.stats),
+        )
 
     def test_every_nonempty_category_is_rendered(self):
         skills = json.loads((ROOT / "data/skills.json").read_text(encoding="utf-8"))["skills"]
