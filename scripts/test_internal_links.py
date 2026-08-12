@@ -44,6 +44,5 @@ class InternalLinksTest(unittest.TestCase):
             with self.subTest(page=page):
                 self.assertIn(f"]({page})", plan)
 
-
 if __name__ == "__main__":
     unittest.main()

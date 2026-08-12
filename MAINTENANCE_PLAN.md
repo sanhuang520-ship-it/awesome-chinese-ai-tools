@@ -20,6 +20,7 @@
 - [x] 对 README、首页、结构化数据和 Sitemap 增加一致性测试。
 - [x] 为公开 HTML、RSS、Sitemap、证据边界增加自动检查。
 - [x] 建立变更日志与首个证据化版本标签，后续按月汇总重要维护变化。
+- [ ] 在具备 GitHub Actions `workflow` 写入权限后，为 Pull Request 启用只读的 `python3 scripts/verify.py` 自动检查；当前贡献者可按贡献指南在本地运行同一命令。
 
 ### 2. 安装与使用验证
 
