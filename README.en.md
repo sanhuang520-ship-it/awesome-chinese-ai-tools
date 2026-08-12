@@ -28,6 +28,17 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 Installation, discovery, automatic activation, and task completion are separate claims. Client behavior varies by version, install location, and task wording. See the [installation guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/) and [compatibility matrix](COMPATIBILITY.md).
 
+### A 30-second first test
+
+Install only one Skill, restart the client, and give it a natural task without naming the Skill. For example, after installing `chinese-typography`, ask:
+
+```text
+请检查下面这段网页 CSS 的中文排版问题，只做审查，不修改文件。明确列出问题、理由和建议值：
+body { font-family: Arial, sans-serif; font-size: 14px; line-height: 1.35; text-align: justify; word-break: break-all; }
+```
+
+This task activated the Skill in the [recorded Codex test](cases/chinese-typography-codex.md). That single observation is not a guarantee for other clients, versions, or wording. Successful and failed reproductions are both welcome through the [compatibility report form](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml).
+
 ## First-party Skills
 
 The 13 repository-maintained Skills cover Chinese typography, Chinese web themes, guochao visual direction, Chinese lesson plans, work reports, ecommerce copywriting, learning, bookkeeping, book digestion, homework tutoring, GitHub README improvement, Chinese design systems, and guofeng Three.js rendering.
