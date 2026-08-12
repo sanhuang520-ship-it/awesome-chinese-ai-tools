@@ -12,7 +12,7 @@
 [![Stars](https://img.shields.io/github/stars/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=e0795a)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
 
-**[🌐 在线浏览（可搜索筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[🧰 中文开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)　·　[📋 完整清单](SKILLS.md)　·
+**[🌐 在线浏览（可搜索筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[🧪 兼容性实测](COMPATIBILITY.md)　·　[🧰 中文开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)　·　[📋 完整清单](SKILLS.md)　·
 [📸 真实渲染截图](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)　·　[🎨 12 种画风对照](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/)　·　[✒️ 中文排版实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/)
 
 </div>
@@ -79,6 +79,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 ```
 
 装好后重启 Claude Code，**无需手动调用**——描述任务，AI 自动激活。
+
+安装与自动触发不是一回事。本站 13 个原创 Skill 已完成 CLI 发现与当前 Codex 安装内容核验；逐项触发、Claude Code 和 Cursor 仍在继续测试，详见 **[兼容性实测表](COMPATIBILITY.md)**。
 
 ---
 

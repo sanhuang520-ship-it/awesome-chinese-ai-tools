@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-08-12",
+  "methodology": {
+    "discovery": "npx skills@1.5.22 add . --list",
+    "codexInstall": "Compare every repository SKILL.md byte-for-byte with the installed copy in ~/.agents/skills/<name>/SKILL.md",
+    "activation": "Requires a recorded task-level run; discovery or installation alone is not activation evidence"
+  },
+  "clients": {
+    "codex": "Codex desktop; exact app build not recorded",
+    "claudeCode": "Not tested",
+    "cursor": "Not tested"
+  },
+  "skills": [
+    "ai-learning-coach",
+    "book-digest-cn",
+    "bookkeeping-cn",
+    "chinese-design-md",
+    "chinese-lesson-plan",
+    "chinese-typography",
+    "chinese-web-themes",
+    "chinese-work-report",
+    "ecommerce-copywriting",
+    "github-readme-cn",
+    "guochao-visual-cn",
+    "guofeng-threejs",
+    "homework-tutor-cn"
+  ],
+  "results": {
+    "discovery": {
+      "status": "verified",
+      "count": 13
+    },
+    "codexInstall": {
+      "status": "verified",
+      "identicalCount": 13
+    },
+    "codexActivation": {
+      "status": "not-tested"
+    },
+    "claudeCode": {
+      "status": "not-tested"
+    },
+    "cursor": {
+      "status": "not-tested"
+    }
+  }
+}
