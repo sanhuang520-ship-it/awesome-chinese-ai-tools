@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import tempfile
+import json
 import re
 import unittest
 from pathlib import Path
@@ -51,6 +52,16 @@ class InternalLinksTest(unittest.TestCase):
         for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/"):
             with self.subTest(page=page):
                 self.assertIn(f"]({page})", plan)
+
+    def test_first_party_explainers_offer_an_evidence_first_repository_path(self):
+        catalog = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))
+        explainers = {skill["explainer"] for skill in catalog["skills"] if skill.get("explainer")}
+        repository = "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools"
+        for relative in explainers:
+            with self.subTest(page=relative):
+                page = (ROOT / relative / "index.html").read_text(encoding="utf-8")
+                self.assertIn(repository, page)
+                self.assertIn("觉得有用再 Star", page)
 
 if __name__ == "__main__":
     unittest.main()
