@@ -8,6 +8,8 @@
 
 - 13 个本站原创 Skill 均已覆盖。
 - 13 个目录名均与 `SKILL.md` frontmatter 的 `name` 一致，本地 Markdown 引用无缺失，也未发现符号链接。
+- 13 个 Skill 使用 `skills-ref 0.1.1` 的实际 CLI `agentskills validate` 逐项验证，均返回 `Valid skill`；这证明结构和 frontmatter 符合该版本参考规范，不证明内容正确或跨客户端兼容。
+- 13 个 Skill 均提供作者、既有分类和 3–5 个搜索标签，供兼容目录展示；这些发现字段不改变 Skill 权限或执行行为。
 - 当前没有 `.py`、`.js`、`.sh` 等独立可执行脚本随 Skill 打包。
 - `guofeng-threejs` 的两个浏览器 Demo 会从 `unpkg.com` 加载固定版本 `three@0.170.0`；其余 Skill 没有发现运行时网络依赖。
 - 部分 Skill 带 Markdown 参考资料、CSS、HTML Demo 或 DESIGN.md 模板；“没有独立脚本”不等于内容无需审查。
@@ -36,3 +38,17 @@
 2. HTML 内联 JavaScript 属于浏览器 Demo 的主动内容，但本表的“独立可执行脚本”专指 `.py`、`.js`、`.sh` 等脚本文件。
 3. 静态检查无法证明提示注入安全、输出事实正确或第三方 CDN 永远可信。涉及真实账户、生产环境或敏感数据时仍需隔离测试和最小权限。
 4. 第三方收录的 171 个 Skill 尚未完成同等级审查，不能套用本站原创的结论。
+
+## 复现标准格式验证
+
+官方参考库的 PyPI `skills-ref 0.1.1` 将命令安装为 `agentskills`。逐项运行：
+
+```bash
+python3 -m venv /tmp/skills-ref-check
+/tmp/skills-ref-check/bin/pip install skills-ref==0.1.1
+for skill in skills/*; do
+  /tmp/skills-ref-check/bin/agentskills validate "$skill"
+done
+```
+
+外部规范页面仍可能显示旧命令名 `skills-ref validate`；应以已安装包暴露的入口为准。本仓库日常的 `python3 scripts/verify.py` 保持无网络、无第三方校验器依赖。

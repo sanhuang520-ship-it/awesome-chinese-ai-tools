@@ -74,6 +74,12 @@ class QualityDataTest(unittest.TestCase):
             )
             self.assertEqual(["demo.html"], runtime_network_evidence(root))
 
+    def test_quality_document_records_versioned_reference_validation(self):
+        quality = (ROOT / "QUALITY.md").read_text(encoding="utf-8")
+        self.assertIn("skills-ref 0.1.1", quality)
+        self.assertIn('agentskills validate "$skill"', quality)
+        self.assertIn("不证明内容正确或跨客户端兼容", quality)
+
 
 if __name__ == "__main__":
     unittest.main()
