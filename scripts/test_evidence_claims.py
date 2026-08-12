@@ -124,6 +124,14 @@ class EvidenceClaimsTest(unittest.TestCase):
                 self.assertIn(phrase, generator)
                 self.assertIn(phrase, catalog)
 
+    def test_compatibility_page_routes_people_to_rendered_case_records(self):
+        page = (ROOT / "compatibility" / "index.html").read_text(encoding="utf-8")
+        prefix = "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/cases/"
+        for case in (ROOT / "cases").glob("*-codex.md"):
+            with self.subTest(case=case.name):
+                self.assertIn(prefix + case.name, page)
+                self.assertNotIn(f'href="../cases/{case.name}"', page)
+
     def test_generated_catalog_does_not_call_every_third_party_entry_tested(self):
         generator = (ROOT / "scripts" / "daily_check.py").read_text(encoding="utf-8")
         catalog = (ROOT / "SKILLS.md").read_text(encoding="utf-8")
