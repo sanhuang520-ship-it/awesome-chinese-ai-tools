@@ -3,13 +3,37 @@
 import unittest
 import xml.etree.ElementTree as ET
 from collections import Counter
+from html.parser import HTMLParser
+from urllib.parse import urljoin
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+BASE_URL = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
+
+
+class DiscoveryParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.robots = ""
+        self.canonical = []
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if tag == "meta" and values.get("name", "").lower() == "robots":
+            self.robots = values.get("content", "").lower()
+        if tag == "link" and values.get("rel") == "canonical":
+            self.canonical.append(values.get("href"))
 
 
 class PublicFeedsTest(unittest.TestCase):
+    def test_robots_allows_crawling_and_declares_canonical_sitemap(self):
+        robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
+        self.assertIn("User-agent: *", robots)
+        self.assertIn("Allow: /", robots)
+        self.assertNotIn("Disallow: /", robots)
+        self.assertIn(f"Sitemap: {BASE_URL}sitemap.xml", robots)
+
     def test_feed_is_valid_and_contains_only_repository_updates(self):
         feed = (ROOT / "feed.xml").read_text(encoding="utf-8")
         root = ET.fromstring(feed)
@@ -79,6 +103,36 @@ class PublicFeedsTest(unittest.TestCase):
         locations = [node.text for node in root.findall("s:url/s:loc", namespace)]
         duplicates = sorted(url for url, count in Counter(locations).items() if count > 1)
         self.assertEqual([], duplicates)
+
+    def test_every_indexable_html_has_one_canonical_and_sitemap_entry(self):
+        root = ET.parse(ROOT / "sitemap.xml").getroot()
+        namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+        locations = {node.text for node in root.findall("s:url/s:loc", namespace)}
+        for page in sorted(ROOT.rglob("*.html")):
+            if any(part.startswith(".") or part in {"node_modules", "work"} for part in page.relative_to(ROOT).parts):
+                continue
+            parser = DiscoveryParser()
+            parser.feed(page.read_text(encoding="utf-8"))
+            if "noindex" in parser.robots:
+                continue
+            relative = page.relative_to(ROOT).as_posix()
+            expected = BASE_URL if relative == "index.html" else urljoin(BASE_URL, relative.removesuffix("index.html"))
+            with self.subTest(page=relative):
+                self.assertEqual([expected], parser.canonical)
+                self.assertIn(expected, locations)
+
+    def test_raw_demo_pages_are_noindex_but_links_remain_followable(self):
+        demos = (
+            "skills/chinese-web-themes/demo.html",
+            "skills/guofeng-threejs/demo.html",
+            "skills/guofeng-threejs/intro-demo.html",
+            "themes/ink3d.html",
+            "themes/intro.html",
+        )
+        for relative in demos:
+            body = (ROOT / relative).read_text(encoding="utf-8")
+            with self.subTest(page=relative):
+                self.assertIn('<meta name="robots" content="noindex,follow">', body)
 
 
 if __name__ == "__main__":
