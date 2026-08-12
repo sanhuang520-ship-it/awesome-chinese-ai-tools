@@ -49,7 +49,7 @@ class InternalLinksTest(unittest.TestCase):
 
     def test_maintenance_plan_links_to_every_named_explainer(self):
         plan = (ROOT / "MAINTENANCE_PLAN.md").read_text(encoding="utf-8")
-        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/", "themes/", "guofeng-threejs/"):
+        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/", "themes/", "guofeng-threejs/", "bookkeeping/"):
             with self.subTest(page=page):
                 self.assertIn(f"]({page})", plan)
 
@@ -68,6 +68,15 @@ class InternalLinksTest(unittest.TestCase):
         command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill guofeng-threejs"
         self.assertIn(f"<code>{command}</code>", page)
         self.assertIn(f'data-copy="{command}"', page)
+
+    def test_bookkeeping_guide_keeps_reconciliation_and_install_command_visible(self):
+        page = (ROOT / "bookkeeping" / "index.html").read_text(encoding="utf-8")
+        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill bookkeeping-cn"
+        for value in ("12,000", "5,000", "1,000", "6,000"):
+            self.assertIn(value, page)
+        self.assertIn(f"<code>{command}</code>", page)
+        self.assertNotIn("投资收益", page)
+        self.assertNotIn("节税方案", page)
 
 if __name__ == "__main__":
     unittest.main()

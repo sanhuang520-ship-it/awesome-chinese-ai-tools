@@ -83,6 +83,7 @@ class CatalogIntegrityTest(unittest.TestCase):
                 "chinese-design-md",
                 "chinese-web-themes",
                 "guofeng-threejs",
+                "bookkeeping-cn",
             },
             set(explainers),
         )
