@@ -12,6 +12,18 @@
 
 ---
 
+## 不会写代码，也可以贡献
+
+不需要 Fork 仓库或编辑 JSON，选一个表单填写即可：
+
+- [推荐一个 Skill 或 AI 工具](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml)
+- [报告失效链接或事实错误](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml)
+- [提交一次成功、失败或未触发的兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)
+
+不知道的字段可以如实写“不确定”或“暂无”。维护者会复核，不要求提交者先得出完整结论；请不要为了填满表单而猜测。
+
+---
+
 ## 分享一次真实使用结果（不需要提 PR）
 
 如果你已经使用过某个 Skill，优先用[兼容性实测表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。它会要求客户端版本、原始任务、实际结果和证据边界；成功、失败和没有自动触发都欢迎。也可以在[置顶 Discussion](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)按下面的格式回复：
@@ -46,6 +58,8 @@ python3 scripts/verify.py
 ---
 
 ## 加一个 Skill
+
+下面是适合直接提 PR 的方式；如果不想改代码，使用上面的推荐表单即可。
 
 编辑 **`data/skills.json`**，在 `skills` 数组里加一条：
 

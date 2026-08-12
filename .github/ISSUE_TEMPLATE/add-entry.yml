@@ -35,6 +35,27 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: checked
+    attributes:
+      label: 你核对到了哪一步
+      description: 如实选择即可；没有亲自使用不影响提交，但我们会区分证据强度
+      options:
+        - 我打开了官方页面或仓库，并核对了上述描述
+        - 我亲自安装或使用过
+        - 我只看到他人介绍，尚未独立核对
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 可复核依据
+      description: Skill 请贴 SKILL.md 的固定链接或仓库路径；工具请贴官方功能说明。没有时写“暂无”
+      placeholder: https://github.com/owner/repo/blob/commit/skills/example/SKILL.md
+    validations:
+      required: true
+
   - type: checkboxes
     id: disclosure
     attributes:

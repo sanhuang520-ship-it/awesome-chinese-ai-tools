@@ -47,6 +47,7 @@ See [output examples](EXAMPLES.md), [reproducible Codex cases](cases/README.md),
 
 ## Contributing
 
+- [Recommend a Skill or AI tool](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml); no code change is required.
 - Submit a real success, failure, or non-activation result through the [compatibility report form](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml).
 - Report stale links or factual errors through the [problem report form](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml).
 - Read [CONTRIBUTING.md](CONTRIBUTING.md) before changing catalog data.

@@ -248,8 +248,9 @@ my-skill/
 
 ## 贡献
 
-收录有误、链接失效、想推荐新 Skill，可以选择对应的 [Issue 表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new/choose)，
-使用问题和实际效果欢迎放到 [Discussions](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions)，或查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
+不会代码也可以贡献：[推荐 Skill 或工具](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml) · [报告事实错误](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml) · [提交兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)。不知道的字段可以如实写“不确定”或“暂无”，不需要为了填满表单而猜测。
+
+使用问题和实际效果欢迎放到 [Discussions](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions)，想直接改数据请查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 如果你用的是 Claude Code 或 Cursor，最有价值的贡献是提交一次成功或失败的真实结果：我们会把客户端版本、原始任务和证据边界整理进[兼容性实测表](COMPATIBILITY.md)，不会把单次体验包装成普遍结论。
 
