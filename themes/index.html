@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>中式网页主题库 · 演示</title>
+<title>中式网页主题库：8 套可切换 CSS 主题与中文排版规范</title>
+<meta name="description" content="在线切换水墨、青绿、宋韵、敦煌、朱砂、新中式、竹韵和夜宴 8 套中式 CSS 主题，查看中文排版规则、对比度实测、安装方式与 Codex 运行记录。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/themes/">
+<meta property="og:title" content="中式网页主题库：8 套可切换 CSS 主题">
+<meta property="og:description" content="真实浏览器预览 8 套中式主题，附中文排版规范、对比度边界、安装方式与 Codex 实测。">
+<meta property="og:url" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/themes/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/assets/readme-banner.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"chinese-web-themes 中式网页主题库","description":"8 套可切换的中式 CSS 主题，内置中文排版规范与已记录的对比度实测。","url":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/themes/","codeRepository":"https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-web-themes","programmingLanguage":["CSS","HTML"],"license":"https://opensource.org/licenses/MIT","inLanguage":"zh-CN"}</script>
 <link rel="stylesheet" href="themes.css">
 <style>
   .switcher {
@@ -27,6 +36,10 @@
     width: 40px; height: 40px; border-radius: 6px;
     border: 1px solid var(--line); display: block;
   }
+  .evidence { margin-top: 2rem; padding: 1.25rem; border: 1px solid var(--line); background: var(--surface); }
+  .evidence h2 { margin-top: 0; }
+  footer { max-width: 38em; margin: 2.5rem auto; padding: 1.25rem 1.5rem; border-top: 1px solid var(--line); color: var(--ink-soft); }
+  footer a { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -55,7 +68,7 @@
   </div>
 
   <h2>为什么要单独做中式主题</h2>
-  <p>主流主题库（如 pakco-html 的 32 套）里有 <code>japanese-minimal</code>，却<strong>没有一套中式的</strong>。中文网页直接套西文模板，会同时踩到行高不够、中英文挤在一起、标点跑到行首等问题。</p>
+  <p>这套主题把中国美学配色与中文排版约束放在同一份 CSS 中。它解决的是行高、中英文间距、标点避头尾、行宽与着重方式等可检查问题，不声称覆盖所有中式视觉传统，也不替代具体项目的字体授权与无障碍复核。</p>
 
   <blockquote>
     这套主题把<em>中文排版规范</em>写进了基础样式：行高 1.75、行宽 38em、CJK 避头尾、着重号代替斜体。
@@ -84,7 +97,20 @@
   <p style="color:var(--ink-soft);font-size:.9em">
     切换主题只需改 <code>data-theme</code> 属性，无需重新加载样式。
   </p>
+
+  <section class="evidence">
+    <h2>证据与边界</h2>
+    <p>仓库记录的 8 套主题正文对比度为 9.4–12.2，超过 WCAG AA 普通文字 4.5:1 的阈值；这不代表页面里所有自定义颜色组合都自动合格。真实浏览器截图、计算方式与 Codex 单任务记录均可单独核对。</p>
+    <p><a href="../shots/">查看 8 套真实渲染截图</a> · <a href="../cases/chinese-web-themes-codex.md">查看 Codex 自动触发记录</a> · <a href="../skills/chinese-web-themes/SKILL.md">阅读 Skill 源码</a></p>
+    <pre><code>npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-web-themes</code></pre>
+  </section>
 </article>
+
+<footer>
+  本页是可切换预览，不是生成效果保证。安装前请核对 Skill 内容与项目所用字体授权。 ·
+  <a href="../">返回中文 AI Skills 库</a> ·
+  <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools">查看 GitHub 仓库 · 觉得有用再 Star</a>
+</footer>
 
 <script>
 document.getElementById('sw').addEventListener('click', e => {

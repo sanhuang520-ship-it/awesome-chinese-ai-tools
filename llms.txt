@@ -20,6 +20,7 @@
 - [GitHub README 审查](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/readme-audit/): 首屏价值、证据和行动入口；不承诺涨星
 - [中文职场汇报](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/work-report/): 结论先行、未知结果明确留空，不编造业务数字
 - [中文电商文案校样](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/ecommerce-copywriting/): 先分拣可写、待补与不应发布的信息，不编造参数、认证、销量或功效
+- [中式网页主题库](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/themes/): 8 套可切换 CSS 主题、中文排版规范、对比度证据与字体授权边界
 
 ## 当前证据
 

@@ -33,7 +33,7 @@
 
 - [x] 发布 Codex 兼容性实测页与 Agent Skills 安装排错页。
 - [x] 提交 Agent-Skills.md 目录并验证 13/13 已生成公开页面；标准格式验证 13/13 通过。分类和标签元数据已补齐，外部目录刷新结果待复核。
-- [ ] 继续为高需求原创 Skill 建立独立说明页，包含用途、边界、安装、真实输出和常见问题；当前已发布 6 个：[中文排版](typography/)、[中式设计系统](design/)、[国潮视觉](guochao/)、[README 审查](readme-audit/)、[中文职场汇报](work-report/)和[中文电商文案校样](ecommerce-copywriting/)。
+- [ ] 继续为高需求原创 Skill 建立独立说明页，包含用途、边界、安装、真实输出和常见问题；当前已发布 7 个：[中文排版](typography/)、[中式设计系统](design/)、[国潮视觉](guochao/)、[README 审查](readme-audit/)、[中文职场汇报](work-report/)、[中文电商文案校样](ecommerce-copywriting/)和[中式网页主题库](themes/)。
 - [ ] 接入站长工具并提交 Sitemap，记录收录数、搜索展示和点击基线。
 - [ ] 每月发布一篇基于可复现实测的长效文章，不转述无法核实的 AI 新闻。
 

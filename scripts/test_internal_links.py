@@ -49,7 +49,7 @@ class InternalLinksTest(unittest.TestCase):
 
     def test_maintenance_plan_links_to_every_named_explainer(self):
         plan = (ROOT / "MAINTENANCE_PLAN.md").read_text(encoding="utf-8")
-        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/"):
+        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/", "themes/"):
             with self.subTest(page=page):
                 self.assertIn(f"]({page})", plan)
 
