@@ -751,8 +751,8 @@ details[open] .sk-install-sum{margin-bottom:2px}
   font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
   font-size:14px;font-weight:700;color:var(--text);
 }
-.sk-desc{font-size:12.5px;color:var(--text2);line-height:1.65;flex:1}
-.sk-desc-en{font-size:11px;color:var(--muted);line-height:1.5;font-style:italic}
+.sk-desc{font-size:12.5px;color:var(--text2);line-height:1.65;flex:1;overflow-wrap:anywhere}
+.sk-desc-en{font-size:11px;color:var(--muted);line-height:1.5;font-style:italic;overflow-wrap:anywhere}
 .b-inst{background:rgba(122,158,194,.14);border:1px solid rgba(122,158,194,.34);color:#8fb2d6}
 [data-theme="light"] .b-inst{color:#3f6f9e}
 .b-stale{background:rgba(214,164,65,.14);border:1px solid rgba(214,164,65,.3);color:var(--accent3)}
@@ -897,6 +897,23 @@ details[open] .sk-install-sum{margin-bottom:2px}
   font-size:12.5px;font-weight:700;color:var(--accent2);white-space:nowrap;flex-shrink:0;
 }
 @media(max-width:640px){.skills-banner-txt span{display:none}}
+.skill-journey{
+  margin:0 0 18px;padding:16px;border:1px solid var(--border2);border-radius:var(--r2);
+  background:linear-gradient(120deg,rgba(214,168,78,.09),rgba(134,184,148,.08));
+}
+.skill-journey-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:11px}
+.skill-journey-head b{font-family:var(--font-serif);font-size:15px;color:var(--text)}
+.skill-journey-head span{font-size:11px;color:var(--text2)}
+.skill-journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.skill-journey-card{
+  min-width:0;padding:12px;border:1px solid var(--border);border-radius:12px;text-decoration:none;
+  background:var(--card);transition:transform .25s var(--spring),border-color .25s,box-shadow .25s;
+}
+.skill-journey-card:hover{transform:translateY(-2px);border-color:var(--accent2);box-shadow:var(--shadow-sm)}
+.skill-journey-card i{font:800 10px var(--font-mono);font-style:normal;color:var(--accent)}
+.skill-journey-card b{display:block;margin:5px 0 2px;color:var(--text);font-size:13px}
+.skill-journey-card span{display:block;color:var(--text2);font-size:11px;line-height:1.5}
+@media(max-width:640px){.skill-journey-grid{grid-template-columns:1fr}.skill-journey-head span,.skill-journey-card span{display:none}.skill-journey-card{padding:10px 12px}.skill-journey-card b{display:inline;margin-left:7px}}
 
 .picker-banner{
   position:relative;overflow:hidden;
@@ -1173,14 +1190,6 @@ details[open] .sk-install-sum{margin-bottom:2px}
     </span>
     <span class="skills-banner-cta">看证据 →</span>
   </a>
-  <a class="skills-banner" href="method/">
-    <span class="skills-banner-icon">📐</span>
-    <span class="skills-banner-txt">
-      <b>Agent Skills 兼容性怎么测</b>
-      <span>发现 ≠ 安装 ≠ 自动触发 ≠ 任务完成</span>
-    </span>
-    <span class="skills-banner-cta">看测试方法 →</span>
-  </a>
   <a class="skills-banner" href="guides/">
     <span class="skills-banner-icon">🧭</span>
     <span class="skills-banner-txt">
@@ -1188,14 +1197,6 @@ details[open] .sk-install-sum{margin-bottom:2px}
       <span>用途 · 方法说明 · 实测状态 · 原始案例 · 安全边界</span>
     </span>
     <span class="skills-banner-cta">看总览 →</span>
-  </a>
-  <a class="skills-banner" href="reproduce/">
-    <span class="skills-banner-icon">▶️</span>
-    <span class="skills-banner-txt">
-      <b>7 个可以逐字重放的测试任务</b>
-      <span>复制安装命令与原始任务 · 6 个摘要不反向编造</span>
-    </span>
-    <span class="skills-banner-cta">开始复现 →</span>
   </a>
   <div class="hero-label">
     <span class="hero-label-dot"></span>
@@ -2016,6 +2017,12 @@ function renderSkillGrid() {
         <a href="install/" style="font-size:12px;color:var(--accent2);text-decoration:none;
            border:1px solid var(--accent2);padding:3px 12px;border-radius:20px;margin-left:8px">
           📦 安装与排错指南 →</a>
+        <a href="codex-skill-not-triggering/" style="font-size:12px;color:var(--accent3);text-decoration:none;
+           border:1px solid var(--accent3);padding:3px 12px;border-radius:20px;margin-left:8px">
+          🧯 Skill 不触发诊断 →</a>
+        <a href="create-codex-skill/" style="font-size:12px;color:var(--accent2);text-decoration:none;
+           border:1px solid var(--accent2);padding:3px 12px;border-radius:20px;margin-left:8px">
+          🛠️ 创建 Codex Skill →</a>
         <a href="readme-audit/" style="font-size:12px;color:var(--accent);text-decoration:none;
            border:1px solid var(--accent);padding:3px 12px;border-radius:20px;margin-left:8px">
           ⭐ README 首屏自查 →</a>
@@ -2085,6 +2092,14 @@ function renderSkills() {
       </div>
       </details>
     </div>
+    <section class="skill-journey" aria-label="Codex Skill 三步使用路径">
+      <div class="skill-journey-head"><b>第一次使用 Codex Skill？从这里走</b><span>创建 → 安装与排错 → 复现与提交</span></div>
+      <div class="skill-journey-grid">
+        <a class="skill-journey-card" href="create-codex-skill/"><i>STEP 01</i><b>创建自己的 Skill</b><span>最小 SKILL.md · description · 验证</span></a>
+        <a class="skill-journey-card" href="codex-skill-not-triggering/"><i>STEP 02</i><b>安装后没有触发</b><span>发现 · 路径 · 自动读取 · 环境</span></a>
+        <a class="skill-journey-card" href="reproduce/"><i>STEP 03</i><b>复制 7 条真实任务</b><span>逐字复现 · 对照证据 · 提交结果</span></a>
+      </div>
+    </section>
     <div class="sk-toolbar">
       <button class="btn-primary" id="sk-share" style="font-size:12.5px;padding:8px 16px;flex-shrink:0">📸 生成分享图</button>
       <div class="sk-search-wrap">
