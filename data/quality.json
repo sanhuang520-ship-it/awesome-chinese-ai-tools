@@ -4,18 +4,18 @@
   "scope": "13 repository-owned skills only",
   "method": "Static repository inspection; no claim of formal security certification",
   "skills": {
-    "ai-learning-coach": {"files": "instructions+references", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "medical/legal/investment decisions"},
-    "book-digest-cn": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": null},
-    "bookkeeping-cn": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "financial privacy; tax and investment advice"},
-    "chinese-design-md": {"files": "instructions+templates", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "font licensing"},
-    "chinese-lesson-plan": {"files": "instructions+references", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "curriculum facts require source confirmation"},
-    "chinese-typography": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "font licensing and regional standards"},
-    "chinese-web-themes": {"files": "instructions+local demo assets", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "font licensing"},
-    "chinese-work-report": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "must not invent business data"},
-    "ecommerce-copywriting": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "advertising claims and regulated products"},
-    "github-readme-cn": {"files": "instructions+references", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "growth correlation is not causation"},
-    "guochao-visual-cn": {"files": "instructions+references", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "cultural accuracy and artist-style boundaries"},
-    "guofeng-threejs": {"files": "instructions+browser demos", "executableScripts": false, "runtimeNetwork": true, "networkDetail": "demo HTML imports three@0.170.0 from unpkg.com", "sensitiveBoundary": null},
-    "homework-tutor-cn": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "does not generate a child-facing answer for copying; may provide a separate parent check"}
+    "ai-learning-coach": {"files": "instructions+references", "filesZh": "说明与本地参考资料", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "medical/legal/investment decisions", "sensitiveBoundaryZh": "医疗、法律与投资决策不能只依赖学习计划"},
+    "book-digest-cn": {"files": "instructions-only", "filesZh": "仅说明文件", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": null, "sensitiveBoundaryZh": null},
+    "bookkeeping-cn": {"files": "instructions-only", "filesZh": "仅说明文件", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "financial privacy; tax and investment advice", "sensitiveBoundaryZh": "财务隐私；不提供税务筹划或投资建议"},
+    "chinese-design-md": {"files": "instructions+templates", "filesZh": "说明与本地设计模板", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "font licensing", "sensitiveBoundaryZh": "字体授权需由使用者核对"},
+    "chinese-lesson-plan": {"files": "instructions+references", "filesZh": "说明与本地参考资料", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "curriculum facts require source confirmation", "sensitiveBoundaryZh": "课程事实与教材版本需要来源确认"},
+    "chinese-typography": {"files": "instructions-only", "filesZh": "仅说明文件", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "font licensing and regional standards", "sensitiveBoundaryZh": "字体授权与地区排版规范需另行核对"},
+    "chinese-web-themes": {"files": "instructions+local demo assets", "filesZh": "说明与本地演示资源", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "font licensing", "sensitiveBoundaryZh": "字体授权需由使用者核对"},
+    "chinese-work-report": {"files": "instructions-only", "filesZh": "仅说明文件", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "must not invent business data", "sensitiveBoundaryZh": "不能编造业务数据或把动作冒充结果"},
+    "ecommerce-copywriting": {"files": "instructions-only", "filesZh": "仅说明文件", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "advertising claims and regulated products", "sensitiveBoundaryZh": "广告宣称与受监管品类需核对当前规则和证明材料"},
+    "github-readme-cn": {"files": "instructions+references", "filesZh": "说明与本地参考资料", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "growth correlation is not causation", "sensitiveBoundaryZh": "增长相关性不等于因果，不承诺涨星"},
+    "guochao-visual-cn": {"files": "instructions+references", "filesZh": "说明与本地参考资料", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "cultural accuracy and artist-style boundaries", "sensitiveBoundaryZh": "文化准确性与艺术家个人风格边界"},
+    "guofeng-threejs": {"files": "instructions+browser demos", "filesZh": "说明与浏览器演示", "executableScripts": false, "runtimeNetwork": true, "networkDetail": "demo HTML imports three@0.170.0 from unpkg.com", "networkDetailZh": "浏览器 Demo 从 unpkg.com 加载 three@0.170.0", "sensitiveBoundary": null, "sensitiveBoundaryZh": null},
+    "homework-tutor-cn": {"files": "instructions-only", "filesZh": "仅说明文件", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "does not generate a child-facing answer for copying; may provide a separate parent check", "sensitiveBoundaryZh": "不生成供孩子直接抄写的答案；可另给家长核对结果"}
   }
 }

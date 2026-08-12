@@ -646,6 +646,10 @@ footer a:hover{text-decoration:underline}
   font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap;text-decoration:none}
 .sp-btn.ghost{background:transparent;border:1px solid var(--border2);color:var(--text2)}
 .sp-btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.sp-quality{padding:12px 18px;border-bottom:1px solid var(--border);background:var(--surface);font-size:12px;color:var(--text2)}
+.sp-quality-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}.sp-quality-head b{color:var(--text)}
+.sp-quality-note{color:var(--muted);font-size:11px}.sp-quality-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px}
+.sp-quality-item{min-width:0}.sp-quality-item b{color:var(--accent2);font-weight:700}.sp-quality a{color:var(--accent2)}
 .sp-body{overflow-y:auto;padding:20px 22px 60px;line-height:1.78;font-size:14.6px;color:var(--text2)}
 .sp-body h1{font-size:21px;color:var(--text);margin:2px 0 12px}
 .sp-body h2{font-size:17px;color:var(--text);margin:26px 0 9px;padding-top:14px;
@@ -676,6 +680,7 @@ footer a:hover{text-decoration:underline}
 @media(max-width:520px){
   .sp-body{padding:16px 15px 50px;font-size:14px}.sp-head{padding:12px 14px}
   .sp-bar{padding:10px 14px;overflow:hidden}.sp-cmd{flex:1 0 100%;width:100%;min-width:0}
+  .sp-quality{padding:11px 14px}.sp-quality-grid{grid-template-columns:1fr}
 }
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
@@ -1744,7 +1749,7 @@ function showListView() {
 /* ══════════════════════════════════════
    Skills 视图
 ══════════════════════════════════════ */
-let skillsData = null;
+let skillsData = null, qualityData = null;
 async function showSkillsView() {
   activeView = 'skills';
   document.getElementById('hero-section').style.display = 'none';
@@ -1755,8 +1760,13 @@ async function showSkillsView() {
   syncGlobalSearch();
   if (!skillsData) {
     try {
-      const r = await fetch('data/skills.json', {cache:'no-cache'});
-      skillsData = await r.json();
+      const responses = await Promise.all([
+        fetch('data/skills.json', {cache:'no-cache'}),
+        fetch('data/quality.json', {cache:'no-cache'})
+      ]);
+      if (!responses[0].ok || !responses[1].ok) throw new Error('Skill 或质量标签数据加载失败');
+      skillsData = await responses[0].json();
+      qualityData = await responses[1].json();
     } catch(e) {
       view.innerHTML = `<div class="list-empty"><div class="list-empty-icon">⚠️</div>
         <div>Skills 数据加载失败</div></div>`;
@@ -1839,6 +1849,7 @@ function spInit(){
     '<a class="sp-btn ghost" id="sp-guide">方法与证据</a>' +
     '<a class="sp-btn ghost" id="sp-case" target="_blank" rel="noopener">Codex 实测 ↗</a>' +
     '<a class="sp-btn ghost" id="sp-gh" target="_blank" rel="noopener">源码 ↗</a></div>' +
+    '<div class="sp-quality" id="sp-quality"></div>' +
     '<div class="sp-body" id="sp-body"></div>';
   document.body.append(mask, panel);
   const close = function(){ mask.classList.remove('show'); panel.classList.remove('show');
@@ -1866,6 +1877,24 @@ async function spOpen(name, url){
     guide.style.display = '';
   } else { guide.style.display = 'none'; }
   e.panel.querySelector('#sp-case').href = 'cases/' + name + '-codex.md';
+  const quality = qualityData && qualityData.skills[name];
+  const qualityBox = e.panel.querySelector('#sp-quality');
+  if (quality) {
+    const network = quality.runtimeNetwork
+      ? '有 · ' + (quality.networkDetailZh || '详情见质量标签') : '未发现';
+    qualityBox.innerHTML = '<div class="sp-quality-head"><b>🛡️ 静态质量与安全标签</b>' +
+      '<span class="sp-quality-note">文件检查，不是安全认证</span></div>' +
+      '<div class="sp-quality-grid">' +
+      '<div class="sp-quality-item"><b>检查范围：</b>' + spEsc(quality.filesZh) + '</div>' +
+      '<div class="sp-quality-item"><b>独立可执行脚本：</b>' + (quality.executableScripts ? '发现' : '未发现') + '</div>' +
+      '<div class="sp-quality-item"><b>运行时网络：</b>' + spEsc(network) + '</div>' +
+      '<div class="sp-quality-item"><b>重点边界：</b>' + spEsc(quality.sensitiveBoundaryZh || '未标专项边界') + '</div>' +
+      '</div><a href="QUALITY.md">查看检查方法与全部限制 →</a>';
+    qualityBox.style.display = '';
+  } else {
+    qualityBox.innerHTML = '<span class="sp-quality-note">该条目没有本站逐项质量标签。</span>';
+    qualityBox.style.display = '';
+  }
   // 有配套可视化页面的 skill，在抽屉里直接给入口
   const VIS = {'guochao-visual-cn':'guochao/', 'chinese-web-themes':'shots/',
                'guofeng-threejs':'shots/', 'chinese-typography':'typography/', 'chinese-design-md':'design/'};

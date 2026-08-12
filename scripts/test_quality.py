@@ -24,6 +24,23 @@ class QualityDataTest(unittest.TestCase):
         networked = {name for name, item in self.data["skills"].items() if item["runtimeNetwork"]}
         self.assertEqual(networked, {"guofeng-threejs"})
 
+    def test_chinese_labels_cover_every_quality_field(self):
+        for name, item in self.data["skills"].items():
+            with self.subTest(skill=name):
+                self.assertTrue(item["filesZh"].strip())
+                if item["sensitiveBoundary"] is not None:
+                    self.assertTrue(item["sensitiveBoundaryZh"].strip())
+                else:
+                    self.assertIsNone(item["sensitiveBoundaryZh"])
+                if item["runtimeNetwork"]:
+                    self.assertTrue(item["networkDetailZh"].strip())
+
+    def test_homepage_drawer_renders_quality_labels_with_certification_boundary(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        for phrase in ("data/quality.json", "静态质量与安全标签", "不是安全认证", "独立可执行脚本", "运行时网络", "重点边界"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, index)
+
     def test_quality_checker_covers_structure_and_link_escape(self):
         checker = (ROOT / "scripts" / "check_quality.py").read_text(encoding="utf-8")
         for phrase in ("frontmatter name does not match directory", "symbolic links require manual review", "missing or escaping local references"):
