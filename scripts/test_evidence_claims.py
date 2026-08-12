@@ -191,6 +191,13 @@ class EvidenceClaimsTest(unittest.TestCase):
                 self.assertIn("历史快照", body)
                 self.assertNotIn(f"alternatives/{page.name}", sitemap)
 
+    def test_indexed_pitfalls_article_marks_historical_counts_as_a_snapshot(self):
+        article = (ROOT / "blog" / "skill-pitfalls.md").read_text(encoding="utf-8")
+        self.assertIn("快照说明（2026-08-12）", article)
+        self.assertIn("分类只表示中文场景，不能证明原创归属", article)
+        self.assertIn("链接可访问不等于逐项功能实测", article)
+        self.assertNotIn("于是我收录了 130 个（其中 59 个中文原创）", article)
+
     def test_security_policy_routes_sensitive_reports_privately(self):
         policy = (ROOT / "SECURITY.md").read_text(encoding="utf-8")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")

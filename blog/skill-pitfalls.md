@@ -1,11 +1,13 @@
 # 7 万星仓库教的安装路径是错的——整理 130 个 AI Skill 的踩坑记录
 
 > 📌 本文已发表于掘金：https://juejin.cn/post/7671196739655352339
+>
+> **快照说明（2026-08-12）**：标题和正文中的 130、59、12 是文章写作时的规模，不是当前目录统计；其中“59 个中文原创”应为“59 个中文条目”，分类只表示中文场景，不能证明原创归属。当前数量请以[动态清单](../SKILLS.md)为准。
 
 
 最近在做一个中文 AI Skills 库。整理过程中发现，这个领域的中文资源基本是空白——英文那边 `anthropics/skills` 16 万星、`awesome-claude-skills` 7 万星，但中文用户既看不懂说明，也不知道有哪些中文 skill 可用。
 
-于是我收录了 130 个（其中 59 个中文原创），又自己写了 12 个填补空白场景。下面是这个过程中真实踩到的坑，有些可能对你有用。
+于是我收录了 130 个（其中 59 个中文条目），又自己写了 12 个填补空白场景。下面是这个过程中真实踩到的坑，有些可能对你有用。
 
 ---
 
@@ -261,9 +263,9 @@ AI 现在什么都敢答，所以**告诉它什么时候该停下来**，可能�
 
 - 仓库：https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools
 - 在线浏览（可搜索筛选）：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/
-- 12 个原创 skill 的实际输出示例：[EXAMPLES.md](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/EXAMPLES.md)
+- 当前 13 个原创 Skill 的输出片段与实测入口：[EXAMPLES.md](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/EXAMPLES.md)
 
-写这篇时收录了 130 个 skill，每个都调 API 验证过仓库真实存在，而且现在每天自动复检一次。信息有误欢迎指出，我会尽快改。
+写这篇时收录了 130 个 Skill 条目，其来源仓库当时通过 GitHub API 核对为可访问；现在来源仓库仍每天自动复检一次。链接可访问不等于逐项功能实测。信息有误欢迎指出，我会尽快改。
 
 ---
 

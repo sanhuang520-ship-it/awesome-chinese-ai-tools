@@ -74,7 +74,7 @@ python3 scripts/verify.py
 }
 ```
 
-`cat` 可选：`cn` 中文原创 · `doc` 文档办公 · `dev` 开发工程 · `design` 创意设计 ·
+`cat` 可选：`cn` 中文条目（不代表原创归属） · `doc` 文档办公 · `dev` 开发工程 · `design` 创意设计 ·
 `biz` 办公协作 · `data` 数据研究 · `sec` 安全取证 · `3d` 3D 与图形 · `game` 游戏开发
 
 **收录标准：**
