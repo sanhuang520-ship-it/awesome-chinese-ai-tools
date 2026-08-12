@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
 import json
+import tempfile
 import unittest
 from pathlib import Path
+
+from check_quality import classify_files, runtime_network_evidence
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,6 +49,30 @@ class QualityDataTest(unittest.TestCase):
         for phrase in ("frontmatter name does not match directory", "symbolic links require manual review", "missing or escaping local references"):
             with self.subTest(phrase=phrase):
                 self.assertIn(phrase, checker)
+
+    def test_quality_checker_covers_file_layout_and_runtime_network_drift(self):
+        checker = (ROOT / "scripts" / "check_quality.py").read_text(encoding="utf-8")
+        for phrase in ("classify_files", "runtime_network_evidence", "runtime network evidence requires English and Chinese details"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, checker)
+
+    def test_runtime_network_detection_ignores_markdown_links_but_finds_browser_imports(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as directory:
+            root = Path(directory)
+            (root / "SKILL.md").write_text("[docs](https://example.com/docs)", encoding="utf-8")
+            self.assertEqual([], runtime_network_evidence(root))
+            (root / "demo.html").write_text(
+                '<script type="module">import "https://cdn.example.com/pkg.js";</script>',
+                encoding="utf-8",
+            )
+            evidence = runtime_network_evidence(root)
+            self.assertEqual(["demo.html"], evidence)
+            self.assertEqual("instructions+browser demos", classify_files(root))
+            (root / "demo.html").write_text(
+                '<script type="importmap">{"imports":{"pkg":"https://cdn.example.com/pkg.js"}}</script>',
+                encoding="utf-8",
+            )
+            self.assertEqual(["demo.html"], runtime_network_evidence(root))
 
 
 if __name__ == "__main__":
