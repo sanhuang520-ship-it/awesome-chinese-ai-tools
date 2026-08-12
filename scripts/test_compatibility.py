@@ -55,6 +55,20 @@ class CompatibilityDataTest(unittest.TestCase):
                 self.assertIn(f"Codex CLI `{version}`", body)
                 self.assertNotIn("Codex desktop", body)
 
+    def test_per_skill_outcomes_cover_activation_evidence(self):
+        activation = self.data["results"]["codexActivation"]
+        results = activation["skillResults"]
+        self.assertEqual(set(activation["verifiedSkills"]), set(results))
+        totals = {"completed": 0, "waiting-input": 0, "bounded-retest": 0}
+        for skill, result in results.items():
+            with self.subTest(skill=skill):
+                self.assertIn(result["outcome"], totals)
+                totals[result["outcome"]] += 1
+                self.assertEqual(f"cases/{skill}-codex.md", result["case"])
+                self.assertTrue(result["labelZh"])
+                self.assertTrue(result["summaryZh"])
+        self.assertEqual({"completed": 10, "waiting-input": 1, "bounded-retest": 2}, totals)
+
     def test_unrun_clients_are_not_claimed_as_verified(self):
         self.assertEqual(self.data["results"]["claudeCode"]["status"], "not-tested")
         self.assertEqual(self.data["results"]["cursor"]["status"], "not-tested")

@@ -121,6 +121,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 这是这个仓库和其他 awesome 列表的区别：**下面这些是我们自己写的，不是搬运的。**
 
+**[→ 按使用场景比较 13 个 Skill、实测状态和安全边界](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guides/)**
+
 | Skill | 做什么 |
 |-------|--------|
 | [`ai-learning-coach`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/learning/) | 学习教练：先校准目标、基础、时间和验收标准，再进入主动回忆 → 输出 → 纠错归因 → 间隔复习；不直接代做学习产出 |

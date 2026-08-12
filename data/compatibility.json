@@ -68,7 +68,87 @@
         "cases/guofeng-threejs-codex.md"
       ],
       "clientVersion": "codex-cli 0.147.0-alpha.6.5",
-      "note": "All 13 skills automatically activated in one task. Two large tasks initially did not complete; both passed smaller bounded retests. This is not evidence for every prompt or client version"
+      "note": "All 13 skills automatically activated in one task. Ten tasks completed in the recorded run, one correctly paused for required user input, and two large tasks initially did not complete before passing smaller bounded retests. This is not evidence for every prompt or client version",
+      "skillResults": {
+        "ai-learning-coach": {
+          "outcome": "waiting-input",
+          "labelZh": "校准完成，待输入",
+          "summaryZh": "先询问目标、基础、时间和成果形式；完整学习方案等待用户补充信息。",
+          "case": "cases/ai-learning-coach-codex.md"
+        },
+        "book-digest-cn": {
+          "outcome": "completed",
+          "labelZh": "当次任务完成",
+          "summaryZh": "完成《小王子》的三层拆解、反面审视与作品未回答问题。",
+          "case": "cases/book-digest-cn-codex.md"
+        },
+        "bookkeeping-cn": {
+          "outcome": "completed",
+          "labelZh": "当次任务完成",
+          "summaryZh": "完成流水分类与金额核对，并拒绝荐股和不当税务建议。",
+          "case": "cases/bookkeeping-cn-codex.md"
+        },
+        "chinese-design-md": {
+          "outcome": "completed",
+          "labelZh": "当次任务完成",
+          "summaryZh": "从现成设计系统中为新中式茶品牌选择宋韵方案，并保留待确认方向。",
+          "case": "cases/chinese-design-md-codex.md"
+        },
+        "chinese-lesson-plan": {
+          "outcome": "bounded-retest",
+          "labelZh": "缩小复测通过",
+          "summaryZh": "完整教案任务未完成；限定为 300 字核心教学环节后复测通过。",
+          "case": "cases/chinese-lesson-plan-codex.md"
+        },
+        "chinese-typography": {
+          "outcome": "completed",
+          "labelZh": "当次任务完成",
+          "summaryZh": "完成中文网页字体、行高、断词、行宽与斜体问题的结构化审查。",
+          "case": "cases/chinese-typography-codex.md"
+        },
+        "chinese-web-themes": {
+          "outcome": "completed",
+          "labelZh": "当次任务完成",
+          "summaryZh": "为中文博客选择水墨主题，并给出引入步骤、上线检查与授权边界。",
+          "case": "cases/chinese-web-themes-codex.md"
+        },
+        "chinese-work-report": {
+          "outcome": "completed",
+          "labelZh": "当次任务完成",
+          "summaryZh": "按结论先行整理周报，披露数据缺失且没有编造业务结果。",
+          "case": "cases/chinese-work-report-codex.md"
+        },
+        "ecommerce-copywriting": {
+          "outcome": "completed",
+          "labelZh": "当次任务完成",
+          "summaryZh": "只使用已知商品信息，并移除无依据认证、医疗效果与绝对化宣称。",
+          "case": "cases/ecommerce-copywriting-codex.md"
+        },
+        "github-readme-cn": {
+          "outcome": "completed",
+          "labelZh": "当次任务完成",
+          "summaryZh": "完成中文仓库首屏审查，主动区分相关性与因果且不承诺涨星。",
+          "case": "cases/github-readme-cn-codex.md"
+        },
+        "guochao-visual-cn": {
+          "outcome": "completed",
+          "labelZh": "当次任务完成",
+          "summaryZh": "把宽泛中国风收束为青绿山水海报，给出配色并限制纹样堆砌。",
+          "case": "cases/guochao-visual-cn-codex.md"
+        },
+        "guofeng-threejs": {
+          "outcome": "bounded-retest",
+          "labelZh": "缩小复测通过",
+          "summaryZh": "完整技术审查因读取范围过大未完成；修订流程后小任务复测通过。",
+          "case": "cases/guofeng-threejs-codex.md"
+        },
+        "homework-tutor-cn": {
+          "outcome": "completed",
+          "labelZh": "当次任务完成",
+          "summaryZh": "拒绝生成给孩子抄写的成品，先给家长引导话术并单列核对结果。",
+          "case": "cases/homework-tutor-cn-codex.md"
+        }
+      }
     },
     "claudeCode": {
       "status": "not-tested"

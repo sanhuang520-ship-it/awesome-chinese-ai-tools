@@ -58,6 +58,17 @@ def main() -> None:
     expected_cases = [f"cases/{skill}-codex.md" for skill in verified_skills]
     if cases != expected_cases:
         fail(f"activation cases must map to verified skills in order: expected={expected_cases}")
+    skill_results = activation.get("skillResults", {})
+    if set(skill_results) != set(verified_skills):
+        fail("skillResults must cover every verified activation skill exactly once")
+    allowed_outcomes = {"completed", "waiting-input", "bounded-retest"}
+    for skill, result in skill_results.items():
+        if result.get("outcome") not in allowed_outcomes:
+            fail(f"unknown task outcome for {skill}: {result.get('outcome')!r}")
+        if result.get("case") != f"cases/{skill}-codex.md":
+            fail(f"skillResults case does not match skill name: {skill}")
+        if not result.get("labelZh") or not result.get("summaryZh"):
+            fail(f"skillResults lacks public Chinese summary: {skill}")
 
     client_version = activation.get("clientVersion", "")
     display_version = client_version.removeprefix("codex-cli ")
