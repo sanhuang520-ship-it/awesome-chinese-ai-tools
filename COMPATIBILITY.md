@@ -14,7 +14,7 @@
 | Claude Code | ⏳ 待测 | 当前没有运行 Claude Code，不能声称通过 |
 | Cursor | ⏳ 待测 | 当前没有运行 Cursor，不能声称通过 |
 
-当前 Codex 客户端为桌面版，但本次没有记录精确构建号，因此不把结论外推到所有版本。
+当前任务级案例记录的客户端为 Codex CLI `0.147.0-alpha.6.5`；这仍不代表其他 Codex 版本或任务措辞会得到相同结果。
 
 ## 13 个本站原创 Skill
 
@@ -51,4 +51,4 @@ Codex 在隔离实测中报告：已安装 Skill 较多时，会为适应 skills
 
 13 个原创 Skill 已各完成一次自动触发测试，两个失败项也完成缩小复测。下一步补 Claude Code / Cursor 的真实环境证据，并为大任务建立明确输出预算。
 
-如果你能提供 Claude Code 或 Cursor 的实际结果，请在[置顶 Discussion](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)按模板回复。成功和失败都欢迎，但请先删除 Token、邮箱和私人路径。
+如果你能提供 Claude Code 或 Cursor 的实际结果，请用[结构化兼容性表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。表单会分别记录是否点名 Skill、是否触发与任务是否完成；成功和失败都欢迎，但请先删除 Token、邮箱和私人路径。

@@ -59,6 +59,21 @@ class CompatibilityDataTest(unittest.TestCase):
         self.assertEqual(self.data["results"]["claudeCode"]["status"], "not-tested")
         self.assertEqual(self.data["results"]["cursor"]["status"], "not-tested")
 
+    def test_compatibility_submission_separates_naming_activation_and_completion(self):
+        template = (ROOT / ".github" / "ISSUE_TEMPLATE" / "compatibility-result.yml").read_text(encoding="utf-8")
+        for field in ("id: named_skill", "id: activation", "id: completion", "id: evidence", "id: boundary"):
+            with self.subTest(field=field):
+                self.assertIn(field, template)
+        self.assertIn("否，没有点名", template)
+        self.assertIn("失败、报错或卡住", template)
+        self.assertIn("截图不是必需的", template)
+
+    def test_public_compatibility_summary_matches_recorded_cli_client(self):
+        summary = (ROOT / "COMPATIBILITY.md").read_text(encoding="utf-8")
+        self.assertIn("Codex CLI `0.147.0-alpha.6.5`", summary)
+        self.assertNotIn("当前 Codex 客户端为桌面版", summary)
+        self.assertIn("compatibility-result.yml", summary)
+
 
 if __name__ == "__main__":
     unittest.main()

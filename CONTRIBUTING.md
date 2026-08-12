@@ -26,7 +26,7 @@
 
 ## 分享一次真实使用结果（不需要提 PR）
 
-如果你已经使用过某个 Skill，优先用[兼容性实测表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。它会要求客户端版本、原始任务、实际结果和证据边界；成功、失败和没有自动触发都欢迎。也可以在[置顶 Discussion](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)按下面的格式回复：
+如果你已经使用过某个 Skill，优先用[兼容性实测表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。它会分别记录客户端版本、原始任务、是否点名 Skill、是否触发、任务是否完成、实际结果和证据边界；成功、失败和没有自动触发都欢迎。也可以在[置顶 Discussion](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)按下面的格式回复：
 
 ```markdown
 ### 使用的 Skill
@@ -36,7 +36,11 @@
 
 ### 我交给 AI 的任务
 
+### 是否在任务里点名 Skill
+
 ### 实际结果
+
+### 是否触发 / 是否完成
 
 ### 有效的地方 / 需要改进的地方
 ```

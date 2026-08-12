@@ -45,6 +45,18 @@ body:
       required: true
 
   - type: dropdown
+    id: named_skill
+    attributes:
+      label: 原始任务里是否主动写了 Skill 名称
+      description: 不点名更适合观察客户端是否会自动选择；点名结果也可以提交，但会单独标注
+      options:
+        - 否，没有点名
+        - 是，主动点名或要求使用该 Skill
+        - 不确定
+    validations:
+      required: true
+
+  - type: dropdown
     id: activation
     attributes:
       label: 是否自动触发 Skill
@@ -55,6 +67,19 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: completion
+    attributes:
+      label: 任务最终状态
+      options:
+        - 完成，主要交付符合任务要求
+        - 部分完成，仍缺少必要内容
+        - 等待用户输入或确认
+        - 失败、报错或卡住
+        - 无法判断
+    validations:
+      required: true
+
   - type: textarea
     id: observed
     attributes:
@@ -62,6 +87,13 @@ body:
       description: 说明完成、失败、卡住或偏离预期的位置；文字和错误日志即可，截图不是必需的
     validations:
       required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 可公开的证据（可选）
+      description: 可粘贴脱敏日志、相关输出片段或公开链接；截图不是必需的，不要上传隐私和凭据
+      placeholder: 脱敏日志、输出片段或公开链接
 
   - type: textarea
     id: boundary
