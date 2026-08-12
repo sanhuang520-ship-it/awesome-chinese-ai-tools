@@ -68,7 +68,7 @@
         "cases/guofeng-threejs-codex.md"
       ],
       "clientVersion": "codex-cli 0.147.0-alpha.6.5",
-      "note": "All 13 skills automatically activated in one task; two activated tasks did not complete, and this is not evidence for every prompt or client version"
+      "note": "All 13 skills automatically activated in one task. Two large tasks initially did not complete; both passed smaller bounded retests. This is not evidence for every prompt or client version"
     },
     "claudeCode": {
       "status": "not-tested"

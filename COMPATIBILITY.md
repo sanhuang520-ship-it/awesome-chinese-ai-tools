@@ -10,7 +10,7 @@
 |---|---|---|
 | `skills` CLI 发现本站原创 Skill | ✅ 13 / 13 | `npx skills@1.5.22 add . --list` 找到 13 个 Skill |
 | Codex 共享目录安装内容 | ✅ 13 / 13 | 仓库与 `~/.agents/skills/<name>/SKILL.md` 逐字节一致 |
-| Codex 自动触发 | ⚠️ 13 / 13 | 13 个 Skill 均发生一次自动触发；其中 2 项任务未完成 |
+| Codex 自动触发 | ⚠️ 13 / 13 | 均发生自动触发；2 项大任务失败后通过缩小复测 |
 | Claude Code | ⏳ 待测 | 当前没有运行 Claude Code，不能声称通过 |
 | Cursor | ⏳ 待测 | 当前没有运行 Cursor，不能声称通过 |
 
@@ -24,17 +24,17 @@
 | [`book-digest-cn`](cases/book-digest-cn-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
 | [`bookkeeping-cn`](cases/bookkeeping-cn-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
 | [`chinese-design-md`](cases/chinese-design-md-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
-| [`chinese-lesson-plan`](cases/chinese-lesson-plan-codex.md) | ✅ | ✅ | ❌¹ | ⏳ | ⏳ |
+| [`chinese-lesson-plan`](cases/chinese-lesson-plan-codex.md) | ✅ | ✅ | ⚠️¹ | ⏳ | ⏳ |
 | [`chinese-typography`](cases/chinese-typography-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
 | [`chinese-web-themes`](cases/chinese-web-themes-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
 | [`chinese-work-report`](cases/chinese-work-report-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
 | [`ecommerce-copywriting`](cases/ecommerce-copywriting-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
 | [`github-readme-cn`](cases/github-readme-cn-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
 | [`guochao-visual-cn`](cases/guochao-visual-cn-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
-| [`guofeng-threejs`](cases/guofeng-threejs-codex.md) | ✅ | ✅ | ❌¹ | ⏳ | ⏳ |
+| [`guofeng-threejs`](cases/guofeng-threejs-codex.md) | ✅ | ✅ | ⚠️¹ | ⏳ | ⏳ |
 | [`homework-tutor-cn`](cases/homework-tutor-cn-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
 
-¹ 仅代表链接案例中的单任务、单客户端版本结果；⚠️ 为等待用户补充信息，❌ 为触发后任务未完成。
+¹ 仅代表链接案例中的单任务、单客户端版本结果；⚠️ 包括等待用户补充，或大任务失败后仅通过缩小复测。
 
 ### 本轮发现的客户端限制
 
@@ -49,6 +49,6 @@ Codex 在隔离实测中报告：已安装 Skill 较多时，会为适应 skills
 
 ## 下一轮测试
 
-13 个原创 Skill 已各完成一次自动触发测试。下一步为 `chinese-lesson-plan` 和修订后的 `guofeng-threejs` 设计更小的复测任务，并开始补 Claude Code / Cursor 的真实环境证据。
+13 个原创 Skill 已各完成一次自动触发测试，两个失败项也完成缩小复测。下一步补 Claude Code / Cursor 的真实环境证据，并为大任务建立明确输出预算。
 
 如果你能提供 Claude Code 或 Cursor 的实际结果，请在[置顶 Discussion](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)按模板回复。成功和失败都欢迎，但请先删除 Token、邮箱和私人路径。
