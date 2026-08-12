@@ -2,7 +2,7 @@
 
 本项目只记录用户能复核的功能、数据与证据变化。自动更新星数、复检日期等日常提交不逐条列入。
 
-## [v0.2.0] - 2026-08-12
+## [v1.1.0] - 2026-08-12
 
 ### 新增
 
@@ -28,4 +28,4 @@
 - Cursor：待任务级实测。
 - 本版本不声明准确率、正式安全认证或跨客户端全面兼容。
 
-[v0.2.0]: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/releases/tag/v0.2.0
+[v1.1.0]: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/releases/tag/v1.1.0
