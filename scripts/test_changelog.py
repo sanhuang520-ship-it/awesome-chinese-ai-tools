@@ -23,6 +23,7 @@ class ChangelogTest(unittest.TestCase):
         self.assertIn("compare/v1.1.1...HEAD", body)
         self.assertIn("不等于独立用户或效果证明", body)
         self.assertIn("workflow` 写入权限", body)
+        self.assertIn("CITATION.cff", body)
 
 
 if __name__ == "__main__":

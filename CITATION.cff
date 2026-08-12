@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "如果你在文章、研究或目录中使用本项目，请引用下面的版本化信息。"
+title: "awesome-chinese-ai-tools: 中文 AI Agent Skills 与工具目录"
+type: software
+authors:
+  - name: "sanhuang520-ship-it"
+version: 1.1.1
+date-released: 2026-08-12
+license: MIT
+repository-code: "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools"
+url: "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
+keywords:
+  - agent-skills
+  - chinese-ai
+  - codex
+  - awesome-list
+  - ai-tools
