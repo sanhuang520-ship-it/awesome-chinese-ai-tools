@@ -1,0 +1,402 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>8 套中式 DESIGN.md —— 给 AI 编程工具读的中国风设计系统 | 中文 AI Skills 库</title>
+<meta name="description" content="8 套可直接丢进项目根目录的中式 DESIGN.md：水墨、青绿、宋韵、敦煌、朱砂、新中式、竹韵、夜宴。含西文设计系统普遍缺失的中文排版规则（行高 1.75、不用 justify、着重号代替斜体、CJK 避头尾），对比度逐项实测。">
+<link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/design/">
+<style>
+:root{--bg:#17171a;--surface:#1f1f23;--surface2:#26262b;--border:#33333a;--border2:#43434c;
+ --text:#eceaf0;--text2:#b5b2be;--muted:#83808d;--accent:#e0795a;--accent2:#86b894;
+ --fs:"Songti SC","Source Han Serif SC","Noto Serif SC",Georgia,serif;
+ --fm:ui-monospace,SFMono-Regular,Menlo,monospace}
+@media(prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#f6f5f3;--surface:#fff;
+ --surface2:#efedea;--border:#e0dcd6;--border2:#d3cec6;--text:#232228;--text2:#55535f}}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);line-height:1.75;
+ font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.w{max-width:1240px;margin:0 auto;padding:34px 20px 70px}
+a{color:var(--accent)}
+.back{font-size:13px;color:var(--muted);text-decoration:none}
+h1{font-family:var(--fs);font-size:clamp(24px,5vw,38px);margin:16px 0 12px;line-height:1.3}
+.lede{color:var(--text2);max-width:44em;margin:0 0 18px;font-size:15.5px}
+.hook{border-left:3px solid var(--accent);background:var(--surface);padding:14px 18px;
+ border-radius:0 10px 10px 0;margin:0 0 14px;max-width:46em;font-size:15px}
+.hook b{color:var(--text)}
+.note{border-left:3px solid var(--accent2);background:var(--surface);padding:12px 16px;
+ border-radius:0 10px 10px 0;font-size:14px;color:var(--text2);margin:0 0 28px;max-width:46em}
+.how{background:var(--surface);border:1px solid var(--border);border-radius:14px;
+ padding:16px 20px;margin:0 0 30px;max-width:46em}
+.how ol{margin:8px 0 0;padding-left:1.3em} .how li{margin:6px 0}
+code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;
+ padding:1px 6px;font-family:var(--fm);font-size:12.8px}
+pre{background:var(--surface2);border:1px solid var(--border);border-radius:9px;
+ padding:11px 14px;overflow-x:auto;margin:8px 0 0}
+pre code{background:none;border:0;padding:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.demo{padding:18px 20px 20px;border-bottom:1px solid var(--border)}
+.d-h{font-family:var(--fs);font-size:26px;font-weight:700;margin-bottom:8px}
+.d-p{font-size:13.5px;line-height:1.75;margin:0 0 12px;letter-spacing:.01em}
+.d-card{border:1px solid;border-radius:10px;padding:9px 12px;margin-bottom:12px}
+.d-soft{font-size:12px}
+.d-row{display:flex;gap:8px}
+.d-btn{font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:8px;letter-spacing:.02em}
+.d-btn.ghost{background:transparent;border:1px solid}
+.body{padding:15px 18px 18px}
+.ttl{display:flex;align-items:baseline;gap:9px;margin-bottom:4px}
+.ttl b{font-family:var(--fs);font-size:18px}
+.ttl code{font-size:11.5px;color:var(--accent2)}
+.use{font-size:12.8px;color:var(--muted);margin:0 0 10px}
+.sw{display:flex;height:26px;border-radius:6px;overflow:hidden;margin-bottom:11px}
+.sw i{flex:1;cursor:pointer;transition:flex .18s}
+.sw i:hover{flex:2}
+.ct{width:100%;border-collapse:collapse;font-size:12.2px;margin-bottom:8px}
+.ct td{padding:3px 0;color:var(--text2)}
+.ct td:nth-child(2){text-align:right;font-family:var(--fm);padding-right:8px}
+.ct td:nth-child(3){width:22px;text-align:right}
+.ct b{color:var(--text)}
+.warn{font-size:11.8px;color:var(--accent);margin:0 0 9px;line-height:1.55}
+.copy{width:100%;background:transparent;border:1px solid var(--border2);color:var(--text2);
+ border-radius:9px;padding:8px;font-size:12.8px;font-weight:600;cursor:pointer;font-family:inherit;
+ transition:.18s}
+.copy:hover{border-color:var(--accent2);color:var(--accent2)}
+.copy.done{border-color:var(--accent2);color:var(--accent2)}
+h2{font-family:var(--fs);font-size:24px;margin:48px 0 8px}
+.sub{color:var(--text2);font-size:14.5px;margin:0 0 18px;max-width:44em}
+table.rules{width:100%;border-collapse:collapse;font-size:13.8px;display:block;overflow-x:auto}
+table.rules th,table.rules td{border:1px solid var(--border);padding:9px 12px;text-align:left;
+ vertical-align:top}
+table.rules th{background:var(--surface2);white-space:nowrap}
+footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--border);
+ font-size:13px;color:var(--muted)}
+@media(max-width:520px){.w{padding:22px 15px 50px}.grid{grid-template-columns:1fr}}
+</style>
+
+<div class="w">
+<a class="back" href="../">← 回中文 AI Skills 库</a>
+<h1>8 套中式 DESIGN.md</h1>
+<p class="lede">DESIGN.md 是<b>给 AI 编程工具读的设计系统文档</b>。丢进项目根目录，
+AI 生成界面时就照着里面的规则来，不用你每次描述一遍。</p>
+
+<div class="hook">
+<b>为什么要专门做中式的？</b><br>
+社区通行的 DESIGN.md 生态里，几十份大厂设计系统，
+<b>没有一份处理中文排版</b>——它们的 Typography 章节讲的是字重、字距、x-height，
+搬到中文页面上基本不适用。而且很多依赖商业字体（比如 Stripe 用的 Sohne），你本机没有就废了。
+</div>
+
+<div class="note">
+✅ 这 8 套<b>不依赖任何商业字体</b>，全用系统自带中文字体；
+每套的对比度都是用 WCAG 公式实算的，<b>包括标出不达标的项</b>——下面卡片里能看到。
+</div>
+
+<div class="how">
+<b>怎么用</b>
+<ol>
+<li>下面挑一套，点「复制这份 DESIGN.md」</li>
+<li>在项目根目录新建 <code>DESIGN.md</code>，粘贴进去</li>
+<li>告诉你的 AI 编程工具（Claude Code / Codex / Cursor 都行）：</li>
+</ol>
+<pre><code>按照项目根目录 DESIGN.md 里的设计规范，实现这个页面</code></pre>
+</div>
+
+<div class="grid">
+
+<article class="card">
+  <!-- 用这套主题自己的颜色渲染一小块真实界面 -->
+  <div class="demo" style="background:#F7F5F0;color:#3A3733">
+    <div class="d-h" style="color:#1C1A17">水墨</div>
+    <p class="d-p">中文网页丑，八成不是设计问题，是排版问题。行高 1.75、行宽 38em、
+       着重号代替斜体，这些写进了设计系统本身。</p>
+    <div class="d-card" style="background:#EFEBE3;border-color:#DDD7CC">
+      <span class="d-soft" style="color:#6E6860">辅助文字 · 时间戳</span>
+    </div>
+    <div class="d-row">
+      <span class="d-btn" style="background:#2E2A26;color:#F7F5F0">主按钮</span>
+      <span class="d-btn ghost" style="border-color:#DDD7CC;color:#3A3733">次按钮</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="ttl"><b>水墨</b><code>ink</code></div>
+    <p class="use">长文阅读、文化内容、需要安静的界面</p>
+    <div class="sw"><i style="background:#F7F5F0" data-c="#F7F5F0" title="canvas #F7F5F0"></i><i style="background:#EFEBE3" data-c="#EFEBE3" title="surface #EFEBE3"></i><i style="background:#DDD7CC" data-c="#DDD7CC" title="hairline #DDD7CC"></i><i style="background:#6E6860" data-c="#6E6860" title="ink-soft #6E6860"></i><i style="background:#3A3733" data-c="#3A3733" title="ink #3A3733"></i><i style="background:#1C1A17" data-c="#1C1A17" title="ink-strong #1C1A17"></i><i style="background:#2E2A26" data-c="#2E2A26" title="primary #2E2A26"></i><i style="background:#C4BCAF" data-c="#C4BCAF" title="primary-weak #C4BCAF"></i></div>
+    <table class="ct">
+      <tr><td>正文 / 底</td><td><b>10.86:1</b></td><td>✅</td></tr>
+      <tr><td>标题 / 底</td><td><b>15.94:1</b></td><td>✅</td></tr>
+      <tr><td>辅助 / 底</td><td>5.06:1</td><td>✅</td></tr>
+      <tr><td>主色 / 底</td><td>13.06:1</td><td>✅</td></tr>
+    </table>
+    
+    <button class="copy" data-k="ink">复制这份 DESIGN.md</button>
+  </div>
+</article>
+<article class="card">
+  <!-- 用这套主题自己的颜色渲染一小块真实界面 -->
+  <div class="demo" style="background:#FAF8F5;color:#413B33">
+    <div class="d-h" style="color:#221E19">新中式</div>
+    <p class="d-p">中文网页丑，八成不是设计问题，是排版问题。行高 1.75、行宽 38em、
+       着重号代替斜体，这些写进了设计系统本身。</p>
+    <div class="d-card" style="background:#F0EBE3;border-color:#DFD6C9">
+      <span class="d-soft" style="color:#756C60">辅助文字 · 时间戳</span>
+    </div>
+    <div class="d-row">
+      <span class="d-btn" style="background:#8C6E4A;color:#FAF8F5">主按钮</span>
+      <span class="d-btn ghost" style="border-color:#DFD6C9;color:#413B33">次按钮</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="ttl"><b>新中式</b><code>neo</code></div>
+    <p class="use">家居、生活方式、品牌官网 · 最百搭</p>
+    <div class="sw"><i style="background:#FAF8F5" data-c="#FAF8F5" title="canvas #FAF8F5"></i><i style="background:#F0EBE3" data-c="#F0EBE3" title="surface #F0EBE3"></i><i style="background:#DFD6C9" data-c="#DFD6C9" title="hairline #DFD6C9"></i><i style="background:#756C60" data-c="#756C60" title="ink-soft #756C60"></i><i style="background:#413B33" data-c="#413B33" title="ink #413B33"></i><i style="background:#221E19" data-c="#221E19" title="ink-strong #221E19"></i><i style="background:#8C6E4A" data-c="#8C6E4A" title="primary #8C6E4A"></i><i style="background:#C9B79E" data-c="#C9B79E" title="primary-weak #C9B79E"></i></div>
+    <table class="ct">
+      <tr><td>正文 / 底</td><td><b>10.44:1</b></td><td>✅</td></tr>
+      <tr><td>标题 / 底</td><td><b>15.63:1</b></td><td>✅</td></tr>
+      <tr><td>辅助 / 底</td><td>4.87:1</td><td>✅</td></tr>
+      <tr><td>主色 / 底</td><td>4.46:1</td><td>⚠️</td></tr>
+    </table>
+    <p class="warn">⚠️ 主色 4.46:1 未达 AA —— 只用于色块、边框、24px 以上大字，不要写正文</p>
+    <button class="copy" data-k="neo">复制这份 DESIGN.md</button>
+  </div>
+</article>
+<article class="card">
+  <!-- 用这套主题自己的颜色渲染一小块真实界面 -->
+  <div class="demo" style="background:#F4F6F5;color:#37423F">
+    <div class="d-h" style="color:#1B2422">宋韵</div>
+    <p class="d-p">中文网页丑，八成不是设计问题，是排版问题。行高 1.75、行宽 38em、
+       着重号代替斜体，这些写进了设计系统本身。</p>
+    <div class="d-card" style="background:#E8EDEC;border-color:#D2DCDA">
+      <span class="d-soft" style="color:#6B7875">辅助文字 · 时间戳</span>
+    </div>
+    <div class="d-row">
+      <span class="d-btn" style="background:#6E9C93;color:#F4F6F5">主按钮</span>
+      <span class="d-btn ghost" style="border-color:#D2DCDA;color:#37423F">次按钮</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="ttl"><b>宋韵</b><code>song</code></div>
+    <p class="use">茶饮、书店、高端服务</p>
+    <div class="sw"><i style="background:#F4F6F5" data-c="#F4F6F5" title="canvas #F4F6F5"></i><i style="background:#E8EDEC" data-c="#E8EDEC" title="surface #E8EDEC"></i><i style="background:#D2DCDA" data-c="#D2DCDA" title="hairline #D2DCDA"></i><i style="background:#6B7875" data-c="#6B7875" title="ink-soft #6B7875"></i><i style="background:#37423F" data-c="#37423F" title="ink #37423F"></i><i style="background:#1B2422" data-c="#1B2422" title="ink-strong #1B2422"></i><i style="background:#6E9C93" data-c="#6E9C93" title="primary #6E9C93"></i><i style="background:#BCD2CD" data-c="#BCD2CD" title="primary-weak #BCD2CD"></i></div>
+    <table class="ct">
+      <tr><td>正文 / 底</td><td><b>9.61:1</b></td><td>✅</td></tr>
+      <tr><td>标题 / 底</td><td><b>14.63:1</b></td><td>✅</td></tr>
+      <tr><td>辅助 / 底</td><td>4.23:1</td><td>⚠️</td></tr>
+      <tr><td>主色 / 底</td><td>2.83:1</td><td>⚠️</td></tr>
+    </table>
+    <p class="warn">⚠️ 辅助文字 4.23:1 · 主色 2.83:1 未达 AA —— 只用于色块、边框、24px 以上大字，不要写正文</p>
+    <button class="copy" data-k="song">复制这份 DESIGN.md</button>
+  </div>
+</article>
+<article class="card">
+  <!-- 用这套主题自己的颜色渲染一小块真实界面 -->
+  <div class="demo" style="background:#F2F5F2;color:#2C3E38">
+    <div class="d-h" style="color:#14241F">青绿</div>
+    <p class="d-p">中文网页丑，八成不是设计问题，是排版问题。行高 1.75、行宽 38em、
+       着重号代替斜体，这些写进了设计系统本身。</p>
+    <div class="d-card" style="background:#E3EBE5;border-color:#C8D6CB">
+      <span class="d-soft" style="color:#5A6E66">辅助文字 · 时间戳</span>
+    </div>
+    <div class="d-row">
+      <span class="d-btn" style="background:#2F6B5E;color:#F2F5F2">主按钮</span>
+      <span class="d-btn ghost" style="border-color:#C8D6CB;color:#2C3E38">次按钮</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="ttl"><b>青绿</b><code>azurite</code></div>
+    <p class="use">文旅、展览、需要贵气的场景</p>
+    <div class="sw"><i style="background:#F2F5F2" data-c="#F2F5F2" title="canvas #F2F5F2"></i><i style="background:#E3EBE5" data-c="#E3EBE5" title="surface #E3EBE5"></i><i style="background:#C8D6CB" data-c="#C8D6CB" title="hairline #C8D6CB"></i><i style="background:#5A6E66" data-c="#5A6E66" title="ink-soft #5A6E66"></i><i style="background:#2C3E38" data-c="#2C3E38" title="ink #2C3E38"></i><i style="background:#14241F" data-c="#14241F" title="ink-strong #14241F"></i><i style="background:#2F6B5E" data-c="#2F6B5E" title="primary #2F6B5E"></i><i style="background:#A8C4B8" data-c="#A8C4B8" title="primary-weak #A8C4B8"></i></div>
+    <table class="ct">
+      <tr><td>正文 / 底</td><td><b>10.32:1</b></td><td>✅</td></tr>
+      <tr><td>标题 / 底</td><td><b>14.69:1</b></td><td>✅</td></tr>
+      <tr><td>辅助 / 底</td><td>4.96:1</td><td>✅</td></tr>
+      <tr><td>主色 / 底</td><td>5.65:1</td><td>✅</td></tr>
+    </table>
+    
+    <button class="copy" data-k="azurite">复制这份 DESIGN.md</button>
+  </div>
+</article>
+<article class="card">
+  <!-- 用这套主题自己的颜色渲染一小块真实界面 -->
+  <div class="demo" style="background:#F6F8F3;color:#333B2D">
+    <div class="d-h" style="color:#1A2114">竹韵</div>
+    <p class="d-p">中文网页丑，八成不是设计问题，是排版问题。行高 1.75、行宽 38em、
+       着重号代替斜体，这些写进了设计系统本身。</p>
+    <div class="d-card" style="background:#E9EFE3;border-color:#D0DCC4">
+      <span class="d-soft" style="color:#667058">辅助文字 · 时间戳</span>
+    </div>
+    <div class="d-row">
+      <span class="d-btn" style="background:#5C7A44;color:#F6F8F3">主按钮</span>
+      <span class="d-btn ghost" style="border-color:#D0DCC4;color:#333B2D">次按钮</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="ttl"><b>竹韵</b><code>bamboo</code></div>
+    <p class="use">健康、教育、环保</p>
+    <div class="sw"><i style="background:#F6F8F3" data-c="#F6F8F3" title="canvas #F6F8F3"></i><i style="background:#E9EFE3" data-c="#E9EFE3" title="surface #E9EFE3"></i><i style="background:#D0DCC4" data-c="#D0DCC4" title="hairline #D0DCC4"></i><i style="background:#667058" data-c="#667058" title="ink-soft #667058"></i><i style="background:#333B2D" data-c="#333B2D" title="ink #333B2D"></i><i style="background:#1A2114" data-c="#1A2114" title="ink-strong #1A2114"></i><i style="background:#5C7A44" data-c="#5C7A44" title="primary #5C7A44"></i><i style="background:#AEC49B" data-c="#AEC49B" title="primary-weak #AEC49B"></i></div>
+    <table class="ct">
+      <tr><td>正文 / 底</td><td><b>10.89:1</b></td><td>✅</td></tr>
+      <tr><td>标题 / 底</td><td><b>15.45:1</b></td><td>✅</td></tr>
+      <tr><td>辅助 / 底</td><td>4.88:1</td><td>✅</td></tr>
+      <tr><td>主色 / 底</td><td>4.54:1</td><td>✅</td></tr>
+    </table>
+    
+    <button class="copy" data-k="bamboo">复制这份 DESIGN.md</button>
+  </div>
+</article>
+<article class="card">
+  <!-- 用这套主题自己的颜色渲染一小块真实界面 -->
+  <div class="demo" style="background:#FBF7F4;color:#38302C">
+    <div class="d-h" style="color:#1A1412">朱砂</div>
+    <p class="d-p">中文网页丑，八成不是设计问题，是排版问题。行高 1.75、行宽 38em、
+       着重号代替斜体，这些写进了设计系统本身。</p>
+    <div class="d-card" style="background:#F3E9E3;border-color:#E0CCC3">
+      <span class="d-soft" style="color:#6E5F58">辅助文字 · 时间戳</span>
+    </div>
+    <div class="d-row">
+      <span class="d-btn" style="background:#B23A2E;color:#FBF7F4">主按钮</span>
+      <span class="d-btn ghost" style="border-color:#E0CCC3;color:#38302C">次按钮</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="ttl"><b>朱砂</b><code>vermilion</code></div>
+    <p class="use">节日、活动页、转化页</p>
+    <div class="sw"><i style="background:#FBF7F4" data-c="#FBF7F4" title="canvas #FBF7F4"></i><i style="background:#F3E9E3" data-c="#F3E9E3" title="surface #F3E9E3"></i><i style="background:#E0CCC3" data-c="#E0CCC3" title="hairline #E0CCC3"></i><i style="background:#6E5F58" data-c="#6E5F58" title="ink-soft #6E5F58"></i><i style="background:#38302C" data-c="#38302C" title="ink #38302C"></i><i style="background:#1A1412" data-c="#1A1412" title="ink-strong #1A1412"></i><i style="background:#B23A2E" data-c="#B23A2E" title="primary #B23A2E"></i><i style="background:#E0B0A8" data-c="#E0B0A8" title="primary-weak #E0B0A8"></i></div>
+    <table class="ct">
+      <tr><td>正文 / 底</td><td><b>12.11:1</b></td><td>✅</td></tr>
+      <tr><td>标题 / 底</td><td><b>17.10:1</b></td><td>✅</td></tr>
+      <tr><td>辅助 / 底</td><td>5.73:1</td><td>✅</td></tr>
+      <tr><td>主色 / 底</td><td>5.57:1</td><td>✅</td></tr>
+    </table>
+    
+    <button class="copy" data-k="vermilion">复制这份 DESIGN.md</button>
+  </div>
+</article>
+<article class="card">
+  <!-- 用这套主题自己的颜色渲染一小块真实界面 -->
+  <div class="demo" style="background:#F5EFE3;color:#4A3B2A">
+    <div class="d-h" style="color:#2A1F14">敦煌</div>
+    <p class="d-p">中文网页丑，八成不是设计问题，是排版问题。行高 1.75、行宽 38em、
+       着重号代替斜体，这些写进了设计系统本身。</p>
+    <div class="d-card" style="background:#EBE0CD;border-color:#D9C8AC">
+      <span class="d-soft" style="color:#7A6750">辅助文字 · 时间戳</span>
+    </div>
+    <div class="d-row">
+      <span class="d-btn" style="background:#A8502F;color:#F5EFE3">主按钮</span>
+      <span class="d-btn ghost" style="border-color:#D9C8AC;color:#4A3B2A">次按钮</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="ttl"><b>敦煌</b><code>dunhuang</code></div>
+    <p class="use">文化 IP、叙事型页面</p>
+    <div class="sw"><i style="background:#F5EFE3" data-c="#F5EFE3" title="canvas #F5EFE3"></i><i style="background:#EBE0CD" data-c="#EBE0CD" title="surface #EBE0CD"></i><i style="background:#D9C8AC" data-c="#D9C8AC" title="hairline #D9C8AC"></i><i style="background:#7A6750" data-c="#7A6750" title="ink-soft #7A6750"></i><i style="background:#4A3B2A" data-c="#4A3B2A" title="ink #4A3B2A"></i><i style="background:#2A1F14" data-c="#2A1F14" title="ink-strong #2A1F14"></i><i style="background:#A8502F" data-c="#A8502F" title="primary #A8502F"></i><i style="background:#D4B08C" data-c="#D4B08C" title="primary-weak #D4B08C"></i></div>
+    <table class="ct">
+      <tr><td>正文 / 底</td><td><b>9.40:1</b></td><td>✅</td></tr>
+      <tr><td>标题 / 底</td><td><b>14.06:1</b></td><td>✅</td></tr>
+      <tr><td>辅助 / 底</td><td>4.72:1</td><td>✅</td></tr>
+      <tr><td>主色 / 底</td><td>4.76:1</td><td>✅</td></tr>
+    </table>
+    
+    <button class="copy" data-k="dunhuang">复制这份 DESIGN.md</button>
+  </div>
+</article>
+<article class="card">
+  <!-- 用这套主题自己的颜色渲染一小块真实界面 -->
+  <div class="demo" style="background:#16171A;color:#D9D5CC">
+    <div class="d-h" style="color:#F2EEE4">夜宴</div>
+    <p class="d-p">中文网页丑，八成不是设计问题，是排版问题。行高 1.75、行宽 38em、
+       着重号代替斜体，这些写进了设计系统本身。</p>
+    <div class="d-card" style="background:#1F2125;border-color:#33363C">
+      <span class="d-soft" style="color:#948E83">辅助文字 · 时间戳</span>
+    </div>
+    <div class="d-row">
+      <span class="d-btn" style="background:#C9A44C;color:#16171A">主按钮</span>
+      <span class="d-btn ghost" style="border-color:#33363C;color:#D9D5CC">次按钮</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="ttl"><b>夜宴</b><code>night</code></div>
+    <p class="use">影音、夜间模式 · 唯一深色</p>
+    <div class="sw"><i style="background:#16171A" data-c="#16171A" title="canvas #16171A"></i><i style="background:#1F2125" data-c="#1F2125" title="surface #1F2125"></i><i style="background:#33363C" data-c="#33363C" title="hairline #33363C"></i><i style="background:#948E83" data-c="#948E83" title="ink-soft #948E83"></i><i style="background:#D9D5CC" data-c="#D9D5CC" title="ink #D9D5CC"></i><i style="background:#F2EEE4" data-c="#F2EEE4" title="ink-strong #F2EEE4"></i><i style="background:#C9A44C" data-c="#C9A44C" title="primary #C9A44C"></i><i style="background:#5C4E2C" data-c="#5C4E2C" title="primary-weak #5C4E2C"></i></div>
+    <table class="ct">
+      <tr><td>正文 / 底</td><td><b>12.24:1</b></td><td>✅</td></tr>
+      <tr><td>标题 / 底</td><td><b>15.47:1</b></td><td>✅</td></tr>
+      <tr><td>辅助 / 底</td><td>5.51:1</td><td>✅</td></tr>
+      <tr><td>主色 / 底</td><td>7.59:1</td><td>✅</td></tr>
+    </table>
+    
+    <button class="copy" data-k="night">复制这份 DESIGN.md</button>
+  </div>
+</article>
+</div>
+
+<h2>中文排版规则</h2>
+<p class="sub">这一节是 8 套共用的，也是和西文设计系统差别最大的地方。</p>
+
+<table class="rules">
+<tr><th>规则</th><th>值</th><th>为什么</th></tr>
+<tr><td>行高</td><td><code>line-height: 1.75</code></td>
+    <td>中文字面率高、没有 x-height 起伏，行高比西文需要更大。1.5 会挤</td></tr>
+<tr><td>行宽</td><td><code>max-width: 38em</code></td>
+    <td>中文每行 30–40 字最舒服。西文常用的 65ch 换算成中文太长</td></tr>
+<tr><td>对齐</td><td><code>text-align: left</code></td>
+    <td><b>不要用 justify</b>。中文没有词间空格，两端对齐会拉出难看的字距</td></tr>
+<tr><td>断行</td><td><code>line-break: strict</code></td>
+    <td>CJK 避头尾：<code>。，、）」</code>不出现在行首，<code>（「</code>不出现在行尾</td></tr>
+<tr><td>强调</td><td><code>text-emphasis: dot</code></td>
+    <td><b>中文不用斜体</b>。宋体黑体没有真正的意大利体，浏览器做机械倾斜很丑，用着重号</td></tr>
+<tr><td>中英间距</td><td>加一个空格</td>
+    <td>「使用 AI 工具」比「使用AI工具」易读——这叫<em style="font-style:normal;text-emphasis:dot;-webkit-text-emphasis:dot">盘古之白</em></td></tr>
+<tr><td>字体栈</td><td><code>PingFang SC</code> → <code>Microsoft YaHei</code> → <code>Noto Sans CJK SC</code></td>
+    <td>分别覆盖 macOS/iOS、Windows、Linux/Android。缺一个就有一批人看到系统默认字体</td></tr>
+</table>
+
+<h2>老实说几句</h2>
+<p class="sub">
+色值取自本项目自己的 CSS 实现，<b>不代表任何传统色的权威标准</b>——传统色在不同文献里本就有出入。<br>
+这 8 套是美学传统的提炼，<b>不是对任何公司视觉的复刻</b>。<br>
+没有覆盖数据可视化配色和繁体中文场景（台标/港标字形与断行规则略有不同）。<br>
+深色只有「夜宴」一套，其余 7 套是浅色系统。
+</p>
+
+<footer>
+来自本站原创 Skill <code>chinese-design-md</code> ·
+<a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-design-md">源码</a><br>
+一键安装：<code>npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-design-md</code><br><br>
+另见：<a href="../shots/">8 套主题的真实渲染截图</a> ·
+<a href="../guochao/">12 种中国美学画风配色对照</a> ·
+<a href="../themes/">在线切换预览</a>
+</footer>
+</div>
+
+<script>
+const KEYS = ["ink", "neo", "song", "azurite", "bamboo", "vermilion", "dunhuang", "night"];
+document.addEventListener('click', async e => {
+  const sw = e.target.closest('.sw i');
+  if (sw) {
+    navigator.clipboard.writeText(sw.dataset.c);
+    const t = sw.title; sw.title = '已复制 ' + sw.dataset.c;
+    setTimeout(() => sw.title = t, 1200);
+    return;
+  }
+  const b = e.target.closest('.copy');
+  if (!b) return;
+  const k = b.dataset.k, old = b.textContent;
+  b.textContent = '读取中…';
+  try {
+    const r = await fetch(`../skills/chinese-design-md/design-md/${k}/DESIGN.md`);
+    if (!r.ok) throw new Error(r.status);
+    await navigator.clipboard.writeText(await r.text());
+    b.textContent = '已复制 ✓ 粘到项目根目录 DESIGN.md';
+    b.classList.add('done');
+  } catch (err) {
+    b.textContent = '复制失败，请从 GitHub 取';
+  }
+  setTimeout(() => { b.textContent = old; b.classList.remove('done'); }, 2600);
+});
+</script>
