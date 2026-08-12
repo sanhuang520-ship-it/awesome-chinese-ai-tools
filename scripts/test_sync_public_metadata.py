@@ -2,6 +2,8 @@
 """公开统计一致性检查。"""
 
 import json
+import shutil
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -10,6 +12,7 @@ from sync_public_metadata import (
     build_stats,
     sync_index_text,
     sync_llms_text,
+    sync_local,
     sync_readme_text,
     sync_sitemap_text,
 )
@@ -55,6 +58,27 @@ class PublicMetadataTest(unittest.TestCase):
         skills = json.loads((ROOT / "data/skills.json").read_text(encoding="utf-8"))["skills"]
         used_categories = {item.get("cat") for item in skills}
         self.assertEqual(used_categories, set(CAT_ORDER))
+
+    def test_local_check_reports_drift_without_writing(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "data").mkdir()
+            for relative in ("data/skills.json", "data/tools.json", "README.md", "index.html", "llms.txt", "sitemap.xml"):
+                source = ROOT / relative
+                target = root / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(source, target)
+            readme = root / "README.md"
+            stale = readme.read_text(encoding="utf-8").replace("46 个 AI 工具导航", "999 个 AI 工具导航")
+            readme.write_text(stale, encoding="utf-8")
+
+            _, changed = sync_local(root)
+            self.assertEqual(["README.md"], changed)
+            self.assertIn("999 个 AI 工具导航", readme.read_text(encoding="utf-8"))
+
+            _, written = sync_local(root, write=True)
+            self.assertEqual(["README.md"], written)
+            self.assertIn("46 个 AI 工具导航", readme.read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

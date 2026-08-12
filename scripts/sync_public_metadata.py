@@ -185,8 +185,8 @@ def sync_public_metadata(github_api, repo):
         _put_if_changed(github_api, repo, path, current, transform(current), sha, message)
 
 
-def sync_local(root):
-    """本地生成入口：用于提交前预览和 CI 一致性检查。"""
+def sync_local(root, write=False):
+    """计算本地公开统计差异；仅在 write=True 时写回文件。"""
     root = Path(root)
     skills_data = json.loads((root / "data/skills.json").read_text(encoding="utf-8"))
     tools_data = json.loads((root / "data/tools.json").read_text(encoding="utf-8"))
@@ -203,16 +203,21 @@ def sync_local(root):
         current = path.read_text(encoding="utf-8")
         updated = transform(current)
         if updated != current:
-            path.write_text(updated, encoding="utf-8")
             changed.append(relative)
+            if write:
+                path.write_text(updated, encoding="utf-8")
     return stats, changed
 
 
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="同步公开统计到 README、首页与 Sitemap")
+    parser = argparse.ArgumentParser(description="检查或同步 README、首页、llms.txt 与 Sitemap 的公开统计")
     parser.add_argument("root", nargs="?", default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--write", action="store_true", help="将计算结果写回；默认只检查且不修改文件")
     args = parser.parse_args()
-    local_stats, local_changed = sync_local(args.root)
-    print(json.dumps({"stats": local_stats, "changed": local_changed}, ensure_ascii=False))
+    local_stats, local_changed = sync_local(args.root, write=args.write)
+    mode = "write" if args.write else "check"
+    print(json.dumps({"mode": mode, "stats": local_stats, "changed": local_changed}, ensure_ascii=False))
+    if local_changed and not args.write:
+        raise SystemExit(1)
