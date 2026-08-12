@@ -1193,7 +1193,7 @@ details[open] .sk-install-sum{margin-bottom:2px}
     <button class="cat-tab" data-cat="search">🔎 搜索</button>
     <button class="cat-tab" data-cat="productivity">⚡ 效率</button>
     <button class="cat-tab" data-cat="agent">🤖 Agent</button>
-    <button class="cat-tab cat-tab-price" id="tab-price" data-special="price">💰 价格对比</button>
+    <button class="cat-tab cat-tab-price" id="tab-price" data-special="price">💰 额度记录</button>
   </div>
 </div>
 
@@ -1251,7 +1251,7 @@ details[open] .sk-install-sum{margin-bottom:2px}
   </p>
   <p>数据来源：<a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank">awesome-chinese-ai-tools</a>
   · 发现遗漏？欢迎 <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues" target="_blank">提交 Issue</a></p>
-  <p style="margin-top:5px">免费额度信息可能随时变化，请以官网为准 · <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/DESIGN.md" target="_blank">设计文档</a></p>
+  <p style="margin-top:5px">商业条款仅为历史记录；链接复检不等于价格复检，请到官网确认 · <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/DESIGN.md" target="_blank">设计文档</a></p>
 </footer>
 
 <!-- ══════════════════════════════════════
@@ -1338,6 +1338,7 @@ details[open] .sk-install-sum{margin-bottom:2px}
    工具数据（运行时从 data/tools.json 加载）
 ══════════════════════════════════════ */
 let catMeta = {};
+let toolMeta = {};
 let tools   = [];
 
 /* ══════════════════════════════════════
@@ -1359,7 +1360,7 @@ const workflows = [
     title:'小红书内容创作工作流',desc:'从选题策划到发布的完整流程',
     steps:[
       {emoji:'💡',tool:'豆包',url:'https://www.doubao.com',action:'选题 + 写正文文案',tip:'字节出品，可让它按目标读者、主题和语气生成多个文案版本，再由你核对事实'},
-      {emoji:'🎨',tool:'即梦 AI',url:'https://jimeng.jianying.com',action:'生成配图',tip:'中文描述直接出图，不需要学英文提示词，每天免费额度充足'},
+      {emoji:'🎨',tool:'即梦 AI',url:'https://jimeng.jianying.com',action:'生成配图',tip:'支持中文描述出图；当前额度和商用条件请到官网确认'},
       {emoji:'🌐',tool:'沉浸式翻译',url:'https://immersivetranslate.com',action:'浏览海外平台找灵感',tip:'看 Instagram/Pinterest 内容时双语对照，快速吸收选题思路'},
     ]},
   { id:'video', emoji:'🎬',
@@ -1474,7 +1475,7 @@ const workflows = [
     title:'电商运营工作流',desc:'从选品到上架的 AI 提效流程',
     steps:[
       {emoji:'✍️',tool:'豆包',url:'https://www.doubao.com',action:'写产品标题 + 卖点',tip:'给它产品基本参数，让它生成多个版本的标题和差异化卖点文案'},
-      {emoji:'🎨',tool:'通义万相',url:'https://tongyi.aliyun.com/wanxiang',action:'生成商品配图',tip:'电商场景训练，商业插图和产品图稳定，API 有免费额度'},
+      {emoji:'🎨',tool:'通义万相',url:'https://tongyi.aliyun.com/wanxiang',action:'生成商品配图',tip:'支持商业插图和产品图生成；当前 API 额度与授权条件请到官网确认'},
       {emoji:'🔍',tool:'秘塔搜索',url:'https://metaso.cn',action:'竞品调研',tip:'快速了解竞品卖点、用户评价和差异化切入方向，无广告干扰'},
     ]},
   { id:'learn', emoji:'📖',
@@ -1528,7 +1529,7 @@ function renderHero() {
       <div class="hero-card-badges">
         ${t.hot ? '<span class="badge b-hot">🔥 热门</span>' : ''}
         <span class="badge b-cat" style="--cat-bg:${cm(t).bg};--cat-c:${cm(t).color}">${cm(t).label}</span>
-        ${t.free ? '<span class="badge b-free">免费可用</span>' : '<span class="badge b-paid">付费</span>'}
+        ${t.free ? '<span class="badge b-free">有免费入口记录</span>' : '<span class="badge b-paid">付费记录</span>'}
         ${t.cn ? '<span class="badge b-cn">🇨🇳 国产</span>' : ''}
         ${t.vpn ? '<span class="badge b-vpn">需梯子</span>' : ''}
       </div>
@@ -1614,7 +1615,7 @@ function renderList() {
       </div>
       <div class="row-badges">
         <span class="badge b-cat" style="--cat-bg:${cm(t).bg};--cat-c:${cm(t).color}">${cm(t).label}</span>
-        ${t.free ? '<span class="badge b-free">免费</span>' : '<span class="badge b-paid">付费</span>'}
+        ${t.free ? '<span class="badge b-free">有免费记录</span>' : '<span class="badge b-paid">付费记录</span>'}
         ${t.cn ? '<span class="badge b-cn">🇨🇳</span>' : ''}
         ${t.vpn ? '<span class="badge b-vpn">梯子</span>' : ''}
         ${starsHTML(t.stars)}
@@ -1640,6 +1641,7 @@ async function loadTools() {
     const res = await fetch('data/tools.json', {cache:'no-cache'});
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
+    toolMeta = data.meta || {};
     catMeta = data.categories || {};
     tools = (data.tools || []).map((t,i) => ({...t, _id:i}));
     document.getElementById('tc').textContent = tools.length;
@@ -1657,7 +1659,7 @@ async function loadTools() {
 }
 
 /* ══════════════════════════════════════
-   定价视图渲染
+   商业条款历史记录（不冒充当前价格）
 ══════════════════════════════════════ */
 let pricingView = false;
 
@@ -1665,24 +1667,19 @@ function renderPricing() {
   const view = document.getElementById('pricing-view');
   const cm = t => catMeta[t.cat] || {label:'—',color:'#a89880',bg:'rgba(168,152,128,.14)'};
 
-  // 分组
-  const freeOnly   = tools.filter(t => !t.pricePro && t.priceFree !== '无免费额度');
-  const freemium   = tools.filter(t =>  t.pricePro && t.priceFree !== '无免费额度');
-  const paidOnly   = tools.filter(t => t.priceFree === '无免费额度');
+  const freeRecorded = tools.filter(t => t.free);
+  const paidRecorded = tools.filter(t => !t.free);
+  const terms = toolMeta.commercialTerms || {};
 
   const tableRows = (list) => list.map(t => `
     <tr>
       <td class="pt-name"><a href="${t.url}" target="_blank" rel="noopener">${t.name}</a></td>
       <td><span class="badge b-cat" style="--cat-bg:${cm(t).bg};--cat-c:${cm(t).color}">${cm(t).label}</span></td>
-      <td class="pt-free-desc">${t.priceFree || '—'}</td>
-      <td>
-        ${t.pricePro
-          ? `<div class="pt-pro-price has-price">${t.pricePro}</div><div class="pt-pro-note">${t.priceProNote||''}</div>`
-          : `<div class="pt-pro-price no-price">—</div>`}
-      </td>
+      <td class="pt-free-desc">${t.freeInfo || '未记录'}</td>
+      <td><a href="${t.url}" target="_blank" rel="noopener" style="color:var(--accent2);font-weight:700">到官网核对 ↗</a></td>
     </tr>`).join('');
 
-  const section = (cls, title, badge, count, list) => `
+  const section = (cls, title, count, list) => `
     <div class="pricing-section ${cls}">
       <div class="pricing-section-title">
         ${title} <span class="pricing-section-badge">${count} 个工具</span>
@@ -1691,8 +1688,8 @@ function renderPricing() {
         <thead><tr>
           <th style="width:160px">工具</th>
           <th style="width:90px">类别</th>
-          <th>免费可用内容</th>
-          <th style="width:160px">付费价格</th>
+          <th>历史额度记录</th>
+          <th style="width:160px">当前条款</th>
         </tr></thead>
         <tbody>${tableRows(list)}</tbody>
       </table>
@@ -1702,26 +1699,23 @@ function renderPricing() {
     <div class="pricing-summary">
       <div class="pricing-stat">
         <span class="pricing-stat-dot free"></span>
-        <span class="pricing-stat-num">${freeOnly.length}</span>
-        <span class="pricing-stat-label">未记录付费版</span>
-      </div>
-      <div class="pricing-stat">
-        <span class="pricing-stat-dot freemium"></span>
-        <span class="pricing-stat-num">${freemium.length}</span>
-        <span class="pricing-stat-label">免费 + 付费版</span>
+        <span class="pricing-stat-num">${freeRecorded.length}</span>
+        <span class="pricing-stat-label">曾记录免费入口</span>
       </div>
       <div class="pricing-stat">
         <span class="pricing-stat-dot paid"></span>
-        <span class="pricing-stat-num">${paidOnly.length}</span>
-        <span class="pricing-stat-label">无免费额度</span>
+        <span class="pricing-stat-num">${paidRecorded.length}</span>
+        <span class="pricing-stat-label">曾记录需付费</span>
       </div>
       <div class="pricing-stat" style="margin-left:auto;font-size:11px;color:var(--muted);background:transparent;border:none">
-        价格以官网为准，可能随时变动
+        快照 ${terms.recordedAt || '日期未知'} · 未逐项复核当前价格与资格
       </div>
     </div>
-    ${section('ps-free',     '🟢 当前数据未记录付费版', 'free',     freeOnly.length, freeOnly)}
-    ${section('ps-freemium', '🟡 免费 + 付费版 — 可升级', 'freemium', freemium.length, freemium)}
-    ${paidOnly.length ? section('ps-paid', '🔴 无免费额度 — 需付费才能用', 'paid', paidOnly.length, paidOnly) : ''}
+    <div style="margin:-10px 0 24px;padding:14px 16px;border:1px solid var(--border);color:var(--muted);font-size:12px;line-height:1.7">
+      ⚠️ 这里是发现线索，不是实时价格库。每日自动化只检查官网入口能否访问，<b style="color:var(--text)">不会验证价格、额度、地区或账号资格</b>。
+    </div>
+    ${section('ps-free', '🟢 历史记录中有免费入口', freeRecorded.length, freeRecorded)}
+    ${paidRecorded.length ? section('ps-paid', '🔴 历史记录中需付费', paidRecorded.length, paidRecorded) : ''}
   `;
 }
 
@@ -2141,8 +2135,8 @@ document.getElementById('tool-list').addEventListener('click', e => {
 
 function toolToMarkdown(t) {
   const cm = catMeta[t.cat] || {};
-  const tags = [cm.label, t.free?'免费':'付费', t.cn?'国产':'', t.vpn?'需梯子':''].filter(Boolean).join(' · ');
-  return `**${t.name}** — ${tags}\n额度：${t.freeInfo}｜中文支持：${'★'.repeat(t.stars)}\n${t.desc}\n${t.url}`;
+  const tags = [cm.label, t.free?'有免费入口记录':'付费记录', t.cn?'国产':'', t.vpn?'需梯子':''].filter(Boolean).join(' · ');
+  return `**${t.name}** — ${tags}\n历史额度记录：${t.freeInfo}（请到官网核对）｜中文支持：${'★'.repeat(t.stars)}\n${t.desc}\n${t.url}`;
 }
 function updateCompareBar() {
   const bar = document.getElementById('compare-bar');
@@ -2161,8 +2155,8 @@ function openCompare() {
   const cm = t => catMeta[t.cat] || {};
   const rows = [
     ['分类', t => cm(t).label||''],
-    ['免费额度', t => t.freeInfo],
-    ['是否免费', t => t.free ? '✅ 免费' : '💰 付费'],
+    ['历史额度记录', t => `${t.freeInfo}（请到官网核对）`],
+    ['历史分类', t => t.free ? '曾记录免费入口' : '曾记录需付费'],
     ['国产', t => t.cn ? '🇨🇳 是' : '—'],
     ['需梯子', t => t.vpn ? '是' : '否'],
     ['中文支持', t => '★'.repeat(t.stars)+'☆'.repeat(5-t.stars)],
@@ -2181,8 +2175,8 @@ function compareToMarkdown() {
   const cols = ['对比项', ...sel.map(t=>t.name)];
   const rows = [
     ['分类', ...sel.map(t=>cm(t).label||'')],
-    ['免费额度', ...sel.map(t=>t.freeInfo)],
-    ['是否免费', ...sel.map(t=>t.free?'免费':'付费')],
+    ['历史额度记录', ...sel.map(t=>`${t.freeInfo}（请到官网核对）`)],
+    ['历史分类', ...sel.map(t=>t.free?'曾记录免费入口':'曾记录需付费')],
     ['国产', ...sel.map(t=>t.cn?'是':'—')],
     ['需梯子', ...sel.map(t=>t.vpn?'是':'否')],
     ['中文支持', ...sel.map(t=>'★'.repeat(t.stars))],
@@ -2432,7 +2426,7 @@ function pkRenderStep(step){
       <div class="picker-opts" style="grid-template-columns:1fr 1fr">
         <div class="picker-opt" data-field="free" data-val="1">
           <span class="picker-opt-emoji">🆓</span>
-          <span class="picker-opt-label">只看免费的</span>
+          <span class="picker-opt-label">只看有免费入口记录的</span>
         </div>
         <div class="picker-opt" data-field="free" data-val="0">
           <span class="picker-opt-emoji">💎</span>
@@ -2493,7 +2487,7 @@ function pkRenderResult(){
         <span class="picker-rec-main">
           <span class="picker-rec-name">${t.name}
             ${t.rec?'<span class="badge b-rec">⭐ 精选</span>':''}
-            ${t.free?'<span class="badge b-free">免费</span>':'<span class="badge b-paid">付费</span>'}
+            ${t.free?'<span class="badge b-free">有免费记录</span>':'<span class="badge b-paid">付费记录</span>'}
           </span>
           <span class="picker-rec-desc">${t.freeInfo || t.desc || ''}</span>
         </span>
@@ -2605,7 +2599,7 @@ function generateShareCard(top, catMt){
     x.fillText(t.name, ix+96, cy+36);
     const nw=x.measureText(t.name).width;
     // 免费/付费 标签
-    const tag=t.free?'免费':'付费', tc=t.free?P.free:P.accent;
+    const tag=t.free?'免费记录':'付费记录', tc=t.free?P.free:P.accent;
     x.font=`600 25px ${SANS}`;
     const tw=x.measureText(tag).width, pillX=ix+96+nw+22;
     x.fillStyle=tc+'22'; rrect(x,pillX,cy+4,tw+28,38,19); x.fill();
@@ -2619,7 +2613,7 @@ function generateShareCard(top, catMt){
   const fy=py+ph-58;
   x.textAlign='center';
   x.fillStyle=P.accent; x.font=`700 31px ${SANS}`;
-  x.fillText('47+ 精选 AI 工具 · 标注免费额度 · 每日更新', W/2, fy-14);
+  x.fillText('47+ AI 工具入口 · 商业条款为历史记录 · 链接自动复检', W/2, fy-14);
   x.fillStyle=P.muted; x.font=`500 26px ${SANS}`;
   x.fillText('⭐ github.com/sanhuang520-ship-it/awesome-chinese-ai-tools', W/2, fy+30);
   x.textAlign='left';
@@ -2788,7 +2782,7 @@ function generateStackCard(){
     x.fillStyle=P.text; x.font=`600 32px ${SERIF}`;
     x.fillText(`${i+1}. ${t.name}`, ix, cy);
     const nw = x.measureText(`${i+1}. ${t.name}`).width;
-    const tag = t.free ? '免费' : '付费';
+    const tag = t.free ? '免费记录' : '付费记录';
     const tc  = t.free ? P.free : P.accent;
     x.font=`600 20px ${SANS}`;
     const tw = x.measureText(tag).width;

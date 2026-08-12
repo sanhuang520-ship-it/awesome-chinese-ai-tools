@@ -39,6 +39,23 @@ class EvidenceClaimsTest(unittest.TestCase):
             with self.subTest(claim=claim):
                 self.assertNotIn(claim, index + tools)
 
+    def test_commercial_terms_are_presented_as_unverified_history(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        tools = (ROOT / "data" / "tools.json").read_text(encoding="utf-8")
+        self.assertIn('"status": "unverified-snapshot"', tools)
+        self.assertIn("链接存活不代表商业条款仍有效", tools)
+        self.assertIn("这里是发现线索，不是实时价格库", index)
+        self.assertIn("不会验证价格、额度、地区或账号资格", index)
+        self.assertNotIn("t.priceFree", index)
+        self.assertNotIn("t.pricePro", index)
+
+    def test_tool_descriptions_avoid_unmeasured_ranking_language(self):
+        tools = (ROOT / "data" / "tools.json").read_text(encoding="utf-8")
+        forbidden = ["顶级", "最大", "最稳定", "最自然", "远超", "神器", "当天可上线", "无限生成"]
+        for claim in forbidden:
+            with self.subTest(claim=claim):
+                self.assertNotIn(claim, tools)
+
 
 if __name__ == "__main__":
     unittest.main()
