@@ -38,6 +38,12 @@ class InternalLinksTest(unittest.TestCase):
         self.assertIn("'搜索工具和功能'", index)
         self.assertIn("'额度记录暂不支持搜索'", index)
 
+    def test_maintenance_plan_links_to_every_named_explainer(self):
+        plan = (ROOT / "MAINTENANCE_PLAN.md").read_text(encoding="utf-8")
+        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/"):
+            with self.subTest(page=page):
+                self.assertIn(f"]({page})", plan)
+
 
 if __name__ == "__main__":
     unittest.main()
