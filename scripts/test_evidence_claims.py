@@ -124,6 +124,17 @@ class EvidenceClaimsTest(unittest.TestCase):
                 self.assertIn(phrase, generator)
                 self.assertIn(phrase, catalog)
 
+    def test_generated_catalog_does_not_call_every_third_party_entry_tested(self):
+        generator = (ROOT / "scripts" / "daily_check.py").read_text(encoding="utf-8")
+        catalog = (ROOT / "SKILLS.md").read_text(encoding="utf-8")
+        for phrase in ("其他中文条目", "不等于逐项功能实测"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, generator)
+                self.assertIn(phrase, catalog)
+        self.assertIn("{cn_n} 个中文条目", generator)
+        self.assertIn("68 个中文条目", catalog)
+        self.assertNotIn("68 个中文原创", catalog)
+
     def test_skill_activation_is_described_as_client_dependent(self):
         generator = (ROOT / "scripts" / "daily_check.py").read_text(encoding="utf-8")
         current = "\n".join(

@@ -1,7 +1,7 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **184 个 Skill｜68 个中文原创｜✍️ 13 个本站原创**  
-> 每一个都经 GitHub API 验证仓库真实存在  
+> **184 个 Skill 条目｜68 个中文条目｜✍️ 13 个本站原创**<br>
+> 来源仓库经 GitHub API 核验真实存在；第三方说明来自上游资料或维护者摘要，不等于逐项功能实测<br>
 > 🔄 最近自动复检：**2026-08-12**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
 🧪 **[Codex 13/13 自动触发实测 → COMPATIBILITY.md](COMPATIBILITY.md)**　📋 [原创 Skill 输出示例](EXAMPLES.md)　🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
@@ -62,7 +62,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [guofeng-threejs](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guofeng-threejs) | 国风 Three.js 渲染（本站原创）：水墨 shader 三技法（墨分五色/边缘积墨/笔触扰动），含可运行 demo 与移动端性能要点。只做中式渲染，不做通用 Three.js 教程 |
 | [homework-tutor-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn) | 家长辅导作业助手（本站原创）：不给答案给引导话术，分学科方法，含情绪对抗处理 |
 
-### 🇨🇳 中文原创（57 个）
+### 🇨🇳 其他中文条目（57 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|

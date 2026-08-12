@@ -392,8 +392,8 @@ def build_skills_md():
 
     L = []
     L.append("# 🧩 AI Agent Skills 中文合集\n")
-    L.append(f"> **{len(S)} 个 Skill｜{cn_n} 个中文原创｜✍️ {len(ours)} 个本站原创**  ")
-    L.append("> 每一个都经 GitHub API 验证仓库真实存在  ")
+    L.append(f"> **{len(S)} 个 Skill 条目｜{cn_n} 个中文条目｜✍️ {len(ours)} 个本站原创**<br>")
+    L.append("> 来源仓库经 GitHub API 核验真实存在；第三方说明来自上游资料或维护者摘要，不等于逐项功能实测<br>")
     L.append(f"> 🔄 最近自动复检：**{checked}**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）\n")
     L.append("🧪 **[Codex 13/13 自动触发实测 → COMPATIBILITY.md](COMPATIBILITY.md)**　"
              "📋 [原创 Skill 输出示例](EXAMPLES.md)　"
@@ -440,7 +440,7 @@ def build_skills_md():
         grp = [s for s in rest if s.get("cat") == c]
         if not grp:
             continue
-        label = cats.get(c, {}).get("label", c)
+        label = "🇨🇳 其他中文条目" if c == "cn" else cats.get(c, {}).get("label", c)
         L.append(f"### {label}（{len(grp)} 个）\n")
         L.append("| Skill | 来源 | 说明 |")
         L.append("|-------|------|------|")
