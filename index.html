@@ -1255,18 +1255,18 @@ details[open] .sk-install-sum{margin-bottom:2px}
 <!-- ══════════════════════════════════════
      WORKFLOW FAB + DRAWER
 ══════════════════════════════════════ -->
-<button class="wf-fab" id="wf-fab"><span class="wf-fab-icon">🧭</span>工作流推荐</button>
+<button class="wf-fab" id="wf-fab"><span class="wf-fab-icon">🧭</span>工作流示例</button>
 <div class="wf-overlay" id="wf-overlay"></div>
 <div class="wf-drawer" id="wf-drawer">
   <div class="wf-drawer-head">
-    <div class="wf-drawer-title">🧭 工作流推荐</div>
+    <div class="wf-drawer-title">🧭 工作流示例</div>
     <button class="wf-drawer-close" id="wf-drawer-close">×</button>
   </div>
   <div class="wf-drawer-body">
-    <p class="wf-sub">输入你的任务，获得最适合的 AI 工具组合</p>
+    <p class="wf-sub">输入你的任务，查看一种可选组合；不代表排名或效果保证</p>
     <div class="wf-input-wrap">
       <input class="wf-input" id="wf-input" type="text" placeholder="例如：写毕业论文 / 做短视频 / 开发网站…">
-      <button class="wf-btn" id="wf-btn">推荐 →</button>
+      <button class="wf-btn" id="wf-btn">查看示例 →</button>
     </div>
     <div class="wf-examples">
       <button class="wf-tag" data-q="写毕业论文">📚 毕业论文</button>
@@ -1348,10 +1348,10 @@ const workflows = [
     title:'学术论文写作工作流',
     desc:'从检索文献到最终答辩，全流程覆盖',
     steps:[
-      {emoji:'🔍',tool:'秘塔搜索',url:'https://metaso.cn',action:'检索文献与资料',tip:'开启学术模式，引用来源可追溯，比百度靠谱，无广告干扰'},
-      {emoji:'📖',tool:'Kimi',url:'https://kimi.moonshot.cn',action:'批量阅读文献 PDF',tip:'200k 超长上下文，直接上传论文 PDF 用中文提问，一次读多篇'},
-      {emoji:'✍️',tool:'秘塔写作猫',url:'https://xiezuocat.com',action:'润色论文表达',tip:'专为中文学术写作优化，改出来的句子不像 AI 腔，更自然'},
-      {emoji:'📊',tool:'Gamma',url:'https://gamma.app',action:'制作答辩 PPT',tip:'粘贴大纲，自动生成结构清晰的演示文稿，10 分钟出 PPT'},
+      {emoji:'🔍',tool:'秘塔搜索',url:'https://metaso.cn',action:'检索文献与资料',tip:'可开启学术模式查找线索；引用仍需打开原文逐条核对'},
+      {emoji:'📖',tool:'Kimi',url:'https://kimi.moonshot.cn',action:'阅读文献 PDF',tip:'上传论文 PDF 后用中文提问；容量、格式支持和额度以官网为准'},
+      {emoji:'✍️',tool:'秘塔写作猫',url:'https://xiezuocat.com',action:'润色论文表达',tip:'可用于检查中文语句与表达；学术观点和引用不能交给工具代替核验'},
+      {emoji:'📊',tool:'Gamma',url:'https://gamma.app',action:'制作答辩 PPT',tip:'粘贴大纲生成演示文稿初稿，再人工核对结构、数据和版式'},
     ]},
   { id:'xiaohongshu', emoji:'📱',
     keywords:['小红书','红书','种草','笔记','博主','内容创作','小红'],
@@ -1365,24 +1365,24 @@ const workflows = [
     keywords:['视频','短视频','抖音','b站','bilibili','youtube','剪辑','vlog','直播','短片'],
     title:'短视频创作工作流',desc:'从脚本策划到成品视频的完整流程',
     steps:[
-      {emoji:'📝',tool:'豆包',url:'https://www.doubao.com',action:'写视频脚本',tip:'说明主题、时长、风格，让它按【画面/旁白/字幕】格式输出，直接可用'},
+      {emoji:'📝',tool:'豆包',url:'https://www.doubao.com',action:'写视频脚本',tip:'说明主题、时长和风格，先生成【画面/旁白/字幕】格式的初稿'},
       {emoji:'🎬',tool:'可灵 AI',url:'https://klingai.kuaishou.com',action:'生成视频片段',tip:'支持文生视频和图生视频；分辨率、额度与生成条件以官网为准'},
       {emoji:'🎙️',tool:'讯飞配音',url:'https://peiyin.xunfei.cn',action:'生成旁白配音',tip:'提供多种中文音色；先试听并核对当前字符额度'},
-      {emoji:'🖼️',tool:'即梦 AI',url:'https://jimeng.jianying.com',action:'生成封面图',tip:'中文描述直接出图，封面点击率决定播放量，这步别省'},
+      {emoji:'🖼️',tool:'即梦 AI',url:'https://jimeng.jianying.com',action:'生成封面图',tip:'支持中文描述出图；发布前检查授权条件、文字和事实表达'},
     ]},
   { id:'website', emoji:'🌐',
     keywords:['网站','网页','前端','web','html','落地页','官网','主页','建站'],
-    title:'快速搭建网站工作流',desc:'从想法到上线，最快当天完成',
+    title:'快速搭建网站工作流',desc:'从想法到可测试原型的一种组合',
     steps:[
-      {emoji:'⚡',tool:'Bolt',url:'https://bolt.new',action:'描述需求一键生成',tip:'一句话出一个可运行的全栈网站，适合快速验证想法，当天上线'},
-      {emoji:'🎨',tool:'v0',url:'https://v0.dev',action:'精细化 UI 设计',tip:'UI 细节要求高时用它，输出 React/Tailwind 代码质量高'},
+      {emoji:'⚡',tool:'Bolt',url:'https://bolt.new',action:'生成原型初稿',tip:'可根据文字需求生成应用原型；上线前仍需安全、功能和部署测试'},
+      {emoji:'🎨',tool:'v0',url:'https://v0.dev',action:'细化 UI 原型',tip:'可生成 React/Tailwind 界面初稿，代码质量需要结合项目测试审查'},
       {emoji:'💻',tool:'Cursor',url:'https://cursor.com',action:'功能开发和调试',tip:'可结合代码库上下文辅助开发；生成结果仍需测试和审查'},
     ]},
   { id:'app', emoji:'📲',
     keywords:['app','APP','应用','小程序','移动端','ios','android','开发','软件'],
     title:'APP / 小程序开发工作流',desc:'从原型到代码的 AI 辅助开发',
     steps:[
-      {emoji:'🎨',tool:'v0',url:'https://v0.dev',action:'快速出 UI 原型',tip:'描述界面需求，直接生成可用的 React 组件代码，原型当天可演示'},
+      {emoji:'🎨',tool:'v0',url:'https://v0.dev',action:'快速出 UI 原型',tip:'描述界面需求生成 React 组件初稿，再接入项目并做交互测试'},
       {emoji:'💻',tool:'Cursor',url:'https://cursor.com',action:'代码编辑与调试',tip:'可结合代码库上下文处理功能开发；生成结果仍需测试和审查'},
       {emoji:'🔍',tool:'Perplexity',url:'https://perplexity.ai',action:'技术问题查询',tip:'回答附带来源链接，适合先定位资料，再回到官方文档核对'},
       {emoji:'💰',tool:'DeepSeek',url:'https://chat.deepseek.com',action:'代码审查 + 优化',tip:'可用于提出审查建议；模型能力与 API 价格会变化，请查官网并运行测试'},
@@ -1401,7 +1401,7 @@ const workflows = [
     steps:[
       {emoji:'💡',tool:'秘塔搜索',url:'https://metaso.cn',action:'素材收集与选题',tip:'无广告，信息密度高，快速了解一个话题全貌，同时找引用素材'},
       {emoji:'✍️',tool:'豆包',url:'https://www.doubao.com',action:'起草文章初稿',tip:'告诉它你的风格和读者群体，让它给出初稿，你再打磨'},
-      {emoji:'🔍',tool:'秘塔写作猫',url:'https://xiezuocat.com',action:'润色 + 查重',tip:'去掉 AI 腔，让文章读起来更像真人写的，同时检查语法错误'},
+      {emoji:'🔍',tool:'秘塔写作猫',url:'https://xiezuocat.com',action:'润色 + 语句检查',tip:'可辅助检查语法和表达；最终语气、事实和原创性仍需作者确认'},
     ]},
   { id:'translate', emoji:'🌐',
     keywords:['翻译','英文','外文','英语','日语','韩语','看文档','外国','看论文'],
@@ -1433,7 +1433,7 @@ const workflows = [
     steps:[
       {emoji:'📊',tool:'通义千问',url:'https://tongyi.aliyun.com',action:'上传 Excel 直接分析',tip:'上传数据文件，用中文问它找规律或趋势，自动生成图表'},
       {emoji:'🗃️',tool:'飞书多维表格',url:'https://feishu.cn',action:'数据整理 + 自动化',tip:'AI+表格组合，自动化填表、筛选、汇总，减少手动操作'},
-      {emoji:'📝',tool:'WPS AI',url:'https://ai.wps.cn',action:'一键生成分析报告',tip:'数据分析完后，让它生成格式规范的中文报告，直接给领导看'},
+      {emoji:'📝',tool:'WPS AI',url:'https://ai.wps.cn',action:'生成分析报告初稿',tip:'根据分析结果生成中文报告初稿，再核对数据、结论和适用范围'},
     ]},
   { id:'meeting', emoji:'🏢',
     keywords:['会议','纪要','记录','总结','周报','汇报','开会','会议记录','工作汇报'],
@@ -1441,23 +1441,23 @@ const workflows = [
     steps:[
       {emoji:'🎙️',tool:'讯飞星火',url:'https://xinghuo.xfyun.cn',action:'录音转文字',tip:'可将会议录音转成文字稿；人名、数字和专业术语需要人工核对'},
       {emoji:'📝',tool:'Kimi',url:'https://kimi.moonshot.cn',action:'整理成结构化纪要',tip:'把文字稿粘进去，让它整理为：决策事项 / 行动项 / 负责人 / 截止日期'},
-      {emoji:'📊',tool:'WPS AI',url:'https://ai.wps.cn',action:'生成周报 / 汇报材料',tip:'给它关键事项，帮你写成格式规范的职场文体，领导喜欢看的那种'},
+      {emoji:'📊',tool:'WPS AI',url:'https://ai.wps.cn',action:'生成周报 / 汇报材料',tip:'提供关键事项生成职场文档初稿，再核对数字、责任人和结论'},
     ]},
   { id:'knowledge', emoji:'🗃️',
     keywords:['知识库','文档','内部','企业','团队','私有','部署','问答系统','RAG'],
     title:'企业知识库搭建工作流',desc:'让内部文档变成可问答的智能助手',
     steps:[
-      {emoji:'🤖',tool:'FastGPT',url:'https://fastgpt.in',action:'搭建知识库问答',tip:'上传公司文档，员工直接用中文提问，开源免费，可私有部署不泄密'},
-      {emoji:'⚙️',tool:'Dify',url:'https://dify.ai',action:'编排复杂 AI 工作流',tip:'需要多个 AI 步骤协作时用它，可视化拖拽配置，GitHub 50k+ stars'},
-      {emoji:'💻',tool:'Ollama',url:'https://ollama.com',action:'本地运行大模型',tip:'数据敏感场景，一行命令在本地跑开源模型，数据完全不出公司网络'},
+      {emoji:'🤖',tool:'FastGPT',url:'https://fastgpt.in',action:'搭建知识库问答',tip:'支持知识库与私有部署；隐私仍取决于模型、网络、日志和部署配置'},
+      {emoji:'⚙️',tool:'Dify',url:'https://dify.ai',action:'编排复杂 AI 工作流',tip:'可通过可视化界面组合多个模型调用与处理步骤'},
+      {emoji:'💻',tool:'Ollama',url:'https://ollama.com',action:'本地运行大模型',tip:'可在本机运行受支持的模型；是否外联仍需检查模型来源、客户端和网络配置'},
     ]},
   { id:'startup', emoji:'🚀',
     keywords:['创业','商业计划','bp','融资','产品','mvp','市场调研','竞品','创业计划','BP'],
     title:'创业 / 商业计划工作流',desc:'用 AI 加速从想法到 MVP',
     steps:[
       {emoji:'🔍',tool:'Perplexity',url:'https://perplexity.ai',action:'市场调研 + 竞品分析',tip:'可用来定位市场与竞品资料；引用链接需要逐条打开并核对原文'},
-      {emoji:'📊',tool:'Gamma',url:'https://gamma.app',action:'制作 BP / 路演 PPT',tip:'给它商业模式框架，直接生成投资人看的演示文稿'},
-      {emoji:'⚡',tool:'Bolt',url:'https://bolt.new',action:'快速搭 MVP 演示',tip:'描述核心功能，当天可以跑起来一个可演示的版本，快速验证方向'},
+      {emoji:'📊',tool:'Gamma',url:'https://gamma.app',action:'制作 BP / 路演 PPT',tip:'提供商业模式框架生成演示文稿初稿，再人工核对数据和论证'},
+      {emoji:'⚡',tool:'Bolt',url:'https://bolt.new',action:'快速搭 MVP 演示',tip:'描述核心功能生成可测试原型；完成时间取决于复杂度和测试要求'},
       {emoji:'🤖',tool:'DeepSeek',url:'https://chat.deepseek.com',action:'方案压力测试',tip:'让它扮演投资人或竞争对手提出质疑，帮你提前发现方案漏洞'},
     ]},
   { id:'podcast', emoji:'🎙️',
@@ -2232,7 +2232,7 @@ function showWorkflow(wf) {
       <div class="wf-step-num">${i+1}</div>
       <div class="wf-step-body">
         <div class="wf-step-action">${s.emoji} ${s.action}</div>
-        <div class="wf-step-tool">推荐：<a href="${s.url}" target="_blank" rel="noopener">${s.tool} ↗</a></div>
+        <div class="wf-step-tool">可选入口：<a href="${s.url}" target="_blank" rel="noopener">${s.tool} ↗</a></div>
         <div class="wf-step-tip">💡 ${s.tip}</div>
       </div>
     </div>`).join('');

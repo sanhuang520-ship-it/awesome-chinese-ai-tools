@@ -74,6 +74,31 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertNotIn("星数远低于实际使用量", index)
         self.assertNotIn("s.rec && !s.ours", index)
 
+    def test_workflow_examples_are_not_presented_as_ranked_recommendations(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        archive = (ROOT / "SCENARIOS.md").read_text(encoding="utf-8")
+        self.assertIn("工作流示例", index)
+        self.assertIn("不代表排名或效果保证", index)
+        self.assertIn("可选入口：", index)
+        self.assertNotIn("工作流推荐", index)
+        self.assertNotIn("获得最适合的 AI 工具组合", index)
+        self.assertNotIn("推荐工具", archive)
+
+    def test_current_workflow_copy_avoids_unverified_speed_and_privacy_claims(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        forbidden = [
+            "10 分钟出 PPT",
+            "最快当天完成",
+            "当天上线",
+            "代码质量高",
+            "可私有部署不泄密",
+            "数据完全不出公司网络",
+            "GitHub 50k+ stars",
+        ]
+        for claim in forbidden:
+            with self.subTest(claim=claim):
+                self.assertNotIn(claim, index)
+
 
 if __name__ == "__main__":
     unittest.main()
