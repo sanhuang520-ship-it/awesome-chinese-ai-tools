@@ -124,6 +124,14 @@ class EvidenceClaimsTest(unittest.TestCase):
                 self.assertIn(phrase, generator)
                 self.assertIn(phrase, catalog)
 
+    def test_security_policy_routes_sensitive_reports_privately(self):
+        policy = (ROOT / "SECURITY.md").read_text(encoding="utf-8")
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn("security/advisories/new", policy)
+        self.assertIn("请不要在公开 Issue", policy)
+        self.assertIn("第三方条目只做目录收录和链接复检", policy)
+        self.assertIn("[🔒 安全报告](SECURITY.md)", readme)
+
 
 if __name__ == "__main__":
     unittest.main()
