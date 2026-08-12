@@ -7,7 +7,7 @@
     "activation": "Requires a recorded task-level run; discovery or installation alone is not activation evidence"
   },
   "clients": {
-    "codex": "Codex desktop; exact app build not recorded",
+    "codex": "Codex CLI 0.147.0-alpha.6.5",
     "claudeCode": "Not tested",
     "cursor": "Not tested"
   },

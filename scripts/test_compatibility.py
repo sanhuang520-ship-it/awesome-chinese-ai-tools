@@ -44,6 +44,17 @@ class CompatibilityDataTest(unittest.TestCase):
             self.assertIn(f"cases/{relative_case}", examples)
             self.assertIn(f"({relative_case})", case_index)
 
+    def test_codex_client_version_matches_every_activation_case(self):
+        activation = self.data["results"]["codexActivation"]
+        version = "0.147.0-alpha.6.5"
+        self.assertEqual(self.data["clients"]["codex"], f"Codex CLI {version}")
+        self.assertEqual(activation["clientVersion"], f"codex-cli {version}")
+        for case in activation["cases"]:
+            with self.subTest(case=case):
+                body = (ROOT / case).read_text(encoding="utf-8")
+                self.assertIn(f"Codex CLI `{version}`", body)
+                self.assertNotIn("Codex desktop", body)
+
     def test_unrun_clients_are_not_claimed_as_verified(self):
         self.assertEqual(self.data["results"]["claudeCode"]["status"], "not-tested")
         self.assertEqual(self.data["results"]["cursor"]["status"], "not-tested")

@@ -59,6 +59,11 @@ def main() -> None:
     if cases != expected_cases:
         fail(f"activation cases must map to verified skills in order: expected={expected_cases}")
 
+    client_version = activation.get("clientVersion", "")
+    display_version = client_version.removeprefix("codex-cli ")
+    if data.get("clients", {}).get("codex") != f"Codex CLI {display_version}":
+        fail("Codex client summary and activation clientVersion differ")
+
     examples = (ROOT / "EXAMPLES.md").read_text(encoding="utf-8")
     case_index = (ROOT / "cases" / "README.md").read_text(encoding="utf-8")
     for skill, case in zip(verified_skills, cases):
@@ -69,6 +74,9 @@ def main() -> None:
             fail(f"EXAMPLES.md does not link activation case for {skill}")
         if f"({relative_case})" not in case_index:
             fail(f"cases/README.md does not link activation case for {skill}")
+        case_body = (ROOT / case).read_text(encoding="utf-8")
+        if f"Codex CLI `{display_version}`" not in case_body:
+            fail(f"activation case client version differs for {skill}")
 
     allowed = {"verified", "failed", "partial", "not-tested"}
     for key, result in data.get("results", {}).items():
