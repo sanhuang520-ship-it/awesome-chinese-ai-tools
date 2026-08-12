@@ -1,6 +1,6 @@
 name: 推荐一个 Skill 或工具
-description: 收录新的 Agent Skill、AI 工具，或报告失效链接
-labels: ["收录建议"]
+description: 推荐收录新的 Agent Skill 或 AI 工具
+labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
@@ -15,7 +15,6 @@ body:
       options:
         - Agent Skill（仓库里有 SKILL.md）
         - AI 工具
-        - 报告失效链接 / 事实错误
     validations:
       required: true
 

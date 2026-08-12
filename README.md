@@ -12,7 +12,7 @@
 [![Stars](https://img.shields.io/github/stars/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=e0795a)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
 
-**[🌐 在线浏览（可搜索筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[📋 完整清单](SKILLS.md)　·
+**[🌐 在线浏览（可搜索筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[🧰 中文开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)　·　[📋 完整清单](SKILLS.md)　·
 [📸 真实渲染截图](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)　·　[🎨 12 种画风对照](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/)　·　[✒️ 中文排版实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/)
 
 </div>
@@ -213,8 +213,8 @@ my-skill/
 
 ## 贡献
 
-收录有误、链接失效、想推荐新 Skill，欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)
-或看 [CONTRIBUTING.md](CONTRIBUTING.md)。
+收录有误、链接失效、想推荐新 Skill，可以选择对应的 [Issue 表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new/choose)，
+使用问题和实际效果欢迎放到 [Discussions](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions)，或查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 **发现事实错误请一定告诉我们** —— 这个项目全部的价值就在"可信"两个字上。
 
