@@ -142,6 +142,11 @@ def check_url(url, timeout=9):
     return False, None, "unknown"
 
 
+def should_persist_tool_check(changed, previous_checked_at, today_str):
+    """状态变化或新检测日期尚未落盘时，必须持久化结果。"""
+    return changed > 0 or previous_checked_at != today_str
+
+
 def check_tool_links():
     """
     读取 data/tools.json → 检测每个工具 URL → 写回更新后的 JSON。
@@ -170,6 +175,7 @@ def check_tool_links():
     data = json.loads(raw)
     sha  = existing["sha"]
     tools = data.get("tools", [])
+    previous_checked_at = data.get("meta", {}).get("linkCheckedAt")
 
     # 2. 逐一检测（顺序+间隔，避免被视为扫描器）
     changed     = 0
@@ -226,9 +232,11 @@ def check_tool_links():
     data["meta"]["linkCheckedAt"] = today_str
     data["meta"]["linkDeadCount"] = len(dead_names)
 
-    # 4. 如果有变化，写回 GitHub
-    if changed == 0:
-        print(f"[链接检测] 无变化，跳过写入")
+    # 4. 状态有变化，或当天检测日期尚未落盘时写回 GitHub。
+    # 不能只看状态变化：否则每天确实执行了请求，但公开证据日期会永久停在旧值。
+    date_changed = previous_checked_at != today_str
+    if not should_persist_tool_check(changed, previous_checked_at, today_str):
+        print(f"[链接检测] 状态和检测日期均无变化，跳过写入")
         return
 
     new_content = json.dumps(data, ensure_ascii=False, indent=2)
@@ -246,7 +254,8 @@ def check_tool_links():
             summary.append(f"异常: {', '.join(dead_names)}")
         if recovered:
             summary.append(f"恢复: {', '.join(recovered)}")
-        print(f"[链接检测] ✅ 已更新 tools.json — {'; '.join(summary) or '全部正常'}")
+        detail = '; '.join(summary) or ("状态无变化，已记录当天检测日期" if date_changed else "全部正常")
+        print(f"[链接检测] ✅ 已更新 tools.json — {detail}")
     else:
         print(f"[链接检测] ❌ 写入失败: {result.get('message', result)}")
 
