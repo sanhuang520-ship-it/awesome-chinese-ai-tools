@@ -33,6 +33,7 @@
 ### 3. 搜索与内容入口
 
 - [x] 发布 Codex 兼容性实测页与 Agent Skills 安装排错页。
+- [x] 发布 Agent Skills 兼容性四层测试方法，统一发现、安装、自动触发、任务完成与环境阻断的记录口径。
 - [x] 提交 Agent-Skills.md 目录并验证 13/13 已生成公开页面；标准格式验证 13/13 通过。分类和标签元数据已补齐，外部目录刷新结果待复核。
 - [x] 为 13 个原创 Skill 全部建立独立说明页，包含用途、边界、安装、实测结果或可复现证据：[AI 学习教练](learning/)、[中文拆书与读书笔记](reading/)、[中文中小学教案](lesson-plan/)、[家长辅导作业](homework/)、[中文排版](typography/)、[中式设计系统](design/)、[国潮视觉](guochao/)、[README 审查](readme-audit/)、[中文职场汇报](work-report/)、[中文电商文案校样](ecommerce-copywriting/)、[中式网页主题库](themes/)、[Three.js 水墨 Shader](guofeng-threejs/)和[家庭流水整理](bookkeeping/)。
 - [ ] 接入站长工具并提交 Sitemap，记录收录数、搜索展示和点击基线。

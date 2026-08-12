@@ -39,6 +39,12 @@ def render_feed():
         raise ValueError(f"unexpected compatibility outcome totals: {dict(counts)}")
     entries = [
         item(
+            "Agent Skills 兼容性怎么测试：四层证据法",
+            "method/",
+            "Wed, 12 Aug 2026 23:28:00 +0800",
+            "公开区分 CLI 发现、文件安装、自动触发与任务完成的测试协议，并给出逐字任务模板、失败分类和环境阻断边界。",
+        ),
+        item(
             "13 个原创中文 Agent Skills 方法与证据总览",
             "guides/",
             "Wed, 12 Aug 2026 22:55:00 +0800",
@@ -71,7 +77,7 @@ def render_feed():
     <link>{BASE}</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 12 Aug 2026 22:55:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 23:28:00 +0800</lastBuildDate>
     <atom:link href="{BASE}feed.xml" rel="self" type="application/rss+xml"/>
 
 {chr(10).join(entries)}

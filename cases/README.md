@@ -29,3 +29,5 @@
 当前隔离测试还持续出现一条重要告警：Skill 数量较多时，Codex 会缩短部分 description 以适应上下文预算。13 项均发生自动触发，但这仍然只是单任务观察；后续复测必须继续保留成功和失败结果。
 
 想复现或补充 Claude Code、Cursor 结果，请用[结构化兼容性表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交客户端版本、原始任务、是否点名 Skill、触发状态、完成状态和脱敏结果。
+
+第一次做测试可先看[Agent Skills 兼容性四层测试法](../method/)：它解释怎样区分发现、安装、自动触发和任务完成，以及为什么平台用量、网络或服务错误不能直接记成 Skill 失败。

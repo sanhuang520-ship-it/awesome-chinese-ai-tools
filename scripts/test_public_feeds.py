@@ -51,7 +51,7 @@ class PublicFeedsTest(unittest.TestCase):
         self.assertEqual(render_feed(), feed)
         root = ET.fromstring(feed)
         items = root.findall("./channel/item")
-        self.assertGreaterEqual(len(items), 4)
+        self.assertGreaterEqual(len(items), 5)
         self.assertNotIn("AI 日报", feed)
         self.assertNotIn("今日推荐", feed)
         self.assertTrue(all("awesome-chinese-ai-tools" in item.findtext("link", "") for item in items))
@@ -61,6 +61,7 @@ class PublicFeedsTest(unittest.TestCase):
         self.assertIn("1 项按流程等待必要输入", feed)
         self.assertIn("2 项大任务失败后缩小复测通过", feed)
         self.assertNotIn("11 项首次完成", feed)
+        self.assertIn("Agent Skills 兼容性怎么测试：四层证据法", feed)
 
     def test_sitemap_contains_every_repository_owned_skill(self):
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
