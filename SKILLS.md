@@ -4,7 +4,9 @@
 > 每一个都经 GitHub API 验证仓库真实存在  
 > 🔄 最近自动复检：**2026-08-12**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
-📋 **[看原创 Skill 实际输出什么 → EXAMPLES.md](EXAMPLES.md)**　🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
+🧪 **[Codex 13/13 自动触发实测 → COMPATIBILITY.md](COMPATIBILITY.md)**　📋 [原创 Skill 输出示例](EXAMPLES.md)　🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
+
+> 兼容性边界：当前只有 Codex 的任务级实测；Claude Code 与 Cursor 待测。成功、失败或未触发均可通过[结构化表单提交](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)。
 
 ---
 
@@ -34,7 +36,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 > 同时在 `~/.claude/skills/` 建立符号链接，因此两处能看到同一份文件；这只证明安装结果，本轮尚未运行 Claude Code。
 > 而部分教程（包括 7 万星仓库）写的 `~/.config/claude-code/skills/`，本机实测**并不存在**。
 
-装好后重启你使用的客户端，用一个**不点名 Skill 名称**的自然任务测试是否自动触发。不同客户端与版本的行为可能不同；当前只有 Codex 的任务级实测。
+装好后重启你使用的客户端，用一个**不点名 Skill 名称**的自然任务测试是否自动触发。不同客户端与版本的行为可能不同；当前只有 Codex 的任务级实测。遇到问题先看[安装与排错页](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/)。
 
 ---
 

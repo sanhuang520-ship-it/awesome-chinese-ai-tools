@@ -24,6 +24,14 @@ class GrowthMetricsTest(unittest.TestCase):
         self.assertEqual(state["publicEndpointsChecked"], state["publicEndpointsOk"])
         self.assertEqual("success", state["pagesDeployment"])
 
+    def test_traffic_snapshot_does_not_call_clones_users(self):
+        data = json.loads((ROOT / "metrics" / "2026-08-12-traffic.json").read_text(encoding="utf-8"))
+        self.assertEqual(14, data["windowDays"])
+        self.assertGreater(data["traffic"]["uniqueCloners"], data["traffic"]["uniqueVisitors"])
+        notes = data["notes"].lower()
+        self.assertIn("must not be called users", notes)
+        self.assertIn("cannot prove", notes)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -365,8 +365,12 @@ def build_skills_md():
     L.append(f"> **{len(S)} 个 Skill｜{cn_n} 个中文原创｜✍️ {len(ours)} 个本站原创**  ")
     L.append("> 每一个都经 GitHub API 验证仓库真实存在  ")
     L.append(f"> 🔄 最近自动复检：**{checked}**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）\n")
-    L.append("📋 **[看原创 Skill 实际输出什么 → EXAMPLES.md](EXAMPLES.md)**　"
+    L.append("🧪 **[Codex 13/13 自动触发实测 → COMPATIBILITY.md](COMPATIBILITY.md)**　"
+             "📋 [原创 Skill 输出示例](EXAMPLES.md)　"
              "🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)\n")
+    L.append("> 兼容性边界：当前只有 Codex 的任务级实测；Claude Code 与 Cursor 待测。"
+             "成功、失败或未触发均可通过[结构化表单提交](https://github.com/"
+             f"{REPO}/issues/new?template=compatibility-result.yml)。\n")
     L.append("---\n")
     L.append("## 什么是 Skills\n")
     L.append("**一句话：Skills 是给 AI 助手加的「专业技能包」。**\n")
@@ -386,7 +390,8 @@ def build_skills_md():
     L.append("> ⚠️ **实测提醒（CLI 1.5.22）**：`npx skills add` 把文件装到 `~/.agents/skills/`（多家 agent 共用），")
     L.append("> 同时在 `~/.claude/skills/` 建立符号链接，因此两处能看到同一份文件；这只证明安装结果，本轮尚未运行 Claude Code。")
     L.append("> 而部分教程（包括 7 万星仓库）写的 `~/.config/claude-code/skills/`，本机实测**并不存在**。\n")
-    L.append("装好后重启你使用的客户端，用一个**不点名 Skill 名称**的自然任务测试是否自动触发。不同客户端与版本的行为可能不同；当前只有 Codex 的任务级实测。\n")
+    L.append("装好后重启你使用的客户端，用一个**不点名 Skill 名称**的自然任务测试是否自动触发。不同客户端与版本的行为可能不同；当前只有 Codex 的任务级实测。"
+             "遇到问题先看[安装与排错页](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/)。\n")
     L.append("---\n")
     L.append("## Skill 清单\n")
 

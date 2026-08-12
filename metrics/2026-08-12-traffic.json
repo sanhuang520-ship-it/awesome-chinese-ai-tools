@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-08-12T19:45:16+08:00",
+  "source": "GitHub Traffic API and public repository API",
+  "windowDays": 14,
+  "repository": "sanhuang520-ship-it/awesome-chinese-ai-tools",
+  "repositoryMetrics": {
+    "stars": 7,
+    "forks": 1
+  },
+  "traffic": {
+    "views": 113,
+    "uniqueVisitors": 50,
+    "clones": 968,
+    "uniqueCloners": 413,
+    "topReferrers": [
+      {"name": "github.com", "views": 40, "uniqueVisitors": 28},
+      {"name": "sanhuang520-ship-it.github.io", "views": 5, "uniqueVisitors": 4}
+    ],
+    "topPaths": [
+      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools", "views": 66, "uniqueVisitors": 41},
+      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/SKILLS.md", "views": 18, "uniqueVisitors": 8}
+    ]
+  },
+  "notes": "Observation only, not attribution evidence. Clone counts may include automation, CI, repeated machines or other non-human activity and must not be called users. The data supports prioritizing the repository overview and SKILLS.md as visible paths, but cannot prove that an edit caused Star growth."
+}

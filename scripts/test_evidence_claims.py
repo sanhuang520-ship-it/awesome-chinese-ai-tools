@@ -111,6 +111,19 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertIn('<b id="skc">—</b> Skills', index)
         self.assertIn('<b id="tc">—</b> 工具', index)
 
+    def test_generated_skill_catalog_leads_to_reproducible_evidence(self):
+        generator = (ROOT / "scripts" / "daily_check.py").read_text(encoding="utf-8")
+        catalog = (ROOT / "SKILLS.md").read_text(encoding="utf-8")
+        for phrase in (
+            "Codex 13/13 自动触发实测",
+            "Claude Code 与 Cursor 待测",
+            "compatibility-result.yml",
+            "安装与排错页",
+        ):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, generator)
+                self.assertIn(phrase, catalog)
+
 
 if __name__ == "__main__":
     unittest.main()
