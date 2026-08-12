@@ -85,6 +85,7 @@
       "descEn": "",
       "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-typography",
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/chinese-typography",
+      "explainer": "typography/",
       "skillOk": true,
       "skillCheckedAt": "2026-08-12"
     },
@@ -98,6 +99,7 @@
       "descEn": "",
       "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guochao-visual-cn",
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/guochao-visual-cn",
+      "explainer": "guochao/",
       "skillOk": true,
       "skillCheckedAt": "2026-08-12"
     },
@@ -163,6 +165,7 @@
       "descEn": "",
       "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-work-report",
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/chinese-work-report",
+      "explainer": "work-report/",
       "skillOk": true,
       "skillCheckedAt": "2026-08-12"
     },
@@ -176,6 +179,7 @@
       "descEn": "",
       "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting",
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/ecommerce-copywriting",
+      "explainer": "ecommerce-copywriting/",
       "skillOk": true,
       "skillCheckedAt": "2026-08-12"
     },
@@ -1767,6 +1771,7 @@
       "ours": true,
       "desc": "GitHub 中文项目门面优化（本站原创）：首屏结构、真实截图怎么截、命名与 topics、发布前自查清单。附 15 个高增长仓库的实测数据，明确区分相关性与不可验证的部分，不承诺涨星",
       "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/github-readme-cn",
+      "explainer": "readme-audit/",
       "skillOk": true,
       "skillStatus": "ok",
       "skillCheckedAt": "2026-08-12"
@@ -2231,6 +2236,7 @@
       "ours": true,
       "desc": "中式 DESIGN.md 设计系统（本站原创）：8 套可直接丢进项目根目录的设计文档，AI 读了就按规范生成界面。含中文排版规则（行高 1.75 / 不用 justify / 着重号代替斜体 / CJK 避头尾），对比度逐项实测并标出不达标项",
       "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-design-md",
+      "explainer": "design/",
       "skillOk": true,
       "skillStatus": "ok",
       "skillCheckedAt": "2026-08-12"

@@ -245,7 +245,7 @@ body{
 }
 [data-theme="light"] .cat-tabs-wrap{background:rgba(246,245,243,.9)}
 .cat-tabs{
-  max-width:1200px;margin:0 auto;
+  width:100%;max-width:1200px;min-width:0;margin:0 auto;
   display:flex;gap:4px;overflow-x:auto;
   -webkit-overflow-scrolling:touch;
   scrollbar-width:none;
@@ -417,10 +417,11 @@ body{
   position:fixed;top:0;right:0;bottom:0;z-index:310;
   width:min(480px,100vw);
   background:var(--surface);border-left:1px solid var(--border);
-  transform:translateX(100%);transition:transform .28s cubic-bezier(.2,.8,.2,1);
+  transform:translateX(100%);opacity:0;visibility:hidden;pointer-events:none;
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .18s,visibility .18s;
   display:flex;flex-direction:column;overflow:hidden
 }
-.wf-drawer.show{transform:translateX(0)}
+.wf-drawer.show{transform:translateX(0);opacity:1;visibility:visible;pointer-events:auto}
 
 .wf-drawer-head{
   display:flex;align-items:center;justify-content:space-between;
@@ -672,7 +673,10 @@ footer a:hover{text-decoration:underline}
   border-radius:7px;padding:5px 11px;font-size:11.5px;font-weight:600;cursor:pointer;
   margin-top:10px;transition:border-color .18s,color .18s}
 .sk-preview:hover{border-color:var(--accent2);color:var(--accent2)}
-@media(max-width:520px){.sp-body{padding:16px 15px 50px;font-size:14px}.sp-head{padding:12px 14px}}
+@media(max-width:520px){
+  .sp-body{padding:16px 15px 50px;font-size:14px}.sp-head{padding:12px 14px}
+  .sp-bar{padding:10px 14px;overflow:hidden}.sp-cmd{flex:1 0 100%;width:100%;min-width:0}
+}
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
   clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -1832,7 +1836,9 @@ function spInit(){
     '<button class="sp-close" id="sp-close" aria-label="关闭">✕</button></div>' +
     '<div class="sp-bar"><span class="sp-cmd" id="sp-cmd"></span>' +
     '<button class="sp-btn" id="sp-copy">复制安装命令</button>' +
-    '<a class="sp-btn ghost" id="sp-gh" target="_blank" rel="noopener">GitHub ↗</a></div>' +
+    '<a class="sp-btn ghost" id="sp-guide">方法与证据</a>' +
+    '<a class="sp-btn ghost" id="sp-case" target="_blank" rel="noopener">Codex 实测 ↗</a>' +
+    '<a class="sp-btn ghost" id="sp-gh" target="_blank" rel="noopener">源码 ↗</a></div>' +
     '<div class="sp-body" id="sp-body"></div>';
   document.body.append(mask, panel);
   const close = function(){ mask.classList.remove('show'); panel.classList.remove('show');
@@ -1853,6 +1859,13 @@ async function spOpen(name, url){
   const e = spInit();
   e.panel.querySelector('#sp-title').textContent = name;
   e.panel.querySelector('#sp-gh').href = url;
+  const skill = skillsData && skillsData.skills.find(function(item){ return item.name === name; });
+  const guide = e.panel.querySelector('#sp-guide');
+  if (skill && skill.explainer) {
+    guide.href = skill.explainer;
+    guide.style.display = '';
+  } else { guide.style.display = 'none'; }
+  e.panel.querySelector('#sp-case').href = 'cases/' + name + '-codex.md';
   // 有配套可视化页面的 skill，在抽屉里直接给入口
   const VIS = {'guochao-visual-cn':'guochao/', 'chinese-web-themes':'shots/',
                'guofeng-threejs':'shots/', 'chinese-typography':'typography/', 'chinese-design-md':'design/'};
@@ -1956,7 +1969,7 @@ function renderSkillGrid() {
               <span class="badge b-ours">✍️ 原创</span>
             </div>
             <div class="sk-desc">${s.desc}</div>
-            <span class="sk-preview">📖 在站内看完整 SKILL.md</span>
+            <span class="sk-preview">${s.explainer ? '📘 看方法与证据 · ' : ''}📖 看完整 SKILL.md</span>
           </div>`).join('')}
       </div>
     </div>` : '';

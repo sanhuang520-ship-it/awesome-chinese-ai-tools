@@ -38,6 +38,14 @@ class InternalLinksTest(unittest.TestCase):
         self.assertIn("'搜索工具和功能'", index)
         self.assertIn("'额度记录暂不支持搜索'", index)
 
+    def test_mobile_skill_drawer_allows_command_and_actions_to_wrap(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn(".sp-bar{padding:10px 14px;overflow:hidden}", index)
+        self.assertIn(".sp-cmd{flex:1 0 100%;width:100%;min-width:0}", index)
+        self.assertIn("width:100%;max-width:1200px;min-width:0;margin:0 auto", index)
+        self.assertIn("opacity:0;visibility:hidden;pointer-events:none", index)
+        self.assertIn("opacity:1;visibility:visible;pointer-events:auto", index)
+
     def test_maintenance_plan_links_to_every_named_explainer(self):
         plan = (ROOT / "MAINTENANCE_PLAN.md").read_text(encoding="utf-8")
         for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/"):

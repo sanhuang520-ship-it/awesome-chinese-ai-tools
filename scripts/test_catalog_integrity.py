@@ -69,6 +69,32 @@ class CatalogIntegrityTest(unittest.TestCase):
                 self.assertNotRegex(skill.get("desc", ""), r"[<>]")
                 self.assertNotRegex(skill.get("descEn", ""), r"[<>]")
 
+    def test_every_declared_skill_explainer_exists_and_is_first_party(self):
+        data = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))
+        explainers = {skill["name"]: skill["explainer"] for skill in data["skills"] if skill.get("explainer")}
+        self.assertEqual(
+            {
+                "chinese-typography",
+                "guochao-visual-cn",
+                "chinese-work-report",
+                "ecommerce-copywriting",
+                "github-readme-cn",
+                "chinese-design-md",
+            },
+            set(explainers),
+        )
+        for name, relative in explainers.items():
+            with self.subTest(skill=name):
+                self.assertRegex(relative, r"^[a-z0-9-]+/$")
+                self.assertTrue((ROOT / relative / "index.html").is_file())
+
+    def test_first_party_drawer_routes_to_guide_source_and_case(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('id="sp-guide"', index)
+        self.assertIn('id="sp-case"', index)
+        self.assertIn("skill.explainer", index)
+        self.assertIn("'cases/' + name + '-codex.md'", index)
+
     def test_timeline_fields_cannot_inject_markup(self):
         data = json.loads((ROOT / "data" / "updates.json").read_text(encoding="utf-8"))
         for event in data.get("events", []):
