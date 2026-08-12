@@ -31,6 +31,18 @@
 
 ---
 
+## 提交前本地验证
+
+仓库内的结构化数据、公开页面、站内链接、RSS、Sitemap 和证据边界可以用一条命令检查，不需要网络：
+
+```bash
+python3 scripts/verify.py
+```
+
+如果脚本报告公开元数据不同步，先运行 `python3 scripts/sync_public_metadata.py . --write`，检查变更后再重新验证。
+
+---
+
 ## 加一个 Skill
 
 编辑 **`data/skills.json`**，在 `skills` 数组里加一条：
