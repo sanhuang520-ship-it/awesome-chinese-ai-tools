@@ -66,6 +66,14 @@ class EvidenceClaimsTest(unittest.TestCase):
             with self.subTest(claim=claim):
                 self.assertNotIn(claim, index)
 
+    def test_skill_install_counts_are_not_called_actual_usage(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        skills = (ROOT / "data" / "skills.json").read_text(encoding="utf-8")
+        self.assertIn("不等于独立用户或实际使用次数", index)
+        self.assertIn('"status": "retired"', skills)
+        self.assertNotIn("星数远低于实际使用量", index)
+        self.assertNotIn("s.rec && !s.ours", index)
+
 
 if __name__ == "__main__":
     unittest.main()

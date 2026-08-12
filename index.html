@@ -1952,10 +1952,9 @@ function renderSkillGrid() {
               <span class="sk-name">${s.name}</span>
               ${s.ours ? '<span class="badge b-ours">✍️ 本站原创</span>' : ''}
               ${s.official ? '<span class="badge b-rec">官方</span>' : ''}
-              ${s.rec && !s.ours ? '<span class="badge b-hot">🔥 推荐</span>' : ''}
               ${s.stars ? `<span class="sk-star">⭐ ${s.stars.toLocaleString()}</span>` : ''}
               ${skStale(s) ? `<span class="badge b-stale" title="最后更新 ${s.lastPush}">🕰 久未更新</span>` : ''}
-              ${s.installs ? `<span class="badge b-inst" title="安装量 ${s.installs.toLocaleString()}（skills.sh，${s.installsAt}）${s.stars && s.installs/s.stars>=20 ? ' — 星数远低于实际使用量' : ''}">⬇ ${s.installs>=10000 ? (s.installs/10000).toFixed(1)+'万' : s.installs.toLocaleString()}${s.stars && s.installs/s.stars>=20 ? ' ⚡' : ''}</span>` : ''}
+              ${s.installs ? `<span class="badge b-inst" title="skills.sh 记录的安装次数 ${s.installs.toLocaleString()}（${s.installsAt}）；不等于独立用户或实际使用次数">⬇ ${s.installs>=10000 ? (s.installs/10000).toFixed(1)+'万' : s.installs.toLocaleString()}</span>` : ''}
             </div>
             <div class="sk-desc">${s.desc}</div>
             <div class="sk-desc-en">${s.descEn || ''}</div>
@@ -1972,7 +1971,7 @@ function renderSkills() {
       <h2>🧩 AI Agent Skills</h2>
       <p>Skills 是给 AI 助手加的「专业技能包」—— 一个文件夹 + 一份说明书，教 AI 怎么做某类任务。
          AI 会自动判断何时激活，无需手动切换。共收录 <b>${d.skills.length}</b> 个（其中
-         <b style="color:var(--accent)">${d.skills.filter(s=>s.cat==='cn').length} 个中文原创</b>），全部已验证仓库真实存在，其中 <b style="color:var(--accent2)">✍️ 本站原创</b> 由我们自己编写维护。<br><span style="font-size:12px;color:var(--muted)">🔄 每日自动复检仓库存活与星数 · 最近复检 <b id="sk-checked">—</b> · 超半年未更新的会标 🕰　·　部分条目带 ⬇ 安装量（来源 skills.sh），<b>⚡ 表示星数远低于实际使用量</b></span></p>
+         <b style="color:var(--accent)">${d.skills.filter(s=>s.cat==='cn').length} 个中文原创</b>），全部已验证仓库真实存在，其中 <b style="color:var(--accent2)">✍️ 本站原创</b> 由我们自己编写维护。<br><span style="font-size:12px;color:var(--muted)">🔄 每日自动复检仓库存活与星数 · 最近复检 <b id="sk-checked">—</b> · 超半年未更新的会标 🕰　·　部分条目显示 skills.sh 在标注日期记录的安装次数；不等于独立用户或实际使用</span></p>
       <details class="sk-install-wrap" id="sk-install-details" open>
       <summary class="sk-install-sum">📦 怎么安装（点开看命令与路径）</summary>
       <div class="sk-install">
