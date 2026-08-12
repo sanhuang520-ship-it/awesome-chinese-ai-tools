@@ -6,8 +6,8 @@
 
 **给 AI 助手装上中文场景的专业技能包**
 
-[![Skills](https://img.shields.io/badge/Skills-163%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
-[![原创](https://img.shields.io/badge/本站原创-12%20个-86b894?style=flat-square)](EXAMPLES.md)
+[![Skills](https://img.shields.io/badge/Skills-164%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
+[![原创](https://img.shields.io/badge/本站原创-13%20个-86b894?style=flat-square)](EXAMPLES.md)
 [![Daily Check](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml/badge.svg)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)
 [![Stars](https://img.shields.io/github/stars/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=e0795a)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
@@ -18,8 +18,8 @@
 </div>
 
 > **和别的 awesome 列表有什么不一样**<br>
-> ① 12 个 Skill 是我们自己写的，不是搬运<br>
-> ② 163 个仓库**每天自动复检**一次还在不在<br>
+> ① 13 个 Skill 是我们自己写的，不是搬运<br>
+> ② 164 个仓库**每天自动复检**一次还在不在<br>
 > ③ 不转述任何 AI 新闻——[原因](CONTENT_POLICY.md)
 
 ```bash
@@ -82,7 +82,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 ---
 
-## ✍️ 本站原创 Skill（12 个）
+## ✍️ 本站原创 Skill（13 个）
 
 这是这个仓库和其他 awesome 列表的区别：**下面这些是我们自己写的，不是搬运的。**
 
@@ -91,6 +91,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [`ai-learning-coach`](skills/ai-learning-coach/) | 学习教练：定目标 → 主动回忆 → 输出 → 纠错归因 → 间隔复习。不直接给答案 |
 | [`book-digest-cn`](skills/book-digest-cn/) | 拆书三层法：作者在答什么问题 → 核心主张 → 对我有什么用。拒绝抄目录式笔记 |
 | [`bookkeeping-cn`](skills/bookkeeping-cn/) | 记账整理。**明确不做**税务筹划、投资建议，不替代会计 |
+| [`chinese-design-md`](skills/chinese-design-md/) | 中式 DESIGN.md 设计系统（本站原创）：8 套可直接丢进项目根目录的设计文档，AI 读了就按规范生成界面。含中文排版规则（行高 1.75 / 不用 justify / 着重号代替斜体 / CJK 避头尾），对比度逐项实测并标出不达标项 |
 | [`chinese-lesson-plan`](skills/chinese-lesson-plan/) | 中小学教案。含防套话机制：学情分析要写这个年龄段的具体特征 |
 | [`chinese-typography`](skills/chinese-typography/) | 中文排版：中英间距、CJK 断行避头尾、字体栈、标点全半角，输出可直接用的 CSS |
 | [`chinese-web-themes`](skills/chinese-web-themes/) | 8 套中式网页主题（水墨/青绿/宋韵/敦煌/朱砂/新中式/竹韵/夜宴），对比度全过 WCAG AA |
@@ -136,8 +137,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 |------|------|
 | 🇨🇳 中文原创仓库 | 63 |
 | 📄 官方（anthropics/skills） | 17 |
-| ✍️ 本站原创 | 12 |
-| **合计** | **163** |
+| ✍️ 本站原创 | 13 |
+| **合计** | **164** |
 
 **[→ 看完整清单 SKILLS.md](SKILLS.md)**（每天从数据自动重建，不会和实际对不上）
 
@@ -152,7 +153,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 1 | 今日工具推荐 |
 | 2 | 核对 [SOURCES.md](SOURCES.md) 里各家 AI 官方公告页链接 |
 | 3 | 47 个工具链接实测可访问性 |
-| 4 | **163 个 skill 仓库复检**：还在不在、星数、最后更新时间 |
+| 4 | **164 个 skill 仓库复检**：还在不在、星数、最后更新时间 |
 | 5 | 从数据重建 SKILLS.md |
 
 这套流程跑在 **GitHub Actions** 上，[运行记录公开可查](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)——不依赖任何人的电脑，也不用你相信我说的话。
