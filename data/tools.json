@@ -10,6 +10,11 @@
       "status": "unverified-snapshot",
       "recordedAt": "2026-08-09",
       "note": "free 与 freeInfo 仅为历史发现线索，未逐项复核当前价格、额度或资格；链接存活不代表商业条款仍有效。"
+    },
+    "editorialSignals": {
+      "status": "retired",
+      "retiredAt": "2026-08-12",
+      "note": "stars、rec 与 hot 为缺少公开评分方法的历史字段，不再用于前端徽章、评分、筛选或排序。"
     }
   },
   "categories": {

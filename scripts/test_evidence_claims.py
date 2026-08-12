@@ -56,6 +56,16 @@ class EvidenceClaimsTest(unittest.TestCase):
             with self.subTest(claim=claim):
                 self.assertNotIn(claim, tools)
 
+    def test_retired_editorial_scores_do_not_drive_the_frontend(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        tools = (ROOT / "data" / "tools.json").read_text(encoding="utf-8")
+        self.assertIn('"status": "retired"', tools)
+        self.assertIn("不再用于前端徽章、评分、筛选或排序", tools)
+        forbidden = ["t.stars", "t.rec", "t.hot", "onlyRec", "onlyHot", "编辑精选", "按精选程度和热度排序"]
+        for claim in forbidden:
+            with self.subTest(claim=claim):
+                self.assertNotIn(claim, index)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1132,10 +1132,8 @@ details[open] .sk-install-sum{margin-bottom:2px}
     <span class="nav-chip"><b id="tc">47</b> 工具</span>
   </div>
   <div class="nav-actions">
-    <button class="nav-quick-btn" id="btn-hot">🔥 热门</button>
-    <button class="nav-quick-btn" id="btn-free">🆓 免费</button>
+    <button class="nav-quick-btn" id="btn-free">🆓 有免费记录</button>
     <button class="nav-quick-btn" id="btn-cn">🇨🇳 国产</button>
-    <button class="nav-quick-btn" id="btn-rec">⭐ 精选</button>
     <a class="gh-star-btn" href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank" rel="noopener" title="在 GitHub 上给我们一颗星">
       <span>⭐</span><span class="gh-label">Star</span><span class="gh-count" id="gh-count">—</span>
     </a>
@@ -1144,7 +1142,7 @@ details[open] .sk-install-sum{margin-bottom:2px}
 </nav>
 
 <!-- ══════════════════════════════════════
-     HERO — 今日精选
+     HERO — 目录入口示例
 ══════════════════════════════════════ -->
 <section class="hero" id="hero-section" data-view="list">
   <div class="stack-panel" id="stack-panel"><!-- JS 填充 --></div>
@@ -1168,8 +1166,8 @@ details[open] .sk-install-sum{margin-bottom:2px}
   </a>
   <div class="hero-label">
     <span class="hero-label-dot"></span>
-    <span class="hero-label-text">编辑精选</span>
-    <span class="hero-label-sub">— 最值得第一个尝试的 AI 工具</span>
+    <span class="hero-label-text">工具入口示例</span>
+    <span class="hero-label-sub">— 按目录顺序展示，不代表排名或推荐</span>
   </div>
   <div class="hero-grid" id="hero-grid">
     <!-- JS 填充 -->
@@ -1491,32 +1489,31 @@ const workflows = [
 /* ══════════════════════════════════════
    状态
 ══════════════════════════════════════ */
-let currentCat = 'all', onlyFree = false, onlyCN = false, onlyRec = false, onlyHot = false, query = '';
+let currentCat = 'all', onlyFree = false, onlyCN = false, query = '';
 const compareSet = new Set();
 const MAX_COMPARE = 4;
 
 /* ══════════════════════════════════════
-   渲染 — Hero 精选卡片
+   渲染 — Hero 入口示例
 ══════════════════════════════════════ */
 function renderHero() {
   const heroGrid = document.getElementById('hero-grid');
-  // 取当前筛选条件下 rec:true 的工具，最多 3 个
-  const recTools = tools.filter(t => {
+  // 按数据源目录顺序取前三个匹配入口；不使用旧评分字段排序。
+  const exampleTools = tools.filter(t => {
     if (currentCat !== 'all' && t.cat !== currentCat) return false;
     if (onlyFree && !t.free) return false;
     if (onlyCN && !t.cn) return false;
-    if (onlyHot && !t.hot) return false;
     if (query) {
       const q = query.toLowerCase();
       if (!t.name.toLowerCase().includes(q) && !t.desc.toLowerCase().includes(q)) return false;
     }
-    return t.rec;
+    return true;
   }).slice(0, 3);
 
-  if (!recTools.length) { heroGrid.innerHTML = ''; return; }
+  if (!exampleTools.length) { heroGrid.innerHTML = ''; return; }
 
   const cm = t => catMeta[t.cat] || {label:'',color:'#a89880',bg:'rgba(168,152,128,.14)'};
-  heroGrid.innerHTML = recTools.map((t, i) => `
+  heroGrid.innerHTML = exampleTools.map((t, i) => `
     <a class="hero-card" data-cat="${t.cat}" href="${t.url}" target="_blank" rel="noopener">
       <button class="hero-fav-btn ${stack.has(t.name)?'on':''}" data-name="${t.name}" title="加入我的工具栈" onclick="event.preventDefault();event.stopPropagation()">${stack.has(t.name)?'★':'☆'}</button>
       <div class="hero-card-top">
@@ -1524,10 +1521,9 @@ function renderHero() {
           ${logoHTML(t,'hero-logo')}
           <div class="hero-card-name">${t.name}<span class="hero-ext">↗</span></div>
         </div>
-        <span class="hero-card-rank">${i === 0 ? '🏆 编辑首选' : `✦ 精选 #${i+1}`}</span>
+        <span class="hero-card-rank">入口示例 ${i+1}</span>
       </div>
       <div class="hero-card-badges">
-        ${t.hot ? '<span class="badge b-hot">🔥 热门</span>' : ''}
         <span class="badge b-cat" style="--cat-bg:${cm(t).bg};--cat-c:${cm(t).color}">${cm(t).label}</span>
         ${t.free ? '<span class="badge b-free">有免费入口记录</span>' : '<span class="badge b-paid">付费记录</span>'}
         ${t.cn ? '<span class="badge b-cn">🇨🇳 国产</span>' : ''}
@@ -1561,19 +1557,11 @@ function logoHTML(t, cls='row-logo') {
   </div>`;
 }
 
-function starsHTML(n) {
-  return '<span class="stars-sm">' +
-    Array.from({length:5}, (_,i) => `<span class="${i<n?'on':''}">★</span>`).join('') +
-    '</span>';
-}
-
 function renderList() {
   const filtered = tools.filter(t => {
     if (currentCat !== 'all' && t.cat !== currentCat) return false;
     if (onlyFree && !t.free) return false;
     if (onlyCN && !t.cn) return false;
-    if (onlyRec && !t.rec) return false;
-    if (onlyHot && !t.hot) return false;
     if (query) {
       const q = query.toLowerCase();
       if (!t.name.toLowerCase().includes(q) &&
@@ -1595,8 +1583,7 @@ function renderList() {
     return;
   }
 
-  const heat = t => (t.hot?2:0) + (t.rec?1:0);
-  const sorted = [...filtered].sort((a,b) => heat(b)-heat(a) || (b.stars||0)-(a.stars||0));
+  const sorted = filtered;
   const cm = t => catMeta[t.cat] || {label:'',color:'#a89880',bg:'rgba(168,152,128,.14)'};
   const isDead = t => t.linkOk === false && (t.linkFailCount||0) >= 2;
 
@@ -1607,8 +1594,6 @@ function renderList() {
         <div class="row-name-line">
           <a class="row-name" href="${t.url}" target="_blank" rel="noopener"
              onclick="event.stopPropagation()">${t.name}<span class="row-ext"> ↗</span></a>
-          ${t.hot ? '<span class="badge b-hot">🔥 热门</span>' : ''}
-          ${t.rec ? '<span class="badge b-rec">⭐ 精选</span>' : ''}
           ${isDead(t) ? `<span class="badge b-dead" title="链接异常·${t.linkCheckedAt}·连续${t.linkFailCount}次">⚠️ 链接可能失效</span>` : ''}
         </div>
         <div class="row-desc">${t.freeInfo}</div>
@@ -1618,7 +1603,6 @@ function renderList() {
         ${t.free ? '<span class="badge b-free">有免费记录</span>' : '<span class="badge b-paid">付费记录</span>'}
         ${t.cn ? '<span class="badge b-cn">🇨🇳</span>' : ''}
         ${t.vpn ? '<span class="badge b-vpn">梯子</span>' : ''}
-        ${starsHTML(t.stars)}
       </div>
       <div class="row-actions">
         <button class="fav-btn ${stack.has(t.name)?'on':''}" data-name="${t.name}" title="加入我的工具栈" onclick="event.stopPropagation()">${stack.has(t.name)?'★':'☆'}</button>
@@ -2089,12 +2073,6 @@ document.getElementById('btn-free').addEventListener('click', function(){
 document.getElementById('btn-cn').addEventListener('click', function(){
   onlyCN = !onlyCN; this.classList.toggle('active', onlyCN); render();
 });
-document.getElementById('btn-rec').addEventListener('click', function(){
-  onlyRec = !onlyRec; this.classList.toggle('active', onlyRec); render();
-});
-document.getElementById('btn-hot').addEventListener('click', function(){
-  onlyHot = !onlyHot; this.classList.toggle('active', onlyHot); render();
-});
 
 /* ══════════════════════════════════════
    工具行点击（跳转官网）
@@ -2136,7 +2114,7 @@ document.getElementById('tool-list').addEventListener('click', e => {
 function toolToMarkdown(t) {
   const cm = catMeta[t.cat] || {};
   const tags = [cm.label, t.free?'有免费入口记录':'付费记录', t.cn?'国产':'', t.vpn?'需梯子':''].filter(Boolean).join(' · ');
-  return `**${t.name}** — ${tags}\n历史额度记录：${t.freeInfo}（请到官网核对）｜中文支持：${'★'.repeat(t.stars)}\n${t.desc}\n${t.url}`;
+  return `**${t.name}** — ${tags}\n历史额度记录：${t.freeInfo}（请到官网核对）\n${t.desc}\n${t.url}`;
 }
 function updateCompareBar() {
   const bar = document.getElementById('compare-bar');
@@ -2159,7 +2137,6 @@ function openCompare() {
     ['历史分类', t => t.free ? '曾记录免费入口' : '曾记录需付费'],
     ['国产', t => t.cn ? '🇨🇳 是' : '—'],
     ['需梯子', t => t.vpn ? '是' : '否'],
-    ['中文支持', t => '★'.repeat(t.stars)+'☆'.repeat(5-t.stars)],
     ['简介', t => t.desc],
     ['官网', t => `<a href="${t.url}" target="_blank" rel="noopener" style="color:var(--accent2)">打开 ↗</a>`],
   ];
@@ -2179,7 +2156,6 @@ function compareToMarkdown() {
     ['历史分类', ...sel.map(t=>t.free?'曾记录免费入口':'曾记录需付费')],
     ['国产', ...sel.map(t=>t.cn?'是':'—')],
     ['需梯子', ...sel.map(t=>t.vpn?'是':'否')],
-    ['中文支持', ...sel.map(t=>'★'.repeat(t.stars))],
     ['官网', ...sel.map(t=>t.url)],
   ];
   const line = arr => '| '+arr.join(' | ')+' |';
@@ -2458,7 +2434,6 @@ function pkRenderResult(){
     (!pkState.free || t.free) &&
     (!pkState.vpn  || !t.vpn)
   );
-  res.sort((a,b)=> ((b.rec?1:0)-(a.rec?1:0)) || ((b.stars||0)-(a.stars||0)));
   const top = res.slice(0,3);
   const catMt = PICKER_CATS.find(c=>c.v===pkState.cat) || {e:'✨', l:'AI 工具'};
   pkLastResult = {top, catMt};
@@ -2478,15 +2453,14 @@ function pkRenderResult(){
   body.innerHTML = `
     <div class="picker-result-head">
       <span class="picker-result-emoji">${catMt.e}</span>
-      <span class="picker-result-tt">为你推荐这 ${top.length} 个</span>
+      <span class="picker-result-tt">找到这 ${top.length} 个入口示例</span>
     </div>
-    <div class="picker-result-sub">按精选程度和热度排序，点击直达官网</div>
+    <div class="picker-result-sub">按目录顺序展示，不代表质量排名；点击直达官网核对</div>
     ${top.map((t,i)=>`
       <a class="picker-rec r${i+1}" href="${t.url}" target="_blank" rel="noopener">
         <span class="picker-rec-rank">${i+1}</span>
         <span class="picker-rec-main">
           <span class="picker-rec-name">${t.name}
-            ${t.rec?'<span class="badge b-rec">⭐ 精选</span>':''}
             ${t.free?'<span class="badge b-free">有免费记录</span>':'<span class="badge b-paid">付费记录</span>'}
           </span>
           <span class="picker-rec-desc">${t.freeInfo || t.desc || ''}</span>
@@ -2573,7 +2547,7 @@ function generateShareCard(top, catMt){
   x.fillStyle=P.accent;
   x.beginPath(); x.arc(ix+7, cy-8, 8, 0, Math.PI*2); x.fill();
   x.font=`600 27px ${SANS}`; x.fillStyle=P.muted;
-  x.fillText('AI 工具导航 · 编辑精选', ix+30, cy);
+  x.fillText('AI 工具导航 · 目录入口', ix+30, cy);
   cy+=86;
   // 标题（衬线）
   x.fillStyle=P.text; x.font=`700 70px ${SERIF}`;
@@ -2650,15 +2624,14 @@ function renderStack(){
     return;
   }
   const items = [...stack].map(stackToolByName).filter(Boolean);
-  const recCount = items.filter(t => t.rec).length;
   const cats  = new Set(items.map(t => t.cat));
   // 补全建议：找还没有的分类
   const missing = Object.keys(CAT_LABELS).filter(c => !cats.has(c));
   let suggest = '';
   if(missing.length){
     const pick = missing[0];
-    const rec  = tools.find(t => t.cat === pick && t.rec) || tools.find(t => t.cat === pick);
-    if(rec) suggest = `<div class="stack-suggest">💡 你的栈还缺一个 <b>${CAT_LABELS[pick]}</b> 类工具，试试「${rec.name}」</div>`;
+    const example = tools.find(t => t.cat === pick);
+    if(example) suggest = `<div class="stack-suggest">💡 你的栈还没有 <b>${CAT_LABELS[pick]}</b> 类工具；目录中的首个入口是「${example.name}」，请自行核对是否适合</div>`;
   }
   el.innerHTML = `
     <div class="stack-head">
@@ -2668,10 +2641,6 @@ function renderStack(){
       <div class="stack-stat">
         <div class="stack-stat-num">${items.length}</div>
         <div class="stack-stat-label">收藏工具</div>
-      </div>
-      <div class="stack-stat">
-        <div class="stack-stat-num cost">${recCount}</div>
-        <div class="stack-stat-label">编辑精选</div>
       </div>
       <div class="stack-stat">
         <div class="stack-stat-num">${cats.size}/10</div>
@@ -2752,14 +2721,12 @@ function generateStackCard(){
   x.fillText('我的 AI 工具栈', ix, cy);
   cy+=78;
   // 统计三栏
-  const recCount = items.filter(t => t.rec).length;
   const cats = new Set(items.map(t => t.cat));
   const stats = [
     {n:items.length, l:'收藏工具'},
-    {n:recCount,     l:'编辑精选'},
     {n:cats.size+'/10', l:'覆盖分类'},
   ];
-  const sw=(iw-24)/3;
+  const sw=(iw-12)/2;
   stats.forEach((s,i) => {
     const sx=ix+i*(sw+12);
     x.fillStyle='#f9f3e3'; rrect(x,sx,cy,sw,110,18); x.fill();
