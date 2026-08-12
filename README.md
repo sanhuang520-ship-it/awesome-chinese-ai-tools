@@ -11,6 +11,7 @@
 [![Skills](https://img.shields.io/badge/Skills-184%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
 [![原创](https://img.shields.io/badge/本站原创-13%20个-86b894?style=flat-square)](EXAMPLES.md)
 [![Daily Check](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml/badge.svg)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)
+[![skills.sh installs](https://skills.sh/b/sanhuang520-ship-it/awesome-chinese-ai-tools)](https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools)
 [![Stars](https://img.shields.io/github/stars/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=e0795a)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/github/v/tag/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=76a88a)](CHANGELOG.md)
@@ -84,6 +85,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 装好后重启你使用的客户端，用一个**不点名 Skill 名称**的自然任务测试是否自动触发。不同客户端与版本的行为可能不同；当前只有 Codex 的任务级实测。
 
 安装与自动触发不是一回事。本站 13 个原创 Skill 已完成 CLI 发现、当前 Codex 安装核验和各 1 次不点名名称的自动触发测试；2 项大任务失败后通过缩小复测，原失败仍公开保留。详见 **[兼容性实测表](COMPATIBILITY.md)**。
+
+仓库也已被 [skills.sh 收录](https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools)，可查看 13 个 Skill 的独立页面和该平台记录的聚合安装次数。该数字来自 skills CLI 遥测，不等于独立用户、实际使用效果或质量认证。
 
 ### 30 秒第一次试用
 

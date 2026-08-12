@@ -74,6 +74,13 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertNotIn("星数远低于实际使用量", index)
         self.assertNotIn("s.rec && !s.ours", index)
 
+    def test_skills_sh_index_is_linked_without_calling_installs_users(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        english = (ROOT / "README.en.md").read_text(encoding="utf-8")
+        self.assertIn("https://skills.sh/b/sanhuang520-ship-it/awesome-chinese-ai-tools", readme)
+        self.assertIn("不等于独立用户、实际使用效果或质量认证", readme)
+        self.assertIn("not a unique-user count, usage outcome, or quality certification", english)
+
     def test_workflow_examples_are_not_presented_as_ranked_recommendations(self):
         index = (ROOT / "index.html").read_text(encoding="utf-8")
         archive = (ROOT / "SCENARIOS.md").read_text(encoding="utf-8")

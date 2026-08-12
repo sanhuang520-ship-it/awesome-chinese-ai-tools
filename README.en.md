@@ -28,6 +28,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 Installation, discovery, automatic activation, and task completion are separate claims. Client behavior varies by version, install location, and task wording. See the [installation guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/) and [compatibility matrix](COMPATIBILITY.md).
 
+The repository is also [indexed by skills.sh](https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools). Its aggregated install count comes from skills CLI telemetry; it is not a unique-user count, usage outcome, or quality certification.
+
 ### A 30-second first test
 
 Install only one Skill, restart the client, and give it a natural task without naming the Skill. For example, after installing `chinese-typography`, ask:
