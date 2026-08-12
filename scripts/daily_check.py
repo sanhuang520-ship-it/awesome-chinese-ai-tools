@@ -383,7 +383,8 @@ def build_skills_md():
     L.append("---\n")
     L.append("## 什么是 Skills\n")
     L.append("**一句话：Skills 是给 AI 助手加的「专业技能包」。**\n")
-    L.append("一个文件夹 + 一份 `SKILL.md` 说明书，告诉 AI 什么时候该用、按什么步骤做。AI 自动判断何时激活。\n")
+    L.append("一个文件夹 + 一份 `SKILL.md` 说明书，告诉 AI 什么时候该用、按什么步骤做。"
+             "支持 Skills 的客户端可以按任务自动激活；是否触发取决于客户端、版本、安装位置和任务措辞，需分别实测。\n")
     L.append("| | 是什么 | 解决什么 |")
     L.append("|---|--------|---------|")
     L.append("| **Skills** | 一份工作说明书（Markdown + 可选脚本） | 教 AI **怎么做**某类任务 |")

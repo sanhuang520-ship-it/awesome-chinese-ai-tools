@@ -34,7 +34,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 **Skills 是给 AI 助手加的「专业技能包」。**
 
 技术上就是一个文件夹 + 一份 `SKILL.md` 说明书，告诉 AI：什么时候该用、按什么步骤做。
-AI 会自动判断何时激活，不需要手动切换。
+支持 Skills 的客户端可以按任务自动激活；是否触发取决于客户端、版本、安装位置和任务措辞，需分别实测。
 
 |  | 是什么 | 解决什么 |
 |---|--------|---------|

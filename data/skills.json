@@ -1791,7 +1791,7 @@
       "name": "seo-geo-claude-skills",
       "cat": "biz",
       "installs": 26085,
-      "desc": "SEO / GEO（生成式引擎优化）技能集，20 个子技能：外链分析、关键词研究、内容写作等。139 星但 2.6 万安装 —— 星数完全反映不出使用量",
+      "desc": "SEO / GEO（生成式引擎优化）技能集，20 个子技能：外链分析、关键词研究、内容写作等；另记录 skills.sh 安装次数，该数值不等于独立用户或实际使用",
       "descEn": "SEO & GEO skills for Claude: backlink analyzer, keyword research, SEO content writer.",
       "url": "https://github.com/aaron-he-zhu/seo-geo-claude-skills",
       "official": false,

@@ -124,6 +124,24 @@ class EvidenceClaimsTest(unittest.TestCase):
                 self.assertIn(phrase, generator)
                 self.assertIn(phrase, catalog)
 
+    def test_skill_activation_is_described_as_client_dependent(self):
+        generator = (ROOT / "scripts" / "daily_check.py").read_text(encoding="utf-8")
+        current = "\n".join(
+            (ROOT / relative).read_text(encoding="utf-8")
+            for relative in ("README.md", "SKILLS.md", "index.html")
+        )
+        self.assertIn("是否触发取决于客户端、版本、安装位置和任务措辞", generator)
+        self.assertIn("是否触发取决于客户端、版本、安装位置和任务措辞", current)
+        self.assertNotIn("AI 会自动判断何时激活", current)
+        self.assertNotIn("AI 自动判断何时激活", current)
+
+    def test_third_party_install_records_are_not_called_usage(self):
+        skills = (ROOT / "data" / "skills.json").read_text(encoding="utf-8")
+        catalog = (ROOT / "SKILLS.md").read_text(encoding="utf-8")
+        self.assertIn("该数值不等于独立用户或实际使用", skills)
+        self.assertIn("该数值不等于独立用户或实际使用", catalog)
+        self.assertNotIn("星数完全反映不出使用量", skills + catalog)
+
     def test_security_policy_routes_sensitive_reports_privately(self):
         policy = (ROOT / "SECURITY.md").read_text(encoding="utf-8")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")

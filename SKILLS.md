@@ -14,7 +14,7 @@
 
 **一句话：Skills 是给 AI 助手加的「专业技能包」。**
 
-一个文件夹 + 一份 `SKILL.md` 说明书，告诉 AI 什么时候该用、按什么步骤做。AI 自动判断何时激活。
+一个文件夹 + 一份 `SKILL.md` 说明书，告诉 AI 什么时候该用、按什么步骤做。支持 Skills 的客户端可以按任务自动激活；是否触发取决于客户端、版本、安装位置和任务措辞，需分别实测。
 
 | | 是什么 | 解决什么 |
 |---|--------|---------|
@@ -245,7 +245,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [ship-learn-next](https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/ship-learn-next) | ⭐517 | 基于进展帮你决定下一步该做什么/学什么 |
 | [google-workspace-skills](https://github.com/sanjay3290/ai-skills/tree/main/skills) | ⭐398 | Google 全家桶集成：Gmail、日历、Chat 等 |
 | [n8n-skills](https://github.com/haunchen/n8n-skills) | ⭐386 | 让 AI 直接理解和操作 n8n 工作流 |
-| [seo-geo-claude-skills](https://github.com/aaron-he-zhu/seo-geo-claude-skills) | ⭐148 | SEO / GEO（生成式引擎优化）技能集，20 个子技能：外链分析、关键词研究、内容写作等。139 星但 2.6 万安装 —— 星数完全反映不出使用量 |
+| [seo-geo-claude-skills](https://github.com/aaron-he-zhu/seo-geo-claude-skills) | ⭐148 | SEO / GEO（生成式引擎优化）技能集，20 个子技能：外链分析、关键词研究、内容写作等；另记录 skills.sh 安装次数，该数值不等于独立用户或实际使用 |
 | [solo-skills](https://github.com/rockscy/solo-skills) | ⭐6 | 独立开发者双语（中英）技能包：7 个 solo 场景 |
 
 ### 📊 数据研究（5 个）
