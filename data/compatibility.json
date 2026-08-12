@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-12",
+  "checkedAt": "2026-08-13",
   "methodology": {
     "discovery": "npx skills@1.5.22 add . --list",
-    "codexInstall": "Compare every repository SKILL.md byte-for-byte with the installed copy in ~/.agents/skills/<name>/SKILL.md",
+    "codexInstall": "Install all 13 skills with skills@1.5.22 --copy into an isolated temporary Git project, then compare every installed SKILL.md byte-for-byte with the current repository; hash the existing global skill files before and after to prove they were not changed",
     "activation": "Requires a recorded task-level run; discovery or installation alone is not activation evidence"
   },
   "clients": {
@@ -33,7 +33,21 @@
     },
     "codexInstall": {
       "status": "verified",
-      "identicalCount": 13
+      "identicalCount": 13,
+      "testedAt": "2026-08-13",
+      "cliVersion": "1.5.22",
+      "scope": "isolated-project-copy",
+      "installPath": ".agents/skills/<name>/SKILL.md",
+      "globalSkillsUnchanged": true,
+      "case": "cases/skills-cli-isolated-install-2026-08-13.md",
+      "note": "All 13 current repository SKILL.md files matched the isolated installed copies byte-for-byte. This verifies the recorded project-copy install only; it does not prove activation or future versions."
+    },
+    "existingGlobalCopies": {
+      "status": "partial",
+      "comparedAt": "2026-08-13",
+      "identicalCount": 0,
+      "total": 13,
+      "note": "The existing global copies were installed before later repository metadata and content updates. Installation is not continuous synchronization; update or reinstall before assuming the local copy matches the current repository."
     },
     "codexActivation": {
       "status": "partial",

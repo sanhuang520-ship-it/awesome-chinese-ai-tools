@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Codex Agent Skills 中文兼容性实测">
 <meta name="twitter:description" content="不把能安装、能触发和能完成任务混为一谈。">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","headline":"Codex Agent Skills 中文兼容性实测","description":"13 个本站原创 Agent Skills 的 Codex 安装与自动触发记录。","inLanguage":"zh-CN","dateModified":"2026-08-12","mainEntityOfPage":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/","author":{"@type":"Organization","name":"中文 AI Skills 库"}}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Codex Agent Skills 中文兼容性实测","description":"13 个本站原创 Agent Skills 的 Codex 安装与自动触发记录。","inLanguage":"zh-CN","dateModified":"2026-08-13","mainEntityOfPage":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/","author":{"@type":"Organization","name":"中文 AI Skills 库"}}
 </script>
 <style>
 :root{--paper:#f2eee4;--ink:#18201d;--muted:#66706a;--line:#c9c0ae;--red:#a34438;--green:#315f50;--amber:#b47825;--card:#fbf8f0;--serif:"Songti SC","Noto Serif CJK SC",STSong,serif;--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,monospace}
@@ -27,11 +27,11 @@
 </style>
 </head>
 <body>
-<header class="wrap top"><a href="../">← 中文 AI Skills 库</a><span>COMPATIBILITY NOTEBOOK · 2026-08-12</span></header>
+<header class="wrap top"><a href="../">← 中文 AI Skills 库</a><span>COMPATIBILITY NOTEBOOK · 2026-08-13</span></header>
 <main>
 <section class="wrap hero"><div><div class="eyebrow">CODEX · AGENT SKILLS · 中文实测</div><h1>能装上，不等于能完成。</h1><p class="lead">我们把发现、安装、自动触发与任务完成拆开测试。13 个本站原创 Skill 均在 Codex 中自动触发过一次，失败记录也保留。</p></div><aside class="stamp"><b>13 / 13</b><span>AUTOMATIC ACTIVATION OBSERVED</span><p>10 项当次完成；1 项按流程等待输入；2 项大任务失败后缩小复测通过。</p></aside></section>
 <section class="warning"><div class="wrap"><b>证据边界</b><p>这是 Codex CLI <code>0.147.0-alpha.6.5</code> 的单任务记录，不是官方认证，也不能外推到每一种提示词。Claude Code 与 Cursor 尚未实测。</p></div></section>
-<section class="wrap section"><h2>四层证据，不能混写</h2><p class="dek">普通列表常把“符合格式”写成“兼容”。这里每前进一步，都需要新的证据。</p><div class="steps"><article class="step"><i>01 / DISCOVERY</i><h3>CLI 能发现</h3><p><code>skills@1.5.22</code> 从仓库识别出 13 个 Skill。</p></article><article class="step"><i>02 / INSTALL</i><h3>文件已安装</h3><p>13 份 SKILL.md 与当前 Codex 共享安装目录逐字节一致。</p></article><article class="step"><i>03 / ACTIVATE</i><h3>自动选择</h3><p>提示不点名 Skill，观察 Codex 是否主动读取正确说明。</p></article><article class="step"><i>04 / DELIVER</i><h3>任务完成</h3><p>选对 Skill 后仍可能超时、越界或遗漏；必须单独记录。</p></article></div></section>
+<section class="wrap section"><h2>四层证据，不能混写</h2><p class="dek">普通列表常把“符合格式”写成“兼容”。这里每前进一步，都需要新的证据。</p><div class="steps"><article class="step"><i>01 / DISCOVERY</i><h3>CLI 能发现</h3><p><code>skills@1.5.22</code> 从仓库识别出 13 个 Skill。</p></article><article class="step"><i>02 / INSTALL</i><h3>文件已安装</h3><p>隔离临时 Git 项目安装 13 项，与当前仓库逐字节一致；<a href="../cases/skills-cli-isolated-install-2026-08-13.md">查看记录</a>。</p></article><article class="step"><i>03 / ACTIVATE</i><h3>自动选择</h3><p>提示不点名 Skill，观察 Codex 是否主动读取正确说明。</p></article><article class="step"><i>04 / DELIVER</i><h3>任务完成</h3><p>选对 Skill 后仍可能超时、越界或遗漏；必须单独记录。</p></article></div><p class="dek" style="margin-top:20px">安装不会持续同步：8 月 8 日留下的全局副本当前与仓库 0/13 一致。旧副本不等于安装失败，但也不能证明当前版本内容。</p></section>
 <section class="wrap section"><h2>13 个真实任务记录</h2><p class="dek">包含中文排版、README、周报、记账、电商、作业辅导、学习、拆书、教案和国风视觉。7 篇保留逐字任务原文，6 篇仅保留任务摘要；点击查看记录与限制。</p><div class="grid">
 <article class="case"><div><h3><a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/cases/chinese-typography-codex.md">中文网页排版审查</a></h3><p>识别字体、行高、断词、行宽与中文斜体问题。</p></div><span class="status">通过</span></article>
 <article class="case"><div><h3><a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/cases/github-readme-cn-codex.md">GitHub 首屏审查</a></h3><p>明确相关性不等于因果，不承诺涨星。</p></div><span class="status">通过</span></article>

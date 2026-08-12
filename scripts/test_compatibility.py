@@ -24,6 +24,17 @@ class CompatibilityDataTest(unittest.TestCase):
         self.assertEqual(self.data["results"]["discovery"]["count"], count)
         self.assertEqual(self.data["results"]["codexInstall"]["identicalCount"], count)
 
+    def test_install_evidence_is_isolated_and_discloses_stale_global_copies(self):
+        install = self.data["results"]["codexInstall"]
+        self.assertEqual("1.5.22", install["cliVersion"])
+        self.assertEqual("isolated-project-copy", install["scope"])
+        self.assertTrue(install["globalSkillsUnchanged"])
+        self.assertTrue((ROOT / install["case"]).is_file())
+        existing = self.data["results"]["existingGlobalCopies"]
+        self.assertEqual("partial", existing["status"])
+        self.assertEqual(0, existing["identicalCount"])
+        self.assertEqual(len(self.data["skills"]), existing["total"])
+
     def test_activation_evidence_points_to_a_case(self):
         activation = self.data["results"]["codexActivation"]
         self.assertEqual(activation["status"], "partial")
@@ -89,6 +100,9 @@ class CompatibilityDataTest(unittest.TestCase):
         self.assertIn("Codex CLI `0.147.0-alpha.6.5`", summary)
         self.assertNotIn("当前 Codex 客户端为桌面版", summary)
         self.assertIn("compatibility-result.yml", summary)
+        self.assertIn("隔离项目安装内容", summary)
+        self.assertIn("0 / 13 当前一致", summary)
+        self.assertIn("安装不是自动更新", summary)
 
 
 if __name__ == "__main__":

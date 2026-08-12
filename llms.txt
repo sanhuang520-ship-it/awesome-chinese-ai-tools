@@ -39,7 +39,8 @@
 ## 当前证据
 
 - `npx skills@1.5.22 add . --list` 能发现 13 个本站原创 Skill。
-- 13 份仓库 SKILL.md 与本机 `~/.agents/skills/<name>/SKILL.md` 逐字节一致。
+- `skills@1.5.22 --copy` 在隔离临时 Git 项目安装 13 项，均与当前仓库 SKILL.md 逐字节一致；全局 Skill 文件前后哈希不变。
+- 8 月 8 日留下的 13 个全局副本目前与仓库 0/13 一致；安装不是持续同步，旧副本不能代表当前仓库。
 - 13/13 在 Codex CLI 0.147.0-alpha.6.5 的单任务中发生自动触发；10 项当次任务完成，1 项按流程等待必要输入，2 项大任务失败后缩小复测通过。
 - Claude Code 与 Cursor 尚无本仓库运行的任务级实测，不能声称兼容通过。
 - skills CLI 在本机同时建立了 `~/.claude/skills/` 符号链接；这只证明文件布局，不证明 Claude Code 自动触发。

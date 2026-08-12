@@ -44,6 +44,17 @@ def main() -> None:
         fail(f"discovery count is {discovery_count}, expected {expected_count}")
     if identical_count != expected_count:
         fail(f"Codex identical count is {identical_count}, expected {expected_count}")
+    install = data["results"]["codexInstall"]
+    if install.get("scope") != "isolated-project-copy" or not install.get("globalSkillsUnchanged"):
+        fail("Codex install evidence must be isolated and prove global skills were unchanged")
+    install_case = install.get("case", "")
+    if not install_case or not (ROOT / install_case).is_file():
+        fail("Codex install evidence case is missing")
+    existing = data["results"].get("existingGlobalCopies", {})
+    if existing.get("status") != "partial" or existing.get("total") != expected_count:
+        fail("existing global copy drift must remain explicit")
+    if existing.get("identicalCount", expected_count) >= expected_count:
+        fail("existing global copy drift evidence was unexpectedly removed")
 
     activation = data["results"]["codexActivation"]
     verified_skills = activation.get("verifiedSkills", [])

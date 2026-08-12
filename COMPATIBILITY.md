@@ -1,6 +1,6 @@
 # Agent Skills 兼容性实测
 
-> 最近实测：**2026-08-12** · 原始记录：[data/compatibility.json](data/compatibility.json) · 汇总校验：[scripts/check_compatibility.py](scripts/check_compatibility.py) · 单次报告规范：[JSON Schema](schemas/compatibility-result.schema.json)
+> 最近实测：**2026-08-13** · 原始记录：[data/compatibility.json](data/compatibility.json) · 汇总校验：[scripts/check_compatibility.py](scripts/check_compatibility.py) · 单次报告规范：[JSON Schema](schemas/compatibility-result.schema.json)
 
 本页只记录实际拿到的证据。**能被 CLI 发现、文件安装成功、AI 自动触发、最终任务完成，是四件不同的事。** 没运行过的客户端明确标为“待测”，不把格式兼容写成实测通过。
 
@@ -9,16 +9,17 @@
 | 检查项 | 结果 | 证据边界 |
 |---|---|---|
 | `skills` CLI 发现本站原创 Skill | ✅ 13 / 13 | `npx skills@1.5.22 add . --list` 找到 13 个 Skill |
-| Codex 共享目录安装内容 | ✅ 13 / 13 | 仓库与 `~/.agents/skills/<name>/SKILL.md` 逐字节一致 |
+| Codex 隔离项目安装内容 | ✅ 13 / 13 | `skills@1.5.22 --copy` 安装至临时 Git 项目的 `.agents/skills/`，与当前仓库逐字节一致；[查看复测记录](cases/skills-cli-isolated-install-2026-08-13.md) |
+| 既有全局安装副本 | ⚠️ 0 / 13 当前一致 | 8 月 8 日安装后，仓库又新增元数据并修订内容；安装不是持续同步，不能把旧副本当成当前版本 |
 | Codex 自动触发 | ⚠️ 13 / 13 | 10 项当次任务完成；1 项按流程等待必要输入；2 项大任务失败后通过缩小复测 |
 | Claude Code | ⏳ 待测 | 当前没有运行 Claude Code，不能声称通过 |
 | Cursor | ⏳ 待测 | 当前没有运行 Cursor，不能声称通过 |
 
-当前任务级案例记录的客户端为 Codex CLI `0.147.0-alpha.6.5`；这仍不代表其他 Codex 版本或任务措辞会得到相同结果。
+当前任务级案例记录的客户端为 Codex CLI `0.147.0-alpha.6.5`；这仍不代表其他 Codex 版本或任务措辞会得到相同结果。安装复测与任务级自动触发是两轮不同证据，不能互相替代。
 
 ## 13 个本站原创 Skill
 
-| Skill | CLI 发现 | Codex 安装内容 | Codex 触发 | Claude Code | Cursor |
+| Skill | CLI 发现 | 隔离安装内容 | Codex 触发 | Claude Code | Cursor |
 |---|---:|---:|---:|---:|---:|
 | [`ai-learning-coach`](cases/ai-learning-coach-codex.md) | ✅ | ✅ | ⚠️¹ | ⏳ | ⏳ |
 | [`book-digest-cn`](cases/book-digest-cn-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
@@ -39,6 +40,12 @@
 ### 本轮发现的客户端限制
 
 Codex 在隔离实测中报告：已安装 Skill 较多时，会为适应 skills 上下文预算而缩短部分 description。`chinese-typography` 本次仍然正确触发，但这条告警可能影响其他 Skill 的发现，因此后续测试会同时记录触发成功与未触发结果。
+
+### 安装不是自动更新
+
+2026-08-13 复查时，未固定版本的 `npx skills --version` 命中了本机旧缓存 `1.5.18`，而 npm `latest` 与本轮固定复测版本均为 `1.5.22`。随后在临时 Git 项目运行固定版本安装，13 项均与当前仓库一致，且全局 Skill 文件前后哈希未变。
+
+与此同时，8 月 8 日留下的 13 个全局副本与当前仓库均已出现差异，主要是后来补充的作者、分类和标签元数据，另有 3 项内容修订。它不代表 CLI 安装错误，只证明**安装后的文件不会随上游仓库持续同步**。排错或复现时应先记录 `npx skills --version`，必要时固定已知版本，并在确认来源后使用 CLI 的更新或重新安装流程；不要直接假定旧副本仍等于当前仓库。
 
 ## 状态定义
 

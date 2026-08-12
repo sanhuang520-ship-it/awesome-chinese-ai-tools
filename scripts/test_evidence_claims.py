@@ -31,6 +31,15 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertIn("| Claude Code | ⏳ 待测 |", compatibility)
         self.assertIn("| Cursor | ⏳ 待测 |", compatibility)
 
+    def test_current_install_evidence_is_not_attributed_to_stale_global_copies(self):
+        compatibility_page = (ROOT / "compatibility" / "index.html").read_text(encoding="utf-8")
+        llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
+        combined = compatibility_page + llms
+        self.assertNotIn("13 份仓库 SKILL.md 与本机 `~/.agents/skills/<name>/SKILL.md` 逐字节一致", combined)
+        self.assertNotIn("与当前 Codex 共享安装目录逐字节一致", combined)
+        self.assertIn("隔离临时 Git 项目", combined)
+        self.assertIn("0/13 一致", combined)
+
     def test_first_party_tool_copy_avoids_unmeasured_superlatives(self):
         index = (ROOT / "index.html").read_text(encoding="utf-8")
         tools = (ROOT / "data" / "tools.json").read_text(encoding="utf-8")

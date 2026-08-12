@@ -39,6 +39,12 @@ def render_feed():
         raise ValueError(f"unexpected compatibility outcome totals: {dict(counts)}")
     entries = [
         item(
+            "skills CLI 1.5.22 隔离安装复测：13/13 一致，旧副本已漂移",
+            "cases/skills-cli-isolated-install-2026-08-13.md",
+            "Thu, 13 Aug 2026 00:51:00 +0800",
+            "在临时 Git 项目复制安装 13 个原创 Skill，全部与当前仓库逐字一致且未修改全局 Skill；同时公开 8 月 8 日全局副本已与当前仓库 0/13 一致，说明安装不会持续同步。",
+        ),
+        item(
             "Agent Skill 安装前安全检查：只读本地审计器",
             "audit-skill/",
             "Thu, 13 Aug 2026 00:36:00 +0800",
@@ -95,7 +101,7 @@ def render_feed():
     <link>{BASE}</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 13 Aug 2026 00:36:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 00:51:00 +0800</lastBuildDate>
     <atom:link href="{BASE}feed.xml" rel="self" type="application/rss+xml"/>
 
 {chr(10).join(entries)}

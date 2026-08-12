@@ -27,6 +27,12 @@ class InstallJourneyTest(unittest.TestCase):
         self.assertEqual(5, len(payload["step"]))
         self.assertEqual("2026-08-13", payload["dateModified"])
 
+    def test_install_page_discloses_version_cache_and_update_drift(self):
+        for phrase in ("安装后不会自动跟随仓库更新", "skills@1.5.22", "0/13 一致", "npx skills --version"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, self.body)
+        self.assertIn("../cases/skills-cli-isolated-install-2026-08-13.md", self.body)
+
 
 if __name__ == "__main__":
     unittest.main()
