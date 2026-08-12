@@ -150,6 +150,14 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertIn("第三方条目只做目录收录和链接复检", policy)
         self.assertIn("[🔒 安全报告](SECURITY.md)", readme)
 
+    def test_community_policy_rejects_manipulated_growth(self):
+        conduct = (ROOT / "CODE_OF_CONDUCT.md").read_text(encoding="utf-8")
+        contributing = (ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
+        for phrase in ("买星", "刷星", "互星", "伪造实测", "推广、返利、追踪参数"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, conduct)
+        self.assertIn("[社区行为规范](CODE_OF_CONDUCT.md)", contributing)
+
 
 
 if __name__ == "__main__":
