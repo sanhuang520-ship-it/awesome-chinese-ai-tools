@@ -1,5 +1,11 @@
 # 投稿说明
 
+## 当前优先发布
+
+`promo/codex-skill-compatibility-posts.md` —— 13 个 Skill 的 Codex 自动触发实测，包含两个失败与修订，事实更新到 2026-08-12。
+
+下面的旧踩坑文章已经发布，数量停留在较早阶段；除非重新同步全文数据，否则不要把旧标题与摘要直接再次发布。
+
 ## 文章文件
 `promo/article-5-skills-pitfalls.md` —— 正文，可直接复制粘贴
 
