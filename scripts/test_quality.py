@@ -24,6 +24,12 @@ class QualityDataTest(unittest.TestCase):
         networked = {name for name, item in self.data["skills"].items() if item["runtimeNetwork"]}
         self.assertEqual(networked, {"guofeng-threejs"})
 
+    def test_quality_checker_covers_structure_and_link_escape(self):
+        checker = (ROOT / "scripts" / "check_quality.py").read_text(encoding="utf-8")
+        for phrase in ("frontmatter name does not match directory", "symbolic links require manual review", "missing or escaping local references"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, checker)
+
 
 if __name__ == "__main__":
     unittest.main()

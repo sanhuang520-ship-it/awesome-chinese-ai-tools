@@ -7,6 +7,7 @@
 ## 检查结论
 
 - 13 个本站原创 Skill 均已覆盖。
+- 13 个目录名均与 `SKILL.md` frontmatter 的 `name` 一致，本地 Markdown 引用无缺失，也未发现符号链接。
 - 当前没有 `.py`、`.js`、`.sh` 等独立可执行脚本随 Skill 打包。
 - `guofeng-threejs` 的两个浏览器 Demo 会从 `unpkg.com` 加载固定版本 `three@0.170.0`；其余 Skill 没有发现运行时网络依赖。
 - 部分 Skill 带 Markdown 参考资料、CSS、HTML Demo 或 DESIGN.md 模板；“没有独立脚本”不等于内容无需审查。
