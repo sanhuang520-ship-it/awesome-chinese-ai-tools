@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""
-每天自动给 awesome-chinese-ai-tools 仓库提交一条"今日工具推荐"
-并检测所有收录工具的链接健康状态，挂掉的工具自动在 data/tools.json 中打标。
-运行方式：由 launchd 每天 09:00 自动触发
-"""
+"""Maintain verifiable repository data: link health, Skill status and generated indexes."""
 
 import json
 import re
@@ -11,7 +7,6 @@ import base64
 import urllib.request
 import urllib.error
 import datetime
-import random
 import os
 import ssl
 try:
@@ -32,34 +27,6 @@ if not GITHUB_TOKEN:
 REPO     = os.environ.get("GITHUB_REPOSITORY", "sanhuang520-ship-it/awesome-chinese-ai-tools")
 API_BASE = "https://api.github.com"
 # ──────────────────────────────────────────────────────────
-
-TOOL_SPOTLIGHTS = [
-    ("DeepSeek-R1", "https://chat.deepseek.com", "深度求索开源推理模型，数学和代码能力比肩 o1，API 价格极低，国产之光。"),
-    ("秘塔搜索", "https://metaso.cn", "国内最好用的 AI 搜索引擎，无广告，支持深度模式和学术模式，完全免费。"),
-    ("沉浸式翻译", "https://immersivetranslate.com", "浏览器双语对照翻译神器，支持 PDF、字幕、网页，免费版已非常够用。"),
-    ("通义灵码", "https://lingma.aliyun.com", "阿里出品的免费 AI 编程插件，支持 VS Code 和 JetBrains，对国内开发者最友好。"),
-    ("即梦 AI", "https://jimeng.jianying.com", "字节出品的图像/视频生成工具，中文提示词理解极佳，每日免费额度充足。"),
-    ("Kimi", "https://kimi.moonshot.cn", "月之暗面出品，200k 超长上下文，适合分析长文档、合同、论文，网页版免费。"),
-    ("可灵 AI", "https://klingai.kuaishou.com", "快手出品的视频生成工具，720p 高质量，运动流畅度领先，每日免费积分可用。"),
-    ("FastGPT", "https://fastgpt.in", "开源知识库问答平台，支持私有部署，RAG 效果好，中文支持完善。"),
-    ("Dify", "https://dify.ai", "国产开源 LLMOps 平台，可视化编排 Agent 工作流，GitHub 30k+ stars。"),
-    ("豆包", "https://www.doubao.com", "字节跳动出品，多模态支持，联网搜索，日常对话和创作场景表现均衡。"),
-    ("LiblibAI", "https://www.liblib.art", "国内最大的 Stable Diffusion 模型社区，每日免费算力，国风/二次元模型丰富。"),
-    ("Coze", "https://coze.cn", "字节出品的 Agent 搭建平台，国内版免费，插件生态丰富，适合搭建个人 AI 助手。"),
-    ("WPS AI", "https://ai.wps.cn", "Office 场景下的 AI 助手，文档摘要、公式生成、PPT 美化，对中文文档处理最优。"),
-    ("海螺视频", "https://hailuoai.video", "MiniMax 出品的视频生成工具，人物运动流畅，每日免费次数可用。"),
-    ("Fish Audio", "https://fish.audio", "支持中文方言的 TTS 平台，音色克隆效果好，每月有免费额度。"),
-    ("Windsurf", "https://codeium.com/windsurf", "Codeium 出品的免费 AI IDE，功能与 Cursor 相近，完全免费是最大优势。"),
-    ("智谱清言", "https://chatglm.cn", "清华技术背景，GLM-4 模型，支持 Agent 和代码解释器，API 有免费额度。"),
-    ("秘塔写作猫", "https://xiezuocat.com", "国内老牌中文写作助手，语法检查、改写润色、AI 续写，基础功能免费。"),
-    ("Gamma", "https://gamma.app", "AI 一键生成 PPT 和文档，模板精美，适合快速出提案和汇报，每月有免费积分。"),
-    ("天工 AI 搜索", "https://search.tiangong.cn", "昆仑万维出品，完全免费，中文资讯和时事查询效果好，支持多轮追问。"),
-    ("Qwen3", "https://tongyi.aliyun.com", "阿里最新旗舰模型，235B 参数，思维链推理强，API 有免费额度，性价比高。"),
-    ("MarsCode", "https://www.marscode.cn", "字节出品的在线云 IDE，内置 AI 编程助手，免费版功能够用，无需本地配置。"),
-    ("彩云小译", "https://caiyunapp.com", "日语翻译效果国内最佳，支持实时字幕翻译，适合追番和看日语技术文档。"),
-    ("讯飞配音", "https://peiyin.xunfei.cn", "科大讯飞出品，国内 TTS 标杆，音色最丰富，每日有免费字符额度。"),
-    ("Perplexity", "https://perplexity.ai", "AI 搜索引擎国际标杆，引用来源准确，学术和技术查询效果最佳，每日免费次数。"),
-]
 
 # ── GitHub API 封装 ────────────────────────────────────────
 def github_api(method, path, data=None, retries=3):
@@ -477,47 +444,6 @@ def build_skills_md():
     print(f"[SKILLS.md] {'✅' if 'content' in res else '❌'} {len(S)} 个 skill / {len(ours)} 原创 / {cn_n} 中文")
 
 
-# ── 今日推荐 Spotlight ─────────────────────────────────────
-def main():
-    today = datetime.date.today()
-    date_str = today.strftime("%Y-%m-%d")
-    month_str = today.strftime("%Y-%m")
-
-    random.seed(today.toordinal())
-    tool_name, tool_url, tool_desc = random.choice(TOOL_SPOTLIGHTS)
-
-    new_entry = f"\n## {date_str}\n\n**今日推荐：[{tool_name}]({tool_url})**\n\n{tool_desc}\n"
-    file_path = f"spotlights/{month_str}.md"
-
-    existing = github_api("GET", f"/repos/{REPO}/contents/{file_path}")
-
-    if "content" in existing:
-        current_content = base64.b64decode(existing["content"]).decode("utf-8")
-        if date_str in current_content:
-            print(f"[{date_str}] 今天已提交过，跳过。")
-            return
-        new_content = current_content + new_entry
-        sha = existing["sha"]
-    else:
-        header = f"# 工具推荐日志 {month_str}\n\n每日一个精选 AI 工具，持续更新。\n"
-        new_content = header + new_entry
-        sha = None
-
-    payload = {
-        "message": f"daily: {date_str} 推荐 {tool_name}",
-        "content": base64.b64encode(new_content.encode("utf-8")).decode("ascii"),
-        "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"}
-    }
-    if sha:
-        payload["sha"] = sha
-
-    result = github_api("PUT", f"/repos/{REPO}/contents/{file_path}", payload)
-    if "content" in result:
-        print(f"[{date_str}] ✅ 已提交：{tool_name}")
-    else:
-        print(f"[{date_str}] ❌ 失败：{result.get('message', result)}")
-
-
 # ── 日报模板 ───────────────────────────────────────────────
 def check_source_nav():
     """
@@ -575,7 +501,6 @@ if __name__ == "__main__":
     #   的 skill 复检和 SKILLS.md 重建全部没跑。）
     import traceback
     STEPS = [
-        ("今日工具推荐",   main),
         ("核对官方信源",   check_source_nav),
         ("工具链接实测",   check_tool_links),
         ("Skill 仓库复检", check_skills),
