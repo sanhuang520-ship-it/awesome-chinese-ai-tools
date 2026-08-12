@@ -2223,6 +2223,17 @@
       "skillOk": true,
       "skillStatus": "ok",
       "skillCheckedAt": "2026-08-12"
+    },
+    {
+      "name": "chinese-design-md",
+      "cat": "design",
+      "official": false,
+      "ours": true,
+      "desc": "中式 DESIGN.md 设计系统（本站原创）：8 套可直接丢进项目根目录的设计文档，AI 读了就按规范生成界面。含中文排版规则（行高 1.75 / 不用 justify / 着重号代替斜体 / CJK 避头尾），对比度逐项实测并标出不达标项",
+      "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-design-md",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-12"
     }
   ],
   "resources": [
