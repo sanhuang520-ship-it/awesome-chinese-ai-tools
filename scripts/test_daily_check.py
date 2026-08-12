@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import importlib.util
+import base64
+import json
 import os
 import unittest
 from pathlib import Path
@@ -39,6 +41,28 @@ class DailyCheckTest(unittest.TestCase):
             {"url": "https://github.com/example/one"},
         ]
         self.assertEqual({"anthropics/skills", "example/one"}, self.module.unique_skill_repositories(skills))
+
+    def test_generated_catalog_keeps_preinstall_audit_entry(self):
+        source = (ROOT / "data" / "skills.json").read_bytes()
+        captured = {}
+
+        def fake_api(method, path, data=None, retries=3):
+            if path.endswith("data/skills.json"):
+                return {"content": base64.b64encode(source).decode("ascii")}
+            if method == "GET" and path.endswith("SKILLS.md"):
+                return {"content": base64.b64encode(b"outdated").decode("ascii"), "sha": "old"}
+            if method == "PUT" and path.endswith("SKILLS.md"):
+                captured["body"] = base64.b64decode(data["content"]).decode("utf-8")
+                return {"content": {"sha": "new"}}
+            raise AssertionError((method, path))
+
+        with patch.object(self.module, "github_api", side_effect=fake_api):
+            self.module.build_skills_md()
+        catalog = captured["body"]
+        for phrase in ("安装第三方 Skill 前", "audit-skill/", "0 项命中不等于安全"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, catalog)
+        self.assertEqual(184, len(json.loads(source)["skills"]))
 
 
 if __name__ == "__main__":

@@ -48,6 +48,17 @@ class GrowthMetricsTest(unittest.TestCase):
         self.assertIn("must not be called current", data["notes"])
         self.assertIn("cannot be attributed", data["notes"])
 
+    def test_owner_traffic_snapshot_keeps_full_discovery_and_privacy_boundaries(self):
+        data = json.loads((ROOT / "metrics" / "2026-08-13-traffic-owner.json").read_text(encoding="utf-8"))
+        self.assertEqual(14, data["windowDays"])
+        self.assertEqual(50, data["traffic"]["uniqueVisitors"])
+        self.assertEqual(413, data["traffic"]["uniqueCloners"])
+        self.assertIn("Google", {item["name"] for item in data["traffic"]["topReferrers"]})
+        self.assertIn("SKILLS.md", data["traffic"]["topPaths"][1]["path"])
+        self.assertIn("no token", data["privacy"])
+        self.assertIn("must not be called users", data["notes"])
+        self.assertIn("cannot be used as a Star conversion rate", data["notes"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,40 @@
+{
+  "recordedAt": "2026-08-13T00:24:04+08:00",
+  "source": "GitHub owner Traffic API and public repository API",
+  "windowDays": 14,
+  "windowType": "rolling; exact first day is controlled by GitHub and may contain days with zero events",
+  "repository": "sanhuang520-ship-it/awesome-chinese-ai-tools",
+  "repositoryMetrics": {
+    "stars": 7,
+    "forks": 1,
+    "openIssues": 0,
+    "subscribers": 0
+  },
+  "traffic": {
+    "views": 113,
+    "uniqueVisitors": 50,
+    "clones": 968,
+    "uniqueCloners": 413,
+    "topReferrers": [
+      {"name": "github.com", "views": 40, "uniqueVisitors": 28},
+      {"name": "sanhuang520-ship-it.github.io", "views": 5, "uniqueVisitors": 4},
+      {"name": "mail.163.com", "views": 5, "uniqueVisitors": 1},
+      {"name": "mail.qq.com", "views": 3, "uniqueVisitors": 1},
+      {"name": "Google", "views": 1, "uniqueVisitors": 1}
+    ],
+    "topPaths": [
+      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools", "title": "Overview", "views": 66, "uniqueVisitors": 41},
+      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/SKILLS.md", "title": "/blob/main/SKILLS.md", "views": 18, "uniqueVisitors": 8},
+      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/issues", "title": "/issues", "views": 3, "uniqueVisitors": 3},
+      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/pulls", "title": "/pulls", "views": 3, "uniqueVisitors": 3},
+      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main", "title": "/tree/main", "views": 3, "uniqueVisitors": 2},
+      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions", "title": "/discussions", "views": 2, "uniqueVisitors": 2},
+      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/news", "title": "/tree/main/news", "views": 2, "uniqueVisitors": 2},
+      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills", "title": "/tree/main/skills", "views": 2, "uniqueVisitors": 2},
+      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/new/main", "title": "/new/main", "views": 2, "uniqueVisitors": 1},
+      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting", "title": "/tree/main/skills/ecommerce-copywriting", "views": 2, "uniqueVisitors": 1}
+    ]
+  },
+  "privacy": "Only aggregate counts and public path/referrer labels are stored; no token, IP address or visitor identity is written.",
+  "notes": "Observation only, not attribution evidence. GitHub's rolling window can overlap earlier snapshots. Clone counts may include CLI installs, automation, CI, repeated machines or other non-human activity and must not be called users. Referrer and path tables are partial top lists. Stars are cumulative while traffic is windowed, so this snapshot cannot be used as a Star conversion rate or prove that one edit caused growth."
+}

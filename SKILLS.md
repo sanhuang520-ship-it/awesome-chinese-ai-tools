@@ -6,6 +6,8 @@
 
 🧪 **[Codex 13/13 自动触发实测 → COMPATIBILITY.md](COMPATIBILITY.md)**　📋 [原创 Skill 输出示例](EXAMPLES.md)　🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
 
+🛡️ **[安装第三方 Skill 前：运行只读本地审计器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/)**（检查脚本、联网、凭据词与高风险命令；不执行目标，0 项命中不等于安全）
+
 > 兼容性边界：当前只有 Codex 的任务级实测；Claude Code 与 Cursor 待测。成功、失败或未触发均可通过[结构化表单提交](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)。
 
 ---
@@ -37,6 +39,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 > 而部分教程（包括 7 万星仓库）写的 `~/.config/claude-code/skills/`，本机实测**并不存在**。
 
 装好后重启你使用的客户端，用一个**不点名 Skill 名称**的自然任务测试是否自动触发。不同客户端与版本的行为可能不同；当前只有 Codex 的任务级实测。遇到问题先看[安装与排错页](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/)。
+
+安装第三方 Skill 前，可先运行 `python3 scripts/audit_skill.py /path/to/skill` 做只读静态扫描；它只提供人工复核线索，不是恶意代码检测或安全认证。
 
 ---
 
