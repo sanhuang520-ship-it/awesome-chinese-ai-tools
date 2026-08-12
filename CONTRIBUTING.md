@@ -58,6 +58,13 @@ python3 scripts/generate_social_preview.py --check
 
 生成 PNG 需要本机安装 `rsvg-convert`；完整本地检查也会验证 SVG 是否与当前数据一致，以及 PNG 是否为 1200 × 630。
 
+原创 Skill 说明页的 Open Graph、Twitter Card 和 JSON-LD 图片字段由脚本统一维护。新增或修改说明页标题、摘要、图片后运行：
+
+```bash
+python3 scripts/sync_social_cards.py --write
+python3 scripts/sync_social_cards.py
+```
+
 ---
 
 ## 提交前本地验证
