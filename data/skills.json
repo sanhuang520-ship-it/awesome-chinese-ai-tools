@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10",
+  "updated": "2026-08-12",
   "note": "官方 skills 描述译自 anthropics/skills 各 SKILL.md 的 description 字段；安装路径经本机实测验证",
   "installPath": "~/.agents/skills/",
   "categories": {
@@ -42,6 +42,10 @@
     "ppt": {
       "label": "📊 PPT 演示",
       "color": "#d98cae"
+    },
+    "agent": {
+      "label": "🤖 Agent 与调研",
+      "color": "#8f9ec9"
     }
   },
   "skills": [
@@ -2128,6 +2132,97 @@
       "skillOk": true,
       "skillStatus": "ok",
       "skillCheckedAt": "2026-08-11"
+    },
+    {
+      "name": "taste-skill",
+      "cat": "design",
+      "official": false,
+      "desc": "让 AI 别再生成套路化口水内容。13 个子技能：品牌套件、极简、粗野主义、图生代码、前端配图（Web/移动端）等，主打有审美的产出",
+      "descEn": "Taste-Skill — gives your AI good taste. Stops the AI from generating boring, generic slop. Premium brand-kit image generation for brand-guidelines boards, logo systems, identity decks.",
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "stars": 75452,
+      "lastPush": "2026-07-23",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-12"
+    },
+    {
+      "name": "Agent-Reach",
+      "cat": "agent",
+      "official": false,
+      "desc": "给 AI 装上看全网的眼睛：读取与搜索 Twitter、Reddit、YouTube、GitHub、B 站、小红书。一个 CLI，零 API 费用。中文触发词齐全（全网调研 / 查一下 / 看看大家怎么评价）",
+      "descEn": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, no API keys.",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "stars": 70739,
+      "lastPush": "2026-08-06",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-12"
+    },
+    {
+      "name": "system_prompts_leaks",
+      "cat": "dev",
+      "official": false,
+      "desc": "各家 AI 产品的系统提示词收集：Anthropic（Claude Fable 5 / Opus 5 / Claude Code）、OpenAI（GPT-5.6-Sol / Codex）等，持续更新。含 9 个 SKILL.md",
+      "descEn": "Extracted system prompts from Anthropic and OpenAI products, continuously updated.",
+      "url": "https://github.com/asgeirtj/system_prompts_leaks",
+      "stars": 62742,
+      "lastPush": "2026-08-07",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-12"
+    },
+    {
+      "name": "last30days-skill",
+      "cat": "agent",
+      "official": false,
+      "desc": "调研某个话题最近 30 天大家实际在说什么：抓 Reddit、X、YouTube、TikTok、HN、Polymarket、GitHub 的帖子与互动数据，输出带引用的总结。自带健康检查诊断失效数据源",
+      "descEn": "Research what people actually say about any topic in the last 30 days across Reddit, X, YouTube, TikTok, Hacker News, Polymarket, GitHub — then synthesizes a grounded summary.",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "stars": 57931,
+      "lastPush": "2026-08-09",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-12"
+    },
+    {
+      "name": "OpenMontage",
+      "cat": "agent",
+      "official": false,
+      "desc": "开源的智能体视频生产系统：12 条流水线、100+ 工具、700+ agent 技能，含 130 个 SKILL.md。覆盖配乐生成、素材处理、剪辑决策全流程",
+      "descEn": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-kit files.",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "stars": 47329,
+      "lastPush": "2026-08-03",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-12"
+    },
+    {
+      "name": "open-notebook",
+      "cat": "doc",
+      "official": false,
+      "desc": "NotebookLM 的开源替代，灵活度和功能更强。含发布流程编排技能（变更日志审计、风险分级测试矩阵、Docker 镜像门禁）",
+      "descEn": "An Open Source implementation of Notebook LM with more flexibility and features.",
+      "url": "https://github.com/lfnovo/open-notebook",
+      "stars": 36710,
+      "lastPush": "2026-08-11",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-12"
+    },
+    {
+      "name": "pm-skills",
+      "cat": "biz",
+      "official": false,
+      "desc": "产品经理技能市场：68 个 PM Skill + 42 条链式工作流，打包成 9 个插件。覆盖需求发现、产品策略、执行、上线到增长。⚠️ 方法论偏国外语境，国内 PM 可作参考",
+      "descEn": "PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.",
+      "url": "https://github.com/phuryn/pm-skills",
+      "stars": 25162,
+      "lastPush": "2026-07-03",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-12"
     }
   ],
   "resources": [
