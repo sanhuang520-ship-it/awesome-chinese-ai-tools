@@ -248,6 +248,22 @@ class EvidenceClaimsTest(unittest.TestCase):
                 self.assertIn(phrase, conduct)
         self.assertIn("[社区行为规范](CODE_OF_CONDUCT.md)", contributing)
 
+    def test_readme_first_screen_keeps_one_clear_value_and_action_path(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        first_screen = readme.split("## 这是什么", 1)[0]
+        self.assertEqual(4, first_screen.count("[!["))
+        self.assertEqual(3, first_screen.count("img.shields.io"))
+        for label in ("在线浏览与搜索", "安装与排错", "看真实输出", "看兼容性证据"):
+            with self.subTest(label=label):
+                self.assertIn(label, first_screen)
+        for secondary in ("安全报告", "中文开箱组合", "完整清单", "12 种画风对照"):
+            with self.subTest(secondary=secondary):
+                self.assertNotIn(secondary, first_screen)
+        self.assertIn(
+            "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list",
+            first_screen,
+        )
+
 
 
 if __name__ == "__main__":

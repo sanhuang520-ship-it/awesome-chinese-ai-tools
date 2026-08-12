@@ -11,12 +11,9 @@
 [![Skills](https://img.shields.io/badge/Skills-184%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
 [![原创](https://img.shields.io/badge/本站原创-13%20个-86b894?style=flat-square)](EXAMPLES.md)
 [![Daily Check](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml/badge.svg)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)
-[![Stars](https://img.shields.io/github/stars/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=e0795a)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/github/v/tag/sanhuang520-ship-it/awesome-chinese-ai-tools?style=flat-square&color=76a88a)](CHANGELOG.md)
 
-**[🌐 在线浏览（可搜索筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[📦 安装排错](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/)　·　[🧪 兼容性实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/)　·　[🛡️ 质量标签](QUALITY.md)　·　[🔒 安全报告](SECURITY.md)　·　[🧰 中文开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)　·　[📋 完整清单](SKILLS.md)　·
-[📸 真实渲染截图](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)　·　[🎨 12 种画风对照](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/)　·　[✒️ 中文排版实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/)
+**[🌐 在线浏览与搜索](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[📦 安装与排错](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/)　·　[📋 看真实输出](EXAMPLES.md)　·　[🧪 看兼容性证据](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/)
 
 </div>
 
@@ -114,7 +111,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 **[→ 用结构化表单提交一次兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)**　·　[在 Discussion 交流](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)
 
-请先移除 Token、邮箱、私人路径和未公开业务数据。被整理进仓库的案例会保留原讨论链接，并明确标注是用户反馈，不会把个别体验写成普遍结论。
+请先移除 Token、邮箱、私人路径和未公开业务数据；敏感漏洞请按[🔒 安全报告](SECURITY.md)中的私密渠道提交。被整理进仓库的案例会保留原讨论链接，并明确标注是用户反馈，不会把个别体验写成普遍结论。
 
 ---
 
