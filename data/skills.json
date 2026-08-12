@@ -2532,7 +2532,7 @@
     {
       "name": "anthropics/skills",
       "stars": 166200,
-      "desc": "官方仓库，质量最有保证",
+      "desc": "官方仓库；仍建议安装前检查具体 Skill 内容",
       "url": "https://github.com/anthropics/skills"
     },
     {

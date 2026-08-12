@@ -31,6 +31,14 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertIn("| Claude Code | ⏳ 待测 |", compatibility)
         self.assertIn("| Cursor | ⏳ 待测 |", compatibility)
 
+    def test_first_party_tool_copy_avoids_unmeasured_superlatives(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        tools = (ROOT / "data" / "tools.json").read_text(encoding="utf-8")
+        forbidden = ["国内最好用", "效果最佳", "国内最强", "效果最准", "减少 70%", "完全免费，无限次"]
+        for claim in forbidden:
+            with self.subTest(claim=claim):
+                self.assertNotIn(claim, index + tools)
+
 
 if __name__ == "__main__":
     unittest.main()

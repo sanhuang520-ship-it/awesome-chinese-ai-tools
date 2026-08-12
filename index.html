@@ -1358,7 +1358,7 @@ const workflows = [
     keywords:['小红书','红书','种草','笔记','博主','内容创作','小红'],
     title:'小红书内容创作工作流',desc:'从选题策划到发布的完整流程',
     steps:[
-      {emoji:'💡',tool:'豆包',url:'https://www.doubao.com',action:'选题 + 写正文文案',tip:'字节出品，对小红书风格理解最准，直接说"帮我写关于XX的爆款小红书"'},
+      {emoji:'💡',tool:'豆包',url:'https://www.doubao.com',action:'选题 + 写正文文案',tip:'字节出品，可让它按目标读者、主题和语气生成多个文案版本，再由你核对事实'},
       {emoji:'🎨',tool:'即梦 AI',url:'https://jimeng.jianying.com',action:'生成配图',tip:'中文描述直接出图，不需要学英文提示词，每天免费额度充足'},
       {emoji:'🌐',tool:'沉浸式翻译',url:'https://immersivetranslate.com',action:'浏览海外平台找灵感',tip:'看 Instagram/Pinterest 内容时双语对照，快速吸收选题思路'},
     ]},
@@ -1367,8 +1367,8 @@ const workflows = [
     title:'短视频创作工作流',desc:'从脚本策划到成品视频的完整流程',
     steps:[
       {emoji:'📝',tool:'豆包',url:'https://www.doubao.com',action:'写视频脚本',tip:'说明主题、时长、风格，让它按【画面/旁白/字幕】格式输出，直接可用'},
-      {emoji:'🎬',tool:'可灵 AI',url:'https://klingai.kuaishou.com',action:'生成视频片段',tip:'国产最稳定，720p，人物运动自然，每天有免费额度'},
-      {emoji:'🎙️',tool:'讯飞配音',url:'https://peiyin.xunfei.cn',action:'生成旁白配音',tip:'音色最多，每天免费字符够一条短视频，找一个适合内容调性的声音'},
+      {emoji:'🎬',tool:'可灵 AI',url:'https://klingai.kuaishou.com',action:'生成视频片段',tip:'支持文生视频和图生视频；分辨率、额度与生成条件以官网为准'},
+      {emoji:'🎙️',tool:'讯飞配音',url:'https://peiyin.xunfei.cn',action:'生成旁白配音',tip:'提供多种中文音色；先试听并核对当前字符额度'},
       {emoji:'🖼️',tool:'即梦 AI',url:'https://jimeng.jianying.com',action:'生成封面图',tip:'中文描述直接出图，封面点击率决定播放量，这步别省'},
     ]},
   { id:'website', emoji:'🌐',
@@ -1384,17 +1384,17 @@ const workflows = [
     title:'APP / 小程序开发工作流',desc:'从原型到代码的 AI 辅助开发',
     steps:[
       {emoji:'🎨',tool:'v0',url:'https://v0.dev',action:'快速出 UI 原型',tip:'描述界面需求，直接生成可用的 React 组件代码，原型当天可演示'},
-      {emoji:'💻',tool:'Cursor',url:'https://cursor.sh',action:'主力开发工具',tip:'理解整个代码库，复杂功能直接描述让它写，减少 70% 重复劳动'},
-      {emoji:'🔍',tool:'Perplexity',url:'https://perplexity.ai',action:'技术问题查询',tip:'遇到报错或不懂的 API，比 Google 更快给出准确答案，附带来源'},
-      {emoji:'💰',tool:'DeepSeek',url:'https://chat.deepseek.com',action:'代码审查 + 优化',tip:'代码能力比肩 GPT-4，API 价格只有 OpenAI 的 1/10，做项目最省钱'},
+      {emoji:'💻',tool:'Cursor',url:'https://cursor.sh',action:'代码编辑与调试',tip:'可结合代码库上下文处理功能开发；生成结果仍需测试和审查'},
+      {emoji:'🔍',tool:'Perplexity',url:'https://perplexity.ai',action:'技术问题查询',tip:'回答附带来源链接，适合先定位资料，再回到官方文档核对'},
+      {emoji:'💰',tool:'DeepSeek',url:'https://chat.deepseek.com',action:'代码审查 + 优化',tip:'可用于提出审查建议；模型能力与 API 价格会变化，请查官网并运行测试'},
     ]},
   { id:'ppt', emoji:'📊',
     keywords:['ppt','PPT','演示','幻灯片','汇报','提案','报告','演讲','slides'],
-    title:'PPT / 演示文稿工作流',desc:'10 分钟出一份专业汇报',
+    title:'PPT / 演示文稿工作流',desc:'从材料整理到演示文稿初稿',
     steps:[
       {emoji:'🧠',tool:'Kimi',url:'https://kimi.moonshot.cn',action:'整理内容大纲',tip:'把原始材料和数据丢进去，让它提炼出清晰的 PPT 框架结构'},
-      {emoji:'🚀',tool:'Gamma',url:'https://gamma.app',action:'一键生成 PPT',tip:'粘贴大纲，自动生成精美演示文稿，模板质量远超 WPS 自带的'},
-      {emoji:'🎨',tool:'即梦 AI',url:'https://jimeng.jianying.com',action:'生成专属配图',tip:'需要特定场景的插图时，中文描述直接出，比找版权图快 10 倍'},
+      {emoji:'🚀',tool:'Gamma',url:'https://gamma.app',action:'生成 PPT 初稿',tip:'粘贴大纲生成演示文稿，再人工核对结构、数据和版式'},
+      {emoji:'🎨',tool:'即梦 AI',url:'https://jimeng.jianying.com',action:'生成专属配图',tip:'需要特定场景插图时可用中文描述生成；发布前检查版权与事实表达'},
     ]},
   { id:'writing', emoji:'✍️',
     keywords:['文章','写作','公众号','博客','内容','稿子','文案','写','笔'],
@@ -1408,21 +1408,21 @@ const workflows = [
     keywords:['翻译','英文','外文','英语','日语','韩语','看文档','外国','看论文'],
     title:'翻译 / 外文阅读工作流',desc:'高效处理外文资料，不再被语言卡住',
     steps:[
-      {emoji:'🌍',tool:'沉浸式翻译',url:'https://immersivetranslate.com',action:'浏览外文网站',tip:'浏览器插件，双语对照不破坏排版，装上一次，终身受益'},
-      {emoji:'📄',tool:'DeepL',url:'https://deepl.com',action:'精准翻译长文本',tip:'欧洲语言质量全球最佳，每月 50 万字符免费，中文翻成英文也很自然'},
+      {emoji:'🌍',tool:'沉浸式翻译',url:'https://immersivetranslate.com',action:'浏览外文网站',tip:'浏览器插件，提供网页双语对照；具体支持范围以当前版本为准'},
+      {emoji:'📄',tool:'DeepL',url:'https://deepl.com',action:'翻译长文本',tip:'支持多种欧洲语言与中英互译；额度与文件限制以官网为准'},
       {emoji:'📖',tool:'Kimi',url:'https://kimi.moonshot.cn',action:'上传 PDF 直接提问',tip:'外文 PDF 直接上传，用中文问它要什么，省去通读原文的时间'},
     ]},
   { id:'image', emoji:'🎨',
     keywords:['图片','图像','设计','海报','插画','配图','画图','logo','封面','美图'],
     title:'图像设计 / 配图工作流',desc:'不会设计也能做出好看的图',
     steps:[
-      {emoji:'🎨',tool:'即梦 AI',url:'https://jimeng.jianying.com',action:'生成插画 / 配图',tip:'中文描述直接出图，不需要英文，每天免费额度充足，上手最快'},
-      {emoji:'🖼️',tool:'文心一格',url:'https://yige.baidu.com',action:'国风 / 古风图片',tip:'国风水墨风格国产最佳，每天有免费电量'},
-      {emoji:'🔥',tool:'LiblibAI',url:'https://www.liblib.art',action:'精细化风格控制',tip:'想要特定风格（二次元/写实/插画），在这里选专门的模型，效果最准'},
+      {emoji:'🎨',tool:'即梦 AI',url:'https://jimeng.jianying.com',action:'生成插画 / 配图',tip:'支持中文描述出图；当前免费额度和商用条件请查官网'},
+      {emoji:'🖼️',tool:'文心一格',url:'https://yige.baidu.com',action:'国风 / 古风图片',tip:'提供国风、水墨等生成风格；额度与授权条件以官网为准'},
+      {emoji:'🔥',tool:'LiblibAI',url:'https://www.liblib.art',action:'精细化风格控制',tip:'可按二次元、写实、插画等方向选择模型；效果取决于模型和提示词'},
     ]},
   { id:'resume', emoji:'💼',
     keywords:['简历','求职','面试','工作','应聘','offer','跳槽','找工作','职场'],
-    title:'求职 / 简历优化工作流',desc:'让你的简历从人堆里脱颖而出',
+    title:'求职 / 简历优化工作流',desc:'从岗位研究到简历与作品集初稿',
     steps:[
       {emoji:'📝',tool:'DeepSeek',url:'https://chat.deepseek.com',action:'优化简历内容',tip:'粘贴你的经历，让它帮你量化成果、提炼亮点，用 STAR 法则重写'},
       {emoji:'🔍',tool:'Kimi',url:'https://kimi.moonshot.cn',action:'深入研究目标公司',tip:'上传公司官网/招聘 JD，让它总结公司业务重点和面试考察方向'},
@@ -1438,9 +1438,9 @@ const workflows = [
     ]},
   { id:'meeting', emoji:'🏢',
     keywords:['会议','纪要','记录','总结','周报','汇报','开会','会议记录','工作汇报'],
-    title:'会议纪要 / 职场总结工作流',desc:'把会议时间利用率提高一倍',
+    title:'会议纪要 / 职场总结工作流',desc:'从录音文字到结构化行动项',
     steps:[
-      {emoji:'🎙️',tool:'讯飞星火',url:'https://xinghuo.xfyun.cn',action:'录音实时转文字',tip:'讯飞语音识别国内准确率最高，会议录音直接转成可编辑的文字稿'},
+      {emoji:'🎙️',tool:'讯飞星火',url:'https://xinghuo.xfyun.cn',action:'录音转文字',tip:'可将会议录音转成文字稿；人名、数字和专业术语需要人工核对'},
       {emoji:'📝',tool:'Kimi',url:'https://kimi.moonshot.cn',action:'整理成结构化纪要',tip:'把文字稿粘进去，让它整理为：决策事项 / 行动项 / 负责人 / 截止日期'},
       {emoji:'📊',tool:'WPS AI',url:'https://ai.wps.cn',action:'生成周报 / 汇报材料',tip:'给它关键事项，帮你写成格式规范的职场文体，领导喜欢看的那种'},
     ]},
@@ -1456,7 +1456,7 @@ const workflows = [
     keywords:['创业','商业计划','bp','融资','产品','mvp','市场调研','竞品','创业计划','BP'],
     title:'创业 / 商业计划工作流',desc:'用 AI 加速从想法到 MVP',
     steps:[
-      {emoji:'🔍',tool:'Perplexity',url:'https://perplexity.ai',action:'市场调研 + 竞品分析',tip:'问它"XX市场规模"、"XX竞品对比"，引用来源有出处，比自己搜快 5 倍'},
+      {emoji:'🔍',tool:'Perplexity',url:'https://perplexity.ai',action:'市场调研 + 竞品分析',tip:'可用来定位市场与竞品资料；引用链接需要逐条打开并核对原文'},
       {emoji:'📊',tool:'Gamma',url:'https://gamma.app',action:'制作 BP / 路演 PPT',tip:'给它商业模式框架，直接生成投资人看的演示文稿'},
       {emoji:'⚡',tool:'Bolt',url:'https://bolt.new',action:'快速搭 MVP 演示',tip:'描述核心功能，当天可以跑起来一个可演示的版本，快速验证方向'},
       {emoji:'🤖',tool:'DeepSeek',url:'https://chat.deepseek.com',action:'方案压力测试',tip:'让它扮演投资人或竞争对手提出质疑，帮你提前发现方案漏洞'},
@@ -1466,8 +1466,8 @@ const workflows = [
     title:'播客 / 有声内容工作流',desc:'从文字稿到成品音频的完整流程',
     steps:[
       {emoji:'✍️',tool:'豆包',url:'https://www.doubao.com',action:'写播客脚本',tip:'给它主题、时长和风格，让它写出口语感强、有节奏感的对话稿'},
-      {emoji:'🎙️',tool:'讯飞配音',url:'https://peiyin.xunfei.cn',action:'生成旁白配音',tip:'音色最多，每天免费字符，找一个适合你内容调性的声音'},
-      {emoji:'🔊',tool:'Fish Audio',url:'https://fish.audio',action:'克隆你自己的声音',tip:'上传 1 分钟真人录音样本，AI 克隆出你的声音，以后无限用'},
+      {emoji:'🎙️',tool:'讯飞配音',url:'https://peiyin.xunfei.cn',action:'生成旁白配音',tip:'提供多种中文音色；先试听并核对当前字符额度'},
+      {emoji:'🔊',tool:'Fish Audio',url:'https://fish.audio',action:'克隆你自己的声音',tip:'需要本人授权的录音样本；样本长度、额度和使用规则以官网为准'},
     ]},
   { id:'ecommerce', emoji:'🛍️',
     keywords:['电商','淘宝','拼多多','京东','产品描述','主图','详情页','带货','选品','卖货'],
@@ -1483,7 +1483,7 @@ const workflows = [
     steps:[
       {emoji:'📖',tool:'Kimi',url:'https://kimi.moonshot.cn',action:'上传教材直接提问',tip:'把教材 PDF 上传，用自己的话提问，比死记硬背高效得多'},
       {emoji:'🌐',tool:'沉浸式翻译',url:'https://immersivetranslate.com',action:'阅读英文原版资料',tip:'双语对照看英文教程，同时学内容和专业词汇，一举两得'},
-      {emoji:'💬',tool:'DeepSeek',url:'https://chat.deepseek.com',action:'出题 + 错题讲解',tip:'让它给你出练习题，答错了让它详细解释，完全免费，无限次使用'},
+      {emoji:'💬',tool:'DeepSeek',url:'https://chat.deepseek.com',action:'出题 + 错题讲解',tip:'让它按目标和难度出题，答错后解释；当前额度和访问条件以官网为准'},
     ]},
 ];
 
@@ -1703,7 +1703,7 @@ function renderPricing() {
       <div class="pricing-stat">
         <span class="pricing-stat-dot free"></span>
         <span class="pricing-stat-num">${freeOnly.length}</span>
-        <span class="pricing-stat-label">完全免费</span>
+        <span class="pricing-stat-label">未记录付费版</span>
       </div>
       <div class="pricing-stat">
         <span class="pricing-stat-dot freemium"></span>
@@ -1719,7 +1719,7 @@ function renderPricing() {
         价格以官网为准，可能随时变动
       </div>
     </div>
-    ${section('ps-free',     '🟢 完全免费 — 无付费版', 'free',     freeOnly.length, freeOnly)}
+    ${section('ps-free',     '🟢 当前数据未记录付费版', 'free',     freeOnly.length, freeOnly)}
     ${section('ps-freemium', '🟡 免费 + 付费版 — 可升级', 'freemium', freemium.length, freemium)}
     ${paidOnly.length ? section('ps-paid', '🔴 无免费额度 — 需付费才能用', 'paid', paidOnly.length, paidOnly) : ''}
   `;
