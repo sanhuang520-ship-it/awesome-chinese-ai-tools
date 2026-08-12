@@ -2234,6 +2234,58 @@
       "skillOk": true,
       "skillStatus": "ok",
       "skillCheckedAt": "2026-08-12"
+    },
+    {
+      "name": "claude-skill-web-clone",
+      "cat": "cn",
+      "official": false,
+      "desc": "网站复刻方法论：先拿真源码 → 判路径 → 逆向拆解 → 搭工程 → 替换内容。覆盖静态站/React/WebGL/Canvas/Three.js。作者强调不靠 AI 幻觉出来的代码",
+      "descEn": "Methodology for faithfully cloning any website (static / React / WebGL) — without copying AI-hallucinated code.",
+      "url": "https://github.com/Jane-xiaoer/claude-skill-web-clone",
+      "stars": 937,
+      "lastPush": "2026-06-30",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-12"
+    },
+    {
+      "name": "clone-any-website-skill",
+      "cat": "dev",
+      "official": false,
+      "desc": "Codex 技能：把公开网站重建成干净可维护的本地项目，讲究视觉、交互、媒体与多端还原度",
+      "descEn": "A Codex skill for rebuilding public websites as clean, maintainable projects with disciplined visual and interaction fidelity.",
+      "url": "https://github.com/promptwhisper/clone-any-website-skill",
+      "stars": 62,
+      "lastPush": "2026-07-30",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-12"
+    },
+    {
+      "name": "watch-skill",
+      "cat": "agent",
+      "official": false,
+      "desc": "让 AI 看懂视频：把视频、直播流、以及 agent 自己的录屏转成可理解的内容并自我校验。含 11 个 SKILL.md，一键装 ffmpeg/yt-dlp 与 MCP",
+      "descEn": "Video understanding and self-verification for AI agents. Turn videos, streams, and agent screen recordings into structured understanding.",
+      "url": "https://github.com/oxbshw/watch-skill",
+      "stars": 279,
+      "lastPush": "2026-08-10",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-12"
+    },
+    {
+      "name": "super-video-maker-skill",
+      "cat": "agent",
+      "official": false,
+      "desc": "端到端 AI 视频生产：HeyGen 数字人、Seedance/字节素材、OpenAI 配图、Remotion 合成，覆盖制作/剪辑/字幕/配乐/导出",
+      "descEn": "End-to-end AI video production skill for agentic frameworks: HeyGen avatars, Seedance b-roll, OpenAI images, Remotion.",
+      "url": "https://github.com/Bomx/super-video-maker-skill",
+      "stars": 213,
+      "lastPush": "2026-08-09",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-08-12"
     }
   ],
   "resources": [
