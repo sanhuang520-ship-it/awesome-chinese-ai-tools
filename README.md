@@ -86,6 +86,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 已经安装但没有自动触发？按 **[Codex Skill 不触发的 5 步诊断树](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/codex-skill-not-triggering/)** 依次检查 CLI 发现、文件路径、客户端读取、任务完成和环境阻断。
 
+想把重复工作变成 Skill？查看 **[创建 Codex Skill 中文实战](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/create-codex-skill/)**：从最小 SKILL.md、触发描述到安装与自动触发测试。
+
 仓库也已被 [skills.sh 收录](https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools)，可查看 13 个 Skill 的独立页面和该平台记录的聚合安装次数。该数字来自 skills CLI 遥测，可能包含维护者安装核验，不等于独立用户、实际使用效果或质量认证。
 
 [Agent-Skills.md 作者页](https://agent-skills.md/authors/sanhuang520-ship-it)也已展示全部 13 个原创 Skill。它是第三方目录入口，不代表独立兼容性实测、内容审核或质量认证；分类与标签正在刷新复核。

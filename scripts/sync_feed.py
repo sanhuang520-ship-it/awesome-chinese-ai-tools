@@ -39,6 +39,12 @@ def render_feed():
         raise ValueError(f"unexpected compatibility outcome totals: {dict(counts)}")
     entries = [
         item(
+            "如何创建 Codex Skill：从 SKILL.md 到自动触发",
+            "create-codex-skill/",
+            "Wed, 12 Aug 2026 23:52:00 +0800",
+            "按 OpenAI 当前文档从成功工作流开始，创建最小 SKILL.md，写清触发范围，按需拆分资源，再验证发现、自动选择和最终交付。",
+        ),
+        item(
             "Codex Skill 安装了却不触发？5 步定位",
             "codex-skill-not-triggering/",
             "Wed, 12 Aug 2026 23:58:00 +0800",
@@ -83,7 +89,7 @@ def render_feed():
     <link>{BASE}</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 12 Aug 2026 23:58:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 23:52:00 +0800</lastBuildDate>
     <atom:link href="{BASE}feed.xml" rel="self" type="application/rss+xml"/>
 
 {chr(10).join(entries)}
