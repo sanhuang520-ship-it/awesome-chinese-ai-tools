@@ -39,14 +39,16 @@
       "status": "partial",
       "verifiedSkills": [
         "chinese-typography",
-        "github-readme-cn"
+        "github-readme-cn",
+        "chinese-work-report"
       ],
       "cases": [
         "cases/chinese-typography-codex.md",
-        "cases/github-readme-cn-codex.md"
+        "cases/github-readme-cn-codex.md",
+        "cases/chinese-work-report-codex.md"
       ],
       "clientVersion": "codex-cli 0.147.0-alpha.6.5",
-      "note": "Two task-level automatic activations verified; this is not evidence for every prompt or client version"
+      "note": "Three task-level automatic activations verified; this is not evidence for every prompt or client version"
     },
     "claudeCode": {
       "status": "not-tested"

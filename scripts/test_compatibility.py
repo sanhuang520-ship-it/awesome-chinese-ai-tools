@@ -29,7 +29,7 @@ class CompatibilityDataTest(unittest.TestCase):
         self.assertEqual(activation["status"], "partial")
         self.assertEqual(
             activation["verifiedSkills"],
-            ["chinese-typography", "github-readme-cn"],
+            ["chinese-typography", "github-readme-cn", "chinese-work-report"],
         )
         self.assertEqual(len(activation["verifiedSkills"]), len(activation["cases"]))
         for case in activation["cases"]:
