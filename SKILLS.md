@@ -1,6 +1,6 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **156 个 Skill｜63 个中文原创｜✍️ 12 个本站原创**  
+> **163 个 Skill｜63 个中文原创｜✍️ 12 个本站原创**  
 > 每一个都经 GitHub API 验证仓库真实存在  
 > 🔄 最近自动复检：**2026-08-11**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
@@ -116,7 +116,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [CN-The-Complete-Guide-to-Building-Skill-for-Claude](https://github.com/chenqing0106/CN-The-Complete-Guide-to-Building-Skill-for-Claude) | ⭐5 | 《为 Claude 构建技能的完整指南》中文翻译：结构、模式、测试、分发 |
 | [ai-video-creator](https://github.com/Frank-oll/ai-video-creator) | ⭐5 | 把生活妙招选题端到端做成可发布的竖屏 AI 短视频（含配音） |
 
-### 📄 文档办公（9 个）
+### 📄 文档办公（10 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -125,12 +125,13 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [pptx](https://github.com/anthropics/skills/tree/main/skills/pptx) | 官方 | PPT 演示文稿：读取、生成幻灯片、调整版式与模板 |
 | [xlsx](https://github.com/anthropics/skills/tree/main/skills/xlsx) | 官方 | Excel 表格：公式计算、图表生成、数据转换 |
 | [doc-coauthoring](https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring) | 官方 | 结构化文档协作撰写流程，引导多人共同完成文档 |
+| [open-notebook](https://github.com/lfnovo/open-notebook) | ⭐36,710 | NotebookLM 的开源替代，灵活度和功能更强。含发布流程编排技能（变更日志审计、风险分级测试矩阵、Docker 镜像门禁） |
 | [NotebookLM Integration](https://github.com/PleasePrompto/notebooklm-skill) | ⭐7,599 | 让 Claude Code 直接对话 NotebookLM，做有出处的问答 🕰<sub>2025-11-21 后未更新</sub> |
 | [article-extractor](https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/article-extractor) | ⭐517 | 从网页提取完整文章正文与元数据 |
 | [Markdown to EPUB Converter](https://github.com/smerchek/claude-epub-skill) | ⭐150 | 把 Markdown 文档转成专业 EPUB 电子书 🕰<sub>2025-10-18 后未更新</sub> |
 | [Master Claude for Legal](https://github.com/sboghossian/master-claude-for-legal) | ⭐54 | 法务技能包：NDA 审阅、多方版本对比、引用核验 |
 
-### 💻 开发工程（25 个）
+### 💻 开发工程（26 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -143,6 +144,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [test-driven-development](https://github.com/obra/superpowers/tree/main/skills/test-driven-development) | ⭐270,554 | 测试驱动开发全流程指导，写代码前先写测试 |
 | [using-git-worktrees](https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/) | ⭐270,554 | 自动创建隔离的 git worktree，多分支并行开发不打架 |
 | [finishing-a-development-branch](https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch) | ⭐270,554 | 开发分支收尾：合并、清理、发布的标准流程 |
+| [system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) | ⭐62,742 | 各家 AI 产品的系统提示词收集：Anthropic（Claude Fable 5 / Opus 5 / Claude Code）、OpenAI（GPT-5.6-Sol / Codex）等，持续更新。含 9 个 SKILL.md |
 | [planning-with-files](https://github.com/othmanadi/planning-with-files) | ⭐26,095 | Manus 式的文件化持久规划：把 task_plan.md / findings.md / progress.md 落到磁盘，上下文丢了工作也不丢。含 18 个子技能 |
 | [baoyu-skills](https://github.com/jimliu/baoyu-skills) | ⭐24,846 | 宝玉的技能合集（22 个）：公众号摘要、发布流程自动化（自动识别版本文件与 changelog，支持 Node/Python/Rust/Claude Plugin）等 |
 | [Skill Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | ⭐14,741 | 把任意文档网站自动转成 Claude Skill —— 造 skill 的利器 |
@@ -160,7 +162,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [D3.js Visualization](https://github.com/chrisvoncsefalvay/claude-d3js-skill) | ⭐220 | 用 D3 做交互式数据可视化图表 🕰<sub>2025-10-18 后未更新</sub> |
 | [great_cto](https://github.com/avelikiy/great_cto) | ⭐75 | 7 个专业子智能体（技术负责人、资深工程师等）组成的技术团队 |
 
-### 🎨 创意设计（10 个）
+### 🎨 创意设计（11 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -169,18 +171,20 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [theme-factory](https://github.com/anthropics/skills/tree/main/skills/theme-factory) | 官方 | 为作品套用主题配色的工具集（幻灯片、网页等） |
 | [brand-guidelines](https://github.com/anthropics/skills/tree/main/skills/brand-guidelines) | 官方 | 把品牌配色与字体规范应用到各类产出物 |
 | [slack-gif-creator](https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator) | 官方 | 制作适配 Slack 的动图 GIF |
+| [taste-skill](https://github.com/Leonxlnx/taste-skill) | ⭐75,452 | 让 AI 别再生成套路化口水内容。13 个子技能：品牌套件、极简、粗野主义、图生代码、前端配图（Web/移动端）等，主打有审美的产出 |
 | [youtube-transcript](https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/youtube-transcript) | ⭐517 | 抓取 YouTube 视频字幕并整理成摘要 |
 | [imagen](https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen) | ⭐397 | 调用 Google Gemini 图像生成 API 出图 |
 | [swiftui-design-skill](https://github.com/wholiver/swiftui-design-skill) | ⭐164 | SwiftUI 前端设计（中文）：反 AI 味六条铁律、设计顾问、五维评审 |
 | [anydesign](https://github.com/uxKero/anydesign) | ⭐155 | 分析任意图片/网址/Figma 文件，生成结构化设计规范 |
 | [pakco-html](https://github.com/pakco77/pakco-html) | ⭐71 | HTML 审美库（中文）：60+ 视觉风格、演示页/长页模板，一键复制 Prompt |
 
-### 💼 办公协作（10 个）
+### 💼 办公协作（11 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
 | [internal-comms](https://github.com/anthropics/skills/tree/main/skills/internal-comms) | 官方 | 撰写各类内部沟通文案的资源集 |
 | [brainstorming](https://github.com/obra/superpowers/tree/main/skills/brainstorming) | ⭐270,554 | 把粗略想法通过结构化提问变成完整方案 |
+| [pm-skills](https://github.com/phuryn/pm-skills) | ⭐25,162 | 产品经理技能市场：68 个 PM Skill + 42 条链式工作流，打包成 9 个插件。覆盖需求发现、产品策略、执行、上线到增长。⚠️ 方法论偏国外语境，国内 PM 可作参考 |
 | [kaizen](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/kaizen/skills/kaizen) | ⭐1,308 | 持续改进方法论，多种分析框架 |
 | [Brand Build Skills](https://github.com/rampstackco/claude-skills) | ⭐532 | 59 个 skill 的品牌与网站全生命周期库 |
 | [tapestry](https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/tapestry) | ⭐517 | 把相关文档互联并总结成知识网络 |
@@ -234,5 +238,5 @@ Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts
 
 ---
 
-*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-08-11。*  
+*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-08-12。*  
 *收录有误或想推荐新 Skill？欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)*
