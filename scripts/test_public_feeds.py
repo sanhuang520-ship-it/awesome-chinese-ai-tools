@@ -2,6 +2,7 @@
 
 import unittest
 import xml.etree.ElementTree as ET
+from collections import Counter
 from pathlib import Path
 
 
@@ -41,12 +42,12 @@ class PublicFeedsTest(unittest.TestCase):
 
     def test_sitemap_contains_first_party_explainer_pages(self):
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
-        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/", "themes/"):
+        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/", "themes/", "guofeng-threejs/"):
             with self.subTest(page=page):
                 self.assertIn(f"/awesome-chinese-ai-tools/{page}", sitemap)
 
     def test_first_party_explainers_have_complete_search_metadata(self):
-        for page in ("typography", "design", "guochao", "readme-audit", "work-report", "ecommerce-copywriting", "themes"):
+        for page in ("typography", "design", "guochao", "readme-audit", "work-report", "ecommerce-copywriting", "themes", "guofeng-threejs"):
             body = (ROOT / page / "index.html").read_text(encoding="utf-8")
             with self.subTest(page=page):
                 self.assertTrue(body.lower().startswith("<!doctype html>"))
@@ -68,9 +69,16 @@ class PublicFeedsTest(unittest.TestCase):
         self.assertIn("Claude Code 与 Cursor 尚无本仓库运行的任务级实测", summary)
         self.assertIn("区分 CLI 发现、文件安装、自动触发和任务完成", summary)
         self.assertIn("data/compatibility.json", summary)
-        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/", "themes/"):
+        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/", "themes/", "guofeng-threejs/"):
             with self.subTest(page=page):
                 self.assertIn(f"/awesome-chinese-ai-tools/{page}", summary)
+
+    def test_sitemap_urls_are_unique(self):
+        root = ET.parse(ROOT / "sitemap.xml").getroot()
+        namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+        locations = [node.text for node in root.findall("s:url/s:loc", namespace)]
+        duplicates = sorted(url for url, count in Counter(locations).items() if count > 1)
+        self.assertEqual([], duplicates)
 
 
 if __name__ == "__main__":

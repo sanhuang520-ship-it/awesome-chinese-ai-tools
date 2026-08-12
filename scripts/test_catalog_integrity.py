@@ -82,6 +82,7 @@ class CatalogIntegrityTest(unittest.TestCase):
                 "github-readme-cn",
                 "chinese-design-md",
                 "chinese-web-themes",
+                "guofeng-threejs",
             },
             set(explainers),
         )

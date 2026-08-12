@@ -49,7 +49,7 @@ class InternalLinksTest(unittest.TestCase):
 
     def test_maintenance_plan_links_to_every_named_explainer(self):
         plan = (ROOT / "MAINTENANCE_PLAN.md").read_text(encoding="utf-8")
-        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/", "themes/"):
+        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/", "themes/", "guofeng-threejs/"):
             with self.subTest(page=page):
                 self.assertIn(f"]({page})", plan)
 
@@ -62,6 +62,12 @@ class InternalLinksTest(unittest.TestCase):
                 page = (ROOT / relative / "index.html").read_text(encoding="utf-8")
                 self.assertIn(repository, page)
                 self.assertIn("觉得有用再 Star", page)
+
+    def test_threejs_guide_keeps_install_command_visible_without_clipboard_access(self):
+        page = (ROOT / "guofeng-threejs" / "index.html").read_text(encoding="utf-8")
+        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill guofeng-threejs"
+        self.assertIn(f"<code>{command}</code>", page)
+        self.assertIn(f'data-copy="{command}"', page)
 
 if __name__ == "__main__":
     unittest.main()
