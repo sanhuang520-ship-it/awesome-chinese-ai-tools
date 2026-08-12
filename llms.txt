@@ -12,6 +12,14 @@
 - [质量与安全标签](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/QUALITY.md): 原创 Skill 的静态检查范围和限制
 - [内容准则](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/CONTENT_POLICY.md): 不转述 AI 新闻，不发布无法持续核实的工具推荐
 
+## 原创 Skill 独立说明页
+
+- [中文网页排版](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/): 行高、字体栈、中英混排、CJK 断行与可复制 CSS
+- [中式 DESIGN.md](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/design/): 8 套设计系统及可核对的对比度边界
+- [国潮视觉方向](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/): 画风、配色和纹样约束；不承诺不同模型生成相同画面
+- [GitHub README 审查](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/readme-audit/): 首屏价值、证据和行动入口；不承诺涨星
+- [中文职场汇报](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/work-report/): 结论先行、未知结果明确留空，不编造业务数字
+
 ## 当前证据
 
 - `npx skills@1.5.22 add . --list` 能发现 13 个本站原创 Skill。

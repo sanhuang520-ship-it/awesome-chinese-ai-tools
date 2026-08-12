@@ -50,6 +50,9 @@ class PublicFeedsTest(unittest.TestCase):
         self.assertIn("Claude Code 与 Cursor 尚无本仓库运行的任务级实测", summary)
         self.assertIn("区分 CLI 发现、文件安装、自动触发和任务完成", summary)
         self.assertIn("data/compatibility.json", summary)
+        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/"):
+            with self.subTest(page=page):
+                self.assertIn(f"/awesome-chinese-ai-tools/{page}", summary)
 
 
 if __name__ == "__main__":
