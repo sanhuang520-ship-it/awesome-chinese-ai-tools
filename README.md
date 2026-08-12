@@ -80,7 +80,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 装好后重启 Claude Code，**无需手动调用**——描述任务，AI 自动激活。
 
-安装与自动触发不是一回事。本站 13 个原创 Skill 已完成 CLI 发现与当前 Codex 安装内容核验，已有 **5 个 Skill** 完成不点名名称的 Codex 自动触发实测；其余逐项触发、Claude Code 和 Cursor 仍在继续测试，详见 **[兼容性实测表](COMPATIBILITY.md)**。
+安装与自动触发不是一回事。本站 13 个原创 Skill 已完成 CLI 发现与当前 Codex 安装内容核验，已有 **6 个 Skill** 完成不点名名称的 Codex 自动触发实测；其余逐项触发、Claude Code 和 Cursor 仍在继续测试，详见 **[兼容性实测表](COMPATIBILITY.md)**。
 
 ---
 
@@ -118,7 +118,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [`github-readme-cn`](skills/github-readme-cn/) | GitHub 中文项目门面优化（本站原创）：首屏结构、真实截图怎么截、命名与 topics、发布前自查清单。附 15 个高增长仓库的实测数据，明确区分相关性与不可验证的部分，不承诺涨星 |
 | [`guochao-visual-cn`](skills/guochao-visual-cn/) | 12 种中国美学画风配方，输出可直接用的 AI 绘图提示词 |
 | [`guofeng-threejs`](skills/guofeng-threejs/) | 国风 Three.js 渲染：水墨 shader 三技法。只做中式渲染，不做通用 Three.js 教程 |
-| [`homework-tutor-cn`](skills/homework-tutor-cn/) | 家长辅导作业。**不给答案**，给引导话术；还处理「家长自己要发火」的场景 |
+| [`homework-tutor-cn`](skills/homework-tutor-cn/) | 家长辅导作业。**不生成给孩子直接抄的答案**，先给引导话术；另给家长核对结果 |
 
 📋 **[看它们实际输出什么 → EXAMPLES.md](EXAMPLES.md)**
 

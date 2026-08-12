@@ -16,6 +16,6 @@
     "github-readme-cn": {"files": "instructions+references", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "growth correlation is not causation"},
     "guochao-visual-cn": {"files": "instructions+references", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "cultural accuracy and artist-style boundaries"},
     "guofeng-threejs": {"files": "instructions+browser demos", "executableScripts": false, "runtimeNetwork": true, "networkDetail": "demo HTML imports three@0.170.0 from unpkg.com", "sensitiveBoundary": null},
-    "homework-tutor-cn": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "does not provide answers for copying"}
+    "homework-tutor-cn": {"files": "instructions-only", "executableScripts": false, "runtimeNetwork": false, "sensitiveBoundary": "does not generate a child-facing answer for copying; may provide a separate parent check"}
   }
 }

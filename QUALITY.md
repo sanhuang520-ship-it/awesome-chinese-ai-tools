@@ -27,7 +27,7 @@
 | `github-readme-cn` | 指令、实测数据 | 无 | 无 | 增长相关性不等于因果 |
 | `guochao-visual-cn` | 指令、纹样参考 | 无 | 无 | 文化准确性、艺术家风格边界 |
 | `guofeng-threejs` | 指令、浏览器 Demo | 无 | **有** | Demo 从 unpkg 加载 Three.js |
-| `homework-tutor-cn` | 指令 | 无 | 无 | 不提供可直接抄写的答案 |
+| `homework-tutor-cn` | 指令 | 无 | 无 | 不生成给孩子直接抄的答案；可给家长核对结果 |
 
 ## 如何理解这些标签
 
