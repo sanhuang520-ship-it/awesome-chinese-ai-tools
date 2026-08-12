@@ -26,6 +26,6 @@
 
 “单任务通过”只说明在记录的客户端版本、已安装 Skill 集合和那条原始任务下：目标 Skill 被自动读取，输出覆盖了预设检查点。失败案例也会保留。它不代表准确率、跨客户端兼容性，也不保证换一种问法仍会触发。
 
-当前隔离测试还持续出现一条重要告警：Skill 数量较多时，Codex 会缩短部分 description 以适应上下文预算。现有 6 项仍然正确触发，但剩余测试必须保留成功和失败结果。
+当前隔离测试还持续出现一条重要告警：Skill 数量较多时，Codex 会缩短部分 description 以适应上下文预算。13 项均发生自动触发，但这仍然只是单任务观察；后续复测必须继续保留成功和失败结果。
 
 想复现或补充 Claude Code、Cursor 结果，请在[置顶 Discussion](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)提交客户端版本、原始任务和脱敏结果。

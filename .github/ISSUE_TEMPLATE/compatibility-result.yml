@@ -1,0 +1,84 @@
+name: 提交一次 Skill 兼容性实测
+description: 分享 Codex、Claude Code 或 Cursor 中成功、失败或未触发的可复现结果
+title: "[兼容性] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        成功、失败和没有自动触发都很有价值。请只提交你实际运行过的结果，并先删除 Token、邮箱、私人路径和未公开业务数据。
+
+  - type: dropdown
+    id: client
+    attributes:
+      label: 客户端
+      options:
+        - Codex
+        - Claude Code
+        - Cursor
+        - 其他 Agent 客户端
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 客户端版本与操作系统
+      description: 能确认多少写多少；不知道的字段请写“不确定”
+      placeholder: Codex 0.x / macOS 15.x
+    validations:
+      required: true
+
+  - type: input
+    id: skill
+    attributes:
+      label: Skill 名称
+      placeholder: chinese-typography
+    validations:
+      required: true
+
+  - type: textarea
+    id: task
+    attributes:
+      label: 交给 AI 的原始任务
+      description: 请保留原始措辞，但移除隐私和敏感业务数据
+    validations:
+      required: true
+
+  - type: dropdown
+    id: activation
+    attributes:
+      label: 是否自动触发 Skill
+      options:
+        - 是，能确认读取了目标 Skill
+        - 否，没有触发
+        - 不确定
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: 实际结果
+      description: 说明完成、失败、卡住或偏离预期的位置；文字和错误日志即可，截图不是必需的
+    validations:
+      required: true
+
+  - type: textarea
+    id: boundary
+    attributes:
+      label: 这次结果不能说明什么
+      description: 例如只测试了一条任务、没有测试写文件、没有测试联网能力
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 这是我实际运行得到的结果，不是推测
+          required: true
+        - label: 我已删除 Token、邮箱、私人路径和未公开业务数据
+          required: true
+        - label: 允许维护者在注明本 Issue 来源和证据边界的前提下整理此结果
+          required: true

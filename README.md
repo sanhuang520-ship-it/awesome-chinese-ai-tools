@@ -19,8 +19,8 @@
 
 > **和别的 awesome 列表有什么不一样**<br>
 > ① 13 个 Skill 是我们自己写的，不是搬运<br>
-> ② 184 个仓库**每天自动复检**一次还在不在<br>
-> ③ 不转述任何 AI 新闻——[原因](CONTENT_POLICY.md)
+> ② 不是只验证“能安装”：13/13 在 Codex 中自动触发，失败过程也公开<br>
+> ③ 184 个仓库**每天自动复检**一次还在不在，不转述无法复核的 AI 新闻
 
 ```bash
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
@@ -94,7 +94,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 4. 实际发生了什么
 5. 哪一步有效，哪一步需要改进
 
-**[→ 在置顶 Discussion 分享第一次使用结果](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)**
+**[→ 用结构化表单提交一次兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)**　·　[在 Discussion 交流](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)
 
 请先移除 Token、邮箱、私人路径和未公开业务数据。被整理进仓库的案例会保留原讨论链接，并明确标注是用户反馈，不会把个别体验写成普遍结论。
 
@@ -168,11 +168,10 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 | 步骤 | 做什么 |
 |------|--------|
-| 1 | 今日工具推荐 |
-| 2 | 核对 [SOURCES.md](SOURCES.md) 里各家 AI 官方公告页链接 |
-| 3 | 47 个工具链接实测可访问性 |
-| 4 | **184 个 skill 仓库复检**：还在不在、星数、最后更新时间 |
-| 5 | 从数据重建 SKILLS.md |
+| 1 | 核对 [SOURCES.md](SOURCES.md) 里各家 AI 官方公告页链接 |
+| 2 | 47 个工具链接实测可访问性 |
+| 3 | **184 个 Skill 仓库复检**：还在不在、星数、最后更新时间 |
+| 4 | 从数据重建 SKILLS.md，并同步公开统计 |
 
 这套流程跑在 **GitHub Actions** 上，[运行记录公开可查](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)——不依赖任何人的电脑，也不用你相信我说的话。
 
@@ -235,6 +234,8 @@ my-skill/
 
 收录有误、链接失效、想推荐新 Skill，可以选择对应的 [Issue 表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new/choose)，
 使用问题和实际效果欢迎放到 [Discussions](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions)，或查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+如果你用的是 Claude Code 或 Cursor，最有价值的贡献是提交一次成功或失败的真实结果：我们会把客户端版本、原始任务和证据边界整理进[兼容性实测表](COMPATIBILITY.md)，不会把单次体验包装成普遍结论。
 
 **发现事实错误请一定告诉我们** —— 这个项目全部的价值就在"可信"两个字上。
 

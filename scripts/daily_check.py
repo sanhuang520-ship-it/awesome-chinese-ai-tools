@@ -17,6 +17,7 @@ except ImportError:
 import time
 
 from sync_public_metadata import CAT_ORDER, sync_public_metadata
+from check_internal_links import ROOT as SITE_ROOT, missing_links, published_pages
 
 # ── 配置 ──────────────────────────────────────────────────
 # token 从环境变量读取。GitHub Actions 里用自带的 GITHUB_TOKEN，无需配置密钥；
@@ -500,7 +501,15 @@ if __name__ == "__main__":
     # （2026-08-09 之前是串行调用，check_tool_links 一次 SSL 抖动就让当天
     #   的 skill 复检和 SKILLS.md 重建全部没跑。）
     import traceback
+
+    def check_published_links():
+        failures = missing_links(SITE_ROOT)
+        if failures:
+            raise RuntimeError("站内断链：" + "；".join(failures))
+        print(f"[站内链接] ✅ {len(published_pages(SITE_ROOT))} 个 HTML 页面")
+
     STEPS = [
+        ("站内链接体检",   check_published_links),
         ("核对官方信源",   check_source_nav),
         ("工具链接实测",   check_tool_links),
         ("Skill 仓库复检", check_skills),
