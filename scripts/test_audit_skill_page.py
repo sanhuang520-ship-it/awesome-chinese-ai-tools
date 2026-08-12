@@ -26,7 +26,7 @@ class AuditSkillPageTest(unittest.TestCase):
                 self.assertIn(phrase, self.body)
 
     def test_page_links_to_source_tests_and_security_policy(self):
-        for href in ("../scripts/audit_skill.py", "../scripts/test_audit_skill.py", "../QUALITY.md", "../SECURITY.md"):
+        for href in ("../scripts/audit_skill.py", "../scripts/test_audit_skill.py", "../QUALITY.md", "../SECURITY.md", "../install/", "../reproduce/"):
             self.assertIn(f'href="{href}"', self.body)
 
 

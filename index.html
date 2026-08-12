@@ -904,7 +904,7 @@ details[open] .sk-install-sum{margin-bottom:2px}
 .skill-journey-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:11px}
 .skill-journey-head b{font-family:var(--font-serif);font-size:15px;color:var(--text)}
 .skill-journey-head span{font-size:11px;color:var(--text2)}
-.skill-journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.skill-journey-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
 .skill-journey-card{
   min-width:0;padding:12px;border:1px solid var(--border);border-radius:12px;text-decoration:none;
   background:var(--card);transition:transform .25s var(--spring),border-color .25s,box-shadow .25s;
@@ -913,6 +913,7 @@ details[open] .sk-install-sum{margin-bottom:2px}
 .skill-journey-card i{font:800 10px var(--font-mono);font-style:normal;color:var(--accent)}
 .skill-journey-card b{display:block;margin:5px 0 2px;color:var(--text);font-size:13px}
 .skill-journey-card span{display:block;color:var(--text2);font-size:11px;line-height:1.5}
+@media(max-width:900px) and (min-width:641px){.skill-journey-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.skill-journey-grid{grid-template-columns:1fr}.skill-journey-head span,.skill-journey-card span{display:none}.skill-journey-card{padding:10px 12px}.skill-journey-card b{display:inline;margin-left:7px}}
 
 .picker-banner{
@@ -2095,12 +2096,13 @@ function renderSkills() {
       </div>
       </details>
     </div>
-    <section class="skill-journey" aria-label="Codex Skill 三步使用路径">
-      <div class="skill-journey-head"><b>第一次使用 Codex Skill？从这里走</b><span>创建 → 安装与排错 → 复现与提交</span></div>
+    <section class="skill-journey" aria-label="Agent Skill 安全使用路径">
+      <div class="skill-journey-head"><b>第一次使用 Agent Skill？按这条路径走</b><span>挑选 → 安装前审计 → 安装与排错 → 复现并提交</span></div>
       <div class="skill-journey-grid">
-        <a class="skill-journey-card" href="create-codex-skill/"><i>STEP 01</i><b>创建自己的 Skill</b><span>最小 SKILL.md · description · 验证</span></a>
-        <a class="skill-journey-card" href="codex-skill-not-triggering/"><i>STEP 02</i><b>安装后没有触发</b><span>发现 · 路径 · 自动读取 · 环境</span></a>
-        <a class="skill-journey-card" href="reproduce/"><i>STEP 03</i><b>复制 7 条真实任务</b><span>逐字复现 · 对照证据 · 提交结果</span></a>
+        <a class="skill-journey-card" href="guides/"><i>STEP 01</i><b>按真实问题挑选</b><span>用途 · 实测状态 · 已知边界</span></a>
+        <a class="skill-journey-card" href="audit-skill/"><i>STEP 02</i><b>安装前只读审计</b><span>脚本 · 联网 · 凭据 · 文件写删</span></a>
+        <a class="skill-journey-card" href="codex-skill-not-triggering/"><i>STEP 03</i><b>安装与触发排错</b><span>发现 · 路径 · 自动读取 · 环境</span></a>
+        <a class="skill-journey-card" href="reproduce/"><i>STEP 04</i><b>复现并提交结果</b><span>逐字任务 · 对照证据 · 成功或失败</span></a>
       </div>
     </section>
     <div class="sk-toolbar">
