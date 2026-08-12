@@ -24,10 +24,15 @@ class CompatibilityDataTest(unittest.TestCase):
         self.assertEqual(self.data["results"]["discovery"]["count"], count)
         self.assertEqual(self.data["results"]["codexInstall"]["identicalCount"], count)
 
+    def test_activation_evidence_points_to_a_case(self):
+        activation = self.data["results"]["codexActivation"]
+        self.assertEqual(activation["status"], "partial")
+        self.assertEqual(activation["verifiedSkills"], ["chinese-typography"])
+        self.assertTrue((ROOT / activation["case"]).is_file())
+
     def test_unrun_clients_are_not_claimed_as_verified(self):
         self.assertEqual(self.data["results"]["claudeCode"]["status"], "not-tested")
         self.assertEqual(self.data["results"]["cursor"]["status"], "not-tested")
-        self.assertEqual(self.data["results"]["codexActivation"]["status"], "not-tested")
 
 
 if __name__ == "__main__":

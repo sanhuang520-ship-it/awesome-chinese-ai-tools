@@ -36,13 +36,23 @@
       "identicalCount": 13
     },
     "codexActivation": {
-      "status": "not-tested"
+      "status": "partial",
+      "verifiedSkills": [
+        "chinese-typography"
+      ],
+      "case": "cases/chinese-typography-codex.md",
+      "clientVersion": "codex-cli 0.147.0-alpha.6.5",
+      "note": "One task-level automatic activation verified; this is not evidence for every prompt or client version"
     },
     "claudeCode": {
       "status": "not-tested"
     },
     "cursor": {
       "status": "not-tested"
+    },
+    "discoveryContextBudget": {
+      "status": "partial",
+      "note": "Codex reported that some skill descriptions were shortened to fit the skills context budget"
     }
   }
 }

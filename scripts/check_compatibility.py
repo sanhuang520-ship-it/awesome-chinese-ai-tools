@@ -45,6 +45,17 @@ def main() -> None:
     if identical_count != expected_count:
         fail(f"Codex identical count is {identical_count}, expected {expected_count}")
 
+    activation = data["results"]["codexActivation"]
+    verified_skills = activation.get("verifiedSkills", [])
+    unknown = sorted(set(verified_skills) - set(actual))
+    if unknown:
+        fail(f"activation evidence references unknown skills: {unknown}")
+    if verified_skills and activation.get("status") not in {"partial", "verified"}:
+        fail("activation evidence exists but its status is not partial or verified")
+    case = activation.get("case")
+    if case and not (ROOT / case).is_file():
+        fail(f"activation case does not exist: {case}")
+
     allowed = {"verified", "failed", "partial", "not-tested"}
     for key, result in data.get("results", {}).items():
         if result.get("status") not in allowed:
