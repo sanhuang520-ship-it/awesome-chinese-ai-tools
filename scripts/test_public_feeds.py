@@ -45,6 +45,24 @@ class PublicFeedsTest(unittest.TestCase):
             with self.subTest(page=page):
                 self.assertIn(f"/awesome-chinese-ai-tools/{page}", sitemap)
 
+    def test_first_party_explainers_have_complete_search_metadata(self):
+        for page in ("typography", "design", "guochao", "readme-audit", "work-report", "ecommerce-copywriting"):
+            body = (ROOT / page / "index.html").read_text(encoding="utf-8")
+            with self.subTest(page=page):
+                self.assertTrue(body.lower().startswith("<!doctype html>"))
+                self.assertIn('<html lang="zh-CN">', body)
+                self.assertIn("<head>", body)
+                self.assertIn("</head>", body)
+                self.assertIn("<body", body)
+                self.assertIn("</body>", body)
+                self.assertTrue(body.rstrip().endswith("</html>"))
+                self.assertIn('<meta name="robots" content="index,follow">', body)
+                self.assertIn(f'/awesome-chinese-ai-tools/{page}/', body)
+                self.assertIn('property="og:title"', body)
+                self.assertIn('property="og:description"', body)
+                self.assertIn('property="og:url"', body)
+                self.assertIn('type="application/ld+json"', body)
+
     def test_llms_summary_preserves_client_evidence_boundary(self):
         summary = (ROOT / "llms.txt").read_text(encoding="utf-8")
         self.assertIn("Claude Code 与 Cursor 尚无本仓库运行的任务级实测", summary)
