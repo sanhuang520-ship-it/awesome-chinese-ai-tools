@@ -17,6 +17,13 @@ class ChangelogTest(unittest.TestCase):
         self.assertIn("不声明准确率", body)
         self.assertIn("GitHub Stars 在本版本发布前仍为 7", body)
 
+    def test_unreleased_section_tracks_current_main_without_claiming_growth(self):
+        body = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+        self.assertIn("## [Unreleased]", body)
+        self.assertIn("compare/v1.1.1...HEAD", body)
+        self.assertIn("不等于独立用户或效果证明", body)
+        self.assertIn("workflow` 写入权限", body)
+
 
 if __name__ == "__main__":
     unittest.main()
