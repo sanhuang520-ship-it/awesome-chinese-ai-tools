@@ -10,7 +10,7 @@
 |---|---|---|
 | `skills` CLI 发现本站原创 Skill | ✅ 13 / 13 | `npx skills@1.5.22 add . --list` 找到 13 个 Skill |
 | Codex 共享目录安装内容 | ✅ 13 / 13 | 仓库与 `~/.agents/skills/<name>/SKILL.md` 逐字节一致 |
-| Codex 自动触发 | ⚠️ 1 / 13 | [`chinese-typography` 单任务通过](cases/chinese-typography-codex.md)；不能外推到所有提示词与版本 |
+| Codex 自动触发 | ⚠️ 2 / 13 | `chinese-typography`、`github-readme-cn` 单任务通过；不能外推到所有提示词与版本 |
 | Claude Code | ⏳ 待测 | 当前没有运行 Claude Code，不能声称通过 |
 | Cursor | ⏳ 待测 | 当前没有运行 Cursor，不能声称通过 |
 
@@ -29,7 +29,7 @@
 | `chinese-web-themes` | ✅ | ✅ | ⏳ | ⏳ | ⏳ |
 | `chinese-work-report` | ✅ | ✅ | ⏳ | ⏳ | ⏳ |
 | `ecommerce-copywriting` | ✅ | ✅ | ⏳ | ⏳ | ⏳ |
-| `github-readme-cn` | ✅ | ✅ | ⏳ | ⏳ | ⏳ |
+| [`github-readme-cn`](cases/github-readme-cn-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
 | `guochao-visual-cn` | ✅ | ✅ | ⏳ | ⏳ | ⏳ |
 | `guofeng-threejs` | ✅ | ✅ | ⏳ | ⏳ | ⏳ |
 | `homework-tutor-cn` | ✅ | ✅ | ⏳ | ⏳ | ⏳ |
@@ -49,6 +49,6 @@ Codex 在隔离实测中报告：已安装 Skill 较多时，会为适应 skills
 
 ## 下一轮测试
 
-按真实任务继续验证 Codex 自动触发，下一批为 `github-readme-cn`、`chinese-work-report`。每条记录至少包含任务原文、客户端与版本、是否自动触发、关键输出、人工修改和已知限制。
+按真实任务继续验证 Codex 自动触发，下一项为 `chinese-work-report`。每条记录至少包含任务原文、客户端与版本、是否自动触发、关键输出、人工修改和已知限制。
 
 如果你能提供 Claude Code 或 Cursor 的实际结果，请在[置顶 Discussion](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)按模板回复。成功和失败都欢迎，但请先删除 Token、邮箱和私人路径。

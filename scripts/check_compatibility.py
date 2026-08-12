@@ -52,9 +52,12 @@ def main() -> None:
         fail(f"activation evidence references unknown skills: {unknown}")
     if verified_skills and activation.get("status") not in {"partial", "verified"}:
         fail("activation evidence exists but its status is not partial or verified")
-    case = activation.get("case")
-    if case and not (ROOT / case).is_file():
-        fail(f"activation case does not exist: {case}")
+    cases = activation.get("cases", [])
+    if len(cases) != len(verified_skills):
+        fail("every verified activation skill must have one case")
+    for case in cases:
+        if not (ROOT / case).is_file():
+            fail(f"activation case does not exist: {case}")
 
     allowed = {"verified", "failed", "partial", "not-tested"}
     for key, result in data.get("results", {}).items():

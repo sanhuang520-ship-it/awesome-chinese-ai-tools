@@ -27,8 +27,13 @@ class CompatibilityDataTest(unittest.TestCase):
     def test_activation_evidence_points_to_a_case(self):
         activation = self.data["results"]["codexActivation"]
         self.assertEqual(activation["status"], "partial")
-        self.assertEqual(activation["verifiedSkills"], ["chinese-typography"])
-        self.assertTrue((ROOT / activation["case"]).is_file())
+        self.assertEqual(
+            activation["verifiedSkills"],
+            ["chinese-typography", "github-readme-cn"],
+        )
+        self.assertEqual(len(activation["verifiedSkills"]), len(activation["cases"]))
+        for case in activation["cases"]:
+            self.assertTrue((ROOT / case).is_file())
 
     def test_unrun_clients_are_not_claimed_as_verified(self):
         self.assertEqual(self.data["results"]["claudeCode"]["status"], "not-tested")
