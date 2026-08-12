@@ -22,13 +22,17 @@ def build_stats(skills_data, tools_data):
         for item in skills
         if urlsplit(item.get("url", "")).netloc.lower() == "github.com"
     }
+    tools = tools_data.get("tools", [])
     return {
         "skills": len(skills),
         "repos": len(repos),
         "cn": sum(1 for item in skills if item.get("cat") == "cn"),
         "ours": sum(1 for item in skills if item.get("ours")),
         "official": sum(1 for item in skills if item.get("official")),
-        "tools": len(tools_data.get("tools", [])),
+        "tools": len(tools),
+        "tools_direct_ok": sum(1 for item in tools if item.get("linkStatus") == "ok"),
+        "tools_bot_blocked": sum(1 for item in tools if item.get("linkStatus") == "ok_bot_blocked"),
+        "tools_whitelisted": sum(1 for item in tools if item.get("linkStatus") == "ok_whitelisted"),
         "checked": skills_data.get("skillsCheckedAt") or datetime.date.today().isoformat(),
     }
 
@@ -37,6 +41,7 @@ def sync_readme_text(body, stats):
     """只同步 README 里的可计算统计，不改手写介绍。"""
     n, repos, cn, ours = stats["skills"], stats["repos"], stats["cn"], stats["ours"]
     official, tools, checked = stats["official"], stats["tools"], stats["checked"]
+    direct_ok, bot_blocked, whitelisted = stats["tools_direct_ok"], stats["tools_bot_blocked"], stats["tools_whitelisted"]
     today = datetime.date.today().isoformat()
     replacements = [
         (r"Skills-\d+%20个-", f"Skills-{n}%20个-"),
@@ -53,7 +58,10 @@ def sync_readme_text(body, stats):
         (r"\| ✍️ 本站原创 \| \d+ \|", f"| ✍️ 本站原创 | {ours} |"),
         (r"\| \*\*合计\*\* \| \*\*\d+\*\* \|", f"| **合计** | **{n}** |"),
         (r"另附 \*\*\d+ 个 AI 工具导航\*\*", f"另附 **{tools} 个 AI 工具导航**"),
-        (r"\| (\d+) \| \d+ 个工具链接实测可访问性 \|", rf"| \1 | {tools} 个工具链接实测可访问性 |"),
+        (
+            r"\| (\d+) \| (?:\d+ 个工具链接实测可访问性|\d+ 个工具入口复检：[^|]+) \|",
+            rf"| \1 | {tools} 个工具入口复检：{direct_ok} 个直接成功，{bot_blocked} 个返回机器人拦截响应，{whitelisted} 个白名单跳过请求 |",
+        ),
         (
             r"\| (\d+) \| \*\*(?:\d+ 个 Skill 仓库复检|\d+ 个来源仓库复检\*\*（覆盖 \d+ 个 Skill 条目）)",
             rf"| \1 | **{repos} 个来源仓库复检**（覆盖 {n} 个 Skill 条目）",

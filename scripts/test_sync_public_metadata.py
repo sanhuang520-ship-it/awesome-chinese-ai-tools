@@ -52,7 +52,7 @@ class PublicMetadataTest(unittest.TestCase):
     def test_readme_step_number_does_not_affect_tool_count_sync(self):
         original = "| 2 | 999 个工具链接实测可访问性 |\n"
         self.assertEqual(
-            f"| 2 | {self.stats['tools']} 个工具链接实测可访问性 |\n",
+            "| 2 | 46 个工具入口复检：39 个直接成功，5 个返回机器人拦截响应，2 个白名单跳过请求 |\n",
             sync_readme_text(original, self.stats),
         )
 
@@ -65,6 +65,15 @@ class PublicMetadataTest(unittest.TestCase):
         self.assertEqual(184, self.stats["skills"])
         self.assertEqual(141, self.stats["repos"])
         self.assertLess(self.stats["repos"], self.stats["skills"])
+
+    def test_tool_link_statuses_are_counted_by_evidence_type(self):
+        self.assertEqual(39, self.stats["tools_direct_ok"])
+        self.assertEqual(5, self.stats["tools_bot_blocked"])
+        self.assertEqual(2, self.stats["tools_whitelisted"])
+        self.assertEqual(
+            self.stats["tools"],
+            self.stats["tools_direct_ok"] + self.stats["tools_bot_blocked"] + self.stats["tools_whitelisted"],
+        )
 
     def test_index_metadata_uses_entry_and_repository_units(self):
         index = (ROOT / "index.html").read_text(encoding="utf-8")

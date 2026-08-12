@@ -172,13 +172,14 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 步骤 | 做什么 |
 |------|--------|
 | 1 | 核对 [SOURCES.md](SOURCES.md) 里各家 AI 官方公告页链接 |
-| 2 | 46 个工具链接实测可访问性 |
+| 2 | 46 个工具入口复检：39 个直接成功，5 个返回机器人拦截响应，2 个白名单跳过请求 |
 | 3 | **141 个来源仓库复检**（覆盖 184 个 Skill 条目）：还在不在、星数、最后更新时间 |
 | 4 | 从数据重建 SKILLS.md，并同步公开统计 |
 
 这套流程跑在 **GitHub Actions** 上，[运行记录公开可查](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)——不依赖任何人的电脑，也不用你相信我说的话。
 
 最近复检：**2026-08-12**，失效 0 个。
+白名单项是此前人工复核后为避免自动化反复误报而跳过，不等于本次工作流再次访问成功；机器人拦截响应也只说明目标服务有响应，不证明普通用户在所有地区都可访问。
 超过半年没更新的会在站内标 🕰——停止维护不等于没价值，但你有权在点进去之前就知道。
 
 ### 检测抓到过的真实域名迁移
