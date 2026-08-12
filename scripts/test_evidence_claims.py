@@ -150,6 +150,16 @@ class EvidenceClaimsTest(unittest.TestCase):
         index = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertNotIn("每个仓库都验证过真实存在", index)
 
+    def test_english_overview_preserves_evidence_boundaries(self):
+        english = (ROOT / "README.en.md").read_text(encoding="utf-8")
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
+        self.assertIn("184 Agent Skill entries from 141 source repositories", english)
+        self.assertIn("Claude Code and Cursor task-level compatibility are still untested", english)
+        self.assertIn("Installation, discovery, automatic activation, and task completion are separate claims", english)
+        self.assertIn("[English](README.en.md)", readme)
+        self.assertIn("README.en.md", llms)
+
     def test_security_policy_routes_sensitive_reports_privately(self):
         policy = (ROOT / "SECURITY.md").read_text(encoding="utf-8")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")

@@ -6,6 +6,8 @@
 
 **给 AI 助手装上中文场景的专业技能包**
 
+[English](README.en.md)
+
 [![Skills](https://img.shields.io/badge/Skills-184%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
 [![原创](https://img.shields.io/badge/本站原创-13%20个-86b894?style=flat-square)](EXAMPLES.md)
 [![Daily Check](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml/badge.svg)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)

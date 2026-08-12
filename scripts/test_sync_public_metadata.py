@@ -11,6 +11,7 @@ from sync_public_metadata import (
     CAT_ORDER,
     build_stats,
     sync_index_text,
+    sync_english_readme_text,
     sync_llms_text,
     sync_local,
     sync_readme_text,
@@ -31,6 +32,7 @@ class PublicMetadataTest(unittest.TestCase):
     def test_committed_files_are_in_sync(self):
         cases = {
             "README.md": lambda text: sync_readme_text(text, self.stats),
+            "README.en.md": lambda text: sync_english_readme_text(text, self.stats),
             "index.html": lambda text: sync_index_text(text, self.stats),
             "llms.txt": lambda text: sync_llms_text(text, self.stats),
             "sitemap.xml": lambda text: sync_sitemap_text(text, self.stats["checked"]),
@@ -75,7 +77,7 @@ class PublicMetadataTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             (root / "data").mkdir()
-            for relative in ("data/skills.json", "data/tools.json", "README.md", "index.html", "llms.txt", "sitemap.xml"):
+            for relative in ("data/skills.json", "data/tools.json", "README.md", "README.en.md", "index.html", "llms.txt", "sitemap.xml"):
                 source = ROOT / relative
                 target = root / relative
                 target.parent.mkdir(parents=True, exist_ok=True)

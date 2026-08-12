@@ -4,6 +4,7 @@
 
 ## 首选入口
 
+- [English overview](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/README.en.md): concise English project scope, evidence and installation guide
 - [在线搜索与筛选](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/): 浏览全部 Skill 和工具
 - [安装与排错](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/): skills CLI 1.5.22 的本机实测步骤与路径边界
 - [Codex 兼容性实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/): 13 个原创 Skill 的自动触发、失败与缩小复测

@@ -155,6 +155,19 @@ def sync_llms_text(body, stats):
     return body
 
 
+def sync_english_readme_text(body, stats):
+    """同步英文入口中的目录规模，防止双语数字漂移。"""
+    n, repos, ours, tools = stats["skills"], stats["repos"], stats["ours"], stats["tools"]
+    body = re.sub(
+        r"\d+ Agent Skill entries from \d+ source repositories",
+        f"{n} Agent Skill entries from {repos} source repositories",
+        body,
+    )
+    body = re.sub(r"maintains \d+ first-party Skills and \d+ AI tool links", f"maintains {ours} first-party Skills and {tools} AI tool links", body)
+    body = re.sub(r"rechecks the \d+ source repositories and \d+ tool links", f"rechecks the {repos} source repositories and {tools} tool links", body)
+    return body
+
+
 def _repo_text(github_api, repo, path):
     info = github_api("GET", f"/repos/{repo}/contents/{path}")
     if "content" not in info:
@@ -189,6 +202,7 @@ def sync_public_metadata(github_api, repo):
     message = f"seo: 同步 {stats['skills']} 个 skill / {stats['ours']} 原创的公开统计"
     transforms = {
         "README.md": lambda text: sync_readme_text(text, stats),
+        "README.en.md": lambda text: sync_english_readme_text(text, stats),
         "index.html": lambda text: sync_index_text(text, stats),
         "llms.txt": lambda text: sync_llms_text(text, stats),
         "sitemap.xml": lambda text: sync_sitemap_text(text, stats["checked"]),
@@ -206,6 +220,7 @@ def sync_local(root, write=False):
     stats = build_stats(skills_data, tools_data)
     transforms = {
         "README.md": lambda text: sync_readme_text(text, stats),
+        "README.en.md": lambda text: sync_english_readme_text(text, stats),
         "index.html": lambda text: sync_index_text(text, stats),
         "llms.txt": lambda text: sync_llms_text(text, stats),
         "sitemap.xml": lambda text: sync_sitemap_text(text, stats["checked"]),
