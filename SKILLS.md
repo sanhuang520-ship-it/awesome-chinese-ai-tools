@@ -56,7 +56,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [chinese-typography](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-typography) | 中文排版助手（本站原创）：中英间距、CJK 断行避头尾、字体栈、标点全半角、行高行宽，附可直接用的 CSS 与公众号排版规则 |
 | [chinese-web-themes](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-web-themes) | 中式网页主题库（本站原创）：8 套中国美学 CSS 主题（水墨/青绿/宋韵/敦煌/朱砂/新中式/竹韵/夜宴），内置中文排版规范，对比度均超 WCAG AA。可在线预览 |
 | [chinese-work-report](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-work-report) | 职场汇报助手（本站原创）：周报/月报/述职/项目汇报，结论先行、卖点翻价值，含 PPT 大纲 |
-| [ecommerce-copywriting](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting) | 电商文案助手（本站原创）：商品标题/详情页/卖点提炼，分平台规则，含广告法违禁词红线 |
+| [ecommerce-copywriting](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting) | 电商文案助手（本站原创）：商品标题、主图与详情页写作，按平台和用户决策路径组织；先核对事实、证明材料与高风险宣称，不把机械禁词替换当作合规保证 |
 | [github-readme-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/github-readme-cn) | GitHub 中文项目门面优化（本站原创）：首屏结构、真实截图怎么截、命名与 topics、发布前自查清单。附 15 个高增长仓库的实测数据，明确区分相关性与不可验证的部分，不承诺涨星 |
 | [guochao-visual-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guochao-visual-cn) | 国潮视觉助手（本站原创）：12 种中国美学画风配方（水墨/工笔/青绿/敦煌/年画/剪纸/国漫等），输出可直接用的提示词，附纹样寓意与传统配色速查 |
 | [guofeng-threejs](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guofeng-threejs) | 国风 Three.js 渲染（本站原创）：水墨 shader 三技法（墨分五色/边缘积墨/笔触扰动），含可运行 demo 与移动端性能要点。只做中式渲染，不做通用 Three.js 教程 |

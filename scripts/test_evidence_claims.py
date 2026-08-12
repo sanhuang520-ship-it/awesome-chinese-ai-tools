@@ -48,6 +48,11 @@ class EvidenceClaimsTest(unittest.TestCase):
                 self.assertNotIn(claim, combined)
         self.assertIn("不是法律意见、平台审核结果", skill)
         self.assertIn("只有用户提供并核对过的事实", examples)
+        catalog_data = (ROOT / "data" / "skills.json").read_text(encoding="utf-8")
+        generated = (ROOT / "SKILLS.md").read_text(encoding="utf-8")
+        self.assertNotIn("广告法违禁词红线", catalog_data + generated)
+        self.assertIn("不把机械禁词替换当作合规保证", catalog_data)
+        self.assertIn("不把机械禁词替换当作合规保证", generated)
 
     def test_commercial_terms_are_presented_as_unverified_history(self):
         index = (ROOT / "index.html").read_text(encoding="utf-8")
