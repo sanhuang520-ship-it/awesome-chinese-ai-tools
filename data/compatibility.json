@@ -46,7 +46,11 @@
         "homework-tutor-cn",
         "ai-learning-coach",
         "book-digest-cn",
-        "chinese-lesson-plan"
+        "chinese-lesson-plan",
+        "chinese-design-md",
+        "chinese-web-themes",
+        "guochao-visual-cn",
+        "guofeng-threejs"
       ],
       "cases": [
         "cases/chinese-typography-codex.md",
@@ -57,10 +61,14 @@
         "cases/homework-tutor-cn-codex.md",
         "cases/ai-learning-coach-codex.md",
         "cases/book-digest-cn-codex.md",
-        "cases/chinese-lesson-plan-codex.md"
+        "cases/chinese-lesson-plan-codex.md",
+        "cases/chinese-design-md-codex.md",
+        "cases/chinese-web-themes-codex.md",
+        "cases/guochao-visual-cn-codex.md",
+        "cases/guofeng-threejs-codex.md"
       ],
       "clientVersion": "codex-cli 0.147.0-alpha.6.5",
-      "note": "Nine task-level automatic activations verified; one activated task did not complete, and this is not evidence for every prompt or client version"
+      "note": "All 13 skills automatically activated in one task; two activated tasks did not complete, and this is not evidence for every prompt or client version"
     },
     "claudeCode": {
       "status": "not-tested"

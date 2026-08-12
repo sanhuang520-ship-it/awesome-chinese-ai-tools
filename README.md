@@ -80,7 +80,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 装好后重启 Claude Code，**无需手动调用**——描述任务，AI 自动激活。
 
-安装与自动触发不是一回事。本站 13 个原创 Skill 已完成 CLI 发现与当前 Codex 安装内容核验，已有 **9 个 Skill** 发生不点名名称的 Codex 自动触发，其中 1 项触发后任务未完成；失败也公开保留。详见 **[兼容性实测表](COMPATIBILITY.md)**。
+安装与自动触发不是一回事。本站 13 个原创 Skill 已完成 CLI 发现、当前 Codex 安装核验和各 1 次不点名名称的自动触发测试；其中 2 项触发后任务未完成，失败也公开保留。详见 **[兼容性实测表](COMPATIBILITY.md)**。
 
 ---
 

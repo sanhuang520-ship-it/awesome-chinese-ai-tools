@@ -4,7 +4,7 @@
 
 ## 当前进度
 
-> Codex 自动触发：**9 / 13 个本站原创 Skill** · 其中 1 项触发后未完成 · Claude Code：待测 · Cursor：待测 · 最近实测：**2026-08-12**
+> Codex 自动触发：**13 / 13 个本站原创 Skill** · 其中 2 项触发后未完成 · Claude Code：待测 · Cursor：待测 · 最近实测：**2026-08-12**
 
 | Skill | 测试任务 | 重点检查 | 结果 |
 |---|---|---|---|
@@ -17,6 +17,10 @@
 | [`ai-learning-coach`](ai-learning-coach-codex.md) | 两周入门 SQL | 先校准目标、主动回忆循环 | 等待用户输入 |
 | [`book-digest-cn`](book-digest-cn-codex.md) | 《小王子》拆书 | 三层拆解、不抄目录 | 单任务通过 |
 | [`chinese-lesson-plan`](chinese-lesson-plan-codex.md) | 水的三态变化教案 | 不虚构教材版本、完整交付 | **触发后未完成** |
+| [`chinese-design-md`](chinese-design-md-codex.md) | 茶品牌 DESIGN.md 选型 | 从 8 套系统中选择、不给空泛国风 | 单任务通过 |
+| [`chinese-web-themes`](chinese-web-themes-codex.md) | 博客水墨主题方案 | 引入步骤、上线检查、授权边界 | 单任务通过 |
+| [`guochao-visual-cn`](guochao-visual-cn-codex.md) | 端午节海报风格 | 具体画风、配色与纹样边界 | 单任务通过 |
+| [`guofeng-threejs`](guofeng-threejs-codex.md) | 水墨 3D 技术审查 | NPR 技法、移动端和 Demo | **触发后未完成** |
 
 ## 怎样理解“通过”
 
