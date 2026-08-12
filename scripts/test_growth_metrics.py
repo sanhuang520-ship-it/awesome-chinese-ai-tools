@@ -32,6 +32,13 @@ class GrowthMetricsTest(unittest.TestCase):
         self.assertIn("must not be called users", notes)
         self.assertIn("cannot prove", notes)
 
+    def test_v111_snapshot_does_not_claim_growth(self):
+        data = json.loads((ROOT / "metrics" / "2026-08-12-v1.1.1.json").read_text(encoding="utf-8"))
+        self.assertEqual("v1.1.1", data["release"]["tag"])
+        self.assertEqual(57, data["release"]["localTests"])
+        self.assertEqual(7, data["repositoryMetrics"]["stars"])
+        self.assertIn("cannot be credited with Star growth", data["notes"])
+
 
 if __name__ == "__main__":
     unittest.main()
