@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: 使用交流与实际效果分享
-    url: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions
-    about: 安装问题、组合建议和使用成果请优先放到 Discussions
+    url: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4
+    about: 按置顶模板分享安装问题、组合建议和可复现的实际使用结果

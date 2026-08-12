@@ -10,6 +10,27 @@
 
 ---
 
+## 分享一次真实使用结果（不需要提 PR）
+
+如果你已经使用过某个 Skill，请直接到 [置顶 Discussion](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4) 回复。成功和失败都欢迎，推荐按下面的格式写：
+
+```markdown
+### 使用的 Skill
+
+### 环境与版本
+<!-- Codex / Claude Code / Cursor；操作系统；能确认的版本 -->
+
+### 我交给 AI 的任务
+
+### 实际结果
+
+### 有效的地方 / 需要改进的地方
+```
+
+提交前请删除 Token、邮箱、私人路径和未公开业务数据。维护者如需把案例整理进 README 或文档，会保留原讨论链接，并区分“用户反馈”与“已复核事实”。
+
+---
+
 ## 加一个 Skill
 
 编辑 **`data/skills.json`**，在 `skills` 数组里加一条：

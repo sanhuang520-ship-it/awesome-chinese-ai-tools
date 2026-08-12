@@ -11,7 +11,7 @@
 
 
 
-> 5 个本站原创 Skill 的**真实输出片段**，看看装上之后能得到什么。
+> 本页是本站原创 Skill 的**仓库自测输出片段**，不是外部用户评价。想看或分享真实使用反馈，请前往[置顶 Discussion](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)。
 > 完整源码：[skills/](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills)
 
 ---

@@ -82,6 +82,22 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 ---
 
+## 用过之后，留下一个可复现结果
+
+这个项目现在最需要的不是一句“好用”，而是其他人能够照着重现的真实案例。成功、失败和“不如预期”都可以，只需写清楚 5 件事：
+
+1. 使用的 Skill
+2. 使用环境与版本（Codex / Claude Code / Cursor 等）
+3. 你交给 AI 的任务
+4. 实际发生了什么
+5. 哪一步有效，哪一步需要改进
+
+**[→ 在置顶 Discussion 分享第一次使用结果](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)**
+
+请先移除 Token、邮箱、私人路径和未公开业务数据。被整理进仓库的案例会保留原讨论链接，并明确标注是用户反馈，不会把个别体验写成普遍结论。
+
+---
+
 ## ✍️ 本站原创 Skill（13 个）
 
 这是这个仓库和其他 awesome 列表的区别：**下面这些是我们自己写的，不是搬运的。**
