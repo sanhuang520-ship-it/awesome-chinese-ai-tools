@@ -95,6 +95,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 |---|---|---|---|
 | 审查中文网页排版 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography` | `请检查下面这段网页 CSS 的中文排版问题，只做审查，不修改文件。明确列出问题、理由和建议值：body { font-family: Arial, sans-serif; font-size: 14px; line-height: 1.35; text-align: justify; word-break: break-all; }` | [Codex 单任务实测](cases/chinese-typography-codex.md) |
 | 整理一份不编数据的周报 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-work-report` | `帮我把下面素材整理成给老板看的中文周报：本周修复了登录问题，做了两个页面；结果数据暂时没有；下周继续优化。请按结论先行组织，不要编造数字。` | [Codex 单任务实测](cases/chinese-work-report-codex.md) |
+| 校对一版不编参数的商品文案 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ecommerce-copywriting` | `给一款普通保湿面霜写电商主图文案。已知只有：50g、无香型、89元。没有提供的参数、认证和功效不要编造；先列出可写、待补和不应发布的信息。` | [Codex 单任务实测](cases/ecommerce-copywriting-codex.md) |
 | 制定不靠刷视频的学习计划 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ai-learning-coach` | `我想用两周入门 SQL，但不想再看完教程就忘。先了解我的目标和基础，再带我制定能动手练习的计划。` | [Codex 单任务实测](cases/ai-learning-coach-codex.md) |
 
 这些任务在记录的 Codex 版本中发生过自动触发；它们不是“必定触发”的保证。若结果不同，请保留客户端版本和任务原文，按[兼容性实测表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交成功或失败结果。
@@ -131,7 +132,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [`chinese-typography`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/) | 中文排版：中英间距、CJK 断行避头尾、字体栈、标点全半角，含错误对照与可直接复制的 CSS |
 | [`chinese-web-themes`](skills/chinese-web-themes/) | 8 套中式网页主题（水墨/青绿/宋韵/敦煌/朱砂/新中式/竹韵/夜宴），对比度全过 WCAG AA |
 | [`chinese-work-report`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/work-report/) | 周报 / 述职 / 项目汇报，讲清楚做了什么、结果如何、下一步；没有结果数据时明确留空，不编数字 |
-| [`ecommerce-copywriting`](skills/ecommerce-copywriting/) | 电商文案，内置《广告法》违禁词红线。**不编造**材质、成分、认证参数 |
+| [`ecommerce-copywriting`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/ecommerce-copywriting/) | 电商文案上架前校样：区分可写、待补与不应发布；**不编造**材质、成分、认证、销量或功效 |
 | [`github-readme-cn`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/readme-audit/) | GitHub 中文项目门面优化（本站原创）：首屏结构、真实截图怎么截、命名与 topics、发布前自查清单。附 15 个高增长仓库的结构观察，明确区分相关性与不可验证的部分，不承诺涨星 |
 | [`guochao-visual-cn`](skills/guochao-visual-cn/) | 12 种中国美学画风配方，输出可直接用的 AI 绘图提示词 |
 | [`guofeng-threejs`](skills/guofeng-threejs/) | 国风 Three.js 渲染：水墨 shader 三技法。只做中式渲染，不做通用 Three.js 教程 |

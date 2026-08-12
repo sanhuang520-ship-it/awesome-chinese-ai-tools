@@ -41,7 +41,7 @@ class PublicFeedsTest(unittest.TestCase):
 
     def test_sitemap_contains_first_party_explainer_pages(self):
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
-        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/"):
+        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/"):
             with self.subTest(page=page):
                 self.assertIn(f"/awesome-chinese-ai-tools/{page}", sitemap)
 
@@ -50,7 +50,7 @@ class PublicFeedsTest(unittest.TestCase):
         self.assertIn("Claude Code 与 Cursor 尚无本仓库运行的任务级实测", summary)
         self.assertIn("区分 CLI 发现、文件安装、自动触发和任务完成", summary)
         self.assertIn("data/compatibility.json", summary)
-        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/"):
+        for page in ("typography/", "design/", "guochao/", "readme-audit/", "work-report/", "ecommerce-copywriting/"):
             with self.subTest(page=page):
                 self.assertIn(f"/awesome-chinese-ai-tools/{page}", summary)
 

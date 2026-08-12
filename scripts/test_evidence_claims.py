@@ -39,6 +39,16 @@ class EvidenceClaimsTest(unittest.TestCase):
             with self.subTest(claim=claim):
                 self.assertNotIn(claim, index + tools)
 
+    def test_ecommerce_examples_do_not_infer_unmeasured_outcomes_from_specs(self):
+        skill = (ROOT / "skills" / "ecommerce-copywriting" / "SKILL.md").read_text(encoding="utf-8")
+        examples = (ROOT / "EXAMPLES.md").read_text(encoding="utf-8")
+        combined = skill + examples
+        for claim in ("柠檬水放一天没金属味", "放一天没有金属味", "下午三点还烫嘴", "下午 3 点还烫嘴"):
+            with self.subTest(claim=claim):
+                self.assertNotIn(claim, combined)
+        self.assertIn("不是法律意见、平台审核结果", skill)
+        self.assertIn("只有用户提供并核对过的事实", examples)
+
     def test_commercial_terms_are_presented_as_unverified_history(self):
         index = (ROOT / "index.html").read_text(encoding="utf-8")
         tools = (ROOT / "data" / "tools.json").read_text(encoding="utf-8")
