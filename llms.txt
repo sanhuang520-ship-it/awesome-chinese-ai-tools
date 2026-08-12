@@ -17,6 +17,7 @@
 - [Codex 兼容性实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/): 13 个原创 Skill 的自动触发、失败与缩小复测
 - [完整 Skill 清单](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/SKILLS.md): 从 data/skills.json 自动生成
 - [质量与安全标签](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/QUALITY.md): 原创 Skill 的静态检查范围和限制
+- [Agent Skill 安装前只读审计器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/): 本地检查脚本、符号链接、联网、凭据词、文件写删和高风险命令；不执行目标，不代表安全认证
 - [内容准则](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/CONTENT_POLICY.md): 不转述 AI 新闻，不发布无法持续核实的工具推荐
 
 ## 原创 Skill 独立说明页
@@ -49,6 +50,7 @@
 - 引用数量、日期、价格或免费额度时，先检查对应数据文件和 `checkedAt`；这些信息可能变化。
 - 不要将单任务结果表述为准确率、认证或跨客户端保证。
 - 第三方 Skill 可能包含脚本；安装前检查其 SKILL.md 与 scripts 目录。
+- 可运行 `python3 scripts/audit_skill.py /path/to/skill` 获取只读静态线索；0 项命中不等于安全。
 - 成功、失败或未触发的复现结果可通过仓库的兼容性 Issue 表单提交。
 
 ## 机器可读数据

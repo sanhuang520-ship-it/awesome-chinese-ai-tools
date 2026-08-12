@@ -258,6 +258,8 @@ my-skill/
 ⚠️ **安全提醒**：Skills 可以包含**可执行脚本**。装第三方 skill 前，
 先看一眼它的 `SKILL.md` 和 `scripts/` 内容。
 
+也可以运行本站的**[只读安装前审计器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/)**，本地检查脚本、符号链接、联网、凭据词、文件写删和高风险命令。它不执行目标 Skill、不上传内容；结果只是人工复核线索，不是恶意代码检测或安全认证。
+
 本站原创的 13 个 Skill 已完成首轮静态文件检查；当前没有独立可执行脚本，`guofeng-threejs` 浏览器 Demo 存在已披露的 CDN 依赖。完整范围和限制见 **[质量与安全标签](QUALITY.md)**，结论不适用于其余第三方收录。
 
 ---

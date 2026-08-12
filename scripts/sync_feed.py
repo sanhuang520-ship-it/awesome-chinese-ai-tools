@@ -39,6 +39,12 @@ def render_feed():
         raise ValueError(f"unexpected compatibility outcome totals: {dict(counts)}")
     entries = [
         item(
+            "Agent Skill 安装前安全检查：只读本地审计器",
+            "audit-skill/",
+            "Thu, 13 Aug 2026 00:36:00 +0800",
+            "开源 Python 工具只读检查脚本、符号链接、联网、凭据词、文件写删和高风险命令；不执行目标 Skill，也不把规则命中包装成安全认证。",
+        ),
+        item(
             "如何创建 Codex Skill：从 SKILL.md 到自动触发",
             "create-codex-skill/",
             "Wed, 12 Aug 2026 23:52:00 +0800",
@@ -89,7 +95,7 @@ def render_feed():
     <link>{BASE}</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 12 Aug 2026 23:52:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 00:36:00 +0800</lastBuildDate>
     <atom:link href="{BASE}feed.xml" rel="self" type="application/rss+xml"/>
 
 {chr(10).join(entries)}

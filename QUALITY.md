@@ -2,6 +2,8 @@
 
 > 静态检查日期：**2026-08-12** · 机器可读记录：[data/quality.json](data/quality.json) · 校验脚本：[scripts/check_quality.py](scripts/check_quality.py)
 
+想检查其他 Skill？使用[通用只读安装前审计器](audit-skill/)或直接运行 `python3 scripts/audit_skill.py /path/to/skill`。它只报告需人工复核的线索，不把规则扫描包装成安全认证。
+
 这不是安全认证，也不保证 AI 输出正确。它回答的是安装前最基本的几个问题：仓库里带了什么文件、有没有独立可执行脚本、演示是否需要联网、哪些领域需要人工复核。
 
 ## 检查结论

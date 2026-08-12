@@ -64,6 +64,7 @@ class PublicFeedsTest(unittest.TestCase):
         self.assertIn("Agent Skills 兼容性怎么测试：四层证据法", feed)
         self.assertIn("Codex Skill 安装了却不触发？5 步定位", feed)
         self.assertIn("如何创建 Codex Skill：从 SKILL.md 到自动触发", feed)
+        self.assertIn("Agent Skill 安装前安全检查：只读本地审计器", feed)
 
     def test_sitemap_contains_every_repository_owned_skill(self):
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
@@ -77,6 +78,10 @@ class PublicFeedsTest(unittest.TestCase):
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
         self.assertIn("/README.md", sitemap)
         self.assertIn("/README.en.md", sitemap)
+
+    def test_sitemap_contains_read_only_skill_auditor(self):
+        sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertIn("/awesome-chinese-ai-tools/audit-skill/", sitemap)
 
     def test_sitemap_contains_reproducible_case_evidence(self):
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
