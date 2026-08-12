@@ -59,6 +59,11 @@ class PublicMetadataTest(unittest.TestCase):
         used_categories = {item.get("cat") for item in skills}
         self.assertEqual(used_categories, set(CAT_ORDER))
 
+    def test_skill_entries_and_source_repositories_are_distinct_counts(self):
+        self.assertEqual(184, self.stats["skills"])
+        self.assertEqual(141, self.stats["repos"])
+        self.assertLess(self.stats["repos"], self.stats["skills"])
+
     def test_local_check_reports_drift_without_writing(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

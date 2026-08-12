@@ -32,6 +32,14 @@ class DailyCheckTest(unittest.TestCase):
     def test_status_change_always_writes(self):
         self.assertTrue(self.module.should_persist_tool_check(1, "2026-08-12", "2026-08-12"))
 
+    def test_skill_repository_count_deduplicates_subdirectory_urls(self):
+        skills = [
+            {"url": "https://github.com/anthropics/skills/tree/main/skills/pdf"},
+            {"url": "https://github.com/anthropics/skills/tree/main/skills/docx"},
+            {"url": "https://github.com/example/one"},
+        ]
+        self.assertEqual({"anthropics/skills", "example/one"}, self.module.unique_skill_repositories(skills))
+
 
 if __name__ == "__main__":
     unittest.main()

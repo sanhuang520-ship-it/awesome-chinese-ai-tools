@@ -10,14 +10,21 @@ import datetime
 import json
 import re
 from pathlib import Path
+from urllib.parse import urlsplit
 
 CAT_ORDER = ["cn", "doc", "ppt", "dev", "agent", "design", "biz", "data", "sec", "3d", "game"]
 
 
 def build_stats(skills_data, tools_data):
     skills = skills_data.get("skills", [])
+    repos = {
+        "/".join(urlsplit(item.get("url", "")).path.strip("/").split("/")[:2]).lower()
+        for item in skills
+        if urlsplit(item.get("url", "")).netloc.lower() == "github.com"
+    }
     return {
         "skills": len(skills),
+        "repos": len(repos),
         "cn": sum(1 for item in skills if item.get("cat") == "cn"),
         "ours": sum(1 for item in skills if item.get("ours")),
         "official": sum(1 for item in skills if item.get("official")),
@@ -28,23 +35,29 @@ def build_stats(skills_data, tools_data):
 
 def sync_readme_text(body, stats):
     """只同步 README 里的可计算统计，不改手写介绍。"""
-    n, cn, ours = stats["skills"], stats["cn"], stats["ours"]
+    n, repos, cn, ours = stats["skills"], stats["repos"], stats["cn"], stats["ours"]
     official, tools, checked = stats["official"], stats["tools"], stats["checked"]
     today = datetime.date.today().isoformat()
     replacements = [
         (r"Skills-\d+%20个-", f"Skills-{n}%20个-"),
         (r"本站原创-\d+%20个-", f"本站原创-{ours}%20个-"),
         (r"① \d+ 个 Skill 是我们自己写的", f"① {ours} 个 Skill 是我们自己写的"),
-        (r"② \d+ 个仓库\*\*每天自动复检\*\*", f"② {n} 个仓库**每天自动复检**"),
+        (
+            r"③ (?:\d+ 个仓库|\d+ 个 Skill 条目来自 \d+ 个仓库，来源仓库)\*\*每天自动复检\*\*一次还在不在",
+            f"③ {n} 个 Skill 条目来自 {repos} 个仓库，来源仓库**每天自动复检**一次还在不在",
+        ),
         (r"本站原创 Skill（\d+ 个）", f"本站原创 Skill（{ours} 个）"),
-        (r"\| 🇨🇳 中文原创仓库 \| \d+ \|", f"| 🇨🇳 中文原创仓库 | {cn} |"),
+        (r"\| 🇨🇳 (?:中文原创仓库|中文 Skill 条目) \| \d+ \|", f"| 🇨🇳 中文 Skill 条目 | {cn} |"),
         (r"\| 📄 官方（anthropics/skills） \| \d+ \|", f"| 📄 官方收录 | {official} |"),
-        (r"\| 📄 官方收录 \| \d+ \|", f"| 📄 官方收录 | {official} |"),
+        (r"\| 📄 (?:官方收录|官方 Skill 条目) \| \d+ \|", f"| 📄 官方 Skill 条目 | {official} |"),
         (r"\| ✍️ 本站原创 \| \d+ \|", f"| ✍️ 本站原创 | {ours} |"),
         (r"\| \*\*合计\*\* \| \*\*\d+\*\* \|", f"| **合计** | **{n}** |"),
         (r"另附 \*\*\d+ 个 AI 工具导航\*\*", f"另附 **{tools} 个 AI 工具导航**"),
         (r"\| (\d+) \| \d+ 个工具链接实测可访问性 \|", rf"| \1 | {tools} 个工具链接实测可访问性 |"),
-        (r"\| 4 \| \*\*\d+ 个 skill 仓库复检\*\*", f"| 4 | **{n} 个 skill 仓库复检**"),
+        (
+            r"\| (\d+) \| \*\*(?:\d+ 个 Skill 仓库复检|\d+ 个来源仓库复检\*\*（覆盖 \d+ 个 Skill 条目）)",
+            rf"| \1 | **{repos} 个来源仓库复检**（覆盖 {n} 个 Skill 条目）",
+        ),
         (r"最近复检：\*\*\d{4}-\d{2}-\d{2}\*\*", f"最近复检：**{checked}**"),
         (
             r"MIT License · 数据最后复检 \d{4}-\d{2}-\d{2} · README 由脚本从实际数据生成于 \d{4}-\d{2}-\d{2}",

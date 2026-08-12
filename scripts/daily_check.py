@@ -265,6 +265,18 @@ def check_tool_links():
 
 
 # ── Skill 健康复检 ─────────────────────────────────────────
+def github_repo_name(url):
+    """从 GitHub URL 提取 owner/repo；子目录链接仍归到同一个来源仓库。"""
+    m = re.match(r"https://github\.com/([^/]+)/([^/#?]+)", url or "")
+    if not m:
+        return None
+    return f"{m.group(1)}/{m.group(2).removesuffix('.git')}"
+
+
+def unique_skill_repositories(skills):
+    return {repo.lower() for item in skills if (repo := github_repo_name(item.get("url", "")))}
+
+
 def check_skills():
     """
     复检 data/skills.json 里每个 skill 的仓库是否还存在，
@@ -282,17 +294,26 @@ def check_skills():
     data = json.loads(base64.b64decode(info["content"]).decode("utf-8"))
     sha = info["sha"]
 
+    skills = data.get("skills", [])
+    repo_results = {}
+    for s in skills:
+        if s.get("ours"):
+            continue
+        full = github_repo_name(s.get("url", ""))
+        if full and full.lower() not in repo_results:
+            repo_results[full.lower()] = github_api("GET", f"/repos/{full}")
+            time.sleep(0.05)
+
     dead, alive, star_moved, changed = [], 0, 0, 0
-    for s in data.get("skills", []):
+    for s in skills:
         if s.get("ours"):
             s["skillOk"] = True
             s["skillCheckedAt"] = today_str
             continue
-        m = re.match(r"https://github\.com/([^/]+)/([^/#?]+)", s.get("url", ""))
-        if not m:
+        full = github_repo_name(s.get("url", ""))
+        if not full:
             continue
-        full = f"{m.group(1)}/{m.group(2).replace('.git','')}"
-        r = github_api("GET", f"/repos/{full}")
+        r = repo_results[full.lower()]
         prev_ok = s.get("skillOk")
         if "stargazers_count" in r:
             alive += 1
@@ -309,7 +330,6 @@ def check_skills():
         if s.get("skillOk") != prev_ok:
             changed += 1
         s["skillCheckedAt"] = today_str
-        time.sleep(0.05)
 
     data["skillsCheckedAt"] = today_str
     result = github_api("PUT", f"/repos/{REPO}/contents/{path}", {
@@ -320,7 +340,8 @@ def check_skills():
         "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"},
     })
     ok = "content" in result
-    print(f"[Skill 复检] {'✅' if ok else '❌'} 存活 {alive} | 失效 {len(dead)} | 星数更新 {star_moved}")
+    total_repos = len(unique_skill_repositories(skills))
+    print(f"[Skill 复检] {'✅' if ok else '❌'} 来源仓库 {total_repos} | 存活条目 {alive + sum(bool(s.get('ours')) for s in skills)} | 失效条目 {len(dead)} | 星数更新 {star_moved}")
     if dead:
         print(f"           失效：{', '.join(dead)}")
         prepend_updates([{

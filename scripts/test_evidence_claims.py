@@ -142,6 +142,12 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertIn("该数值不等于独立用户或实际使用", catalog)
         self.assertNotIn("星数完全反映不出使用量", skills + catalog)
 
+    def test_public_copy_distinguishes_skill_entries_from_repositories(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn("184 个 Skill 条目来自 141 个仓库", readme)
+        self.assertIn("141 个来源仓库复检", readme)
+        self.assertNotIn("184 个 Skill 仓库复检", readme)
+
     def test_security_policy_routes_sensitive_reports_privately(self):
         policy = (ROOT / "SECURITY.md").read_text(encoding="utf-8")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")

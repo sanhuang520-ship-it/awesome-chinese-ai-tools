@@ -21,7 +21,7 @@
 > **和别的 awesome 列表有什么不一样**<br>
 > ① 13 个 Skill 是我们自己写的，不是搬运<br>
 > ② 不是只验证“能安装”：13/13 在 Codex 中自动触发，失败过程也公开<br>
-> ③ 184 个仓库**每天自动复检**一次还在不在，不转述无法复核的 AI 新闻
+> ③ 184 个 Skill 条目来自 141 个仓库，来源仓库**每天自动复检**一次还在不在，不转述无法复核的 AI 新闻
 
 ```bash
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
@@ -154,8 +154,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 | 分类 | 数量 |
 |------|------|
-| 🇨🇳 中文原创仓库 | 68 |
-| 📄 官方收录 | 19 |
+| 🇨🇳 中文 Skill 条目 | 68 |
+| 📄 官方 Skill 条目 | 19 |
 | ✍️ 本站原创 | 13 |
 | **合计** | **184** |
 
@@ -171,7 +171,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 |------|--------|
 | 1 | 核对 [SOURCES.md](SOURCES.md) 里各家 AI 官方公告页链接 |
 | 2 | 46 个工具链接实测可访问性 |
-| 3 | **184 个 Skill 仓库复检**：还在不在、星数、最后更新时间 |
+| 3 | **141 个来源仓库复检**（覆盖 184 个 Skill 条目）：还在不在、星数、最后更新时间 |
 | 4 | 从数据重建 SKILLS.md，并同步公开统计 |
 
 这套流程跑在 **GitHub Actions** 上，[运行记录公开可查](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)——不依赖任何人的电脑，也不用你相信我说的话。
