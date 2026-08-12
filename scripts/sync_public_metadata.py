@@ -75,13 +75,13 @@ def sync_readme_text(body, stats):
 
 def sync_index_text(body, stats):
     """同步首页 SEO 元数据和 JSON-LD。"""
-    n, cn, ours = stats["skills"], stats["cn"], stats["ours"]
+    n, repos, cn, ours = stats["skills"], stats["repos"], stats["cn"], stats["ours"]
     tools, checked = stats["tools"], stats["checked"]
     title = f"中文 AI Skills 库 — {n} 个技能包，{ours} 个本站原创 | 每日自动复检"
     desc = (
         f"面向中文用户的 AI Agent Skills 合集：{n} 个技能包，"
-        f"其中 {cn} 个中文项目、{ours} 个本站自写 Skill；"
-        f"每天自动复检仓库是否失效，另附 {tools} 个 AI 工具导航。"
+        f"其中 {cn} 个中文条目、{ours} 个本站自写 Skill，来自 {repos} 个来源仓库；"
+        f"每天自动复检来源仓库是否失效，另附 {tools} 个 AI 工具导航。"
     )
     short_desc = f"{n} 个 AI 技能包，{ours} 个本站自写。每日自动复检，GitHub Actions 记录公开可查。"
 
@@ -122,8 +122,8 @@ def sync_index_text(body, stats):
             for question in item.get("mainEntity", []):
                 if question.get("name") == "有哪些中文的 Claude Skills？":
                     question["acceptedAnswer"]["text"] = (
-                        f"本站收录了 {cn} 个中文 Skill 项目，其中有 {ours} 个本站自写 Skill。"
-                        "全部经 GitHub API 验证仓库真实存在，并每天自动复检。"
+                        f"本站收录了 {cn} 个中文 Skill 条目，其中有 {ours} 个本站自写 Skill。"
+                        f"这些条目来自 {repos} 个来源仓库，来源仓库经 GitHub API 核验并每天自动复检。"
                     )
     new_json = json.dumps(graph, ensure_ascii=False, separators=(",", ":"))
     return body[: match.start()] + match.group(1) + new_json + match.group(3) + body[match.end() :]

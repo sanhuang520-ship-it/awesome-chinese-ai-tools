@@ -147,6 +147,8 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertIn("184 个 Skill 条目来自 141 个仓库", readme)
         self.assertIn("141 个来源仓库复检", readme)
         self.assertNotIn("184 个 Skill 仓库复检", readme)
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("每个仓库都验证过真实存在", index)
 
     def test_security_policy_routes_sensitive_reports_privately(self):
         policy = (ROOT / "SECURITY.md").read_text(encoding="utf-8")

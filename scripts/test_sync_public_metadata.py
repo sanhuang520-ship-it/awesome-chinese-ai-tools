@@ -64,6 +64,13 @@ class PublicMetadataTest(unittest.TestCase):
         self.assertEqual(141, self.stats["repos"])
         self.assertLess(self.stats["repos"], self.stats["skills"])
 
+    def test_index_metadata_uses_entry_and_repository_units(self):
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        synced = sync_index_text(index, self.stats)
+        self.assertIn("68 个中文条目", synced)
+        self.assertIn("来自 141 个来源仓库", synced)
+        self.assertNotIn("68 个中文项目", synced)
+
     def test_local_check_reports_drift_without_writing(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
