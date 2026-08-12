@@ -12,10 +12,11 @@ class TaskEvidenceTest(unittest.TestCase):
 
     def test_evidence_levels_match_preserved_case_text(self):
         verbatim, summaries = validate_records(self.records)
-        self.assertEqual(6, len(verbatim))
-        self.assertEqual(7, len(summaries))
+        self.assertEqual(7, len(verbatim))
+        self.assertEqual(6, len(summaries))
         self.assertEqual(
             {
+                "ai-learning-coach",
                 "bookkeeping-cn",
                 "chinese-typography",
                 "chinese-work-report",
@@ -37,9 +38,9 @@ class TaskEvidenceTest(unittest.TestCase):
 
     def test_only_verbatim_records_have_copyable_tasks(self):
         body = OUTPUT.read_text(encoding="utf-8")
-        self.assertEqual(6, body.count(">复制任务</button>"))
-        self.assertIn("6 条逐字任务原文", body)
-        self.assertIn("7 条只有任务摘要", body)
+        self.assertEqual(7, body.count(">复制任务</button>"))
+        self.assertIn("7 条逐字任务原文", body)
+        self.assertIn("6 条只有任务摘要", body)
         for name, record in self.records.items():
             with self.subTest(skill=name):
                 if record["level"] == "verbatim":

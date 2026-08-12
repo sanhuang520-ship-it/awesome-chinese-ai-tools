@@ -123,7 +123,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 **[→ 按使用场景比较 13 个 Skill、实测状态和安全边界](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guides/)**
 
-**[→ 复制 6 条有逐字原文的首次测试任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reproduce/)**（另外 7 条只有摘要，不反向补写）
+**[→ 复制 7 条有逐字原文的首次测试任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reproduce/)**（另外 6 条只有摘要，不反向补写）
 
 | Skill | 做什么 |
 |-------|--------|

@@ -3,7 +3,7 @@
   "checkedAt": "2026-08-12",
   "method": "verbatim means the case file contains a fenced text block explicitly labeled as the original task; summary-only means only a narrative task summary was preserved and no wording is reconstructed",
   "records": {
-    "ai-learning-coach": {"level": "summary-only", "case": "cases/ai-learning-coach-codex.md"},
+    "ai-learning-coach": {"level": "verbatim", "case": "cases/ai-learning-coach-codex.md", "textBlock": 0},
     "book-digest-cn": {"level": "summary-only", "case": "cases/book-digest-cn-codex.md"},
     "bookkeeping-cn": {"level": "verbatim", "case": "cases/bookkeeping-cn-codex.md", "textBlock": 0},
     "chinese-design-md": {"level": "summary-only", "case": "cases/chinese-design-md-codex.md"},

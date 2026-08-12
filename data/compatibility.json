@@ -73,7 +73,7 @@
         "ai-learning-coach": {
           "outcome": "waiting-input",
           "labelZh": "校准完成，待输入",
-          "summaryZh": "先询问目标、基础、时间和成果形式；完整学习方案等待用户补充信息。",
+          "summaryZh": "逐字复测完成学习前校准并等待用户输入；完整学习方案与学习效果仍未验证。",
           "case": "cases/ai-learning-coach-codex.md"
         },
         "book-digest-cn": {
