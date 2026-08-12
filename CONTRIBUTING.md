@@ -57,6 +57,8 @@ python3 scripts/check_compatibility_report.py compatibility-reports/<id>.json
 
 JSON Schema 是跨工具的数据契约；上面的无第三方依赖校验器还会检查：Skill 是否属于本仓库维护范围、环境阻断是否被误写成任务完成，以及公开文本中常见的 Token、邮箱和私人路径。自动扫描不能代替人工脱敏，提交前仍需逐项阅读。
 
+提交前也可运行 `python3 scripts/check_compatibility_reports.py`，一次检查目录中的全部 JSON，并在报错时标出文件名。通过只代表机器可检查的结构与一致性成立；维护者仍会人工核对来源、证据边界和脱敏情况。
+
 ## 更新社交分享图
 
 `og.svg` 由已提交的目录与兼容性证据生成，不手工填写数量。统计变化后运行：

@@ -7,6 +7,7 @@ body:
       value: |
         成功、失败和没有自动触发都很有价值。请只提交你实际运行过的结果，并先删除 Token、邮箱、私人路径和未公开业务数据。
         如果你希望用 PR 提交机器可读结果，请复制[示例报告](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/examples/compatibility-result.example.json)，并按[公开 JSON Schema](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/schemas/compatibility-result.schema.json)校验。
+        不想手写 JSON，可先用[浏览器本地报告生成器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/report/)下载；表单内容不会上传到本站服务器。机器校验通过不等于结果已被独立复现。
 
   - type: dropdown
     id: client

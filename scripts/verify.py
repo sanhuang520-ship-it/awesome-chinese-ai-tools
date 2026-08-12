@@ -19,6 +19,7 @@ def run(label: str, command: list[str], cwd: Path = ROOT) -> None:
 def main() -> None:
     run("public metadata sync check", [sys.executable, "scripts/sync_public_metadata.py", "."])
     run("compatibility data", [sys.executable, "scripts/check_compatibility.py"])
+    run("submitted compatibility reports", [sys.executable, "scripts/check_compatibility_reports.py"])
     run("quality data", [sys.executable, "scripts/check_quality.py"])
     run("published internal links", [sys.executable, "scripts/check_internal_links.py"])
     run("unit tests", [sys.executable, "-m", "unittest", *TEST_MODULES], cwd=SCRIPTS)

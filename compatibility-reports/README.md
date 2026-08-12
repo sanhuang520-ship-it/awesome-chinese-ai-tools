@@ -13,4 +13,12 @@ python3 scripts/check_compatibility_report.py compatibility-reports/<id>.json
 python3 scripts/verify.py
 ```
 
-完整字段见 [`schemas/compatibility-result.schema.json`](../schemas/compatibility-result.schema.json)。维护者会复核原始证据和隐私边界；通过结构校验不等于结果已被独立复现，也不等于跨客户端兼容认证。
+目录中的所有 JSON 也会由总校验逐份检查：
+
+```bash
+python3 scripts/check_compatibility_reports.py
+```
+
+若失败，输出会先标出文件名，再显示具体字段提示。
+
+完整字段见 [`schemas/compatibility-result.schema.json`](../schemas/compatibility-result.schema.json)。维护者会复核原始证据和隐私边界；机器检查通过只证明结构、一致性和常见敏感信息规则通过，不等于结果已被独立复现，也不等于跨客户端兼容认证。

@@ -13,6 +13,9 @@
 - [ ] 如果加的是 Skill，对方仓库里**确实有 `SKILL.md`**
 - [ ] `desc` 译自原作者的描述，或明确标注是我自己的理解（没有靠名字猜）
 - [ ] 我已运行 `python3 scripts/verify.py`，或说明了本地无法运行的原因
+- [ ] 如果提交 `compatibility-reports/*.json`：这是实际运行结果，已删除敏感信息，并保留任务原文和证据边界；`python3 scripts/check_compatibility_reports.py` 已通过
+
+检查通过只证明文件结构、数据一致性与常见隐私规则通过，不代表兼容性结果已被维护者独立复现。
 
 ## 补充说明
 
