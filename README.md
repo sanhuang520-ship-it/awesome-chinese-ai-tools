@@ -115,6 +115,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 **[→ 用结构化表单提交一次兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)**　·　[在 Discussion 交流](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)
 
+准备提 PR 的贡献者也可以复制[机器可读示例](examples/compatibility-result.example.json)，按 [JSON Schema](schemas/compatibility-result.schema.json)填写，并用仓库内的无依赖校验器检查环境阻断、证据边界和常见敏感信息。
+
 请先移除 Token、邮箱、私人路径和未公开业务数据；敏感漏洞请按[🔒 安全报告](SECURITY.md)中的私密渠道提交。被整理进仓库的案例会保留原讨论链接，并明确标注是用户反馈，不会把个别体验写成普遍结论。
 
 ---

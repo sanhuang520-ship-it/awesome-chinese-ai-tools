@@ -1,6 +1,6 @@
 # Agent Skills 兼容性实测
 
-> 最近实测：**2026-08-12** · 原始记录：[data/compatibility.json](data/compatibility.json) · 校验脚本：[scripts/check_compatibility.py](scripts/check_compatibility.py)
+> 最近实测：**2026-08-12** · 原始记录：[data/compatibility.json](data/compatibility.json) · 汇总校验：[scripts/check_compatibility.py](scripts/check_compatibility.py) · 单次报告规范：[JSON Schema](schemas/compatibility-result.schema.json)
 
 本页只记录实际拿到的证据。**能被 CLI 发现、文件安装成功、AI 自动触发、最终任务完成，是四件不同的事。** 没运行过的客户端明确标为“待测”，不把格式兼容写成实测通过。
 
@@ -51,4 +51,12 @@ Codex 在隔离实测中报告：已安装 Skill 较多时，会为适应 skills
 
 13 个原创 Skill 已各完成一次自动触发测试：10 项当次任务完成，1 项按流程等待必要输入，两个失败项完成缩小复测。下一步补 Claude Code / Cursor 的真实环境证据，并为大任务建立明确输出预算。
 
-如果你能提供 Claude Code 或 Cursor 的实际结果，请用[结构化兼容性表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。表单会分别记录是否点名 Skill、是否触发与任务是否完成；成功和失败都欢迎，但请先删除 Token、邮箱和私人路径。
+如果你能提供 Claude Code 或 Cursor 的实际结果，请用[结构化兼容性表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。表单会分别记录模型是否开始执行、是否点名 Skill、是否触发与任务是否完成；成功和失败都欢迎，但请先删除 Token、邮箱和私人路径。
+
+希望用 PR 提交机器可读结果时，复制[真实示例报告](examples/compatibility-result.example.json)，按 [JSON Schema](schemas/compatibility-result.schema.json)填写，再运行：
+
+```bash
+python3 scripts/check_compatibility_report.py compatibility-reports/<id>.json
+```
+
+仓库校验器不依赖第三方 Python 包，并额外检查本仓库 Skill 名称、环境阻断与完成状态的一致性，以及常见敏感信息。它不是通用 JSON Schema 实现，也不能替代人工脱敏。

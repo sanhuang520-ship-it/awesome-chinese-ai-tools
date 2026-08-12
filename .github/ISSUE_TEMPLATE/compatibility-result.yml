@@ -6,6 +6,7 @@ body:
     attributes:
       value: |
         成功、失败和没有自动触发都很有价值。请只提交你实际运行过的结果，并先删除 Token、邮箱、私人路径和未公开业务数据。
+        如果你希望用 PR 提交机器可读结果，请复制[示例报告](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/examples/compatibility-result.example.json)，并按[公开 JSON Schema](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/schemas/compatibility-result.schema.json)校验。
 
   - type: dropdown
     id: client
@@ -57,6 +58,18 @@ body:
       required: true
 
   - type: dropdown
+    id: environment
+    attributes:
+      label: 模型是否真正开始执行
+      description: 账户用量、网络或平台错误发生在模型输出前时，应选“未执行”，不能记成 Skill 失败
+      options:
+        - 是，模型已经开始执行任务
+        - 否，被账户、网络、平台或本机环境阻断
+        - 不确定
+    validations:
+      required: true
+
+  - type: dropdown
     id: activation
     attributes:
       label: 是否自动触发 Skill
@@ -76,6 +89,7 @@ body:
         - 部分完成，仍缺少必要内容
         - 等待用户输入或确认
         - 失败、报错或卡住
+        - 未执行，平台、账户或环境在模型开始前阻断
         - 无法判断
     validations:
       required: true

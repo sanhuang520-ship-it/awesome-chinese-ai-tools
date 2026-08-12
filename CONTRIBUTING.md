@@ -47,6 +47,16 @@
 
 提交前请删除 Token、邮箱、私人路径和未公开业务数据。维护者如需把案例整理进 README 或文档，会保留原讨论链接，并区分“用户反馈”与“已复核事实”。
 
+### 用 JSON 提交可自动检查的结果
+
+准备提 PR 时，可以复制 [`examples/compatibility-result.example.json`](examples/compatibility-result.example.json)，按公开的 [`schemas/compatibility-result.schema.json`](schemas/compatibility-result.schema.json)填写，并保存为 `compatibility-reports/<id>.json`。示例取自仓库已经公开的真实复测，不是虚构的“理想输出”。
+
+```bash
+python3 scripts/check_compatibility_report.py compatibility-reports/<id>.json
+```
+
+JSON Schema 是跨工具的数据契约；上面的无第三方依赖校验器还会检查：Skill 是否属于本仓库维护范围、环境阻断是否被误写成任务完成，以及公开文本中常见的 Token、邮箱和私人路径。自动扫描不能代替人工脱敏，提交前仍需逐项阅读。
+
 ## 更新社交分享图
 
 `og.svg` 由已提交的目录与兼容性证据生成，不手工填写数量。统计变化后运行：

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-08-12-codex-ai-learning-coach-calibration",
+  "recordedAt": "2026-08-12T23:11:00+08:00",
+  "sourceType": "repository-self-test",
+  "client": {
+    "name": "codex",
+    "version": "0.147.0-alpha.6.5",
+    "os": "macOS",
+    "details": "Ephemeral session in a read-only sandbox"
+  },
+  "skill": "ai-learning-coach",
+  "task": {
+    "verbatim": "我想用两周入门 SQL，但不想再看完教程就忘。请先只完成开始学习前的校准：一次问清楚制定计划所必需的信息，不要现在就生成学习计划，也不要修改任何文件。",
+    "namedSkill": "no"
+  },
+  "environment": {
+    "status": "ok"
+  },
+  "activation": {
+    "status": "verified",
+    "evidence": "Codex主动说明使用 ai-learning-coach，并读取对应 SKILL.md。"
+  },
+  "completion": {
+    "status": "waiting-input",
+    "summary": "学习前校准已完成；完整两周计划按任务要求等待用户补充信息。"
+  },
+  "observed": [
+    "一次询问用途、基础、时间投入、目标产出、验收标准、环境、数据库方向、偏好和遗忘原因。",
+    "没有提前生成通用的14天课表，也没有修改文件。"
+  ],
+  "evidence": [
+    {
+      "kind": "link",
+      "value": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/cases/ai-learning-coach-codex.md"
+    }
+  ],
+  "boundaries": [
+    "只验证学习前校准，没有验证后续计划执行或学习效果。",
+    "单客户端版本、单条任务的结果不能外推为跨版本准确率。"
+  ],
+  "privacy": {
+    "scrubbed": true,
+    "containsSensitiveData": false
+  },
+  "caseUrl": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/cases/ai-learning-coach-codex.md"
+}

@@ -56,3 +56,5 @@
 - [quality.json](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/data/quality.json)
 - [task-evidence.json](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/data/task-evidence.json)
 - [retest-queue.json](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/data/retest-queue.json)
+- [兼容性单次报告 JSON Schema](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/schemas/compatibility-result.schema.json)
+- [已验证的兼容性报告示例](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/examples/compatibility-result.example.json)

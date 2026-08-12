@@ -75,11 +75,13 @@ class CompatibilityDataTest(unittest.TestCase):
 
     def test_compatibility_submission_separates_naming_activation_and_completion(self):
         template = (ROOT / ".github" / "ISSUE_TEMPLATE" / "compatibility-result.yml").read_text(encoding="utf-8")
-        for field in ("id: named_skill", "id: activation", "id: completion", "id: evidence", "id: boundary"):
+        for field in ("id: named_skill", "id: environment", "id: activation", "id: completion", "id: evidence", "id: boundary"):
             with self.subTest(field=field):
                 self.assertIn(field, template)
         self.assertIn("否，没有点名", template)
         self.assertIn("失败、报错或卡住", template)
+        self.assertIn("未执行，平台、账户或环境", template)
+        self.assertIn("compatibility-result.schema.json", template)
         self.assertIn("截图不是必需的", template)
 
     def test_public_compatibility_summary_matches_recorded_cli_client(self):
