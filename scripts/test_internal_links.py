@@ -110,5 +110,15 @@ class InternalLinksTest(unittest.TestCase):
         self.assertNotIn("按新课标的教学目标三维度组织", skill)
         self.assertNotIn("按新课标三维目标", catalog)
 
+    def test_homework_guide_separates_guidance_from_parent_checking(self):
+        page = (ROOT / "homework" / "index.html").read_text(encoding="utf-8")
+        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill homework-tutor-cn"
+        for phrase in ("孩子先说", "家长引导", "家长核对", "迁移练习", "最终使用仍由人决定", "不做诊断"):
+            self.assertIn(phrase, page)
+        self.assertIn(f'<code class="command">{command}</code>', page)
+        self.assertIn(f'data-copy="{command}"', page)
+        catalog = (ROOT / "data" / "skills.json").read_text(encoding="utf-8")
+        self.assertNotIn("不给答案给引导话术", catalog)
+
 if __name__ == "__main__":
     unittest.main()

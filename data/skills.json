@@ -153,10 +153,11 @@
       "official": false,
       "rec": true,
       "ours": true,
-      "desc": "家长辅导作业助手（本站原创）：不给答案给引导话术，分学科方法，含情绪对抗处理",
+      "desc": "家长辅导作业助手（本站原创）：不生成给孩子直接抄写的成品，先给家长引导话术，再单列核对结果；含分学科方法与情绪对抗处理",
       "descEn": "",
       "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn",
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/homework-tutor-cn",
+      "explainer": "homework/",
       "skillOk": true,
       "skillCheckedAt": "2026-08-12"
     },

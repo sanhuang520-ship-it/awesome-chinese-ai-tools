@@ -135,7 +135,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [`github-readme-cn`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/readme-audit/) | GitHub 中文项目门面优化（本站原创）：首屏结构、真实截图怎么截、命名与 topics、发布前自查清单。附 15 个高增长仓库的结构观察，明确区分相关性与不可验证的部分，不承诺涨星 |
 | [`guochao-visual-cn`](skills/guochao-visual-cn/) | 12 种中国美学画风配方，输出可直接用的 AI 绘图提示词 |
 | [`guofeng-threejs`](skills/guofeng-threejs/) | 国风 Three.js 渲染：水墨 shader 三技法。只做中式渲染，不做通用 Three.js 教程 |
-| [`homework-tutor-cn`](skills/homework-tutor-cn/) | 家长辅导作业。**不生成给孩子直接抄的答案**，先给引导话术；另给家长核对结果 |
+| [`homework-tutor-cn`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/homework/) | 家长辅导作业：**不生成给孩子直接抄写的成品**，先给引导话术，再单列家长核对结果；公开最终使用仍由人决定的边界 |
 
 📋 **[看它们实际输出什么 → EXAMPLES.md](EXAMPLES.md)**
 
@@ -143,7 +143,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 写这些 skill 时最大的领悟是——**真正决定一个 skill 好不好用的，往往是它的边界。**
 
-> 记账不做税务筹划 · 辅导作业不给答案 · 学习教练不替你完成输出 · 国潮视觉不伪造文物
+> 记账不做税务筹划 · 辅导作业不生成给孩子直接抄写的成品 · 学习教练不替你完成输出 · 国潮视觉不伪造文物
 
 一个只写"能做什么"的 skill，用起来会发现它在你没问的地方也给意见，
 在它不该确定的地方也很确定。
