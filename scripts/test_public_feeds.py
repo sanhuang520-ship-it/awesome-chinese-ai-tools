@@ -26,6 +26,12 @@ class PublicFeedsTest(unittest.TestCase):
             with self.subTest(skill=skill_file.parent.name):
                 self.assertIn(expected, sitemap)
 
+    def test_llms_summary_preserves_client_evidence_boundary(self):
+        summary = (ROOT / "llms.txt").read_text(encoding="utf-8")
+        self.assertIn("Claude Code 与 Cursor 尚无本仓库运行的任务级实测", summary)
+        self.assertIn("区分 CLI 发现、文件安装、自动触发和任务完成", summary)
+        self.assertIn("data/compatibility.json", summary)
+
 
 if __name__ == "__main__":
     unittest.main()

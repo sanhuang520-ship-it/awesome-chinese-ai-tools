@@ -1,0 +1,35 @@
+# 中文 AI Skills 库
+
+> 面向中文用户的 Agent Skills 合集与实测仓库。收录 184 个 Skill，其中 13 个由本仓库维护；另有 47 个 AI 工具入口。项目重点是可安装、可复现和明确证据边界，不把收录、安装或单次运行写成普遍兼容。
+
+## 首选入口
+
+- [在线搜索与筛选](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/): 浏览全部 Skill 和工具
+- [安装与排错](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/): skills CLI 1.5.22 的本机实测步骤与路径边界
+- [Codex 兼容性实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/): 13 个原创 Skill 的自动触发、失败与缩小复测
+- [完整 Skill 清单](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/SKILLS.md): 从 data/skills.json 自动生成
+- [质量与安全标签](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/QUALITY.md): 原创 Skill 的静态检查范围和限制
+- [内容准则](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/CONTENT_POLICY.md): 不转述 AI 新闻，不发布无法持续核实的工具推荐
+
+## 当前证据
+
+- `npx skills@1.5.22 add . --list` 能发现 13 个本站原创 Skill。
+- 13 份仓库 SKILL.md 与本机 `~/.agents/skills/<name>/SKILL.md` 逐字节一致。
+- 13/13 在 Codex CLI 0.147.0-alpha.6.5 的单任务中发生自动触发；11 项首次完成，2 项大任务失败后缩小复测通过。
+- Claude Code 与 Cursor 尚无本仓库运行的任务级实测，不能声称兼容通过。
+- skills CLI 在本机同时建立了 `~/.claude/skills/` 符号链接；这只证明文件布局，不证明 Claude Code 自动触发。
+
+## 使用与引用规则
+
+- 区分 CLI 发现、文件安装、自动触发和任务完成。
+- 引用数量、日期、价格或免费额度时，先检查对应数据文件和 `checkedAt`；这些信息可能变化。
+- 不要将单任务结果表述为准确率、认证或跨客户端保证。
+- 第三方 Skill 可能包含脚本；安装前检查其 SKILL.md 与 scripts 目录。
+- 成功、失败或未触发的复现结果可通过仓库的兼容性 Issue 表单提交。
+
+## 机器可读数据
+
+- [skills.json](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/data/skills.json)
+- [tools.json](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/data/tools.json)
+- [compatibility.json](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/data/compatibility.json)
+- [quality.json](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/data/quality.json)
