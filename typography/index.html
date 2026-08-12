@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>中文网页排版规范：行高、中英混排与 CJK 断行 | 中文 AI Skills 库</title>
+<meta name="description" content="一份可直接使用的中文网页排版指南：中文行高、字体栈、中英混排空格、CJK 避头尾、行宽、标点与着重号，附错误对照和可复制 CSS。">
+<link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="中文网页排版规范：10 条规则与可复制 CSS">
+<meta property="og:description" content="从行高、中英混排到 CJK 断行，用一组前后对照修好中文网页。">
+<meta property="og:url" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="中文网页排版规范：10 条规则与可复制 CSS">
+<meta name="twitter:description" content="从行高、中英混排到 CJK 断行，用一组前后对照修好中文网页。">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"WebPage","name":"中文网页排版规范：行高、中英混排与 CJK 断行","url":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/","description":"可直接使用的中文网页排版规则、错误对照和 CSS。","inLanguage":"zh-CN","isPartOf":{"@type":"WebSite","name":"中文 AI Skills 库","url":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"中文网页正文行高设置多少合适？","acceptedAnswer":{"@type":"Answer","text":"正文通常可从 1.6 到 1.8 之间调整，本站示例使用 1.75；大标题可收紧到约 1.35。"}},
+      {"@type":"Question","name":"中文和英文之间要不要加空格？","acceptedAnswer":{"@type":"Answer","text":"通常建议在中文与英文或半角数字之间加入一个空格，但标点旁边不重复加空格。手动或构建时处理比依赖实验性浏览器特性更稳妥。"}},
+      {"@type":"Question","name":"为什么不建议中文正文使用两端对齐？","acceptedAnswer":{"@type":"Answer","text":"中文没有西文那样的词间空格，两端对齐容易把字距拉得不均匀。多数网页正文使用左对齐更稳定。"}}
+    ]}
+  ]
+}
+</script>
+<style>
+:root{--paper:#f4efe5;--paper2:#e9e1d2;--ink:#202522;--soft:#5d645e;--line:#c9beaa;--red:#9d3b32;--green:#315d51;--white:#fffdf8;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.75;letter-spacing:.01em}
+a{color:var(--green)}
+button{font:inherit}
+.page{width:min(1180px,calc(100% - 40px));margin:auto}
+.mast{padding:26px 0 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:18px}
+.back{text-decoration:none;font-size:14px;font-weight:700}.folio{font:12px/1 var(--mono);color:var(--soft);letter-spacing:.08em}
+.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:58px;padding:72px 0 66px;position:relative}
+.hero::before{content:"排";position:absolute;right:0;top:8px;font:700 clamp(150px,24vw,330px)/1 var(--serif);color:rgba(157,59,50,.055);pointer-events:none}
+.kicker{display:flex;align-items:center;gap:12px;color:var(--red);font-size:13px;font-weight:800;letter-spacing:.16em}.kicker::before{content:"";width:38px;height:2px;background:var(--red)}
+h1,h2,h3{font-family:var(--serif);letter-spacing:0}
+h1{font-size:clamp(42px,7.2vw,88px);line-height:1.08;margin:18px 0 24px;max-width:9em;font-weight:800}
+.lead{font-size:clamp(18px,2vw,23px);line-height:1.8;max-width:36em;color:#3e4540;margin:0}
+.hero-note{align-self:end;border-top:4px solid var(--red);padding-top:18px;position:relative;z-index:1}
+.hero-note b{font:700 25px/1.3 var(--serif)}.hero-note p{font-size:14px;color:var(--soft);margin:10px 0 18px}
+.install,.copycss{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:10px 14px;cursor:pointer;font-weight:700;box-shadow:4px 4px 0 var(--red);transition:transform .15s,box-shadow .15s}
+.install:hover,.copycss:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--red)}
+.install:focus-visible,.copycss:focus-visible,.tabs button:focus-visible,a:focus-visible{outline:3px solid #c88831;outline-offset:3px}
+.section{padding:70px 0;border-top:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:95px minmax(0,1fr);gap:22px;margin-bottom:32px}.num{font:700 13px/1 var(--mono);color:var(--red);padding-top:12px}
+h2{font-size:clamp(31px,5vw,53px);line-height:1.2;margin:0 0 10px}.dek{color:var(--soft);max-width:43em;margin:0}
+.proofs{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:var(--white)}
+.proof{padding:28px clamp(20px,4vw,44px);min-width:0}.proof+.proof{border-left:1px solid var(--line)}
+.proof-label{font:800 12px/1 var(--mono);letter-spacing:.1em;color:var(--red);margin-bottom:22px}.proof.good .proof-label{color:var(--green)}
+.sample-bad{font-size:15px;line-height:1.35;text-align:justify;word-break:break-all;max-width:none;margin:0}.sample-good{font-size:17px;line-height:1.75;text-align:left;word-break:normal;overflow-wrap:anywhere;line-break:strict;max-width:38em;margin:0}
+.sample-bad strong{font-style:italic}.sample-good strong{font-weight:700;text-emphasis:dot;-webkit-text-emphasis:dot;text-emphasis-position:under right;-webkit-text-emphasis-position:under}
+.verdict{display:flex;gap:10px;align-items:flex-start;margin-top:25px;padding-top:16px;border-top:1px dashed var(--line);font-size:13px;color:var(--soft)}.mark{color:var(--red);font-weight:900}.good .mark{color:var(--green)}
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.rule{padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:42px minmax(0,1fr);gap:15px;background:rgba(255,253,248,.36)}
+.rule i{font:700 12px/1 var(--mono);color:var(--red);font-style:normal;padding-top:6px}.rule h3{font-size:21px;margin:0 0 6px}.rule p{font-size:14px;color:var(--soft);margin:0}.rule code{font-family:var(--mono);font-size:12px;color:var(--green)}
+.workbench{display:grid;grid-template-columns:.78fr 1.22fr;border:1px solid var(--ink);background:var(--white)}
+.work-copy{padding:34px}.work-copy h3{font-size:28px;margin:0 0 12px}.work-copy p{color:var(--soft);font-size:14px}.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.tabs button{border:1px solid var(--line);background:transparent;color:var(--ink);padding:7px 11px;cursor:pointer;font-size:13px}.tabs button[aria-selected=true]{background:var(--green);color:white;border-color:var(--green)}
+.carrier{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:14px}.carrier b{font-family:var(--serif);font-size:18px}.carrier p{margin:5px 0 0}
+.codebox{background:#1e2421;color:#e8eadf;padding:28px;overflow:auto;position:relative}.codebox pre{margin:0;white-space:pre;tab-size:2;font:13px/1.75 var(--mono)}.codebox .copycss{position:absolute;right:18px;top:18px;background:var(--paper);color:var(--ink);box-shadow:3px 3px 0 var(--red);font-size:12px;padding:7px 10px}
+.diagnosis{width:100%;border-collapse:collapse;background:var(--white);font-size:14px}.diagnosis th,.diagnosis td{text-align:left;padding:15px 18px;border:1px solid var(--line);vertical-align:top}.diagnosis th{font:700 14px/1.4 var(--serif);background:var(--paper2)}.diagnosis code{font:12px var(--mono);color:var(--green)}
+.cta{margin:70px 0;background:var(--red);color:#fff8ed;padding:clamp(30px,6vw,65px);display:grid;grid-template-columns:1fr auto;align-items:end;gap:30px}.cta h2{font-size:clamp(30px,5vw,55px);margin:0 0 10px}.cta p{margin:0;opacity:.84}.cta .install{background:#fff8ed;color:var(--ink);box-shadow:5px 5px 0 #51201c;white-space:nowrap}
+footer{border-top:1px solid var(--line);padding:25px 0 48px;color:var(--soft);font-size:13px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+@media(max-width:780px){.hero{grid-template-columns:1fr;gap:32px;padding:48px 0}.hero-note{max-width:34em}.proofs,.workbench{grid-template-columns:1fr}.proof+.proof{border-left:0;border-top:1px solid var(--line)}.rules{grid-template-columns:1fr}.cta{grid-template-columns:1fr;align-items:start}.codebox{min-height:440px}.section-head{grid-template-columns:50px 1fr}}
+@media(max-width:480px){body{font-size:16px}.page{width:min(100% - 26px,1180px)}.mast{padding-top:18px}.folio{display:none}.hero{padding-top:38px}.proof,.work-copy,.codebox{padding:22px 18px}.diagnosis{display:block;overflow-x:auto;white-space:nowrap}.section{padding:54px 0}.section-head{display:block}.num{margin-bottom:12px}.cta{margin:50px 0}.cta .install{white-space:normal}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.install,.copycss{transition:none}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="mast">
+    <a class="back" href="../">← 中文 AI Skills 库</a>
+    <span class="folio">TYPE SPECIMEN · 2026</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="kicker">中文排版，不是西文换个字体</div>
+        <h1>把中文排得<br>像中文。</h1>
+        <p class="lead">行高、中英间距、CJK 断行、字体栈和标点——十条规则，修掉中文网页里那些“说不上来，但就是不舒服”的地方。</p>
+      </div>
+      <aside class="hero-note">
+        <b>适用于网页、公众号、Word / PDF 与 PPT</b>
+        <p>同一条规则不能机械套在所有载体上。这个 Skill 会先确认载体，再给出可执行的样式。</p>
+        <button class="install" type="button" data-copy="npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography">复制安装命令</button>
+      </aside>
+    </section>
+
+    <section class="section" id="comparison">
+      <div class="section-head"><div class="num">01 / 对照</div><div><h2>只改排版，气质就变了</h2><p class="dek">下面两段内容相同。右侧没有加入图片、渐变或动效，只修正了中文阅读最关键的几项参数。</p></div></div>
+      <div class="proofs">
+        <article class="proof bad"><div class="proof-label">BEFORE · 西文模板直套</div><p class="sample-bad">我们用AI工具做了一次中文网页实验。页面设置为两端对齐，行高只有1.35，而且把word-break写成break-all。遇到OpenAI Codex这样的中英文混排时，字母可能从中间断开。<strong>中文强调还被机械地拉成斜体</strong>，读起来又挤又碎。</p><div class="verdict"><span class="mark">×</span><span>行距拥挤、字距不匀、英文可能被截断，中文斜体也缺少自然字形。</span></div></article>
+        <article class="proof good"><div class="proof-label">AFTER · 中文阅读参数</div><p class="sample-good">我们用 AI 工具做了一次中文网页实验。页面使用左对齐，正文行高设为 1.75，并保留正常的单词断行。遇到 OpenAI Codex 这样的中英文混排时，英文单词会保持完整。<strong>中文强调改用着重号</strong>，字面更稳定，阅读节奏也更松弛。</p><div class="verdict"><span class="mark">✓</span><span>盘古之白、舒展行高、正常断词、严格避头尾，规则各自解决一个明确问题。</span></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="rules">
+      <div class="section-head"><div class="num">02 / 规则</div><div><h2>中文排版的 10 个支点</h2><p class="dek">它们不是审美口号，而是可以逐项检查的实现规则。具体数值仍应按字号、字体和载体微调。</p></div></div>
+      <div class="rules">
+        <article class="rule"><i>01</i><div><h3>留出盘古之白</h3><p>中文与英文、半角数字之间通常加一个空格；标点旁边不重复加。例：<code>用 Python 写 3 个脚本</code>。</p></div></article>
+        <article class="rule"><i>02</i><div><h3>正文行高更松</h3><p>从 <code>line-height: 1.75</code> 起步；中文字符方正饱满，西文常用的 1.4 往往太挤。</p></div></article>
+        <article class="rule"><i>03</i><div><h3>写完整字体栈</h3><p>覆盖苹果、Windows 与 Linux / Android；衬线和无衬线分别组织，不依赖单一系统字体。</p></div></article>
+        <article class="rule"><i>04</i><div><h3>标点跟随语境</h3><p>中文句子用全角标点，英文内部用半角；中文省略号是“……”而不是三个英文句点。</p></div></article>
+        <article class="rule"><i>05</i><div><h3>引号保持统一</h3><p>简体大陆常用“”与‘’；港台或文艺排版常见「」与『』。选择一套，不在同篇混用。</p></div></article>
+        <article class="rule"><i>06</i><div><h3>控制 CJK 断行</h3><p>用 <code>word-break: normal</code> 与 <code>line-break: strict</code>，避免截断英文和标点悬在行首。</p></div></article>
+        <article class="rule"><i>07</i><div><h3>缩进与段距二选一</h3><p>网页多用段间距；印刷、Word / PDF 可用两字符首行缩进。不要同时缩进又空行。</p></div></article>
+        <article class="rule"><i>08</i><div><h3>中文慎用斜体</h3><p>许多中文字体没有真斜体。优先用字重或 <code>text-emphasis: dot</code> 的传统着重号。</p></div></article>
+        <article class="rule"><i>09</i><div><h3>限制字号与行宽</h3><p>网页正文建议至少 16px；长阅读可从 17–18px 测试，正文宽度可先设 <code>max-width: 38em</code>。</p></div></article>
+        <article class="rule"><i>10</i><div><h3>数字保持可比较</h3><p>数字使用半角，单位前后的空格按语境统一；表格数字用 <code>tabular-nums</code> 对齐。</p></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="css">
+      <div class="section-head"><div class="num">03 / 落地</div><div><h2>一份能直接改的基础 CSS</h2><p class="dek">这不是“万能主题”，而是稳健起点。品牌字体、字号层级与不同地区规范仍要按项目确认。</p></div></div>
+      <div class="workbench">
+        <div class="work-copy">
+          <h3>先确认载体，再下手</h3>
+          <p>网页、公众号、文档和演示文稿的约束不同。选择一个载体，查看最先要调整的参数。</p>
+          <div class="tabs" role="tablist" aria-label="排版载体">
+            <button type="button" role="tab" aria-selected="true" data-carrier="web">网页</button>
+            <button type="button" role="tab" aria-selected="false" data-carrier="wechat">公众号</button>
+            <button type="button" role="tab" aria-selected="false" data-carrier="doc">Word / PDF</button>
+            <button type="button" role="tab" aria-selected="false" data-carrier="ppt">PPT</button>
+          </div>
+          <div class="carrier" id="carrier" aria-live="polite"><b>网页</b><p>优先检查字体回退、正文行宽、响应式字号与 CJK 断行；正文通常使用段间距，不做首行缩进。</p></div>
+        </div>
+        <div class="codebox"><button class="copycss" type="button">复制 CSS</button><pre id="css-code">:root {
+  --font-sans: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "PingFang SC", "Microsoft YaHei",
+    "Noto Sans CJK SC", sans-serif;
+  --font-serif: "Songti SC", "Noto Serif CJK SC",
+    Georgia, serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+article { max-width: 38em; margin-inline: auto; }
+p { margin: 0 0 1.5em; }
+h1, h2, h3 { line-height: 1.35; letter-spacing: 0; }
+
+article {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
+em {
+  font-style: normal;
+  text-emphasis: dot;
+  text-emphasis-position: under right;
+}
+
+td.num {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}</pre></div>
+      </div>
+    </section>
+
+    <section class="section" id="diagnosis">
+      <div class="section-head"><div class="num">04 / 速查</div><div><h2>页面哪里不对，先看这里</h2><p class="dek">从症状反推原因，比随意换颜色和字体更有效。</p></div></div>
+      <table class="diagnosis">
+        <thead><tr><th>症状</th><th>常见原因</th><th>优先修复</th></tr></thead>
+        <tbody>
+          <tr><td>中文挤成一堵墙</td><td>行高偏小、段落没有呼吸</td><td><code>line-height: 1.75</code></td></tr>
+          <tr><td>中英文粘在一起</td><td>缺少混排空格</td><td>手动或在构建流程中加入空格</td></tr>
+          <tr><td>英文单词被切开</td><td>使用了 <code>break-all</code></td><td><code>word-break: normal</code></td></tr>
+          <tr><td>标点悬在行首</td><td>缺少 CJK 避头尾</td><td><code>line-break: strict</code></td></tr>
+          <tr><td>正文一眼扫不完</td><td>每行过长</td><td>从 <code>max-width: 38em</code> 调整</td></tr>
+          <tr><td>中文斜体像被推歪</td><td>字体没有真实斜体字形</td><td>改用字重或着重号</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="cta">
+      <div><h2>让 Codex 帮你逐项检查。</h2><p>安装本站原创 <strong>chinese-typography</strong>，按载体输出中文排版建议或可直接使用的样式。</p></div>
+      <button class="install" type="button" data-copy="npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography">复制安装命令</button>
+    </section>
+  </main>
+
+  <footer><span>本站原创 Skill · <a href="../skills/chinese-typography/SKILL.md">阅读完整规则</a> · <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-typography">GitHub 源码</a></span><span>字体商用授权与地区排版规范，请在具体项目中另行核实。</span></footer>
+</div>
+<script>
+const carriers={
+  web:['网页','优先检查字体回退、正文行宽、响应式字号与 CJK 断行；正文通常使用段间距，不做首行缩进。'],
+  wechat:['公众号','使用内联样式，正文一般从 15–16px、1.75 行高起步；微信已有页面边距，不额外堆叠留白。'],
+  doc:['Word / PDF','印刷式长文可使用两字符首行缩进，并用磅值管理字号；不要再同时加入大段间距。'],
+  ppt:['PPT','字号更大、每页文字更少、层级对比更强；先删减内容，再调整行距，而不是把整段缩小。']
+};
+document.querySelectorAll('.tabs button').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected','false'));
+  btn.setAttribute('aria-selected','true');
+  const c=carriers[btn.dataset.carrier];
+  document.querySelector('#carrier').innerHTML=`<b>${c[0]}</b><p>${c[1]}</p>`;
+}));
+async function copyText(text,button,done){
+  try{await navigator.clipboard.writeText(text);const old=button.textContent;button.textContent=done;setTimeout(()=>button.textContent=old,1800)}
+  catch(e){button.textContent='复制失败，请手动选择';setTimeout(()=>button.textContent='复制',1800)}
+}
+document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',()=>copyText(btn.dataset.copy,btn,'已复制 ✓')));
+document.querySelector('.copycss').addEventListener('click',e=>copyText(document.querySelector('#css-code').textContent,e.currentTarget,'已复制 CSS ✓'));
+</script>
+</body>
+</html>

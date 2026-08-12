@@ -13,7 +13,7 @@
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
 
 **[🌐 在线浏览（可搜索筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[📋 完整清单](SKILLS.md)　·
-[📸 真实渲染截图](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)　·　[🎨 12 种画风对照](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/)
+[📸 真实渲染截图](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)　·　[🎨 12 种画风对照](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/)　·　[✒️ 中文排版实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/)
 
 </div>
 
@@ -93,7 +93,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [`bookkeeping-cn`](skills/bookkeeping-cn/) | 记账整理。**明确不做**税务筹划、投资建议，不替代会计 |
 | [`chinese-design-md`](skills/chinese-design-md/) | 中式 DESIGN.md 设计系统（本站原创）：8 套可直接丢进项目根目录的设计文档，AI 读了就按规范生成界面。含中文排版规则（行高 1.75 / 不用 justify / 着重号代替斜体 / CJK 避头尾），对比度逐项实测并标出不达标项 |
 | [`chinese-lesson-plan`](skills/chinese-lesson-plan/) | 中小学教案。含防套话机制：学情分析要写这个年龄段的具体特征 |
-| [`chinese-typography`](skills/chinese-typography/) | 中文排版：中英间距、CJK 断行避头尾、字体栈、标点全半角，输出可直接用的 CSS |
+| [`chinese-typography`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/) | 中文排版：中英间距、CJK 断行避头尾、字体栈、标点全半角，含错误对照与可直接复制的 CSS |
 | [`chinese-web-themes`](skills/chinese-web-themes/) | 8 套中式网页主题（水墨/青绿/宋韵/敦煌/朱砂/新中式/竹韵/夜宴），对比度全过 WCAG AA |
 | [`chinese-work-report`](skills/chinese-work-report/) | 周报 / 述职 / 项目汇报，讲清楚做了什么、结果如何、下一步 |
 | [`ecommerce-copywriting`](skills/ecommerce-copywriting/) | 电商文案，内置《广告法》违禁词红线。**不编造**材质、成分、认证参数 |
