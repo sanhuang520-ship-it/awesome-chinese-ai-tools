@@ -39,6 +39,15 @@ class GrowthMetricsTest(unittest.TestCase):
         self.assertEqual(7, data["repositoryMetrics"]["stars"])
         self.assertIn("cannot be credited with Star growth", data["notes"])
 
+    def test_search_content_launch_preserves_missing_metric_and_distribution_state(self):
+        data = json.loads((ROOT / "metrics" / "2026-08-12-search-content-launch.json").read_text(encoding="utf-8"))
+        self.assertEqual("not-refreshed", data["repositoryMetrics"]["status"])
+        self.assertEqual("not-published", data["externalDistribution"]["status"])
+        self.assertEqual(200, data["publishedEndpoints"]["codexSkillNotTriggering"]["httpStatus"])
+        self.assertEqual(200, data["publishedEndpoints"]["createCodexSkill"]["httpStatus"])
+        self.assertIn("must not be called current", data["notes"])
+        self.assertIn("cannot be attributed", data["notes"])
+
 
 if __name__ == "__main__":
     unittest.main()
