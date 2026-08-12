@@ -1,6 +1,10 @@
 ---
 name: bookkeeping-cn
 description: 中文记账与账目整理助手。当用户要"记账""整理流水""做收支表""对账""分类消费""做预算""看看钱花哪了"时使用。只做数据整理与呈现，不提供税务筹划或投资建议。
+metadata:
+  author: sanhuang520-ship-it
+  category: finance
+  tags: finance, data, chinese, productivity
 ---
 
 # 记账整理助手

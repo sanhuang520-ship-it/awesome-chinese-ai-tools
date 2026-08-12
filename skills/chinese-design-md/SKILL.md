@@ -1,6 +1,10 @@
 ---
 name: chinese-design-md
 description: 中式 DESIGN.md 设计系统。当用户要"中国风网页""国风页面""中式设计系统""给项目定个中式风格""DESIGN.md""让 AI 按设计规范生成界面""中文网页排版规范"时使用。提供 8 套可直接丢进项目根目录的 DESIGN.md，AI 读了就按这套规范生成界面。含西文设计系统普遍缺失的中文排版规则。
+metadata:
+  author: sanhuang520-ship-it
+  category: design
+  tags: design, standards, chinese, ui
 ---
 
 # 中式 DESIGN.md

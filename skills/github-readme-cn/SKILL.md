@@ -1,6 +1,10 @@
 ---
 name: github-readme-cn
 description: 中文开源项目的 README 与仓库门面优化。当用户说"我的开源项目没人看""README 怎么写""GitHub 仓库怎么优化""帮我写 README""项目主页太丑""怎么让别人愿意 star"时使用。基于对 15 个近期高增长仓库的实测数据给出可执行建议，同时明确说明哪些是相关性、哪些无法验证——不承诺涨星。
+metadata:
+  author: sanhuang520-ship-it
+  category: documentation
+  tags: documentation, git, optimization, chinese
 ---
 
 # GitHub 中文项目门面优化

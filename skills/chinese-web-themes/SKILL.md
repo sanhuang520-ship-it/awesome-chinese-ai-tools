@@ -1,6 +1,10 @@
 ---
 name: chinese-web-themes
 description: 中式网页主题库。当用户要"中国风网页""国风网站样式""古风博客主题""中式配色 CSS""水墨风页面""新中式网页""给网站换个中国风皮肤"时使用。提供 8 套可直接引入的 CSS 主题，内置中文排版规范。
+metadata:
+  author: sanhuang520-ship-it
+  category: design
+  tags: design, chinese, ui, development
 ---
 
 # 中式网页主题库

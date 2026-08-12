@@ -1,6 +1,10 @@
 ---
 name: homework-tutor-cn
 description: 辅导中国中小学生作业的家长助手。当用户要"辅导作业""孩子这题不会""怎么给孩子讲""检查作业""孩子不想写作业"时使用。重点是教家长怎么引导，而不是直接给答案。
+metadata:
+  author: sanhuang520-ship-it
+  category: productivity
+  tags: learning, education, chinese, productivity
 ---
 
 # 家长辅导作业助手

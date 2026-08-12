@@ -1,6 +1,10 @@
 ---
 name: ecommerce-copywriting
 description: 生成中文电商商品文案。当用户要"写商品详情""起标题""做卖点提炼""写主图文案""优化转化""写种草文案"时使用。覆盖淘宝/天猫/京东/拼多多/抖音小店/小红书，按平台规则和搜索逻辑组织。
+metadata:
+  author: sanhuang520-ship-it
+  category: marketing
+  tags: marketing, content-creation, compliance, chinese
 ---
 
 # 电商文案助手

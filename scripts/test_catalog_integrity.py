@@ -3,6 +3,7 @@
 import json
 import re
 import unittest
+import yaml
 from collections import Counter
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -94,6 +95,37 @@ class CatalogIntegrityTest(unittest.TestCase):
         self.assertIn('id="sp-case"', index)
         self.assertIn("skill.explainer", index)
         self.assertIn("'cases/' + name + '-codex.md'", index)
+
+    def test_first_party_skill_frontmatter_is_directory_and_index_friendly(self):
+        allowed_categories = {
+            "content-creation",
+            "design",
+            "development",
+            "documentation",
+            "finance",
+            "marketing",
+            "productivity",
+        }
+        for path in sorted((ROOT / "skills").glob("*/SKILL.md")):
+            with self.subTest(skill=path.parent.name):
+                text = path.read_text(encoding="utf-8")
+                self.assertTrue(text.startswith("---\n"))
+                frontmatter = text.split("---\n", 2)[1]
+                data = yaml.safe_load(frontmatter)
+                self.assertEqual(path.parent.name, data["name"])
+                self.assertRegex(data["name"], r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+                self.assertLessEqual(len(data["name"]), 64)
+                self.assertTrue(data["description"].strip())
+                self.assertLessEqual(len(data["description"]), 1024)
+                metadata = data["metadata"]
+                self.assertEqual("sanhuang520-ship-it", metadata["author"])
+                self.assertIn(metadata["category"], allowed_categories)
+                tags = [tag for tag in re.split(r"[,\s]+", metadata["tags"]) if tag]
+                self.assertGreaterEqual(len(tags), 3)
+                self.assertLessEqual(len(tags), 5)
+                self.assertEqual(len(tags), len(set(tags)))
+                for tag in tags:
+                    self.assertRegex(tag, r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
     def test_timeline_fields_cannot_inject_markup(self):
         data = json.loads((ROOT / "data" / "updates.json").read_text(encoding="utf-8"))
