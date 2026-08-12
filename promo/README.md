@@ -6,11 +6,13 @@
 
 `promo/codex-search-articles-posts.md` —— 两篇新搜索型文章的分发素材：先发“不自动触发”诊断，观察至少一天后再决定是否发“创建 Codex Skill”教程；当前均未对外发布。
 
+`promo/audit-skill-launch-posts.md` —— 安装前只读审计器的可核验发布材料；当前未发布，不用于 Linux.do。发布前复跑真实样例，明确规则扫描不是安全认证。
+
 下面的旧踩坑文章已经发布，数量停留在较早阶段；除非重新同步全文数据，否则不要把旧标题与摘要直接再次发布。
 
 ## 目录收录
 
-`promo/directory-submissions.md` —— 记录逐渠道重复检查、候选条目、证据边界与发布阻塞，避免重复投稿和无关群发。
+`promo/directory-submissions.md` —— 记录已验证收录、逐渠道查重、当前规则、候选阻塞与解锁条件，避免重复投稿、发送不必要的个人信息和无关群发。
 
 ## 文章文件
 `promo/article-5-skills-pitfalls.md` —— 正文，可直接复制粘贴
