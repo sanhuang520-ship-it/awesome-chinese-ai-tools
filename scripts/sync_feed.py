@@ -39,6 +39,12 @@ def render_feed():
         raise ValueError(f"unexpected compatibility outcome totals: {dict(counts)}")
     entries = [
         item(
+            "Codex Skill 安装了却不触发？5 步定位",
+            "codex-skill-not-triggering/",
+            "Wed, 12 Aug 2026 23:58:00 +0800",
+            "按 CLI 发现、文件落盘、客户端读取、任务完成和环境阻断逐层排查，连接可复制命令、逐字实测与隐私优先的本地报告生成器。",
+        ),
+        item(
             "Agent Skills 兼容性怎么测试：四层证据法",
             "method/",
             "Wed, 12 Aug 2026 23:28:00 +0800",
@@ -77,7 +83,7 @@ def render_feed():
     <link>{BASE}</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 12 Aug 2026 23:28:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 23:58:00 +0800</lastBuildDate>
     <atom:link href="{BASE}feed.xml" rel="self" type="application/rss+xml"/>
 
 {chr(10).join(entries)}
