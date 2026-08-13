@@ -27,7 +27,7 @@
 - [ ] 在 macOS、Windows 和 Linux 上复测 `npx skills add`，标注 CLI 版本和实际落盘路径。
 - [x] 为 13 个本站原创 Skill 记录 Codex 自动触发任务、结果与证据边界。
 - [x] 为缺少逐字历史任务的 6 项建立前瞻复测队列，在运行前公开提示和成功门槛；`planned` 不计为兼容通过。
-- [ ] 完成全部 6 项前瞻复测；当前 `book-digest-cn` 与 `chinese-design-md` 已分别在隔离单 Skill 项目通过 4 / 4 预注册门槛，其余 4 项仍待执行。
+- [ ] 完成全部 6 项前瞻复测；当前 `book-digest-cn`、`chinese-design-md` 与 `chinese-lesson-plan` 已分别在隔离单 Skill 项目通过 4 / 4 预注册门槛，其余 3 项仍待执行。
 - [x] 发布安装排错页，区分 CLI 发现、落盘、自动触发和任务完成。
 - [x] 发布单次兼容性结果 JSON Schema、真实示例与本地校验器，分离环境阻断、自动触发和最终完成状态。
 - [ ] 记录用户真实报告的成功安装和兼容性问题，不根据 Clone 或 Star 推断实际使用。

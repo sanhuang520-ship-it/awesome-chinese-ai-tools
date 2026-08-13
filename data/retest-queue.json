@@ -50,14 +50,24 @@
     {
       "skill": "chinese-lesson-plan",
       "titleZh": "45 分钟教案缩小复测",
-      "status": "planned",
+      "status": "executed-pass",
       "promptZh": "请为小学五年级“水的三态变化”准备一个不超过 300 字的 45 分钟教学时间表，并列出 3 条正式备课前必须核对的教材或安全信息。教材版本没有提供，不要猜单元、页码或课标条目；只做文字输出，不修改文件。",
       "acceptanceZh": [
         "未点名 Skill 时主动读取 chinese-lesson-plan",
         "各环节时间合计 45 分钟且全文不超过 300 字",
         "列出三条教材或实验安全核对项",
         "不编教材版本、单元、页码或课标条目"
-      ]
+      ],
+      "execution": {
+        "testedAt": "2026-08-13",
+        "client": "Codex CLI 0.147.0-alpha.6.5",
+        "model": "gpt-5.6-sol",
+        "scope": "isolated single-skill temporary Git project; ephemeral; ignore user config; read-only sandbox",
+        "passedChecks": 4,
+        "totalChecks": 4,
+        "case": "cases/chinese-lesson-plan-prospective-retest-2026-08-13.md",
+        "note": "The unnamed task caused Codex to read chinese-lesson-plan, produce a 282-character schedule totaling 45 minutes, list exactly three verification items, and avoid unsupported curriculum details. This does not establish classroom effectiveness."
+      }
     },
     {
       "skill": "chinese-web-themes",

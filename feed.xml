@@ -5,9 +5,18 @@
     <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 13 Aug 2026 11:06:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 11:12:00 +0800</lastBuildDate>
     <atom:link href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>chinese-lesson-plan 前瞻复测：45 分钟与 300 字限制</title>
+      <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/cases/chinese-lesson-plan-prospective-retest-2026-08-13.md</link>
+      <guid isPermaLink="true">https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/cases/chinese-lesson-plan-prospective-retest-2026-08-13.md</guid>
+      <pubDate>Thu, 13 Aug 2026 11:12:00 +0800</pubDate>
+      <description><![CDATA[
+        <p>在隔离单 Skill 项目执行运行前公开任务；最终教学时间表合计 45 分钟、282 个字符，列出三条教材或实验安全核对项，未猜教材版本、单元、页码或课标条目。</p>
+      ]]></description>
+    </item>
     <item>
       <title>chinese-design-md 前瞻复测：茶品牌选型 4/4 门槛通过</title>
       <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/cases/chinese-design-md-prospective-retest-2026-08-13.md</link>

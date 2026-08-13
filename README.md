@@ -67,7 +67,7 @@ lrwxr-xr-x  <name> -> ../../.agents/skills/<name>   # 这里是符号链接
 
 ## 怎么装
 
-**[→ 不知道先试哪个？查看 13 个单项安装命令与可复制首次任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**：7 条来自历史逐字原文；6 条是运行前公开的前瞻任务，其中 2 条已执行、4 条仍待测，两类证据不会混写。
+**[→ 不知道先试哪个？查看 13 个单项安装命令与可复制首次任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**：7 条来自历史逐字原文；6 条是运行前公开的前瞻任务，其中 3 条已执行、3 条仍待测，两类证据不会混写。
 
 ```bash
 # 先看仓库里有哪些
@@ -142,7 +142,7 @@ npx --yes skills@1.5.22 update -p -y
 
 **[→ 复制 7 条有逐字原文的首次测试任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reproduce/)**（另外 6 条只有摘要，不反向补写）
 
-**[→ 参与前瞻兼容性复测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/retest/)**（6 条任务和门槛先公开；2 条隔离自测通过 4/4，4 条仍为 `planned`）
+**[→ 参与前瞻兼容性复测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/retest/)**（6 条任务和门槛先公开；3 条隔离自测通过 4/4，3 条仍为 `planned`）
 
 **[→ 在一页选择全部 13 个首次试用任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**（单项安装、复制任务、历史证据或前瞻成功门槛）
 

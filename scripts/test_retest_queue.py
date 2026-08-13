@@ -22,8 +22,8 @@ class RetestQueueTest(unittest.TestCase):
                 self.assertEqual(4, len(item["acceptanceZh"]))
                 self.assertNotIn(item["skill"], item["promptZh"])
         statuses = {item["skill"]: item["status"] for item in self.items}
-        self.assertEqual({"book-digest-cn", "chinese-design-md"}, {skill for skill, status in statuses.items() if status == "executed-pass"})
-        self.assertEqual(4, sum(status == "planned" for status in statuses.values()))
+        self.assertEqual({"book-digest-cn", "chinese-design-md", "chinese-lesson-plan"}, {skill for skill, status in statuses.items() if status == "executed-pass"})
+        self.assertEqual(3, sum(status == "planned" for status in statuses.values()))
         for item in self.items:
             if item["status"] == "planned":
                 continue
@@ -39,10 +39,10 @@ class RetestQueueTest(unittest.TestCase):
         self.assertEqual(render(), self.body)
         self.assertEqual(6, self.body.count('class="queue-card"'))
         self.assertEqual(6, self.body.count(">复制任务</button>"))
-        self.assertEqual(4, self.body.count("PLANNED · 尚无结果"))
-        self.assertEqual(2, self.body.count("已执行 · 预注册门槛通过 4 / 4"))
-        self.assertIn("2 个已执行", self.body)
-        self.assertIn("4 项 planned 仍不算通过", self.body)
+        self.assertEqual(3, self.body.count("PLANNED · 尚无结果"))
+        self.assertEqual(3, self.body.count("已执行 · 预注册门槛通过 4 / 4"))
+        self.assertIn("3 个已执行", self.body)
+        self.assertIn("3 项 planned 仍不算通过", self.body)
 
 
 if __name__ == "__main__":
