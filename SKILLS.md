@@ -80,23 +80,23 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 <a id="catalog-original"></a>
 ### ✍️ 本站原创（13 个）
 
-> 我们自己编写维护，每个都写明「不做什么」。可直接 `npx skills add` 安装。
+> 我们自己编写维护，每个都写明「不做什么」。以下是安装前静态检查标签，不是安全认证；完整方法见 [QUALITY.md](QUALITY.md)。
 
-| Skill | 说明 |
-|-------|------|
-| [ai-learning-coach](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ai-learning-coach) | AI 学习教练（本站原创）：不直接给答案，带你走完整学习循环——定目标→主动回忆→输出→纠错→间隔复习→项目交付，含错因分析模板 |
-| [book-digest-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/book-digest-cn) | 拆书助手（本站原创）：三层拆解（作者在答什么问题→核心主张→对我有什么用），拒绝抄目录式笔记 |
-| [bookkeeping-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/bookkeeping-cn) | 记账整理助手（本站原创）：流水分类、收支表、预算跟踪；明确不做税务与投资建议 |
-| [chinese-design-md](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-design-md) | 中式 DESIGN.md 设计系统（本站原创）：8 套可直接丢进项目根目录的设计文档，AI 读了就按规范生成界面。含中文排版规则（行高 1.75 / 不用 justify / 着重号代替斜体 / CJK 避头尾），对比度逐项实测并标出不达标项 |
-| [chinese-lesson-plan](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-lesson-plan) | 中文教案助手（本站原创）：按新课标三维目标生成中小学教案，含分层作业、板书设计、说课稿 |
-| [chinese-typography](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-typography) | 中文排版助手（本站原创）：中英间距、CJK 断行避头尾、字体栈、标点全半角、行高行宽，附可直接用的 CSS 与公众号排版规则 |
-| [chinese-web-themes](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-web-themes) | 中式网页主题库（本站原创）：8 套中国美学 CSS 主题（水墨/青绿/宋韵/敦煌/朱砂/新中式/竹韵/夜宴），内置中文排版规范，对比度均超 WCAG AA。可在线预览 |
-| [chinese-work-report](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-work-report) | 职场汇报助手（本站原创）：周报/月报/述职/项目汇报，结论先行、卖点翻价值，含 PPT 大纲 |
-| [ecommerce-copywriting](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting) | 电商文案助手（本站原创）：商品标题、主图与详情页写作，按平台和用户决策路径组织；先核对事实、证明材料与高风险宣称，不把机械禁词替换当作合规保证 |
-| [github-readme-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/github-readme-cn) | GitHub 中文项目门面优化（本站原创）：首屏结构、真实截图怎么截、命名与 topics、发布前自查清单。附 15 个高增长仓库的实测数据，明确区分相关性与不可验证的部分，不承诺涨星 |
-| [guochao-visual-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guochao-visual-cn) | 国潮视觉助手（本站原创）：12 种中国美学画风配方（水墨/工笔/青绿/敦煌/年画/剪纸/国漫等），输出可直接用的提示词，附纹样寓意与传统配色速查 |
-| [guofeng-threejs](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guofeng-threejs) | 国风 Three.js 渲染（本站原创）：水墨 shader 三技法（墨分五色/边缘积墨/笔触扰动），含可运行 demo 与移动端性能要点。只做中式渲染，不做通用 Three.js 教程 |
-| [homework-tutor-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn) | 家长辅导作业助手（本站原创）：不给答案给引导话术，分学科方法，含情绪对抗处理 |
+| Skill | 做什么 | 安装前标签 |
+|-------|--------|------------|
+| [ai-learning-coach](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/learning/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ai-learning-coach) | AI 学习教练（本站原创）：不直接给答案，带你走完整学习循环——定目标→主动回忆→输出→纠错→间隔复习→项目交付，含错因分析模板 | 说明与本地参考资料；无独立可执行脚本；未发现运行时联网；**边界：**医疗、法律与投资决策不能只依赖学习计划 |
+| [book-digest-cn](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reading/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/book-digest-cn) | 拆书助手（本站原创）：三层拆解（作者在答什么问题→核心主张→对我有什么用），拒绝抄目录式笔记 | 仅说明文件；无独立可执行脚本；未发现运行时联网；**边界：**未标记敏感决策边界，仍需核对输出 |
+| [bookkeeping-cn](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bookkeeping/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/bookkeeping-cn) | 记账整理助手（本站原创）：流水分类、收支表、预算跟踪；明确不做税务与投资建议 | 仅说明文件；无独立可执行脚本；未发现运行时联网；**边界：**财务隐私；不提供税务筹划或投资建议 |
+| [chinese-design-md](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/design/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-design-md) | 中式 DESIGN.md 设计系统（本站原创）：8 套可直接丢进项目根目录的设计文档，AI 读了就按规范生成界面。含中文排版规则（行高 1.75 / 不用 justify / 着重号代替斜体 / CJK 避头尾），对比度逐项实测并标出不达标项 | 说明与本地设计模板；无独立可执行脚本；未发现运行时联网；**边界：**字体授权需由使用者核对 |
+| [chinese-lesson-plan](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/lesson-plan/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-lesson-plan) | 中文教案助手（本站原创）：先核对学段、教材版本和适用课标，再按学科核心素养、学习任务与评价证据组织目标，含分层作业、板书设计和说课稿 | 说明与本地参考资料；无独立可执行脚本；未发现运行时联网；**边界：**课程事实与教材版本需要来源确认 |
+| [chinese-typography](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-typography) | 中文排版助手（本站原创）：中英间距、CJK 断行避头尾、字体栈、标点全半角、行高行宽，附可直接用的 CSS 与公众号排版规则 | 仅说明文件；无独立可执行脚本；未发现运行时联网；**边界：**字体授权与地区排版规范需另行核对 |
+| [chinese-web-themes](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/themes/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-web-themes) | 中式网页主题库（本站原创）：8 套中国美学 CSS 主题（水墨/青绿/宋韵/敦煌/朱砂/新中式/竹韵/夜宴），内置中文排版规范，对比度均超 WCAG AA。可在线预览 | 说明与本地演示资源；无独立可执行脚本；未发现运行时联网；**边界：**字体授权需由使用者核对 |
+| [chinese-work-report](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/work-report/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-work-report) | 职场汇报助手（本站原创）：周报/月报/述职/项目汇报，结论先行、卖点翻价值，含 PPT 大纲 | 仅说明文件；无独立可执行脚本；未发现运行时联网；**边界：**不能编造业务数据或把动作冒充结果 |
+| [ecommerce-copywriting](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/ecommerce-copywriting/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting) | 电商文案助手（本站原创）：商品标题、主图与详情页写作，按平台和用户决策路径组织；先核对事实、证明材料与高风险宣称，不把机械禁词替换当作合规保证 | 仅说明文件；无独立可执行脚本；未发现运行时联网；**边界：**广告宣称与受监管品类需核对当前规则和证明材料 |
+| [github-readme-cn](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/readme-audit/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/github-readme-cn) | GitHub 中文项目门面优化（本站原创）：首屏结构、真实截图怎么截、命名与 topics、发布前自查清单。附 15 个高增长仓库的实测数据，明确区分相关性与不可验证的部分，不承诺涨星 | 说明与本地参考资料；无独立可执行脚本；未发现运行时联网；**边界：**增长相关性不等于因果，不承诺涨星 |
+| [guochao-visual-cn](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guochao-visual-cn) | 国潮视觉助手（本站原创）：12 种中国美学画风配方（水墨/工笔/青绿/敦煌/年画/剪纸/国漫等），输出可直接用的提示词，附纹样寓意与传统配色速查 | 说明与本地参考资料；无独立可执行脚本；未发现运行时联网；**边界：**文化准确性与艺术家个人风格边界 |
+| [guofeng-threejs](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guofeng-threejs/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guofeng-threejs) | 国风 Three.js 渲染（本站原创）：水墨 shader 三技法（墨分五色/边缘积墨/笔触扰动），含可运行 demo 与移动端性能要点。只做中式渲染，不做通用 Three.js 教程 | 说明与浏览器演示；无独立可执行脚本；浏览器 Demo 从 unpkg.com 加载 three@0.170.0；**边界：**未标记敏感决策边界，仍需核对输出 |
+| [homework-tutor-cn](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/homework/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn) | 家长辅导作业助手（本站原创）：不生成给孩子直接抄写的成品，先给家长引导话术，再单列核对结果；含分学科方法与情绪对抗处理 | 仅说明文件；无独立可执行脚本；未发现运行时联网；**边界：**不生成供孩子直接抄写的答案；可另给家长核对结果 |
 
 <a id="catalog-cn"></a>
 ### 🇨🇳 其他中文条目（57 个）
@@ -359,5 +359,5 @@ Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts
 
 ---
 
-*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-08-12。*  
+*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-08-13。*
 *收录有误或想推荐新 Skill？欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)*

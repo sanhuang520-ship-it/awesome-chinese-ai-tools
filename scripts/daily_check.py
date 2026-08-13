@@ -353,6 +353,13 @@ def check_skills():
 
 
 # ── SKILLS.md 自动生成 ─────────────────────────────────────
+def catalog_quality_label(quality):
+    scripts = "发现独立可执行脚本，安装前需人工复核" if quality.get("executableScripts") else "无独立可执行脚本"
+    network = quality.get("networkDetailZh") if quality.get("runtimeNetwork") else "未发现运行时联网"
+    boundary = quality.get("sensitiveBoundaryZh") or "未标记敏感决策边界，仍需核对输出"
+    return f"{quality['filesZh']}；{scripts}；{network}；**边界：**{boundary}"
+
+
 def build_skills_md():
     """
     从 data/skills.json 重新生成 SKILLS.md。
@@ -363,11 +370,20 @@ def build_skills_md():
         print("[SKILLS.md] ❌ 读不到 skills.json，跳过")
         return
     d = json.loads(base64.b64decode(info["content"]).decode("utf-8"))
+    quality_info = github_api("GET", f"/repos/{REPO}/contents/data/quality.json")
+    if "content" not in quality_info:
+        print("[SKILLS.md] ❌ 读不到 quality.json，跳过，避免丢失安装前标签")
+        return
+    quality_data = json.loads(base64.b64decode(quality_info["content"]).decode("utf-8"))
     S = d.get("skills", [])
     cats = d.get("categories", {})
     checked = d.get("skillsCheckedAt", "—")
 
     ours = [s for s in S if s.get("ours")]
+    qualities = quality_data.get("skills", {})
+    if {s["name"] for s in ours} != set(qualities):
+        print("[SKILLS.md] ❌ 原创 Skill 与质量标签范围不一致，跳过")
+        return
     rest = [s for s in S if not s.get("ours")]
     cn_n = sum(1 for s in S if s.get("cat") == "cn")
 
@@ -456,11 +472,16 @@ def build_skills_md():
     if ours:
         L.append('<a id="catalog-original"></a>')
         L.append(f"### ✍️ 本站原创（{len(ours)} 个）\n")
-        L.append("> 我们自己编写维护，每个都写明「不做什么」。可直接 `npx skills add` 安装。\n")
-        L.append("| Skill | 说明 |")
-        L.append("|-------|------|")
+        L.append("> 我们自己编写维护，每个都写明「不做什么」。以下是安装前静态检查标签，不是安全认证；完整方法见 [QUALITY.md](QUALITY.md)。\n")
+        L.append("| Skill | 做什么 | 安装前标签 |")
+        L.append("|-------|--------|------------|")
         for s in sorted(ours, key=lambda x: x["name"]):
-            L.append(f"| [{s['name']}]({s['url']}) | {s.get('desc','')} |")
+            quality = qualities[s["name"]]
+            page = f"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/{s['explainer']}"
+            L.append(
+                f"| [{s['name']}]({page}) · [源码]({s['url']}) | {s.get('desc','')} | "
+                f"{catalog_quality_label(quality)} |"
+            )
         L.append("")
 
     for c in CAT_ORDER:
@@ -491,7 +512,7 @@ def build_skills_md():
     L.append("## ⚠️ 安全提醒\n")
     L.append("Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts/` 内容。\n")
     L.append("---\n")
-    L.append(f"*本文件由脚本从 `data/skills.json` 自动生成，最后更新 {datetime.date.today()}。*  ")
+    L.append(f"*本文件由脚本从 `data/skills.json` 自动生成，最后更新 {datetime.date.today()}。*")
     L.append(f"*收录有误或想推荐新 Skill？欢迎 [提 Issue](https://github.com/{REPO}/issues)*")
 
     body = "\n".join(L) + "\n"

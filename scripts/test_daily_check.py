@@ -44,11 +44,14 @@ class DailyCheckTest(unittest.TestCase):
 
     def test_generated_catalog_keeps_preinstall_audit_entry(self):
         source = (ROOT / "data" / "skills.json").read_bytes()
+        quality = (ROOT / "data" / "quality.json").read_bytes()
         captured = {}
 
         def fake_api(method, path, data=None, retries=3):
             if path.endswith("data/skills.json"):
                 return {"content": base64.b64encode(source).decode("ascii")}
+            if path.endswith("data/quality.json"):
+                return {"content": base64.b64encode(quality).decode("ascii")}
             if method == "GET" and path.endswith("SKILLS.md"):
                 return {"content": base64.b64encode(b"outdated").decode("ascii"), "sha": "old"}
             if method == "PUT" and path.endswith("SKILLS.md"):
@@ -63,6 +66,50 @@ class DailyCheckTest(unittest.TestCase):
             with self.subTest(phrase=phrase):
                 self.assertIn(phrase, catalog)
         self.assertEqual(184, len(json.loads(source)["skills"]))
+
+    def test_generated_originals_expose_decision_labels_and_evidence_pages(self):
+        source = (ROOT / "data" / "skills.json").read_bytes()
+        quality = (ROOT / "data" / "quality.json").read_bytes()
+        captured = {}
+
+        def fake_api(method, path, data=None, retries=3):
+            if path.endswith("data/skills.json"):
+                return {"content": base64.b64encode(source).decode("ascii")}
+            if path.endswith("data/quality.json"):
+                return {"content": base64.b64encode(quality).decode("ascii")}
+            if method == "GET" and path.endswith("SKILLS.md"):
+                return {"content": base64.b64encode(b"outdated").decode("ascii"), "sha": "old"}
+            if method == "PUT" and path.endswith("SKILLS.md"):
+                captured["body"] = base64.b64decode(data["content"]).decode("utf-8")
+                return {"content": {"sha": "new"}}
+            raise AssertionError((method, path))
+
+        with patch.object(self.module, "github_api", side_effect=fake_api):
+            self.module.build_skills_md()
+        catalog = captured["body"]
+        for phrase in (
+            "以下是安装前静态检查标签，不是安全认证",
+            "| Skill | 做什么 | 安装前标签 |",
+            "无独立可执行脚本",
+            "未发现运行时联网",
+            "浏览器 Demo 从 unpkg.com 加载 three@0.170.0",
+            "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/",
+            "[源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-typography)",
+        ):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, catalog)
+
+    def test_catalog_quality_label_does_not_hide_future_script_or_network_risk(self):
+        label = self.module.catalog_quality_label({
+            "filesZh": "说明与脚本",
+            "executableScripts": True,
+            "runtimeNetwork": True,
+            "networkDetailZh": "运行时请求 example.com",
+            "sensitiveBoundaryZh": "先在隔离环境复核",
+        })
+        self.assertIn("发现独立可执行脚本，安装前需人工复核", label)
+        self.assertIn("运行时请求 example.com", label)
+        self.assertIn("**边界：**先在隔离环境复核", label)
 
 
 if __name__ == "__main__":
