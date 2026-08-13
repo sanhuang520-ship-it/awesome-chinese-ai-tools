@@ -19,6 +19,7 @@ import time
 from check_catalog_claims import find_claim_violations
 from sync_public_metadata import CAT_ORDER, sync_public_metadata
 from check_internal_links import ROOT as SITE_ROOT, missing_links, published_pages
+from render_static_catalog import render_catalog
 
 # ── 配置 ──────────────────────────────────────────────────
 # token 从环境变量读取。GitHub Actions 里用自带的 GITHUB_TOKEN，无需配置密钥；
@@ -541,6 +542,43 @@ def build_skills_md():
     print(f"[SKILLS.md] {'✅' if 'content' in res else '❌'} {len(S)} 个 skill / {len(ours)} 原创 / {cn_n} 中文")
 
 
+def sync_static_catalog():
+    """
+    从 data/skills.json 重渲染 catalog/index.html（无 JS 版可爬取目录）。
+
+    render_static_catalog.py 本身设计成本地文件 + git commit 跑；
+    这里改用同一套 github_api 读写，跟 build_skills_md 保持一个模式，
+    避免"数据改了、这个静态页没人跟着更新"再发生一次（08-13 已经踩过）。
+    """
+    info = github_api("GET", f"/repos/{REPO}/contents/data/skills.json")
+    if "content" not in info:
+        raise RuntimeError("[catalog] 读不到 skills.json")
+    data = json.loads(base64.b64decode(info["content"]).decode("utf-8"))
+
+    claim_violations = find_claim_violations(data)
+    if claim_violations:
+        raise RuntimeError("[catalog] 目录声明门槛未通过，跳过生成：\n           "
+                           + "\n           ".join(claim_violations))
+
+    rendered = render_catalog(data)
+
+    path = "catalog/index.html"
+    cur = github_api("GET", f"/repos/{REPO}/contents/{path}")
+    current = base64.b64decode(cur["content"]).decode("utf-8") if "content" in cur else ""
+    if current == rendered:
+        print(f"[catalog] 无变化，跳过写入")
+        return
+
+    res = github_api("PUT", f"/repos/{REPO}/contents/{path}", {
+        "message": f"chore: 自动重渲染 catalog/index.html — {len(data.get('skills', []))} 个 skill",
+        "content": base64.b64encode(rendered.encode("utf-8")).decode("ascii"),
+        "sha": cur.get("sha"),
+        "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"},
+    })
+    if "content" not in res:
+        raise RuntimeError(f"[catalog] 写入失败: {res.get('message', res)}")
+    print(f"[catalog] ✅ 已重渲染 — {len(data.get('skills', []))} 个 skill")
+
 # ── 日报模板 ───────────────────────────────────────────────
 def check_source_nav():
     """
@@ -611,6 +649,7 @@ if __name__ == "__main__":
         ("工具链接实测",   check_tool_links),
         ("Skill 仓库复检", check_skills),
         ("重建 SKILLS.md", build_skills_md),
+        ("重渲染目录页", sync_static_catalog),
         ("同步公开统计", lambda: sync_public_metadata(github_api, REPO)),
     ]
     failed = []
