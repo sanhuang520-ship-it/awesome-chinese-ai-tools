@@ -4,6 +4,7 @@
 
 ## [Unreleased]
 
+- 新增无需 JavaScript 的完整 Agent Skills 静态目录：184 个条目按数据源场景自动生成，保留原创、官方与第三方资料标签以及兼容/安全边界；接入 README、`llms.txt`、Sitemap 和离线一致性测试，不按 Star 排名。
 - 新增可审查的 v1.2.0 GitHub Release 说明源文件，锁定兼容性计数、安全边界、测试范围和 annotated tag 目标；GitHub 正式 Release 发布后由公开 API 复核，不用自动生成的夸张摘要。
 - 对 7 条高曝光或高声明第三方 Skill 做只读事实核验：修正 6 条把上游宣传、借用 Star 数、动态排名或易变计数写成目录事实的摘要；保存上游 commit 与 README/SKILL blob SHA，不安装或执行第三方代码，也不把上游效果案例冒充本站复现。
 - 补强已有的 4 组中文 Skill 开箱页：13 个唯一 Skill 名称全部直达各自方法与证据页，并从 README 与 `llms.txt` 增加入口；明确组合只是编辑建议，不代表同时触发或跨客户端认证。

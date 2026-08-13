@@ -17,6 +17,8 @@
 
 **[🌐 在线浏览与搜索](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[📦 安装与排错](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/)　·　[📋 看真实输出](EXAMPLES.md)　·　[🧪 看兼容性证据](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/)
 
+<sub>[📚 无 JavaScript？浏览完整静态目录](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/catalog/)</sub>
+
 </div>
 
 > **和别的 awesome 列表有什么不一样**<br>

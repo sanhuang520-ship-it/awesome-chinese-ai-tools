@@ -22,6 +22,7 @@ def main() -> None:
     run("compatibility data", [sys.executable, "scripts/check_compatibility.py"])
     run("submitted compatibility reports", [sys.executable, "scripts/check_compatibility_reports.py"])
     run("quality data", [sys.executable, "scripts/check_quality.py"])
+    run("crawlable static catalog", [sys.executable, "scripts/render_static_catalog.py", "--check"])
     run("published internal links", [sys.executable, "scripts/check_internal_links.py"])
     run("unit tests", [sys.executable, "-m", "unittest", *TEST_MODULES], cwd=SCRIPTS)
     print(f"\nverification OK: {len(TEST_MODULES)} test modules")

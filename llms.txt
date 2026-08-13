@@ -6,6 +6,7 @@
 
 - [English overview](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/README.en.md): concise English project scope, evidence and installation guide
 - [在线搜索与筛选](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/): 浏览全部 Skill 和工具
+- [无 JavaScript 静态目录](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/catalog/): 从 skills.json 自动生成，按场景浏览全部 Skill，不按 Star 排名
 - [安装与排错](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/): skills CLI 1.5.22 的本机实测步骤与路径边界
 - [Agent Skills 兼容性测试方法](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/method/): 四层证据、逐字任务、失败分类与最小记录模板
 - [Codex Skill 不自动触发排查](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/codex-skill-not-triggering/): 按 CLI 发现、文件落盘、客户端读取、任务完成与环境阻断定位问题
