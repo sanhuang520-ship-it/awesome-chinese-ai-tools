@@ -47,6 +47,13 @@ class BundlesPageTest(unittest.TestCase):
         self.assertEqual("FAQPage", faq["@type"])
         self.assertEqual(4, len(faq["mainEntity"]))
 
+    def test_search_and_share_summaries_do_not_claim_untested_client_support(self):
+        head = self.page.split("</head>", 1)[0]
+        self.assertIn("Codex 任务级观察", head)
+        self.assertIn("Claude Code 与 Cursor 待测", head)
+        self.assertNotIn("适用于 Codex、Claude Code", head)
+        self.assertNotIn("四组可直接安装", head)
+
     def test_visible_faq_matches_structured_answers_and_preserves_boundaries(self):
         match = re.search(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', self.page, re.S)
         faq = json.loads(match.group(1))["@graph"][1]
