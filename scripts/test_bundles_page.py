@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -28,6 +29,19 @@ class BundlesPageTest(unittest.TestCase):
         self.assertIn("组合只是任务入口", self.page)
         self.assertIn("不是官方兼容性认证", self.page)
         self.assertIn('href="../guides/"', self.page)
+
+    def test_page_has_complete_share_and_structured_metadata(self):
+        self.assertIn('<meta name="robots" content="index,follow">', self.page)
+        self.assertIn('<meta property="og:image"', self.page)
+        self.assertIn('<meta name="twitter:card" content="summary_large_image">', self.page)
+        match = re.search(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', self.page, re.S)
+        self.assertIsNotNone(match)
+        structured = json.loads(match.group(1))
+        self.assertEqual(4, structured["numberOfItems"])
+        self.assertEqual(
+            ["#writing", "#visual", "#learning", "#office"],
+            [item["url"].removeprefix(structured["url"]) for item in structured["itemListElement"]],
+        )
 
     def test_discovery_surfaces_link_to_bundles(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
