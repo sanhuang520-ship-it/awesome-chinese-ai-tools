@@ -31,7 +31,9 @@ class InstallJourneyTest(unittest.TestCase):
         for phrase in ("安装后不会自动跟随仓库更新", "skills@1.5.22", "0/13 一致", "npx skills --version", "update -p -y", "13/13 与当前仓库完整一致", "没有验证全局"):
             with self.subTest(phrase=phrase):
                 self.assertIn(phrase, self.body)
-        self.assertIn("../cases/skills-cli-isolated-install-2026-08-13.md", self.body)
+        self.assertIn("../update-agent-skill/", self.body)
+        update_guide = (ROOT / "update-agent-skill" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("../cases/skills-cli-isolated-install-2026-08-13.md", update_guide)
 
 
 if __name__ == "__main__":
