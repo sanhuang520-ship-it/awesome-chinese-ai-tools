@@ -71,6 +71,8 @@ lrwxr-xr-x  <name> -> ../../.agents/skills/<name>   # 这里是符号链接
 
 **[→ 不知道先试哪个？查看 13 个单项安装命令与可复制首次任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**：7 条来自历史逐字原文；6 条是运行前公开的前瞻任务，6 条均已执行，两类证据不会混写。
 
+**[→ 已有明确目标？按中文表达、国风视觉、学习家庭、办公经营选择 4 组开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)**：每个 Skill 名称直达方法、案例与边界页；组合是编辑入口，不代表会同时触发或已经跨客户端认证。
+
 ```bash
 # 先看仓库里有哪些
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
