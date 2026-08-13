@@ -8,7 +8,7 @@
 
 安装层另有一份独立记录：[skills CLI 1.5.22 隔离安装与项目更新复测](skills-cli-isolated-install-2026-08-13.md)。它证明当前仓库 13 项在临时 Git 项目中复制安装后逐字一致，并用受控历史夹具验证 13/13 项目副本可更新到当前完整文件夹；同时公开旧全局副本 0/13 当前一致。这不是自动触发证据，也不证明全局更新。
 
-前瞻层另有一份执行记录：[`book-digest-cn` 无原文拆书准备 4 / 4 门槛通过](book-digest-cn-prospective-retest-2026-08-13.md)。任务与门槛先公开，随后才在隔离单 Skill 临时项目中运行；它不覆盖下表较早的《小王子》拆书案例，其余 5 条前瞻任务仍待测。
+前瞻层已有两份执行记录：[`book-digest-cn` 无原文拆书准备](book-digest-cn-prospective-retest-2026-08-13.md)与 [`chinese-design-md` 茶品牌设计选型](chinese-design-md-prospective-retest-2026-08-13.md)，均通过 4 / 4 门槛。任务与门槛先公开，随后才在隔离单 Skill 临时项目中运行；它们不覆盖下表较早的历史案例，其余 4 条前瞻任务仍待测。
 
 | Skill | 测试任务 | 重点检查 | 结果 |
 |---|---|---|---|

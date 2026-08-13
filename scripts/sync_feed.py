@@ -39,6 +39,12 @@ def render_feed():
         raise ValueError(f"unexpected compatibility outcome totals: {dict(counts)}")
     entries = [
         item(
+            "chinese-design-md 前瞻复测：茶品牌选型 4/4 门槛通过",
+            "cases/chinese-design-md-prospective-retest-2026-08-13.md",
+            "Thu, 13 Aug 2026 11:06:00 +0800",
+            "在只含单个 Skill 的隔离 Codex 项目中执行运行前公开任务；未点名 Skill 时主动读取现有方案，只推荐宋韵与新中式并解释差异，只问一个决策问题，项目未被修改。结果不外推为视觉质量或跨客户端认证。",
+        ),
+        item(
             "book-digest-cn 前瞻复测：无原文时 4/4 门槛通过",
             "cases/book-digest-cn-prospective-retest-2026-08-13.md",
             "Thu, 13 Aug 2026 10:51:00 +0800",
@@ -113,7 +119,7 @@ def render_feed():
     <link>{BASE}</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 13 Aug 2026 10:51:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 11:06:00 +0800</lastBuildDate>
     <atom:link href="{BASE}feed.xml" rel="self" type="application/rss+xml"/>
 
 {chr(10).join(entries)}

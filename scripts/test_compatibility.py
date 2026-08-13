@@ -100,14 +100,16 @@ class CompatibilityDataTest(unittest.TestCase):
     def test_preregistered_retests_preserve_executed_and_remaining_counts(self):
         result = self.data["results"]["prospectiveRetests"]
         self.assertEqual(6, result["plannedCount"])
-        self.assertEqual(1, result["executedCount"])
-        self.assertEqual(1, result["passedCount"])
+        self.assertEqual(2, result["executedCount"])
+        self.assertEqual(2, result["passedCount"])
         self.assertEqual(0, result["failedCount"])
-        self.assertEqual(5, result["remainingCount"])
-        book = result["results"]["book-digest-cn"]
-        self.assertEqual(4, book["passedChecks"])
-        self.assertEqual(4, book["totalChecks"])
-        self.assertTrue((ROOT / book["case"]).is_file())
+        self.assertEqual(4, result["remainingCount"])
+        self.assertEqual({"book-digest-cn", "chinese-design-md"}, set(result["results"]))
+        for skill, record in result["results"].items():
+            with self.subTest(skill=skill):
+                self.assertEqual(4, record["passedChecks"])
+                self.assertEqual(4, record["totalChecks"])
+                self.assertTrue((ROOT / record["case"]).is_file())
 
     def test_compatibility_submission_separates_naming_activation_and_completion(self):
         template = (ROOT / ".github" / "ISSUE_TEMPLATE" / "compatibility-result.yml").read_text(encoding="utf-8")

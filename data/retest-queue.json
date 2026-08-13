@@ -28,14 +28,24 @@
     {
       "skill": "chinese-design-md",
       "titleZh": "茶品牌设计系统选型",
-      "status": "planned",
+      "status": "executed-pass",
       "promptZh": "我在做一个新中式茶品牌官网，受众是 25—35 岁城市用户，希望克制、现代，但不要变成通用极简风。请只从项目现有的中式 DESIGN.md 方案中推荐最多两套，说明各自适用条件，并问我一个会改变最终选择的关键问题。不要创建或修改文件。",
       "acceptanceZh": [
         "未点名 Skill 时主动读取 chinese-design-md",
         "推荐不超过两套现有设计系统并说明差异",
         "提出一个会改变选择的定位问题",
         "不创建或修改文件"
-      ]
+      ],
+      "execution": {
+        "testedAt": "2026-08-13",
+        "client": "Codex CLI 0.147.0-alpha.6.5",
+        "model": "gpt-5.6-sol",
+        "scope": "isolated single-skill temporary Git project; ephemeral; ignore user config; read-only sandbox",
+        "passedChecks": 4,
+        "totalChecks": 4,
+        "case": "cases/chinese-design-md-prospective-retest-2026-08-13.md",
+        "note": "The unnamed task caused Codex to read chinese-design-md and the two recommended existing DESIGN.md files, compare exactly two options, ask one decision-changing question, and leave the project unchanged. This does not establish design quality or cross-client compatibility."
+      }
     },
     {
       "skill": "chinese-lesson-plan",
