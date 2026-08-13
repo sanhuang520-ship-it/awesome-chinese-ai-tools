@@ -37,11 +37,25 @@ class BundlesPageTest(unittest.TestCase):
         match = re.search(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', self.page, re.S)
         self.assertIsNotNone(match)
         structured = json.loads(match.group(1))
-        self.assertEqual(4, structured["numberOfItems"])
+        item_list, faq = structured["@graph"]
+        self.assertEqual("ItemList", item_list["@type"])
+        self.assertEqual(4, item_list["numberOfItems"])
         self.assertEqual(
             ["#writing", "#visual", "#learning", "#office"],
-            [item["url"].removeprefix(structured["url"]) for item in structured["itemListElement"]],
+            [item["url"].removeprefix(item_list["url"]) for item in item_list["itemListElement"]],
         )
+        self.assertEqual("FAQPage", faq["@type"])
+        self.assertEqual(4, len(faq["mainEntity"]))
+
+    def test_visible_faq_matches_structured_answers_and_preserves_boundaries(self):
+        match = re.search(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', self.page, re.S)
+        faq = json.loads(match.group(1))["@graph"][1]
+        for item in faq["mainEntity"]:
+            with self.subTest(question=item["name"]):
+                self.assertIn(item["name"].replace("这些组合在 ", ""), self.page)
+                self.assertIn(item["acceptedAnswer"]["text"], self.page)
+        self.assertIn("Claude Code 与 Cursor 仍待本仓库实测", self.page)
+        self.assertIn("结果不是安全认证", self.page)
 
     def test_discovery_surfaces_link_to_bundles(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
