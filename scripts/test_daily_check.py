@@ -111,6 +111,46 @@ class DailyCheckTest(unittest.TestCase):
         self.assertIn("运行时请求 example.com", label)
         self.assertIn("**边界：**先在隔离环境复核", label)
 
+    def test_generated_catalog_refuses_unstable_third_party_claims(self):
+        source_data = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))
+        source_data["skills"][13]["desc"] = "目前 Star 数最高的一份"
+        source = json.dumps(source_data, ensure_ascii=False).encode("utf-8")
+        quality = (ROOT / "data" / "quality.json").read_bytes()
+        writes = []
+
+        def fake_api(method, path, data=None, retries=3):
+            if path.endswith("data/skills.json"):
+                return {"content": base64.b64encode(source).decode("ascii")}
+            if path.endswith("data/quality.json"):
+                return {"content": base64.b64encode(quality).decode("ascii")}
+            if method == "PUT":
+                writes.append(path)
+            return {}
+
+        with patch.object(self.module, "github_api", side_effect=fake_api):
+            self.module.build_skills_md()
+        self.assertEqual([], writes)
+
+    def test_skill_refresh_refuses_to_write_catalog_with_unstable_claims(self):
+        source_data = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))
+        target = next(skill for skill in source_data["skills"] if not skill.get("ours") and skill.get("repo"))
+        target["desc"] = "117 星但 1.1 万安装"
+        source = json.dumps(source_data, ensure_ascii=False).encode("utf-8")
+        writes = []
+
+        def fake_api(method, path, data=None, retries=3):
+            if method == "GET" and path.endswith("data/skills.json"):
+                return {"content": base64.b64encode(source).decode("ascii"), "sha": "old"}
+            if method == "GET" and path.startswith("/repos/"):
+                return {"stargazers_count": 1, "pushed_at": "2026-08-13T00:00:00Z"}
+            if method == "PUT":
+                writes.append(path)
+            return {}
+
+        with patch.object(self.module, "github_api", side_effect=fake_api), patch.object(self.module.time, "sleep"):
+            self.module.check_skills()
+        self.assertEqual([], writes)
+
 
 if __name__ == "__main__":
     unittest.main()

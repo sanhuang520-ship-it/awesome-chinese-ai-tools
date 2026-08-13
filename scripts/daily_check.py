@@ -16,6 +16,7 @@ except ImportError:
     _CAFILE = None
 import time
 
+from check_catalog_claims import find_claim_violations
 from sync_public_metadata import CAT_ORDER, sync_public_metadata
 from check_internal_links import ROOT as SITE_ROOT, missing_links, published_pages
 
@@ -332,6 +333,12 @@ def check_skills():
         s["skillCheckedAt"] = today_str
 
     data["skillsCheckedAt"] = today_str
+    claim_violations = find_claim_violations(data)
+    if claim_violations:
+        print("[Skill 复检] ❌ 目录声明门槛未通过，拒绝写回")
+        for violation in claim_violations:
+            print(f"           {violation}")
+        return
     result = github_api("PUT", f"/repos/{REPO}/contents/{path}", {
         "message": f"chore: {today_str} skill 复检 — {len(dead)} 失效 / {star_moved} 个星数更新",
         "content": base64.b64encode(
@@ -376,6 +383,12 @@ def build_skills_md():
         return
     quality_data = json.loads(base64.b64decode(quality_info["content"]).decode("utf-8"))
     S = d.get("skills", [])
+    claim_violations = find_claim_violations(d)
+    if claim_violations:
+        print("[SKILLS.md] ❌ 目录声明门槛未通过，跳过生成")
+        for violation in claim_violations:
+            print(f"            {violation}")
+        return
     cats = d.get("categories", {})
     checked = d.get("skillsCheckedAt", "—")
 

@@ -141,6 +141,7 @@ python3 scripts/check_repository_profile.py
 - 仓库里**必须有 `SKILL.md`**——只是个不错的项目但没有 SKILL.md 的，不算 skill
 - 仓库真实存在且可访问（我们每天会自动复检，失效会标记）
 - `desc` 要么译自原作者的 description，要么明确是你的理解。**不要看名字猜功能**
+- `desc` / `descEn` 不写动态 Star 排名、借用上游 Star 数、Star 与安装量对比，或未经本站复现的百分比效果；提交前运行 `python3 scripts/check_catalog_claims.py`
 - 名称、URL、描述会用于网站渲染：不要在名称或 URL 中加入引号、反引号或 HTML；描述中不要写 HTML 标签
 
 ## 加一个 AI 工具
