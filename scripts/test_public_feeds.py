@@ -67,7 +67,16 @@ class PublicFeedsTest(unittest.TestCase):
         self.assertIn("Agent Skill 安装前安全检查：只读本地审计器", feed)
         self.assertIn("skills CLI 1.5.22 隔离安装与项目更新复测：13/13 一致", feed)
         self.assertIn("Agent Skill 怎么更新：skills update 项目级实测", feed)
+        self.assertIn("Agent Skill 测试失败怎么修：两条可复核闭环", feed)
         self.assertIn("不会持续同步", feed)
+
+    def test_failure_repair_guide_is_discoverable_from_home_and_english_readme(self):
+        home = (ROOT / "index.html").read_text(encoding="utf-8")
+        english = (ROOT / "README.en.md").read_text(encoding="utf-8")
+        self.assertIn('href="fix-agent-skill/"', home)
+        self.assertIn("失败后怎么修：不改题、不降门槛", home)
+        self.assertIn("Failure repair guide", english)
+        self.assertIn("unchanged original tasks at 4/4", english)
 
     def test_sitemap_contains_every_repository_owned_skill(self):
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
