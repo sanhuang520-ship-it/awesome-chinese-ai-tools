@@ -16,21 +16,30 @@ class RetestQueueTest(unittest.TestCase):
         summary_only = {name for name, record in evidence.items() if record["level"] == "summary-only"}
         self.assertEqual(summary_only, {item["skill"] for item in self.items})
 
-    def test_every_item_is_prospective_and_has_four_acceptance_checks(self):
+    def test_every_item_is_preregistered_and_has_four_acceptance_checks(self):
         for item in self.items:
             with self.subTest(skill=item["skill"]):
-                self.assertEqual("planned", item["status"])
                 self.assertEqual(4, len(item["acceptanceZh"]))
                 self.assertNotIn(item["skill"], item["promptZh"])
+        statuses = {item["skill"]: item["status"] for item in self.items}
+        self.assertEqual("executed-pass", statuses["book-digest-cn"])
+        self.assertEqual(5, sum(status == "planned" for status in statuses.values()))
+        execution = self.items[0]["execution"]
+        self.assertEqual(execution["passedChecks"], execution["totalChecks"])
+        self.assertTrue((ROOT / execution["case"]).is_file())
+        case = (ROOT / execution["case"]).read_text(encoding="utf-8")
+        self.assertIn(self.items[0]["promptZh"], case)
+        for check in self.items[0]["acceptanceZh"]:
+            self.assertIn(check, case)
 
     def test_generated_page_is_current_and_does_not_claim_results(self):
         self.assertEqual(render(), self.body)
         self.assertEqual(6, self.body.count('class="queue-card"'))
-        self.assertEqual(6, self.body.count(">复制待测任务</button>"))
-        self.assertEqual(6, self.body.count("PLANNED · 尚无结果"))
-        self.assertIn("目前一个都不算通过", self.body)
-        for forbidden in ("测试通过", "兼容通过", "自动触发成功"):
-            self.assertNotIn(forbidden, self.body)
+        self.assertEqual(6, self.body.count(">复制任务</button>"))
+        self.assertEqual(5, self.body.count("PLANNED · 尚无结果"))
+        self.assertEqual(1, self.body.count("已执行 · 预注册门槛通过 4 / 4"))
+        self.assertIn("1 个已执行", self.body)
+        self.assertIn("5 项 planned 仍不算通过", self.body)
 
 
 if __name__ == "__main__":

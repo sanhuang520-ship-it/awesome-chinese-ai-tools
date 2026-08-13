@@ -22,8 +22,9 @@ class TryTasksPageTest(unittest.TestCase):
         self.assertEqual(13, body.count(">复制任务</button>"))
         self.assertEqual(7, body.count('data-kind="historical"'))
         self.assertEqual(6, body.count('data-kind="prospective"'))
-        self.assertEqual(6, body.count("PLANNED · 尚无结果"))
-        self.assertIn("PLANNED 不等于通过", body)
+        self.assertEqual(5, body.count("PLANNED · 尚无结果"))
+        self.assertEqual(1, body.count("已执行 · 预注册门槛通过 4 / 4"))
+        self.assertIn("5 条仍为 planned", body)
         self.assertIn("先移除 Token、邮箱、私人路径和未公开数据", body)
 
     def test_all_explainers_link_to_first_use_page(self):

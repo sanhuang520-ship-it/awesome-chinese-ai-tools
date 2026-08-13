@@ -53,7 +53,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 校对商品文案事实边界 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ecommerce-copywriting` | `根据已知参数整理可写、待补和不应发布的信息；没有的参数、认证和功效不要编。` | [Codex 单任务实测](cases/ecommerce-copywriting-codex.md) |
 | 制定能动手练习的学习计划 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ai-learning-coach` | `我想两周入门 SQL。先了解目标和基础，再制定有练习、输出和复盘的计划。` | [Codex 校准实测](cases/ai-learning-coach-codex.md) |
 
-**[→ 查看全部 13 个单项安装命令与可复制首次任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**：7 条历史逐字原文与 6 条尚无结果的前瞻任务严格分开。
+**[→ 查看全部 13 个单项安装命令与可复制首次任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**：7 条历史逐字原文与 6 条前瞻任务严格分开；前瞻任务中 1 条已执行、5 条仍待测。
 
 这些链接只记录一次特定 Codex 版本与任务的结果，不保证其他客户端、版本或措辞得到相同结果。
 

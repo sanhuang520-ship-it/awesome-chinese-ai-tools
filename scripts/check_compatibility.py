@@ -96,6 +96,19 @@ def main() -> None:
     if data.get("clients", {}).get("codex") != f"Codex CLI {display_version}":
         fail("Codex client summary and activation clientVersion differ")
 
+    prospective = data["results"].get("prospectiveRetests", {})
+    if prospective.get("plannedCount") != 6:
+        fail("prospective retest baseline must preserve six preregistered tasks")
+    if prospective.get("executedCount") + prospective.get("remainingCount") != prospective.get("plannedCount"):
+        fail("prospective executed and remaining counts do not add up")
+    if prospective.get("passedCount") + prospective.get("failedCount") != prospective.get("executedCount"):
+        fail("prospective pass and fail counts do not add up")
+    for skill, result in prospective.get("results", {}).items():
+        if skill not in actual or result.get("passedChecks") > result.get("totalChecks", 0):
+            fail(f"invalid prospective retest result: {skill}")
+        if not (ROOT / result.get("case", "")).is_file():
+            fail(f"prospective retest case is missing: {skill}")
+
     examples = (ROOT / "EXAMPLES.md").read_text(encoding="utf-8")
     case_index = (ROOT / "cases" / "README.md").read_text(encoding="utf-8")
     for skill, case in zip(verified_skills, cases):

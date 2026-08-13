@@ -18,6 +18,8 @@
 
 当前 13 个原创 Skill 都有一条 Codex 自动触发记录；全部保留客户端版本、任务内容、观察结果和不能外推的部分，其中 7 条保留逐字任务原文，6 条仅保留任务摘要。它们是单任务仓库自测，不等于跨客户端准确率，也不代表外部用户评价。
 
+此外，`book-digest-cn` 已完成一条[运行前公开任务与门槛的隔离前瞻复测](cases/book-digest-cn-prospective-retest-2026-08-13.md)，4 / 4 门槛通过；其他 5 条前瞻任务仍待测。它与下表较早的历史案例是两次独立观察。
+
 | Skill | Codex 实测记录 | Skill | Codex 实测记录 |
 |---|---|---|---|
 | `ai-learning-coach` | [两周入门 SQL](cases/ai-learning-coach-codex.md) | `book-digest-cn` | [《小王子》拆书](cases/book-digest-cn-codex.md) |

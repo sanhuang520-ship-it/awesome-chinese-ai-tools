@@ -6,14 +6,24 @@
     {
       "skill": "book-digest-cn",
       "titleZh": "无原文时的拆书准备",
-      "status": "planned",
+      "status": "executed-pass",
       "promptZh": "我准备给读书会做《小王子》的读书笔记，但现在没有提供目录、摘录或版本信息。请先只完成准备阶段：一次问清楚继续拆解所需的信息，并给我一个“作者问题—核心主张与论证—我的判断”的空白笔记骨架。不要根据印象填写作品内容，不要大段引用原文，也不要修改任何文件。",
       "acceptanceZh": [
         "未点名 Skill 时主动读取 book-digest-cn",
         "询问阅读目的、阅读进度、版本或可核验材料与期望产出",
         "只给空白三层骨架，不填充《小王子》内容",
         "不大段引用原文，不修改文件"
-      ]
+      ],
+      "execution": {
+        "testedAt": "2026-08-13",
+        "client": "Codex CLI 0.147.0-alpha.6.5",
+        "model": "gpt-5.6-sol",
+        "scope": "isolated single-skill temporary Git project; ephemeral; ignore user config; read-only sandbox",
+        "passedChecks": 4,
+        "totalChecks": 4,
+        "case": "cases/book-digest-cn-prospective-retest-2026-08-13.md",
+        "note": "The unnamed task caused Codex to read book-digest-cn, ask for the required context in one response, and provide only an empty three-layer outline. This repository-maintainer test is not evidence for other prompts, clients or versions."
+      }
     },
     {
       "skill": "chinese-design-md",

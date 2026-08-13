@@ -97,6 +97,18 @@ class CompatibilityDataTest(unittest.TestCase):
         self.assertEqual(self.data["results"]["claudeCode"]["status"], "not-tested")
         self.assertEqual(self.data["results"]["cursor"]["status"], "not-tested")
 
+    def test_preregistered_retests_preserve_executed_and_remaining_counts(self):
+        result = self.data["results"]["prospectiveRetests"]
+        self.assertEqual(6, result["plannedCount"])
+        self.assertEqual(1, result["executedCount"])
+        self.assertEqual(1, result["passedCount"])
+        self.assertEqual(0, result["failedCount"])
+        self.assertEqual(5, result["remainingCount"])
+        book = result["results"]["book-digest-cn"]
+        self.assertEqual(4, book["passedChecks"])
+        self.assertEqual(4, book["totalChecks"])
+        self.assertTrue((ROOT / book["case"]).is_file())
+
     def test_compatibility_submission_separates_naming_activation_and_completion(self):
         template = (ROOT / ".github" / "ISSUE_TEMPLATE" / "compatibility-result.yml").read_text(encoding="utf-8")
         for field in ("id: named_skill", "id: environment", "id: activation", "id: completion", "id: evidence", "id: boundary"):

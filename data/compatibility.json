@@ -178,6 +178,25 @@
         }
       }
     },
+    "prospectiveRetests": {
+      "status": "partial",
+      "testedAt": "2026-08-13",
+      "clientVersion": "codex-cli 0.147.0-alpha.6.5",
+      "plannedCount": 6,
+      "executedCount": 1,
+      "passedCount": 1,
+      "failedCount": 0,
+      "remainingCount": 5,
+      "note": "Prompts and acceptance checks were committed before execution. One repository-maintainer test passed all four preregistered checks in an isolated single-skill temporary Git project. Five tasks remain unexecuted; this does not change the earlier 13-skill activation outcome totals.",
+      "results": {
+        "book-digest-cn": {
+          "status": "verified",
+          "passedChecks": 4,
+          "totalChecks": 4,
+          "case": "cases/book-digest-cn-prospective-retest-2026-08-13.md"
+        }
+      }
+    },
     "claudeCode": {
       "status": "not-tested"
     },

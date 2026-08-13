@@ -18,6 +18,8 @@
 
 当前任务级案例记录的客户端为 Codex CLI `0.147.0-alpha.6.5`；这仍不代表其他 Codex 版本或任务措辞会得到相同结果。安装复测与任务级自动触发是两轮不同证据，不能互相替代。
 
+另有 6 条运行前公开任务与成功门槛的前瞻复测：`book-digest-cn` 已在隔离单 Skill 临时项目中执行并通过 4 / 4 门槛；[原始记录](cases/book-digest-cn-prospective-retest-2026-08-13.md)保留命令、文件哈希与边界。其余 5 条仍为 `planned`，不计为通过。这组结果不改写上表的首次自动触发 10 / 1 / 2 统计。
+
 ## 13 个本站原创 Skill
 
 | Skill | CLI 发现 | 隔离安装内容 | Codex 触发 | Claude Code | Cursor |
