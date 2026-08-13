@@ -4,7 +4,7 @@
 > 来源仓库经 GitHub API 核验真实存在；第三方说明来自上游资料或维护者摘要，不等于逐项功能实测<br>
 > 🔄 最近自动复检：**2026-08-13**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
-🧪 **[Codex 13/13 自动触发实测 → COMPATIBILITY.md](COMPATIBILITY.md)**　📋 [原创 Skill 输出示例](EXAMPLES.md)　🔎 [按场景找 Skill](#skill-catalog)　🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
+🧪 **[Codex 13/13 自动触发实测 → COMPATIBILITY.md](COMPATIBILITY.md)**　🧰 [4 组开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)　📋 [原创 Skill 输出示例](EXAMPLES.md)　🔎 [按场景找 Skill](#skill-catalog)　🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
 
 🛡️ **[安装第三方 Skill 前：运行只读本地审计器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/)**（检查脚本、联网、凭据词与高风险命令；不执行目标，0 项命中不等于安全）
 

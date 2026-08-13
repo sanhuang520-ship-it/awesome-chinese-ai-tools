@@ -32,8 +32,12 @@ class BundlesPageTest(unittest.TestCase):
     def test_discovery_surfaces_link_to_bundles(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
+        catalog = (ROOT / "SKILLS.md").read_text(encoding="utf-8")
+        generator = (ROOT / "scripts" / "daily_check.py").read_text(encoding="utf-8")
         self.assertIn("/awesome-chinese-ai-tools/bundles/", readme)
         self.assertIn("/awesome-chinese-ai-tools/bundles/", llms)
+        self.assertIn("/awesome-chinese-ai-tools/bundles/", catalog)
+        self.assertIn("/awesome-chinese-ai-tools/bundles/", generator)
         self.assertIn("不代表会同时触发", readme)
 
 

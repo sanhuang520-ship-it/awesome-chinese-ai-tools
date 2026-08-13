@@ -412,6 +412,7 @@ def build_skills_md():
     L.append("> 来源仓库经 GitHub API 核验真实存在；第三方说明来自上游资料或维护者摘要，不等于逐项功能实测<br>")
     L.append(f"> 🔄 最近自动复检：**{checked}**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）\n")
     L.append("🧪 **[Codex 13/13 自动触发实测 → COMPATIBILITY.md](COMPATIBILITY.md)**　"
+             "🧰 [4 组开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)　"
              "📋 [原创 Skill 输出示例](EXAMPLES.md)　"
              "🔎 [按场景找 Skill](#skill-catalog)　"
              "🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)\n")
