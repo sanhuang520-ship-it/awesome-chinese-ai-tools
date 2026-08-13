@@ -14,12 +14,15 @@
 
 ## 不会写代码，也可以贡献
 
+如果不想先研究仓库结构，可以从[三个 10—20 分钟的真实维护任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/contribute/)里选一个。每项都给出操作范围、提交入口和完成标准。
+
 不需要 Fork 仓库或编辑 JSON，选一个表单填写即可：
 
 - [推荐一个 Skill 或 AI 工具](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml)
 - [报告失效链接或事实错误](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml)
 - [改进一个本站原创 Skill](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=improve-skill.yml)
 - [提交一次成功、失败或未触发的兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)
+- [提交一次 Windows、WSL、Linux 或 macOS 安装环境复测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=install-environment-result.yml)
 
 不知道的字段可以如实写“不确定”或“暂无”。维护者会复核，不要求提交者先得出完整结论；请不要为了填满表单而猜测。
 

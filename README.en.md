@@ -72,6 +72,7 @@ See [output examples](EXAMPLES.md), [reproducible Codex cases](cases/README.md),
 
 ## Contributing
 
+- Pick one scoped task from the [first-contribution page](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/contribute/): cross-client retesting, Windows/Linux installation-path evidence, or a read-only catalog fact check. Each task has an explicit completion gate.
 - [Recommend a Skill or AI tool](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml); no code change is required.
 - Submit a real success, failure, or non-activation result through the [compatibility report form](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml).
 - For a machine-readable pull request, generate a private local JSON report in the [browser report builder](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/report/), or copy the [validated example](examples/compatibility-result.example.json), then run `python3 scripts/check_compatibility_reports.py`.

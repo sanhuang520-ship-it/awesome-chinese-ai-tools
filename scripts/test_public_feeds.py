@@ -68,6 +68,7 @@ class PublicFeedsTest(unittest.TestCase):
         self.assertIn("skills CLI 1.5.22 隔离安装与项目更新复测：13/13 一致", feed)
         self.assertIn("Agent Skill 怎么更新：skills update 项目级实测", feed)
         self.assertIn("Agent Skill 测试失败怎么修：两条可复核闭环", feed)
+        self.assertIn("第一次贡献：3 个 10—20 分钟的真实维护任务", feed)
         self.assertIn("不会持续同步", feed)
 
     def test_failure_repair_guide_is_discoverable_from_home_and_english_readme(self):

@@ -39,6 +39,12 @@ def render_feed():
         raise ValueError(f"unexpected compatibility outcome totals: {dict(counts)}")
     entries = [
         item(
+            "第一次贡献：3 个 10—20 分钟的真实维护任务",
+            "contribute/",
+            "Thu, 13 Aug 2026 13:02:00 +0800",
+            "把跨客户端复测、Windows/Linux 安装路径验证和第三方条目事实复核拆成范围明确、有完成标准的入口；成功和失败都可提交，贡献不以 Star 为条件。",
+        ),
+        item(
             "Agent Skill 测试失败怎么修：两条可复核闭环",
             "fix-agent-skill/",
             "Thu, 13 Aug 2026 12:18:00 +0800",
@@ -146,7 +152,7 @@ def render_feed():
     <link>{BASE}</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 13 Aug 2026 12:18:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 13:02:00 +0800</lastBuildDate>
     <atom:link href="{BASE}feed.xml" rel="self" type="application/rss+xml"/>
 
 {chr(10).join(entries)}

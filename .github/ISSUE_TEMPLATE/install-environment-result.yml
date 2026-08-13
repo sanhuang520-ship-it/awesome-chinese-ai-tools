@@ -1,0 +1,97 @@
+name: 提交一次安装环境复测
+description: 记录 Windows、WSL、Linux 或 macOS 上 skills CLI 的版本、落盘路径与文件类型
+title: "[安装环境] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这个表单只记录实际运行过的安装环境结果。成功、失败和权限阻断都欢迎；请先删除用户名、Token、邮箱、私人路径和未公开业务数据。
+        安装路径会随 CLI 版本、操作系统和目标客户端变化。单次结果不能外推为所有环境都相同。
+
+  - type: dropdown
+    id: system
+    attributes:
+      label: 操作系统
+      options:
+        - Windows
+        - WSL
+        - Linux
+        - macOS
+        - 其他
+    validations:
+      required: true
+
+  - type: input
+    id: versions
+    attributes:
+      label: 系统、终端、Node.js 与 skills CLI 版本
+      description: 能确认多少写多少；不知道可写“不确定”
+      placeholder: Windows 11 / PowerShell 7 / Node 22.x / skills 1.5.22
+    validations:
+      required: true
+
+  - type: input
+    id: command
+    attributes:
+      label: 实际运行的命令
+      placeholder: npx --yes skills@1.5.22 add https://github.com/... --skill chinese-typography
+    validations:
+      required: true
+
+  - type: input
+    id: skill
+    attributes:
+      label: 安装的 Skill 名称
+      placeholder: chinese-typography
+    validations:
+      required: true
+
+  - type: textarea
+    id: result
+    attributes:
+      label: 实际结果与脱敏输出
+      description: 写明成功、失败或阻断，以及关键输出；截图不是必需的
+    validations:
+      required: true
+
+  - type: textarea
+    id: paths
+    attributes:
+      label: 实际落盘路径与文件类型
+      description: 用 <用户名> 替换私人目录；说明是普通目录、副本、符号链接、junction，还是无法确认
+      placeholder: <用户目录>/.agents/skills/chinese-typography（普通目录）
+    validations:
+      required: true
+
+  - type: dropdown
+    id: executed
+    attributes:
+      label: 是否运行了目标 Skill 附带的脚本或 Demo
+      options:
+        - 否，只检查安装结果
+        - 是，已运行并会在下方说明
+        - 目标 Skill 没有附带脚本或 Demo
+        - 不确定
+    validations:
+      required: true
+
+  - type: textarea
+    id: boundary
+    attributes:
+      label: 这次结果不能说明什么
+      placeholder: 没有验证自动触发、任务完成或其他 CLI 版本
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 这是我实际运行得到的结果，不是根据文档推测
+          required: true
+        - label: 我已删除 Token、邮箱、用户名、私人路径和未公开业务数据
+          required: true
+        - label: 我理解单次结果不代表所有操作系统、版本或客户端
+          required: true
