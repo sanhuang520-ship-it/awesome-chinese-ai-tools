@@ -2,6 +2,8 @@
 
 ## 当前优先发布
 
+`promo/update-agent-skill-posts.md` —— 当前首选：13 个受控历史夹具的项目级更新实测，问题具体、命令可复制、结果与边界均可复核；状态未发布，外部操作需用户当时确认。
+
 `promo/codex-skill-compatibility-posts.md` —— 13 个 Skill 的 Codex 自动触发实测，包含两个失败与修订，事实更新到 2026-08-12。
 
 `promo/codex-search-articles-posts.md` —— 两篇新搜索型文章的分发素材：先发“不自动触发”诊断，观察至少一天后再决定是否发“创建 Codex Skill”教程；当前均未对外发布。

@@ -24,6 +24,18 @@ class DistributionReadinessTest(unittest.TestCase):
         self.assertIn("Linux.do 不使用本稿", body)
         self.assertIn("发布操作需用户当时确认", body)
 
+    def test_update_launch_copy_is_unpublished_and_preserves_fixture_boundaries(self):
+        body = (ROOT / "promo" / "update-agent-skill-posts.md").read_text(encoding="utf-8")
+        self.assertIn("状态：**未发布**", body)
+        self.assertIn("skills@1.5.22 update -p -y", body)
+        self.assertIn("受控测试夹具", body)
+        self.assertIn("没有测试全局", body)
+        self.assertIn("发布操作需用户当时确认", body)
+        self.assertIn("Clone 不能称为用户", body)
+        index = (ROOT / "promo" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("promo/update-agent-skill-posts.md", index)
+        self.assertIn("当前首选", index)
+
     def test_machine_readable_record_has_no_false_publication_or_attribution(self):
         data = json.loads((ROOT / "metrics" / "2026-08-13-distribution-readiness.json").read_text(encoding="utf-8"))
         self.assertEqual("not-published", data["preparedContent"]["status"])
