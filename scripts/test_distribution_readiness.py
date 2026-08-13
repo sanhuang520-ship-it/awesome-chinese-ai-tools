@@ -52,6 +52,17 @@ class DistributionReadinessTest(unittest.TestCase):
         self.assertIn("promo/update-agent-skill-posts.md", index)
         self.assertIn("当前首选", index)
 
+    def test_bundles_launch_copy_is_unpublished_and_avoids_rank_claims(self):
+        body = (ROOT / "promo" / "bundles-launch-posts.md").read_text(encoding="utf-8")
+        self.assertIn("状态：**未发布**", body)
+        self.assertIn("发布操作需用户当时确认", body)
+        self.assertIn("不代表同时触发或跨客户端认证", body)
+        self.assertIn("Clone 不能称为用户", body)
+        self.assertNotIn("最佳 Agent Skills", body)
+        self.assertNotIn("必装 Skill", body)
+        index = (ROOT / "promo" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("promo/bundles-launch-posts.md", index)
+
     def test_machine_readable_record_has_no_false_publication_or_attribution(self):
         data = json.loads((ROOT / "metrics" / "2026-08-13-distribution-readiness.json").read_text(encoding="utf-8"))
         self.assertEqual("not-published", data["preparedContent"]["status"])

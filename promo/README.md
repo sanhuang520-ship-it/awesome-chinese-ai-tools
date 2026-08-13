@@ -2,6 +2,8 @@
 
 ## 当前优先发布
 
+`promo/bundles-launch-posts.md` —— 4 组中文 Agent Skills 开箱组合的场景型分发稿；不做动态排名或“必装”承诺，状态未发布，外部操作需用户当时确认。
+
 `promo/update-agent-skill-posts.md` —— 当前首选：13 个受控历史夹具的项目级更新实测，问题具体、命令可复制、结果与边界均可复核；状态未发布，外部操作需用户当时确认。
 
 `promo/codex-skill-compatibility-posts.md` —— 13 个 Skill 的 Codex 自动触发实测，包含两个失败与修订，事实更新到 2026-08-12。
