@@ -39,6 +39,12 @@ def render_feed():
         raise ValueError(f"unexpected compatibility outcome totals: {dict(counts)}")
     entries = [
         item(
+            "chinese-web-themes 前瞻复测：遗漏授权检查，记为 3/4 失败",
+            "cases/chinese-web-themes-prospective-retest-2026-08-13.md",
+            "Thu, 13 Aug 2026 11:16:00 +0800",
+            "隔离测试完成水墨主题选择、最短接入和正文、移动端、代码块、样式覆盖与无障碍检查，但漏掉预注册的授权检查，因此保留为未通过全部门槛，而非选择性只发布成功结果。",
+        ),
+        item(
             "chinese-lesson-plan 前瞻复测：45 分钟与 300 字限制",
             "cases/chinese-lesson-plan-prospective-retest-2026-08-13.md",
             "Thu, 13 Aug 2026 11:12:00 +0800",
@@ -125,7 +131,7 @@ def render_feed():
     <link>{BASE}</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 13 Aug 2026 11:12:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 11:16:00 +0800</lastBuildDate>
     <atom:link href="{BASE}feed.xml" rel="self" type="application/rss+xml"/>
 
 {chr(10).join(entries)}

@@ -18,7 +18,7 @@
 
 当前任务级案例记录的客户端为 Codex CLI `0.147.0-alpha.6.5`；这仍不代表其他 Codex 版本或任务措辞会得到相同结果。安装复测与任务级自动触发是两轮不同证据，不能互相替代。
 
-另有 6 条运行前公开任务与成功门槛的前瞻复测：`book-digest-cn`、`chinese-design-md` 与 `chinese-lesson-plan` 已分别在隔离单 Skill 临时项目中执行并通过 4 / 4 门槛；[拆书记录](cases/book-digest-cn-prospective-retest-2026-08-13.md)、[设计选型记录](cases/chinese-design-md-prospective-retest-2026-08-13.md)和[教案记录](cases/chinese-lesson-plan-prospective-retest-2026-08-13.md)保留命令、文件哈希与边界。其余 3 条仍为 `planned`，不计为通过。这组结果不改写上表的首次自动触发 10 / 1 / 2 统计。
+另有 6 条运行前公开任务与成功门槛的前瞻复测：`book-digest-cn`、`chinese-design-md` 与 `chinese-lesson-plan` 已分别在隔离单 Skill 临时项目中执行并通过 4 / 4 门槛；`chinese-web-themes` 执行后因遗漏授权检查记为 3 / 4 失败；[拆书记录](cases/book-digest-cn-prospective-retest-2026-08-13.md)、[设计选型记录](cases/chinese-design-md-prospective-retest-2026-08-13.md)、[教案记录](cases/chinese-lesson-plan-prospective-retest-2026-08-13.md)和[主题失败记录](cases/chinese-web-themes-prospective-retest-2026-08-13.md)保留命令、文件哈希与边界。其余 2 条仍为 `planned`，不计为通过。这组结果不改写上表的首次自动触发 10 / 1 / 2 统计。
 
 ## 13 个本站原创 Skill
 

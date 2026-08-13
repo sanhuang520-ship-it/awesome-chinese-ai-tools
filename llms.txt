@@ -13,9 +13,9 @@
 - [创建 Codex Skill 中文实战](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/create-codex-skill/): 按 OpenAI 当前文档从最小 SKILL.md、触发范围到安装与验证
 - [兼容性报告生成器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/report/): 浏览器本地生成符合公开 Schema 的 JSON，不上传或保存表单内容
 - [13 个原创 Skill 方法与证据总览](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guides/): 按使用场景比较方法、实测状态、原始案例和安全边界
-- [13 个首次试用任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/): 每项提供单独安装命令和自然任务；7 条历史逐字原文与 6 条前瞻任务严格分开，前瞻任务中 3 条已执行、3 条仍待测
+- [13 个首次试用任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/): 每项提供单独安装命令和自然任务；7 条历史逐字原文与 6 条前瞻任务严格分开，前瞻任务中 4 条已执行、2 条仍待测
 - [7 个可逐字复现的测试任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reproduce/): 复制安装命令与案例中保存的逐字任务原文；另外 6 项仅有摘要，不反向补写
-- [6 个前瞻兼容性复测任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/retest/): 运行前公开提示与成功门槛；book-digest-cn、chinese-design-md 与 chinese-lesson-plan 隔离自测均通过 4/4，另外 3 条仍为 planned
+- [6 个前瞻兼容性复测任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/retest/): 运行前公开提示与成功门槛；三条隔离自测通过 4/4，chinese-web-themes 为 3/4 失败，另外 2 条仍为 planned
 - [Codex 兼容性实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/): 13 个原创 Skill 的自动触发、失败与缩小复测
 - [完整 Skill 清单](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/SKILLS.md): 从 data/skills.json 自动生成
 - [质量与安全标签](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/QUALITY.md): 原创 Skill 的静态检查范围和限制

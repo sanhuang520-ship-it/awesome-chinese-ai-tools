@@ -41,9 +41,9 @@ def load_tasks():
             "prompt": item["promptZh"],
             "kind": "prospective",
             "status": (
-                f"已执行 · 预注册门槛通过 {item['execution']['passedChecks']} / {item['execution']['totalChecks']}"
-                if item["status"] == "executed-pass"
-                else "PLANNED · 尚无结果"
+                "PLANNED · 尚无结果"
+                if item["status"] == "planned"
+                else f"已执行 · {'预注册门槛通过' if item['status'] == 'executed-pass' else '未通过全部门槛'} {item['execution']['passedChecks']} / {item['execution']['totalChecks']}"
             ),
             "checks": item["acceptanceZh"],
             "execution": item.get("execution"),

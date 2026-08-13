@@ -183,11 +183,11 @@
       "testedAt": "2026-08-13",
       "clientVersion": "codex-cli 0.147.0-alpha.6.5",
       "plannedCount": 6,
-      "executedCount": 3,
+      "executedCount": 4,
       "passedCount": 3,
-      "failedCount": 0,
-      "remainingCount": 3,
-      "note": "Prompts and acceptance checks were committed before execution. Three repository-maintainer tests passed all four preregistered checks in isolated single-skill temporary Git projects. Three tasks remain unexecuted; this does not change the earlier 13-skill activation outcome totals.",
+      "failedCount": 1,
+      "remainingCount": 2,
+      "note": "Prompts and acceptance checks were committed before execution. Three repository-maintainer tests passed all four checks; one executed test passed three of four and is retained as a failure because it omitted the licensing check. Two tasks remain unexecuted; this does not change the earlier 13-skill activation outcome totals.",
       "results": {
         "book-digest-cn": {
           "status": "verified",
@@ -206,6 +206,12 @@
           "passedChecks": 4,
           "totalChecks": 4,
           "case": "cases/chinese-lesson-plan-prospective-retest-2026-08-13.md"
+        },
+        "chinese-web-themes": {
+          "status": "failed",
+          "passedChecks": 3,
+          "totalChecks": 4,
+          "case": "cases/chinese-web-themes-prospective-retest-2026-08-13.md"
         }
       }
     },

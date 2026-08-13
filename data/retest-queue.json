@@ -72,14 +72,24 @@
     {
       "skill": "chinese-web-themes",
       "titleZh": "普通博客水墨主题接入",
-      "status": "planned",
+      "status": "executed-fail",
       "promptZh": "我有一个普通中文博客，现有正文和代码块样式都要保留，想增加克制的水墨气质。请只推荐一套现有主题，给出最短接入步骤和上线前检查清单；不要生成完整 CSS，也不要修改文件。",
       "acceptanceZh": [
         "未点名 Skill 时主动读取 chinese-web-themes",
         "只推荐一套现有主题并给出最短接入步骤",
         "检查正文行宽、移动端、代码块、样式覆盖、授权与无障碍",
         "不生成完整 CSS，不修改文件"
-      ]
+      ],
+      "execution": {
+        "testedAt": "2026-08-13",
+        "client": "Codex CLI 0.147.0-alpha.6.5",
+        "model": "gpt-5.6-sol",
+        "scope": "isolated single-skill temporary Git project; ephemeral; ignore user config; read-only sandbox",
+        "passedChecks": 3,
+        "totalChecks": 4,
+        "case": "cases/chinese-web-themes-prospective-retest-2026-08-13.md",
+        "note": "Codex activated the skill, recommended only ink, supplied a short integration path, preserved the no-write boundary, and checked content, mobile, code, override and accessibility concerns. It omitted the preregistered licensing check, so the result is an executed failure."
+      }
     },
     {
       "skill": "guochao-visual-cn",
