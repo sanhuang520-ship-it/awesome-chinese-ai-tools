@@ -89,6 +89,14 @@ python3 scripts/verify.py
 
 如果脚本报告公开元数据不同步，先运行 `python3 scripts/sync_public_metadata.py . --write`，检查变更后再重新验证。
 
+复测 GitHub 仓库搜索发现性时，使用固定查询脚本，不要手工改变排序后与旧基线比较：
+
+```bash
+python3 scripts/capture_github_search.py --output metrics/YYYY-MM-DD-github-search.json
+```
+
+该脚本只读取公开仓库搜索和公开 Stars/Forks。排名会受索引、活跃度、Stars 与未知因素影响，不能把变化归因于一处 README 修改，也不能承诺涨星。
+
 ---
 
 ## 加一个 Skill
