@@ -8,6 +8,22 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class DistributionReadinessTest(unittest.TestCase):
+    def test_first_party_skill_improvement_has_a_distinct_private_safe_route(self):
+        template = (ROOT / ".github" / "ISSUE_TEMPLATE" / "improve-skill.yml").read_text(encoding="utf-8")
+        for phrase in (
+            "改进一个本站原创 Skill",
+            "这是实际任务反馈",
+            "合成示例",
+            "截图不是必需的",
+            "我已删除 Token、邮箱、私人路径和未公开业务数据",
+            "不等于所有客户端或版本都会复现",
+        ):
+            self.assertIn(phrase, template)
+        contributing = (ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn("template=improve-skill.yml", contributing)
+        self.assertIn("template=improve-skill.yml", readme)
+
     def test_directory_ledger_prevents_duplicate_submission(self):
         body = (ROOT / "promo" / "directory-submissions.md").read_text(encoding="utf-8")
         self.assertIn("Agent-Skills.md", body)

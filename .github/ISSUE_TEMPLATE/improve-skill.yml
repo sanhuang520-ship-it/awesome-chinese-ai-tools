@@ -1,0 +1,88 @@
+name: 改进一个本站原创 Skill
+description: 用真实任务反馈方法、边界、示例或交付缺口
+title: "[Skill 改进] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这个表单用于改进本仓库 `skills/` 下的 13 个原创 Skill。请提交实际遇到的任务与脱敏结果；如果问题只是没有自动触发，请改用兼容性实测表单。
+        不要粘贴 Token、邮箱、私人路径、客户资料或未公开业务数据。
+
+  - type: dropdown
+    id: skill
+    attributes:
+      label: Skill
+      options:
+        - ai-learning-coach
+        - book-digest-cn
+        - bookkeeping-cn
+        - chinese-design-md
+        - chinese-lesson-plan
+        - chinese-typography
+        - chinese-web-themes
+        - chinese-work-report
+        - ecommerce-copywriting
+        - github-readme-cn
+        - guochao-visual-cn
+        - guofeng-threejs
+        - homework-tutor-cn
+    validations:
+      required: true
+
+  - type: textarea
+    id: task
+    attributes:
+      label: 你实际要完成的任务
+      description: 保留关键约束，但请把私人和业务信息改成合成示例
+      placeholder: 我希望 AI……输入中包含……最终需要……
+    validations:
+      required: true
+
+  - type: dropdown
+    id: gap
+    attributes:
+      label: 改进类型
+      options:
+        - 方法步骤不清楚或顺序不合理
+        - 输出缺少必要内容
+        - 边界过宽、过窄或容易误解
+        - 示例不能覆盖真实任务
+        - references、脚本或 Demo 问题
+        - 其他可复现的改进
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: 实际发生了什么
+      description: 说明偏离预期的位置；文字或短日志即可，截图不是必需的
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你希望怎样改进
+      description: 写可检查的结果，不要求你先设计具体实现
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 可复核依据（可选）
+      description: 可贴脱敏输出、公开资料或最小复现；没有时可以留空
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 这是实际任务反馈，不是为了推广产品或索要收录
+          required: true
+        - label: 我已删除 Token、邮箱、私人路径和未公开业务数据
+          required: true
+        - label: 我理解单次任务反馈不等于所有客户端或版本都会复现
+          required: true

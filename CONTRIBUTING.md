@@ -18,9 +18,12 @@
 
 - [推荐一个 Skill 或 AI 工具](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml)
 - [报告失效链接或事实错误](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml)
+- [改进一个本站原创 Skill](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=improve-skill.yml)
 - [提交一次成功、失败或未触发的兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)
 
 不知道的字段可以如实写“不确定”或“暂无”。维护者会复核，不要求提交者先得出完整结论；请不要为了填满表单而猜测。
+
+如何选择：推荐新项目用“推荐”；链接、名称、数字或说明错误用“事实错误”；本站原创 Skill 已经触发但方法、边界、示例或交付需要改进，用“原创 Skill 改进”；是否被客户端自动读取或最终是否完成，用“兼容性实测”。
 
 ---
 

@@ -273,7 +273,7 @@ my-skill/
 
 ## 贡献
 
-不会代码也可以贡献：[推荐 Skill 或工具](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml) · [报告事实错误](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml) · [提交兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)。不知道的字段可以如实写“不确定”或“暂无”，不需要为了填满表单而猜测。
+不会代码也可以贡献：[推荐 Skill 或工具](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml) · [报告事实错误](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml) · [改进原创 Skill](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=improve-skill.yml) · [提交兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)。不知道的字段可以如实写“不确定”或“暂无”，不需要为了填满表单而猜测。
 
 使用问题和实际效果欢迎放到 [Discussions](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions)，想直接改数据请查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
