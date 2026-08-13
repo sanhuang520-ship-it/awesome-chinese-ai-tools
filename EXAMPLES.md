@@ -18,7 +18,7 @@
 
 当前 13 个原创 Skill 都有一条 Codex 自动触发记录；全部保留客户端版本、任务内容、观察结果和不能外推的部分，其中 7 条保留逐字任务原文，6 条仅保留任务摘要。它们是单任务仓库自测，不等于跨客户端准确率，也不代表外部用户评价。
 
-此外，`book-digest-cn`、`chinese-design-md` 与 `chinese-lesson-plan` 已各完成一条运行前公开任务与门槛的隔离前瞻复测（[拆书记录](cases/book-digest-cn-prospective-retest-2026-08-13.md) · [设计选型记录](cases/chinese-design-md-prospective-retest-2026-08-13.md) · [教案记录](cases/chinese-lesson-plan-prospective-retest-2026-08-13.md)），均通过 4 / 4 门槛；另有 1 条 3/4 失败，其他 2 条仍待测。它们与下表较早的历史案例是独立观察。
+此外，`book-digest-cn`、`chinese-design-md` 与 `chinese-lesson-plan` 已各完成一条运行前公开任务与门槛的隔离前瞻复测（[拆书记录](cases/book-digest-cn-prospective-retest-2026-08-13.md) · [设计选型记录](cases/chinese-design-md-prospective-retest-2026-08-13.md) · [教案记录](cases/chinese-lesson-plan-prospective-retest-2026-08-13.md)），均通过 4 / 4 门槛；另有 1 条 3/4 失败，其他 1 条仍待测。它们与下表较早的历史案例是独立观察。
 
 | Skill | Codex 实测记录 | Skill | Codex 实测记录 |
 |---|---|---|---|

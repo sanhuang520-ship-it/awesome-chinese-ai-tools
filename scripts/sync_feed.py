@@ -38,6 +38,7 @@ def render_feed():
     if counts != {"completed": 10, "waiting-input": 1, "bounded-retest": 2}:
         raise ValueError(f"unexpected compatibility outcome totals: {dict(counts)}")
     entries = [
+        item("guochao-visual-cn 前瞻复测：端午海报方向 4/4 通过", "cases/guochao-visual-cn-prospective-retest-2026-08-13.md", "Thu, 13 Aug 2026 11:20:00 +0800", "隔离任务把宽泛中国风收束为青绿山水矿物色传统，给出主色比例、构图、纹样与负面约束；没有调用图片生成，也没有模仿在世艺术家。"),
         item(
             "chinese-web-themes 前瞻复测：遗漏授权检查，记为 3/4 失败",
             "cases/chinese-web-themes-prospective-retest-2026-08-13.md",
@@ -131,7 +132,7 @@ def render_feed():
     <link>{BASE}</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 13 Aug 2026 11:16:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 11:20:00 +0800</lastBuildDate>
     <atom:link href="{BASE}feed.xml" rel="self" type="application/rss+xml"/>
 
 {chr(10).join(entries)}

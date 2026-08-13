@@ -94,14 +94,21 @@
     {
       "skill": "guochao-visual-cn",
       "titleZh": "端午海报画风收束",
-      "status": "planned",
+      "status": "executed-pass",
       "promptZh": "我要做一张面向年轻人的端午节社交海报，只需要视觉方向和可复制提示词，不调用图片生成。请把宽泛的“中国风”收束为一种具体美学传统，给出主色比例、构图重点、可用纹样和应避免的俗套；不要模仿在世艺术家的个人风格。",
       "acceptanceZh": [
         "未点名 Skill 时主动读取 guochao-visual-cn",
         "选择一种具体美学传统而非泛称中国风",
         "给出配色比例、构图、纹样与负面约束",
         "不调用图片生成，不模仿在世艺术家风格"
-      ]
+      ],
+      "execution": {
+        "testedAt": "2026-08-13", "client": "Codex CLI 0.147.0-alpha.6.5", "model": "gpt-5.6-sol",
+        "scope": "isolated single-skill temporary Git project; ephemeral; ignore user config; read-only sandbox",
+        "passedChecks": 4, "totalChecks": 4,
+        "case": "cases/guochao-visual-cn-prospective-retest-2026-08-13.md",
+        "note": "Codex activated the skill, selected one concrete tradition, supplied ratios, composition, motifs and negative constraints, and did not generate an image or imitate a living artist."
+      }
     },
     {
       "skill": "guofeng-threejs",

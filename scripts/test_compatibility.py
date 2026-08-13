@@ -100,11 +100,11 @@ class CompatibilityDataTest(unittest.TestCase):
     def test_preregistered_retests_preserve_executed_and_remaining_counts(self):
         result = self.data["results"]["prospectiveRetests"]
         self.assertEqual(6, result["plannedCount"])
-        self.assertEqual(4, result["executedCount"])
-        self.assertEqual(3, result["passedCount"])
+        self.assertEqual(5, result["executedCount"])
+        self.assertEqual(4, result["passedCount"])
         self.assertEqual(1, result["failedCount"])
-        self.assertEqual(2, result["remainingCount"])
-        self.assertEqual({"book-digest-cn", "chinese-design-md", "chinese-lesson-plan", "chinese-web-themes"}, set(result["results"]))
+        self.assertEqual(1, result["remainingCount"])
+        self.assertEqual({"book-digest-cn", "chinese-design-md", "chinese-lesson-plan", "chinese-web-themes", "guochao-visual-cn"}, set(result["results"]))
         for skill, record in result["results"].items():
             with self.subTest(skill=skill):
                 self.assertIn(record["passedChecks"], (3, 4))
