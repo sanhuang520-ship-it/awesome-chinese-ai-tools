@@ -19,6 +19,7 @@ API = "https://api.github.com"
 QUERIES = (
     "中文 agent skills",
     "chinese agent skills",
+    "chinese ai skills",
     "codex skills chinese",
     "中文 AI skills",
     "awesome chinese ai tools",
@@ -80,6 +81,11 @@ def build_snapshot(search, repository: dict, recorded_at: str) -> dict:
         "repositoryMetrics": {
             "stars": repository["stargazers_count"],
             "forks": repository["forks_count"],
+        },
+        "repositoryProfile": {
+            "description": repository.get("description"),
+            "homepage": repository.get("homepage"),
+            "topics": sorted(repository.get("topics", [])),
         },
         "notes": "Observation only, not attribution evidence. GitHub search rankings and result totals can change with indexing, repository activity, Stars, query interpretation and other unknown factors. A later rank change cannot be attributed to one README phrase, and a top-20 absence does not mean the repository is absent from all results. This baseline does not promise discovery or Star growth.",
     }

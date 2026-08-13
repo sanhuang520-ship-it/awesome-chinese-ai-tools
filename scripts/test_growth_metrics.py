@@ -70,6 +70,16 @@ class GrowthMetricsTest(unittest.TestCase):
         self.assertIn("cannot be attributed", data["notes"])
         self.assertIn("does not promise", data["notes"])
 
+    def test_search_followup_preserves_pre_profile_change_state(self):
+        data = json.loads((ROOT / "metrics" / "2026-08-13-github-search-followup.json").read_text(encoding="utf-8"))
+        results = {item["query"]: item["targetRankInTop20"] for item in data["queries"]}
+        for query in ("中文 agent skills", "chinese agent skills", "chinese ai skills", "codex skills chinese", "中文 AI skills"):
+            self.assertIsNone(results[query])
+        self.assertEqual(3, results["awesome chinese ai tools"])
+        self.assertIn("中文 Agent Skills 合集", data["repositoryProfile"]["description"])
+        self.assertNotIn("ai-skills", data["repositoryProfile"]["topics"])
+        self.assertIn("cannot be attributed", data["notes"])
+
 
 if __name__ == "__main__":
     unittest.main()
