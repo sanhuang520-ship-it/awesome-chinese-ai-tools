@@ -4,7 +4,7 @@
 
 # 中文 AI Skills 库
 
-**给 AI 助手装上中文场景的专业技能包**
+**中文 Agent Skills 合集：可搜索、可安装、带实测证据**
 
 [English](README.en.md)
 

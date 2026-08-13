@@ -229,6 +229,13 @@ class EvidenceClaimsTest(unittest.TestCase):
         ):
             self.assertIn(case, catalog)
 
+    def test_readme_names_the_current_agent_skills_position_without_inflating_counts(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        english = (ROOT / "README.en.md").read_text(encoding="utf-8")
+        self.assertIn("中文 Agent Skills 合集：可搜索、可安装、带实测证据", readme)
+        self.assertIn("# Chinese AI Agent Skills Directory", english)
+        self.assertNotIn("184 个中文原创", readme)
+
     def test_third_party_install_records_are_not_called_usage(self):
         skills = (ROOT / "data" / "skills.json").read_text(encoding="utf-8")
         catalog = (ROOT / "SKILLS.md").read_text(encoding="utf-8")

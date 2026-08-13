@@ -59,6 +59,17 @@ class GrowthMetricsTest(unittest.TestCase):
         self.assertIn("must not be called users", data["notes"])
         self.assertIn("cannot be used as a Star conversion rate", data["notes"])
 
+    def test_github_search_baseline_records_absence_without_promising_rank(self):
+        data = json.loads((ROOT / "metrics" / "2026-08-13-github-search-baseline.json").read_text(encoding="utf-8"))
+        self.assertEqual("best-match", data["method"]["sort"])
+        self.assertEqual(20, data["method"]["pageSize"])
+        results = {item["query"]: item["targetRankInTop20"] for item in data["queries"]}
+        self.assertIsNone(results["中文 agent skills"])
+        self.assertIsNone(results["chinese agent skills"])
+        self.assertEqual(3, results["awesome chinese ai tools"])
+        self.assertIn("cannot be attributed", data["notes"])
+        self.assertIn("does not promise", data["notes"])
+
 
 if __name__ == "__main__":
     unittest.main()
