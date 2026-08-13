@@ -39,10 +39,10 @@ def render_feed():
         raise ValueError(f"unexpected compatibility outcome totals: {dict(counts)}")
     entries = [
         item(
-            "skills CLI 1.5.22 隔离安装复测：13/13 一致，旧副本已漂移",
+            "skills CLI 1.5.22 隔离安装与项目更新复测：13/13 一致",
             "cases/skills-cli-isolated-install-2026-08-13.md",
             "Thu, 13 Aug 2026 00:51:00 +0800",
-            "在临时 Git 项目复制安装 13 个原创 Skill，全部与当前仓库逐字一致且未修改全局 Skill；同时公开 8 月 8 日全局副本已与当前仓库 0/13 一致，说明安装不会持续同步。",
+            "在临时 Git 项目复制安装 13 个原创 Skill，全部与当前仓库逐字一致；再用受控历史夹具验证 13/13 项目副本可更新到当前完整文件夹，全局 Skill 哈希未变。同时公开旧全局副本 0/13 当前一致，说明安装不会持续同步。",
         ),
         item(
             "Agent Skill 安装前安全检查：只读本地审计器",

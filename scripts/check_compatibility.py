@@ -50,6 +50,16 @@ def main() -> None:
     install_case = install.get("case", "")
     if not install_case or not (ROOT / install_case).is_file():
         fail("Codex install evidence case is missing")
+    update = data["results"].get("projectUpdate", {})
+    if update.get("scope") != "isolated-project-copy" or not update.get("globalSkillsUnchanged"):
+        fail("project update evidence must be isolated and prove global skills were unchanged")
+    if update.get("fixtureDifferentCount") != expected_count:
+        fail("project update fixture must differ from every current repository skill")
+    if update.get("updatedCount") != expected_count or update.get("identicalFolderCount") != expected_count:
+        fail("project update evidence must cover every complete skill folder")
+    update_case = update.get("case", "")
+    if update_case != install_case or not (ROOT / update_case).is_file():
+        fail("project update evidence case is missing or inconsistent")
     existing = data["results"].get("existingGlobalCopies", {})
     if existing.get("status") != "partial" or existing.get("total") != expected_count:
         fail("existing global copy drift must remain explicit")

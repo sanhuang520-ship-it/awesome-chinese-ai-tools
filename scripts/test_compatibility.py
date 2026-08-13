@@ -35,6 +35,19 @@ class CompatibilityDataTest(unittest.TestCase):
         self.assertEqual(0, existing["identicalCount"])
         self.assertEqual(len(self.data["skills"]), existing["total"])
 
+    def test_project_update_evidence_uses_a_different_historical_fixture(self):
+        update = self.data["results"]["projectUpdate"]
+        count = len(self.data["skills"])
+        self.assertEqual("verified", update["status"])
+        self.assertEqual("1.5.22", update["cliVersion"])
+        self.assertEqual("isolated-project-copy", update["scope"])
+        self.assertEqual("npx --yes skills@1.5.22 update -p -y", update["command"])
+        self.assertEqual(count, update["fixtureDifferentCount"])
+        self.assertEqual(count, update["updatedCount"])
+        self.assertEqual(count, update["identicalFolderCount"])
+        self.assertTrue(update["globalSkillsUnchanged"])
+        self.assertTrue((ROOT / update["case"]).is_file())
+
     def test_activation_evidence_points_to_a_case(self):
         activation = self.data["results"]["codexActivation"]
         self.assertEqual(activation["status"], "partial")

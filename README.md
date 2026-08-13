@@ -76,7 +76,12 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 # 全部装上
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'
+
+# 已在当前 Git 项目安装过：按锁文件更新项目副本
+npx --yes skills@1.5.22 update -p -y
 ```
+
+最后一条只适用于已有 `skills-lock.json` 的项目级安装。本仓库用历史夹具隔离复测为 13/13 完整文件夹更新成功；没有验证全局 `update -g`，详见[安装与项目更新记录](cases/skills-cli-isolated-install-2026-08-13.md)。
 
 装好后重启你使用的客户端，用一个**不点名 Skill 名称**的自然任务测试是否自动触发。不同客户端与版本的行为可能不同；当前只有 Codex 的任务级实测。
 

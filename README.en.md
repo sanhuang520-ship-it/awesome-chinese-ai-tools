@@ -29,6 +29,14 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 Installation, discovery, automatic activation, and task completion are separate claims. Client behavior varies by version, install location, and task wording. See the [installation guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/) and [compatibility matrix](COMPATIBILITY.md).
 
+For a project-level installation that already has `skills-lock.json`, the isolated update test used:
+
+```bash
+npx --yes skills@1.5.22 update -p -y
+```
+
+All 13 controlled historical fixture folders matched the current public repository after that run, while global Skill hashes remained unchanged. This does not verify global `update -g`, lockless installs, activation, or future CLI versions; see the [full test record](cases/skills-cli-isolated-install-2026-08-13.md).
+
 The repository is also [indexed by skills.sh](https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools). Its aggregated install count comes from skills CLI telemetry and may include maintainer verification runs; it is not a unique-user count, usage outcome, or quality certification.
 
 The [Agent-Skills.md author page](https://agent-skills.md/authors/sanhuang520-ship-it) also lists all 13 first-party Skills. It is a third-party directory surface, not independent compatibility testing, content review, or quality certification; category and tag refreshes are still being verified.

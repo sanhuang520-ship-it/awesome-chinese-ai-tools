@@ -42,6 +42,20 @@
       "case": "cases/skills-cli-isolated-install-2026-08-13.md",
       "note": "All 13 current repository SKILL.md files matched the isolated installed copies byte-for-byte. This verifies the recorded project-copy install only; it does not prove activation or future versions."
     },
+    "projectUpdate": {
+      "status": "verified",
+      "testedAt": "2026-08-13",
+      "cliVersion": "1.5.22",
+      "scope": "isolated-project-copy",
+      "command": "npx --yes skills@1.5.22 update -p -y",
+      "fixtureCommit": "5906879414e3d0745ed0f1bc086ec5ff9af69eab",
+      "fixtureDifferentCount": 13,
+      "updatedCount": 13,
+      "identicalFolderCount": 13,
+      "globalSkillsUnchanged": true,
+      "case": "cases/skills-cli-isolated-install-2026-08-13.md",
+      "note": "A controlled historical fixture replaced all 13 project copies while preserving the generated lock file. Project update restored all complete skill folders to the then-current public repository content. This does not verify global updates, lockless installs, activation, or future CLI versions."
+    },
     "existingGlobalCopies": {
       "status": "partial",
       "comparedAt": "2026-08-13",
