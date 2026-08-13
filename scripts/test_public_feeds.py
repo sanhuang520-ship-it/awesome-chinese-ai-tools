@@ -143,6 +143,9 @@ class PublicFeedsTest(unittest.TestCase):
         }
         expected = {
             BASE_URL: "2026-08-13",
+            BASE_URL + "README.md": "2026-08-13",
+            BASE_URL + "SKILLS.md": "2026-08-13",
+            BASE_URL + "llms.txt": "2026-08-13",
             BASE_URL + "guides/": "2026-08-13",
             BASE_URL + "audit-skill/": "2026-08-13",
             BASE_URL + "install/": "2026-08-13",
