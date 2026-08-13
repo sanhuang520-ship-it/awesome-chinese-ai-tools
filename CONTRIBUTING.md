@@ -100,6 +100,14 @@ python3 scripts/capture_github_search.py --output metrics/YYYY-MM-DD-github-sear
 
 该脚本只读取公开仓库搜索和公开 Stars/Forks。排名会受索引、活跃度、Stars 与未知因素影响，不能把变化归因于一处 README 修改，也不能承诺涨星。
 
+核对 GitHub 仓库 description、homepage 和 topics 是否与已提交定位一致：
+
+```bash
+python3 scripts/check_repository_profile.py
+```
+
+检查器只读取公开 API，不会修改仓库设置；期望值保存在 `data/repository-profile.json`。
+
 ---
 
 ## 加一个 Skill

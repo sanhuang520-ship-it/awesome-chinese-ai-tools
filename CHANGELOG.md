@@ -6,6 +6,7 @@
 
 ### 使用与发现
 
+- GitHub 仓库描述收束为“中文 Agent Skills 合集”，保留 184 个条目、13 个原创、Codex 实测与 Claude Code / Cursor 待测边界；description、homepage 和 15 个 topics 同步固化为只读可检查配置。
 - 发布“Agent Skill 怎么更新”项目级实测页：连接锁文件前置条件、固定 CLI 版本、完整文件夹比较和全局哈希边界，不把项目结果外推为全局更新保证。
 - 同步推进本轮实际修改的 README、SKILLS 与 llms.txt Sitemap 日期，并用测试锁定搜索元数据不再落后于内容。
 - 安装页的旧副本提醒改为先进入项目更新指南，再由指南连接原始实验记录，减少普通读者直接落入证据正文的理解断层。
