@@ -135,7 +135,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [universal-examprep-skill](https://github.com/ZeKaiNie/universal-examprep-skill) | ⭐297 | 考前突击教练：把课件资料变成应试重点 |
 | [opencode-skills](https://github.com/zrt-ai-lab/opencode-skills) | ⭐267 | 技能库：视频生成、图片生成、Agent 互联、智能问数 |
 | [skills_collection](https://github.com/wwwzhouhui/skills_collection) | ⭐261 | 个人实用技能集，覆盖开发效率与内容创作 |
-| [awesome-skills-cn](https://github.com/lingxling/awesome-skills-cn) | ⭐246 | 热门 Skills 中文学习版 + 教程，7000+ 收录 |
+| [awesome-skills-cn](https://github.com/lingxling/awesome-skills-cn) | ⭐246 | 汇集多个上游 Skill 项目的中文学习版与教程；各子项目翻译范围以当前 README 为准 |
 | [humanizer-zh-academic](https://github.com/redbaronyyyyy-eng/humanizer-zh-academic) | ⭐245 | 面向中文学术文本的 AI 写作特征审查与改写；检测率变化仅为上游案例，本仓库未独立复现 |
 | [Bloom](https://github.com/Li-Evan/Bloom) | ⭐225 | 私人 AI 家教：识别你的学习方式，安排下一课 |
 | [technical-writing](https://github.com/luoling8192/technical-writing) | ⭐210 | 中文技术写作：设计文档、评审稿、复盘、分享稿 |
@@ -220,7 +220,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [test-driven-development](https://github.com/obra/superpowers/tree/main/skills/test-driven-development) | ⭐271,317 | 测试驱动开发全流程指导，写代码前先写测试 |
 | [using-git-worktrees](https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/) | ⭐271,317 | 自动创建隔离的 git worktree，多分支并行开发不打架 |
 | [finishing-a-development-branch](https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch) | ⭐271,317 | 开发分支收尾：合并、清理、发布的标准流程 |
-| [composio-awesome-claude-skills](https://github.com/composiohq/awesome-claude-skills) | ⭐72,386 | Claude Skills 清单型索引，是目前 star 数最高的一份（清单本身不含 skill 文件） |
+| [composio-awesome-claude-skills](https://github.com/composiohq/awesome-claude-skills) | ⭐72,386 | Claude Skills 与 Plugins 清单型索引；清单本身不提供所列项目的统一功能实测 |
 | [system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) | ⭐62,792 | 各家 AI 产品的系统提示词收集：Anthropic（Claude Fable 5 / Opus 5 / Claude Code）、OpenAI（GPT-5.6-Sol / Codex）等，持续更新。含 9 个 SKILL.md |
 | [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | ⭐52,220 | Claude Code 资源精选清单，覆盖工作流、命令、配置等（清单型） |
 | [wshobson-agents](https://github.com/wshobson/agents) | ⭐38,751 | 跨 harness 的 agent 插件市场，同时支持 Claude Code / Codex CLI / Cursor / OpenCode / Copilot / Gemini |

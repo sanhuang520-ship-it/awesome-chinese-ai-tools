@@ -24,7 +24,7 @@ class ThirdPartyFactAuditTest(unittest.TestCase):
                 cls.skills[repo] = skill
 
     def test_audit_is_bounded_and_did_not_execute_third_party_code(self):
-        self.assertEqual(5, len(self.audit["entries"]))
+        self.assertEqual(7, len(self.audit["entries"]))
         self.assertFalse(self.audit["method"]["executedThirdPartyCode"])
         self.assertFalse(self.audit["method"]["independentOutcomeTesting"])
         self.assertIn("不安装或运行第三方代码", self.audit["method"]["boundaryZh"])
@@ -39,12 +39,23 @@ class ThirdPartyFactAuditTest(unittest.TestCase):
 
     def test_promotional_outcome_and_borrowed_star_claims_are_not_catalog_facts(self):
         combined = "\n".join(self.skills[entry["repo"]]["desc"] for entry in self.audit["entries"])
-        for stale_claim in ("26万⭐", "20.6% 降到 10.1%", "117 星但 1.1 万安装"):
+        for stale_claim in (
+            "26万⭐",
+            "20.6% 降到 10.1%",
+            "117 星但 1.1 万安装",
+            "目前 star 数最高",
+            "7000+ 收录",
+        ):
             with self.subTest(claim=stale_claim):
                 self.assertNotIn(stale_claim, combined)
         self.assertIn("未独立复现", self.skills["redbaronyyyyy-eng/humanizer-zh-academic"]["desc"])
         self.assertIn("未独立复现", self.skills["qingshanliuci/cnki-aigc---skill"]["desc"])
         self.assertIn("账号权限", self.skills["zhjiang22/openclaw-xhs"]["desc"])
+
+    def test_catalog_does_not_encode_a_dynamic_star_ranking(self):
+        all_descriptions = "\n".join(skill["desc"] for skill in self.skills.values())
+        self.assertNotIn("目前 star 数最高", all_descriptions.lower())
+        self.assertIn("未独立复现", all_descriptions)
 
 
 if __name__ == "__main__":

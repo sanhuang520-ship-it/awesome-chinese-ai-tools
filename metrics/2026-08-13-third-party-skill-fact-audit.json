@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "capturedAt": "2026-08-13",
-  "scope": "Five high-exposure or high-claim third-party catalog entries",
+  "scope": "Seven high-exposure or high-claim third-party catalog entries",
   "notes": "Observation and copy-correction record only, not attribution evidence. It does not show that a catalog correction caused traffic, adoption or Star growth, and it does not independently validate upstream outcome claims.",
   "method": {
     "source": "GitHub public repository API plus upstream README.md and SKILL.md at the recorded commits",
@@ -52,6 +52,22 @@
       "observed": "SKILL.md lists search, reading, comments, likes, favorites, publishing, topic tracking and long-image export; several actions require identifiers, setup and account access.",
       "decision": "corrected",
       "reasonZh": "移除会快速过时的 Star/安装量对比，保留可核对的能力并为写操作增加配置与权限边界。"
+    },
+    {
+      "repo": "composiohq/awesome-claude-skills",
+      "commit": "be2a406907dbc61b73e6827ded415c96139d13a2",
+      "readmeSha": "d28b9c3515147fba1242461eb2c11155ffca5bbf",
+      "observed": "Repository is a curated index of Claude Skills, Plugins and related resources; its README does not establish a durable cross-repository Star ranking.",
+      "decision": "corrected",
+      "reasonZh": "移除目前 Star 最高这一动态排名，保留清单型索引定位并说明未统一实测所列项目。"
+    },
+    {
+      "repo": "lingxling/awesome-skills-cn",
+      "commit": "73c65e56f14bab57523ed1d573748a7392d221bb",
+      "readmeSha": "158218a3dc7834128e2f70522cf8c1b228c401b3",
+      "observed": "README lists Chinese learning copies and translation status for multiple upstream Skill collections; its repository description promotes an aggregate 7000+ figure.",
+      "decision": "corrected",
+      "reasonZh": "移除含义不清且会变化的 7000+ 收录说法，改为可持续核对的多项目中文学习版与翻译范围。"
     }
   ]
 }
