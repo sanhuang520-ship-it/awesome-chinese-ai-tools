@@ -76,6 +76,34 @@ https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/create-codex-skil
 真实中文排版 Skill 的结构、触发描述与三层验证：
 https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/create-codex-skill/
 
+## 主题三：Agent Skill 测试失败后怎么修
+
+文章：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/fix-agent-skill/
+
+### V2EX / Linux.do 标题
+
+Agent Skill 测试失败后，我为什么坚持用同一道题复测
+
+### 正文
+
+测试失败后，最容易让数字变好看的做法，是改一道更容易的题、删掉没满足的门槛，或者只保留修复后的结果。这样无法证明原问题已经关闭。
+
+这次我保留了两条预注册失败：一个中文网页主题 Skill 漏掉授权检查，记为 3/4；一个国风 Three.js Skill 超过 300 字限制，408 个 Unicode 字符，也记为 3/4。
+
+修复只改通用指令：前者补齐六项上线检查，后者增加短答模板和字符计数。然后重放完全相同的原任务，分别达到 4/4 和 294 个 Unicode 字符；初次失败仍公开保留。
+
+完整任务、门槛、前后输出和证据边界：
+https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/fix-agent-skill/
+
+这只是所记录 Codex 环境中的两条任务结果，不是总体准确率或跨客户端保证。
+
+### 短帖
+
+Agent Skill 测试失败后，不改题、不降门槛、不覆盖旧失败。先定位最小指令缺口，再用完全相同的任务复测。
+
+两条真实 3/4 → 4/4 的完整记录：
+https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/fix-agent-skill/
+
 ## 发布后记录
 
 每个平台一次只发一篇，记录平台、发布 URL、发布时间、标题版本，以及 24 小时和 72 小时后的独立访客、引荐来源、Star 与事实纠错。变化只能写“发布后观察到”，不能直接归因于文章。不得互 Star、买量、群发私信或主动索要 Star。

@@ -144,6 +144,8 @@ npx --yes skills@1.5.22 update -p -y
 
 **[→ 查看前瞻复测与修复闭环](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/retest/)**（6 条任务和门槛先公开；初次 4 条通过、2 条失败，针对性修复后两条用原任务均通过 4/4；旧失败不覆盖）
 
+**[→ Agent Skill 测试失败后怎么修](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/fix-agent-skill/)**（不改题、不降门槛、不覆盖旧失败；含两条 3/4 → 4/4 的完整证据链）
+
 **[→ 在一页选择全部 13 个首次试用任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**（单项安装、复制任务、历史证据或前瞻成功门槛）
 
 | Skill | 做什么 |
