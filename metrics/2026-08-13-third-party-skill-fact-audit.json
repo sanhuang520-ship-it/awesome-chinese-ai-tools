@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-13",
+  "scope": "Five high-exposure or high-claim third-party catalog entries",
+  "notes": "Observation and copy-correction record only, not attribution evidence. It does not show that a catalog correction caused traffic, adoption or Star growth, and it does not independently validate upstream outcome claims.",
+  "method": {
+    "source": "GitHub public repository API plus upstream README.md and SKILL.md at the recorded commits",
+    "executedThirdPartyCode": false,
+    "independentOutcomeTesting": false,
+    "boundaryZh": "本次只核对仓库状态、文件结构和上游文字，不安装或运行第三方代码；上游效果案例不等于本站复现。"
+  },
+  "entries": [
+    {
+      "repo": "jnMetaCode/superpowers-zh",
+      "commit": "fb63548c9d2e997b3496e402fea174aaa71dc49d",
+      "readmeSha": "2675aeedbd1e1d73a08a99b50b79966a45e125bf",
+      "observed": "README lists 14 translated and 6 China-focused Skills, 20 total; the large Star count in its prose refers to the upstream superpowers project.",
+      "decision": "corrected",
+      "reasonZh": "移除借用上游项目 Star 数的表述，改为可由当前 README 核对的 14 + 6 / 20 个 Skill。"
+    },
+    {
+      "repo": "laolaoshiren/claude-code-skills-zh",
+      "commit": "00183b506e56cc3c1d9de7e2676bd5ede2b57c63",
+      "readmeSha": "5639d905b11a9415644c708feda429c265cd02c5",
+      "observed": "Repository describes a Chinese Claude Code Skills, Agents and Plugins collection organized by scenario with copyable installation guidance.",
+      "decision": "retained",
+      "reasonZh": "现有摘要与上游定位一致，且没有把宣传性规模数字写成本站验证结果。"
+    },
+    {
+      "repo": "redbaronyyyyy-eng/humanizer-zh-academic",
+      "commit": "50e11af64eb4817f75b8be7d609b99d7cd80d801",
+      "readmeSha": "84fb4b8c524feae63886dba291c1eda64bd38b31",
+      "skillSha": "2054d87e01b5da594dc09ce013d47aa24513db96",
+      "observed": "Upstream presents detection-rate changes as its own rewrite experiment and supplies two Skill variants.",
+      "decision": "corrected",
+      "reasonZh": "目录只描述文本审查与改写能力，并明确检测率变化未由本站独立复现。"
+    },
+    {
+      "repo": "qingshanliuci/cnki-aigc---skill",
+      "commit": "8d69669a7e5289ca2c73e7aed79032ef955f39b3",
+      "readmeSha": "10e62d61b9b858eec05dc8fba51335178f0a4212",
+      "skillSha": "86511b576bf79b1b3804033804fb1d0c84d5207b",
+      "observed": "Upstream reports one CNKI AIGC rewrite case with numeric before-and-after values.",
+      "decision": "corrected",
+      "reasonZh": "不再把单个上游案例写成本站实测结果；保留其针对标记段落的工作流定位。"
+    },
+    {
+      "repo": "zhjiang22/openclaw-xhs",
+      "commit": "8b6fca257f93adbdd3d431f1f497e30adb5162a8",
+      "readmeSha": "4302f9a45b02d442308ba1c0cf9c139456274cd7",
+      "skillSha": "17791b07ac5d81621df2c53ead86fb8ec79b1943",
+      "observed": "SKILL.md lists search, reading, comments, likes, favorites, publishing, topic tracking and long-image export; several actions require identifiers, setup and account access.",
+      "decision": "corrected",
+      "reasonZh": "移除会快速过时的 Star/安装量对比，保留可核对的能力并为写操作增加配置与权限边界。"
+    }
+  ]
+}

@@ -112,7 +112,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [zhangxuefeng-skill](https://github.com/alchaincyf/zhangxuefeng-skill) | ⭐10,123 | 张雪峰的思维框架与表达方式：基于 5 本著作、15+ 篇采访、30+ 条语录整理出 5 个心智模型与 8 条决策启发式。用于分析教育选择、职业规划、阶层流动 |
 | [dbskill](https://github.com/dontbesilent2025/dbskill) | ⭐9,443 | 个人技能合集（30 个）：公众号 HTML 排版、用阿德勒心理学框架诊断执行阻滞（知道该做却拖延时用）等 |
 | [wechatdownload](https://github.com/qiye45/wechatdownload) | ⭐8,886 | 微信公众号文章批量下载，支持评论与合集，可导出 html/md/pdf/docx，提供 MCP/Skill 调用方式 |
-| [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | ⭐7,639 | superpowers 中文版：26万⭐框架完整汉化 + 6 个中国原创 skill |
+| [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | ⭐7,639 | superpowers 中文增强版：14 个核心工作流汉化 + 6 个中国开发场景 Skill；上游 README 当前列出 20 个 Skill |
 | [gzh-design-skill](https://github.com/isjiamu/gzh-design-skill) | ⭐3,047 | 微信公众号排版引擎：Markdown → 可直接粘进公众号编辑器的 HTML。6 套主题 + 主题生成器，自动章节编号、引言卡片、目录导航，支持 Word/PDF 输入 |
 | [codex-claude-academic-skills](https://github.com/zLanqing/codex-claude-academic-skills) | ⭐2,811 | 学术科研三件套：文献阅读、论文写作、科学计算全流程 |
 | [everything-claude-code-zh](https://github.com/xu-xiang/everything-claude-code-zh) | ⭐1,851 | Claude Code 完整配置中文翻译（agents/skills/hooks/commands） |
@@ -136,7 +136,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [opencode-skills](https://github.com/zrt-ai-lab/opencode-skills) | ⭐267 | 技能库：视频生成、图片生成、Agent 互联、智能问数 |
 | [skills_collection](https://github.com/wwwzhouhui/skills_collection) | ⭐261 | 个人实用技能集，覆盖开发效率与内容创作 |
 | [awesome-skills-cn](https://github.com/lingxling/awesome-skills-cn) | ⭐246 | 热门 Skills 中文学习版 + 教程，7000+ 收录 |
-| [humanizer-zh-academic](https://github.com/redbaronyyyyy-eng/humanizer-zh-academic) | ⭐245 | 降低中文学术写作 AIGC 检测率 |
+| [humanizer-zh-academic](https://github.com/redbaronyyyyy-eng/humanizer-zh-academic) | ⭐245 | 面向中文学术文本的 AI 写作特征审查与改写；检测率变化仅为上游案例，本仓库未独立复现 |
 | [Bloom](https://github.com/Li-Evan/Bloom) | ⭐225 | 私人 AI 家教：识别你的学习方式，安排下一课 |
 | [technical-writing](https://github.com/luoling8192/technical-writing) | ⭐210 | 中文技术写作：设计文档、评审稿、复盘、分享稿 |
 | [niubiskill](https://github.com/nathanskill/niubiskill) | ⭐208 | 中文变现决策：判断一件事是否接近收入再投入 |
@@ -146,12 +146,12 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [makeownsrt](https://github.com/joshhu/makeownsrt) | ⭐175 | 从 MKV 提取英文字幕并翻成繁中双语 SRT |
 | [Auto-CV](https://github.com/flamingoTOM/Auto-CV) | ⭐169 | LaTeX 中文简历模板 + 自动提取内容生成 |
 | [JobOK](https://github.com/GresonKwan/JobOK) | ⭐130 | 中文求职：优势挖掘、岗位匹配、简历优化、面试训练 |
-| [openclaw-xhs](https://github.com/zhjiang22/openclaw-xhs) | ⭐118 | 小红书内容工具：搜笔记、取详情与评论、发图文/视频笔记、点赞收藏、热点话题跟踪、帖子导出长图。117 星但 1.1 万安装 |
+| [openclaw-xhs](https://github.com/zhjiang22/openclaw-xhs) | ⭐118 | 小红书 MCP 工作流：搜索与读取笔记、评论互动、发布、热点跟踪及长图导出；写操作需复核上游配置与账号权限 |
 | [hermes-arxiv-agent](https://github.com/genggng/hermes-arxiv-agent) | ⭐114 | 每天自动抓 arXiv 论文，生成中文摘要推送到飞书 |
 | [wechat-writing-style](https://github.com/yaoleifly/wechat-writing-style) | ⭐77 | 微信公众号中文写作风格 |
 | [kc_ai_skills](https://github.com/KerberosClaw/kc_ai_skills) | ⭐77 | 中文优先的 Claude Code / Codex skills 合集 |
 | [stop-slop-zh](https://github.com/VincentOld/stop-slop-zh) | ⭐65 | 消除中文 AI 写作痕迹：拆排比、去名词化、换具体细节 |
-| [cnki-aigc---skill](https://github.com/qingshanliuci/cnki-aigc---skill) | ⭐36 | 知网 AIGC 降重：实测把 AI 率从 20.6% 降到 10.1% |
+| [cnki-aigc---skill](https://github.com/qingshanliuci/cnki-aigc---skill) | ⭐36 | 针对知网 AIGC 标记段落的中文改写工作流；效果数字仅为上游案例，本仓库未独立复现 |
 | [awesome-skills-zh](https://github.com/yzfly/awesome-skills-zh) | ⭐27 | 精选 Claude / Agent / LLM Skills 中文资源列表 |
 | [awesome-claude-skills-zh-TW](https://github.com/ammosu/awesome-claude-skills-zh-TW) | ⭐24 | awesome-claude-skills 繁体中文化版本 🕰<sub>2025-12-15 后未更新</sub> |
 | [scholar-wendao-skill](https://github.com/tizzy916/scholar-wendao-skill) | ⭐20 | 学者问道：把学者视角提炼成可复用框架 |

@@ -5,6 +5,7 @@
 ## [Unreleased]
 
 - 新增可审查的 v1.2.0 GitHub Release 说明源文件，锁定兼容性计数、安全边界、测试范围和 annotated tag 目标；GitHub 正式 Release 发布后由公开 API 复核，不用自动生成的夸张摘要。
+- 对 5 条高曝光或高声明第三方 Skill 做只读事实核验：修正 4 条把上游宣传、借用 Star 数或易变计数写成目录事实的摘要；保存上游 commit 与 README/SKILL blob SHA，不安装或执行第三方代码，也不把上游效果案例冒充本站复现。
 
 ## [v1.2.0] - 2026-08-13
 
