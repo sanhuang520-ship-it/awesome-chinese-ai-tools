@@ -24,9 +24,7 @@ class RepositoryProfileTest(unittest.TestCase):
         self.assertEqual(1, self.expected["schemaVersion"])
         self.assertIn("中文 Agent Skills 合集", self.expected["description"])
         self.assertIn("Claude Code / Cursor 待测", self.expected["description"])
-        self.assertEqual(20, len(self.expected["topics"]))
-        for topic in ("ai-skills", "agent-skill", "chinese-skills", "codex-skill", "skills"):
-            self.assertIn(topic, self.expected["topics"])
+        self.assertEqual(15, len(self.expected["topics"]))
         self.assertIn("not evidence of ranking or Star growth", self.expected["notes"])
         self.assertEqual([], compare_profile(self.expected, self.actual))
 

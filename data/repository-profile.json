@@ -1,29 +1,24 @@
 {
   "schemaVersion": 1,
   "repository": "sanhuang520-ship-it/awesome-chinese-ai-tools",
-  "description": "Chinese Agent Skills / 中文 Agent Skills 合集：184 个条目、13 个原创；Codex 13/13 自动触发实测，Claude Code / Cursor 待测；每日自动复检",
+  "description": "中文 Agent Skills 合集：184 个条目、13 个本站原创；Codex 13/13 自动触发实测，Claude Code / Cursor 待测；每日自动复检",
   "homepage": "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/",
   "topics": [
     "agent-skills",
-    "agent-skill",
     "ai-agent",
     "ai-agent-skills",
-    "ai-skills",
     "ai-tools",
     "awesome-list",
     "chinese",
     "chinese-ai",
-    "chinese-skills",
     "claude-code",
     "claude-skills",
     "codex",
     "codex-skills",
-    "codex-skill",
     "cursor",
     "developer-tools",
     "open-source",
-    "skill-md",
-    "skills"
+    "skill-md"
   ],
   "notes": "These are discoverability fields, not evidence of ranking or Star growth. The checker is read-only and never changes repository settings."
 }
