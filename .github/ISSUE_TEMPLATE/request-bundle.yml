@@ -1,0 +1,57 @@
+name: 提议一个中文 Skill 组合
+description: 用真实任务说明现有四组未覆盖的工作流
+title: "[组合需求] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这个表单用于改进[四组中文 Skill 开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)。请描述一个真实、可公开的中文任务；不需要点赞或 Star，也不要提交 Token、邮箱、私人路径、客户资料或未公开业务数据。
+
+  - type: textarea
+    id: task
+    attributes:
+      label: 你实际要完成的中文任务
+      description: 写清输入、关键约束与最终交付；请用合成信息替换隐私或业务数据
+      placeholder: 我通常会提供……需要 AI 最终交付……必须遵守……
+    validations:
+      required: true
+
+  - type: dropdown
+    id: closest
+    attributes:
+      label: 当前最接近哪一组
+      options:
+        - 中文表达
+        - 国风视觉
+        - 学习与家庭
+        - 办公经营
+        - 四组都不接近
+    validations:
+      required: true
+
+  - type: textarea
+    id: gap
+    attributes:
+      label: 现有组合缺少什么
+      description: 说明缺少的步骤、边界或交付，不要求你先决定具体 Skill
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_workflow
+    attributes:
+      label: 你现在怎样完成它（可选）
+      description: 可以写人工步骤、正在使用的公开工具或 Skill；请不要贴推广参数
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 这是一个真实任务需求，不是为了推广产品、索要收录或交换 Star
+          required: true
+        - label: 我已删除 Token、邮箱、私人路径和未公开业务数据
+          required: true
+        - label: 我理解组合是编辑建议，不等于所有 Skill 会同时触发或跨客户端兼容
+          required: true

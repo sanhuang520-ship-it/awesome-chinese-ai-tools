@@ -54,6 +54,17 @@ class BundlesPageTest(unittest.TestCase):
         self.assertIn("/awesome-chinese-ai-tools/bundles/", generator)
         self.assertIn("不代表会同时触发", readme)
 
+    def test_missing_scenarios_route_to_a_privacy_safe_issue(self):
+        template = (ROOT / ".github" / "ISSUE_TEMPLATE" / "request-bundle.yml").read_text(encoding="utf-8")
+        self.assertIn("template=request-bundle.yml", self.page)
+        for phrase in (
+            "真实任务需求",
+            "不是为了推广产品、索要收录或交换 Star",
+            "Token、邮箱、私人路径和未公开业务数据",
+            "不等于所有 Skill 会同时触发或跨客户端兼容",
+        ):
+            self.assertIn(phrase, template)
+
 
 if __name__ == "__main__":
     unittest.main()
