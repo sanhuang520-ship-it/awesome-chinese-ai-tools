@@ -95,6 +95,8 @@ python3 scripts/verify.py
 
 如果脚本报告公开元数据不同步，先运行 `python3 scripts/sync_public_metadata.py . --write`，检查变更后再重新验证。
 
+维护者发布稳定版本后，可用 `python3 scripts/check_github_release.py` 只读核对：对应 tag 是否存在公开且非 prerelease 的 GitHub Release、标题与证据边界是否完整、tag 是否仍为 annotated tag。该检查不创建、修改或删除 Release。
+
 复测 GitHub 仓库搜索发现性时，使用固定查询脚本，不要手工改变排序后与旧基线比较：
 
 ```bash
