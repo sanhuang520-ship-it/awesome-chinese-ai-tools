@@ -6,7 +6,9 @@
 
 **中文 Agent Skills 合集：可搜索、可安装、带实测证据**
 
-[English](README.en.md)
+<sub>Chinese Agent Skills / Chinese AI Skills directory with reproducible Codex evidence and explicit Claude Code / Cursor test gaps.</sub>
+
+[English](README.en.md) · [English web guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/chinese-agent-skills/)
 
 [![Skills](https://img.shields.io/badge/Skills-184%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
 [![原创](https://img.shields.io/badge/本站原创-13%20个-86b894?style=flat-square)](EXAMPLES.md)

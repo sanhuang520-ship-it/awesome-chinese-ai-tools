@@ -4,6 +4,8 @@ An evidence-first directory of **184 Agent Skill entries from 141 source reposit
 
 [中文 README](README.md) · [Browsable directory](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/) · [Compatibility evidence](COMPATIBILITY.md) · [Failure repair guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/fix-agent-skill/) · [Pre-install audit](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/) · [Quality labels](QUALITY.md) · [Security policy](SECURITY.md)
 
+Prefer a concise web path? Open the [Chinese Agent Skills / Chinese AI Skills guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/chinese-agent-skills/) for browsing, first install, evidence, safety review, and contribution routes.
+
 ## What is different here?
 
 - **13 first-party Skills:** maintained in this repository instead of only linking elsewhere.

@@ -96,6 +96,8 @@ class PublicMetadataTest(unittest.TestCase):
         self.assertIn("68 个中文条目", synced)
         self.assertIn("来自 141 个来源仓库", synced)
         self.assertNotIn("68 个中文项目", synced)
+        self.assertIn("Chinese Agent Skills / 中文 AI Skills 库", synced)
+        self.assertIn("Chinese Agent Skills / 中文 AI Skills 合集", synced)
 
     def test_local_check_reports_drift_without_writing(self):
         with tempfile.TemporaryDirectory() as temp:

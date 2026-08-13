@@ -6,6 +6,7 @@
 
 ### 使用与发现
 
+- 默认 README 首屏加入准确的 `Chinese Agent Skills / Chinese AI Skills` 英文定位，并发布英文落地页，连接目录浏览、单项安装、只读审计、兼容性方法、失败修复和贡献任务；首页 SEO 元数据由生成器持续维护双语定位，兼容性边界不变。
 - GitHub 仓库搜索基线新增 `chinese ai skills` 固定查询，并随快照保存当时的 description、homepage 和 topics；修改前结果显示五个核心中英文词均未进入前 20，`awesome chinese ai tools` 仍为第 3。候选 Profile 修改尚未同步，不把排名变化归因于文案。
 - 新增第一次贡献页，把跨客户端复测、跨系统安装路径和第三方条目事实复核整理为三个 10—20 分钟、有完成标准的真实维护任务；新增安装环境结构化 Issue 表单，不以 Star 或好评作为贡献条件。
 - 新增“Agent Skill 测试失败怎么修”长效页面，以两条真实 3/4 → 4/4 案例说明预注册门槛、最小指令修复、相同任务复测与旧失败留档；接入 README、`llms.txt`、RSS、Sitemap 和自动回归检查。

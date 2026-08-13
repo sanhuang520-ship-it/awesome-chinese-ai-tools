@@ -260,6 +260,7 @@ class EvidenceClaimsTest(unittest.TestCase):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         english = (ROOT / "README.en.md").read_text(encoding="utf-8")
         self.assertIn("中文 Agent Skills 合集：可搜索、可安装、带实测证据", readme)
+        self.assertIn("Chinese Agent Skills / Chinese AI Skills directory", readme)
         self.assertIn("# Chinese AI Agent Skills Directory", english)
         self.assertNotIn("184 个中文原创", readme)
 

@@ -85,13 +85,13 @@ def sync_index_text(body, stats):
     """同步首页 SEO 元数据和 JSON-LD。"""
     n, repos, cn, ours = stats["skills"], stats["repos"], stats["cn"], stats["ours"]
     tools, checked = stats["tools"], stats["checked"]
-    title = f"中文 AI Skills 库 — {n} 个技能包，{ours} 个本站原创 | 每日自动复检"
+    title = f"Chinese Agent Skills / 中文 AI Skills 库 — {n} 个技能包，{ours} 个本站原创"
     desc = (
-        f"面向中文用户的 AI Agent Skills 合集：{n} 个技能包，"
+        f"Chinese Agent Skills / 中文 AI Skills 合集：{n} 个 Skill 条目，"
         f"其中 {cn} 个中文条目、{ours} 个本站自写 Skill，来自 {repos} 个来源仓库；"
         f"每天自动复检来源仓库是否失效，另附 {tools} 个 AI 工具导航。"
     )
-    short_desc = f"{n} 个 AI 技能包，{ours} 个本站自写。每日自动复检，GitHub Actions 记录公开可查。"
+    short_desc = f"Chinese AI Skills directory：{n} 个 Skill 条目，{ours} 个本站自写；每日自动复检，兼容性证据与失败边界公开。"
 
     body = re.sub(r"<title>.*?</title>", f"<title>{title}</title>", body, count=1)
     body = re.sub(

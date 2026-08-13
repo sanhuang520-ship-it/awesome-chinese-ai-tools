@@ -39,6 +39,12 @@ def render_feed():
         raise ValueError(f"unexpected compatibility outcome totals: {dict(counts)}")
     entries = [
         item(
+            "Chinese Agent Skills：英文安装、证据与贡献入口",
+            "chinese-agent-skills/",
+            "Thu, 13 Aug 2026 14:06:00 +0800",
+            "新增英文落地页，连接 184 条目录、13 个原创 Skill、单项安装、只读审计、兼容性方法、失败修复与真实贡献任务；明确 Claude Code 和 Cursor 仍待任务级实测。",
+        ),
+        item(
             "第一次贡献：3 个 10—20 分钟的真实维护任务",
             "contribute/",
             "Thu, 13 Aug 2026 13:02:00 +0800",
@@ -152,7 +158,7 @@ def render_feed():
     <link>{BASE}</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 13 Aug 2026 13:02:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 14:06:00 +0800</lastBuildDate>
     <atom:link href="{BASE}feed.xml" rel="self" type="application/rss+xml"/>
 
 {chr(10).join(entries)}
