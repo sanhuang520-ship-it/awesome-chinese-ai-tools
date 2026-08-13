@@ -5,9 +5,18 @@
     <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/</link>
     <description>只发布 Agent Skills 实测、维护记录和可复核的数据更新；不转述 AI 新闻，不自动生成工具推荐。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 13 Aug 2026 11:20:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 11:24:00 +0800</lastBuildDate>
     <atom:link href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>6 条前瞻复测全部执行：4 条通过，2 条保留失败</title>
+      <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/retest/</link>
+      <guid isPermaLink="true">https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/retest/</guid>
+      <pubDate>Thu, 13 Aug 2026 11:24:00 +0800</pubDate>
+      <description><![CDATA[
+        <p>全部运行前公开任务均已隔离执行：4 条通过 4/4；chinese-web-themes 因遗漏授权检查、guofeng-threejs 因超过 300 字限制，各保留为 3/4 失败。</p>
+      ]]></description>
+    </item>
     <item>
       <title>guochao-visual-cn 前瞻复测：端午海报方向 4/4 通过</title>
       <link>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/cases/guochao-visual-cn-prospective-retest-2026-08-13.md</link>

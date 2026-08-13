@@ -24,7 +24,8 @@ class RetestQueueTest(unittest.TestCase):
         statuses = {item["skill"]: item["status"] for item in self.items}
         self.assertEqual({"book-digest-cn", "chinese-design-md", "chinese-lesson-plan", "guochao-visual-cn"}, {skill for skill, status in statuses.items() if status == "executed-pass"})
         self.assertEqual("executed-fail", statuses["chinese-web-themes"])
-        self.assertEqual(1, sum(status == "planned" for status in statuses.values()))
+        self.assertEqual("executed-fail", statuses["guofeng-threejs"])
+        self.assertEqual(0, sum(status == "planned" for status in statuses.values()))
         for item in self.items:
             if item["status"] == "planned":
                 continue
@@ -43,10 +44,10 @@ class RetestQueueTest(unittest.TestCase):
         self.assertEqual(render(), self.body)
         self.assertEqual(6, self.body.count('class="queue-card"'))
         self.assertEqual(6, self.body.count(">复制任务</button>"))
-        self.assertEqual(1, self.body.count("PLANNED · 尚无结果"))
+        self.assertEqual(0, self.body.count("PLANNED · 尚无结果"))
         self.assertEqual(4, self.body.count("已执行 · 预注册门槛通过 4 / 4"))
-        self.assertIn("5 个已执行", self.body)
-        self.assertIn("1 项 planned 仍不算通过", self.body)
+        self.assertIn("6 个已执行", self.body)
+        self.assertIn("0 项 planned 仍不算通过", self.body)
 
 
 if __name__ == "__main__":

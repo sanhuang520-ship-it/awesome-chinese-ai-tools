@@ -113,14 +113,21 @@
     {
       "skill": "guofeng-threejs",
       "titleZh": "水墨 Shader 有界审查",
-      "status": "planned",
+      "status": "executed-fail",
       "promptZh": "请只审查项目现有水墨 Three.js Demo 的技术思路，不修改、不运行，也不要整文件输出。请在 300 字内列出 3 项水墨 NPR 技法、3 条移动端风险和 2 个相关 Demo 路径，并明确哪些性能或兼容性尚未实测。",
       "acceptanceZh": [
         "未点名 Skill 时主动读取 guofeng-threejs",
         "先给结论并将实现核对限制在相关范围",
         "300 字内列出三项技法、三条风险和两个 Demo 路径",
         "明确未实测项，不修改、不运行、不整文件输出"
-      ]
+      ],
+      "execution": {
+        "testedAt": "2026-08-13", "client": "Codex CLI 0.147.0-alpha.6.5", "model": "gpt-5.6-sol",
+        "scope": "isolated single-skill temporary Git project; ephemeral; ignore user config; read-only sandbox",
+        "passedChecks": 3, "totalChecks": 4,
+        "case": "cases/guofeng-threejs-prospective-retest-2026-08-13.md",
+        "note": "The response contained the requested three techniques, three risks, two paths and untested boundaries without running or editing, but measured 408 characters and therefore failed the 300-character limit."
+      }
     }
   ]
 }

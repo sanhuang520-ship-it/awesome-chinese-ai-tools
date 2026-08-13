@@ -183,11 +183,11 @@
       "testedAt": "2026-08-13",
       "clientVersion": "codex-cli 0.147.0-alpha.6.5",
       "plannedCount": 6,
-      "executedCount": 5,
+      "executedCount": 6,
       "passedCount": 4,
-      "failedCount": 1,
-      "remainingCount": 1,
-      "note": "Prompts and acceptance checks were committed before execution. Four repository-maintainer tests passed all four checks; one executed test passed three of four and is retained as a failure because it omitted the licensing check. One task remains unexecuted; this does not change the earlier 13-skill activation outcome totals.",
+      "failedCount": 2,
+      "remainingCount": 0,
+      "note": "All six preregistered tasks were executed in isolated single-skill projects. Four passed all checks; two passed three of four and are retained as failures. This does not change the earlier 13-skill activation outcome totals.",
       "results": {
         "book-digest-cn": {
           "status": "verified",
@@ -216,6 +216,10 @@
         "guochao-visual-cn": {
           "status": "verified", "passedChecks": 4, "totalChecks": 4,
           "case": "cases/guochao-visual-cn-prospective-retest-2026-08-13.md"
+        },
+        "guofeng-threejs": {
+          "status": "failed", "passedChecks": 3, "totalChecks": 4,
+          "case": "cases/guofeng-threejs-prospective-retest-2026-08-13.md"
         }
       }
     },

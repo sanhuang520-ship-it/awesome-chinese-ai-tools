@@ -8,7 +8,7 @@
 
 安装层另有一份独立记录：[skills CLI 1.5.22 隔离安装与项目更新复测](skills-cli-isolated-install-2026-08-13.md)。它证明当前仓库 13 项在临时 Git 项目中复制安装后逐字一致，并用受控历史夹具验证 13/13 项目副本可更新到当前完整文件夹；同时公开旧全局副本 0/13 当前一致。这不是自动触发证据，也不证明全局更新。
 
-前瞻层已有四份执行记录：[`book-digest-cn` 无原文拆书准备](book-digest-cn-prospective-retest-2026-08-13.md)、[`chinese-design-md` 茶品牌设计选型](chinese-design-md-prospective-retest-2026-08-13.md)、[`chinese-lesson-plan` 45 分钟教案](chinese-lesson-plan-prospective-retest-2026-08-13.md)与 [`chinese-web-themes` 水墨主题接入](chinese-web-themes-prospective-retest-2026-08-13.md)。前三项通过 4 / 4，最后一项因遗漏授权检查为 3 / 4 失败。任务与门槛先公开，随后才在隔离单 Skill 临时项目中运行；它们不覆盖下表较早的历史案例，另有 1 条 3/4 失败，其余 1 条仍待测。
+前瞻层的 6 项已全部执行：`book-digest-cn`、`chinese-design-md`、`chinese-lesson-plan`、`guochao-visual-cn` 通过 4 / 4；`chinese-web-themes` 因遗漏授权检查、`guofeng-threejs` 因超过 300 字限制，各为 3 / 4 失败。任务与门槛先公开，结果没有反向改写。
 
 | Skill | 测试任务 | 重点检查 | 结果 |
 |---|---|---|---|
