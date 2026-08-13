@@ -169,8 +169,7 @@ def check_tool_links():
     file_path = "data/tools.json"
     existing = github_api("GET", f"/repos/{REPO}/contents/{file_path}")
     if "content" not in existing:
-        print("[链接检测] ❌ 无法读取 data/tools.json，跳过检测")
-        return
+        raise RuntimeError("[链接检测] 无法读取 data/tools.json")
 
     raw = base64.b64decode(existing["content"]).decode("utf-8")
     data = json.loads(raw)
@@ -258,7 +257,7 @@ def check_tool_links():
         detail = '; '.join(summary) or ("状态无变化，已记录当天检测日期" if date_changed else "全部正常")
         print(f"[链接检测] ✅ 已更新 tools.json — {detail}")
     else:
-        print(f"[链接检测] ❌ 写入失败: {result.get('message', result)}")
+        raise RuntimeError(f"[链接检测] 写入失败: {result.get('message', result)}")
 
     # 把新发现的失效写入动态时间线
     prepend_updates(tl_events)
@@ -290,8 +289,7 @@ def check_skills():
     path = "data/skills.json"
     info = github_api("GET", f"/repos/{REPO}/contents/{path}")
     if "content" not in info:
-        print("[Skill 复检] ❌ 无法读取 skills.json，跳过")
-        return
+        raise RuntimeError("[Skill 复检] 无法读取 skills.json")
     data = json.loads(base64.b64decode(info["content"]).decode("utf-8"))
     sha = info["sha"]
 
@@ -335,10 +333,8 @@ def check_skills():
     data["skillsCheckedAt"] = today_str
     claim_violations = find_claim_violations(data)
     if claim_violations:
-        print("[Skill 复检] ❌ 目录声明门槛未通过，拒绝写回")
-        for violation in claim_violations:
-            print(f"           {violation}")
-        return
+        raise RuntimeError("[Skill 复检] 目录声明门槛未通过，拒绝写回：\n           "
+                           + "\n           ".join(claim_violations))
     result = github_api("PUT", f"/repos/{REPO}/contents/{path}", {
         "message": f"chore: {today_str} skill 复检 — {len(dead)} 失效 / {star_moved} 个星数更新",
         "content": base64.b64encode(
@@ -374,29 +370,29 @@ def build_skills_md():
     """
     info = github_api("GET", f"/repos/{REPO}/contents/data/skills.json")
     if "content" not in info:
-        print("[SKILLS.md] ❌ 读不到 skills.json，跳过")
-        return
+        raise RuntimeError("[SKILLS.md] 读不到 skills.json")
     d = json.loads(base64.b64decode(info["content"]).decode("utf-8"))
     quality_info = github_api("GET", f"/repos/{REPO}/contents/data/quality.json")
     if "content" not in quality_info:
-        print("[SKILLS.md] ❌ 读不到 quality.json，跳过，避免丢失安装前标签")
-        return
+        raise RuntimeError("[SKILLS.md] 读不到 quality.json，拒绝生成以免丢失安装前标签")
     quality_data = json.loads(base64.b64decode(quality_info["content"]).decode("utf-8"))
     S = d.get("skills", [])
     claim_violations = find_claim_violations(d)
     if claim_violations:
-        print("[SKILLS.md] ❌ 目录声明门槛未通过，跳过生成")
-        for violation in claim_violations:
-            print(f"            {violation}")
-        return
+        raise RuntimeError("[SKILLS.md] 目录声明门槛未通过，跳过生成：\n            "
+                           + "\n            ".join(claim_violations))
     cats = d.get("categories", {})
     checked = d.get("skillsCheckedAt", "—")
 
     ours = [s for s in S if s.get("ours")]
     qualities = quality_data.get("skills", {})
     if {s["name"] for s in ours} != set(qualities):
-        print("[SKILLS.md] ❌ 原创 Skill 与质量标签范围不一致，跳过")
-        return
+        only_ours = {s["name"] for s in ours} - set(qualities)
+        only_tags = set(qualities) - {s["name"] for s in ours}
+        raise RuntimeError(
+            "[SKILLS.md] 原创 Skill 与质量标签范围不一致，"
+            "data/quality.json 需与 skills.json 里 ours=true 的条目一一对应；"
+            f"缺标签={sorted(only_ours)} 多余标签={sorted(only_tags)}")
     rest = [s for s in S if not s.get("ours")]
     cn_n = sum(1 for s in S if s.get("cat") == "cn")
 
@@ -559,8 +555,7 @@ def check_source_nav():
     path = "SOURCES.md"
     info = github_api("GET", f"/repos/{REPO}/contents/{path}")
     if "content" not in info:
-        print("[信源导航] ❌ 找不到 SOURCES.md，跳过")
-        return
+        raise RuntimeError("[信源导航] 找不到 SOURCES.md")
     body = base64.b64decode(info["content"]).decode("utf-8")
 
     # 已知误报：整个域名从本机网络返回 400（含首页），属于 IP/地区层拦截，
@@ -593,7 +588,9 @@ def check_source_nav():
         "sha": info["sha"],
         "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"},
     })
-    print(f"[信源导航] {'✅ 已更新核对日期' if 'content' in res else '❌ 写回失败'}")
+    if "content" not in res:
+        raise RuntimeError(f"[信源导航] 写回失败: {res.get('message', res)}")
+    print("[信源导航] ✅ 已更新核对日期")
 
 
 if __name__ == "__main__":
@@ -629,5 +626,8 @@ if __name__ == "__main__":
     if failed:
         print(f"\n===== {stamp} 完成 {len(STEPS)-len(failed)}/{len(STEPS)} 步，"
               f"失败：{'、'.join(failed)} =====")
+        # 必须非零退出：README 对外承诺「运行记录公开可查」，
+        # 绿勾就得真的代表六步都写回了，不能让静默跳过冒充成功。
+        raise SystemExit(1)
     else:
         print(f"\n===== {stamp} {len(STEPS)} 步全部完成 =====")

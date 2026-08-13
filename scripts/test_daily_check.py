@@ -128,7 +128,11 @@ class DailyCheckTest(unittest.TestCase):
             return {}
 
         with patch.object(self.module, "github_api", side_effect=fake_api):
-            self.module.build_skills_md()
+            with self.assertRaises(RuntimeError) as raised:
+                self.module.build_skills_md()
+        # 既要拒绝写回，也要抛出去让 Actions 变红：
+        # 静默 return 会让退出码保持 0，绿勾就成了假证据。
+        self.assertIn("目录声明门槛未通过", str(raised.exception))
         self.assertEqual([], writes)
 
     def test_skill_refresh_refuses_to_write_catalog_with_unstable_claims(self):
@@ -148,7 +152,9 @@ class DailyCheckTest(unittest.TestCase):
             return {}
 
         with patch.object(self.module, "github_api", side_effect=fake_api), patch.object(self.module.time, "sleep"):
-            self.module.check_skills()
+            with self.assertRaises(RuntimeError) as raised:
+                self.module.check_skills()
+        self.assertIn("目录声明门槛未通过", str(raised.exception))
         self.assertEqual([], writes)
 
 
