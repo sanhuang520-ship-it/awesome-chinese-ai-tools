@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import json
 import unittest
 from pathlib import Path
 
@@ -228,6 +229,30 @@ class EvidenceClaimsTest(unittest.TestCase):
             "cases/ai-learning-coach-codex.md",
         ):
             self.assertIn(case, catalog)
+
+    def test_catalog_has_generated_scenario_navigation_for_every_section(self):
+        catalog = (ROOT / "SKILLS.md").read_text(encoding="utf-8")
+        generator = (ROOT / "scripts" / "daily_check.py").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))
+        ours = [skill for skill in data["skills"] if skill.get("ours")]
+        rest = [skill for skill in data["skills"] if not skill.get("ours")]
+        expected = {"original": len(ours)}
+        expected.update({
+            category: sum(skill.get("cat") == category for skill in rest)
+            for category in data["categories"]
+        })
+
+        self.assertIn("[按场景找 Skill](#skill-catalog)", catalog)
+        self.assertIn("### 按场景直达", catalog)
+        for category, count in expected.items():
+            if not count:
+                continue
+            with self.subTest(category=category):
+                anchor = f'catalog-{category}'
+                self.assertEqual(2, catalog.count(anchor))
+                self.assertIn(f"| {count} | [查看](#{anchor}) |", catalog)
+        for phrase in ('<a id="skill-catalog"></a>', 'L.append(f\'<a id="catalog-{c}"></a>\')'):
+            self.assertIn(phrase, generator)
 
     def test_readme_names_the_current_agent_skills_position_without_inflating_counts(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")

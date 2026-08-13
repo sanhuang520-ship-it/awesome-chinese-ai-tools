@@ -4,7 +4,7 @@
 > 来源仓库经 GitHub API 核验真实存在；第三方说明来自上游资料或维护者摘要，不等于逐项功能实测<br>
 > 🔄 最近自动复检：**2026-08-12**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
-🧪 **[Codex 13/13 自动触发实测 → COMPATIBILITY.md](COMPATIBILITY.md)**　📋 [原创 Skill 输出示例](EXAMPLES.md)　🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
+🧪 **[Codex 13/13 自动触发实测 → COMPATIBILITY.md](COMPATIBILITY.md)**　📋 [原创 Skill 输出示例](EXAMPLES.md)　🔎 [按场景找 Skill](#skill-catalog)　🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
 
 🛡️ **[安装第三方 Skill 前：运行只读本地审计器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/)**（检查脚本、联网、凭据词与高风险命令；不执行目标，0 项命中不等于安全）
 
@@ -57,8 +57,27 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 ---
 
+<a id="skill-catalog"></a>
 ## Skill 清单
 
+### 按场景直达
+
+| 场景 | 条目数 | 跳转 |
+|---|---:|---|
+| ✍️ 本站原创 | 13 | [查看](#catalog-original) |
+| 🇨🇳 其他中文条目 | 57 | [查看](#catalog-cn) |
+| 📄 文档办公 | 10 | [查看](#catalog-doc) |
+| 📊 PPT 演示 | 19 | [查看](#catalog-ppt) |
+| 💻 开发工程 | 35 | [查看](#catalog-dev) |
+| 🤖 Agent 与调研 | 7 | [查看](#catalog-agent) |
+| 🎨 创意设计 | 12 | [查看](#catalog-design) |
+| 💼 办公协作 | 11 | [查看](#catalog-biz) |
+| 📊 数据研究 | 5 | [查看](#catalog-data) |
+| 🔐 安全取证 | 5 | [查看](#catalog-sec) |
+| 🧊 3D 与图形 | 5 | [查看](#catalog-3d) |
+| 🎮 游戏开发 | 5 | [查看](#catalog-game) |
+
+<a id="catalog-original"></a>
 ### ✍️ 本站原创（13 个）
 
 > 我们自己编写维护，每个都写明「不做什么」。可直接 `npx skills add` 安装。
@@ -79,6 +98,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [guofeng-threejs](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/guofeng-threejs) | 国风 Three.js 渲染（本站原创）：水墨 shader 三技法（墨分五色/边缘积墨/笔触扰动），含可运行 demo 与移动端性能要点。只做中式渲染，不做通用 Three.js 教程 |
 | [homework-tutor-cn](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn) | 家长辅导作业助手（本站原创）：不给答案给引导话术，分学科方法，含情绪对抗处理 |
 
+<a id="catalog-cn"></a>
 ### 🇨🇳 其他中文条目（57 个）
 
 | Skill | 来源 | 说明 |
@@ -141,6 +161,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [CN-The-Complete-Guide-to-Building-Skill-for-Claude](https://github.com/chenqing0106/CN-The-Complete-Guide-to-Building-Skill-for-Claude) | ⭐5 | 《为 Claude 构建技能的完整指南》中文翻译：结构、模式、测试、分发 |
 | [ai-video-creator](https://github.com/Frank-oll/ai-video-creator) | ⭐5 | 把生活妙招选题端到端做成可发布的竖屏 AI 短视频（含配音） |
 
+<a id="catalog-doc"></a>
 ### 📄 文档办公（10 个）
 
 | Skill | 来源 | 说明 |
@@ -156,6 +177,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [Markdown to EPUB Converter](https://github.com/smerchek/claude-epub-skill) | ⭐150 | 把 Markdown 文档转成专业 EPUB 电子书 🕰<sub>2025-10-18 后未更新</sub> |
 | [Master Claude for Legal](https://github.com/sboghossian/master-claude-for-legal) | ⭐54 | 法务技能包：NDA 审阅、多方版本对比、引用核验 |
 
+<a id="catalog-ppt"></a>
 ### 📊 PPT 演示（19 个）
 
 | Skill | 来源 | 说明 |
@@ -180,6 +202,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [gpt-image2-ppt-skills](https://github.com/JuneYaooo/gpt-image2-ppt-skills) | ⭐1,169 | 克隆任意 .pptx 的版式做成自己的稿子：gpt-image-2 模仿版式，你提供内容。内置 10 套风格，输出高清 PNG 与 16:9 .pptx |
 | [ppt-agent-skills](https://github.com/sunbigfly/ppt-agent-skills) | ⭐880 | 像做软件工程一样做演示：模拟顶级 PPT 设计公司的完整流程（需求调研→资料搜集→大纲策划→策划稿→设计稿），输出 HTML |
 
+<a id="catalog-dev"></a>
 ### 💻 开发工程（35 个）
 
 | Skill | 来源 | 说明 |
@@ -220,6 +243,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [great_cto](https://github.com/avelikiy/great_cto) | ⭐75 | 7 个专业子智能体（技术负责人、资深工程师等）组成的技术团队 |
 | [clone-any-website-skill](https://github.com/promptwhisper/clone-any-website-skill) | ⭐62 | Codex 技能：把公开网站重建成干净可维护的本地项目，讲究视觉、交互、媒体与多端还原度 |
 
+<a id="catalog-agent"></a>
 ### 🤖 Agent 与调研（7 个）
 
 | Skill | 来源 | 说明 |
@@ -232,6 +256,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [watch-skill](https://github.com/oxbshw/watch-skill) | ⭐278 | 让 AI 看懂视频：把视频、直播流、以及 agent 自己的录屏转成可理解的内容并自我校验。含 11 个 SKILL.md，一键装 ffmpeg/yt-dlp 与 MCP |
 | [super-video-maker-skill](https://github.com/Bomx/super-video-maker-skill) | ⭐213 | 端到端 AI 视频生产：HeyGen 数字人、Seedance/字节素材、OpenAI 配图、Remotion 合成，覆盖制作/剪辑/字幕/配乐/导出 |
 
+<a id="catalog-design"></a>
 ### 🎨 创意设计（12 个）
 
 | Skill | 来源 | 说明 |
@@ -249,6 +274,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [anydesign](https://github.com/uxKero/anydesign) | ⭐155 | 分析任意图片/网址/Figma 文件，生成结构化设计规范 |
 | [pakco-html](https://github.com/pakco77/pakco-html) | ⭐71 | HTML 审美库（中文）：60+ 视觉风格、演示页/长页模板，一键复制 Prompt |
 
+<a id="catalog-biz"></a>
 ### 💼 办公协作（11 个）
 
 | Skill | 来源 | 说明 |
@@ -265,6 +291,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [seo-geo-claude-skills](https://github.com/aaron-he-zhu/seo-geo-claude-skills) | ⭐148 | SEO / GEO（生成式引擎优化）技能集，20 个子技能：外链分析、关键词研究、内容写作等；另记录 skills.sh 安装次数，该数值不等于独立用户或实际使用 |
 | [solo-skills](https://github.com/rockscy/solo-skills) | ⭐6 | 独立开发者双语（中英）技能包：7 个 solo 场景 |
 
+<a id="catalog-data"></a>
 ### 📊 数据研究（5 个）
 
 | Skill | 来源 | 说明 |
@@ -275,6 +302,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [postgres](https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres) | ⭐398 | 对 PostgreSQL 执行安全的只读 SQL 查询 |
 | [recursive-research](https://github.com/Anjos2/recursive-research) | ⭐38 | 跨领域递归研究，可深入到博士级别 |
 
+<a id="catalog-sec"></a>
 ### 🔐 安全取证（5 个）
 
 | Skill | 来源 | 说明 |
@@ -285,6 +313,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [file-deletion](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/file-deletion) | ⭐659 | 安全删除文件与数据清除方法 |
 | [FFUF Web Fuzzing](https://github.com/jthack/ffuf_claude_skill) | ⭐205 | 集成 ffuf 做 Web 模糊测试 🕰<sub>2025-10-16 后未更新</sub> |
 
+<a id="catalog-3d"></a>
 ### 🧊 3D 与图形（5 个）
 
 | Skill | 来源 | 说明 |
@@ -295,6 +324,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [threejs-game-skills](https://github.com/majidmanzarpour/threejs-game-skills) | ⭐1,264 | 用 Three.js 做浏览器游戏的 9 个技能：玩法系统、AAA 级画面、游戏 UI、3D/图像/音频资产生成、调试与性能分析、QA 与发布 |
 | [auteur](https://github.com/agiwhitelist/auteur) | ⭐1,098 | 把网页当电影来导：整站从零设计构建，滚动驱动的电影感叙事页，多屏产品（应用/仪表盘/后台/引导/文档）共用一套设计系统 |
 
+<a id="catalog-game"></a>
 ### 🎮 游戏开发（5 个）
 
 | Skill | 来源 | 说明 |

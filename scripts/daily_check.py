@@ -397,6 +397,7 @@ def build_skills_md():
     L.append(f"> 🔄 最近自动复检：**{checked}**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）\n")
     L.append("🧪 **[Codex 13/13 自动触发实测 → COMPATIBILITY.md](COMPATIBILITY.md)**　"
              "📋 [原创 Skill 输出示例](EXAMPLES.md)　"
+             "🔎 [按场景找 Skill](#skill-catalog)　"
              "🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)\n")
     L.append("🛡️ **[安装第三方 Skill 前：运行只读本地审计器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/)**"
              "（检查脚本、联网、凭据词与高风险命令；不执行目标，0 项命中不等于安全）\n")
@@ -437,10 +438,23 @@ def build_skills_md():
     L.append(f"| 制定能动手练习的学习计划 | `npx skills add https://github.com/{REPO} --skill ai-learning-coach` | `我想两周入门 SQL。先了解目标和基础，再制定有练习、输出和复盘的计划。` | [Codex 校准实测](cases/ai-learning-coach-codex.md) |\n")
     L.append("这些链接只记录一次特定 Codex 版本与任务的结果，不保证其他客户端、版本或措辞得到相同结果。\n")
     L.append("---\n")
+    L.append('<a id="skill-catalog"></a>')
     L.append("## Skill 清单\n")
+    L.append("### 按场景直达\n")
+    L.append("| 场景 | 条目数 | 跳转 |")
+    L.append("|---|---:|---|")
+    L.append(f"| ✍️ 本站原创 | {len(ours)} | [查看](#catalog-original) |")
+    for c in CAT_ORDER:
+        grp = [s for s in rest if s.get("cat") == c]
+        if not grp:
+            continue
+        label = "🇨🇳 其他中文条目" if c == "cn" else cats.get(c, {}).get("label", c)
+        L.append(f"| {label} | {len(grp)} | [查看](#catalog-{c}) |")
+    L.append("")
 
     # 本站原创单列在最前
     if ours:
+        L.append('<a id="catalog-original"></a>')
         L.append(f"### ✍️ 本站原创（{len(ours)} 个）\n")
         L.append("> 我们自己编写维护，每个都写明「不做什么」。可直接 `npx skills add` 安装。\n")
         L.append("| Skill | 说明 |")
@@ -454,6 +468,7 @@ def build_skills_md():
         if not grp:
             continue
         label = "🇨🇳 其他中文条目" if c == "cn" else cats.get(c, {}).get("label", c)
+        L.append(f'<a id="catalog-{c}"></a>')
         L.append(f"### {label}（{len(grp)} 个）\n")
         L.append("| Skill | 来源 | 说明 |")
         L.append("|-------|------|------|")
