@@ -4,6 +4,7 @@
 
 ## [Unreleased]
 
+- 补齐跨系统安装取证路径：安装页提供 Windows PowerShell、WSL/Linux 的最小只读命令和脱敏边界；新增机器可读 Schema、示例与无依赖校验器，用于沉淀真实安装路径，不把文件落盘冒充自动触发或跨系统兼容。
 - 新增无需 JavaScript 的完整 Agent Skills 静态目录：184 个条目按数据源场景自动生成，保留原创、官方与第三方资料标签以及兼容/安全边界；接入 README、`llms.txt`、Sitemap 和离线一致性测试，不按 Star 排名。
 - 新增可审查的 v1.2.0 GitHub Release 说明源文件，锁定兼容性计数、安全边界、测试范围和 annotated tag 目标；GitHub 正式 Release 发布后由公开 API 复核，不用自动生成的夸张摘要。
 - 对 7 条高曝光或高声明第三方 Skill 做只读事实核验：修正 6 条把上游宣传、借用 Star 数、动态排名或易变计数写成目录事实的摘要；保存上游 commit 与 README/SKILL blob SHA，不安装或执行第三方代码，也不把上游效果案例冒充本站复现。

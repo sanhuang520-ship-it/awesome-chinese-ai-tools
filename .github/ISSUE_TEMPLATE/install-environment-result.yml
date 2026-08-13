@@ -8,6 +8,7 @@ body:
       value: |
         这个表单只记录实际运行过的安装环境结果。成功、失败和权限阻断都欢迎；请先删除用户名、Token、邮箱、私人路径和未公开业务数据。
         安装路径会随 CLI 版本、操作系统和目标客户端变化。单次结果不能外推为所有环境都相同。
+        想用 PR 留下机器可读记录？复制[示例 JSON](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/examples/install-environment-result.example.json)，按[Schema](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/schemas/install-environment-result.schema.json)填写，并运行 `python3 scripts/check_install_environment_report.py <report>.json`。通过只表示结构、隐私扫描与安装证据边界一致，不代表客户端自动触发。
 
   - type: dropdown
     id: system

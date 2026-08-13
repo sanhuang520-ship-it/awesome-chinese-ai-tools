@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/schemas/install-environment-result.schema.json",
+  "title": "Agent Skill installation environment result",
+  "description": "A privacy-scrubbed observation of one skills CLI installation attempt. It records installation evidence only, not client activation or task completion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "recordedAt", "sourceType", "environment", "command", "skill", "result", "paths", "boundaries", "privacy"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{7,127}$"},
+    "recordedAt": {"type": "string", "format": "date-time"},
+    "sourceType": {"type": "string", "enum": ["repository-self-test", "community-report"]},
+    "environment": {
+      "type": "object", "additionalProperties": false,
+      "required": ["os", "terminal", "nodeVersion", "skillsVersion"],
+      "properties": {
+        "os": {"type": "string", "minLength": 1},
+        "terminal": {"type": "string", "minLength": 1},
+        "nodeVersion": {"type": "string", "minLength": 1},
+        "skillsVersion": {"type": "string", "minLength": 1}
+      }
+    },
+    "command": {"type": "string", "minLength": 1},
+    "skill": {"type": "string", "minLength": 1},
+    "result": {"type": "string", "enum": ["installed", "failed", "blocked", "unknown"]},
+    "paths": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["path", "type", "exists"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "type": {"type": "string", "enum": ["directory", "file", "symlink", "junction", "unknown"]},
+          "exists": {"type": "boolean"}
+        }
+      }
+    },
+    "observed": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "boundaries": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "privacy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scrubbed", "containsSensitiveData"],
+      "properties": {"scrubbed": {"const": true}, "containsSensitiveData": {"const": false}}
+    }
+  }
+}

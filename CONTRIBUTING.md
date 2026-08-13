@@ -27,6 +27,14 @@
 
 不知道的字段可以如实写“不确定”或“暂无”。维护者会复核，不要求提交者先得出完整结论；请不要为了填满表单而猜测。
 
+安装环境结果也可以通过 PR 留下机器可读记录：复制 [`examples/install-environment-result.example.json`](examples/install-environment-result.example.json)，按 [`schemas/install-environment-result.schema.json`](schemas/install-environment-result.schema.json) 填写，并运行：
+
+```bash
+python3 scripts/check_install_environment_report.py <report>.json
+```
+
+该记录只描述一次 CLI 安装尝试、版本、落盘路径与文件类型；自动触发和任务完成仍须用兼容性实测表单或报告单独记录。
+
 如何选择：推荐新项目用“推荐”；链接、名称、数字或说明错误用“事实错误”；本站原创 Skill 已经触发但方法、边界、示例或交付需要改进，用“原创 Skill 改进”；是否被客户端自动读取或最终是否完成，用“兼容性实测”；有真实中文任务但现有四组开箱方案都不合适，用“组合需求”。
 
 ---

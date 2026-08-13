@@ -35,6 +35,20 @@ class InstallJourneyTest(unittest.TestCase):
         update_guide = (ROOT / "update-agent-skill" / "index.html").read_text(encoding="utf-8")
         self.assertIn("../cases/skills-cli-isolated-install-2026-08-13.md", update_guide)
 
+    def test_cross_platform_evidence_steps_do_not_claim_unmeasured_compatibility(self):
+        for phrase in (
+            "跨系统留证：只记录安装，不猜客户端行为",
+            "WINDOWS · PowerShell",
+            "WSL / LINUX · shell",
+            "Get-Item",
+            "不存在也很有价值",
+            "不要把“能看到文件”写成“自动触发”",
+            "install-environment-result.example.json",
+            "check_install_environment_report.py",
+        ):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, self.body)
+
 
 if __name__ == "__main__":
     unittest.main()
