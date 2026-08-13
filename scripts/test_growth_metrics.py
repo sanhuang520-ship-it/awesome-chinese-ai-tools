@@ -80,6 +80,17 @@ class GrowthMetricsTest(unittest.TestCase):
         self.assertNotIn("ai-skills", data["repositoryProfile"]["topics"])
         self.assertIn("cannot be attributed", data["notes"])
 
+    def test_v120_release_snapshot_freezes_current_evidence_without_growth_claim(self):
+        data = json.loads((ROOT / "metrics" / "2026-08-13-v1.2.0.json").read_text(encoding="utf-8"))
+        self.assertEqual("v1.2.0", data["release"]["tag"])
+        self.assertEqual(206, data["release"]["localTests"])
+        self.assertEqual(36, data["release"]["testModules"])
+        self.assertEqual(44, data["release"]["publicHtmlPagesChecked"])
+        self.assertEqual({"completed": 10, "waitingInput": 1, "boundedRetest": 2}, data["evidenceBoundary"]["compatibilityOutcomes"])
+        self.assertTrue(data["evidenceBoundary"]["prospectiveRetests"]["initialFailuresPreserved"])
+        self.assertEqual("untested-by-repository", data["evidenceBoundary"]["claudeCodeTaskLevel"])
+        self.assertIn("cannot be credited with Star growth", data["notes"])
+
 
 if __name__ == "__main__":
     unittest.main()

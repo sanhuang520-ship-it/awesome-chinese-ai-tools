@@ -289,7 +289,7 @@ my-skill/
 
 如果你用的是 Claude Code 或 Cursor，最有价值的贡献是提交一次成功或失败的真实结果：我们会把客户端版本、原始任务和证据边界整理进[兼容性实测表](COMPATIBILITY.md)，不会把单次体验包装成普遍结论。
 
-在文章、研究或其他目录中引用本项目时，可使用 GitHub 的 **Cite this repository** 入口或查看 [CITATION.cff](CITATION.cff)。当前稳定引用版本为 [v1.1.1](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/v1.1.1)；持续更新内容请链接仓库主页，并注明访问日期。
+在文章、研究或其他目录中引用本项目时，可使用 GitHub 的 **Cite this repository** 入口或查看 [CITATION.cff](CITATION.cff)。当前稳定引用版本为 [v1.2.0](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/v1.2.0)；持续更新内容请链接仓库主页，并注明访问日期。
 
 **发现事实错误请一定告诉我们** —— 这个项目全部的价值就在"可信"两个字上。
 

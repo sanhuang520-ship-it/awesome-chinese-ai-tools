@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+## [v1.2.0] - 2026-08-13
+
+> 本版本将 v1.1.1 之后的兼容性证据、安全审计与发现入口冻结为可引用边界。当前口径为 10 项完成记录、1 项按流程等待必要输入、2 项大任务失败后缩小复测；另有 6 条前瞻任务初次 4 条通过、2 条失败，两条失败经最小指令修复后用完全相同任务通过 4 / 4，旧失败保留。该口径替代旧版笼统的“11 项首次完成”，不声明准确率或跨客户端兼容。
+
 ### 使用与发现
 
 - 默认 README 首屏加入准确的 `Chinese Agent Skills / Chinese AI Skills` 英文定位，并发布英文落地页，连接目录浏览、单项安装、只读审计、兼容性方法、失败修复和贡献任务；首页 SEO 元数据由生成器持续维护双语定位，兼容性边界不变。
@@ -120,4 +124,5 @@
 
 [v1.1.0]: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/releases/tag/v1.1.0
 [v1.1.1]: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/releases/tag/v1.1.1
-[Unreleased]: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/compare/v1.1.1...HEAD
+[v1.2.0]: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/v1.2.0
+[Unreleased]: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/compare/v1.2.0...HEAD

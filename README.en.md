@@ -83,6 +83,10 @@ See [output examples](EXAMPLES.md), [reproducible Codex cases](cases/README.md),
 
 Remove tokens, private paths, email addresses, and unpublished business data before posting logs. Automated validation does not replace manual redaction or independent reproduction. Third-party inclusion, directory indexing, clone counts and Stars are not a security audit, usage proof or endorsement.
 
+## Citation
+
+The current stable evidence boundary is [v1.2.0](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/v1.2.0). Use [CITATION.cff](CITATION.cff) for versioned metadata; link the default branch with an access date when referring to continuously updated catalog data.
+
 ## License
 
 [MIT](LICENSE)

@@ -11,8 +11,8 @@ class CitationTest(unittest.TestCase):
     def test_citation_metadata_matches_the_stable_release(self):
         body = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
         self.assertIn("cff-version: 1.2.0", body)
-        self.assertIn("version: 1.1.1", body)
-        self.assertIn("date-released: 2026-08-12", body)
+        self.assertIn("version: 1.2.0", body)
+        self.assertIn("date-released: 2026-08-13", body)
         self.assertIn("license: MIT", body)
         self.assertIn(
             'repository-code: "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools"',
@@ -23,9 +23,11 @@ class CitationTest(unittest.TestCase):
         body = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("[CITATION.cff](CITATION.cff)", body)
         self.assertIn(
-            "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/v1.1.1",
+            "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/v1.2.0",
             body,
         )
+        english = (ROOT / "README.en.md").read_text(encoding="utf-8")
+        self.assertIn("current stable evidence boundary is [v1.2.0]", english)
 
 
 if __name__ == "__main__":

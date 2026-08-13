@@ -4,8 +4,8 @@ title: "awesome-chinese-ai-tools: 中文 AI Agent Skills 与工具目录"
 type: software
 authors:
   - name: "sanhuang520-ship-it"
-version: 1.1.1
-date-released: 2026-08-12
+version: 1.2.0
+date-released: 2026-08-13
 license: MIT
 repository-code: "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools"
 url: "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
@@ -15,3 +15,4 @@ keywords:
   - codex
   - awesome-list
   - ai-tools
+  - chinese-agent-skills

@@ -1,0 +1,50 @@
+{
+  "recordedAt": "2026-08-13T14:24:00+08:00",
+  "source": "GitHub public repository and Actions APIs; local verification; public GitHub Pages",
+  "repository": "sanhuang520-ship-it/awesome-chinese-ai-tools",
+  "repositoryMetrics": {
+    "stars": 7,
+    "forks": 1,
+    "openIssues": 0
+  },
+  "release": {
+    "tag": "v1.2.0",
+    "commit": "resolved-by-annotated-tag-v1.2.0",
+    "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/v1.2.0",
+    "localTests": 206,
+    "testModules": 36,
+    "publicHtmlPagesChecked": 44,
+    "latestScheduledDailyCheck": {
+      "status": "success",
+      "commit": "30bd9d7",
+      "scope": "latest scheduled run before release preparation; not the release commit"
+    },
+    "latestPagesDeploymentBeforeReleasePreparation": {
+      "status": "success",
+      "commit": "88b2ad2",
+      "scope": "latest published content commit before release preparation"
+    },
+    "englishDiscoveryEndpoint": {
+      "url": "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/chinese-agent-skills/",
+      "httpStatus": 200
+    }
+  },
+  "evidenceBoundary": {
+    "compatibilityOutcomes": {
+      "completed": 10,
+      "waitingInput": 1,
+      "boundedRetest": 2
+    },
+    "prospectiveRetests": {
+      "executed": 6,
+      "initialPasses": 4,
+      "initialFailures": 2,
+      "remediationRetestsPassed": 2,
+      "initialFailuresPreserved": true
+    },
+    "claudeCodeTaskLevel": "untested-by-repository",
+    "cursorTaskLevel": "untested-by-repository",
+    "security": "static review indicators only; not a security certification"
+  },
+  "notes": "Observation only, not attribution evidence. Stars remained at 7 during release preparation. This release freezes a versioned evidence boundary; it cannot be credited with Star growth, independent adoption, overall accuracy, security certification or cross-client compatibility. The immutable commit is resolved by the annotated v1.2.0 tag and verified after pushing instead of embedding a circular self-hash in this file."
+}
