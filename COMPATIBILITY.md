@@ -18,7 +18,7 @@
 
 当前任务级案例记录的客户端为 Codex CLI `0.147.0-alpha.6.5`；这仍不代表其他 Codex 版本或任务措辞会得到相同结果。安装复测与任务级自动触发是两轮不同证据，不能互相替代。
 
-另有 6 条运行前公开任务与成功门槛的前瞻复测，现已全部执行：`book-digest-cn`、`chinese-design-md`、`chinese-lesson-plan` 与 `guochao-visual-cn` 通过 4 / 4；`chinese-web-themes` 因遗漏授权检查、`guofeng-threejs` 因超过 300 字限制，各记为 3 / 4 失败。每项都有独立案例记录。这组结果不改写上表的首次自动触发 10 / 1 / 2 统计。
+另有 6 条运行前公开任务与成功门槛的前瞻复测，现已全部执行：初次 4 条通过 4 / 4；`chinese-web-themes` 因遗漏授权检查、`guofeng-threejs` 因超过 300 字限制，各记为 3 / 4 失败。随后只针对失败原因修改 Skill 指令，并以完全相同的原始任务复测，两项均通过 4 / 4（Three.js 响应实测 294 字符）。[主题修复记录](cases/chinese-web-themes-remediation-retest-2026-08-13.md)与 [Three.js 修复记录](cases/guofeng-threejs-remediation-retest-2026-08-13.md)不会覆盖首次失败。这组结果不改写上表的首次自动触发 10 / 1 / 2 统计。
 
 ## 13 个本站原创 Skill
 

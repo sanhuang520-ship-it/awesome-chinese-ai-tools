@@ -108,6 +108,18 @@ def main() -> None:
             fail(f"invalid prospective retest result: {skill}")
         if not (ROOT / result.get("case", "")).is_file():
             fail(f"prospective retest case is missing: {skill}")
+    remediation = prospective.get("remediationRetests", {})
+    if remediation.get("executedCount") != 2 or remediation.get("passedCount") != 2 or remediation.get("failedCount") != 0:
+        fail("remediation retest totals must preserve two executed passes")
+    if set(remediation.get("results", {})) != {"chinese-web-themes", "guofeng-threejs"}:
+        fail("remediation retests must cover the two initial failures")
+    for skill, result in remediation["results"].items():
+        if result.get("passedChecks") != result.get("totalChecks") or result.get("totalChecks") != 4:
+            fail(f"remediation retest must pass all original checks: {skill}")
+        if not (ROOT / result.get("case", "")).is_file():
+            fail(f"remediation retest case is missing: {skill}")
+    if remediation["results"]["guofeng-threejs"].get("measuredCharacters", 301) > 300:
+        fail("guofeng-threejs remediation exceeds the original 300-character limit")
 
     examples = (ROOT / "EXAMPLES.md").read_text(encoding="utf-8")
     case_index = (ROOT / "cases" / "README.md").read_text(encoding="utf-8")

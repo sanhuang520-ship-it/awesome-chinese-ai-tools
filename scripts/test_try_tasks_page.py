@@ -24,7 +24,8 @@ class TryTasksPageTest(unittest.TestCase):
         self.assertEqual(6, body.count('data-kind="prospective"'))
         self.assertEqual(0, body.count("PLANNED · 尚无结果"))
         self.assertEqual(4, body.count("已执行 · 预注册门槛通过 4 / 4"))
-        self.assertEqual(2, body.count("已执行 · 未通过全部门槛 3 / 4"))
+        self.assertEqual(0, body.count("已执行 · 未通过全部门槛 3 / 4"))
+        self.assertEqual(2, body.count("初次 3 / 4 · 修复后 4 / 4"))
         self.assertIn("0 条仍为 planned", body)
         self.assertIn("先移除 Token、邮箱、私人路径和未公开数据", body)
 

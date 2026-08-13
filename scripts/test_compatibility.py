@@ -110,6 +110,13 @@ class CompatibilityDataTest(unittest.TestCase):
                 self.assertIn(record["passedChecks"], (3, 4))
                 self.assertEqual(4, record["totalChecks"])
                 self.assertTrue((ROOT / record["case"]).is_file())
+        remediation = result["remediationRetests"]
+        self.assertEqual("completed", remediation["status"])
+        self.assertEqual(2, remediation["executedCount"])
+        self.assertEqual(2, remediation["passedCount"])
+        self.assertEqual(0, remediation["failedCount"])
+        self.assertEqual({"chinese-web-themes", "guofeng-threejs"}, set(remediation["results"]))
+        self.assertEqual(294, remediation["results"]["guofeng-threejs"]["measuredCharacters"])
 
     def test_compatibility_submission_separates_naming_activation_and_completion(self):
         template = (ROOT / ".github" / "ISSUE_TEMPLATE" / "compatibility-result.yml").read_text(encoding="utf-8")

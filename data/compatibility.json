@@ -188,6 +188,24 @@
       "failedCount": 2,
       "remainingCount": 0,
       "note": "All six preregistered tasks were executed in isolated single-skill projects. Four passed all checks; two passed three of four and are retained as failures. This does not change the earlier 13-skill activation outcome totals.",
+      "remediationRetests": {
+        "status": "completed",
+        "executedCount": 2,
+        "passedCount": 2,
+        "failedCount": 0,
+        "note": "Both initially failed tasks were rerun with the exact original prompts after targeted Skill instruction fixes. Both passed 4/4; initial 3/4 failures remain preserved.",
+        "results": {
+          "chinese-web-themes": {
+            "status": "verified", "passedChecks": 4, "totalChecks": 4,
+            "case": "cases/chinese-web-themes-remediation-retest-2026-08-13.md"
+          },
+          "guofeng-threejs": {
+            "status": "verified", "passedChecks": 4, "totalChecks": 4,
+            "measuredCharacters": 294,
+            "case": "cases/guofeng-threejs-remediation-retest-2026-08-13.md"
+          }
+        }
+      },
       "results": {
         "book-digest-cn": {
           "status": "verified",

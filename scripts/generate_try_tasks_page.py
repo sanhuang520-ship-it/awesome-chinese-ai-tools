@@ -43,6 +43,8 @@ def load_tasks():
             "status": (
                 "PLANNED · 尚无结果"
                 if item["status"] == "planned"
+                else f"初次 {item['execution']['passedChecks']} / {item['execution']['totalChecks']} · 修复后 {item['execution']['remediation']['passedChecks']} / {item['execution']['remediation']['totalChecks']}"
+                if item["execution"].get("remediation")
                 else f"已执行 · {'预注册门槛通过' if item['status'] == 'executed-pass' else '未通过全部门槛'} {item['execution']['passedChecks']} / {item['execution']['totalChecks']}"
             ),
             "checks": item["acceptanceZh"],
@@ -61,8 +63,13 @@ def render_card(item):
     else:
         checks = "".join(f"<li>{html.escape(check)}</li>" for check in item["checks"])
         if item.get("execution"):
-            evidence_link = f'<a href="../{html.escape(item["execution"]["case"])}">查看执行记录与限制 →</a>'
-            heading = "预注册门槛（已执行）"
+            remediation = item["execution"].get("remediation")
+            if remediation:
+                evidence_link = f'<a href="../{html.escape(item["execution"]["case"])}">初次失败记录</a> · <a href="../{html.escape(remediation["case"])}">修复后复测 →</a>'
+                heading = "原始预注册门槛（初次失败，修复后通过）"
+            else:
+                evidence_link = f'<a href="../{html.escape(item["execution"]["case"])}">查看执行记录与限制 →</a>'
+                heading = "预注册门槛（已执行）"
         else:
             evidence_link = f'<a href="{ISSUE}">提交成功、失败或未触发结果 →</a>'
             heading = "成功门槛（尚未执行）"

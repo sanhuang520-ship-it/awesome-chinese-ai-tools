@@ -25,6 +25,11 @@ class RetestQueueTest(unittest.TestCase):
         self.assertEqual({"book-digest-cn", "chinese-design-md", "chinese-lesson-plan", "guochao-visual-cn"}, {skill for skill, status in statuses.items() if status == "executed-pass"})
         self.assertEqual("executed-fail", statuses["chinese-web-themes"])
         self.assertEqual("executed-fail", statuses["guofeng-threejs"])
+        for skill in ("chinese-web-themes", "guofeng-threejs"):
+            remediation = next(item for item in self.items if item["skill"] == skill)["execution"]["remediation"]
+            self.assertEqual(4, remediation["passedChecks"])
+            self.assertEqual(4, remediation["totalChecks"])
+            self.assertTrue((ROOT / remediation["case"]).is_file())
         self.assertEqual(0, sum(status == "planned" for status in statuses.values()))
         for item in self.items:
             if item["status"] == "planned":
@@ -46,8 +51,9 @@ class RetestQueueTest(unittest.TestCase):
         self.assertEqual(6, self.body.count(">复制任务</button>"))
         self.assertEqual(0, self.body.count("PLANNED · 尚无结果"))
         self.assertEqual(4, self.body.count("已执行 · 预注册门槛通过 4 / 4"))
-        self.assertIn("6 个已执行", self.body)
-        self.assertIn("0 项 planned 仍不算通过", self.body)
+        self.assertIn("6 个全部执行", self.body)
+        self.assertIn("2 个完成修复闭环", self.body)
+        self.assertIn("修复后通过不抹去初次失败", self.body)
 
 
 if __name__ == "__main__":

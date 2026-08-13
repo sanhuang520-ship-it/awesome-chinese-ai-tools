@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-12",
+  "updatedAt": "2026-08-13",
   "statusDefinition": "planned means the prompt and acceptance checks are published before execution; it is not a compatibility result",
   "items": [
     {
@@ -88,7 +88,15 @@
         "passedChecks": 3,
         "totalChecks": 4,
         "case": "cases/chinese-web-themes-prospective-retest-2026-08-13.md",
-        "note": "Codex activated the skill, recommended only ink, supplied a short integration path, preserved the no-write boundary, and checked content, mobile, code, override and accessibility concerns. It omitted the preregistered licensing check, so the result is an executed failure."
+        "note": "Codex activated the skill, recommended only ink, supplied a short integration path, preserved the no-write boundary, and checked content, mobile, code, override and accessibility concerns. It omitted the preregistered licensing check, so the result is an executed failure.",
+        "remediation": {
+          "testedAt": "2026-08-13",
+          "status": "verified",
+          "passedChecks": 4,
+          "totalChecks": 4,
+          "case": "cases/chinese-web-themes-remediation-retest-2026-08-13.md",
+          "note": "After adding a six-gate existing-site checklist to the Skill, the same prompt explicitly covered licensing and passed all original checks. The initial failure remains preserved."
+        }
       }
     },
     {
@@ -126,7 +134,16 @@
         "scope": "isolated single-skill temporary Git project; ephemeral; ignore user config; read-only sandbox",
         "passedChecks": 3, "totalChecks": 4,
         "case": "cases/guofeng-threejs-prospective-retest-2026-08-13.md",
-        "note": "The response contained the requested three techniques, three risks, two paths and untested boundaries without running or editing, but measured 408 characters and therefore failed the 300-character limit."
+        "note": "The response contained the requested three techniques, three risks, two paths and untested boundaries without running or editing, but measured 408 characters and therefore failed the 300-character limit.",
+        "remediation": {
+          "testedAt": "2026-08-13",
+          "status": "verified",
+          "passedChecks": 4,
+          "totalChecks": 4,
+          "measuredCharacters": 294,
+          "case": "cases/guofeng-threejs-remediation-retest-2026-08-13.md",
+          "note": "After adding a bounded-review template and explicit Unicode counting guard, the same prompt produced a 294-character response and passed all original checks. The initial failure remains preserved."
+        }
       }
     }
   ]

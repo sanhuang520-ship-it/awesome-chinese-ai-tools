@@ -142,7 +142,7 @@ npx --yes skills@1.5.22 update -p -y
 
 **[→ 复制 7 条有逐字原文的首次测试任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reproduce/)**（另外 6 条只有摘要，不反向补写）
 
-**[→ 参与前瞻兼容性复测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/retest/)**（6 条任务和门槛先公开；4 条通过 4/4、2 条为 3/4 失败）
+**[→ 查看前瞻复测与修复闭环](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/retest/)**（6 条任务和门槛先公开；初次 4 条通过、2 条失败，针对性修复后两条用原任务均通过 4/4；旧失败不覆盖）
 
 **[→ 在一页选择全部 13 个首次试用任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**（单项安装、复制任务、历史证据或前瞻成功门槛）
 
