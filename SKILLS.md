@@ -42,6 +42,19 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 安装第三方 Skill 前，可先运行 `python3 scripts/audit_skill.py /path/to/skill` 做只读静态扫描；它只提供人工复核线索，不是恶意代码检测或安全认证。
 
+### 30 秒选一个真实任务
+
+只装当前需要的一项，重启客户端，再复制自然任务。任务中不点名 Skill，才能观察客户端是否会主动选择它。
+
+| 需求 | 安装 | 复制给 AI | 本仓库记录 |
+|---|---|---|---|
+| 审查中文网页排版 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography` | `请检查这段 CSS 的中文字体、行高、断词和两端对齐问题，只审查，不修改文件。` | [Codex 单任务实测](cases/chinese-typography-codex.md) |
+| 整理不编数据的周报 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-work-report` | `把这些工作素材整理成给老板看的周报；结果数据没有提供，不要编造。` | [Codex 单任务实测](cases/chinese-work-report-codex.md) |
+| 校对商品文案事实边界 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ecommerce-copywriting` | `根据已知参数整理可写、待补和不应发布的信息；没有的参数、认证和功效不要编。` | [Codex 单任务实测](cases/ecommerce-copywriting-codex.md) |
+| 制定能动手练习的学习计划 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ai-learning-coach` | `我想两周入门 SQL。先了解目标和基础，再制定有练习、输出和复盘的计划。` | [Codex 校准实测](cases/ai-learning-coach-codex.md) |
+
+这些链接只记录一次特定 Codex 版本与任务的结果，不保证其他客户端、版本或措辞得到相同结果。
+
 ---
 
 ## Skill 清单

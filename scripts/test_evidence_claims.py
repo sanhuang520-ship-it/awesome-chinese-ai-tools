@@ -207,6 +207,28 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertNotIn("AI 会自动判断何时激活", current)
         self.assertNotIn("AI 自动判断何时激活", current)
 
+    def test_catalog_second_entry_offers_reproducible_first_tasks(self):
+        catalog = (ROOT / "SKILLS.md").read_text(encoding="utf-8")
+        generator = (ROOT / "scripts" / "daily_check.py").read_text(encoding="utf-8")
+        for phrase in (
+            "30 秒选一个真实任务",
+            "--skill chinese-typography",
+            "--skill chinese-work-report",
+            "--skill ecommerce-copywriting",
+            "--skill ai-learning-coach",
+            "不保证其他客户端、版本或措辞",
+        ):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, catalog)
+                self.assertIn(phrase, generator)
+        for case in (
+            "cases/chinese-typography-codex.md",
+            "cases/chinese-work-report-codex.md",
+            "cases/ecommerce-copywriting-codex.md",
+            "cases/ai-learning-coach-codex.md",
+        ):
+            self.assertIn(case, catalog)
+
     def test_third_party_install_records_are_not_called_usage(self):
         skills = (ROOT / "data" / "skills.json").read_text(encoding="utf-8")
         catalog = (ROOT / "SKILLS.md").read_text(encoding="utf-8")
