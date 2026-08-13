@@ -32,6 +32,14 @@ class DistributionReadinessTest(unittest.TestCase):
         self.assertIn("real community usage", body)
         self.assertIn("Clone 不能叫用户", body)
 
+    def test_bundle_requests_have_a_distinct_contribution_route(self):
+        contributing = (ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
+        config = (ROOT / ".github" / "ISSUE_TEMPLATE" / "config.yml").read_text(encoding="utf-8")
+        for body in (contributing, config):
+            self.assertIn("template=request-bundle.yml", body)
+            self.assertIn("中文 Skill 组合", body)
+        self.assertIn("现有四组开箱方案都不合适", contributing)
+
     def test_audit_launch_copy_is_unpublished_and_preserves_boundaries(self):
         body = (ROOT / "promo" / "audit-skill-launch-posts.md").read_text(encoding="utf-8")
         self.assertIn("状态：**未发布**", body)

@@ -6,6 +6,9 @@ contact_links:
   - name: 提交 Skill 兼容性实测
     url: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml
     about: 分享 Codex、Claude Code、Cursor 中成功、失败或未触发的可复现结果
+  - name: 提议一个中文 Skill 组合
+    url: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=request-bundle.yml
+    about: 用真实、脱敏的中文任务说明现有四组开箱方案未覆盖的缺口
   - name: 使用交流与实际效果分享
     url: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4
     about: 按置顶模板分享安装问题、组合建议和可复现的实际使用结果

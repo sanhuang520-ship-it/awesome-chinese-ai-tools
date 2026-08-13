@@ -23,10 +23,11 @@
 - [改进一个本站原创 Skill](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=improve-skill.yml)
 - [提交一次成功、失败或未触发的兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)
 - [提交一次 Windows、WSL、Linux 或 macOS 安装环境复测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=install-environment-result.yml)
+- [提议一个现有四组未覆盖的中文 Skill 组合](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=request-bundle.yml)
 
 不知道的字段可以如实写“不确定”或“暂无”。维护者会复核，不要求提交者先得出完整结论；请不要为了填满表单而猜测。
 
-如何选择：推荐新项目用“推荐”；链接、名称、数字或说明错误用“事实错误”；本站原创 Skill 已经触发但方法、边界、示例或交付需要改进，用“原创 Skill 改进”；是否被客户端自动读取或最终是否完成，用“兼容性实测”。
+如何选择：推荐新项目用“推荐”；链接、名称、数字或说明错误用“事实错误”；本站原创 Skill 已经触发但方法、边界、示例或交付需要改进，用“原创 Skill 改进”；是否被客户端自动读取或最终是否完成，用“兼容性实测”；有真实中文任务但现有四组开箱方案都不合适，用“组合需求”。
 
 ---
 
