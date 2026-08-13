@@ -67,6 +67,8 @@ lrwxr-xr-x  <name> -> ../../.agents/skills/<name>   # 这里是符号链接
 
 ## 怎么装
 
+**[→ 不知道先试哪个？查看 13 个单项安装命令与可复制首次任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**：7 条来自历史逐字原文，6 条是尚无结果的前瞻任务，两类证据不会混写。
+
 ```bash
 # 先看仓库里有哪些
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
@@ -141,6 +143,8 @@ npx --yes skills@1.5.22 update -p -y
 **[→ 复制 7 条有逐字原文的首次测试任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reproduce/)**（另外 6 条只有摘要，不反向补写）
 
 **[→ 参与 6 条前瞻兼容性复测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/retest/)**（任务和成功门槛已公开，`planned` 不等于通过）
+
+**[→ 在一页选择全部 13 个首次试用任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**（单项安装、复制任务、历史证据或前瞻成功门槛）
 
 | Skill | 做什么 |
 |-------|--------|

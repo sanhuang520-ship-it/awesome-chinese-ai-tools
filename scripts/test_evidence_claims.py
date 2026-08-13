@@ -217,6 +217,8 @@ class EvidenceClaimsTest(unittest.TestCase):
             "--skill chinese-work-report",
             "--skill ecommerce-copywriting",
             "--skill ai-learning-coach",
+            "查看全部 13 个单项安装命令与可复制首次任务",
+            "try-agent-skills/",
             "不保证其他客户端、版本或措辞",
         ):
             with self.subTest(phrase=phrase):

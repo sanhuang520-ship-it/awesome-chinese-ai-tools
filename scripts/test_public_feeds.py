@@ -147,6 +147,7 @@ class PublicFeedsTest(unittest.TestCase):
             BASE_URL + "SKILLS.md": "2026-08-13",
             BASE_URL + "llms.txt": "2026-08-13",
             BASE_URL + "guides/": "2026-08-13",
+            BASE_URL + "try-agent-skills/": "2026-08-13",
             BASE_URL + "audit-skill/": "2026-08-13",
             BASE_URL + "install/": "2026-08-13",
             BASE_URL + "guochao/": "2026-08-12",
