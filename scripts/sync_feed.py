@@ -39,6 +39,12 @@ def render_feed():
         raise ValueError(f"unexpected compatibility outcome totals: {dict(counts)}")
     entries = [
         item(
+            "Agent Skill 怎么更新：skills update 项目级实测",
+            "update-agent-skill/",
+            "Thu, 13 Aug 2026 10:10:00 +0800",
+            "在有 skills-lock.json 的隔离项目中，13 个受控历史夹具经 skills CLI 1.5.22 更新后与当前公开仓库完整一致，全局 Skill 文件哈希未变；不外推到全局更新或无锁场景。",
+        ),
+        item(
             "skills CLI 1.5.22 隔离安装与项目更新复测：13/13 一致",
             "cases/skills-cli-isolated-install-2026-08-13.md",
             "Thu, 13 Aug 2026 00:51:00 +0800",

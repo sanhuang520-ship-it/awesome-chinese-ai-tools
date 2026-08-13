@@ -9,6 +9,7 @@
 - [安装与排错](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/): skills CLI 1.5.22 的本机实测步骤与路径边界
 - [Agent Skills 兼容性测试方法](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/method/): 四层证据、逐字任务、失败分类与最小记录模板
 - [Codex Skill 不自动触发排查](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/codex-skill-not-triggering/): 按 CLI 发现、文件落盘、客户端读取、任务完成与环境阻断定位问题
+- [Agent Skill 项目级更新实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/update-agent-skill/): 在有 skills-lock.json 的项目中固定 CLI 版本更新，并比较完整文件夹与全局哈希边界
 - [创建 Codex Skill 中文实战](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/create-codex-skill/): 按 OpenAI 当前文档从最小 SKILL.md、触发范围到安装与验证
 - [兼容性报告生成器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/report/): 浏览器本地生成符合公开 Schema 的 JSON，不上传或保存表单内容
 - [13 个原创 Skill 方法与证据总览](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guides/): 按使用场景比较方法、实测状态、原始案例和安全边界

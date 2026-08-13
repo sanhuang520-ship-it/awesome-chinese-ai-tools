@@ -91,6 +91,8 @@ npx --yes skills@1.5.22 update -p -y
 
 已经安装但没有自动触发？按 **[Codex Skill 不触发的 5 步诊断树](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/codex-skill-not-triggering/)** 依次检查 CLI 发现、文件路径、客户端读取、任务完成和环境阻断。
 
+已经安装但内容可能过期？查看 **[Agent Skill 项目级更新实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/update-agent-skill/)**：先核对 `skills-lock.json`，再运行固定版本更新，并比较完整文件夹与全局边界。
+
 想把重复工作变成 Skill？查看 **[创建 Codex Skill 中文实战](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/create-codex-skill/)**：从最小 SKILL.md、触发描述到安装与自动触发测试。
 
 仓库也已被 [skills.sh 收录](https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools)，可查看 13 个 Skill 的独立页面和该平台记录的聚合安装次数。该数字来自 skills CLI 遥测，可能包含维护者安装核验，不等于独立用户、实际使用效果或质量认证。

@@ -66,6 +66,7 @@ class PublicFeedsTest(unittest.TestCase):
         self.assertIn("如何创建 Codex Skill：从 SKILL.md 到自动触发", feed)
         self.assertIn("Agent Skill 安装前安全检查：只读本地审计器", feed)
         self.assertIn("skills CLI 1.5.22 隔离安装与项目更新复测：13/13 一致", feed)
+        self.assertIn("Agent Skill 怎么更新：skills update 项目级实测", feed)
         self.assertIn("不会持续同步", feed)
 
     def test_sitemap_contains_every_repository_owned_skill(self):
