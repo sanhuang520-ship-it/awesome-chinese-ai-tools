@@ -1,6 +1,6 @@
 # Chinese AI Agent Skills Directory
 
-An evidence-first directory of **184 Agent Skill entries from 141 source repositories**, focused on Chinese-language workflows. This repository also maintains 13 first-party Skills and 46 AI tool links.
+An evidence-first directory of **195 Agent Skill entries from 152 source repositories**, focused on Chinese-language workflows. This repository also maintains 13 first-party Skills and 46 AI tool links.
 
 [中文 README](README.md) · [Browsable directory](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/) · [Compatibility evidence](COMPATIBILITY.md) · [Failure repair guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/fix-agent-skill/) · [Pre-install audit](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/) · [Quality labels](QUALITY.md) · [Security policy](SECURITY.md)
 
@@ -13,7 +13,7 @@ Prefer a concise web path? Open the [Chinese Agent Skills / Chinese AI Skills gu
 - **Same-task remediation evidence:** two preregistered failures remained public, received minimal instruction fixes, and then passed the unchanged original tasks at 4/4. This is task-level evidence, not an overall accuracy or cross-client claim.
 - **Review before install:** a read-only local scanner reports scripts, symlinks, network access, credential-related terms, file mutation and high-attention commands without executing the target Skill. Findings are review indicators, not a security certification.
 - **Explicit boundaries:** Claude Code and Cursor task-level compatibility are still untested by this repository.
-- **Daily source checks:** GitHub Actions rechecks the 141 source repositories and 46 tool links. A live link does not prove current pricing, safety, or client compatibility.
+- **Daily source checks:** GitHub Actions rechecks the 152 source repositories and 46 tool links. A live link does not prove current pricing, safety, or client compatibility.
 - **No paid or coordinated Stars:** contributions should improve usefulness and evidence, not manipulate popularity signals.
 
 ## Install
