@@ -61,7 +61,7 @@
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/guofeng-threejs",
       "explainer": "guofeng-threejs/",
       "skillOk": true,
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "chinese-web-themes",
@@ -75,7 +75,7 @@
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/chinese-web-themes",
       "explainer": "themes/",
       "skillOk": true,
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "chinese-typography",
@@ -89,7 +89,7 @@
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/chinese-typography",
       "explainer": "typography/",
       "skillOk": true,
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "guochao-visual-cn",
@@ -103,7 +103,7 @@
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/guochao-visual-cn",
       "explainer": "guochao/",
       "skillOk": true,
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "book-digest-cn",
@@ -117,7 +117,7 @@
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/book-digest-cn",
       "explainer": "reading/",
       "skillOk": true,
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "ai-learning-coach",
@@ -131,7 +131,7 @@
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/ai-learning-coach",
       "explainer": "learning/",
       "skillOk": true,
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "bookkeeping-cn",
@@ -145,7 +145,7 @@
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/bookkeeping-cn",
       "explainer": "bookkeeping/",
       "skillOk": true,
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "homework-tutor-cn",
@@ -159,7 +159,7 @@
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/homework-tutor-cn",
       "explainer": "homework/",
       "skillOk": true,
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "chinese-work-report",
@@ -173,7 +173,7 @@
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/chinese-work-report",
       "explainer": "work-report/",
       "skillOk": true,
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "ecommerce-copywriting",
@@ -187,7 +187,7 @@
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/ecommerce-copywriting",
       "explainer": "ecommerce-copywriting/",
       "skillOk": true,
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "chinese-lesson-plan",
@@ -201,7 +201,7 @@
       "repo": "sanhuang520-ship-it/awesome-chinese-ai-tools/skills/chinese-lesson-plan",
       "explainer": "lesson-plan/",
       "skillOk": true,
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "docx",
@@ -212,8 +212,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/docx",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "pdf",
@@ -224,8 +224,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "pptx",
@@ -236,8 +236,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "xlsx",
@@ -248,8 +248,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "doc-coauthoring",
@@ -260,8 +260,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "skill-creator",
@@ -273,8 +273,8 @@
       "rec": true,
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "mcp-builder",
@@ -285,8 +285,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "web-artifacts-builder",
@@ -298,8 +298,8 @@
       "rec": true,
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "webapp-testing",
@@ -310,8 +310,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "frontend-design",
@@ -322,8 +322,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "claude-api",
@@ -334,8 +334,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/claude-api",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "canvas-design",
@@ -346,8 +346,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "algorithmic-art",
@@ -358,8 +358,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "theme-factory",
@@ -370,8 +370,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "brand-guidelines",
@@ -382,8 +382,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "slack-gif-creator",
@@ -394,8 +394,8 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "internal-comms",
@@ -406,151 +406,151 @@
       "url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "test-driven-development",
       "cat": "dev",
       "official": false,
-      "stars": 271443,
+      "stars": 271771,
       "desc": "测试驱动开发全流程指导，写代码前先写测试",
       "descEn": "Use when implementing any feature or bugfix, before writing implementation code.",
       "url": "https://github.com/obra/superpowers/tree/main/skills/test-driven-development",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "using-git-worktrees",
       "cat": "dev",
       "official": false,
-      "stars": 271443,
+      "stars": 271771,
       "desc": "自动创建隔离的 git worktree，多分支并行开发不打架",
       "descEn": "Creates isolated git worktrees with smart directory selection and safety verification.",
       "url": "https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "finishing-a-development-branch",
       "cat": "dev",
       "official": false,
-      "stars": 271443,
+      "stars": 271771,
       "desc": "开发分支收尾：合并、清理、发布的标准流程",
       "descEn": "Guides completion of development work by presenting clear options and handling chosen workflow.",
       "url": "https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "subagent-driven-development",
       "cat": "dev",
       "official": false,
-      "stars": 1331,
+      "stars": 1333,
       "desc": "把任务拆给多个子智能体并行处理，加速复杂开发",
       "descEn": "Dispatches independent subagents for individual tasks with code review checkpoints between iterations for rapid, controlled development.",
       "url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/sadd/skills/subagent-driven-development",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-12",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "software-architecture",
       "cat": "dev",
       "official": false,
-      "stars": 1331,
+      "stars": 1333,
       "desc": "实现整洁架构、SOLID 等设计模式",
       "descEn": "Implements design patterns including Clean Architecture, SOLID principles, and comprehensive software design best practices.",
       "url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/ddd/skills/software-architecture",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-12",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "prompt-engineering",
       "cat": "dev",
       "official": false,
-      "stars": 1331,
+      "stars": 1333,
       "desc": "系统讲解提示词工程的技巧与模式",
       "descEn": "Teaches well-known prompt engineering techniques and patterns, including Anthropic best practices and agent persuasion principles.",
       "url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/customaize-agent/skills/prompt-engineering",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-12",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Skill Seekers",
       "cat": "dev",
       "official": false,
-      "stars": 14754,
+      "stars": 14755,
       "desc": "把任意文档网站自动转成 Claude Skill —— 造 skill 的利器",
       "descEn": "Automatically converts any documentation website into a Claude AI skill in minutes.",
       "url": "https://github.com/yusufkaraaslan/Skill_Seekers",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-09",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Playwright Browser Automation",
       "cat": "dev",
       "official": false,
-      "stars": 3021,
+      "stars": 3024,
       "desc": "用 Playwright 做浏览器自动化测试与验证",
       "descEn": "Model-invoked Playwright automation for testing and validating web applications.",
       "url": "https://github.com/lackeyjb/playwright-skill",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-11",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "lean-ctx",
       "cat": "dev",
       "official": false,
-      "stars": 3570,
+      "stars": 3572,
       "desc": "AI 编程代理的上下文运行时，管理会话与上下文",
       "descEn": "MCP server and context runtime for AI coding agents: session caching, AST-aware compression, and 90+ shell patterns to reduce token usage. Supports Cl",
       "url": "https://github.com/yvgude/lean-ctx",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "iOS Simulator",
       "cat": "dev",
       "official": false,
-      "stars": 1211,
+      "stars": 1212,
       "desc": "操作 iOS 模拟器做 App 测试",
       "descEn": "Enables Claude to interact with iOS Simulator for testing and debugging iOS applications.",
       "url": "https://github.com/conorluddy/ios-simulator-skill",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-18",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "aws-skills",
       "cat": "dev",
       "official": false,
-      "stars": 348,
+      "stars": 349,
       "desc": "AWS 开发：CDK 最佳实践、成本优化、Serverless 架构",
       "descEn": "AWS development with CDK best practices, cost optimization MCP servers, and serverless/event-driven architecture patterns.",
       "url": "https://github.com/zxkane/aws-skills",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-15",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "D3.js Visualization",
@@ -563,59 +563,59 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2025-10-18",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "great_cto",
       "cat": "dev",
       "official": false,
-      "stars": 76,
+      "stars": 77,
       "desc": "7 个专业子智能体（技术负责人、资深工程师等）组成的技术团队",
       "descEn": "Claude Code plugin: 7 specialised subagents (tech-lead, senior-dev, qa-engineer, security-officer, devops, l3-support, project-auditor) orchestrating ",
       "url": "https://github.com/avelikiy/great_cto",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-12",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "reddit-fetch",
       "cat": "dev",
       "official": false,
-      "stars": 9610,
+      "stars": 9613,
       "desc": "当 WebFetch 被拦时，通过 Gemini CLI 抓取 Reddit 内容",
       "descEn": "Fetches Reddit content via Gemini CLI when WebFetch is blocked or returns 403 errors.",
       "url": "https://github.com/ykdojo/claude-code-tips/tree/main/skills/reddit-fetch",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-06",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "root-cause-tracing",
       "cat": "data",
       "official": false,
-      "stars": 271443,
+      "stars": 271771,
       "desc": "错误深藏在执行链路时，追溯根本原因",
       "descEn": "Use when errors occur deep in execution and you need to trace back to find the original trigger.",
       "url": "https://github.com/obra/superpowers/tree/main/skills/root-cause-tracing",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "deep-research",
       "cat": "data",
       "official": false,
-      "stars": 398,
+      "stars": 399,
       "desc": "调用 Gemini Deep Research 做自主多步研究",
       "descEn": "Execute autonomous multi-step research using Gemini Deep Research Agent for market analysis, competitive landscaping, and literature reviews.",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-09",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "CSV Data Summarizer",
@@ -628,20 +628,20 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2025-10-16",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "postgres",
       "cat": "data",
       "official": false,
-      "stars": 398,
+      "stars": 399,
       "desc": "对 PostgreSQL 执行安全的只读 SQL 查询",
       "descEn": "Execute safe read-only SQL queries against PostgreSQL databases with multi-connection support and defense-in-depth security.",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-09",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "recursive-research",
@@ -654,7 +654,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-04-22",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "swiftui-design-skill",
@@ -667,33 +667,33 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-05-01",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "imagen",
       "cat": "design",
       "official": false,
-      "stars": 398,
+      "stars": 399,
       "desc": "调用 Google Gemini 图像生成 API 出图",
       "descEn": "Generate images using Google Gemini's image generation API for UI mockups, icons, illustrations, and visual assets.",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-09",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "anydesign",
       "cat": "design",
       "official": false,
-      "stars": 155,
+      "stars": 156,
       "desc": "分析任意图片/网址/Figma 文件，生成结构化设计规范",
       "descEn": "Analyzes any image, URL, or Figma file and generates a structured `design.md` with the full design system, component inventory, and reconstruction not",
       "url": "https://github.com/uxKero/anydesign",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-11",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "youtube-transcript",
@@ -706,7 +706,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-03-11",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Markdown to EPUB Converter",
@@ -719,7 +719,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2025-10-18",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Master Claude for Legal",
@@ -732,7 +732,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-05-18",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "article-extractor",
@@ -745,46 +745,46 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-03-11",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "NotebookLM Integration",
       "cat": "doc",
       "official": false,
-      "stars": 7606,
+      "stars": 7618,
       "desc": "让 Claude Code 直接对话 NotebookLM，做有出处的问答",
       "descEn": "Lets Claude Code chat directly with NotebookLM for source-grounded answers based exclusively on uploaded documents.",
       "url": "https://github.com/PleasePrompto/notebooklm-skill",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2025-11-21",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "brainstorming",
       "cat": "biz",
       "official": false,
-      "stars": 271443,
+      "stars": 271771,
       "desc": "把粗略想法通过结构化提问变成完整方案",
       "descEn": "Transform rough ideas into fully-formed designs through structured questioning and alternative exploration.",
       "url": "https://github.com/obra/superpowers/tree/main/skills/brainstorming",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "google-workspace-skills",
       "cat": "biz",
       "official": false,
-      "stars": 398,
+      "stars": 399,
       "desc": "Google 全家桶集成：Gmail、日历、Chat 等",
       "descEn": "Suite of Google Workspace integrations: Gmail, Calendar, Chat, Docs, Sheets, Slides, and Drive with cross-platform OAuth.",
       "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-09",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "n8n-skills",
@@ -797,20 +797,20 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-09",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "kaizen",
       "cat": "biz",
       "official": false,
-      "stars": 1331,
+      "stars": 1333,
       "desc": "持续改进方法论，多种分析框架",
       "descEn": "Applies continuous improvement methodology with multiple analytical approaches, based on Japanese Kaizen philosophy and Lean methodology.",
       "url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/kaizen/skills/kaizen",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-12",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "tapestry",
@@ -823,7 +823,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-03-11",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "ship-learn-next",
@@ -836,7 +836,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-03-11",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "solo-skills",
@@ -849,20 +849,20 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-01",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Brand Build Skills",
       "cat": "biz",
       "official": false,
-      "stars": 538,
+      "stars": 540,
       "desc": "59 个 skill 的品牌与网站全生命周期库",
       "descEn": "59-skill library covering the full website lifecycle: brand, design, content, SEO, dev, ops, growth, and research. Stack-agnostic with an Ahrefs MCP-p",
       "url": "https://github.com/rampstackco/claude-skills",
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-10",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "computer-forensics",
@@ -875,7 +875,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-25",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "metadata-extraction",
@@ -888,7 +888,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-25",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "file-deletion",
@@ -901,7 +901,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-25",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "FFUF Web Fuzzing",
@@ -914,7 +914,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2025-10-16",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "pakco-html",
@@ -928,13 +928,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "superpowers-zh",
       "cat": "cn",
       "official": false,
-      "stars": 7645,
+      "stars": 7652,
       "desc": "superpowers 中文增强版：14 个核心工作流汉化 + 6 个中国开发场景 Skill；上游 README 当前列出 20 个 Skill",
       "descEn": "Chinese-enhanced superpowers edition: 14 translated core workflows plus 6 China-focused development Skills; the upstream README currently lists 20 Skills.",
       "url": "https://github.com/jnMetaCode/superpowers-zh",
@@ -942,13 +942,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-12",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "codex-claude-academic-skills",
       "cat": "cn",
       "official": false,
-      "stars": 2829,
+      "stars": 2853,
       "desc": "学术科研三件套：文献阅读、论文写作、科学计算全流程",
       "descEn": "本仓库包含三个面向学术科研人员的Skills，覆盖从文献阅读、论文写作到科学计算的完整研究工作流。office-academic-skill 负责论文阅读报告与学术 PPT/Word 文档生成；research-writ",
       "url": "https://github.com/zLanqing/codex-claude-academic-skills",
@@ -956,13 +956,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-05-14",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "everything-claude-code-zh",
       "cat": "cn",
       "official": false,
-      "stars": 1854,
+      "stars": 1858,
       "desc": "Claude Code 完整配置中文翻译（agents/skills/hooks/commands）",
       "descEn": "everything-claude-code 中文翻译项目：完整的 Claude Code 配置集合（agents, skills, hooks, commands, rules, MCPs）。源自 Anthropic ",
       "url": "https://github.com/xu-xiang/everything-claude-code-zh",
@@ -970,13 +970,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-03-05",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "agent-skills-with-anthropic",
       "cat": "cn",
       "official": false,
-      "stars": 1462,
+      "stars": 1463,
       "desc": "吴恩达 DeepLearning.AI 课程的中文翻译与知识整理",
       "descEn": "本项目围绕吴恩达老师在DeepLearning.AI出品的agent-skills-with-anthropic系列课程，为学习者打造中文翻译与知识整理教程。项目提供课程内容翻译、知识点梳理和示例代码解读等内容，欢迎大家",
       "url": "https://github.com/datawhalechina/agent-skills-with-anthropic",
@@ -984,13 +984,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-01",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "shuorenhua",
       "cat": "cn",
       "official": false,
-      "stars": 1054,
+      "stars": 1060,
       "desc": "「说人话」去 AI 味改写：保事实、分场景、改完可直接发",
       "descEn": "说人话｜中文优先的去 AI 味改写 skill：保事实、分场景、改完可直接发。Chinese-first rewrite skill for Codex / Claude Code / Cursor / ChatGPT ",
       "url": "https://github.com/MrGeDiao/shuorenhua",
@@ -998,13 +998,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Awesome-Journal-Skills",
       "cat": "cn",
       "official": false,
-      "stars": 980,
+      "stars": 984,
       "desc": "主流期刊投稿技能包（AER、QJE 等经济学顶刊）",
       "descEn": "Journal-specific Claude Code/Codex skill packs covering mainstream journals — AER, QJE, Nature, Cell, 管理世界, 经济",
       "url": "https://github.com/brycewang-stanford/Awesome-Journal-Skills",
@@ -1012,7 +1012,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-09",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "speak-human-tw",
@@ -1026,13 +1026,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "claude-code-skills-zh",
       "cat": "cn",
       "official": false,
-      "stars": 759,
+      "stars": 761,
       "desc": "面向中文开发者的技能库，按场景分类、复制即装",
       "descEn": "面向中文开发者的 Claude Code Skills / Agents / Plugins 精选与原创技能库｜按场景分类｜复制即装｜持续更新",
       "url": "https://github.com/laolaoshiren/claude-code-skills-zh",
@@ -1040,7 +1040,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "higgsfield-seedance2-jineng",
@@ -1054,13 +1054,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-04-09",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "xiaohu-wechat-format",
       "cat": "cn",
       "official": false,
-      "stars": 683,
+      "stars": 684,
       "desc": "公众号一键排版发布：Markdown → 微信 HTML，30 套主题",
       "descEn": "Claude Code 公众号一键排版+发布技能 | Markdown → 微信兼容 HTML → 推送草稿箱 | 30 套主题 + 可视化画廊",
       "url": "https://github.com/xiaohuailabs/xiaohu-wechat-format",
@@ -1068,7 +1068,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-12",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Claude_skills_zh-CN",
@@ -1082,13 +1082,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-01-19",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "cuimao-translator",
       "cat": "cn",
       "official": false,
-      "stars": 461,
+      "stars": 462,
       "desc": "一键把英文 PDF 翻译成流畅中文",
       "descEn": "一键将英文PDF翻译为流畅中文的Claude Code技能",
       "url": "https://github.com/Cuimao777/cuimao-translator",
@@ -1096,13 +1096,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-04-29",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "video-recap-skills",
       "cat": "cn",
       "official": false,
-      "stars": 451,
+      "stars": 453,
       "desc": "把任意视频剪成解说式短片",
       "descEn": "Clip any video into a narration recap with claude code skill｜用 claude code skill 把任何视频剪辑成中文解说视频，支持剪映导出",
       "url": "https://github.com/worldwonderer/video-recap-skills",
@@ -1110,7 +1110,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-26",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "yupi-skill",
@@ -1124,13 +1124,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-04-09",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "docx-skill-4-cn-paper",
       "cat": "cn",
       "official": false,
-      "stars": 360,
+      "stars": 361,
       "desc": "中文论文排版规范：课程论文、数模竞赛、毕业论文",
       "descEn": "中文论文常用排版格式Skills，适用于课程论文、数模竞赛、毕业论文等场景，让llm agent写word论文或者将.md转.docx时可调用",
       "url": "https://github.com/Gostyan/docx-skill-4-cn-paper",
@@ -1138,7 +1138,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-12",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "xiaohongshu-skills",
@@ -1152,7 +1152,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-01-23",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "opencode-skills",
@@ -1166,7 +1166,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-22",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "universal-examprep-skill",
@@ -1180,7 +1180,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-19",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "skills_collection",
@@ -1194,13 +1194,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-09",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "humanizer-zh-academic",
       "cat": "cn",
       "official": false,
-      "stars": 245,
+      "stars": 246,
       "desc": "面向中文学术文本的 AI 写作特征审查与改写；检测率变化仅为上游案例，本仓库未独立复现",
       "descEn": "Reviews and rewrites AI-like patterns in Chinese academic text; detection-rate changes are upstream case claims not independently reproduced here.",
       "url": "https://github.com/redbaronyyyyy-eng/humanizer-zh-academic",
@@ -1208,7 +1208,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-02-24",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "awesome-skills-cn",
@@ -1222,7 +1222,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-16",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "niubiskill",
@@ -1236,7 +1236,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-02",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Vibe_coding_guide",
@@ -1250,7 +1250,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-25",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "technical-writing",
@@ -1264,13 +1264,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-05-27",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "SecSkills",
       "cat": "cn",
       "official": false,
-      "stars": 207,
+      "stars": 208,
       "desc": "渗透测试技能模块，遵循 PTES 标准全阶段覆盖",
       "descEn": "面向 Claude Code 的专业渗透测试技能模块。严格遵循 PTES 标准，覆盖信息收集、漏洞利用、后渗透与免杀规避全阶段。不定期更新skill，以达到优化skill。",
       "url": "https://github.com/Arenbai/SecSkills",
@@ -1278,7 +1278,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-05",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "makeownsrt",
@@ -1292,7 +1292,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-03-05",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Auto-CV",
@@ -1306,13 +1306,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-03-27",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "JobOK",
       "cat": "cn",
       "official": false,
-      "stars": 130,
+      "stars": 131,
       "desc": "中文求职：优势挖掘、岗位匹配、简历优化、面试训练",
       "descEn": "Job OK: 面向中文求职者的证据驱动求职 Agent Skill，支持优势挖掘、岗位匹配、简历优化、面试训练和投递跟踪。",
       "url": "https://github.com/GresonKwan/JobOK",
@@ -1320,7 +1320,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-18",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "wechat-writing-style",
@@ -1334,7 +1334,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-04-10",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "refine-legal-chinese",
@@ -1348,21 +1348,21 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-19",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "reverse-skill",
       "cat": "sec",
       "official": false,
-      "stars": 24649,
+      "stars": 24952,
       "desc": "逆向工程与授权渗透测试的 Skill 路由包",
       "descEn": "Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing ",
       "url": "https://github.com/zhaoxuya520/reverse-skill",
       "repo": "zhaoxuya520/reverse-skill",
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-12",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "AppGenesisForge",
@@ -1376,13 +1376,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-19",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "humanities-writing-companion",
       "cat": "cn",
       "official": false,
-      "stars": 358,
+      "stars": 360,
       "desc": "人文学科写作助手：11 种模式覆盖构思到成稿",
       "descEn": "End-to-end humanities writing assistant — an Agent Skill (open SKILL.md format). 11 modes from Socratic resear",
       "url": "https://github.com/tizzy916/humanities-writing-companion",
@@ -1390,7 +1390,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-13",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Bloom",
@@ -1404,7 +1404,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-23",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "openclaw-guide",
@@ -1418,13 +1418,13 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-04-15",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "hermes-arxiv-agent",
       "cat": "cn",
       "official": false,
-      "stars": 114,
+      "stars": 115,
       "desc": "每天自动抓 arXiv 论文，生成中文摘要推送到飞书",
       "descEn": "一个基于 Hermes 的 agent skill：每天自动从 arXiv 抓取论文，用 AI 生成中文摘要和作者单位，推送到飞书，并提供本地静态阅读网站。 ",
       "url": "https://github.com/genggng/hermes-arxiv-agent",
@@ -1432,7 +1432,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "kc_ai_skills",
@@ -1446,7 +1446,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-07",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "stop-slop-zh",
@@ -1460,7 +1460,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-05-28",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "cnki-aigc---skill",
@@ -1474,7 +1474,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-05-01",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "awesome-skills-zh",
@@ -1488,7 +1488,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-05",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "scholar-wendao-skill",
@@ -1502,7 +1502,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-05-19",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "awesome-claude-skills-zh",
@@ -1516,7 +1516,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-05-20",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "ip-character-designer",
@@ -1530,7 +1530,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-04-15",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "cn-humanizer-academic",
@@ -1544,7 +1544,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-05-19",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "CN-The-Complete-Guide-to-Building-Skill-for-Claude",
@@ -1558,7 +1558,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-02-28",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "ai-video-creator",
@@ -1572,7 +1572,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-11",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "awesome-claude-skills-zh-TW",
@@ -1586,7 +1586,7 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2025-12-15",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "awesome-claude-skills-cn",
@@ -1600,72 +1600,72 @@
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-01-14",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "img2threejs",
       "cat": "3d",
       "official": false,
-      "stars": 11504,
+      "stars": 11600,
       "desc": "把参考图还原成纯代码的程序化 Three.js 模型，带质量门禁、可直接做动画。用于图生 3D、物体精细重建、风格化人物",
       "descEn": "Turn an object or character reference image into a quality-gated, animation-ready procedural Three.js model built in code.",
       "url": "https://github.com/img2threejs/img2threejs",
-      "lastPush": "2026-08-12",
+      "lastPush": "2026-08-13",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "threejs-skills",
       "cat": "3d",
       "official": false,
-      "stars": 2970,
+      "stars": 2977,
       "desc": "Three.js 分领域技能包（10 个子技能）：场景与相机基础、几何体、材质、贴图、光照、动画、交互、着色器、后期处理、模型加载",
       "descEn": "Three.js scene setup, cameras, renderer, Object3D hierarchy, coordinate systems, geometry, materials, textures, lighting, animation, interaction, shaders, postprocessing, loaders.",
       "url": "https://github.com/CloudAI-X/threejs-skills",
       "lastPush": "2026-07-09",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "threejs-game-skills",
       "cat": "3d",
       "official": false,
-      "stars": 1272,
+      "stars": 1281,
       "desc": "用 Three.js 做浏览器游戏的 9 个技能：玩法系统、AAA 级画面、游戏 UI、3D/图像/音频资产生成、调试与性能分析、QA 与发布",
       "descEn": "Agent skills for building playable, polished Three.js browser games with gameplay, AAA-style graphics, UI, debug/profile, and QA/release.",
       "url": "https://github.com/majidmanzarpour/threejs-game-skills",
       "lastPush": "2026-07-16",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "img2obj",
       "cat": "3d",
       "official": false,
-      "stars": 1582,
+      "stars": 1583,
       "desc": "Codex 插件：给一张物体图，校验并把它重建为可编辑的程序化 Three.js 资产",
       "descEn": "Use when the user provides or references an object image and wants Codex to validate, reconstruct, review, or refine it as an editable procedural Three.js asset.",
       "url": "https://github.com/vinhhien112/img2obj",
       "lastPush": "2026-08-06",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "auteur",
       "cat": "3d",
       "official": false,
-      "stars": 1058,
+      "stars": 1013,
       "desc": "把网页当电影来导：整站从零设计构建，滚动驱动的电影感叙事页，多屏产品（应用/仪表盘/后台/引导/文档）共用一套设计系统",
       "descEn": "Design and build complete web experiences from scratch — award-level pages, cinematic scroll-directed sites where the page is directed like a film.",
       "url": "https://github.com/agiwhitelist/auteur",
       "lastPush": "2026-08-06",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Claude-Code-Game-Studios",
@@ -1674,11 +1674,11 @@
       "descEn": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system.",
       "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
       "official": false,
-      "stars": 23836,
+      "stars": 23857,
       "lastPush": "2026-05-21",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "GD-Agentic-Skills",
@@ -1687,11 +1687,11 @@
       "descEn": "The official \"Long-Term Memory\" for Godot 4.7+ AI Agents. A high-density library of 97 expert skills and 27 guides.",
       "url": "https://github.com/thedivergentai/GD-Agentic-Skills",
       "official": false,
-      "stars": 508,
+      "stars": 510,
       "lastPush": "2026-08-12",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "awesome-gamedev-agent-skills",
@@ -1700,11 +1700,11 @@
       "descEn": "Game-development Agent Skills for AI coding agents: install once and a master router loads the right skill for the engine and task.",
       "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
       "official": false,
-      "stars": 498,
+      "stars": 507,
       "lastPush": "2026-08-11",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "novel-to-game",
@@ -1713,11 +1713,11 @@
       "descEn": "Agent Skills that turn novels into source-grounded, fully playable games for Claude Code, Codex, and Kimi Code.",
       "url": "https://github.com/worldwonderer/novel-to-game",
       "official": false,
-      "stars": 644,
+      "stars": 650,
       "lastPush": "2026-08-12",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "sprite-gen",
@@ -1726,11 +1726,11 @@
       "descEn": "Generate clean 2D game sprites and animation atlases with a component-row pipeline: base identity, per-state layout guides, chroma-key alpha cleanup.",
       "url": "https://github.com/aldegad/sprite-gen",
       "official": false,
-      "stars": 683,
+      "stars": 691,
       "lastPush": "2026-08-13",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "gzh-design-skill",
@@ -1739,11 +1739,11 @@
       "descEn": "An AI-agent skill that turns Markdown into paste-ready WeChat Official Account HTML with 6 curated themes.",
       "url": "https://github.com/isjiamu/gzh-design-skill",
       "official": false,
-      "stars": 3060,
+      "stars": 3081,
       "lastPush": "2026-07-08",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "drawio-skill",
@@ -1752,11 +1752,11 @@
       "descEn": "Generate draw.io diagrams from natural language — 11 presets (UML, SysML/MBSE, BPMN, network, C4…), 36 tools.",
       "url": "https://github.com/Agents365-ai/drawio-skill",
       "official": false,
-      "stars": 7553,
+      "stars": 7582,
       "lastPush": "2026-08-05",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Enterprise-ai-scenario-map-skill",
@@ -1769,7 +1769,7 @@
       "lastPush": "2026-04-01",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "github-readme-cn",
@@ -1781,7 +1781,7 @@
       "explainer": "readme-audit/",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "humanizer-zh",
@@ -1791,11 +1791,11 @@
       "descEn": "Remove AI-generated traces from text. Based on Wikipedia's AI writing characteristics guide.",
       "url": "https://github.com/op7418/humanizer-zh",
       "official": false,
-      "stars": 15210,
+      "stars": 15242,
       "lastPush": "2026-01-19",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13",
+      "skillCheckedAt": "2026-08-14",
       "installsAt": "2026-08-08",
       "installsSrc": "skills.sh"
     },
@@ -1807,11 +1807,11 @@
       "descEn": "SEO & GEO skills for Claude: backlink analyzer, keyword research, SEO content writer.",
       "url": "https://github.com/aaron-he-zhu/seo-geo-claude-skills",
       "official": false,
-      "stars": 148,
+      "stars": 151,
       "lastPush": "2026-07-13",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13",
+      "skillCheckedAt": "2026-08-14",
       "installsAt": "2026-08-08",
       "installsSrc": "skills.sh"
     },
@@ -1823,11 +1823,11 @@
       "descEn": "Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss.",
       "url": "https://github.com/othmanadi/planning-with-files",
       "official": false,
-      "stars": 26139,
+      "stars": 26156,
       "lastPush": "2026-08-09",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13",
+      "skillCheckedAt": "2026-08-14",
       "installsAt": "2026-08-08",
       "installsSrc": "skills.sh"
     },
@@ -1839,11 +1839,11 @@
       "descEn": "Create technical diagrams such as software architecture, data flow, flowcharts, sequence diagrams, C4 reviews, cloud deployments, event streams.",
       "url": "https://github.com/yizhiyanhua-ai/fireworks-tech-graph",
       "official": false,
-      "stars": 9873,
+      "stars": 9886,
       "lastPush": "2026-07-17",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13",
+      "skillCheckedAt": "2026-08-14",
       "installsAt": "2026-08-08",
       "installsSrc": "skills.sh"
     },
@@ -1859,7 +1859,7 @@
       "lastPush": "2026-03-08",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13",
+      "skillCheckedAt": "2026-08-14",
       "installsAt": "2026-08-08",
       "installsSrc": "skills.sh"
     },
@@ -1871,11 +1871,11 @@
       "descEn": "Zhang Xuefeng's mental models and expression style, distilled from books and interviews.",
       "url": "https://github.com/alchaincyf/zhangxuefeng-skill",
       "official": false,
-      "stars": 10124,
+      "stars": 10128,
       "lastPush": "2026-05-28",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13",
+      "skillCheckedAt": "2026-08-14",
       "installsAt": "2026-08-08",
       "installsSrc": "skills.sh"
     },
@@ -1887,11 +1887,11 @@
       "descEn": "Baoyu's skill collection: WeChat article summary, universal release workflow, and more.",
       "url": "https://github.com/jimliu/baoyu-skills",
       "official": false,
-      "stars": 24939,
+      "stars": 24961,
       "lastPush": "2026-07-04",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13",
+      "skillCheckedAt": "2026-08-14",
       "installsAt": "2026-08-08",
       "installsSrc": "skills.sh"
     },
@@ -1903,11 +1903,11 @@
       "descEn": "Personal skill collection: WeChat HTML formatting, Adlerian framework for diagnosing procrastination.",
       "url": "https://github.com/dontbesilent2025/dbskill",
       "official": false,
-      "stars": 9451,
-      "lastPush": "2026-08-11",
+      "stars": 9466,
+      "lastPush": "2026-08-13",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13",
+      "skillCheckedAt": "2026-08-14",
       "installsAt": "2026-08-08",
       "installsSrc": "skills.sh"
     },
@@ -1918,11 +1918,11 @@
       "desc": "生成可编辑的原生 PPTX：原生形状、转场动画、数据图表；可建可复用的品牌/风格/版式工作区，也能填充现有 PPTX 模板或增强已完成的稿子",
       "descEn": "AI-driven presentation workflow for generating editable PPTX decks, creating reusable Brand/Style/Layout/Deck workspaces, filling native PPTX templates.",
       "url": "https://github.com/hugohe3/ppt-master",
-      "stars": 46171,
-      "lastPush": "2026-08-13",
+      "stars": 46539,
+      "lastPush": "2026-08-14",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "frontend-slides",
@@ -1931,11 +1931,11 @@
       "desc": "用前端能力做网页幻灯片：从零生成或把 PPT/PPTX 转成网页，动画丰富，面向不做设计的人",
       "descEn": "Create stunning, animation-rich HTML presentations from scratch or by converting PowerPoint files. Helps non-designers.",
       "url": "https://github.com/zarazhangrui/frontend-slides",
-      "stars": 27437,
+      "stars": 27473,
       "lastPush": "2026-06-23",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "guizang-ppt-skill",
@@ -1944,11 +1944,11 @@
       "desc": "横向翻页网页 PPT（单 HTML）：含 WebGL 背景、演讲者视图、观众屏同步、讲稿备注。两种风格——「电子杂志×电子墨水」和「瑞士国际主义」",
       "descEn": "AI-agent Skill for generating polished HTML slide decks: editorial magazine and Swiss layouts.",
       "url": "https://github.com/op7418/guizang-ppt-skill",
-      "stars": 23910,
+      "stars": 23955,
       "lastPush": "2026-08-07",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "html-ppt-skill",
@@ -1957,11 +1957,11 @@
       "desc": "HTML PPT Studio：24 套主题、31 种版式、20+ 动画，模板驱动的静态 HTML 演示",
       "descEn": "HTML PPT Studio — 24 themes, 31 layouts, 20+ animations for professional HTML presentations.",
       "url": "https://github.com/lewislulu/html-ppt-skill",
-      "stars": 7839,
+      "stars": 7849,
       "lastPush": "2026-04-26",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "qiaomu-anything-to-notebooklm",
@@ -1970,11 +1970,11 @@
       "desc": "多源内容处理器：公众号、网页、YouTube、播客（小宇宙/喜马拉雅）、PDF、Markdown → 自动上传 NotebookLM 并生成播客/PPT/思维导图",
       "descEn": "Multi-source content processor for NotebookLM. Supports WeChat articles, web pages, YouTube, PDF.",
       "url": "https://github.com/joeseesun/qiaomu-anything-to-notebooklm",
-      "stars": 5742,
+      "stars": 5743,
       "lastPush": "2026-04-28",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "dashi-ppt-skill",
@@ -1983,11 +1983,11 @@
       "desc": "基于预置视觉主题组合页面，生成可离线打开、可在浏览器编辑的 HTML 演示，支持导出 PPTX / PDF",
       "descEn": "Generates browser-editable presentations from multiple visual themes, exportable to HTML/PPTX/PDF.",
       "url": "https://github.com/chuspeeism/dashi-ppt-skill",
-      "stars": 5081,
+      "stars": 5097,
       "lastPush": "2026-07-30",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "codex-ppt-skill",
@@ -1996,11 +1996,11 @@
       "desc": "用 GPT-Image-2 从文章、报告、论文、笔记或大纲生成视觉统一的图片式 PPTX",
       "descEn": "Generate visually unified image-based PPT/PPTX decks from articles, reports, papers, notes, or outlines.",
       "url": "https://github.com/ningzimu/codex-ppt-skill",
-      "stars": 4818,
+      "stars": 4832,
       "lastPush": "2026-07-30",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "bento",
@@ -2009,11 +2009,11 @@
       "desc": "把一套办公软件塞进单个文件：.bento.html 演示稿，文档本身是 JSON，双击就能编辑与放映，自带演讲者窗口",
       "descEn": "Single-file .bento.html decks whose document is plain JSON in a #bento-doc script block.",
       "url": "https://github.com/nyblnet/bento",
-      "stars": 3959,
+      "stars": 3984,
       "lastPush": "2026-08-12",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "NanoBanana-PPT-Skills",
@@ -2026,7 +2026,7 @@
       "lastPush": "2026-01-19",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "GordenPPTSkill",
@@ -2035,11 +2035,11 @@
       "desc": "21 套内置中文 PPT 模板（也支持自带 .pptx）：只替换文字、不破坏原排版配色字号，内置出框检测与同级标题字号校验。适合工作汇报、述职竞聘、开题答辩",
       "descEn": "AI-friendly PPT builder: hand-polished Chinese PPTX templates + non-destructive text-only editing.",
       "url": "https://github.com/GordenSun/GordenPPTSkill",
-      "stars": 2932,
+      "stars": 2934,
       "lastPush": "2026-06-22",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "image-to-editable-ppt-skill",
@@ -2048,11 +2048,11 @@
       "desc": "把幻灯片截图、扫描件、图片式 PPTX 和 PDF 还原成对象级可编辑的 PowerPoint",
       "descEn": "Rebuild slide images, image-based PPTX files, and PDF decks into object-level editable PowerPoint.",
       "url": "https://github.com/ningzimu/image-to-editable-ppt-skill",
-      "stars": 1966,
+      "stars": 1977,
       "lastPush": "2026-07-28",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "GordenSuperPPTSkills",
@@ -2061,11 +2061,11 @@
       "desc": "把图片格式的 PPT 逆向还原成可编辑 .pptx：复刻背景 + 绿幕抠框架 + 抠元素图标 + GPT 视觉提取文字，再合成（文字是真文本框）",
       "descEn": "Converts slide images back into an editable PPTX via background + skeleton + icon extraction.",
       "url": "https://github.com/GordenSun/GordenSuperPPTSkills",
-      "stars": 1762,
+      "stars": 1763,
       "lastPush": "2026-06-07",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "CyberPPT",
@@ -2074,11 +2074,11 @@
       "desc": "把 DOCX/PDF/TXT/XLSX、研究报告、原始数据转成高密度、可编辑的咨询风格 PPTX，支持 SCR 叙事、风格确认与渲染质检",
       "descEn": "Generates high-density, editable, consulting-style PowerPoint with SCR narrative and quality checks.",
       "url": "https://github.com/crazyykhllc-bit/CyberPPT",
-      "stars": 1580,
+      "stars": 1581,
       "lastPush": "2026-07-20",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "harness-anything",
@@ -2087,11 +2087,11 @@
       "desc": "AI 控制中枢：WPS、MS Office、Zotero、Photoshop，47 个 CLI 命令 + 27 个学术技能。含 JSON 数据驱动的 PPT 自动生成",
       "descEn": "AI agent control hub: WPS, MS Office, Zotero, Photoshop, 47 CLI commands, 27 academic skills.",
       "url": "https://github.com/yb2460/harness-anything",
-      "stars": 1442,
+      "stars": 1452,
       "lastPush": "2026-07-28",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "ian-handdrawn-ppt",
@@ -2100,11 +2100,11 @@
       "desc": "中文手绘技术 PPT 整页图像生成：21:9 封面 + 16:9 正文配图，PNG 输出",
       "descEn": "Chinese handdrawn technical article/PPT-style page images. 21:9 cover + 16:9 body.",
       "url": "https://github.com/helloianneo/ian-handdrawn-ppt",
-      "stars": 1320,
+      "stars": 1322,
       "lastPush": "2026-04-25",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "ppt-image-first",
@@ -2117,7 +2117,7 @@
       "lastPush": "2026-05-08",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "gpt-image2-ppt-skills",
@@ -2126,11 +2126,11 @@
       "desc": "克隆任意 .pptx 的版式做成自己的稿子：gpt-image-2 模仿版式，你提供内容。内置 10 套风格，输出高清 PNG 与 16:9 .pptx",
       "descEn": "Clone any .pptx into your own deck — gpt-image-2 mimics the layout, you supply the content.",
       "url": "https://github.com/JuneYaooo/gpt-image2-ppt-skills",
-      "stars": 1169,
+      "stars": 1170,
       "lastPush": "2026-08-02",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "ppt-agent-skills",
@@ -2143,7 +2143,7 @@
       "lastPush": "2026-06-08",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "taste-skill",
@@ -2152,11 +2152,11 @@
       "desc": "让 AI 别再生成套路化口水内容。13 个子技能：品牌套件、极简、粗野主义、图生代码、前端配图（Web/移动端）等，主打有审美的产出",
       "descEn": "Taste-Skill — gives your AI good taste. Stops the AI from generating boring, generic slop. Premium brand-kit image generation for brand-guidelines boards, logo systems, identity decks.",
       "url": "https://github.com/Leonxlnx/taste-skill",
-      "stars": 76056,
+      "stars": 76280,
       "lastPush": "2026-07-23",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "Agent-Reach",
@@ -2165,11 +2165,11 @@
       "desc": "给 AI 装上看全网的眼睛：读取与搜索 Twitter、Reddit、YouTube、GitHub、B 站、小红书。一个 CLI，零 API 费用。中文触发词齐全（全网调研 / 查一下 / 看看大家怎么评价）",
       "descEn": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, no API keys.",
       "url": "https://github.com/Panniantong/Agent-Reach",
-      "stars": 71276,
+      "stars": 71463,
       "lastPush": "2026-08-12",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "system_prompts_leaks",
@@ -2178,11 +2178,11 @@
       "desc": "各家 AI 产品的系统提示词收集：Anthropic（Claude Fable 5 / Opus 5 / Claude Code）、OpenAI（GPT-5.6-Sol / Codex）等，持续更新。含 9 个 SKILL.md",
       "descEn": "Extracted system prompts from Anthropic and OpenAI products, continuously updated.",
       "url": "https://github.com/asgeirtj/system_prompts_leaks",
-      "stars": 62810,
-      "lastPush": "2026-08-07",
+      "stars": 62855,
+      "lastPush": "2026-08-13",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "last30days-skill",
@@ -2191,11 +2191,11 @@
       "desc": "调研某个话题最近 30 天大家实际在说什么：抓 Reddit、X、YouTube、TikTok、HN、Polymarket、GitHub 的帖子与互动数据，输出带引用的总结。自带健康检查诊断失效数据源",
       "descEn": "Research what people actually say about any topic in the last 30 days across Reddit, X, YouTube, TikTok, Hacker News, Polymarket, GitHub — then synthesizes a grounded summary.",
       "url": "https://github.com/mvanhorn/last30days-skill",
-      "stars": 58048,
-      "lastPush": "2026-08-09",
+      "stars": 58128,
+      "lastPush": "2026-08-13",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "OpenMontage",
@@ -2204,11 +2204,11 @@
       "desc": "开源的智能体视频生产系统：12 条流水线、100+ 工具、700+ agent 技能，含 130 个 SKILL.md。覆盖配乐生成、素材处理、剪辑决策全流程",
       "descEn": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-kit files.",
       "url": "https://github.com/calesthio/OpenMontage",
-      "stars": 47865,
-      "lastPush": "2026-08-03",
+      "stars": 47976,
+      "lastPush": "2026-08-14",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "open-notebook",
@@ -2217,11 +2217,11 @@
       "desc": "NotebookLM 的开源替代，灵活度和功能更强。含发布流程编排技能（变更日志审计、风险分级测试矩阵、Docker 镜像门禁）",
       "descEn": "An Open Source implementation of Notebook LM with more flexibility and features.",
       "url": "https://github.com/lfnovo/open-notebook",
-      "stars": 36759,
+      "stars": 36788,
       "lastPush": "2026-08-11",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "pm-skills",
@@ -2230,11 +2230,11 @@
       "desc": "产品经理技能市场：68 个 PM Skill + 42 条链式工作流，打包成 9 个插件。覆盖需求发现、产品策略、执行、上线到增长。⚠️ 方法论偏国外语境，国内 PM 可作参考",
       "descEn": "PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.",
       "url": "https://github.com/phuryn/pm-skills",
-      "stars": 25217,
+      "stars": 25242,
       "lastPush": "2026-07-03",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "chinese-design-md",
@@ -2246,7 +2246,7 @@
       "explainer": "design/",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "claude-skill-web-clone",
@@ -2255,11 +2255,11 @@
       "desc": "网站复刻方法论：先拿真源码 → 判路径 → 逆向拆解 → 搭工程 → 替换内容。覆盖静态站/React/WebGL/Canvas/Three.js。作者强调不靠 AI 幻觉出来的代码",
       "descEn": "Methodology for faithfully cloning any website (static / React / WebGL) — without copying AI-hallucinated code.",
       "url": "https://github.com/Jane-xiaoer/claude-skill-web-clone",
-      "stars": 940,
+      "stars": 941,
       "lastPush": "2026-06-30",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "clone-any-website-skill",
@@ -2272,7 +2272,7 @@
       "lastPush": "2026-07-30",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "watch-skill",
@@ -2281,11 +2281,11 @@
       "desc": "让 AI 看懂视频：把视频、直播流、以及 agent 自己的录屏转成可理解的内容并自我校验。含 11 个 SKILL.md，一键装 ffmpeg/yt-dlp 与 MCP",
       "descEn": "Video understanding and self-verification for AI agents. Turn videos, streams, and agent screen recordings into structured understanding.",
       "url": "https://github.com/oxbshw/watch-skill",
-      "stars": 281,
+      "stars": 283,
       "lastPush": "2026-08-10",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "super-video-maker-skill",
@@ -2294,11 +2294,11 @@
       "desc": "端到端 AI 视频生产：HeyGen 数字人、Seedance/字节素材、OpenAI 配图、Remotion 合成，覆盖制作/剪辑/字幕/配乐/导出",
       "descEn": "End-to-end AI video production skill for agentic frameworks: HeyGen avatars, Seedance b-roll, OpenAI images, Remotion.",
       "url": "https://github.com/Bomx/super-video-maker-skill",
-      "stars": 214,
+      "stars": 216,
       "lastPush": "2026-08-09",
       "skillOk": true,
       "skillStatus": "ok",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "agent-skills",
@@ -2309,11 +2309,11 @@
       "url": "https://github.com/vercel-labs/agent-skills",
       "repo": "vercel-labs/agent-skills",
       "rec": false,
-      "stars": 29995,
+      "stars": 30011,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-12",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "claude-plugins-official",
@@ -2324,11 +2324,11 @@
       "url": "https://github.com/anthropics/claude-plugins-official",
       "repo": "anthropics/claude-plugins-official",
       "rec": false,
-      "stars": 33474,
+      "stars": 33505,
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-14",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "wshobson-agents",
@@ -2339,11 +2339,11 @@
       "url": "https://github.com/wshobson/agents",
       "repo": "wshobson/agents",
       "rec": false,
-      "stars": 38763,
+      "stars": 38779,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-05",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "claude-skills-345",
@@ -2354,11 +2354,11 @@
       "url": "https://github.com/alirezarezvani/claude-skills",
       "repo": "alirezarezvani/claude-skills",
       "rec": false,
-      "stars": 24370,
+      "stars": 24394,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-09",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "awesome-claude-code-subagents",
@@ -2369,11 +2369,11 @@
       "url": "https://github.com/voltagent/awesome-claude-code-subagents",
       "repo": "voltagent/awesome-claude-code-subagents",
       "rec": false,
-      "stars": 24256,
+      "stars": 24279,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-12",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "agent-skills-for-context-engineering",
@@ -2384,11 +2384,11 @@
       "url": "https://github.com/muratcankoylan/agent-skills-for-context-engineering",
       "repo": "muratcankoylan/agent-skills-for-context-engineering",
       "rec": false,
-      "stars": 17712,
+      "stars": 17718,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-10",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "garden-skills",
@@ -2399,11 +2399,11 @@
       "url": "https://github.com/conardli/garden-skills",
       "repo": "conardli/garden-skills",
       "rec": false,
-      "stars": 10288,
+      "stars": 10295,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-12",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "banana-slides",
@@ -2414,11 +2414,11 @@
       "url": "https://github.com/anionex/banana-slides",
       "repo": "anionex/banana-slides",
       "rec": false,
-      "stars": 15445,
+      "stars": 15449,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-10",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "wechatdownload",
@@ -2429,11 +2429,11 @@
       "url": "https://github.com/qiye45/wechatdownload",
       "repo": "qiye45/wechatdownload",
       "rec": false,
-      "stars": 8890,
+      "stars": 8898,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-21",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "agency-agents-zh",
@@ -2444,11 +2444,11 @@
       "url": "https://github.com/jnmetacode/agency-agents-zh",
       "repo": "jnmetacode/agency-agents-zh",
       "rec": false,
-      "stars": 19387,
+      "stars": 19422,
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-12",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "awesome-chatgpt-zh",
@@ -2459,11 +2459,11 @@
       "url": "https://github.com/embraceagi/awesome-chatgpt-zh",
       "repo": "embraceagi/awesome-chatgpt-zh",
       "rec": false,
-      "stars": 11642,
+      "stars": 11644,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-07-03",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "ian-xiaohei-illustrations",
@@ -2474,11 +2474,11 @@
       "url": "https://github.com/helloianneo/ian-xiaohei-illustrations",
       "repo": "helloianneo/ian-xiaohei-illustrations",
       "rec": false,
-      "stars": 9390,
+      "stars": 9405,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-06-03",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "composio-awesome-claude-skills",
@@ -2489,11 +2489,11 @@
       "url": "https://github.com/composiohq/awesome-claude-skills",
       "repo": "composiohq/awesome-claude-skills",
       "rec": false,
-      "stars": 72399,
+      "stars": 72439,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-10",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "awesome-claude-code",
@@ -2504,11 +2504,11 @@
       "url": "https://github.com/hesreallyhim/awesome-claude-code",
       "repo": "hesreallyhim/awesome-claude-code",
       "rec": false,
-      "stars": 52226,
+      "stars": 52265,
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-13",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-14",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "awesome-agent-skills",
@@ -2519,11 +2519,11 @@
       "url": "https://github.com/voltagent/awesome-agent-skills",
       "repo": "voltagent/awesome-agent-skills",
       "rec": false,
-      "stars": 30174,
+      "stars": 30224,
       "skillOk": true,
       "skillStatus": "ok",
-      "lastPush": "2026-08-12",
-      "skillCheckedAt": "2026-08-13"
+      "lastPush": "2026-08-13",
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "travisvn-awesome-claude-skills",
@@ -2534,11 +2534,11 @@
       "url": "https://github.com/travisvn/awesome-claude-skills",
       "repo": "travisvn/awesome-claude-skills",
       "rec": false,
-      "stars": 14629,
+      "stars": 14642,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-04-28",
-      "skillCheckedAt": "2026-08-13"
+      "skillCheckedAt": "2026-08-14"
     },
     {
       "name": "skillspector",
@@ -2564,7 +2564,7 @@
       "url": "https://github.com/titanwings/colleague-skill",
       "repo": "titanwings/colleague-skill",
       "rec": false,
-      "stars": 21246,
+      "stars": 21258,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
@@ -2594,7 +2594,7 @@
       "url": "https://github.com/anbeime/skill",
       "repo": "anbeime/skill",
       "rec": false,
-      "stars": 5239,
+      "stars": 5240,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-08-13",
@@ -2669,7 +2669,7 @@
       "url": "https://github.com/oh-my-mermaid/oh-my-mermaid",
       "repo": "oh-my-mermaid/oh-my-mermaid",
       "rec": false,
-      "stars": 2186,
+      "stars": 2187,
       "skillOk": true,
       "skillStatus": "ok",
       "lastPush": "2026-04-07",
@@ -2739,7 +2739,7 @@
     }
   ],
   "installCmd": "npx skills add <仓库地址>",
-  "skillsCheckedAt": "2026-08-13",
+  "skillsCheckedAt": "2026-08-14",
   "installNote": "实测 Vercel Labs skills CLI 1.5.22（2026-08-08）：`npx skills add` 把文件装到 `~/.agents/skills/`，并在 `~/.claude/skills/` 建立符号链接，因此两个路径能看到同一份文件。本轮没有运行 Claude Code，符号链接存在不能证明自动触发。部分教程写的 `~/.config/claude-code/skills/` 在本机实测并不存在。",
   "installsNote": "部分条目带 installs，表示 skills.sh 在 installsAt 日期记录的安装次数；不等于独立用户或实际使用。",
   "editorialSignals": {
