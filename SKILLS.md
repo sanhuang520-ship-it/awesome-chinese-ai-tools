@@ -1,6 +1,6 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **184 个 Skill 条目｜68 个中文条目｜✍️ 13 个本站原创**<br>
+> **195 个 Skill 条目｜72 个中文条目｜✍️ 13 个本站原创**<br>
 > 来源仓库经 GitHub API 核验真实存在；第三方说明来自上游资料或维护者摘要，不等于逐项功能实测<br>
 > 🔄 最近自动复检：**2026-08-13**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
@@ -67,15 +67,15 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 场景 | 条目数 | 跳转 |
 |---|---:|---|
 | ✍️ 本站原创 | 13 | [查看](#catalog-original) |
-| 🇨🇳 其他中文条目 | 57 | [查看](#catalog-cn) |
+| 🇨🇳 其他中文条目 | 61 | [查看](#catalog-cn) |
 | 📄 文档办公 | 10 | [查看](#catalog-doc) |
 | 📊 PPT 演示 | 19 | [查看](#catalog-ppt) |
-| 💻 开发工程 | 35 | [查看](#catalog-dev) |
-| 🤖 Agent 与调研 | 7 | [查看](#catalog-agent) |
+| 💻 开发工程 | 37 | [查看](#catalog-dev) |
+| 🤖 Agent 与调研 | 8 | [查看](#catalog-agent) |
 | 🎨 创意设计 | 12 | [查看](#catalog-design) |
-| 💼 办公协作 | 11 | [查看](#catalog-biz) |
+| 💼 办公协作 | 13 | [查看](#catalog-biz) |
 | 📊 数据研究 | 5 | [查看](#catalog-data) |
-| 🔐 安全取证 | 5 | [查看](#catalog-sec) |
+| 🔐 安全取证 | 7 | [查看](#catalog-sec) |
 | 🧊 3D 与图形 | 5 | [查看](#catalog-3d) |
 | 🎮 游戏开发 | 5 | [查看](#catalog-game) |
 
@@ -101,10 +101,12 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [homework-tutor-cn](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/homework/) · [源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/homework-tutor-cn) | 家长辅导作业助手（本站原创）：不生成给孩子直接抄写的成品，先给家长引导话术，再单列核对结果；含分学科方法与情绪对抗处理 | 仅说明文件；无独立可执行脚本；未发现运行时联网；**边界：**不生成供孩子直接抄写的答案；可另给家长核对结果 |
 
 <a id="catalog-cn"></a>
-### 🇨🇳 其他中文条目（57 个）
+### 🇨🇳 其他中文条目（61 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
+| [colleague-skill](https://github.com/titanwings/colleague-skill) | ⭐21,246 | 中文向数字生命人格类 Skill，根目录同时有 SKILL.md 和 skills/ |
+| [khazix-skills](https://github.com/kkkkhazix/khazix-skills) | ⭐19,649 | 中文数字生命博主卡兹克开源的 Skill 合集，扁平目录结构，每个子目录独立一个 SKILL.md |
 | [agency-agents-zh](https://github.com/jnmetacode/agency-agents-zh) | ⭐19,387 | 267 个即插即用的中文 AI 专家角色，覆盖 20 个部门，含 52 个面向中国市场的原创智能体，兼容 18 种工具 |
 | [humanizer-zh](https://github.com/op7418/humanizer-zh) | ⭐15,210 | 去除文本里的 AI 生成痕迹。基于维基百科「AI 写作特征」整理，检测并修复：夸大的象征意义、宣传性语言、-ing 结尾的肤浅分析、模糊归因、破折号过度使用、三段式法则、AI 词汇、否定式排比 🕰<sub>2026-01-19 后未更新</sub> |
 | [awesome-chatgpt-zh](https://github.com/embraceagi/awesome-chatgpt-zh) | ⭐11,642 | ChatGPT 中文指南：指令、应用开发与资源清单，2023-03 建仓 |
@@ -113,6 +115,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [dbskill](https://github.com/dontbesilent2025/dbskill) | ⭐9,451 | 个人技能合集（30 个）：公众号 HTML 排版、用阿德勒心理学框架诊断执行阻滞（知道该做却拖延时用）等 |
 | [wechatdownload](https://github.com/qiye45/wechatdownload) | ⭐8,890 | 微信公众号文章批量下载，支持评论与合集，可导出 html/md/pdf/docx，提供 MCP/Skill 调用方式 |
 | [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | ⭐7,645 | superpowers 中文增强版：14 个核心工作流汉化 + 6 个中国开发场景 Skill；上游 README 当前列出 20 个 Skill |
+| [oh-story-claudecode](https://github.com/worldwonderer/oh-story-claudecode) | ⭐5,521 | 网文/小说写作 skill 包，覆盖扫榜、拆文、写作、去 AI 味、封面图全流程 |
+| [anbeime-skill-store](https://github.com/anbeime/skill) | ⭐5,239 | 中文 Skill 商店，收录文档处理、内容创作、编程开发、机器学习、自动化工作流等领域的技能包合集 |
 | [gzh-design-skill](https://github.com/isjiamu/gzh-design-skill) | ⭐3,060 | 微信公众号排版引擎：Markdown → 可直接粘进公众号编辑器的 HTML。6 套主题 + 主题生成器，自动章节编号、引言卡片、目录导航，支持 Word/PDF 输入 |
 | [codex-claude-academic-skills](https://github.com/zLanqing/codex-claude-academic-skills) | ⭐2,829 | 学术科研三件套：文献阅读、论文写作、科学计算全流程 |
 | [everything-claude-code-zh](https://github.com/xu-xiang/everything-claude-code-zh) | ⭐1,854 | Claude Code 完整配置中文翻译（agents/skills/hooks/commands） |
@@ -205,7 +209,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [ppt-agent-skills](https://github.com/sunbigfly/ppt-agent-skills) | ⭐882 | 像做软件工程一样做演示：模拟顶级 PPT 设计公司的完整流程（需求调研→资料搜集→大纲策划→策划稿→设计稿），输出 HTML |
 
 <a id="catalog-dev"></a>
-### 💻 开发工程（35 个）
+### 💻 开发工程（37 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -230,11 +234,13 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [claude-skills-345](https://github.com/alirezarezvani/claude-skills) | ⭐24,370 | 330+ skill、30+ agent、70+ 自定义命令的合集，.claude/ 与 agents/ 分开组织 |
 | [Skill Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | ⭐14,754 | 把任意文档网站自动转成 Claude Skill —— 造 skill 的利器 |
 | [travisvn-awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | ⭐14,629 | Claude Skills 清单型索引，偏重工作流定制方向 |
+| [claude-seo](https://github.com/agricidaniel/claude-seo) | ⭐14,116 | Claude Code 的 SEO Skill，含子技能与子 agent，覆盖技术 SEO、E-E-A-T、schema 等方向 |
 | [fireworks-tech-graph](https://github.com/yizhiyanhua-ai/fireworks-tech-graph) | ⭐9,873 | 生成技术图表：软件架构、数据流、流程图、时序图、C4 模型、云部署、事件流 |
 | [reddit-fetch](https://github.com/ykdojo/claude-code-tips/tree/main/skills/reddit-fetch) | ⭐9,610 | 当 WebFetch 被拦时，通过 Gemini CLI 抓取 Reddit 内容 |
 | [drawio-skill](https://github.com/Agents365-ai/drawio-skill) | ⭐7,553 | 用自然语言生成 draw.io 图表：11 种预设（UML、SysML/MBSE、BPMN、网络拓扑、C4 架构等），36 个工具 |
 | [lean-ctx](https://github.com/yvgude/lean-ctx) | ⭐3,570 | AI 编程代理的上下文运行时，管理会话与上下文 |
 | [Playwright Browser Automation](https://github.com/lackeyjb/playwright-skill) | ⭐3,021 | 用 Playwright 做浏览器自动化测试与验证 |
+| [oh-my-mermaid](https://github.com/oh-my-mermaid/oh-my-mermaid) | ⭐2,186 | 把代码库结构转成可导航的架构图 skill，基于 Claude Code，输出 Mermaid 图 |
 | [subagent-driven-development](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/sadd/skills/subagent-driven-development) | ⭐1,331 | 把任务拆给多个子智能体并行处理，加速复杂开发 |
 | [software-architecture](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/ddd/skills/software-architecture) | ⭐1,331 | 实现整洁架构、SOLID 等设计模式 |
 | [prompt-engineering](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/customaize-agent/skills/prompt-engineering) | ⭐1,331 | 系统讲解提示词工程的技巧与模式 |
@@ -246,7 +252,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [clone-any-website-skill](https://github.com/promptwhisper/clone-any-website-skill) | ⭐62 | Codex 技能：把公开网站重建成干净可维护的本地项目，讲究视觉、交互、媒体与多端还原度 |
 
 <a id="catalog-agent"></a>
-### 🤖 Agent 与调研（7 个）
+### 🤖 Agent 与调研（8 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -255,6 +261,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [OpenMontage](https://github.com/calesthio/OpenMontage) | ⭐47,865 | 开源的智能体视频生产系统：12 条流水线、100+ 工具、700+ agent 技能，含 130 个 SKILL.md。覆盖配乐生成、素材处理、剪辑决策全流程 |
 | [awesome-claude-code-subagents](https://github.com/voltagent/awesome-claude-code-subagents) | ⭐24,256 | 100+ 个 Claude Code 专用 subagent，覆盖较广的开发场景 |
 | [agent-skills-for-context-engineering](https://github.com/muratcankoylan/agent-skills-for-context-engineering) | ⭐17,712 | 面向上下文工程与多 agent 架构的 skill 集，根目录同时有 SKILL.md 和 skills/ |
+| [video-shotcraft](https://github.com/vincentwei1021/video-shotcraft) | ⭐4,941 | 面向 Claude Code / Codex 的产品视频生成 skill，含分镜卡片与运镜手法库，基于 Remotion 渲染 |
 | [watch-skill](https://github.com/oxbshw/watch-skill) | ⭐281 | 让 AI 看懂视频：把视频、直播流、以及 agent 自己的录屏转成可理解的内容并自我校验。含 11 个 SKILL.md，一键装 ffmpeg/yt-dlp 与 MCP |
 | [super-video-maker-skill](https://github.com/Bomx/super-video-maker-skill) | ⭐214 | 端到端 AI 视频生产：HeyGen 数字人、Seedance/字节素材、OpenAI 配图、Remotion 合成，覆盖制作/剪辑/字幕/配乐/导出 |
 
@@ -277,13 +284,15 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [pakco-html](https://github.com/pakco77/pakco-html) | ⭐71 | HTML 审美库（中文）：60+ 视觉风格、演示页/长页模板，一键复制 Prompt |
 
 <a id="catalog-biz"></a>
-### 💼 办公协作（11 个）
+### 💼 办公协作（13 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
 | [internal-comms](https://github.com/anthropics/skills/tree/main/skills/internal-comms) | 官方 | 撰写各类内部沟通文案的资源集 |
 | [brainstorming](https://github.com/obra/superpowers/tree/main/skills/brainstorming) | ⭐271,443 | 把粗略想法通过结构化提问变成完整方案 |
 | [pm-skills](https://github.com/phuryn/pm-skills) | ⭐25,217 | 产品经理技能市场：68 个 PM Skill + 42 条链式工作流，打包成 9 个插件。覆盖需求发现、产品策略、执行、上线到增长。⚠️ 方法论偏国外语境，国内 PM 可作参考 |
+| [product-manager-skills](https://github.com/deanpeters/product-manager-skills) | ⭐6,446 | 面向产品经理的 skill 框架，适配 Claude Code / Cowork / Codex 等多个 agent 客户端 |
+| [aaron-marketing-skills](https://github.com/aaron-he-zhu/aaron-marketing-skills) | ⭐2,582 | 面向市场营销的 Claude Code 插件形态 skill 合集，覆盖 SEO/GEO、红人营销、付费投放等方向 |
 | [kaizen](https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/kaizen/skills/kaizen) | ⭐1,331 | 持续改进方法论，多种分析框架 |
 | [Brand Build Skills](https://github.com/rampstackco/claude-skills) | ⭐538 | 59 个 skill 的品牌与网站全生命周期库 |
 | [tapestry](https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/tapestry) | ⭐519 | 把相关文档互联并总结成知识网络 |
@@ -305,11 +314,13 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [recursive-research](https://github.com/Anjos2/recursive-research) | ⭐38 | 跨领域递归研究，可深入到博士级别 |
 
 <a id="catalog-sec"></a>
-### 🔐 安全取证（5 个）
+### 🔐 安全取证（7 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
 | [reverse-skill](https://github.com/zhaoxuya520/reverse-skill) | ⭐24,649 | 逆向工程与授权渗透测试的 Skill 路由包 |
+| [skillspector](https://github.com/nvidia/skillspector) | ⭐14,596 | NVIDIA 出品的 AI agent skill 安全扫描器，检测漏洞、恶意模式与 prompt injection 风险 |
+| [claude-bughunter](https://github.com/elementalsouls/claude-bughunter) | ⭐3,544 | 面向漏洞挖掘与外部红队工作的 Claude Code skill 合集，含多个 slash 命令 |
 | [computer-forensics](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/computer-forensics) | ⭐660 | 数字取证分析与调查技术 |
 | [metadata-extraction](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/metadata-extraction) | ⭐660 | 提取分析文件元数据用于取证 |
 | [file-deletion](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/file-deletion) | ⭐660 | 安全删除文件与数据清除方法 |
@@ -361,5 +372,5 @@ Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts
 
 ---
 
-*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-08-13。*
+*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-08-14。*
 *收录有误或想推荐新 Skill？欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)*
