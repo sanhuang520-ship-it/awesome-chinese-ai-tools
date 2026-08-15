@@ -1,6 +1,12 @@
 {
-  "updated": "2026-08-05",
+  "updated": "2026-08-15",
   "events": [
+    {
+      "date": "2026-08-15",
+      "type": "alert",
+      "title": "1 个 Skill 仓库已失效",
+      "desc": "AppGenesisForge —— 已在站内标记"
+    },
     {
       "date": "2026-08-05",
       "type": "tool",
@@ -114,12 +120,6 @@
       "type": "tool",
       "title": "Cursor 域名迁移到 cursor.com",
       "desc": "原 cursor.sh 已 308 重定向，站内链接已更新"
-    },
-    {
-      "date": "2026-06-27",
-      "type": "alert",
-      "title": "OpenAI GPT-4.5 正式退役",
-      "desc": "ChatGPT 现有对话自动迁移到 GPT-5.5，API 调用方需切换型号名"
     }
   ]
 }
