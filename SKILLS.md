@@ -372,5 +372,5 @@ Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts
 
 ---
 
-*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-08-14。*
+*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-08-15。*
 *收录有误或想推荐新 Skill？欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)*
