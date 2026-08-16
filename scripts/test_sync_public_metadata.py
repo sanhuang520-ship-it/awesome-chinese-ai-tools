@@ -65,9 +65,21 @@ class PublicMetadataTest(unittest.TestCase):
         self.assertEqual(expected, sync_sitemap_text(original, "2026-08-12"))
 
     def test_readme_step_number_does_not_affect_tool_count_sync(self):
+        """
+        目的是验证「不管原来写的步骤编号是几，行本身会被换成当天真实统计」——
+        不是验证某天具体查到多少个工具被拦截。之前把 39/5/2 这几个数字焊死在测试里，
+        而这三个数字来自当天对外部网站的真实探活，站点自己加个机器人验证第二天数字
+        就会变，跟仓库代码有没有 bug 无关。2026-08-16 就撞上了（39→38，5→6）。
+        改成从 self.stats 里现取现拼，只测模板和替换逻辑对不对。
+        """
         original = "| 2 | 999 个工具链接实测可访问性 |\n"
+        n, direct_ok, bot_blocked, whitelisted = (
+            self.stats["tools"], self.stats["tools_direct_ok"],
+            self.stats["tools_bot_blocked"], self.stats["tools_whitelisted"],
+        )
         self.assertEqual(
-            "| 2 | 46 个工具入口复检：39 个直接成功，5 个返回机器人拦截响应，2 个白名单跳过请求 |\n",
+            f"| 2 | {n} 个工具入口复检：{direct_ok} 个直接成功，"
+            f"{bot_blocked} 个返回机器人拦截响应，{whitelisted} 个白名单跳过请求 |\n",
             sync_readme_text(original, self.stats),
         )
 
@@ -82,9 +94,14 @@ class PublicMetadataTest(unittest.TestCase):
         self.assertLess(self.stats["repos"], self.stats["skills"])
 
     def test_tool_link_statuses_are_counted_by_evidence_type(self):
-        self.assertEqual(39, self.stats["tools_direct_ok"])
-        self.assertEqual(5, self.stats["tools_bot_blocked"])
-        self.assertEqual(2, self.stats["tools_whitelisted"])
+        """
+        真正要守住的不变量是「三类状态加起来等于工具总数」——分类不能漏掉或算重。
+        具体 39/5/2 这种精确值是当天对外部网站真实探活的结果，第二天完全可能因为
+        对方网站行为变化而不同，不是这里的逻辑错了，硬编码这几个数字迟早天天报红。
+        """
+        self.assertGreaterEqual(self.stats["tools_direct_ok"], 0)
+        self.assertGreaterEqual(self.stats["tools_bot_blocked"], 0)
+        self.assertGreaterEqual(self.stats["tools_whitelisted"], 0)
         self.assertEqual(
             self.stats["tools"],
             self.stats["tools_direct_ok"] + self.stats["tools_bot_blocked"] + self.stats["tools_whitelisted"],

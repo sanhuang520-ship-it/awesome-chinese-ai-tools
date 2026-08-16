@@ -38,6 +38,7 @@ class PublicFeedsTest(unittest.TestCase):
             for skill in catalog["skills"]
             if skill.get("ours") and skill.get("explainer")
         )
+        cls.checked = catalog["skillsCheckedAt"]
 
     def test_robots_allows_crawling_and_declares_canonical_sitemap(self):
         robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
@@ -146,16 +147,26 @@ class PublicFeedsTest(unittest.TestCase):
         self.assertEqual([], duplicates)
 
     def test_updated_discovery_pages_have_matching_sitemap_dates(self):
+        """
+        sync_sitemap_text() 只把 base / README.md / SKILLS.md / README.en.md 这四个
+        核心页的 lastmod 往前推到 skillsCheckedAt（每天复检都会变，不能硬编码具体日期，
+        2026-08-13 那次就是把当天日期焊死在测试里，三天后必然报红——不是回归，是测试
+        本身没跟上会天天变化的数据）。其余静态页只在内容真的改了才手动更新 lastmod，
+        这部分继续按具体日期断言，因为它们不会自动变。
+        """
         root = ET.parse(ROOT / "sitemap.xml").getroot()
         namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
         lastmods = {
             node.findtext("s:loc", namespaces=namespace): node.findtext("s:lastmod", namespaces=namespace)
             for node in root.findall("s:url", namespace)
         }
-        expected = {
-            BASE_URL: "2026-08-13",
-            BASE_URL + "README.md": "2026-08-13",
-            BASE_URL + "SKILLS.md": "2026-08-13",
+        auto_advances_daily = {
+            BASE_URL: self.checked,
+            BASE_URL + "README.md": self.checked,
+            BASE_URL + "SKILLS.md": self.checked,
+            BASE_URL + "README.en.md": self.checked,
+        }
+        manually_maintained = {
             BASE_URL + "llms.txt": "2026-08-13",
             BASE_URL + "guides/": "2026-08-13",
             BASE_URL + "try-agent-skills/": "2026-08-13",
@@ -163,7 +174,7 @@ class PublicFeedsTest(unittest.TestCase):
             BASE_URL + "install/": "2026-08-13",
             BASE_URL + "guochao/": "2026-08-12",
         }
-        for url, date in expected.items():
+        for url, date in {**auto_advances_daily, **manually_maintained}.items():
             with self.subTest(url=url):
                 self.assertEqual(date, lastmods.get(url))
 
