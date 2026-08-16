@@ -24,9 +24,26 @@ jobs:
           python-version: "3.12"
 
       - name: Install deps
-        run: pip install --quiet certifi
+        run: pip install --quiet certifi pyyaml
 
       - name: Run daily check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/daily_check.py
+
+      # daily_check.py 写数据是直接调 GitHub API（PUT contents），不碰本地文件，
+      # 所以上面这步跑完之后，这台 runner 的本地检出还是旧内容，必须重新拉一次
+      # 才能测到它刚刚实际推上去的东西。
+      #
+      # 更重要的原因：这次 push 用的是 secrets.GITHUB_TOKEN，按 GitHub 官方文档，
+      # 用这个内置 token 触发的 push **不会**触发别的 workflow（防止套娃死循环）。
+      # 也就是说 tests.yml 不会因为这次自动提交而跑——唯一能验证「今天自动写的东西
+      # 没有弄坏什么」的地方，就是这里，在同一个 job 里自己测自己。
+      - name: Pull what was just pushed
+        run: git pull --ff-only origin main
+
+      - name: Verify pushed state still passes tests
+        working-directory: scripts
+        env:
+          GITHUB_TOKEN: dummy
+        run: python -m unittest discover -s . -p "test_*.py" -v
