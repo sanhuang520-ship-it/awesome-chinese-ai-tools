@@ -1,9 +1,9 @@
 {
   "meta": {
-    "updated": "2026-08-15",
+    "updated": "2026-08-16",
     "source": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools",
     "note": "工具数据单一可信源。新增/修改工具只改这里，前端自动渲染。免费额度信息可能变化，以官网为准。",
-    "linkCheckedAt": "2026-08-15",
+    "linkCheckedAt": "2026-08-16",
     "linkDeadCount": 0,
     "hotUpdated": "2026-06-23",
     "commercialTerms": {
@@ -83,7 +83,7 @@
       "desc": "提供网页对话与 API，覆盖代码、数学和通用推理场景；模型能力与价格会变化。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0,
       "hot": true
     },
@@ -100,7 +100,7 @@
       "desc": "月之暗面出品，支持上传论文、合同和报告等长文档后进行问答。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0,
       "hot": true
     },
@@ -117,7 +117,7 @@
       "desc": "阿里云出品，提供文本、多模态和 API 能力；具体模型与额度以官网为准。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0,
       "hot": true
     },
@@ -134,7 +134,7 @@
       "desc": "字节跳动出品，支持多模态与联网，覆盖日常创作和对话场景。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -150,7 +150,7 @@
       "desc": "百度出品，整合百度搜索，知识库问答和搜索增强场景有独特优势。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -166,7 +166,7 @@
       "desc": "科大讯飞出品，提供语音与对话能力，适合需要语音交互的场景。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -182,7 +182,7 @@
       "desc": "智谱出品，提供对话、代码解释器和 Agent 等能力；具体模型与额度以官网为准。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0,
       "hot": true
     },
@@ -199,7 +199,7 @@
       "desc": "Anthropic 出品，支持长文档分析、代码和通用对话；可访问性与功能以官网为准。",
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -215,7 +215,7 @@
       "desc": "OpenAI 出品，提供通用对话、多模态和自定义 GPT 等能力。",
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -231,7 +231,7 @@
       "desc": "Google 出品，可与 Gmail、Docs、Drive 等 Google 服务配合使用。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -247,7 +247,7 @@
       "desc": "字节出品，支持中文提示词的图像生成与编辑；额度和授权条件以官网为准。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0,
       "hot": true
     },
@@ -264,7 +264,7 @@
       "desc": "百度出品，国风、古风、水墨风格尤为出色，适合中式内容创作。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -280,7 +280,7 @@
       "desc": "阿里出品，针对中文场景专项训练，商业插图和电商图片质量稳定。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -296,7 +296,7 @@
       "desc": "Stable Diffusion 模型社区，提供二次元、写实、国风等模型与在线生成入口。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -312,7 +312,7 @@
       "desc": "面向商业视觉生成场景；订阅、可访问性与授权条件以官网为准。",
       "linkOk": true,
       "linkStatus": "ok_whitelisted",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -328,7 +328,7 @@
       "desc": "Adobe 出品，提供生成式图像功能；具体商用授权范围应以 Adobe 当前条款为准。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -344,7 +344,7 @@
       "desc": "开放权重图像模型，可在满足硬件和许可证条件时本地部署。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -360,7 +360,7 @@
       "desc": "快手出品，支持文生视频和图生视频；分辨率、额度与生成条件以官网为准。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0,
       "hot": true
     },
@@ -377,7 +377,7 @@
       "desc": "字节出品，与即梦图像同平台，工作流顺畅，中文描述直接生成视频。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -393,7 +393,7 @@
       "desc": "MiniMax 出品，支持文本或图像生成视频，适合制作短视频片段。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -409,7 +409,7 @@
       "desc": "好莱坞采用的专业视频 AI 工具，奥斯卡获奖影片有实际使用案例。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -425,7 +425,7 @@
       "desc": "阿里出品，提供 VS Code 和 JetBrains 插件，支持中文代码场景。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -441,7 +441,7 @@
       "desc": "AI 代码编辑器，提供代码库上下文、补全、对话和编辑功能。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0,
       "hot": true
     },
@@ -458,7 +458,7 @@
       "desc": "Codeium 出品，提供代码补全、对话与编辑器集成功能；可用范围和额度以官网为准。",
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -474,7 +474,7 @@
       "desc": "字节出品的在线云 IDE，内置 AI 助手，适合无需完整本地环境的原型开发。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -490,7 +490,7 @@
       "desc": "支持用自然语言生成和迭代 Web 应用，适合制作可运行原型。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -506,7 +506,7 @@
       "desc": "Vercel 出品，面向 UI 组件生成，可输出 React 与 Tailwind 等前端代码。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -522,7 +522,7 @@
       "desc": "中文写作助手，提供语法检查、改写和润色功能，适用于学习与职场文本。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -538,7 +538,7 @@
       "desc": "论文、报告、简历专项，格式规范，学生和需要正式文体的职场人适用。",
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -554,7 +554,7 @@
       "desc": "可根据文字大纲生成演示文稿初稿，适合快速搭建提案结构。",
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -570,7 +570,7 @@
       "desc": "浏览器双语对照工具，支持网页、PDF 和字幕等场景；支持范围以当前版本为准。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -586,7 +586,7 @@
       "desc": "支持多种欧洲语言与中英互译；具体免费字符额度以官网为准。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -602,7 +602,7 @@
       "desc": "面向日语翻译场景，支持实时字幕等功能。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -618,7 +618,7 @@
       "desc": "网易出品，词典+翻译双合一，生词本和例句库是英语学习者的好帮手。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -634,7 +634,7 @@
       "desc": "中文 TTS 工具，提供新闻播报、有声书等多种音色与风格。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -650,7 +650,7 @@
       "desc": "支持中文方言与音色克隆；所需样本长度和使用条件以官网说明为准。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -666,7 +666,7 @@
       "desc": "微软出品，提供中文在内的多语言 TTS API；当前额度以 Azure 官网为准。",
       "linkOk": true,
       "linkStatus": "ok_whitelisted",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -682,7 +682,7 @@
       "desc": "中文 AI 搜索工具，提供学术与深度搜索模式，并展示引用来源。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -698,7 +698,7 @@
       "desc": "AI 搜索工具，回答中展示引用来源，适合进一步核对技术和学术资料。",
       "linkOk": true,
       "linkStatus": "ok_bot_blocked",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -714,7 +714,7 @@
       "desc": "昆仑万维出品，支持中文资讯查询与多轮追问。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -730,7 +730,7 @@
       "desc": "面向 Office 场景的 AI 助手，提供文档摘要、公式生成和 PPT 辅助等功能。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -746,7 +746,7 @@
       "desc": "结合电子表格与自动化流程，适合团队协作和数据管理场景。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -762,7 +762,7 @@
       "desc": "字节出品的 Agent 平台，支持拖拽配置、插件和自动化流程。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -778,7 +778,7 @@
       "desc": "开源 LLM 应用平台，支持可视化编排 Agent、工作流和私有化部署。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -794,7 +794,7 @@
       "desc": "知识库问答平台，支持 RAG、工作流和将内部文档接入问答应用。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     },
     {
@@ -810,7 +810,7 @@
       "desc": "1Panel 出品，知识库问答，安装简单，中小团队快速搭建内部知识库。",
       "linkOk": true,
       "linkStatus": "ok",
-      "linkCheckedAt": "2026-08-15",
+      "linkCheckedAt": "2026-08-16",
       "linkFailCount": 0
     }
   ]
