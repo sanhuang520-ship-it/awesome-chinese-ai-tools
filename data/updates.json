@@ -1,6 +1,12 @@
 {
-  "updated": "2026-08-15",
+  "updated": "2026-08-16",
   "events": [
+    {
+      "date": "2026-08-16",
+      "type": "alert",
+      "title": "1 个 Skill 仓库已失效",
+      "desc": "AppGenesisForge —— 已在站内标记"
+    },
     {
       "date": "2026-08-15",
       "type": "alert",
@@ -114,12 +120,6 @@
       "type": "alert",
       "title": "Windsurf Cascade 即将 EOL",
       "desc": "7月1日停服，已并入 Devin Desktop（cognition.com），本周迁移"
-    },
-    {
-      "date": "2026-06-28",
-      "type": "tool",
-      "title": "Cursor 域名迁移到 cursor.com",
-      "desc": "原 cursor.sh 已 308 重定向，站内链接已更新"
     }
   ]
 }
