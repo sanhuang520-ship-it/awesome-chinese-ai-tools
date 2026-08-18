@@ -69,7 +69,7 @@ class StaticCatalogTest(unittest.TestCase):
             'property="og:title"',
             'name="twitter:card"',
             'type="application/ld+json"',
-            '"numberOfItems":195',
+            '"numberOfItems":194',
         ):
             self.assertIn(phrase, self.page)
 

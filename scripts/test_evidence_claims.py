@@ -262,7 +262,7 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertIn("中文 Agent Skills 合集：可搜索、可安装、带实测证据", readme)
         self.assertIn("Chinese Agent Skills / Chinese AI Skills directory", readme)
         self.assertIn("# Chinese AI Agent Skills Directory", english)
-        self.assertNotIn("195 个中文原创", readme)
+        self.assertNotIn("194 个中文原创", readme)
 
     def test_third_party_install_records_are_not_called_usage(self):
         skills = (ROOT / "data" / "skills.json").read_text(encoding="utf-8")
@@ -273,9 +273,9 @@ class EvidenceClaimsTest(unittest.TestCase):
 
     def test_public_copy_distinguishes_skill_entries_from_repositories(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertIn("195 个 Skill 条目来自 152 个仓库", readme)
-        self.assertIn("152 个来源仓库复检", readme)
-        self.assertNotIn("195 个 Skill 仓库复检", readme)
+        self.assertIn("194 个 Skill 条目来自 151 个仓库", readme)
+        self.assertIn("151 个来源仓库复检", readme)
+        self.assertNotIn("194 个 Skill 仓库复检", readme)
         index = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertNotIn("每个仓库都验证过真实存在", index)
         self.assertNotIn("个中文原创", index)
@@ -286,7 +286,7 @@ class EvidenceClaimsTest(unittest.TestCase):
         english = (ROOT / "README.en.md").read_text(encoding="utf-8")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
-        self.assertIn("195 Agent Skill entries from 152 source repositories", english)
+        self.assertIn("194 Agent Skill entries from 151 source repositories", english)
         self.assertIn("Claude Code and Cursor task-level compatibility are still untested", english)
         self.assertIn("Installation, discovery, automatic activation, and task completion are separate claims", english)
         self.assertIn("Ten completed the recorded task", english)

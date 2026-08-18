@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
 <title id="title">中文 AI Skills 库</title>
-<desc id="desc">195 个 Agent Skill 条目，13 个本站原创；Codex 13/13 有自动触发记录，Claude Code 和 Cursor 待测。</desc>
+<desc id="desc">194 个 Agent Skill 条目，13 个本站原创；Codex 13/13 有自动触发记录，Claude Code 和 Cursor 待测。</desc>
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#111719"/><stop offset=".62" stop-color="#17181b"/><stop offset="1" stop-color="#30201e"/></linearGradient>
   <radialGradient id="glow"><stop stop-color="#e0795a" stop-opacity=".24"/><stop offset="1" stop-color="#e0795a" stop-opacity="0"/></radialGradient>
@@ -11,9 +11,9 @@
 <rect x="70" y="64" width="64" height="64" rx="18" fill="#e58a4f" filter="url(#shadow)"/>
 <text x="102" y="108" text-anchor="middle" fill="#fff8eb" font-size="35" font-family="Songti SC,Noto Serif CJK SC,serif">技</text>
 <text x="154" y="107" fill="#f4f0e8" font-size="30" font-weight="650" font-family="Songti SC,Noto Serif CJK SC,serif">中文 AI Skills 库</text>
-<text x="70" y="229" fill="#f5f1e9" font-size="64" font-weight="650" font-family="Songti SC,Noto Serif CJK SC,serif">195 个 Agent Skill 条目</text>
+<text x="70" y="229" fill="#f5f1e9" font-size="64" font-weight="650" font-family="Songti SC,Noto Serif CJK SC,serif">194 个 Agent Skill 条目</text>
 <text x="70" y="322" fill="#f5f1e9" font-size="55" font-weight="650" font-family="Songti SC,Noto Serif CJK SC,serif">其中 <tspan fill="#f07858">13 个本站原创</tspan></text>
-<text x="70" y="383" fill="#bfc1c6" font-size="25" font-weight="550" font-family="Avenir Next,PingFang SC,Noto Sans CJK SC,sans-serif">72 个中文 Skill 条目 · 来自 152 个来源仓库 · 每日来源复检</text>
+<text x="70" y="383" fill="#bfc1c6" font-size="25" font-weight="550" font-family="Avenir Next,PingFang SC,Noto Sans CJK SC,sans-serif">72 个中文 Skill 条目 · 来自 151 个来源仓库 · 每日来源复检</text>
 <g transform="translate(70 428)" font-family="Avenir Next,PingFang SC,Noto Sans CJK SC,sans-serif" font-size="19" font-weight="700">
   <rect width="304" height="54" rx="27" fill="#193b31" stroke="#70b59a"/><text x="152" y="34" text-anchor="middle" fill="#9ed8c0">Codex 13/13 自动触发记录</text>
   <rect x="322" width="278" height="54" rx="27" fill="#352a1e" stroke="#d7a44d"/><text x="461" y="34" text-anchor="middle" fill="#efc470">Claude Code / Cursor 待测</text>

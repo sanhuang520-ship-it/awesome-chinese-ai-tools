@@ -89,8 +89,8 @@ class PublicMetadataTest(unittest.TestCase):
         self.assertEqual(used_categories, set(CAT_ORDER))
 
     def test_skill_entries_and_source_repositories_are_distinct_counts(self):
-        self.assertEqual(195, self.stats["skills"])
-        self.assertEqual(152, self.stats["repos"])
+        self.assertEqual(194, self.stats["skills"])
+        self.assertEqual(151, self.stats["repos"])
         self.assertLess(self.stats["repos"], self.stats["skills"])
 
     def test_tool_link_statuses_are_counted_by_evidence_type(self):
@@ -111,7 +111,7 @@ class PublicMetadataTest(unittest.TestCase):
         index = (ROOT / "index.html").read_text(encoding="utf-8")
         synced = sync_index_text(index, self.stats)
         self.assertIn("72 个中文条目", synced)
-        self.assertIn("来自 152 个来源仓库", synced)
+        self.assertIn("来自 151 个来源仓库", synced)
         self.assertNotIn("68 个中文项目", synced)
         self.assertIn("Chinese Agent Skills / 中文 AI Skills 库", synced)
         self.assertIn("Chinese Agent Skills / 中文 AI Skills 合集", synced)

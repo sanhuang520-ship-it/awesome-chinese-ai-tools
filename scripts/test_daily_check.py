@@ -65,7 +65,7 @@ class DailyCheckTest(unittest.TestCase):
         for phrase in ("安装第三方 Skill 前", "audit-skill/", "0 项命中不等于安全"):
             with self.subTest(phrase=phrase):
                 self.assertIn(phrase, catalog)
-        self.assertEqual(195, len(json.loads(source)["skills"]))
+        self.assertEqual(194, len(json.loads(source)["skills"]))
 
     def test_generated_originals_expose_decision_labels_and_evidence_pages(self):
         source = (ROOT / "data" / "skills.json").read_bytes()
