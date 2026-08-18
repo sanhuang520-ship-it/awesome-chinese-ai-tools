@@ -10,7 +10,7 @@
 
 [English](README.en.md) · [English web guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/chinese-agent-skills/)
 
-[![Skills](https://img.shields.io/badge/Skills-195%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
+[![Skills](https://img.shields.io/badge/Skills-194%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
 [![原创](https://img.shields.io/badge/本站原创-13%20个-86b894?style=flat-square)](EXAMPLES.md)
 [![Daily Check](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml/badge.svg)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
@@ -24,7 +24,7 @@
 > **和别的 awesome 列表有什么不一样**<br>
 > ① 13 个 Skill 是我们自己写的，不是搬运<br>
 > ② 不是只验证“能安装”：13/13 在 Codex 中自动触发，失败过程也公开<br>
-> ③ 195 个 Skill 条目来自 152 个仓库，来源仓库**每天自动复检**一次还在不在，不转述无法复核的 AI 新闻
+> ③ 194 个 Skill 条目来自 151 个仓库，来源仓库**每天自动复检**一次还在不在，不转述无法复核的 AI 新闻
 
 ```bash
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
@@ -206,7 +206,7 @@ npx --yes skills@1.5.22 update -p -y
 | 🇨🇳 中文 Skill 条目 | 72 |
 | 📄 官方 Skill 条目 | 19 |
 | ✍️ 本站原创 | 13 |
-| **合计** | **195** |
+| **合计** | **194** |
 
 **[→ 看完整清单 SKILLS.md](SKILLS.md)**（每天从数据自动重建，不会和实际对不上）
 
@@ -220,7 +220,7 @@ npx --yes skills@1.5.22 update -p -y
 |------|--------|
 | 1 | 核对 [SOURCES.md](SOURCES.md) 里各家 AI 官方公告页链接 |
 | 2 | 46 个工具入口复检：38 个直接成功，6 个返回机器人拦截响应，2 个白名单跳过请求 |
-| 3 | **152 个来源仓库复检**（覆盖 195 个 Skill 条目）：还在不在、星数、最后更新时间 |
+| 3 | **151 个来源仓库复检**（覆盖 194 个 Skill 条目）：还在不在、星数、最后更新时间 |
 | 4 | 从数据重建 SKILLS.md，并同步公开统计 |
 
 这套流程跑在 **GitHub Actions** 上，[运行记录公开可查](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)——不依赖任何人的电脑，也不用你相信我说的话。
@@ -300,5 +300,5 @@ my-skill/
 ---
 
 <div align="center">
-<sub>MIT License · 数据最后复检 2026-08-17 · 公开统计由脚本同步于 2026-08-17</sub>
+<sub>MIT License · 数据最后复检 2026-08-17 · 公开统计由脚本同步于 2026-08-18</sub>
 </div>
