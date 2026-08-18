@@ -13,7 +13,7 @@ Prefer a concise web path? Open the [Chinese Agent Skills / Chinese AI Skills gu
 - **Same-task remediation evidence:** two preregistered failures remained public, received minimal instruction fixes, and then passed the unchanged original tasks at 4/4. This is task-level evidence, not an overall accuracy or cross-client claim.
 - **Review before install:** a read-only local scanner reports scripts, symlinks, network access, credential-related terms, file mutation and high-attention commands without executing the target Skill. Findings are review indicators, not a security certification.
 - **Explicit boundaries:** Claude Code and Cursor task-level compatibility are still untested by this repository.
-- **Daily source checks:** GitHub Actions rechecks the 151 source repositories and 46 tool links. A live link does not prove current pricing, safety, or client compatibility.
+- **Periodic source checks:** GitHub Actions rechecks the 151 source repositories and 46 tool links; runs are manually triggered and every run is publicly logged. A live link does not prove current pricing, safety, or client compatibility.
 - **No paid or coordinated Stars:** contributions should improve usefulness and evidence, not manipulate popularity signals.
 
 ## Install

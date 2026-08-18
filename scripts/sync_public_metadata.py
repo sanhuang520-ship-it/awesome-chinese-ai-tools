@@ -48,8 +48,8 @@ def sync_readme_text(body, stats):
         (r"本站原创-\d+%20个-", f"本站原创-{ours}%20个-"),
         (r"① \d+ 个 Skill 是我们自己写的", f"① {ours} 个 Skill 是我们自己写的"),
         (
-            r"③ (?:\d+ 个仓库|\d+ 个 Skill 条目来自 \d+ 个仓库，来源仓库)\*\*每天自动复检\*\*一次还在不在",
-            f"③ {n} 个 Skill 条目来自 {repos} 个仓库，来源仓库**每天自动复检**一次还在不在",
+            r"③ (?:\d+ 个仓库|\d+ 个 Skill 条目来自 \d+ 个仓库，来源仓库)\*\*(?:每天自动复检|定期复检)\*\*一次还在不在(?:（最近 \d{4}-\d{2}-\d{2}）)?",
+            f"③ {n} 个 Skill 条目来自 {repos} 个仓库，来源仓库**定期复检**一次还在不在（最近 {checked}）",
         ),
         (r"本站原创 Skill（\d+ 个）", f"本站原创 Skill（{ours} 个）"),
         (r"\| 🇨🇳 (?:中文原创仓库|中文 Skill 条目) \| \d+ \|", f"| 🇨🇳 中文 Skill 条目 | {cn} |"),
@@ -89,9 +89,9 @@ def sync_index_text(body, stats):
     desc = (
         f"Chinese Agent Skills / 中文 AI Skills 合集：{n} 个 Skill 条目，"
         f"其中 {cn} 个中文条目、{ours} 个本站自写 Skill，来自 {repos} 个来源仓库；"
-        f"每天自动复检来源仓库是否失效，另附 {tools} 个 AI 工具导航。"
+        f"定期复检来源仓库是否失效，另附 {tools} 个 AI 工具导航。"
     )
-    short_desc = f"Chinese AI Skills directory：{n} 个 Skill 条目，{ours} 个本站自写；每日自动复检，兼容性证据与失败边界公开。"
+    short_desc = f"Chinese AI Skills directory：{n} 个 Skill 条目，{ours} 个本站自写；定期复检，兼容性证据与失败边界公开。"
 
     body = re.sub(r"<title>.*?</title>", f"<title>{title}</title>", body, count=1)
     body = re.sub(
@@ -131,7 +131,7 @@ def sync_index_text(body, stats):
                 if question.get("name") == "有哪些中文的 Claude Skills？":
                     question["acceptedAnswer"]["text"] = (
                         f"本站收录了 {cn} 个中文 Skill 条目，其中有 {ours} 个本站自写 Skill。"
-                        f"这些条目来自 {repos} 个来源仓库，来源仓库经 GitHub API 核验并每天自动复检。"
+                        f"这些条目来自 {repos} 个来源仓库，来源仓库经 GitHub API 核验并定期复检。"
                     )
     new_json = json.dumps(graph, ensure_ascii=False, separators=(",", ":"))
     return body[: match.start()] + match.group(1) + new_json + match.group(3) + body[match.end() :]

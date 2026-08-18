@@ -1,8 +1,13 @@
 name: Daily Check
 
+# 2026-08-18 起去掉定时触发，改为只在需要时手动运行（Actions 页面点 Run workflow，
+# 或用 API 触发 workflow_dispatch）。
+#
+# 原因：每天定时跑会产生大量提交噪音，而这个仓库的实际维护是按需进行的。
+# 配套改动：README / index.html / llms.txt 里原来写「每天自动复检」的地方
+# 已全部改成「定期复检」并标注最近一次复检日期——去掉定时却留着「每天」的说法，
+# 就成了虚假宣称，这是本项目最不能碰的红线。
 on:
-  schedule:
-    - cron: "10 1 * * *"
   workflow_dispatch:
 
 permissions:
