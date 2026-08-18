@@ -225,7 +225,7 @@ npx --yes skills@1.5.22 update -p -y
 
 这套流程跑在 **GitHub Actions** 上，[运行记录公开可查](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)——不依赖任何人的电脑，也不用你相信我说的话。
 
-最近复检：**2026-08-17**，失效 0 个。
+最近复检：**2026-08-18**，失效 0 个。
 白名单项是此前人工复核后为避免自动化反复误报而跳过，不等于本次工作流再次访问成功；机器人拦截响应也只说明目标服务有响应，不证明普通用户在所有地区都可访问。
 超过半年没更新的会在站内标 🕰——停止维护不等于没价值，但你有权在点进去之前就知道。
 
@@ -300,5 +300,5 @@ my-skill/
 ---
 
 <div align="center">
-<sub>MIT License · 数据最后复检 2026-08-17 · 公开统计由脚本同步于 2026-08-18</sub>
+<sub>MIT License · 数据最后复检 2026-08-18 · 公开统计由脚本同步于 2026-08-18</sub>
 </div>
