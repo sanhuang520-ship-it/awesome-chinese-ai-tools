@@ -176,6 +176,49 @@ def sync_english_readme_text(body, stats):
     return body
 
 
+def sync_chinese_agent_skills_text(body, stats):
+    """
+    同步 chinese-agent-skills/index.html 里的计数。
+
+    这一页是纯手写静态页，没有生成脚本，但测试会断言它的数字跟 data/skills.json 一致。
+    在接进这里之前，每次增删 Skill 都要人工去改 6 处数字（08-14、08-17 各手改过一轮），
+    漏改就等着 CI 报红。这里用跟 README/index.html 同一套正则替换的做法把它纳入自动同步。
+    """
+    n, repos, ours = stats["skills"], stats["repos"], stats["ours"]
+    body = re.sub(
+        r"<title>Chinese Agent Skills Directory: \d+ Skills, \d+ Tested First-Party Skills</title>",
+        f"<title>Chinese Agent Skills Directory: {n} Skills, {ours} Tested First-Party Skills</title>",
+        body,
+    )
+    body = re.sub(
+        r"directory: \d+ entries, \d+ first-party Skills",
+        f"directory: {n} entries, {ours} first-party Skills",
+        body,
+    )
+    body = re.sub(
+        r"content=\"\d+ Agent Skill entries, \d+ first-party Skills",
+        f'content="{n} Agent Skill entries, {ours} first-party Skills',
+        body,
+    )
+    body = re.sub(
+        r'<aside class="proof"><strong>\d+</strong>',
+        f'<aside class="proof"><strong>{n}</strong>',
+        body,
+    )
+    body = re.sub(
+        r"Agent Skill entries from \d+ source repositories",
+        f"Agent Skill entries from {repos} source repositories",
+        body,
+    )
+    body = re.sub(
+        r"Search and filter \d+ entries by workflow",
+        f"Search and filter {n} entries by workflow",
+        body,
+    )
+    body = re.sub(r'"numberOfItems":\d+', f'"numberOfItems":{n}', body)
+    return body
+
+
 def _repo_text(github_api, repo, path):
     info = github_api("GET", f"/repos/{repo}/contents/{path}")
     if "content" not in info:
@@ -203,19 +246,27 @@ def _put_if_changed(github_api, repo, path, current, updated, sha, message):
     return True
 
 
-def sync_public_metadata(github_api, repo):
-    skills_body, _ = _repo_text(github_api, repo, "data/skills.json")
-    tools_body, _ = _repo_text(github_api, repo, "data/tools.json")
-    stats = build_stats(json.loads(skills_body), json.loads(tools_body))
-    message = f"seo: 同步 {stats['skills']} 个 skill / {stats['ours']} 原创的公开统计"
-    transforms = {
+def _transforms(stats):
+    """
+    路径 → 转换函数。API 模式（sync_public_metadata）和本地模式（sync_local）共用同一份，
+    以前这张表在两个函数里各写了一遍，加一个文件要记得改两处——漏一处就只在其中一种模式生效。
+    """
+    return {
         "README.md": lambda text: sync_readme_text(text, stats),
         "README.en.md": lambda text: sync_english_readme_text(text, stats),
         "index.html": lambda text: sync_index_text(text, stats),
         "llms.txt": lambda text: sync_llms_text(text, stats),
         "sitemap.xml": lambda text: sync_sitemap_text(text, stats["checked"]),
+        "chinese-agent-skills/index.html": lambda text: sync_chinese_agent_skills_text(text, stats),
     }
-    for path, transform in transforms.items():
+
+
+def sync_public_metadata(github_api, repo):
+    skills_body, _ = _repo_text(github_api, repo, "data/skills.json")
+    tools_body, _ = _repo_text(github_api, repo, "data/tools.json")
+    stats = build_stats(json.loads(skills_body), json.loads(tools_body))
+    message = f"seo: 同步 {stats['skills']} 个 skill / {stats['ours']} 原创的公开统计"
+    for path, transform in _transforms(stats).items():
         current, sha = _repo_text(github_api, repo, path)
         _put_if_changed(github_api, repo, path, current, transform(current), sha, message)
 
@@ -226,15 +277,8 @@ def sync_local(root, write=False):
     skills_data = json.loads((root / "data/skills.json").read_text(encoding="utf-8"))
     tools_data = json.loads((root / "data/tools.json").read_text(encoding="utf-8"))
     stats = build_stats(skills_data, tools_data)
-    transforms = {
-        "README.md": lambda text: sync_readme_text(text, stats),
-        "README.en.md": lambda text: sync_english_readme_text(text, stats),
-        "index.html": lambda text: sync_index_text(text, stats),
-        "llms.txt": lambda text: sync_llms_text(text, stats),
-        "sitemap.xml": lambda text: sync_sitemap_text(text, stats["checked"]),
-    }
     changed = []
-    for relative, transform in transforms.items():
+    for relative, transform in _transforms(stats).items():
         path = root / relative
         current = path.read_text(encoding="utf-8")
         updated = transform(current)

@@ -9,6 +9,7 @@ from pathlib import Path
 
 from sync_public_metadata import (
     CAT_ORDER,
+    _transforms,
     build_stats,
     sync_index_text,
     sync_english_readme_text,
@@ -136,7 +137,14 @@ class PublicMetadataTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             (root / "data").mkdir()
-            for relative in ("data/skills.json", "data/tools.json", "README.md", "README.en.md", "index.html", "llms.txt", "sitemap.xml"):
+            # 要复制的文件直接从 _transforms 取，不再手写清单：
+            # 以前是硬编码的一串路径，新增同步文件时忘了加进来，这个测试就会
+            # FileNotFoundError（08-18 加 chinese-agent-skills/index.html 时正好撞上）。
+            synced_files = tuple(_transforms(build_stats(
+                json.loads((ROOT / "data/skills.json").read_text(encoding="utf-8")),
+                json.loads((ROOT / "data/tools.json").read_text(encoding="utf-8")),
+            )))
+            for relative in ("data/skills.json", "data/tools.json") + synced_files:
                 source = ROOT / relative
                 target = root / relative
                 target.parent.mkdir(parents=True, exist_ok=True)

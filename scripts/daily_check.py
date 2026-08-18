@@ -20,6 +20,7 @@ from check_catalog_claims import find_claim_violations
 from sync_public_metadata import CAT_ORDER, sync_public_metadata
 from check_internal_links import ROOT as SITE_ROOT, missing_links, published_pages
 from render_static_catalog import render_catalog
+from generate_social_preview import build_preview_stats, render_svg
 
 # ── 配置 ──────────────────────────────────────────────────
 # token 从环境变量读取。GitHub Actions 里用自带的 GITHUB_TOKEN，无需配置密钥；
@@ -542,6 +543,14 @@ def build_skills_md():
     print(f"[SKILLS.md] {'✅' if 'content' in res else '❌'} {len(S)} 个 skill / {len(ours)} 原创 / {cn_n} 中文")
 
 
+def _repo_json_text(path):
+    """按路径取仓库里的文本内容，取不到就抛错（不静默跳过）。"""
+    info = github_api("GET", f"/repos/{REPO}/contents/{path}")
+    if "content" not in info:
+        raise RuntimeError(f"读不到 {path}：{info.get('message', info)}")
+    return base64.b64decode(info["content"]).decode("utf-8")
+
+
 def sync_static_catalog():
     """
     从 data/skills.json 重渲染 catalog/index.html（无 JS 版可爬取目录）。
@@ -578,6 +587,41 @@ def sync_static_catalog():
     if "content" not in res:
         raise RuntimeError(f"[catalog] 写入失败: {res.get('message', res)}")
     print(f"[catalog] ✅ 已重渲染 — {len(data.get('skills', []))} 个 skill")
+
+def sync_social_preview():
+    """
+    从数据重渲染 og.svg（社交预览图）。
+
+    generate_social_preview.py 原本只能本地跑 + git commit，不在这套 API 流程里，
+    结果每次增删 Skill 都要人工记得跑一遍 `--write --png`，08-14 和 08-17 各漏过一次，
+    靠 Tests CI 事后报红才发现。这里用跟 build_skills_md / sync_static_catalog
+    完全一样的「读 → 比对 → 有变化才写」接进 STEPS。
+
+    ⚠️ 只同步 og.svg。og.png 需要 rsvg-convert 二进制，runner 上默认没有，
+    仍需本地跑 `python3 scripts/generate_social_preview.py --write --png` 后提交。
+    """
+    catalog = json.loads(_repo_json_text("data/skills.json"))
+    tools = json.loads(_repo_json_text("data/tools.json"))
+    compatibility = json.loads(_repo_json_text("data/compatibility.json"))
+
+    rendered = render_svg(build_preview_stats(catalog, tools, compatibility))
+
+    path = "og.svg"
+    cur = github_api("GET", f"/repos/{REPO}/contents/{path}")
+    current = base64.b64decode(cur["content"]).decode("utf-8") if "content" in cur else ""
+    if current == rendered:
+        print("[og.svg] 无变化，跳过写入")
+        return
+
+    res = github_api("PUT", f"/repos/{REPO}/contents/{path}", {
+        "message": f"chore: 自动重渲染 og.svg — {len(catalog.get('skills', []))} 个 skill",
+        "content": base64.b64encode(rendered.encode("utf-8")).decode("ascii"),
+        "sha": cur.get("sha"),
+        "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"},
+    })
+    if "content" not in res:
+        raise RuntimeError(f"[og.svg] 写入失败: {res.get('message', res)}")
+    print("[og.svg] ✅ 已重渲染（og.png 仍需本地生成）")
 
 # ── 日报模板 ───────────────────────────────────────────────
 def check_source_nav():
@@ -650,6 +694,7 @@ if __name__ == "__main__":
         ("Skill 仓库复检", check_skills),
         ("重建 SKILLS.md", build_skills_md),
         ("重渲染目录页", sync_static_catalog),
+        ("重渲染社交预览图", sync_social_preview),
         ("同步公开统计", lambda: sync_public_metadata(github_api, REPO)),
     ]
     failed = []

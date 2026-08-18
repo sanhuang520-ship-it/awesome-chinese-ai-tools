@@ -15,10 +15,13 @@ SVG_PATH = ROOT / "og.svg"
 PNG_PATH = ROOT / "og.png"
 
 
-def load_stats(root: Path = ROOT) -> dict[str, int]:
-    catalog = json.loads((root / "data" / "skills.json").read_text(encoding="utf-8"))
-    tools = json.loads((root / "data" / "tools.json").read_text(encoding="utf-8"))
-    compatibility = json.loads((root / "data" / "compatibility.json").read_text(encoding="utf-8"))
+def build_preview_stats(catalog: dict, tools: dict, compatibility: dict) -> dict[str, int]:
+    """
+    从已解析的三份数据算出社交预览图要用的统计。
+
+    单独抽出来是为了让 daily_check.py 能用 GitHub API 取到的数据直接调用——
+    load_stats() 只能读本地文件，接不进那套「读 API → 比对 → 有变化才写」的流程。
+    """
     public_stats = build_stats(catalog, tools)
     verified = compatibility["results"]["codexActivation"]["verifiedSkills"]
     stats = {
@@ -31,6 +34,14 @@ def load_stats(root: Path = ROOT) -> dict[str, int]:
     if stats["codex"] != stats["ours"]:
         raise ValueError("social preview requires Codex activation evidence for every first-party Skill")
     return stats
+
+
+def load_stats(root: Path = ROOT) -> dict[str, int]:
+    return build_preview_stats(
+        json.loads((root / "data" / "skills.json").read_text(encoding="utf-8")),
+        json.loads((root / "data" / "tools.json").read_text(encoding="utf-8")),
+        json.loads((root / "data" / "compatibility.json").read_text(encoding="utf-8")),
+    )
 
 
 def render_svg(stats: dict[str, int]) -> str:
