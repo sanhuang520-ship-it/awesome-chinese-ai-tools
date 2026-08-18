@@ -1365,20 +1365,6 @@
       "skillCheckedAt": "2026-08-17"
     },
     {
-      "name": "AppGenesisForge",
-      "cat": "dev",
-      "official": false,
-      "stars": 412,
-      "desc": "19 个角色协作的 AI Agent 团队脚手架，按阶段门禁推进",
-      "descEn": "AI Agent Team scaffold for Claude Code — 19 roles collaborate through stage gates, enforced by mandatory skill",
-      "url": "https://github.com/pcliangx/AppGenesisForge",
-      "repo": "pcliangx/AppGenesisForge",
-      "skillOk": false,
-      "skillStatus": "gone",
-      "lastPush": "2026-07-19",
-      "skillCheckedAt": "2026-08-17"
-    },
-    {
       "name": "humanities-writing-companion",
       "cat": "cn",
       "official": false,
