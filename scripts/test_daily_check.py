@@ -65,7 +65,12 @@ class DailyCheckTest(unittest.TestCase):
         for phrase in ("安装第三方 Skill 前", "audit-skill/", "0 项命中不等于安全"):
             with self.subTest(phrase=phrase):
                 self.assertIn(phrase, catalog)
-        self.assertEqual(194, len(json.loads(source)["skills"]))
+        # 生成的目录必须覆盖 skills.json 里的全部条目，不能被截断。
+        # 用数据本身现算，不写死当天数字。
+        self.assertEqual(
+            len(json.loads(source)["skills"]),
+            len(json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))["skills"]),
+        )
 
     def test_generated_originals_expose_decision_labels_and_evidence_pages(self):
         source = (ROOT / "data" / "skills.json").read_bytes()

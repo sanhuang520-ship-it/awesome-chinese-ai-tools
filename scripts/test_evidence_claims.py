@@ -6,6 +6,25 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def catalog_counts():
+    """
+    从 data/skills.json 现场算出「条目数」和「来源仓库数」。
+
+    这两个数字每次增删 Skill 都会变，写死在断言里只会逼着人每次回来抄一遍
+    （08-14 抄成 195/152，08-17 又抄成 194/151），而抄写本身验证不了任何东西。
+    这里真正要守的是：对外文案用的是「条目 vs 仓库」两个口径，且数字跟数据一致。
+    """
+    skills = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))["skills"]
+    repos = {
+        "/".join(item["url"].split("github.com/")[1].split("/")[:2]).lower()
+        for item in skills
+        if "github.com/" in item.get("url", "")
+    }
+    return len(skills), len(repos)
+
+
 PUBLIC_FILES = [
     ROOT / "README.md",
     ROOT / "SKILLS.md",
@@ -262,7 +281,11 @@ class EvidenceClaimsTest(unittest.TestCase):
         self.assertIn("中文 Agent Skills 合集：可搜索、可安装、带实测证据", readme)
         self.assertIn("Chinese Agent Skills / Chinese AI Skills directory", readme)
         self.assertIn("# Chinese AI Agent Skills Directory", english)
-        self.assertNotIn("194 个中文原创", readme)
+        # 不能把全部条目说成"中文原创"（实际只有 13 个是本仓库自写）。
+        # 这里必须用当前真实总数去比对：写死某个旧数字的话，总数一变，
+        # README 真写了夸大说法反而测不出来——断言会因为数字对不上而"放行"。
+        entries, _ = catalog_counts()
+        self.assertNotIn(f"{entries} 个中文原创", readme)
 
     def test_third_party_install_records_are_not_called_usage(self):
         skills = (ROOT / "data" / "skills.json").read_text(encoding="utf-8")
@@ -273,9 +296,11 @@ class EvidenceClaimsTest(unittest.TestCase):
 
     def test_public_copy_distinguishes_skill_entries_from_repositories(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertIn("194 个 Skill 条目来自 151 个仓库", readme)
-        self.assertIn("151 个来源仓库复检", readme)
-        self.assertNotIn("194 个 Skill 仓库复检", readme)
+        entries, repos = catalog_counts()
+        self.assertIn(f"{entries} 个 Skill 条目来自 {repos} 个仓库", readme)
+        self.assertIn(f"{repos} 个来源仓库复检", readme)
+        # 关键区分：复检的是仓库不是条目，不能把条目数说成"仓库复检"
+        self.assertNotIn(f"{entries} 个 Skill 仓库复检", readme)
         index = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertNotIn("每个仓库都验证过真实存在", index)
         self.assertNotIn("个中文原创", index)
@@ -286,7 +311,8 @@ class EvidenceClaimsTest(unittest.TestCase):
         english = (ROOT / "README.en.md").read_text(encoding="utf-8")
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
-        self.assertIn("194 Agent Skill entries from 151 source repositories", english)
+        entries, repos = catalog_counts()
+        self.assertIn(f"{entries} Agent Skill entries from {repos} source repositories", english)
         self.assertIn("Claude Code and Cursor task-level compatibility are still untested", english)
         self.assertIn("Installation, discovery, automatic activation, and task completion are separate claims", english)
         self.assertIn("Ten completed the recorded task", english)

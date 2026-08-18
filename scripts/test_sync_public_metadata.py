@@ -89,8 +89,22 @@ class PublicMetadataTest(unittest.TestCase):
         self.assertEqual(used_categories, set(CAT_ORDER))
 
     def test_skill_entries_and_source_repositories_are_distinct_counts(self):
-        self.assertEqual(194, self.stats["skills"])
-        self.assertEqual(151, self.stats["repos"])
+        """
+        要守的是「条目数」和「来源仓库数」是两个不同口径、且 build_stats 算得对——
+        不是某天恰好是 194/151。之前把当天数字写死在这里，结果每次增删 skill
+        都得回来改一遍测试（08-14 改成 195/152，08-17 又改成 194/151），
+        而这种改动纯属抄写，不构成任何验证。改成从 data/skills.json 现场推导。
+        """
+        skills = json.loads((ROOT / "data/skills.json").read_text(encoding="utf-8"))["skills"]
+        expected_repos = {
+            "/".join(item["url"].split("github.com/")[1].split("/")[:2]).lower()
+            for item in skills
+            if "github.com/" in item.get("url", "")
+        }
+        self.assertEqual(len(skills), self.stats["skills"])
+        self.assertEqual(len(expected_repos), self.stats["repos"])
+        # 多个 Skill 可以来自同一个仓库，所以仓库数必须严格小于条目数；
+        # 如果两者相等，说明去重逻辑失效了。
         self.assertLess(self.stats["repos"], self.stats["skills"])
 
     def test_tool_link_statuses_are_counted_by_evidence_type(self):
@@ -110,9 +124,11 @@ class PublicMetadataTest(unittest.TestCase):
     def test_index_metadata_uses_entry_and_repository_units(self):
         index = (ROOT / "index.html").read_text(encoding="utf-8")
         synced = sync_index_text(index, self.stats)
-        self.assertIn("72 个中文条目", synced)
-        self.assertIn("来自 151 个来源仓库", synced)
-        self.assertNotIn("68 个中文项目", synced)
+        # 同样从 self.stats 取，避免每次增删 skill 都要回来改这两个数字
+        self.assertIn(f"{self.stats['cn']} 个中文条目", synced)
+        self.assertIn(f"来自 {self.stats['repos']} 个来源仓库", synced)
+        # 「项目」是旧口径（把条目说成项目），换成「条目」之后不该再出现
+        self.assertNotIn("个中文项目", synced)
         self.assertIn("Chinese Agent Skills / 中文 AI Skills 库", synced)
         self.assertIn("Chinese Agent Skills / 中文 AI Skills 合集", synced)
 

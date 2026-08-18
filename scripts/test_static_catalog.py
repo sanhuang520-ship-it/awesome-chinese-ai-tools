@@ -69,7 +69,9 @@ class StaticCatalogTest(unittest.TestCase):
             'property="og:title"',
             'name="twitter:card"',
             'type="application/ld+json"',
-            '"numberOfItems":194',
+            # 结构化数据里的条目数必须跟 skills.json 一致；用 self.data 现算，
+            # 不写死当天数字（写死的话每次增删 Skill 都得回来抄一遍）
+            f'"numberOfItems":{len(self.data["skills"])}',
         ):
             self.assertIn(phrase, self.page)
 
