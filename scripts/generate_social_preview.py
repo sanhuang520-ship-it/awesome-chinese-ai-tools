@@ -30,13 +30,41 @@ def svg_digest(svg_text: str) -> str:
     return hashlib.sha256(svg_text.encode("utf-8")).hexdigest()
 
 
+def png_digest() -> str:
+    return hashlib.sha256(PNG_PATH.read_bytes()).hexdigest()
+
+
+def _stamp_text(svg_text: str) -> str:
+    """戳里同时记 svg 和 png 两个哈希。"""
+    return f"svg={svg_digest(svg_text)}\npng={png_digest()}\n"
+
+
+def _read_stamp() -> dict:
+    if not PNG_STAMP_PATH.exists():
+        return {}
+    out = {}
+    for line in PNG_STAMP_PATH.read_text(encoding="utf-8").splitlines():
+        if "=" in line:
+            k, _, v = line.partition("=")
+            out[k.strip()] = v.strip()
+    return out
+
+
 def png_is_stale(svg_text: str) -> bool:
-    """og.png 是否落后于当前 og.svg。"""
+    """
+    og.png 是否已经和当前 og.svg 对不上。
+
+    两件事都要查，缺一不可：
+    - svg 哈希：SVG 更新了但忘了重渲染 PNG（最常见的失误）
+    - png 哈希：PNG 本身被替换或损坏（只记 SVG 哈希的话，这种情况查不出来——
+      2026-08-19 做守卫审计时，篡改 PNG 尾部字节测试照样全绿，就是漏了这一半）
+    """
     if not PNG_PATH.exists():
         return True
-    if not PNG_STAMP_PATH.exists():
+    stamp = _read_stamp()
+    if not stamp:
         return True
-    return PNG_STAMP_PATH.read_text(encoding="utf-8").strip() != svg_digest(svg_text)
+    return stamp.get("svg") != svg_digest(svg_text) or stamp.get("png") != png_digest()
 
 
 def build_preview_stats(catalog: dict, tools: dict, compatibility: dict) -> dict[str, int]:
@@ -130,7 +158,7 @@ def main() -> None:
             raise SystemExit("og.svg is missing; add --write")
         subprocess.run([renderer, "-w", "1200", "-h", "630", "-o", str(PNG_PATH), str(SVG_PATH)], check=True)
         PNG_STAMP_PATH.write_text(
-            svg_digest(SVG_PATH.read_text(encoding="utf-8")) + "\n", encoding="utf-8"
+            _stamp_text(SVG_PATH.read_text(encoding="utf-8")), encoding="utf-8"
         )
         print(f"wrote {PNG_PATH.relative_to(ROOT)} + {PNG_STAMP_PATH.relative_to(ROOT)}")
 
