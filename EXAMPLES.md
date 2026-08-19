@@ -391,10 +391,10 @@ font-family:
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
 
 # 装单个（推荐）
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-lesson-plan
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-lesson-plan -g
 
 # 全部装上
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*' -g
 ```
 
 或手动复制 `skills/<名称>/` 到 `~/.claude/skills/`

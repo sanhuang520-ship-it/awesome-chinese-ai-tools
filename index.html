@@ -1940,7 +1940,7 @@ async function spOpen(name, url){
     vis.style.display = '';
   } else if (vis) { vis.style.display = 'none'; }
   e.panel.querySelector('#sp-cmd').textContent =
-    'npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ' + name;
+    'npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ' + name + ' -g';
   const body = e.panel.querySelector('#sp-body');
   body.innerHTML = '<div class="sp-loading">正在读取 SKILL.md…</div>';
   e.mask.classList.add('show'); e.panel.classList.add('show');
@@ -2092,13 +2092,12 @@ function renderSkills() {
       <div class="sk-install">
         <div class="sk-install-label">一键安装（推荐）</div>
         <code>npx skills add &lt;仓库地址&gt; --list　　# 先看有哪些</code>
-        <code style="margin-top:6px">npx skills add &lt;仓库地址&gt; --skill &lt;名称&gt;　　# 装指定的</code>
-        <div class="sk-install-label" style="margin-top:10px">安装位置（本机实测有效）</div>
+        <code style="margin-top:6px">npx skills add &lt;仓库地址&gt; --skill &lt;名称&gt; -g　　# 装指定的（-g=全局）</code>
+        <div class="sk-install-label" style="margin-top:10px">全局安装位置（加 -g 时；不加则在当前目录）</div>
         <code>${d.installPath}</code>
       </div>
       <div class="sk-warn">
-        ⚠️ 实测（skills CLI 1.5.22）：<code style="display:inline">npx skills add</code> 把文件装到上面这个通用目录，
-        同时在 <code style="display:inline">~/.claude/skills/</code> 建立<b>符号链接</b>，因此两处能看到同一份文件；这只证明安装结果，本轮尚未运行 Claude Code，不能据此声称自动触发。
+        ⚠️ 实测（skills CLI 1.5.23，2026-08-20 复测）：<code style="display:inline">npx skills add</code> <b>默认装进你当前所在的目录</b>（<code style="display:inline">./.agents/skills/</code>）；<b>加 <code style="display:inline">-g</code> 才装到上面这个用户级通用目录</b>。两种情况都会在同级 <code style="display:inline">.claude/skills/</code> 建立<b>符号链接</b>，因此两处能看到同一份文件；这只证明安装结果，本轮尚未运行 Claude Code，不能据此声称自动触发。
         而部分教程写的 <code style="display:inline">~/.config/claude-code/skills/</code> 本机实测<b>并不存在</b>。Skills 可包含可执行脚本，安装第三方 skill 前请先查看其内容。
       </div>
       </details>

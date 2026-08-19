@@ -63,7 +63,7 @@ def render():
     verbatim, summaries = validate_records(records)
     cards = []
     for name, record, task in verbatim:
-        install = f"npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill {name}"
+        install = f"npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill {name} -g"
         result = results[name]
         cards.append(f'''<article class="task-card">
   <div class="card-head"><span>{html.escape(name)}</span><b>{html.escape(result["labelZh"])}</b></div>

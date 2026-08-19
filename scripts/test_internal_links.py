@@ -67,13 +67,13 @@ class InternalLinksTest(unittest.TestCase):
 
     def test_threejs_guide_keeps_install_command_visible_without_clipboard_access(self):
         page = (ROOT / "guofeng-threejs" / "index.html").read_text(encoding="utf-8")
-        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill guofeng-threejs"
+        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill guofeng-threejs -g"
         self.assertIn(f"<code>{command}</code>", page)
         self.assertIn(f'data-copy="{command}"', page)
 
     def test_bookkeeping_guide_keeps_reconciliation_and_install_command_visible(self):
         page = (ROOT / "bookkeeping" / "index.html").read_text(encoding="utf-8")
-        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill bookkeeping-cn"
+        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill bookkeeping-cn -g"
         for value in ("12,000", "5,000", "1,000", "6,000"):
             self.assertIn(value, page)
         self.assertIn(f"<code>{command}</code>", page)
@@ -82,7 +82,7 @@ class InternalLinksTest(unittest.TestCase):
 
     def test_learning_guide_keeps_calibration_and_evidence_boundary_visible(self):
         page = (ROOT / "learning" / "index.html").read_text(encoding="utf-8")
-        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ai-learning-coach"
+        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ai-learning-coach -g"
         for phrase in ("为什么学", "当前基础", "可用时间", "验收标准", "仍未验证"):
             self.assertIn(phrase, page)
         self.assertIn(f'<code class="command">{command}</code>', page)
@@ -91,7 +91,7 @@ class InternalLinksTest(unittest.TestCase):
 
     def test_reading_guide_keeps_source_and_copyright_boundaries_visible(self):
         page = (ROOT / "reading" / "index.html").read_text(encoding="utf-8")
-        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill book-digest-cn"
+        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill book-digest-cn -g"
         for phrase in ("作者的问题", "主张与论证", "我的判断", "作品内容", "解释", "待核对", "版权与引用边界"):
             self.assertIn(phrase, page)
         self.assertIn(f'<code class="command">{command}</code>', page)
@@ -100,7 +100,7 @@ class InternalLinksTest(unittest.TestCase):
 
     def test_lesson_plan_guide_uses_current_curriculum_language_and_keeps_failure_visible(self):
         page = (ROOT / "lesson-plan" / "index.html").read_text(encoding="utf-8")
-        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-lesson-plan"
+        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-lesson-plan -g"
         for phrase in ("核心素养", "学习任务", "评价证据", "完整任务：未完成", "缩小复测：通过", "学生隐私", "实验与活动安全"):
             self.assertIn(phrase, page)
         self.assertIn(f'<code class="command">{command}</code>', page)
@@ -112,7 +112,7 @@ class InternalLinksTest(unittest.TestCase):
 
     def test_homework_guide_separates_guidance_from_parent_checking(self):
         page = (ROOT / "homework" / "index.html").read_text(encoding="utf-8")
-        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill homework-tutor-cn"
+        command = "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill homework-tutor-cn -g"
         for phrase in ("孩子先说", "家长引导", "家长核对", "迁移练习", "最终使用仍由人决定", "不做诊断"):
             self.assertIn(phrase, page)
         self.assertIn(f'<code class="command">{command}</code>', page)

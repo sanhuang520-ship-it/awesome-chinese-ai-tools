@@ -30,7 +30,7 @@ $ npx skills add &lt;repo&gt; --skill &lt;name&gt;
 <section class="wrap section"><h2>安装前，先审计第三方 Skill</h2><p class="dek">先读 <code>SKILL.md</code> 和 <code>scripts/</code>。也可以运行本站的只读本地审计器，定位脚本、联网、凭据词、文件写删和高风险命令；它不执行目标，规则零命中也不等于安全。</p><p><a href="../audit-skill/">打开安装前只读审计指南 →</a></p></section>
 <section class="wrap section"><h2>四步安装与核对</h2><p class="dek">以下命令使用本站仓库作例子。一次只处理当前需要的 Skill，保留 CLI 版本与本机观察结果。</p><div class="steps">
 <article class="card"><i>STEP 01</i><h3>先列出，不要盲装全部</h3><div class="cmd"><code>npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list</code></div><p>确认目标名称，也能及早发现仓库结构不被 CLI 识别。</p></article>
-<article class="card"><i>STEP 02</i><h3>一次只装一个</h3><div class="cmd"><code>npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography</code></div><p>Skill 越多，客户端用于发现描述的上下文预算越紧。本次 Codex 实测出现过 description 被缩短的警告。</p></article>
+<article class="card"><i>STEP 02</i><h3>一次只装一个</h3><div class="cmd"><code>npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography -g</code></div><p>Skill 越多，客户端用于发现描述的上下文预算越紧。本次 Codex 实测出现过 description 被缩短的警告。</p></article>
 <article class="card"><i>STEP 03</i><h3>核对实际文件</h3><div class="cmd"><code>ls -la ~/.agents/skills/chinese-typography
 ls -la ~/.claude/skills/chinese-typography</code></div><p>本机实测文件位于 <code>~/.agents/skills/</code>；Claude 目录可见符号链接。版本变化后请以本机结果为准。</p></article>
 <article class="card"><i>STEP 04</i><h3>测试自动触发</h3><div class="cmd"><code>请审查这个中文网页的字体、行高、断行、标点和中英混排问题。</code></div><p>不要在任务里说出 Skill 名称。观察 AI 是否主动读取正确说明，再检查输出是否真正完成任务。</p></article>

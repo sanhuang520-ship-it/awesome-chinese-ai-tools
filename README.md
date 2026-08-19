@@ -92,18 +92,26 @@ CLI 帮助原文：`-g, --global  Install skill globally (user-level) instead of
 **[→ 已有明确目标？按中文表达、国风视觉、学习家庭、办公经营选择 4 组开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)**：每个 Skill 名称直达方法、案例与边界页；组合是编辑入口，不代表会同时触发或已经跨客户端认证。
 
 ```bash
-# 先看仓库里有哪些
+# 先看仓库里有哪些（只读，不写任何文件）
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
 
-# 装单个（推荐）
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography
+# 装单个（推荐）。-g = 装到用户级 ~/.agents/skills/，任何目录下都能用
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography -g
 
-# 全部装上
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'
+# 全部装上（13 个）
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*' -g
+
+# 不加 -g 就是「项目级」：装进你当前所在的这个目录，只在这个项目里可用
+cd ~/my-project && npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography
 
 # 已在当前 Git 项目安装过：按锁文件更新项目副本
 npx --yes skills@1.5.22 update -p -y
 ```
+
+> **上面每条命令都在 2026-08-20 用 CLI 1.5.23 实测跑过**：`--list` 正常列出 13 个；
+> `--skill <name> -g` 落在 `~/.agents/skills/`；`--skill '*'` 确实装满 13 个；
+> 不加 `-g` 落在当前目录。**顺带一提，`--skill a,b,c` 这种逗号分隔写法不生效**
+> （只会列出清单不安装），要装多个就重复执行或用 `'*'`。
 
 最后一条只适用于已有 `skills-lock.json` 的项目级安装。本仓库用历史夹具隔离复测为 13/13 完整文件夹更新成功；没有验证全局 `update -g`，详见[安装与项目更新记录](cases/skills-cli-isolated-install-2026-08-13.md)。
 
@@ -129,10 +137,10 @@ npx --yes skills@1.5.22 update -p -y
 
 | 你想试什么 | 安装 | 复制给 AI 的任务 | 本仓库记录 |
 |---|---|---|---|
-| 审查中文网页排版 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography` | `请检查下面这段网页 CSS 的中文排版问题，只做审查，不修改文件。明确列出问题、理由和建议值：body { font-family: Arial, sans-serif; font-size: 14px; line-height: 1.35; text-align: justify; word-break: break-all; }` | [Codex 单任务实测](cases/chinese-typography-codex.md) |
-| 整理一份不编数据的周报 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-work-report` | `帮我把下面素材整理成给老板看的中文周报：本周修复了登录问题，做了两个页面；结果数据暂时没有；下周继续优化。请按结论先行组织，不要编造数字。` | [Codex 单任务实测](cases/chinese-work-report-codex.md) |
-| 校对一版不编参数的商品文案 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ecommerce-copywriting` | `给一款普通保湿面霜写电商主图文案。已知只有：50g、无香型、89元。没有提供的参数、认证和功效不要编造；先列出可写、待补和不应发布的信息。` | [Codex 单任务实测](cases/ecommerce-copywriting-codex.md) |
-| 制定不靠刷视频的学习计划 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ai-learning-coach` | `我想用两周入门 SQL，但不想再看完教程就忘。先了解我的目标和基础，再带我制定能动手练习的计划。` | [Codex 单任务实测](cases/ai-learning-coach-codex.md) |
+| 审查中文网页排版 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography -g` | `请检查下面这段网页 CSS 的中文排版问题，只做审查，不修改文件。明确列出问题、理由和建议值：body { font-family: Arial, sans-serif; font-size: 14px; line-height: 1.35; text-align: justify; word-break: break-all; }` | [Codex 单任务实测](cases/chinese-typography-codex.md) |
+| 整理一份不编数据的周报 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-work-report -g` | `帮我把下面素材整理成给老板看的中文周报：本周修复了登录问题，做了两个页面；结果数据暂时没有；下周继续优化。请按结论先行组织，不要编造数字。` | [Codex 单任务实测](cases/chinese-work-report-codex.md) |
+| 校对一版不编参数的商品文案 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ecommerce-copywriting -g` | `给一款普通保湿面霜写电商主图文案。已知只有：50g、无香型、89元。没有提供的参数、认证和功效不要编造；先列出可写、待补和不应发布的信息。` | [Codex 单任务实测](cases/ecommerce-copywriting-codex.md) |
+| 制定不靠刷视频的学习计划 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ai-learning-coach -g` | `我想用两周入门 SQL，但不想再看完教程就忘。先了解我的目标和基础，再带我制定能动手练习的计划。` | [Codex 单任务实测](cases/ai-learning-coach-codex.md) |
 
 这些任务在记录的 Codex 版本中发生过自动触发；它们不是“必定触发”的保证。若结果不同，请保留客户端版本和任务原文，按[兼容性实测表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交成功或失败结果。
 

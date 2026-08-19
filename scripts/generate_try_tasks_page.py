@@ -56,7 +56,7 @@ def load_tasks():
 
 
 def render_card(item):
-    install = f"npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill {item['skill']}"
+    install = f"npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill {item['skill']} -g"
     if item["kind"] == "historical":
         evidence = f'''<strong>已有记录（只限当时版本与任务）</strong><p>{html.escape(item["summary"])}</p><a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/{html.escape(item["case"])}">查看原始案例与限制 →</a>'''
         badge = "历史逐字原文"

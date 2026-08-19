@@ -27,7 +27,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 Install one Skill:
 
 ```bash
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography -g
 ```
 
 Installation, discovery, automatic activation, and task completion are separate claims. Client behavior varies by version, install location, and task wording. See the [installation guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/) and [compatibility matrix](COMPATIBILITY.md).
