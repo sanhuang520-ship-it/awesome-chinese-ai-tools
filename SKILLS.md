@@ -30,13 +30,20 @@
 
 ```bash
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list          # 先看有哪些
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill guochao-visual-cn
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*'             # 全部
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill guochao-visual-cn -g   # -g = 全局安装
+npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*' -g          # 全部
 ```
 
-> ⚠️ **实测提醒（CLI 1.5.22）**：`npx skills add` 把文件装到 `~/.agents/skills/`（多家 agent 共用），
-> 同时在 `~/.claude/skills/` 建立符号链接，因此两处能看到同一份文件；这只证明安装结果，本轮尚未运行 Claude Code。
+> ⚠️ **实测提醒（CLI 1.5.23，2026-08-19 复测）**：`npx skills add` **默认是项目级**，
+> 把文件装进**你当前所在的目录**（`./.agents/skills/`），不是家目录；
+> 加 `-g` 才装到用户级的 `~/.agents/skills/`。CLI 帮助原文：
+> `-g, --global  Install skill globally (user-level) instead of project-level`。
+> 两种情况都会在同级的 `.claude/skills/` 建符号链接，所以两处能看到同一份文件；
+> 这只证明安装结果，本轮尚未运行 Claude Code。
 > 而部分教程（包括 7 万星仓库）写的 `~/.config/claude-code/skills/`，本机实测**并不存在**。
+
+> 📌 本页此前写的是「装到 `~/.agents/skills/`」，不准确——当初那次实测在家目录下跑，
+> 把「当前目录恰好是家目录」当成了工具行为。2026-08-19 换目录交叉验证后更正。
 
 装好后重启你使用的客户端，用一个**不点名 Skill 名称**的自然任务测试是否自动触发。不同客户端与版本的行为可能不同；当前只有 Codex 的任务级实测。遇到问题先看[安装与排错页](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/)。
 
@@ -371,5 +378,5 @@ Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts
 
 ---
 
-*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-08-18。*
+*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-08-19。*
 *收录有误或想推荐新 Skill？欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)*
