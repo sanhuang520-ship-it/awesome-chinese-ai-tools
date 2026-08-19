@@ -2,6 +2,7 @@
 """Generate the repository social preview from committed evidence."""
 
 import argparse
+import hashlib
 import json
 import shutil
 import subprocess
@@ -13,6 +14,29 @@ from sync_public_metadata import build_stats
 ROOT = Path(__file__).resolve().parents[1]
 SVG_PATH = ROOT / "og.svg"
 PNG_PATH = ROOT / "og.png"
+# 记录「og.png 是照哪一版 og.svg 渲染的」。
+#
+# 为什么不在 CI 里直接渲染 PNG：这张图的文案是中文，SVG 指定 Songti SC /
+# Noto Serif CJK SC，而 GitHub runner 默认没有中文字体，在那边渲染会出豆腐块，
+# 产出的图比现在更糟；而且不同机器的 rsvg/字体版本渲染出的字节本来就不同，
+# 两边各渲染一次就会互相覆盖、无限 churn。
+#
+# 所以 PNG 保持本地生成，但把当时 og.svg 的哈希记下来，让 CI 只做「是否过期」
+# 的判断——不需要字体、不需要渲染，也不会再悄悄过期。
+PNG_STAMP_PATH = ROOT / "og.png.sha256"
+
+
+def svg_digest(svg_text: str) -> str:
+    return hashlib.sha256(svg_text.encode("utf-8")).hexdigest()
+
+
+def png_is_stale(svg_text: str) -> bool:
+    """og.png 是否落后于当前 og.svg。"""
+    if not PNG_PATH.exists():
+        return True
+    if not PNG_STAMP_PATH.exists():
+        return True
+    return PNG_STAMP_PATH.read_text(encoding="utf-8").strip() != svg_digest(svg_text)
 
 
 def build_preview_stats(catalog: dict, tools: dict, compatibility: dict) -> dict[str, int]:
@@ -86,7 +110,13 @@ def main() -> None:
         current = SVG_PATH.read_text(encoding="utf-8") if SVG_PATH.exists() else ""
         if current != expected:
             raise SystemExit("og.svg is stale; run python3 scripts/generate_social_preview.py --write --png")
-        print("social preview SVG is in sync")
+        if png_is_stale(current):
+            raise SystemExit(
+                "og.png is stale relative to og.svg; run "
+                "python3 scripts/generate_social_preview.py --write --png "
+                "(needs rsvg-convert and CJK fonts, so it must be done locally, not in CI)"
+            )
+        print("social preview SVG and PNG are in sync")
 
     if args.write:
         SVG_PATH.write_text(expected, encoding="utf-8")
@@ -99,7 +129,10 @@ def main() -> None:
         if not args.write and not SVG_PATH.exists():
             raise SystemExit("og.svg is missing; add --write")
         subprocess.run([renderer, "-w", "1200", "-h", "630", "-o", str(PNG_PATH), str(SVG_PATH)], check=True)
-        print(f"wrote {PNG_PATH.relative_to(ROOT)}")
+        PNG_STAMP_PATH.write_text(
+            svg_digest(SVG_PATH.read_text(encoding="utf-8")) + "\n", encoding="utf-8"
+        )
+        print(f"wrote {PNG_PATH.relative_to(ROOT)} + {PNG_STAMP_PATH.relative_to(ROOT)}")
 
     if not (args.check or args.write or args.png):
         parser.error("choose --check or --write [--png]")

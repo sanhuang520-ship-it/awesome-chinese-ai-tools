@@ -4,7 +4,7 @@ import struct
 import unittest
 from pathlib import Path
 
-from generate_social_preview import PNG_PATH, SVG_PATH, load_stats, render_svg
+from generate_social_preview import PNG_PATH, SVG_PATH, load_stats, png_is_stale, render_svg
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,6 +21,24 @@ class SocialPreviewTest(unittest.TestCase):
             self.assertIn(phrase, svg)
         for stale in ("184 个可安装", "68 个中文项目", "Codex / Claude Code / Cursor"):
             self.assertNotIn(stale, svg)
+
+    def test_png_is_not_stale_relative_to_svg(self):
+        """
+        og.png 必须是照当前 og.svg 渲染的。
+
+        og.svg 现在由 daily_check.py 自动同步，但 og.png 只能本地生成
+        （要 rsvg-convert，而且这张图是中文文案、CI runner 没有中文字体，
+        在那边渲染会出豆腐块）。所以这里靠 og.png.sha256 这个哈希戳判断是否过期，
+        不需要渲染也不需要字体——否则 PNG 会在无人察觉的情况下一直显示旧数字，
+        而它正是分享到社交平台时别人看到的那张图。
+
+        报红时的修法：python3 scripts/generate_social_preview.py --write --png
+        """
+        svg = SVG_PATH.read_text(encoding="utf-8")
+        self.assertFalse(
+            png_is_stale(svg),
+            "og.png 落后于 og.svg；本地跑 generate_social_preview.py --write --png 后提交",
+        )
 
     def test_png_has_social_preview_dimensions(self):
         data = PNG_PATH.read_bytes()

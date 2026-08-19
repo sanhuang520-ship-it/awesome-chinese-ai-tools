@@ -39,6 +39,7 @@ def build_stats(skills_data, tools_data):
 
 def sync_readme_text(body, stats):
     """只同步 README 里的可计算统计，不改手写介绍。"""
+    original_body = body
     n, repos, cn, ours = stats["skills"], stats["repos"], stats["cn"], stats["ours"]
     official, tools, checked = stats["official"], stats["tools"], stats["checked"]
     direct_ok, bot_blocked, whitelisted = stats["tools_direct_ok"], stats["tools_bot_blocked"], stats["tools_whitelisted"]
@@ -67,17 +68,38 @@ def sync_readme_text(body, stats):
             rf"| \1 | **{repos} 个来源仓库复检**（覆盖 {n} 个 Skill 条目）",
         ),
         (r"最近复检：\*\*\d{4}-\d{2}-\d{2}\*\*", f"最近复检：**{checked}**"),
-        (
-            r"MIT License · 数据最后复检 \d{4}-\d{2}-\d{2} · README 由脚本从实际数据生成于 \d{4}-\d{2}-\d{2}",
-            f"MIT License · 数据最后复检 {checked} · 公开统计由脚本同步于 {today}",
-        ),
-        (
-            r"MIT License · 数据最后复检 \d{4}-\d{2}-\d{2} · 公开统计由脚本同步于 \d{4}-\d{2}-\d{2}",
-            f"MIT License · 数据最后复检 {checked} · 公开统计由脚本同步于 {today}",
-        ),
+        # 页脚的两个日期不在这里处理，见下方——"同步于"那个日期只在内容真的
+        # 变了才前移，否则每过一天就会跟自己对不上。
     ]
     for pattern, value in replacements:
         body = re.sub(pattern, value, body)
+
+    # 迁移旧措辞，统一成"公开统计由脚本同步于"
+    body = re.sub(
+        r"MIT License · 数据最后复检 \d{4}-\d{2}-\d{2} · README 由脚本从实际数据生成于 (\d{4}-\d{2}-\d{2})",
+        rf"MIT License · 数据最后复检 {checked} · 公开统计由脚本同步于 \1",
+        body,
+    )
+    # 数据复检日期直接来自数据文件，照实写
+    body = re.sub(
+        r"(MIT License · 数据最后复检 )\d{4}-\d{2}-\d{2}( · 公开统计由脚本同步于 )",
+        rf"\g<1>{checked}\g<2>",
+        body,
+    )
+
+    # "公开统计由脚本同步于"只在这次同步真的改了东西时才前移到今天。
+    #
+    # 原来无条件写 today()，有两个问题：
+    # ① 每过一天，已提交的 README 就和重新生成的结果对不上，
+    #    test_committed_files_are_in_sync 会无缘无故报红（去掉 cron 之后尤其明显）；
+    # ② 更要紧的是，一个「什么都没变也照样往前跳」的日期是误导——
+    #    读者看到今天的日期会以为当天做过核对，其实数据可能是几天前的。
+    if body != original_body:
+        body = re.sub(
+            r"(公开统计由脚本同步于 )\d{4}-\d{2}-\d{2}",
+            rf"\g<1>{today}",
+            body,
+        )
     return body
 
 
