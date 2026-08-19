@@ -52,20 +52,36 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 7 万星的 `awesome-claude-skills` 教你装到 `~/.config/claude-code/skills/`。
 **我照做，装完没生效——那个目录在我这台 macOS 上根本不存在。**
 
-用 Vercel Labs 的 `skills` CLI 实测（1.5.22）：
+用 Vercel Labs 的 `skills` CLI 实测（**1.5.23，2026-08-19 复测**）：
 
 ```bash
-$ npx skills add <repo> --skill <name>
-✓ ~/.agents/skills/<name>          # 文件实际在这里（多家 agent 共用）
+# 默认是「项目级」——装进你当前所在的那个目录，不是家目录
+$ cd /tmp && npx skills add <repo> --skill <name>
+✓ ./.agents/skills/<name>          # 落在 /tmp/.agents/skills/
+
+# 要装成全局（用户级），必须加 -g
+$ npx skills add <repo> --skill <name> -g
+✓ ~/.agents/skills/<name>
 
 $ ls -l ~/.claude/skills/
-lrwxr-xr-x  <name> -> ../../.agents/skills/<name>   # 这里是符号链接
+lrwxr-xr-x  <name> -> ../../.agents/skills/<name>   # 同级目录下的符号链接
 ```
 
-安装器同时在 `~/.claude/skills/` 建立了符号链接，所以从两个路径都能看到同一份文件。**这只证明安装结果；本轮没有运行 Claude Code，不能据此声称自动触发。**
+CLI 帮助原文：`-g, --global  Install skill globally (user-level) instead of project-level`。
+安装器会在同级的 `.claude/skills/` 建符号链接，所以两个路径能看到同一份文件。
+**这只证明安装结果；本轮没有运行 Claude Code，不能据此声称自动触发。**
 
-**两条经验**：高星不等于正确，路径命令这类可验证的东西花 10 秒实测比信任星数靠谱；
-**而且工具会变——这个结论我们复测过一次才发现要补细节。**
+> **⚠️ 2026-08-19 更正**：这一节此前写的是「`npx skills add` 把文件装到 `~/.agents/skills/`」，
+> 不准确。默认行为是装进**当前工作目录**；当初那次实测是在家目录下跑的，
+> 于是把「当时的当前目录恰好是家目录」当成了「工具装到家目录」。
+> 本次交叉验证：在 `/tmp` 下跑落在 `/tmp/.agents/skills/`；
+> 在一个 git 仓库的子目录下跑落在该子目录，**不会向上找项目根**；加 `-g` 才走家目录。
+>
+> 这和本节批评 7 万星仓库的，其实是同一类错误——**把测试环境的偶然当成工具的行为**。
+> 记下来是因为它比结论本身更值得记：可验证的东西要换环境验，不是跑一次就下定论。
+
+**三条经验**：高星不等于正确；工具会变，写死的结论要定期复测；
+**同一个命令换个目录跑结果就不同的时候，说明你测的是环境不是工具。**
 
 ---
 
