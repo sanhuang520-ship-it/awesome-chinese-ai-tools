@@ -646,9 +646,14 @@ def check_source_nav():
         raise RuntimeError("[信源导航] 找不到 SOURCES.md")
     body = base64.b64decode(info["content"]).decode("utf-8")
 
-    # 已知误报：整个域名从本机网络返回 400（含首页），属于 IP/地区层拦截，
-    # 不是站点失效 —— 手动 curl 复核过，别让它天天误报。
-    SKIP = ("ai.meta.com",)
+    # 已知误报：这些域名从 runner 访问会失败，但站点本身是好的 —— 都手动 curl 复核过，
+    # 别让它们天天误报。加新条目前必须先本机复核，不要凭超时就往这里加。
+    #
+    # ai.meta.com    整个域名从本机网络返回 400（含首页），IP/地区层拦截
+    # www.zhipuai.cn 2026-08-20 runner 报 timeout，但本机两种 UA 实测均 HTTP 200，
+    #                DNS 解析到 kunluncan CDN（223.95.60.x）——国内 CDN 对海外 IP 的
+    #                常见表现，不是站点失效
+    SKIP = ("ai.meta.com", "zhipuai.cn")
 
     urls = sorted(set(re.findall(r"\]\((https?://[^)]+)\)", body)))
     dead, skipped = [], 0
