@@ -165,6 +165,7 @@ def check_tool_links():
     # 反复误报的域名：手动 curl 复核确认站点正常，但检测端拿到 403/超时。
     # midjourney.com = Cloudflare 机器人防护，日志里已「异常↔恢复」横跳 76 次。
     SKIP_DOMAINS = {"azure.microsoft.com", "midjourney.com"}
+    whitelist_alerts = []   # 白名单里「看起来是真挂了」的条目，需要人工复核
     print(f"\n[链接检测] 开始 — {today_str}")
 
     # 1. 从 GitHub 拉取 tools.json
@@ -193,9 +194,17 @@ def check_tool_links():
         prev_ok         = t.get("linkOk")
         prev_fail_count = t.get("linkFailCount", 0)
 
-        # 已知误报域名直接跳过（标记为正常，不实际请求）
+        # 白名单 = 「不因此报警」，不是「假装访问过」。
+        # 原来这里直接写 code=200 却从未发出请求，等于给未验证的 URL 记了个假状态；
+        # 更要紧的是：万一站点真挂了（404/410），白名单会把它永久藏住。
+        # 现在照常探测，失败不计入异常，但把真实观测结果记进 whitelistProbe，
+        # 并对「像是真挂了」的响应单独告警。
         if any(d in url for d in SKIP_DOMAINS):
-            ok, code, note = True, 200, "ok_whitelisted"
+            probe_ok, probe_code, probe_note = check_url(url)
+            ok, code, note = True, probe_code or 0, "ok_whitelisted"
+            t["whitelistProbe"] = probe_note
+            if not probe_ok and probe_code in (404, 410):
+                whitelist_alerts.append(f"{t.get('name', url)}: {probe_code}")
         else:
             ok, code, note = check_url(url)
             if not ok:
@@ -233,6 +242,14 @@ def check_tool_links():
     data["meta"]["updated"]       = today_str
     data["meta"]["linkCheckedAt"] = today_str
     data["meta"]["linkDeadCount"] = len(dead_names)
+
+    # 白名单告警要放在「是否写盘」的判断之前打印：
+    # 无变化的日子会提前 return，放在写入分支里就等于静默——而这个告警的意义
+    # 恰恰是防止白名单把真失效藏住，不能自己也被藏起来。
+    if whitelist_alerts:
+        print("[链接检测] ⚠️ 白名单域名返回 404/410，可能是真的挂了，请人工复核后决定是否移出白名单：")
+        for a in whitelist_alerts:
+            print(f"           {a}")
 
     # 4. 状态有变化，或当天检测日期尚未落盘时写回 GitHub。
     # 不能只看状态变化：否则每天确实执行了请求，但公开证据日期会永久停在旧值。
@@ -656,10 +673,14 @@ def check_source_nav():
     SKIP = ("ai.meta.com", "zhipuai.cn")
 
     urls = sorted(set(re.findall(r"\]\((https?://[^)]+)\)", body)))
-    dead, skipped = [], 0
+    dead, skipped, skip_alerts = [], 0, []
     for u in urls:
         if any(d in u for d in SKIP):
             skipped += 1
+            # 同样照常探测：白名单不报警，但要能看见它从「超时」变成「404」
+            p_ok, p_code, p_note = check_url(u)
+            if not p_ok and p_code in (404, 410):
+                skip_alerts.append(f"{u} → {p_code}")
             continue
         ok, code, note = check_url(u)
         if not ok:
@@ -668,6 +689,10 @@ def check_source_nav():
 
     print(f"[信源导航] 核对 {len(urls)-skipped}/{len(urls)} 个官方链接 — 异常 {len(dead)} 个"
           + (f"（跳过已知误报 {skipped} 个）" if skipped else ""))
+    if skip_alerts:
+        print("[信源导航] ⚠️ 白名单条目返回 404/410，可能是真的挂了，请人工复核后决定是否移出白名单：")
+        for a in skip_alerts:
+            print(f"           {a}")
     for u, note in dead:
         print(f"           ⚠️ {u} ({note})")
 
