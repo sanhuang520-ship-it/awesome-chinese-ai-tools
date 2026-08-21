@@ -34,12 +34,11 @@ DEMO_PAGES = {
 
 # 不从站内首页链接、但确实有入口的页面。故意写成显式白名单：
 # 新增条目必须是有意识的决定，而不是"忘了加链接"。
-# 两者都在 README.md / README.en.md / llms.txt 里有入口，也都在 sitemap 里。
+# 它在 README.md / README.en.md / llms.txt 里有入口，也在 sitemap 里。
+# （chinese-agent-skills/ 已于 2026-08-21 在首页导航栏加了 EN 入口，故移出白名单。）
 LINKED_ONLY_FROM_README = {
     # 无 JavaScript 的可爬目录，是首页列表的镜像；不从首页链接以免自我竞争。
     "catalog/index.html",
-    # 英文落地页（lang="en"），面向英文搜索，入口在 README.en.md。
-    "chinese-agent-skills/index.html",
 }
 
 

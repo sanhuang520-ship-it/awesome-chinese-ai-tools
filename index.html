@@ -20,6 +20,8 @@
 <meta name="twitter:image" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/og.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/#site","url":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/","name":"中文 AI Skills 库","description":"Chinese AI Skills directory：194 个 Skill 条目，13 个本站自写；定期复检，兼容性证据与失败边界公开。","inLanguage":"zh-CN","potentialAction":{"@type":"SearchAction","target":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Dataset","@id":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/#skills","name":"AI Agent Skills 中文合集（194 个）","description":"Chinese Agent Skills / 中文 AI Skills 合集：194 个 Skill 条目，其中 72 个中文条目、13 个本站自写 Skill，来自 151 个来源仓库；定期复检来源仓库是否失效，另附 46 个 AI 工具导航。","url":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/","inLanguage":"zh-CN","license":"https://opensource.org/licenses/MIT","creator":{"@type":"Organization","name":"awesome-chinese-ai-tools"},"dateModified":"2026-08-20","keywords":["Codex Skills","Claude Skills","Cursor Skills","Agent Skills","中文 Skills"],"distribution":{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/data/skills.json"}},{"@type":"FAQPage","@id":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/#faq","mainEntity":[{"@type":"Question","name":"Claude Skills 装在哪个目录？","acceptedAnswer":{"@type":"Answer","text":"本机使用 Vercel Labs skills CLI 1.5.23 实测（2026-08-19）：npx skills add 默认是项目级，装进当前所在目录的 .agents/skills/；加 -g 才装到用户级的 ~/.agents/skills/。两种情况都会在同级 .claude/skills/ 建符号链接。此前本页写的是「装到 ~/.agents/skills/」，那是当初在家目录下实测造成的误读，已更正。不同版本可能变化；符号链接存在不等于已验证 Claude Code 自动触发。"}},{"@type":"Question","name":"怎么安装一个 AI Skill？","acceptedAnswer":{"@type":"Answer","text":"最简单是 npx skills add <GitHub 仓库地址>，加 --list 可先看仓库里有哪些 skill，加 --skill <名称> 装指定的一个。安装第三方 Skill 前应先检查其中的 SKILL.md 与脚本。"}},{"@type":"Question","name":"Skills 和 MCP 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"Skills 是一份 Markdown 工作说明书，教 AI 怎么做某类任务；MCP 是一个后台服务，让 AI 连上外部系统（数据库、浏览器等）。Skills 管「怎么做」，MCP 管「能连什么」，两者可以配合使用。"}},{"@type":"Question","name":"有哪些中文的 Claude Skills？","acceptedAnswer":{"@type":"Answer","text":"本站收录了 72 个中文 Skill 条目，其中有 13 个本站自写 Skill。这些条目来自 151 个来源仓库，来源仓库经 GitHub API 核验并定期复检。"}}]}]}</script>
 <link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/">
+<link rel="alternate" hreflang="zh-CN" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/">
+<link rel="alternate" hreflang="en" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/chinese-agent-skills/">
 <link rel="alternate" type="application/rss+xml" title="中文 AI Skills 库 — 可验证更新" href="feed.xml">
 <style>
 /* ══════════════════════════════════════
@@ -133,6 +135,13 @@ body{
 }
 .nav-quick-btn:hover{color:var(--text);border-color:var(--border2);background:var(--surface2)}
 .nav-quick-btn.active{background:var(--surface2);border-color:var(--accent2);color:var(--accent2)}
+.nav-lang-btn{
+  font-size:12px;font-weight:700;letter-spacing:.4px;
+  padding:6px 11px;border-radius:20px;border:1px solid var(--border);
+  background:transparent;color:var(--muted);text-decoration:none;
+  display:inline-flex;align-items:center;transition:all .2s;white-space:nowrap;flex-shrink:0
+}
+.nav-lang-btn:hover{color:var(--accent2);border-color:var(--accent2);background:var(--surface2)}
 .theme-toggle{
   background:var(--surface2);border:1px solid var(--border);color:var(--text);
   width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:15px;
@@ -1158,12 +1167,27 @@ details[open] .sk-install-sum{margin-bottom:2px}
   .cat-tab::after,.wf-tag::after{
     content:'';position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)
   }
-  .gh-star-btn{min-height:40px;display:inline-flex;align-items:center}
+  .gh-star-btn,.nav-lang-btn{min-height:40px;display:inline-flex;align-items:center}
+  /* 导航栏加了 EN 入口后，搜索框是唯一的弹性项，会被挤到 60px。
+     实测收紧四处间距把它抬回 110px（加 EN 之前是 109px），star 计数不动。 */
+  .navbar{padding:0 12px;gap:10px}
+  .nav-actions{gap:6px}
+  .nav-logo{font-size:14px}
+  .nav-lang-btn{padding:6px 7px;font-size:11.5px}
+  .nav-search-wrap{min-width:110px}
   .row-desc{font-size:12.5px;line-height:1.55}
   .sk-desc-en{font-size:12px}
   .row-ext{font-size:11px}
   .sk-warn{font-size:12.5px}
   body{padding-bottom:76px}
+}
+/* ≤360px（iPhone SE 这类）空间不够：logo 只留 AI 字标，把宽度让给搜索框。
+   实测 320px 下搜索框 122px，比没加 EN 时的 110px 还宽，且 star 计数保留。 */
+@media(max-width:360px){
+  .navbar{padding:0 8px;gap:8px}
+  .nav-search-wrap{min-width:0}
+  .nav-logo{font-size:0}
+  .nav-logo span{font-size:15px}
 }
 </style>
 </head>
@@ -1190,6 +1214,7 @@ details[open] .sk-install-sum{margin-bottom:2px}
     <a class="gh-star-btn" href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank" rel="noopener" title="在 GitHub 上给我们一颗星">
       <span>⭐</span><span class="gh-label">Star</span><span class="gh-count" id="gh-count">—</span>
     </a>
+    <a class="nav-lang-btn" href="chinese-agent-skills/" hreflang="en" lang="en" title="English version" aria-label="Switch to English version">EN</a>
     <button class="theme-toggle" id="theme-toggle" title="切换主题" aria-label="切换明暗主题">🌙</button>
   </div>
 </nav>
