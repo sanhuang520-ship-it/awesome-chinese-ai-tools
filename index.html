@@ -1140,6 +1140,31 @@ details[open] .sk-install-sum{margin-bottom:2px}
   .stack-stats{grid-template-columns:1fr 1fr}
   .stack-stat:nth-child(3){grid-column:1/-1}
 }
+
+/* ══════════════════════════════════════
+   移动端可用性（2026-08-21）
+   1. 触控目标扩到 44px —— 只扩热区，视觉尺寸不变
+      现状实测：.icon-btn/.fav-btn 仅 28×28，.cat-tab 高 31px。
+      过 WCAG 2.2 AA（24px），但低于 AAA / Apple HIG 的 44px。
+   2. 中文正文字号下限 —— 手机上原样沿用桌面的 10–11px，CJK 偏小
+   3. 悬浮按钮不再压住页面最后一屏内容
+══════════════════════════════════════ */
+@media(max-width:640px){
+  .icon-btn,.fav-btn,.hero-fav-btn,.wf-drawer-close,.theme-toggle,.cat-tab,.wf-tag{position:relative}
+  .icon-btn::after,.fav-btn::after,.hero-fav-btn::after,.wf-drawer-close::after,.theme-toggle::after{
+    content:'';position:absolute;left:50%;top:50%;width:44px;height:44px;
+    transform:translate(-50%,-50%);border-radius:50%
+  }
+  .cat-tab::after,.wf-tag::after{
+    content:'';position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)
+  }
+  .gh-star-btn{min-height:40px;display:inline-flex;align-items:center}
+  .row-desc{font-size:12.5px;line-height:1.55}
+  .sk-desc-en{font-size:12px}
+  .row-ext{font-size:11px}
+  .sk-warn{font-size:12.5px}
+  body{padding-bottom:76px}
+}
 </style>
 </head>
 <body>
