@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>国风 Three.js · 青绿山水渲染演示</title>
+<style>
+  body { margin:0; background:#E6E0CE; font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; }
+  #app { width:100vw; height:100vh; display:block; }
+  .hud {
+    position:fixed; top:16px; left:16px; z-index:5;
+    background:rgba(232,226,208,.93); border:1px solid #BFAE84;
+    border-radius:8px; padding:12px 16px; max-width:320px;
+  }
+  .hud h1 { font-family:"Songti SC",serif; font-size:18px; margin:0 0 6px; color:#1F3A33; }
+  .hud p { font-size:12px; line-height:1.7; color:#5C6155; margin:0 0 10px; }
+  .hud button {
+    font:inherit; font-size:12px; padding:4px 12px; margin:2px;
+    border:1px solid #BFAE84; background:#F5F0E1; border-radius:999px;
+    color:#2E3A31; cursor:pointer;
+  }
+  .hud button.on { background:#1F3A33; color:#F5F0E1; border-color:#1F3A33; }
+  .hud .stat { font:11px ui-monospace,Menlo,monospace; color:#8A8264; margin-top:8px; }
+  #err { position:fixed; bottom:16px; left:16px; color:#B23A2E; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="hud">
+  <h1>青绿山水</h1>
+  <p>和工笔同一套反向外壳描边，只把线色从墨黑换成<b>暖金</b>——一个参数的差别，气质完全不同。高低两色按海拔映射石青与石绿。</p>
+  <div>
+    <button data-m="qianli" class="on">千里江山</button>
+    <button data-m="jinbi">金碧</button>
+    <button data-m="ink">墨线对照</button>
+  </div>
+  <div class="stat" id="stat">—</div>
+</div>
+<canvas id="app"></canvas>
+<div id="err"></div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.170.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+const err = document.getElementById('err');
+window.addEventListener('error', e => err.textContent = '❌ ' + e.message);
+
+const canvas = document.getElementById('app');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(40, innerWidth/innerHeight, .1, 100);
+
+let FIT_R = 3.0;
+function fitCamera() {
+  const aspect = innerWidth / innerHeight;
+  camera.aspect = aspect;
+  const vFov = camera.fov * Math.PI / 180;
+  const distV = FIT_R / Math.tan(vFov / 2);
+  const distH = FIT_R / (Math.tan(vFov / 2) * aspect);
+  const d = Math.max(distV, distH);
+  camera.position.set(0, d * 0.26, d);
+  camera.lookAt(0, -0.15, 0);
+  camera.updateProjectionMatrix();
+}
+
+/* ── 青绿山水：和工笔只差一个参数，但气质完全不同 ──────────
+   1. 色阶量化    —— 和水墨同源，但阶数中等（6 阶）
+   2. 石青石绿双色 —— **按海拔映射**：山脚石绿、山顶石青。
+                     这是青绿山水的做法，不是随机分色也不是按明暗分
+   3. 金色描边    —— 唯一和工笔不同的地方：同一套反向外壳，
+                     线色从墨黑换成暖金。「金碧山水」这个名字就是从这儿来的
+   ──────────────────────────────────────────────── */
+const PALETTES = {
+  // low=山脚石绿, high=山顶石青, line=描边, paper=绢底, gold=金粉提亮
+  // 千里江山图以「鲜艳」著称，石青石绿都是高饱和矿物色。
+  // v1 用了偏暗的 #3E7A5E/#2A5C86，配上 0.55 的暗部下限，整片山糊成墨绿。
+  qianli: { low:'#57A177', high:'#2E76B0', line:'#C9A227', paper:'#E6E0CE', gold:0.55 },
+  jinbi:  { low:'#5FAE74', high:'#2A7FC4', line:'#EAC44E', paper:'#EFE6CB', gold:1.0  },
+  ink:    { low:'#57A177', high:'#2E76B0', line:'#16211C', paper:'#E6E0CE', gold:0.0  },
+};
+
+const uniforms = {
+  uTime:  { value: 0 },
+  uLow:   { value: new THREE.Color(PALETTES.qianli.low) },
+  uHigh:  { value: new THREE.Color(PALETTES.qianli.high) },
+  uLine:  { value: new THREE.Color(PALETTES.qianli.line) },
+  uPaper: { value: new THREE.Color(PALETTES.qianli.paper) },
+  uGold:  { value: PALETTES.qianli.gold },
+  uLightDir: { value: new THREE.Vector3(0.8, 1.4, 0.9).normalize() },
+};
+
+const qinglvMaterial = new THREE.ShaderMaterial({
+  uniforms,
+  vertexShader: `
+    varying vec3 vN;
+    varying vec3 vV;
+    varying vec3 vP;
+    varying vec3 vW;
+    void main() {
+      vN = normalize(normalMatrix * normal);
+      vec4 mv = modelViewMatrix * vec4(position, 1.0);
+      vV = normalize(-mv.xyz);
+      vP = position;
+      vW = (modelMatrix * vec4(position, 1.0)).xyz;   // 世界坐标，用来取海拔
+      gl_Position = projectionMatrix * mv;
+    }`,
+  fragmentShader: `
+    uniform float uTime, uGold;
+    uniform vec3  uLow, uHigh, uLine, uPaper, uLightDir;
+    varying vec3  vN, vV, vP, vW;
+
+    float hash(vec3 p){ return fract(sin(dot(p, vec3(12.9898,78.233,45.164))) * 43758.5453); }
+    float noise(vec3 p){
+      vec3 i = floor(p), f = fract(p);
+      f = f*f*(3.0-2.0*f);
+      return mix(
+        mix(mix(hash(i), hash(i+vec3(1,0,0)), f.x), mix(hash(i+vec3(0,1,0)), hash(i+vec3(1,1,0)), f.x), f.y),
+        mix(mix(hash(i+vec3(0,0,1)), hash(i+vec3(1,0,1)), f.x), mix(hash(i+vec3(0,1,1)), hash(i+vec3(1,1,1)), f.x), f.y),
+        f.z);
+    }
+
+    void main() {
+      vec3 N = normalize(vN);
+      float lam = max(dot(N, normalize(uLightDir)), 0.0);
+
+      // ① 中等色阶（6 阶）：比水墨细、比壁画平
+      float n = noise(vP * 7.0 + uTime * 0.04);
+      lam += (n - 0.5) * 0.07;
+      float steps = 6.0;
+      float q = floor(clamp(lam, 0.0, 1.0) * steps) / (steps - 1.0);
+
+      // ② 石青石绿按**海拔**映射，不是随机也不是按明暗。
+      //    山脚用石绿、山顶用石青，这是青绿山水的固定语法。
+      // 海拔归一化范围要贴合实际山高（约 -1.4 ~ +1.6），
+      // v1 的系数让 alt 大部分时间挤在中段，青绿两色分不开。
+      float alt = clamp((vW.y + 1.45) / 3.05, 0.0, 1.0);
+      alt = smoothstep(0.08, 0.92, alt);
+      vec3 base = mix(uLow, uHigh, alt);
+
+      // 明暗只调深浅，不改色相（矿物色的特点）
+      // 暗部下限 0.55 太低（敦煌那次已经栽过一回）：矿物色的饱和度全被吃掉。
+      vec3 col = mix(base * 0.78, base, q);
+      // 高处罩一层绢底做空气感，但要克制，否则山顶发灰反而失了"青"
+      col = mix(col, uPaper, alt * 0.10 + pow(q, 3.0) * 0.08);
+
+      // ③ 金：山脊受光处敷金粉。uGold=0 时这条完全不生效（墨线对照档）
+      float ridge = smoothstep(0.72, 0.98, lam) * smoothstep(0.35, 0.8, alt);
+      col = mix(col, uLine, ridge * uGold * 0.42);
+
+      gl_FragColor = vec4(col, 1.0);
+    }`,
+});
+
+/* ── 反向外壳描边：和 gongbi-demo.html 完全同一套实现 ──
+   唯一的差别是 uLine 传进来的是暖金而不是墨黑。 */
+const outlineMaterial = new THREE.ShaderMaterial({
+  uniforms: { uLine: uniforms.uLine, uThickness: { value: 0.022 } },
+  side: THREE.BackSide,
+  vertexShader: `
+    uniform float uThickness;
+    void main() {
+      vec3 p = position + normalize(normal) * uThickness;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
+    }`,
+  fragmentShader: `
+    uniform vec3 uLine;
+    void main() { gl_FragColor = vec4(uLine, 1.0); }`,
+});
+
+/* ── 形体：连绵山峦 ──
+   青绿山水的主体是山，用锥体错落摆开比抽象几何体贴题得多。 */
+const group = new THREE.Group();
+function addPeak(r, h, x, y, z, seg) {
+  const geo = new THREE.ConeGeometry(r, h, seg, 3);
+  const mesh = new THREE.Mesh(geo, qinglvMaterial);
+  mesh.position.set(x, y, z);
+  group.add(mesh);
+  mesh.add(new THREE.Mesh(geo, outlineMaterial));   // 外壳跟着本体走
+  return mesh;
+}
+// 前后三排，近大远小
+addPeak(1.05, 2.15, -1.55, -0.30,  0.55, 7);
+addPeak(1.35, 2.95,  0.05,  0.10,  0.00, 8);
+addPeak(0.90, 1.80,  1.62, -0.45,  0.35, 6);
+addPeak(0.72, 1.35, -0.85, -0.62,  1.25, 6);
+addPeak(0.80, 1.55,  1.00, -0.55,  1.15, 5);
+
+// 江面：青绿山水多有水，用一块低平面收住底部
+// 水面做得足够大，让边缘落到画面外 —— v1 用 11×6，四条硬边全在画面里，
+// 看着像一块灰绿托盘而不是江面。
+// 再压淡：v2 的 0.30 不透明度让水面铺满下方三分之二，像一片绿地不像江水。
+// 青绿山水里水多是「留白 + 一点淡color」，让绢底透上来才对。
+const water = new THREE.Mesh(
+  new THREE.PlaneGeometry(46, 34),
+  new THREE.MeshBasicMaterial({ color: new THREE.Color('#A8C4BA'), transparent: true, opacity: .13 })
+);
+water.rotation.x = -Math.PI / 2;
+water.position.y = -1.42;
+group.add(water);
+
+scene.add(group);
+scene.background = new THREE.Color(PALETTES.qianli.paper);
+
+{
+  // 只按山峰算取景，水面很大不参与（否则画面会被推远）
+  let r = 0;
+  group.traverse(o => {
+    if (!o.isMesh || o === water) return;
+    o.updateWorldMatrix(true, false);
+    if (!o.geometry.boundingSphere) o.geometry.computeBoundingSphere();
+    const bs = o.geometry.boundingSphere.clone().applyMatrix4(o.matrixWorld);
+    r = Math.max(r, bs.center.length() + bs.radius);
+  });
+  FIT_R = r * 1.05;
+  fitCamera();
+}
+
+const stat = document.getElementById('stat');
+let frames = 0, fpsT = performance.now(), fps = 0;
+
+let raf;
+function loop(t) {
+  uniforms.uTime.value = t * .001;
+  group.rotation.y = Math.sin(t * .00012) * .26;
+  renderer.render(scene, camera);
+
+  frames++;
+  if (t - fpsT > 500) { fps = Math.round(frames * 1000 / (t - fpsT)); frames = 0; fpsT = t; }
+  const info = renderer.info.render;
+  stat.textContent = `${info.calls} draw call · ${info.triangles.toLocaleString()} 三角面 · ${fps} fps`;
+
+  raf = requestAnimationFrame(loop);
+}
+raf = requestAnimationFrame(loop);
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  fitCamera();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+document.querySelector('.hud').addEventListener('click', e => {
+  const b = e.target.closest('button[data-m]');
+  if (!b) return;
+  const p = PALETTES[b.dataset.m];
+  uniforms.uLow.value.set(p.low);
+  uniforms.uHigh.value.set(p.high);
+  uniforms.uLine.value.set(p.line);
+  uniforms.uPaper.value.set(p.paper);
+  uniforms.uGold.value = p.gold;
+  scene.background.set(p.paper);
+  document.body.style.background = p.paper;
+  document.querySelectorAll('.hud button').forEach(x => x.classList.toggle('on', x === b));
+});
+
+window.__ready = true;
+</script>
+</body>
+</html>
