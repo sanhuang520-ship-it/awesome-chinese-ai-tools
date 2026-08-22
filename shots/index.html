@@ -144,8 +144,46 @@ code.i{background:var(--surface);border:1px solid var(--border);border-radius:5p
   </figure>
 </div>
 
+<h2>guofeng-threejs · 另外四种中式风格</h2>
+<p class="sub">同一套思路换技法：剪纸把水墨的边缘压深反过来做成背光透射；工笔靠反向外壳勒线；
+敦煌让噪声从配角变主角；青绿只把线色换成暖金。四张都是 WebGL 真实渲染输出。</p>
+<div class="g">
+  <figure class="s wide">
+    <a href="../assets/shots/threejs-papercut.webp" target="_blank" rel="noopener">
+      <img src="../assets/shots/threejs-papercut.webp" alt="guofeng-threejs 剪纸皮影渲染结果"
+           loading="lazy" width="1400" height="950"></a>
+    <figcaption><b>剪纸皮影</b> <code>skills/guofeng-threejs/papercut-demo.html</code><br>
+      <span>关掉光照做纯剪影，rim 不压深、改为背光透射的暖光——和水墨正好相反　·
+      <a href="../skills/guofeng-threejs/papercut-demo.html" target="_blank" rel="noopener">打开可交互版本 →</a></span></figcaption>
+  </figure>
+  <figure class="s wide">
+    <a href="../assets/shots/threejs-gongbi.webp" target="_blank" rel="noopener">
+      <img src="../assets/shots/threejs-gongbi.webp" alt="guofeng-threejs 工笔渲染结果"
+           loading="lazy" width="1400" height="950"></a>
+    <figcaption><b>工笔</b> <code>skills/guofeng-threejs/gongbi-demo.html</code><br>
+      <span>9 阶量化 + 矿物色 + 反向外壳墨线。界面上实时显示 draw call 与三角面，描边的代价看得见　·
+      <a href="../skills/guofeng-threejs/gongbi-demo.html" target="_blank" rel="noopener">打开可交互版本 →</a></span></figcaption>
+  </figure>
+  <figure class="s wide">
+    <a href="../assets/shots/threejs-dunhuang.webp" target="_blank" rel="noopener">
+      <img src="../assets/shots/threejs-dunhuang.webp" alt="guofeng-threejs 敦煌壁画渲染结果"
+           loading="lazy" width="1400" height="950"></a>
+    <figcaption><b>敦煌壁画</b> <code>skills/guofeng-threejs/dunhuang-demo.html</code><br>
+      <span>多倍频噪声做剥落、龟裂与铅丹变黑。切到「初绘」档把做旧关掉，敦煌感立刻消失　·
+      <a href="../skills/guofeng-threejs/dunhuang-demo.html" target="_blank" rel="noopener">打开可交互版本 →</a></span></figcaption>
+  </figure>
+  <figure class="s wide">
+    <a href="../assets/shots/threejs-qinglv.webp" target="_blank" rel="noopener">
+      <img src="../assets/shots/threejs-qinglv.webp" alt="guofeng-threejs 青绿山水渲染结果"
+           loading="lazy" width="1400" height="950"></a>
+    <figcaption><b>青绿山水</b> <code>skills/guofeng-threejs/qinglv-demo.html</code><br>
+      <span>石青石绿按海拔映射，描边换成暖金。切到「墨线对照」档只换线色，金碧的贵气就没了　·
+      <a href="../skills/guofeng-threejs/qinglv-demo.html" target="_blank" rel="noopener">打开可交互版本 →</a></span></figcaption>
+  </figure>
+</div>
+
 <footer>
-截图生成于 2026-08-07，用 headless Chrome（2× 像素密度）实跑，转 WebP 压缩。<br>
+2D 主题与水墨截图生成于 2026-08-07，另外四种风格生成于 2026-08-22；均用 headless Chrome 实跑，转 WebP 压缩。<br>
 安装 2D 主题：<code class="i">npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-web-themes -g</code><br>
 安装 3D 水墨：<code class="i">npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill guofeng-threejs -g</code><br>
 另见：<a href="../guochao/">12 种中国美学画风 · 配色与纹样对照</a>　·
