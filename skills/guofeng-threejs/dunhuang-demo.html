@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>国风 Three.js · 敦煌壁画渲染演示</title>
+<style>
+  body { margin:0; background:#2A211A; font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; }
+  #app { width:100vw; height:100vh; display:block; }
+  .hud {
+    position:fixed; top:16px; left:16px; z-index:5;
+    background:rgba(30,24,19,.9); border:1px solid #6B5843;
+    border-radius:8px; padding:12px 16px; max-width:320px;
+  }
+  .hud h1 { font-family:"Songti SC",serif; font-size:18px; margin:0 0 6px; color:#E8CFA0; }
+  .hud p { font-size:12px; line-height:1.7; color:#B8A184; margin:0 0 10px; }
+  .hud button {
+    font:inherit; font-size:12px; padding:4px 12px; margin:2px;
+    border:1px solid #6B5843; background:transparent; border-radius:999px;
+    color:#DCC49B; cursor:pointer;
+  }
+  .hud button.on { background:#DCC49B; color:#241C15; border-color:#DCC49B; }
+  .hud .stat { font:11px ui-monospace,Menlo,monospace; color:#8C7A62; margin-top:8px; }
+  #err { position:fixed; bottom:16px; left:16px; color:#E2705E; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="hud">
+  <h1>敦煌壁画</h1>
+  <p>关键不在配色，在<b>破坏</b>：多层噪声做剥落、龟裂与铅丹变黑。壁画好看是因为它旧了。</p>
+  <div>
+    <button data-m="tang" class="on">盛唐</button>
+    <button data-m="wei">北魏</button>
+    <button data-m="fresh">初绘</button>
+  </div>
+  <div class="stat" id="stat">—</div>
+</div>
+<canvas id="app"></canvas>
+<div id="err"></div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.170.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+const err = document.getElementById('err');
+window.addEventListener('error', e => err.textContent = '❌ ' + e.message);
+
+const canvas = document.getElementById('app');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(42, innerWidth/innerHeight, .1, 100);
+camera.lookAt(0, 0, 0);
+
+let FIT_R = 2.4;
+function fitCamera() {
+  const aspect = innerWidth / innerHeight;
+  camera.aspect = aspect;
+  const vFov = camera.fov * Math.PI / 180;
+  const distV = FIT_R / Math.tan(vFov / 2);
+  const distH = FIT_R / (Math.tan(vFov / 2) * aspect);
+  camera.position.set(0, 0, Math.max(distV, distH));
+  camera.updateProjectionMatrix();
+}
+
+/* ── 敦煌壁画：三件事，重点在第二件 ─────────────────────
+   1. 三色限定 —— 土红 / 石青 / 石绿，加白垩底。矿物颜料就这么几种
+   2. 强噪声做斑驳 —— 剥落、龟裂、起甲。这是本方案和前三个的根本区别：
+                     水墨/工笔的噪声是"打破机械感"的微扰，
+                     这里的噪声是**主体表现手段**，幅度大一个量级
+   3. 铅丹变黑 —— 唐代用的铅丹（红色）氧化后变成深褐近黑，
+                 这是敦煌壁画"脸都是黑的"的真实原因，不是画的时候就那样
+   ──────────────────────────────────────────────── */
+const PALETTES = {
+  // plaster=白垩地仗，red=土红，blue=石青，green=石绿，age=老化程度
+  tang:  { plaster:'#C9B18A', red:'#A8442C', blue:'#2E5A7A', green:'#4A7355', bg:'#1A1410', age:1.0 },
+  wei:   { plaster:'#B8A184', red:'#8E3A28', blue:'#28506B', green:'#3F6349', bg:'#1E1811', age:1.35 },
+  fresh: { plaster:'#DCC9A4', red:'#C4553A', blue:'#3A6E92', green:'#5A8A66', bg:'#2A211A', age:0.15 },
+};
+
+const uniforms = {
+  uTime:    { value: 0 },
+  uPlaster: { value: new THREE.Color(PALETTES.tang.plaster) },
+  uRed:     { value: new THREE.Color(PALETTES.tang.red) },
+  uBlue:    { value: new THREE.Color(PALETTES.tang.blue) },
+  uGreen:   { value: new THREE.Color(PALETTES.tang.green) },
+  uAge:     { value: PALETTES.tang.age },
+  uRecede:  { value: 0.0 },   // 背景墙用它压暗，把图与底分开
+  uLightDir:{ value: new THREE.Vector3(0.6, 1.0, 1.4).normalize() },
+};
+
+const muralMaterial = new THREE.ShaderMaterial({
+  uniforms,
+  vertexShader: `
+    varying vec3 vN;
+    varying vec3 vV;
+    varying vec3 vP;
+    void main() {
+      vN = normalize(normalMatrix * normal);
+      vec4 mv = modelViewMatrix * vec4(position, 1.0);
+      vV = normalize(-mv.xyz);
+      vP = position;
+      gl_Position = projectionMatrix * mv;
+    }`,
+  fragmentShader: `
+    uniform float uTime, uAge, uRecede;
+    uniform vec3  uPlaster, uRed, uBlue, uGreen, uLightDir;
+    varying vec3  vN, vV, vP;
+
+    float hash(vec3 p){ return fract(sin(dot(p, vec3(12.9898,78.233,45.164))) * 43758.5453); }
+    float noise(vec3 p){
+      vec3 i = floor(p), f = fract(p);
+      f = f*f*(3.0-2.0*f);
+      return mix(
+        mix(mix(hash(i), hash(i+vec3(1,0,0)), f.x), mix(hash(i+vec3(0,1,0)), hash(i+vec3(1,1,0)), f.x), f.y),
+        mix(mix(hash(i+vec3(0,0,1)), hash(i+vec3(1,0,1)), f.x), mix(hash(i+vec3(0,1,1)), hash(i+vec3(1,1,1)), f.x), f.y),
+        f.z);
+    }
+    // 多倍频：剥落这种自然破坏是多尺度的，单层噪声看着假
+    float fbm(vec3 p){
+      float s = 0.0, a = 0.5;
+      for (int i = 0; i < 4; i++) { s += a * noise(p); p *= 2.03; a *= 0.5; }
+      return s;
+    }
+
+    void main() {
+      vec3 N = normalize(vN);
+      float lam = max(dot(N, normalize(uLightDir)), 0.0);
+
+      // ── ① 三色限定 + 分层设色
+      //     纯 fbm 划分色区会得到"迷彩"，不像壁画。真壁画是**分层分块**的：
+      //     一栏一栏往上排，边界虽不齐但有明确走向。
+      //     所以用 y 方向的色带做主结构，噪声只负责把边界啃毛。
+      float band = vP.y * 0.62 + (fbm(vP * 1.9) - 0.5) * 0.85;
+      float region = fract(band * 0.85 + 0.5);
+      vec3 col;
+      if (region < 0.40)      col = uRed;
+      else if (region < 0.70) col = uBlue;
+      else                    col = uGreen;
+
+      // 基础色阶（比水墨粗，壁画是平涂不是渲染）
+      float steps = 4.0;
+      float q = floor(clamp(lam, 0.0, 1.0) * steps) / (steps - 1.0);
+      // 暗部下限别压太狠：壁画是平涂，本来就没什么明暗，
+      // v1/v2 压到 0.62 让整张图发闷，矿物色的饱和度也看不出来了。
+      col = mix(col * 0.82, col, q);
+
+      // ── ② 强噪声做斑驳：这里是主体表现，不是微扰
+      //     幅度看 uAge —— "初绘"几乎不破坏，"北魏"破坏最重
+      float flake  = fbm(vP * 3.4);          // 大块剥落
+      float mottle = fbm(vP * 11.0);         // 中等起甲
+      float grain  = noise(vP * 46.0);       // 颗粒
+
+      // 剥落：噪声低于阈值处，颜料层没了，露出下面的白垩地仗
+      float loss = smoothstep(0.52, 0.34, flake * 0.65 + mottle * 0.35);
+      col = mix(col, uPlaster, clamp(loss * uAge, 0.0, 0.92));
+
+      // 龟裂：取噪声的等值线做细缝
+      float c = fbm(vP * 18.0);
+      float crack = smoothstep(0.495, 0.5, c) * smoothstep(0.515, 0.505, c);
+      col = mix(col, uPlaster * 0.42, crack * uAge * 0.9);
+
+      // ── ③ 铅丹变黑：只作用在红色区，且是斑块状不是整体压暗
+      float oxid = smoothstep(0.55, 0.85, fbm(vP * 5.2));
+      float isRed = step(region, 0.40);
+      col = mix(col, vec3(0.13, 0.10, 0.09), oxid * isRed * uAge * 0.75);
+
+      // 地仗颗粒 + 整体做旧
+      col *= 0.94 + 0.06 * grain;
+      col = mix(col, col * vec3(1.10, 1.00, 0.86), uAge * 0.45);  // 泛黄（提亮而非压暗）
+      col *= 1.12;                                                 // 整体抬一档，别让做旧把颜色吃掉
+
+      // 背景墙压暗并去饱和：前景浮雕和背景用的是同一套 shader 同一批颜色，
+      // 不做区分的话拱龛和立柱会完全糊进背景里（v3 就是这样）。
+      float g = dot(col, vec3(0.299, 0.587, 0.114));
+      col = mix(col, vec3(g), uRecede * 0.45);
+      col *= 1.0 - uRecede * 0.42;
+
+      gl_FragColor = vec4(col, 1.0);
+    }`,
+});
+
+/* ── 形体：壁画长在洞窟壁面上，用一段弧形墙 + 几个浅浮雕 ── */
+const group = new THREE.Group();
+// 背景墙用平面就够了 —— 壁画本来就画在平整墙面上。
+// v1 用半径 2.6 的圆柱，它最前端跑到 z=+1.4 把浮雕全挡住；
+// v2 改缓弧又因为 thetaStart 的朝向不好控，变成一块悬空小方板。
+// 平面没有这些坑，且能可靠铺满画面。
+const wallMaterial = muralMaterial.clone();
+wallMaterial.uniforms = THREE.UniformsUtils.clone(muralMaterial.uniforms);
+// 共享这些引用，切配色时墙跟着一起变
+for (const k of ['uTime','uPlaster','uRed','uBlue','uGreen','uAge','uLightDir']) {
+  wallMaterial.uniforms[k] = uniforms[k];
+}
+wallMaterial.uniforms.uRecede.value = 1.0;
+const wall = new THREE.Mesh(new THREE.PlaneGeometry(9, 6, 1, 1), wallMaterial);
+wall.position.z = -2.2;
+group.add(wall);
+
+// 浅浮雕：龛与供养人轮廓的抽象体
+const niche = new THREE.Mesh(new THREE.TorusGeometry(.62, .13, 24, 72, Math.PI), muralMaterial);
+niche.position.set(0, .28, .1);
+group.add(niche);
+const orb = new THREE.Mesh(new THREE.SphereGeometry(.30, 48, 32), muralMaterial);
+orb.position.set(0, -.34, .2);
+group.add(orb);
+const pillarL = new THREE.Mesh(new THREE.CylinderGeometry(.075, .075, 1.5, 20), muralMaterial);
+pillarL.position.set(-.72, -.28, .05);
+group.add(pillarL);
+const pillarR = pillarL.clone();
+pillarR.position.x = .72;
+group.add(pillarR);
+
+scene.add(group);
+scene.background = new THREE.Color(PALETTES.tang.bg);
+
+{
+  // 取景只按前景浮雕算 —— 把背景墙也算进去的话，画面会被推得极远，
+  // 浮雕小得看不见（墙半径 6.5，比浮雕大一个量级）。
+  let r = 0;
+  group.traverse(o => {
+    if (!o.isMesh || o === wall) return;
+    o.updateWorldMatrix(true, false);
+    if (!o.geometry.boundingSphere) o.geometry.computeBoundingSphere();
+    const bs = o.geometry.boundingSphere.clone().applyMatrix4(o.matrixWorld);
+    r = Math.max(r, bs.center.length() + bs.radius);
+  });
+  FIT_R = r * 1.15;
+  fitCamera();
+}
+
+const stat = document.getElementById('stat');
+let frames = 0, fpsT = performance.now(), fps = 0;
+
+let raf;
+function loop(t) {
+  uniforms.uTime.value = t * .001;
+  group.rotation.y = Math.sin(t * .00013) * .30;
+  group.rotation.x = Math.sin(t * .00009) * .07;
+  renderer.render(scene, camera);
+
+  frames++;
+  if (t - fpsT > 500) { fps = Math.round(frames * 1000 / (t - fpsT)); frames = 0; fpsT = t; }
+  const info = renderer.info.render;
+  stat.textContent = `${info.calls} draw call · ${info.triangles.toLocaleString()} 三角面 · ${fps} fps`;
+
+  raf = requestAnimationFrame(loop);
+}
+raf = requestAnimationFrame(loop);
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  fitCamera();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+document.querySelector('.hud').addEventListener('click', e => {
+  const b = e.target.closest('button[data-m]');
+  if (!b) return;
+  const p = PALETTES[b.dataset.m];
+  uniforms.uPlaster.value.set(p.plaster);
+  uniforms.uRed.value.set(p.red);
+  uniforms.uBlue.value.set(p.blue);
+  uniforms.uGreen.value.set(p.green);
+  uniforms.uAge.value = p.age;
+  scene.background.set(p.bg);
+  document.body.style.background = p.bg;
+  document.querySelectorAll('.hud button').forEach(x => x.classList.toggle('on', x === b));
+});
+
+window.__ready = true;
+</script>
+</body>
+</html>
