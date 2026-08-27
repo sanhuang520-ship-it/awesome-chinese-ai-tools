@@ -446,7 +446,8 @@ def build_skills_md():
              "🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)\n")
     L.append("🛡️ **[安装第三方 Skill 前：运行只读本地审计器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/)**"
              "（检查脚本、联网、凭据词与高风险命令；不执行目标，0 项命中不等于安全）\n")
-    L.append("> 兼容性边界：当前只有 Codex 的任务级实测；Claude Code 与 Cursor 待测。"
+    L.append("> 兼容性边界：Codex 有任务级自动触发实测；Claude Code 已实测发现、加载与任务覆盖"
+             "（13/13 发现，12/13 任务覆盖），但**自动触发未记录**（那一轮是自测）；Cursor 待测。"
              "成功、失败或未触发均可通过[结构化表单提交](https://github.com/"
              f"{REPO}/issues/new?template=compatibility-result.yml)。\n")
     L.append("---\n")
@@ -471,7 +472,8 @@ def build_skills_md():
     L.append("> 加 `-g` 才装到用户级的 `~/.agents/skills/`。CLI 帮助原文：")
     L.append("> `-g, --global  Install skill globally (user-level) instead of project-level`。")
     L.append("> 两种情况都会在同级的 `.claude/skills/` 建符号链接，所以两处能看到同一份文件；")
-    L.append("> 这只证明安装结果，本轮尚未运行 Claude Code。")
+    L.append("> 这只证明安装结果。Claude Code 已于 2026-08-26 实测（发现与加载 13/13），"
+             "但那一轮是自测，不记自动触发。")
     L.append("> 而部分教程（包括 7 万星仓库）写的 `~/.config/claude-code/skills/`，本机实测**并不存在**。\n")
     L.append("> 📌 本页此前写的是「装到 `~/.agents/skills/`」，不准确——当初那次实测在家目录下跑，")
     L.append("> 把「当前目录恰好是家目录」当成了工具行为。2026-08-19 换目录交叉验证后更正。\n")

@@ -94,8 +94,22 @@ class CompatibilityDataTest(unittest.TestCase):
         self.assertEqual({"completed": 10, "waiting-input": 1, "bounded-retest": 2}, totals)
 
     def test_unrun_clients_are_not_claimed_as_verified(self):
-        self.assertEqual(self.data["results"]["claudeCode"]["status"], "not-tested")
         self.assertEqual(self.data["results"]["cursor"]["status"], "not-tested")
+
+    def test_claude_code_records_observation_without_claiming_activation(self):
+        # 2026-08-26 起 Claude Code 有了发现与加载的实测证据，但那一轮是自测：
+        # 选择调用 Skill 的模型，就是撰写任务措辞和判定结果的模型。
+        # 它不与 Codex 那轮同级（Codex 在提示词未点名时自己声明了 Skill 名称），
+        # 所以这里守的是「可以记录观察，但不许把它写成自动触发通过」。
+        result = self.data["results"]["claudeCode"]
+        self.assertEqual("partial", result["status"])
+        self.assertIs(False, result["activationRecorded"])
+        self.assertEqual(13, result["discoveryCount"])
+        self.assertEqual(13, result["loadCount"])
+        # 任务覆盖是 12/13，不是 13/13：guofeng-threejs 的本机副本早于一次技法修订。
+        self.assertEqual(13, result["taskCoverageCompleted"] + result["taskCoveragePartial"])
+        self.assertEqual(12, result["taskCoverageCompleted"])
+        self.assertTrue((ROOT / result["case"]).is_file())
 
     def test_preregistered_retests_preserve_executed_and_remaining_counts(self):
         result = self.data["results"]["prospectiveRetests"]

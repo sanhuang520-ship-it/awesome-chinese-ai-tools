@@ -61,7 +61,7 @@ class BundlesPageTest(unittest.TestCase):
             with self.subTest(question=item["name"]):
                 self.assertIn(item["name"].replace("这些组合在 ", ""), self.page)
                 self.assertIn(item["acceptedAnswer"]["text"], self.page)
-        self.assertIn("Claude Code 与 Cursor 仍待本仓库实测", self.page)
+        self.assertIn("Claude Code 已实测发现与加载（13/13），但自动触发未记录；Cursor 仍待实测", self.page)
         self.assertIn("结果不是安全认证", self.page)
 
     def test_discovery_surfaces_link_to_bundles(self):

@@ -1,6 +1,6 @@
 # Agent Skills 兼容性实测
 
-> 最近实测：**2026-08-13** · 原始记录：[data/compatibility.json](data/compatibility.json) · 汇总校验：[scripts/check_compatibility.py](scripts/check_compatibility.py) · 单次报告规范：[JSON Schema](schemas/compatibility-result.schema.json)
+> 最近实测：**2026-08-26**（Claude Code）· 上一轮 2026-08-13（Codex） · 原始记录：[data/compatibility.json](data/compatibility.json) · 汇总校验：[scripts/check_compatibility.py](scripts/check_compatibility.py) · 单次报告规范：[JSON Schema](schemas/compatibility-result.schema.json)
 
 本页只记录实际拿到的证据。**能被 CLI 发现、文件安装成功、AI 自动触发、最终任务完成，是四件不同的事。** 没运行过的客户端明确标为“待测”，不把格式兼容写成实测通过。
 
@@ -13,10 +13,27 @@
 | 项目级旧副本更新 | ✅ 13 / 13 | 受控历史夹具中的 13 个完整 Skill 文件夹经 `skills@1.5.22 update -p -y` 更新后均与当前仓库一致；全局文件未改变 |
 | 既有全局安装副本 | ⚠️ 0 / 13 当前一致 | 8 月 8 日安装后，仓库又新增元数据并修订内容；安装不是持续同步，不能把旧副本当成当前版本 |
 | Codex 自动触发 | ⚠️ 13 / 13 | 10 项当次任务完成；1 项按流程等待必要输入；2 项大任务失败后通过缩小复测 |
-| Claude Code | ⏳ 待测 | 当前没有运行 Claude Code，不能声称通过 |
+| Claude Code 发现本站原创 Skill | ✅ 13 / 13 | 13 个全部出现在会话可用 Skill 列表中；[查看记录](cases/claude-code-13-skills-2026-08-26.md) |
+| Claude Code 加载与路径解析 | ✅ 13 / 13 | 13 个全部加载成功，`base directory` 正确解析到 `~/.claude/skills/<name>` |
+| Claude Code 任务覆盖 | ⚠️ 12 / 13 | 用自然措辞、不点名 Skill 撰写任务，按输出内容判定；`guofeng-threejs` 因本机副本过期记 ⚠️ |
+| Claude Code 自动触发 | ⏳ 未记录 | **本轮是自测，不构成独立证据**，详见下方说明 |
 | Cursor | ⏳ 待测 | 当前没有运行 Cursor，不能声称通过 |
 
 当前任务级案例记录的客户端为 Codex CLI `0.147.0-alpha.6.5`；这仍不代表其他 Codex 版本或任务措辞会得到相同结果。安装复测与任务级自动触发是两轮不同证据，不能互相替代。
+
+### 为什么 Claude Code 那轮不记「自动触发」
+
+Codex 那轮的触发证据，是 Codex 在提示词从未出现 Skill 名称的情况下**自己声明**
+「我会用『chinese-typography』规范做纯审查」并读取了对应文件——那是可以从外部观察的第三方行为。
+
+Claude Code 通过工具按名称调用 Skill，**选择调用哪个 Skill 的模型，与撰写任务措辞、
+判定结果的模型是同一个**。因此本轮虽然 13 个都被正确选中，但这不与 Codex 那轮同级，
+本页不把它记为自动触发通过。
+
+能够独立观察、不依赖判断的是另外两件事：Skill 是否出现在客户端会话列表里，
+以及能否被加载、路径能否正确解析。这两项按 ✅ 记录。
+
+要取得与 Codex 同级的证据，需要由不知情的执行者做盲测——这是下一轮要补的。
 
 另有 6 条运行前公开任务与成功门槛的前瞻复测，现已全部执行：初次 4 条通过 4 / 4；`chinese-web-themes` 因遗漏授权检查、`guofeng-threejs` 因超过 300 字限制，各记为 3 / 4 失败。随后只针对失败原因修改 Skill 指令，并以完全相同的原始任务复测，两项均通过 4 / 4（Three.js 响应实测 294 字符）。[主题修复记录](cases/chinese-web-themes-remediation-retest-2026-08-13.md)与 [Three.js 修复记录](cases/guofeng-threejs-remediation-retest-2026-08-13.md)不会覆盖首次失败。这组结果不改写上表的首次自动触发 10 / 1 / 2 统计。
 
@@ -24,21 +41,23 @@
 
 | Skill | CLI 发现 | 隔离安装内容 | Codex 触发 | Claude Code | Cursor |
 |---|---:|---:|---:|---:|---:|
-| [`ai-learning-coach`](cases/ai-learning-coach-codex.md) | ✅ | ✅ | ⚠️¹ | ⏳ | ⏳ |
-| [`book-digest-cn`](cases/book-digest-cn-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
-| [`bookkeeping-cn`](cases/bookkeeping-cn-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
-| [`chinese-design-md`](cases/chinese-design-md-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
-| [`chinese-lesson-plan`](cases/chinese-lesson-plan-codex.md) | ✅ | ✅ | ⚠️¹ | ⏳ | ⏳ |
-| [`chinese-typography`](cases/chinese-typography-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
-| [`chinese-web-themes`](cases/chinese-web-themes-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
-| [`chinese-work-report`](cases/chinese-work-report-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
-| [`ecommerce-copywriting`](cases/ecommerce-copywriting-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
-| [`github-readme-cn`](cases/github-readme-cn-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
-| [`guochao-visual-cn`](cases/guochao-visual-cn-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
-| [`guofeng-threejs`](cases/guofeng-threejs-codex.md) | ✅ | ✅ | ⚠️¹ | ⏳ | ⏳ |
-| [`homework-tutor-cn`](cases/homework-tutor-cn-codex.md) | ✅ | ✅ | ✅¹ | ⏳ | ⏳ |
+| [`ai-learning-coach`](cases/ai-learning-coach-codex.md) | ✅ | ✅ | ⚠️¹ | ✅² | ⏳ |
+| [`book-digest-cn`](cases/book-digest-cn-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
+| [`bookkeeping-cn`](cases/bookkeeping-cn-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
+| [`chinese-design-md`](cases/chinese-design-md-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
+| [`chinese-lesson-plan`](cases/chinese-lesson-plan-codex.md) | ✅ | ✅ | ⚠️¹ | ✅² | ⏳ |
+| [`chinese-typography`](cases/chinese-typography-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
+| [`chinese-web-themes`](cases/chinese-web-themes-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
+| [`chinese-work-report`](cases/chinese-work-report-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
+| [`ecommerce-copywriting`](cases/ecommerce-copywriting-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
+| [`github-readme-cn`](cases/github-readme-cn-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
+| [`guochao-visual-cn`](cases/guochao-visual-cn-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
+| [`guofeng-threejs`](cases/guofeng-threejs-codex.md) | ✅ | ✅ | ⚠️¹ | ⚠️² | ⏳ |
+| [`homework-tutor-cn`](cases/homework-tutor-cn-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
 
 ¹ 仅代表链接案例中的单任务、单客户端版本结果；⚠️ 包括等待用户补充，或大任务失败后仅通过缩小复测。
+
+² Claude Code 一列表示**发现 + 加载 + 任务覆盖**三项，[记录在此](cases/claude-code-13-skills-2026-08-26.md)；**不含自动触发**（原因见上文）。`guofeng-threejs` 记 ⚠️ 是因为本机副本早于一次技法修订，所依据的内容不是当前版本。
 
 ### 本轮发现的客户端限制
 
@@ -61,7 +80,7 @@ Codex 在隔离实测中报告：已安装 Skill 较多时，会为适应 skills
 
 ## 下一轮测试
 
-13 个原创 Skill 已各完成一次自动触发测试：10 项当次任务完成，1 项按流程等待必要输入，两个失败项完成缩小复测。下一步补 Claude Code / Cursor 的真实环境证据，并为大任务建立明确输出预算。
+13 个原创 Skill 已各完成一次自动触发测试：10 项当次任务完成，1 项按流程等待必要输入，两个失败项完成缩小复测。Claude Code 已于 2026-08-26 补上发现、加载与任务覆盖的证据，但自动触发仍缺同级证据（需盲测）。下一步：更新本机副本后重测 7 个漂移项，由不知情执行者做盲测，并补 Cursor。
 
 如果你能提供 Claude Code 或 Cursor 的实际结果，请用[结构化兼容性表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。表单会分别记录模型是否开始执行、是否点名 Skill、是否触发与任务是否完成；成功和失败都欢迎，但请先删除 Token、邮箱和私人路径。
 

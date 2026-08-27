@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "sanhuang520-ship-it/awesome-chinese-ai-tools",
-  "description": "中文 Agent Skills 合集：184 个条目、13 个本站原创；Codex 13/13 自动触发实测，Claude Code / Cursor 待测；每日自动复检",
+  "description": "中文 Agent Skills 合集：194 个条目、13 个本站原创；Codex 13/13 自动触发实测，Claude Code / Cursor 待测；来源仓库定期复检，运行记录公开",
   "homepage": "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/",
   "topics": [
     "agent-skills",

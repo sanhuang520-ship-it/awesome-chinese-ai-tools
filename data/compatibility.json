@@ -4,11 +4,12 @@
   "methodology": {
     "discovery": "npx skills@1.5.22 add . --list",
     "codexInstall": "Install all 13 skills with skills@1.5.22 --copy into an isolated temporary Git project, then compare every installed SKILL.md byte-for-byte with the current repository; hash the existing global skill files before and after to prove they were not changed",
-    "activation": "Requires a recorded task-level run; discovery or installation alone is not activation evidence"
+    "activation": "Requires a recorded task-level run; discovery or installation alone is not activation evidence",
+    "claudeCodeObservation": "Claude Code invokes skills by name through a tool, so the model that chooses the skill is the same model that writes the task wording and judges the result. Session-list discovery and skill loading are directly observable and recorded; auto-activation is NOT recorded, because a self-test is not equivalent evidence to the Codex round, where the client named the skill unprompted."
   },
   "clients": {
     "codex": "Codex CLI 0.147.0-alpha.6.5",
-    "claudeCode": "Not tested",
+    "claudeCode": "Claude Code (Claude Agent SDK session, model claude-opus-5)",
     "cursor": "Not tested"
   },
   "skills": [
@@ -196,11 +197,15 @@
         "note": "Both initially failed tasks were rerun with the exact original prompts after targeted Skill instruction fixes. Both passed 4/4; initial 3/4 failures remain preserved.",
         "results": {
           "chinese-web-themes": {
-            "status": "verified", "passedChecks": 4, "totalChecks": 4,
+            "status": "verified",
+            "passedChecks": 4,
+            "totalChecks": 4,
             "case": "cases/chinese-web-themes-remediation-retest-2026-08-13.md"
           },
           "guofeng-threejs": {
-            "status": "verified", "passedChecks": 4, "totalChecks": 4,
+            "status": "verified",
+            "passedChecks": 4,
+            "totalChecks": 4,
             "measuredCharacters": 294,
             "case": "cases/guofeng-threejs-remediation-retest-2026-08-13.md"
           }
@@ -232,17 +237,45 @@
           "case": "cases/chinese-web-themes-prospective-retest-2026-08-13.md"
         },
         "guochao-visual-cn": {
-          "status": "verified", "passedChecks": 4, "totalChecks": 4,
+          "status": "verified",
+          "passedChecks": 4,
+          "totalChecks": 4,
           "case": "cases/guochao-visual-cn-prospective-retest-2026-08-13.md"
         },
         "guofeng-threejs": {
-          "status": "failed", "passedChecks": 3, "totalChecks": 4,
+          "status": "failed",
+          "passedChecks": 3,
+          "totalChecks": 4,
           "case": "cases/guofeng-threejs-prospective-retest-2026-08-13.md"
         }
       }
     },
     "claudeCode": {
-      "status": "not-tested"
+      "status": "partial",
+      "testedAt": "2026-08-26",
+      "client": "Claude Code (Claude Agent SDK session)",
+      "model": "claude-opus-5",
+      "installPath": "~/.claude/skills/<name> -> symlink to ~/.agents/skills/<name>",
+      "installedAt": "2026-08-08",
+      "discoveryCount": 13,
+      "loadCount": 13,
+      "taskCoverageCompleted": 12,
+      "taskCoveragePartial": 1,
+      "activationRecorded": false,
+      "case": "cases/claude-code-13-skills-2026-08-26.md",
+      "descriptionIdenticalCount": 13,
+      "folderIdenticalCount": 6,
+      "folderDriftedCount": 7,
+      "driftedSkills": [
+        "bookkeeping-cn",
+        "chinese-design-md",
+        "chinese-web-themes",
+        "github-readme-cn",
+        "guochao-visual-cn",
+        "guofeng-threejs",
+        "homework-tutor-cn"
+      ],
+      "note": "Discovery and loading are directly observable: 13/13 appeared in the session skill list and loaded with a correctly resolved base directory. Task coverage was judged from output content: 12/13 completed, guofeng-threejs marked partial because the installed copy predates a corrected technique (the stale copy still recommends Sobel post-processing for gongbi outlines, which this repository replaced with inverted-hull after measuring that fwidth(N) crease detection fails on smooth organic shapes). Auto-activation is deliberately NOT claimed: the same model chose the skill, wrote the wording and judged the result. Single run, single wording, single model version."
     },
     "cursor": {
       "status": "not-tested"

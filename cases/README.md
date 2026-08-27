@@ -35,3 +35,7 @@
 想复现或补充 Claude Code、Cursor 结果，请用[结构化兼容性表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交客户端版本、原始任务、是否点名 Skill、触发状态、完成状态和脱敏结果。
 
 第一次做测试可先看[Agent Skills 兼容性四层测试法](../method/)：它解释怎样区分发现、安装、自动触发和任务完成，以及为什么平台用量、网络或服务错误不能直接记成 Skill 失败。
+
+## Claude Code
+
+- [13 个原创 Skill 的发现、加载与任务覆盖（2026-08-26）](claude-code-13-skills-2026-08-26.md) —— 发现与加载 13/13，任务覆盖 12/13；**自动触发未记录**（那一轮是自测，不与 Codex 同级）。同时首次记录到旧副本仍在分发已被推翻的技法建议。

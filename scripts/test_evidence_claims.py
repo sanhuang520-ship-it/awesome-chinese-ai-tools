@@ -48,8 +48,11 @@ class EvidenceClaimsTest(unittest.TestCase):
 
     def test_unknown_clients_remain_explicitly_unverified(self):
         compatibility = (ROOT / "COMPATIBILITY.md").read_text(encoding="utf-8")
-        self.assertIn("| Claude Code | ⏳ 待测 |", compatibility)
         self.assertIn("| Cursor | ⏳ 待测 |", compatibility)
+        # Claude Code 已有发现与加载的实测证据，但自动触发那一行必须继续是「未记录」：
+        # 那一轮是自测，与 Codex 的第三方可观察证据不同级。
+        self.assertIn("| Claude Code 自动触发 | ⏳ 未记录 |", compatibility)
+        self.assertNotIn("Claude Code 自动触发 | ✅", compatibility)
 
     def test_current_install_evidence_is_not_attributed_to_stale_global_copies(self):
         compatibility_page = (ROOT / "compatibility" / "index.html").read_text(encoding="utf-8")
@@ -189,7 +192,7 @@ class EvidenceClaimsTest(unittest.TestCase):
         catalog = (ROOT / "SKILLS.md").read_text(encoding="utf-8")
         for phrase in (
             "Codex 13/13 自动触发实测",
-            "Claude Code 与 Cursor 待测",
+            "自动触发未记录",   # 生成器必须继续声明 Claude Code 那轮不算自动触发通过
             "compatibility-result.yml",
             "安装与排错页",
         ):
