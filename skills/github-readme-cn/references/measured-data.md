@@ -88,7 +88,43 @@
 **后果**：无法区分某个仓库是靠 README 好，还是靠某个大号转发。
 这是"打法"最核心的因果问题，而这份数据回答不了。
 
-## 四、采集方法（可复现）
+## 四、中文搜索词在 GitHub 上基本不工作（2026-08-28 补测）
+
+给两个中文项目挑 topic 时顺带测的，结论比 topic 清单本身有用。
+
+用 `/search/repositories` 分别以中英文查询同一主题，取按星排序的前 15：
+
+| 查询词 | 前 5 名的相关性 |
+|---|---|
+| `元素周期表` | **0 / 5 相关**。返回的是某书单仓库（★22871）、x86 汇编示例、某政治仓库、某组织主页 |
+| `互动学习 物理 化学` | **0 个结果** |
+| `教学 可视化` | **0 / 5 相关** |
+| `periodic table interactive` | **5 / 5 相关**，全是真的周期表项目 |
+| `interactive science education` | 4 / 5 相关 |
+| `chemistry visualization` | 5 / 5 相关 |
+
+**推论**：想靠搜索被找到，topic 和描述里的关键词要用英文。
+中文项目当然可以有中文说明，但**别指望中文关键词把人带过来**。
+
+### 顺带得到的 topic 分布
+
+统计上述查询命中的仓库实际打了哪些 topic：
+
+- 化学/周期表向（45 个仓库）：`chemistry` 25× · `periodic-table` 11× ·
+  `visualization` 11× · `science` 8× · `periodic-table-of-elements` 7× · `education` 6×
+- 科学教育向（30 个仓库）：`education` 10× · `science` 7× · `interactive` 3× ·
+  `interactive-learning` 3× · `physics` 3× · `chemistry` 3× · `biology` 2× · `stem` 2×
+
+**凭常识猜错了三个**：动手前先猜了 `chinese`、`teaching`、`static-site`，
+在 75 个样本里**各出现 0 次**。这正是本 Skill 那句「用目标用户真正会搜的词，
+不是你觉得贴切的词」的实例——包括写这句话的人自己也会猜错。
+
+### 这组数据同样测不到的
+
+它测的是**热门同类仓库打了什么 topic**，不是**打了这些就会被找到**。
+和上一节同样的幸存者偏差：打了相同 topic 却没人看的仓库，搜索按星排序，根本取不到。
+
+## 五、采集方法（可复现）
 
 ```
 GET /search/repositories?q=created:>YYYY-MM-DD stars:>N&sort=stars
@@ -96,6 +132,7 @@ GET /repos/{full}                → 星数、创建时间、描述、topics、l
 GET /users/{owner}               → 粉丝数、账号年龄、公开库数
 GET /repos/{full}/readme         → README 原文，取前 1200 字符作为"首屏"
 GET /repos/{full}/git/trees/{branch}?recursive=1  → 文件构成
+GET /search/repositories?q=<中/英文词>&sort=stars   → 第四节的中英文查询对比
 ```
 
 "首屏"定义为 README 前 1200 字符——对应 GitHub 上大约不滚动能看到的高度。
