@@ -15,7 +15,7 @@
 | Codex 自动触发 | ⚠️ 13 / 13 | 10 项当次任务完成；1 项按流程等待必要输入；2 项大任务失败后通过缩小复测 |
 | Claude Code 发现本站原创 Skill | ✅ 13 / 13 | 13 个全部出现在会话可用 Skill 列表中；[查看记录](cases/claude-code-13-skills-2026-08-26.md) |
 | Claude Code 加载与路径解析 | ✅ 13 / 13 | 13 个全部加载成功，`base directory` 正确解析到 `~/.claude/skills/<name>` |
-| Claude Code 任务覆盖 | ⚠️ 12 / 13 | 用自然措辞、不点名 Skill 撰写任务，按输出内容判定；`guofeng-threejs` 因本机副本过期记 ⚠️ |
+| Claude Code 任务覆盖 | ✅ 13 / 13 | 用自然措辞、不点名 Skill 撰写任务，按输出内容判定。首轮 12/13（`guofeng-threejs` 副本过期）；08-28 副本追平后 7 项全部重跑，13 / 13 |
 | Claude Code 自动触发 | ⏳ 未记录 | **本轮是自测，不构成独立证据**，详见下方说明 |
 | 全局 `update -g` | ❌ **不更新无锁条目的 Skill** | `skills@1.5.23` 报告成功但静默跳过 7 个；[查看记录](cases/skills-cli-global-update-2026-08-28.md) |
 | Cursor | ⏳ 待测 | 当前没有运行 Cursor，不能声称通过 |
@@ -53,12 +53,12 @@ Claude Code 通过工具按名称调用 Skill，**选择调用哪个 Skill 的�
 | [`ecommerce-copywriting`](cases/ecommerce-copywriting-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
 | [`github-readme-cn`](cases/github-readme-cn-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
 | [`guochao-visual-cn`](cases/guochao-visual-cn-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
-| [`guofeng-threejs`](cases/guofeng-threejs-codex.md) | ✅ | ✅ | ⚠️¹ | ⚠️² | ⏳ |
+| [`guofeng-threejs`](cases/guofeng-threejs-codex.md) | ✅ | ✅ | ⚠️¹ | ✅² | ⏳ |
 | [`homework-tutor-cn`](cases/homework-tutor-cn-codex.md) | ✅ | ✅ | ✅¹ | ✅² | ⏳ |
 
 ¹ 仅代表链接案例中的单任务、单客户端版本结果；⚠️ 包括等待用户补充，或大任务失败后仅通过缩小复测。
 
-² Claude Code 一列表示**发现 + 加载 + 任务覆盖**三项，[记录在此](cases/claude-code-13-skills-2026-08-26.md)；**不含自动触发**（原因见上文）。`guofeng-threejs` 记 ⚠️ 是因为本机副本早于一次技法修订，所依据的内容不是当前版本。
+² Claude Code 一列表示**发现 + 加载 + 任务覆盖**三项，[记录在此](cases/claude-code-13-skills-2026-08-26.md)；**不含自动触发**（原因见上文）。首轮 `guofeng-threejs` 记 ⚠️（本机副本早于一次技法修订）；2026-08-28 副本追平后重跑，改记 ✅。
 
 ### 本轮发现的客户端限制
 
@@ -94,7 +94,7 @@ Codex 在隔离实测中报告：已安装 Skill 较多时，会为适应 skills
 
 ## 下一轮测试
 
-13 个原创 Skill 已各完成一次自动触发测试：10 项当次任务完成，1 项按流程等待必要输入，两个失败项完成缩小复测。Claude Code 已于 2026-08-26 补上发现、加载与任务覆盖的证据，但自动触发仍缺同级证据（需盲测）。本机副本已于 2026-08-28 全部追平（13/13 逐字节一致），但**那 7 个的 Claude Code 结论仍是在旧副本上测的**，需在新会话重测。下一步：① 新会话重测 7 项 ② 由不知情执行者做盲测取得同级触发证据 ③ 验证「有锁条目且上游有新提交」时 `update -g` 能否正确拉取 ④ 补 Cursor。
+13 个原创 Skill 已各完成一次自动触发测试：10 项当次任务完成，1 项按流程等待必要输入，两个失败项完成缩小复测。Claude Code 已于 2026-08-26 补上发现、加载与任务覆盖的证据，但自动触发仍缺同级证据（需盲测）。本机副本已于 2026-08-28 全部追平，7 项也已在当前版本上重跑完毕（13/13）。下一步：① 由不知情执行者做盲测，取得与 Codex 同级的触发证据 ② 验证「有锁条目且上游有新提交」时 `update -g` 能否正确拉取 ③ 补 Cursor。
 
 如果你能提供 Claude Code 或 Cursor 的实际结果，请用[结构化兼容性表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。表单会分别记录模型是否开始执行、是否点名 Skill、是否触发与任务是否完成；成功和失败都欢迎，但请先删除 Token、邮箱和私人路径。
 

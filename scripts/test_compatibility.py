@@ -106,9 +106,11 @@ class CompatibilityDataTest(unittest.TestCase):
         self.assertIs(False, result["activationRecorded"])
         self.assertEqual(13, result["discoveryCount"])
         self.assertEqual(13, result["loadCount"])
-        # 任务覆盖是 12/13，不是 13/13：guofeng-threejs 的本机副本早于一次技法修订。
+        # 首轮 12/13（guofeng-threejs 副本过期）；08-28 副本追平后 7 项重跑为 13/13。
+        # 守的是「两项之和必须等于 13」——不许把某一项悄悄从分母里拿掉。
         self.assertEqual(13, result["taskCoverageCompleted"] + result["taskCoveragePartial"])
-        self.assertEqual(12, result["taskCoverageCompleted"])
+        self.assertEqual(13, result["taskCoverageCompleted"])
+        self.assertEqual("2026-08-28", result["retestedAt"])
         self.assertTrue((ROOT / result["case"]).is_file())
 
     def test_preregistered_retests_preserve_executed_and_remaining_counts(self):

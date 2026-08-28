@@ -259,8 +259,8 @@
       "installedAt": "2026-08-08",
       "discoveryCount": 13,
       "loadCount": 13,
-      "taskCoverageCompleted": 12,
-      "taskCoveragePartial": 1,
+      "taskCoverageCompleted": 13,
+      "taskCoveragePartial": 0,
       "activationRecorded": false,
       "case": "cases/claude-code-13-skills-2026-08-26.md",
       "descriptionIdenticalCount": 13,
@@ -275,7 +275,9 @@
         "guofeng-threejs",
         "homework-tutor-cn"
       ],
-      "note": "Discovery and loading are directly observable: 13/13 appeared in the session skill list and loaded with a correctly resolved base directory. Task coverage was judged from output content: 12/13 completed, guofeng-threejs marked partial because the installed copy predates a corrected technique (the stale copy still recommends Sobel post-processing for gongbi outlines, which this repository replaced with inverted-hull after measuring that fwidth(N) crease detection fails on smooth organic shapes). Auto-activation is deliberately NOT claimed: the same model chose the skill, wrote the wording and judged the result. Single run, single wording, single model version."
+      "note": "Discovery and loading are directly observable: 13/13 appeared in the session skill list and loaded with a correctly resolved base directory. Task coverage was judged from output content: first round 12/13 completed, guofeng-threejs partial because the installed copy predated a corrected technique (the stale copy still recommends Sobel post-processing for gongbi outlines, which this repository replaced with inverted-hull after measuring that fwidth(N) crease detection fails on smooth organic shapes). Auto-activation is deliberately NOT claimed: the same model chose the skill, wrote the wording and judged the result. Single run, single wording, single model version. On 2026-08-28 the local copies were brought to parity and all seven drifted skills were re-run against current content: 13/13 completed. Retesting in the same session was possible because SKILL.md bodies are read from disk at invocation time; only descriptions are loaded at session start.",
+      "retestedAt": "2026-08-28",
+      "retestedSkills": 7
     },
     "cursor": {
       "status": "not-tested"
