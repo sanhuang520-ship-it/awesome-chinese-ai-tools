@@ -1,6 +1,6 @@
 # Agent Skills 兼容性实测
 
-> 最近实测：**2026-08-26**（Claude Code）· 上一轮 2026-08-13（Codex） · 原始记录：[data/compatibility.json](data/compatibility.json) · 汇总校验：[scripts/check_compatibility.py](scripts/check_compatibility.py) · 单次报告规范：[JSON Schema](schemas/compatibility-result.schema.json)
+> 最近实测：**2026-08-28**（skills CLI 全局更新）· 2026-08-26（Claude Code）· 2026-08-13（Codex） · 原始记录：[data/compatibility.json](data/compatibility.json) · 汇总校验：[scripts/check_compatibility.py](scripts/check_compatibility.py) · 单次报告规范：[JSON Schema](schemas/compatibility-result.schema.json)
 
 本页只记录实际拿到的证据。**能被 CLI 发现、文件安装成功、AI 自动触发、最终任务完成，是四件不同的事。** 没运行过的客户端明确标为“待测”，不把格式兼容写成实测通过。
 
@@ -11,12 +11,13 @@
 | `skills` CLI 发现本站原创 Skill | ✅ 13 / 13 | `npx skills@1.5.22 add . --list` 找到 13 个 Skill |
 | Codex 隔离项目安装内容 | ✅ 13 / 13 | `skills@1.5.22 --copy` 安装至临时 Git 项目的 `.agents/skills/`，与当前仓库逐字节一致；[查看复测记录](cases/skills-cli-isolated-install-2026-08-13.md) |
 | 项目级旧副本更新 | ✅ 13 / 13 | 受控历史夹具中的 13 个完整 Skill 文件夹经 `skills@1.5.22 update -p -y` 更新后均与当前仓库一致；全局文件未改变 |
-| 既有全局安装副本 | ⚠️ 0 / 13 当前一致 | 8 月 8 日安装后，仓库又新增元数据并修订内容；安装不是持续同步，不能把旧副本当成当前版本 |
+| 既有全局安装副本 | ⚠️ 曾 0 / 13，08-28 重装后 13 / 13 | 8 月 8 日安装后仓库又有修订，且 `update -g` 看不见无锁条目的副本；重新安装才追平。安装不是持续同步，不能把旧副本当成当前版本 |
 | Codex 自动触发 | ⚠️ 13 / 13 | 10 项当次任务完成；1 项按流程等待必要输入；2 项大任务失败后通过缩小复测 |
 | Claude Code 发现本站原创 Skill | ✅ 13 / 13 | 13 个全部出现在会话可用 Skill 列表中；[查看记录](cases/claude-code-13-skills-2026-08-26.md) |
 | Claude Code 加载与路径解析 | ✅ 13 / 13 | 13 个全部加载成功，`base directory` 正确解析到 `~/.claude/skills/<name>` |
 | Claude Code 任务覆盖 | ⚠️ 12 / 13 | 用自然措辞、不点名 Skill 撰写任务，按输出内容判定；`guofeng-threejs` 因本机副本过期记 ⚠️ |
 | Claude Code 自动触发 | ⏳ 未记录 | **本轮是自测，不构成独立证据**，详见下方说明 |
+| 全局 `update -g` | ❌ **不更新无锁条目的 Skill** | `skills@1.5.23` 报告成功但静默跳过 7 个；[查看记录](cases/skills-cli-global-update-2026-08-28.md) |
 | Cursor | ⏳ 待测 | 当前没有运行 Cursor，不能声称通过 |
 
 当前任务级案例记录的客户端为 Codex CLI `0.147.0-alpha.6.5`；这仍不代表其他 Codex 版本或任务措辞会得到相同结果。安装复测与任务级自动触发是两轮不同证据，不能互相替代。
@@ -71,6 +72,19 @@ Codex 在隔离实测中报告：已安装 Skill 较多时，会为适应 skills
 
 同日在受控临时项目中，先保留公开仓库安装生成的 `skills-lock.json`，再把 13 个项目副本替换为历史提交 `5906879` 的完整文件夹。更新前 13 / 13 与当前仓库不同；运行 `npx --yes skills@1.5.22 update -p -y` 后，13 / 13 完整文件夹与当前仓库一致，全局文件哈希未变。这个结果只验证**有锁文件的项目级复制安装**，不证明全局 `update -g` 或无锁文件场景。
 
+2026-08-28 补上了全局场景的实测，结论是**否定的**：`skills@1.5.23` 的 `update -g` 只处理
+`~/.agents/.skill-lock.json` 里有条目的 Skill。本机 13 个全局副本中有 7 个没有锁条目，
+命令输出「✓ Updated 22 skill(s)」、退出码 0，却对这 7 个只字未提，哈希 13/13 全部未变。
+它们自 2026-08-08 起静默过期 20 天，期间每次 update 都返回成功。
+
+后果不止于版本不齐：`guofeng-threejs` 的旧副本仍在推荐已被本仓库推翻的 Sobel 描边方案，
+**使用者运行 update、看到绿勾、继续拿到错的建议**。改用逐个 `add --skill <name> -g`
+重新安装后，7/7 补上锁条目、13/13 内容追平。[完整记录](cases/skills-cli-global-update-2026-08-28.md)
+
+这一轮**没有**验证「有锁条目且上游有新提交时 update 能否正确拉取」——本轮 6 个有条目的
+恰好都已是最新，该路径未被触发。所以现在能说的只是「没有锁条目会被静默跳过」，
+不能反过来说「有锁条目就一定更新得上」。
+
 ## 状态定义
 
 - ✅ **已验证**：执行过对应检查，并保留了命令、日期和结果。
@@ -80,7 +94,7 @@ Codex 在隔离实测中报告：已安装 Skill 较多时，会为适应 skills
 
 ## 下一轮测试
 
-13 个原创 Skill 已各完成一次自动触发测试：10 项当次任务完成，1 项按流程等待必要输入，两个失败项完成缩小复测。Claude Code 已于 2026-08-26 补上发现、加载与任务覆盖的证据，但自动触发仍缺同级证据（需盲测）。下一步：更新本机副本后重测 7 个漂移项，由不知情执行者做盲测，并补 Cursor。
+13 个原创 Skill 已各完成一次自动触发测试：10 项当次任务完成，1 项按流程等待必要输入，两个失败项完成缩小复测。Claude Code 已于 2026-08-26 补上发现、加载与任务覆盖的证据，但自动触发仍缺同级证据（需盲测）。本机副本已于 2026-08-28 全部追平（13/13 逐字节一致），但**那 7 个的 Claude Code 结论仍是在旧副本上测的**，需在新会话重测。下一步：① 新会话重测 7 项 ② 由不知情执行者做盲测取得同级触发证据 ③ 验证「有锁条目且上游有新提交」时 `update -g` 能否正确拉取 ④ 补 Cursor。
 
 如果你能提供 Claude Code 或 Cursor 的实际结果，请用[结构化兼容性表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。表单会分别记录模型是否开始执行、是否点名 Skill、是否触发与任务是否完成；成功和失败都欢迎，但请先删除 Token、邮箱和私人路径。
 

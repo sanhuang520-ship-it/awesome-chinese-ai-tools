@@ -149,8 +149,23 @@ class CompatibilityDataTest(unittest.TestCase):
         self.assertNotIn("当前 Codex 客户端为桌面版", summary)
         self.assertIn("compatibility-result.yml", summary)
         self.assertIn("隔离项目安装内容", summary)
-        self.assertIn("0 / 13 当前一致", summary)
+        # 2026-08-28 重装后全局副本已追平，但「曾经漂移到 0/13」这个事实不能因此被抹掉：
+        # 它是「安装不是持续同步」的原始证据。守卫改为同时锁住历史与修复两半。
+        self.assertIn("曾 0 / 13", summary)
+        self.assertIn("重装后 13 / 13", summary)
         self.assertIn("安装不是自动更新", summary)
+
+    def test_global_update_failure_stays_recorded(self):
+        # update -g 静默跳过无锁条目的 Skill，是本仓库唯一一条 ❌ 结论。
+        # 重装修好了本机副本，但不等于 CLI 的这个行为被修复了，不许因此删掉。
+        summary = (ROOT / "COMPATIBILITY.md").read_text(encoding="utf-8")
+        self.assertIn("不更新无锁条目的 Skill", summary)
+        result = self.data["results"]["globalUpdate"]
+        self.assertEqual("failed", result["status"])
+        self.assertEqual(0, result["ourSkillsChangedCount"])
+        self.assertEqual(0, result["exitCode"])          # 报成功却没更新，这才是问题所在
+        self.assertEqual(7, result["skippedWithoutWarningCount"])
+        self.assertTrue((ROOT / result["case"]).is_file())
 
 
 if __name__ == "__main__":

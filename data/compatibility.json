@@ -283,6 +283,24 @@
     "discoveryContextBudget": {
       "status": "partial",
       "note": "Codex reported that some skill descriptions were shortened to fit the skills context budget"
+    },
+    "globalUpdate": {
+      "status": "failed",
+      "testedAt": "2026-08-28",
+      "cliVersion": "1.5.23",
+      "scope": "global-user-level",
+      "command": "npx --yes skills@1.5.23 update -g -y",
+      "exitCode": 0,
+      "reportedUpdatedCount": 22,
+      "ourSkillsChangedCount": 0,
+      "skippedWithoutWarningCount": 7,
+      "lockedBeforeCount": 6,
+      "lockFile": "~/.agents/.skill-lock.json",
+      "remediation": "npx skills@1.5.23 add <repo> --skill <name> -g, one skill at a time",
+      "remediationLockEntriesAdded": 7,
+      "identicalAfterRemediation": 13,
+      "case": "cases/skills-cli-global-update-2026-08-28.md",
+      "note": "update -g only processes skills that have an entry in the global lock file. Seven skills installed on 2026-08-08 had no entry, were silently skipped for 20 days, and the command still exited 0 reporting success. This round did NOT verify whether a skill that HAS a lock entry updates correctly when upstream moves ahead: all six locked skills were already current, so that path was never exercised."
     }
   }
 }
