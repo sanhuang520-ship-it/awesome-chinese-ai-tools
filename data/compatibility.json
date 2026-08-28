@@ -302,7 +302,19 @@
       "remediationLockEntriesAdded": 7,
       "identicalAfterRemediation": 13,
       "case": "cases/skills-cli-global-update-2026-08-28.md",
-      "note": "update -g only processes skills that have an entry in the global lock file. Seven skills installed on 2026-08-08 had no entry, were silently skipped for 20 days, and the command still exited 0 reporting success. This round did NOT verify whether a skill that HAS a lock entry updates correctly when upstream moves ahead: all six locked skills were already current, so that path was never exercised."
+      "note": "update -g only processes skills that have an entry in the global lock file. Seven skills installed on 2026-08-08 had no entry, were silently skipped for 20 days, and the command still exited 0 reporting success. This round did NOT verify whether a skill that HAS a lock entry updates correctly when upstream moves ahead: all six locked skills were already current, so that path was never exercised.",
+      "lockedEntryUpdate": {
+        "status": "verified",
+        "testedAt": "2026-08-28",
+        "skill": "github-readme-cn",
+        "linesBefore": 176,
+        "linesAfter": 181,
+        "byteIdenticalToRepoAfter": true,
+        "lockHashChanged": true,
+        "criteriaSetBeforeRun": true,
+        "note": "Upstream was changed first, then the same update -g command was run. All four pre-registered criteria changed (line count, new passage present, file sha, lock hash). So the failure is conditional: skills WITH a lock entry update correctly; only those WITHOUT one are silently skipped."
+      },
+      "unexplainedObservation": "The same run also reported updating guofeng-threejs and homework-tutor-cn, which had no upstream change since their 2026-08-28 reinstall, while bookkeeping-cn and chinese-design-md in an identical situation were not touched. No content impact (13/13 still byte-identical to the repository afterwards). Cause not determined; recorded as an observation only."
     }
   }
 }

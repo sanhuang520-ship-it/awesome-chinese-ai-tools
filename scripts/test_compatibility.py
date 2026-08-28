@@ -161,13 +161,25 @@ class CompatibilityDataTest(unittest.TestCase):
         # update -g 静默跳过无锁条目的 Skill，是本仓库唯一一条 ❌ 结论。
         # 重装修好了本机副本，但不等于 CLI 的这个行为被修复了，不许因此删掉。
         summary = (ROOT / "COMPATIBILITY.md").read_text(encoding="utf-8")
-        self.assertIn("不更新无锁条目的 Skill", summary)
+        self.assertIn("静默跳过，不提示", summary)
+        # 同日又验证了有锁条目的正向路径。两行必须并存：
+        # 只留失败会夸大问题，只留成功会把「静默跳过」这条真实缺陷抹掉。
+        self.assertIn("正确拉取上游新版", summary)
         result = self.data["results"]["globalUpdate"]
         self.assertEqual("failed", result["status"])
         self.assertEqual(0, result["ourSkillsChangedCount"])
         self.assertEqual(0, result["exitCode"])          # 报成功却没更新，这才是问题所在
         self.assertEqual(7, result["skippedWithoutWarningCount"])
         self.assertTrue((ROOT / result["case"]).is_file())
+        # 有锁条目的路径是「已验证通过」，和上面的失败是两件事，不能互相覆盖。
+        locked = result["lockedEntryUpdate"]
+        self.assertEqual("verified", locked["status"])
+        self.assertTrue(locked["byteIdenticalToRepoAfter"])
+        self.assertTrue(locked["lockHashChanged"])
+        self.assertTrue(locked["criteriaSetBeforeRun"])   # 判定标准必须是运行前定的
+        # 那次运行里两个「上游没改却被报告更新」的现象原因未查明，
+        # 记录必须保留，不许因为不好看就删掉。
+        self.assertIn("Cause not determined", result["unexplainedObservation"])
 
 
 if __name__ == "__main__":
