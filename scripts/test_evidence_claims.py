@@ -216,7 +216,12 @@ class EvidenceClaimsTest(unittest.TestCase):
                 self.assertIn(phrase, generator)
                 self.assertIn(phrase, catalog)
         self.assertIn("{cn_n} 个中文条目", generator)
-        self.assertIn("72 个中文条目", catalog)
+        # 不写死数字：本文件顶部 catalog_counts() 的注释已经记过这个教训
+        # （08-14 抄成 195/152、08-17 抄成 194/151，抄写本身验证不了任何东西）。
+        # 这里要守的是「生成器把 cn 分类的实际条数写进了 SKILLS.md」。
+        skills = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))["skills"]
+        cn_n = sum(1 for item in skills if item.get("cat") == "cn")
+        self.assertIn(f"{cn_n} 个中文条目", catalog)
         self.assertNotIn("68 个中文原创", catalog)
 
     def test_skill_activation_is_described_as_client_dependent(self):

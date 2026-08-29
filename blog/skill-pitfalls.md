@@ -295,7 +295,7 @@ AI 现在什么都敢答，所以**告诉它什么时候该停下来**，可能�
 - 在线浏览（可搜索筛选）：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/
 - 当前 13 个原创 Skill 的输出片段与实测入口：[EXAMPLES.md](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/EXAMPLES.md)
 
-写这篇时收录了 130 个 Skill 条目，其来源仓库当时通过 GitHub API 核对为可访问；现在来源仓库仍每天自动复检一次。链接可访问不等于逐项功能实测。信息有误欢迎指出，我会尽快改。
+写这篇时收录了 130 个 Skill 条目，其来源仓库当时通过 GitHub API 核对为可访问；现在来源仓库仍定期复检一次（2026-08-20 起改为手动触发，不再是每日定时）。链接可访问不等于逐项功能实测。信息有误欢迎指出，我会尽快改。
 
 ---
 

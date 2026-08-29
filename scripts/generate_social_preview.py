@@ -112,11 +112,11 @@ def render_svg(stats: dict[str, int]) -> str:
 <text x="154" y="107" fill="#f4f0e8" font-size="30" font-weight="650" font-family="Songti SC,Noto Serif CJK SC,serif">中文 AI Skills 库</text>
 <text x="70" y="229" fill="#f5f1e9" font-size="64" font-weight="650" font-family="Songti SC,Noto Serif CJK SC,serif">{stats['skills']} 个 Agent Skill 条目</text>
 <text x="70" y="322" fill="#f5f1e9" font-size="55" font-weight="650" font-family="Songti SC,Noto Serif CJK SC,serif">其中 <tspan fill="#f07858">{stats['ours']} 个本站原创</tspan></text>
-<text x="70" y="383" fill="#bfc1c6" font-size="25" font-weight="550" font-family="Avenir Next,PingFang SC,Noto Sans CJK SC,sans-serif">{stats['chinese']} 个中文 Skill 条目 · 来自 {stats['repos']} 个来源仓库 · 每日来源复检</text>
+<text x="70" y="383" fill="#bfc1c6" font-size="25" font-weight="550" font-family="Avenir Next,PingFang SC,Noto Sans CJK SC,sans-serif">{stats['chinese']} 个中文 Skill 条目 · 来自 {stats['repos']} 个来源仓库 · 定期来源复检</text>
 <g transform="translate(70 428)" font-family="Avenir Next,PingFang SC,Noto Sans CJK SC,sans-serif" font-size="19" font-weight="700">
   <rect width="304" height="54" rx="27" fill="#193b31" stroke="#70b59a"/><text x="152" y="34" text-anchor="middle" fill="#9ed8c0">Codex {stats['codex']}/{stats['ours']} 自动触发记录</text>
-  <rect x="322" width="278" height="54" rx="27" fill="#352a1e" stroke="#d7a44d"/><text x="461" y="34" text-anchor="middle" fill="#efc470">Claude Code / Cursor 待测</text>
-  <rect x="618" width="210" height="54" rx="27" fill="#202f39" stroke="#7397aa"/><text x="723" y="34" text-anchor="middle" fill="#9fc2d3">运行边界公开</text>
+  <rect x="322" width="340" height="54" rx="27" fill="#352a1e" stroke="#d7a44d"/><text x="492" y="34" text-anchor="middle" fill="#efc470">Claude Code 部分实测 · Cursor 待测</text>
+  <rect x="680" width="210" height="54" rx="27" fill="#202f39" stroke="#7397aa"/><text x="785" y="34" text-anchor="middle" fill="#9fc2d3">运行边界公开</text>
 </g>
 <line x1="70" y1="520" x2="1130" y2="520" stroke="#f4f0e8" stroke-opacity=".14"/>
 <text x="70" y="571" fill="#a3a4aa" font-size="21" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">sanhuang520-ship-it.github.io/awesome-chinese-ai-tools</text>
