@@ -150,8 +150,14 @@ class PublicMetadataTest(unittest.TestCase):
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(source, target)
             readme = root / "README.md"
-            stale = readme.read_text(encoding="utf-8").replace("46 个 AI 工具导航", "999 个 AI 工具导航")
-            readme.write_text(stale, encoding="utf-8")
+            # 不写死工具数：加一个工具这里就会失效，而"抄一遍当前数字"验证不了任何东西
+            # （08-31 加第 47 个工具时正好撞上，和 test_evidence_claims 里那次同一类问题）。
+            # 这里只需要制造一处漂移，所以从数据现场取真实数字再改坏它。
+            tools_n = len(json.loads((ROOT / "data/tools.json").read_text(encoding="utf-8"))["tools"])
+            marker = f"{tools_n} 个 AI 工具导航"
+            body = readme.read_text(encoding="utf-8")
+            self.assertIn(marker, body)          # 先确认标记真的在，否则下面等于没改
+            readme.write_text(body.replace(marker, "999 个 AI 工具导航"), encoding="utf-8")
 
             _, changed = sync_local(root)
             self.assertEqual(["README.md"], changed)
@@ -159,7 +165,7 @@ class PublicMetadataTest(unittest.TestCase):
 
             _, written = sync_local(root, write=True)
             self.assertEqual(["README.md"], written)
-            self.assertIn("46 个 AI 工具导航", readme.read_text(encoding="utf-8"))
+            self.assertIn(marker, readme.read_text(encoding="utf-8"))   # 写回后应恢复成真实数字
 
 
 if __name__ == "__main__":

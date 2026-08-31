@@ -814,6 +814,20 @@
       "linkStatus": "ok",
       "linkCheckedAt": "2026-08-30",
       "linkFailCount": 0
+    },
+    {
+      "name": "SandBase CLI",
+      "url": "https://github.com/sandbaseai/cli",
+      "cat": "agent",
+      "free": false,
+      "cn": true,
+      "vpn": false,
+      "freeInfo": "CLI 本身 Apache-2.0 开源；模型调用按服务方定价，免费额度本站未核实",
+      "desc": "开源命令行与 MCP 桥接工具，用统一的 OpenAI 兼容接口把多家模型服务接入 Claude Code、Cursor、Codex 等客户端。含中文 README。功能范围与模型数量为上游自述，本站未逐项实测。",
+      "linkOk": true,
+      "linkStatus": "ok",
+      "linkCheckedAt": "2026-08-31",
+      "linkFailCount": 0
     }
   ]
 }
