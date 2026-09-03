@@ -43,3 +43,7 @@
 ## skills CLI
 
 - [`update -g` 会静默跳过没有锁条目的 Skill（2026-08-28）](skills-cli-global-update-2026-08-28.md) —— 报告成功、退出码 0，实际 7 个未更新且无任何提示；重新安装可修复。
+
+## 第三方 Skill 实测
+
+- [`chinese-git-workflow`（superpowers-zh ★7960）— 首例，2026-09-03](third-party-chinese-git-workflow-2026-09-03.md) —— 安装层已测（CLI **报失败但实际装好**）；触发测试已前瞻登记、尚未执行。
