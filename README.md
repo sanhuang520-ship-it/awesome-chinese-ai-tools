@@ -71,6 +71,8 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 **[→ Agent Skill 测试失败后怎么修](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/fix-agent-skill/)**（不改题、不降门槛、不覆盖旧失败；含两条 3/4 → 4/4 的完整证据链）
 
+**[→ 我们也测别人的 Skill](THIRD-PARTY-TESTING.md)**（只用对方自己声明的契约当标准；不打分、不排名）
+
 **[→ 在一页选择全部 13 个首次试用任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**（单项安装、复制任务、历史证据或前瞻成功门槛）
 
 | Skill | 做什么 |
