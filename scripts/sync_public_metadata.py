@@ -58,11 +58,7 @@ def sync_readme_text(body, stats):
         (r"\| 📄 (?:官方收录|官方 Skill 条目) \| \d+ \|", f"| 📄 官方 Skill 条目 | {official} |"),
         (r"\| ✍️ 本站原创 \| \d+ \|", f"| ✍️ 本站原创 | {ours} |"),
         (r"\| \*\*合计\*\* \| \*\*\d+\*\* \|", f"| **合计** | **{n}** |"),
-        (r"另附 \*\*\d+ 个 AI 工具导航\*\*", f"另附 **{tools} 个 AI 工具导航**"),
-        (
-            r"\| (\d+) \| (?:\d+ 个工具链接实测可访问性|\d+ 个工具入口复检：[^|]+) \|",
-            rf"| \1 | {tools} 个工具入口复检：{direct_ok} 个直接成功，{bot_blocked} 个返回机器人拦截响应，{whitelisted} 个白名单跳过请求 |",
-        ),
+        (r"另(?:附|有) \*\*\d+ 个 AI 工具导航(?:的归档快照)?\*\*", f"另有 **{tools} 个 AI 工具导航的归档快照**"),
         (
             r"\| (\d+) \| \*\*(?:\d+ 个 Skill 仓库复检|\d+ 个来源仓库复检\*\*（覆盖 \d+ 个 Skill 条目）)",
             rf"| \1 | **{repos} 个来源仓库复检**（覆盖 {n} 个 Skill 条目）",
@@ -111,7 +107,7 @@ def sync_index_text(body, stats):
     desc = (
         f"Chinese Agent Skills / 中文 AI Skills 合集：{n} 个 Skill 条目，"
         f"其中 {cn} 个中文条目、{ours} 个本站自写 Skill，来自 {repos} 个来源仓库；"
-        f"定期复检来源仓库是否失效，另附 {tools} 个 AI 工具导航。"
+        f"定期复检来源仓库是否失效；另有 {tools} 个 AI 工具导航的归档快照（不再复检）。"
     )
     short_desc = f"Chinese AI Skills directory：{n} 个 Skill 条目，{ours} 个本站自写；定期复检，兼容性证据与失败边界公开。"
 
@@ -181,7 +177,7 @@ def sync_llms_text(body, stats):
     n, ours, tools = stats["skills"], stats["ours"], stats["tools"]
     body = re.sub(r"收录 \d+ 个 Skill", f"收录 {n} 个 Skill", body, count=1)
     body = re.sub(r"其中 \d+ 个由本仓库维护", f"其中 {ours} 个由本仓库维护", body, count=1)
-    body = re.sub(r"另有 \d+ 个 AI 工具入口", f"另有 {tools} 个 AI 工具入口", body, count=1)
+    body = re.sub(r"另有 \d+ 个 AI 工具入口(?:的归档快照)?", f"另有 {tools} 个 AI 工具入口的归档快照", body, count=1)
     return body
 
 
@@ -193,8 +189,8 @@ def sync_english_readme_text(body, stats):
         f"{n} Agent Skill entries from {repos} source repositories",
         body,
     )
-    body = re.sub(r"maintains \d+ first-party Skills and \d+ AI tool links", f"maintains {ours} first-party Skills and {tools} AI tool links", body)
-    body = re.sub(r"rechecks the \d+ source repositories and \d+ tool links", f"rechecks the {repos} source repositories and {tools} tool links", body)
+    body = re.sub(r"maintains \d+ first-party Skills and (?:an archived snapshot of )?\d+ AI tool links", f"maintains {ours} first-party Skills and an archived snapshot of {tools} AI tool links", body)
+    body = re.sub(r"rechecks the \d+ source repositories(?: and \d+ tool links)?", f"rechecks the {repos} source repositories", body)
     return body
 
 

@@ -15,6 +15,11 @@
       "status": "retired",
       "retiredAt": "2026-08-12",
       "note": "stars、rec 与 hot 为缺少公开评分方法的历史字段，不再用于前端徽章、评分、筛选或排序。"
+    },
+    "archive": {
+      "status": "archived",
+      "archivedAt": "2026-09-14",
+      "note": "工具导航于 2026-09-14 转为归档快照：不再复检链接，不再接受新工具投稿。链接、额度与描述停留在最后一次复检（linkCheckedAt）时的状态，使用前请到官网核对。"
     }
   },
   "categories": {

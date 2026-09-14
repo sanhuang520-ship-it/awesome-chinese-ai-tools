@@ -2,6 +2,7 @@
 """公开统计一致性检查。"""
 
 import json
+import re
 import shutil
 import tempfile
 import unittest
@@ -65,24 +66,34 @@ class PublicMetadataTest(unittest.TestCase):
         expected = original.replace("2026-08-11", "2026-08-12")
         self.assertEqual(expected, sync_sitemap_text(original, "2026-08-12"))
 
-    def test_readme_step_number_does_not_affect_tool_count_sync(self):
+    def test_tool_directory_is_archived_consistently(self):
         """
-        目的是验证「不管原来写的步骤编号是几，行本身会被换成当天真实统计」——
-        不是验证某天具体查到多少个工具被拦截。之前把 39/5/2 这几个数字焊死在测试里，
-        而这三个数字来自当天对外部网站的真实探活，站点自己加个机器人验证第二天数字
-        就会变，跟仓库代码有没有 bug 无关。2026-08-16 就撞上了（39→38，5→6）。
-        改成从 self.stats 里现取现拼，只测模板和替换逻辑对不对。
+        2026-09-14 工具导航转为归档快照：不再复检、不再收新工具。
+        要守的是「对外说法」与「实际行为」一致——
+        维护步骤里没有工具复检，就不许任何页面再宣称工具链接在被复检；
+        反过来，如果以后把复检加回去，这条测试会逼着人同时改掉「归档」表述。
         """
-        original = "| 2 | 999 个工具链接实测可访问性 |\n"
-        n, direct_ok, bot_blocked, whitelisted = (
-            self.stats["tools"], self.stats["tools_direct_ok"],
-            self.stats["tools_bot_blocked"], self.stats["tools_whitelisted"],
-        )
-        self.assertEqual(
-            f"| 2 | {n} 个工具入口复检：{direct_ok} 个直接成功，"
-            f"{bot_blocked} 个返回机器人拦截响应，{whitelisted} 个白名单跳过请求 |\n",
-            sync_readme_text(original, self.stats),
-        )
+        tools = json.loads((ROOT / "data/tools.json").read_text(encoding="utf-8"))
+        self.assertEqual("archived", tools["meta"]["archive"]["status"])
+
+        steps = re.search(r"STEPS = \[(.*?)\n    \]", (ROOT / "scripts/daily_check.py").read_text(encoding="utf-8"), re.S).group(1)
+        active = [line for line in steps.splitlines() if not line.strip().startswith("#")]
+        self.assertFalse(any("check_tool_links" in line for line in active))
+
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        english = (ROOT / "README.en.md").read_text(encoding="utf-8")
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("个工具入口复检", readme)
+        self.assertNotIn("链接定期自动实测", readme)
+        self.assertIn("AI 工具导航的归档快照", readme)
+        self.assertNotIn("tool links; runs are manually triggered", english)
+        self.assertIn("archived snapshot", english)
+        self.assertIn("工具导航（归档）", index)
+        self.assertIn("归档快照", index)
+
+        # 旧格式的维护表工具行不应再被同步脚本「复活」
+        self.assertEqual("| 2 | 999 个工具链接实测可访问性 |\n",
+                         sync_readme_text("| 2 | 999 个工具链接实测可访问性 |\n", self.stats))
 
     def test_every_nonempty_category_is_rendered(self):
         skills = json.loads((ROOT / "data/skills.json").read_text(encoding="utf-8"))["skills"]

@@ -728,7 +728,8 @@ if __name__ == "__main__":
     STEPS = [
         ("站内链接体检",   check_published_links),
         ("核对官方信源",   check_source_nav),
-        ("工具链接实测",   check_tool_links),
+        # 「工具链接实测」已于 2026-09-14 移除：工具导航转为归档快照，不再复检。
+        # check_tool_links() 函数本身保留，需要时可手动调用。
         ("Skill 仓库复检", check_skills),
         ("重建 SKILLS.md", build_skills_md),
         ("重渲染目录页", sync_static_catalog),

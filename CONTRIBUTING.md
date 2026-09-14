@@ -152,14 +152,15 @@ python3 scripts/check_repository_profile.py
 - `desc` / `descEn` 不写动态 Star 排名、借用上游 Star 数、Star 与安装量对比，或未经本站复现的百分比效果；提交前运行 `python3 scripts/check_catalog_claims.py`
 - 名称、URL、描述会用于网站渲染：不要在名称或 URL 中加入引号、反引号或 HTML；描述中不要写 HTML 标签
 
-## 加一个 AI 工具
+## 加一个 AI 工具（已停止接收）
 
-编辑 **`data/tools.json`**。收录标准：
+**工具导航于 2026-09-14 转为归档快照，不再接受新工具投稿，也不再复检已有链接。**
 
-- 真实可用，非 Demo、非停更
-- 核心功能基于 AI
-- 有免费额度优先（纯付费需注明）
-- 界面或内容支持中文（国际工具标 🌐）
+原因：本项目的重点是 Agent Skills；47 个工具链接每次维护都要复检，
+其中近 1/5 被机器人拦截或需白名单跳过，维护成本高，且让项目看起来像工具聚合站。
+已有条目保留在 `data/tools.json` 里作为历史快照，数据文件 `meta.archive` 写明了归档日期。
+
+想推荐的是 Agent Skill（仓库里有 `SKILL.md`）的话，仍然欢迎，见上一节。
 
 ## 报告失效链接
 
