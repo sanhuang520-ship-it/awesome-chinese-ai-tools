@@ -21,7 +21,7 @@ class SocialPreviewTest(unittest.TestCase):
                        "Claude Code 部分实测 · Cursor 待测"):
             self.assertIn(phrase, svg)
         for stale in ("184 个可安装", "68 个中文项目", "Codex / Claude Code / Cursor",
-                      # cron 已于 2026-08-20 移除，改为手动触发。分享图是最外层的对外
+                      # 每日定时已于 2026-08-18 移除，2026-09-14 起每周跑一次。分享图是最外层的对外
                       # 物料，措辞必须跟着改，不能继续宣称「每日/每天」自动复检。
                       "每日来源复检", "每天自动复检",
                       # Claude Code 只做过发现与加载，触发那一项是自测，不许写成全测过。

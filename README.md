@@ -12,7 +12,7 @@
 
 [![原创](https://img.shields.io/badge/本站原创-13%20个-86b894?style=flat-square)](EXAMPLES.md)
 [![Skills](https://img.shields.io/badge/Skills-212%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
-[![Daily Check](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml/badge.svg)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)
+[![Weekly Check](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml/badge.svg)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
 
 **[🌐 在线浏览与搜索](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[📦 安装与排错](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/)　·　[📋 看真实输出](EXAMPLES.md)　·　[🧪 看兼容性证据](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/)
@@ -263,7 +263,7 @@ npx --yes skills@1.5.22 update -p -y
 
 这套流程跑在 **GitHub Actions** 上，[运行记录公开可查](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)——不依赖任何人的电脑，也不用你相信我说的话。
 
-> 2026-08-18 起改为**手动触发**（此前是每天定时）。每次运行的时间、结果和完整日志都公开可查，
+> 触发方式：2026-08-18 前每天定时 → 之后只手动触发（结果一停 12 天没人跑）→ **2026-09-14 起每周一自动跑一次**，也可随时手动触发。每次运行的时间、结果和完整日志都公开可查，
 > 上方「最近复检」日期直接来自数据文件，所以你看到的永远是真实的上次复检时间，而不是一句「每天都在跑」的承诺。
 
 最近复检：**2026-09-13**，失效 0 个。
