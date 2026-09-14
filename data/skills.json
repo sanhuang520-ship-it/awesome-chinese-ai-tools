@@ -1859,6 +1859,19 @@
       "skillCheckedAt": "2026-09-13"
     },
     {
+      "name": "video-router",
+      "cat": "design",
+      "official": false,
+      "desc": "OrkasVideoStudio 的入口 Skill：让编程 Agent 做视频，拿到需求先判断走哪条线——HTML 动效合成、剪辑真实素材、AI 生成画面，或端到端自动。整套共 14 个 Skill。⚠️ 纯英文文档，上游示例称支持中文配音与字幕，本站未实测；按维护者决定破例收录。",
+      "descEn": "Read this FIRST on any video-production request to pick and lock the line — generate, compose, edit, or AUTO end-to-end.",
+      "url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/video-router",
+      "stars": 486,
+      "lastPush": "2026-09-10",
+      "skillOk": true,
+      "skillStatus": "ok",
+      "skillCheckedAt": "2026-09-14"
+    },
+    {
       "name": "youtube-transcript",
       "cat": "design",
       "official": false,

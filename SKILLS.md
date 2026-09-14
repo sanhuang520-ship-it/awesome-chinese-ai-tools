@@ -1,6 +1,6 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **211 个 Skill 条目｜85 个中文条目｜✍️ 13 个本站原创**<br>
+> **212 个 Skill 条目｜85 个中文条目｜✍️ 13 个本站原创**<br>
 > 来源仓库经 GitHub API 核验真实存在；第三方说明来自上游资料或维护者摘要，不等于逐项功能实测<br>
 > 🔄 最近自动复检：**2026-09-13**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
@@ -79,7 +79,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 📊 PPT 演示 | 19 | [查看](#catalog-ppt) |
 | 💻 开发工程 | 36 | [查看](#catalog-dev) |
 | 🤖 Agent 与调研 | 8 | [查看](#catalog-agent) |
-| 🎨 创意设计 | 15 | [查看](#catalog-design) |
+| 🎨 创意设计 | 16 | [查看](#catalog-design) |
 | 💼 办公协作 | 13 | [查看](#catalog-biz) |
 | 📊 数据研究 | 6 | [查看](#catalog-data) |
 | 🔐 安全取证 | 7 | [查看](#catalog-sec) |
@@ -285,7 +285,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [super-video-maker-skill](https://github.com/Bomx/super-video-maker-skill) | ⭐275 | 端到端 AI 视频生产：HeyGen 数字人、Seedance/字节素材、OpenAI 配图、Remotion 合成，覆盖制作/剪辑/字幕/配乐/导出 |
 
 <a id="catalog-design"></a>
-### 🎨 创意设计（15 个）
+### 🎨 创意设计（16 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -299,6 +299,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [ian-xiaohei-illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations) | ⭐11,584 | 中文小黑怪诞正文配图生成 Skill，16:9 白底手绘风格，Codex Skill 形态（与已收录 ian-handdrawn-ppt 同作者） |
 | [guizang-material-illustration](https://github.com/op7418/guizang-material-illustration) | ⭐1,133 | 归藏风格的材质插画：带标注的说明图、材质风格图表插画与数据优先的科普配图。 |
 | [youtube-transcript](https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/youtube-transcript) | ⭐541 | 抓取 YouTube 视频字幕并整理成摘要 🕰<sub>2026-03-11 后未更新</sub> |
+| [video-router](https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/video-router) | ⭐486 | OrkasVideoStudio 的入口 Skill：让编程 Agent 做视频，拿到需求先判断走哪条线——HTML 动效合成、剪辑真实素材、AI 生成画面，或端到端自动。整套共 14 个 Skill。⚠️ 纯英文文档，上游示例称支持中文配音与字幕，本站未实测；按维护者决定破例收录。 |
 | [imagen](https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen) | ⭐422 | 调用 Google Gemini 图像生成 API 出图 |
 | [swiftui-design-skill](https://github.com/wholiver/swiftui-design-skill) | ⭐194 | SwiftUI 前端设计（中文）：反 AI 味六条铁律、设计顾问、五维评审 |
 | [anydesign](https://github.com/uxKero/anydesign) | ⭐184 | 分析任意图片/网址/Figma 文件，生成结构化设计规范 |
@@ -395,5 +396,5 @@ Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts
 
 ---
 
-*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-09-13。*
+*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-09-14。*
 *收录有误或想推荐新 Skill？欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)*
