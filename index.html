@@ -1853,7 +1853,7 @@ function renderPricing() {
       </div>
     </div>
     <div style="margin:-10px 0 24px;padding:14px 16px;border:1px solid var(--border);color:var(--muted);font-size:12.5px;line-height:1.7">
-      ⚠️ 这里是发现线索，不是实时价格库。每日自动化只检查官网入口能否访问，<b style="color:var(--text)">不会验证价格、额度、地区或账号资格</b>。
+      ⚠️ 这里是发现线索，不是实时价格库。工具导航已于 2026-09-14 归档，官网入口不再定期检查，<b style="color:var(--text)">不会验证价格、额度、地区或账号资格</b>。
     </div>
     ${section('ps-free', '🟢 历史记录中有免费入口', freeRecorded.length, freeRecorded)}
     ${paidRecorded.length ? section('ps-paid', '🔴 历史记录中需付费', paidRecorded.length, paidRecorded) : ''}
@@ -3033,7 +3033,7 @@ function generateSkillsCard(){
   const fy=py+ph-58;
   x.textAlign='center';
   x.fillStyle=P.accent; x.font=`700 30px ${SANS}`;
-  x.fillText('来源仓库每日复检 · 无广告无跟踪', W/2, fy-14);
+  x.fillText('来源仓库每周复检 · 无广告无跟踪', W/2, fy-14);
   x.fillStyle=P.muted; x.font=`500 24px ${SANS}`;
   x.fillText('⭐ github.com/sanhuang520-ship-it/awesome-chinese-ai-tools', W/2, fy+30);
   x.textAlign='left';

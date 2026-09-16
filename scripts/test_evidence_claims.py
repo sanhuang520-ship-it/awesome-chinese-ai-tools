@@ -46,6 +46,20 @@ class EvidenceClaimsTest(unittest.TestCase):
             with self.subTest(claim=claim):
                 self.assertNotIn(claim, combined)
 
+    def test_public_pages_do_not_claim_daily_automation(self):
+        """
+        每日定时已于 2026-08-18 取消，2026-09-14 起改为每周一。
+        对外页面里任何「每天/每日自动复检」的说法都会变成虚假宣称，
+        这是本项目最不能碰的红线，所以用测试钉住。
+        （第三方 Skill 的描述里出现「每天自动抓 arXiv」属于条目内容，不在此列。）
+        """
+        for name in ("index.html", "README.md", "README.en.md", "llms.txt", "MAINTENANCE_PLAN.md"):
+            body = (ROOT / name).read_text(encoding="utf-8")
+            for claim in ("每日自动化", "每日复检", "每天自动复检", "每日自动复检", "每天早上"):
+                with self.subTest(page=name, claim=claim):
+                    self.assertNotIn(claim, body)
+            self.assertNotIn("daily", body.lower().replace("daily-check", "").replace("daily_check", ""))
+
     def test_unknown_clients_remain_explicitly_unverified(self):
         compatibility = (ROOT / "COMPATIBILITY.md").read_text(encoding="utf-8")
         self.assertIn("| Cursor | ⏳ 待测 |", compatibility)
