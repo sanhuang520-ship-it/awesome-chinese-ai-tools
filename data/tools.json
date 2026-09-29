@@ -1,9 +1,9 @@
 {
   "meta": {
-    "updated": "2026-09-13",
+    "updated": "2026-09-30",
     "source": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools",
     "note": "工具数据单一可信源。新增/修改工具只改这里，前端自动渲染。免费额度信息可能变化，以官网为准。",
-    "linkCheckedAt": "2026-09-13",
+    "linkCheckedAt": "2026-09-30",
     "linkDeadCount": 0,
     "hotUpdated": "2026-06-23",
     "commercialTerms": {
@@ -832,6 +832,22 @@
       "linkOk": true,
       "linkStatus": "ok",
       "linkCheckedAt": "2026-09-13",
+      "linkFailCount": 0
+    },
+    {
+      "name": "DSH API",
+      "url": "https://api.dshapi.icu/",
+      "cat": "llm",
+      "free": false,
+      "cn": true,
+      "vpn": false,
+      "rec": false,
+      "stars": 4,
+      "freeInfo": "注册即用，按量计费（人民币）；国模分组 0.08x（官网价 8%）",
+      "desc": "中转聚合站：同一个 base URL 同时支持 OpenAI 与 Anthropic 协议，覆盖 DeepSeek V4 系列、GLM-5.2/5.3、Kimi K2.8/K3、MiniMax M3、混元 3/4 等国模；Claude Code、Codex CLI 不改代码可接入。",
+      "linkOk": true,
+      "linkStatus": "ok",
+      "linkCheckedAt": "2026-09-30",
       "linkFailCount": 0
     }
   ]
