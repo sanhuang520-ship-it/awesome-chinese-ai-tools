@@ -1,0 +1,17 @@
+{
+  "recordedAt": "2026-08-12T23:56:00+08:00",
+  "repository": "sanhuang520-ship-it/awesome-chinese-ai-tools",
+  "head": "10c7fba",
+  "publishedEndpoints": {
+    "codexSkillNotTriggering": {"url": "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/codex-skill-not-triggering/", "httpStatus": 200},
+    "createCodexSkill": {"url": "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/create-codex-skill/", "httpStatus": 200}
+  },
+  "repositoryMetrics": {
+    "status": "not-refreshed",
+    "reason": "GitHub anonymous repository API rate limit exceeded",
+    "lastConfirmed": {"recordedAt": "2026-08-12T19:12:00+08:00", "stars": 7, "forks": 1}
+  },
+  "externalDistribution": {"status": "not-published", "preparedCopy": "promo/codex-search-articles-posts.md"},
+  "observationWindows": ["before-publication", "24-hours-after-publication", "72-hours-after-publication", "4-weeks-after-publication"],
+  "notes": "Observation only, not attribution evidence. The current repository metrics could not be refreshed because the anonymous GitHub API was rate-limited; the last confirmed values are historical and must not be called current. No external post has been published. Later traffic or Star changes cannot be attributed to one article without channel-level evidence."
+}

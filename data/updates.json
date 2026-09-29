@@ -1,0 +1,125 @@
+{
+  "updated": "2026-09-28",
+  "events": [
+    {
+      "date": "2026-09-28",
+      "type": "alert",
+      "title": "1 个 Skill 仓库已失效",
+      "desc": "claude-code-skills-zh —— 已在站内标记"
+    },
+    {
+      "date": "2026-08-17",
+      "type": "alert",
+      "title": "1 个 Skill 仓库已失效",
+      "desc": "AppGenesisForge —— 已在站内标记"
+    },
+    {
+      "date": "2026-08-16",
+      "type": "alert",
+      "title": "1 个 Skill 仓库已失效",
+      "desc": "AppGenesisForge —— 已在站内标记"
+    },
+    {
+      "date": "2026-08-15",
+      "type": "alert",
+      "title": "1 个 Skill 仓库已失效",
+      "desc": "AppGenesisForge —— 已在站内标记"
+    },
+    {
+      "date": "2026-08-05",
+      "type": "tool",
+      "title": "Runway 官网域名迁移",
+      "desc": "runwayml.com → runway.com，站内链接已更新（链接检测发现）"
+    },
+    {
+      "date": "2026-08-01",
+      "type": "alert",
+      "title": "Claude 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-08-01",
+      "type": "alert",
+      "title": "ChatGPT 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-08-01",
+      "type": "alert",
+      "title": "Gemini 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-08-01",
+      "type": "alert",
+      "title": "Gamma 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-08-01",
+      "type": "alert",
+      "title": "Fish Audio 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-08-01",
+      "type": "alert",
+      "title": "Perplexity 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-08-01",
+      "type": "alert",
+      "title": "Gamma 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-07-31",
+      "type": "alert",
+      "title": "Midjourney 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-07-31",
+      "type": "alert",
+      "title": "Runway 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-07-25",
+      "type": "alert",
+      "title": "Runway 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-07-16",
+      "type": "alert",
+      "title": "Midjourney 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-07-08",
+      "type": "alert",
+      "title": "Midjourney 链接异常",
+      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
+    },
+    {
+      "date": "2026-07-07",
+      "type": "model",
+      "title": "Gemini 3.5 Pro 定档 7 月 17 日",
+      "desc": "200 万 token 上下文 + Deep Think 推理层，与 WAIC 开幕同日"
+    },
+    {
+      "date": "2026-07-04",
+      "type": "tool",
+      "title": "Flux 官网域名迁移",
+      "desc": "blackforestlabs.ai → bfl.ai，站内链接已更新"
+    },
+    {
+      "date": "2026-07-04",
+      "type": "model",
+      "title": "Claude Sonnet 5 发布",
+      "desc": "免费版默认可用，API 尝鲜价 $2/$10 至 8月31日"
+    }
+  ]
+}

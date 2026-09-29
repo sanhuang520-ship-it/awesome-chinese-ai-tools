@@ -1,0 +1,131 @@
+name: 提交一次 Skill 兼容性实测
+description: 分享 Codex、Claude Code 或 Cursor 中成功、失败或未触发的可复现结果
+title: "[兼容性] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        成功、失败和没有自动触发都很有价值。请只提交你实际运行过的结果，并先删除 Token、邮箱、私人路径和未公开业务数据。
+        如果你希望用 PR 提交机器可读结果，请复制[示例报告](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/examples/compatibility-result.example.json)，并按[公开 JSON Schema](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/schemas/compatibility-result.schema.json)校验。
+        不想手写 JSON，可先用[浏览器本地报告生成器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/report/)下载；表单内容不会上传到本站服务器。机器校验通过不等于结果已被独立复现。
+
+  - type: dropdown
+    id: client
+    attributes:
+      label: 客户端
+      options:
+        - Codex
+        - Claude Code
+        - Cursor
+        - 其他 Agent 客户端
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 客户端版本与操作系统
+      description: 能确认多少写多少；不知道的字段请写“不确定”
+      placeholder: Codex 0.x / macOS 15.x
+    validations:
+      required: true
+
+  - type: input
+    id: skill
+    attributes:
+      label: Skill 名称
+      placeholder: chinese-typography
+    validations:
+      required: true
+
+  - type: textarea
+    id: task
+    attributes:
+      label: 交给 AI 的原始任务
+      description: 请保留原始措辞，但移除隐私和敏感业务数据
+    validations:
+      required: true
+
+  - type: dropdown
+    id: named_skill
+    attributes:
+      label: 原始任务里是否主动写了 Skill 名称
+      description: 不点名更适合观察客户端是否会自动选择；点名结果也可以提交，但会单独标注
+      options:
+        - 否，没有点名
+        - 是，主动点名或要求使用该 Skill
+        - 不确定
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 模型是否真正开始执行
+      description: 账户用量、网络或平台错误发生在模型输出前时，应选“未执行”，不能记成 Skill 失败
+      options:
+        - 是，模型已经开始执行任务
+        - 否，被账户、网络、平台或本机环境阻断
+        - 不确定
+    validations:
+      required: true
+
+  - type: dropdown
+    id: activation
+    attributes:
+      label: 是否自动触发 Skill
+      options:
+        - 是，能确认读取了目标 Skill
+        - 否，没有触发
+        - 不确定
+    validations:
+      required: true
+
+  - type: dropdown
+    id: completion
+    attributes:
+      label: 任务最终状态
+      options:
+        - 完成，主要交付符合任务要求
+        - 部分完成，仍缺少必要内容
+        - 等待用户输入或确认
+        - 失败、报错或卡住
+        - 未执行，平台、账户或环境在模型开始前阻断
+        - 无法判断
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: 实际结果
+      description: 说明完成、失败、卡住或偏离预期的位置；文字和错误日志即可，截图不是必需的
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 可公开的证据（可选）
+      description: 可粘贴脱敏日志、相关输出片段或公开链接；截图不是必需的，不要上传隐私和凭据
+      placeholder: 脱敏日志、输出片段或公开链接
+
+  - type: textarea
+    id: boundary
+    attributes:
+      label: 这次结果不能说明什么
+      description: 例如只测试了一条任务、没有测试写文件、没有测试联网能力
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 这是我实际运行得到的结果，不是推测
+          required: true
+        - label: 我已删除 Token、邮箱、私人路径和未公开业务数据
+          required: true
+        - label: 允许维护者在注明本 Issue 来源和证据边界的前提下整理此结果
+          required: true

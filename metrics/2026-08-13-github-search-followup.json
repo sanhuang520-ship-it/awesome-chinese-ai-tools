@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-08-13T12:19:17+08:00",
+  "source": "GitHub public repository search API",
+  "repository": "sanhuang520-ship-it/awesome-chinese-ai-tools",
+  "method": {
+    "sort": "best-match",
+    "order": "desc",
+    "pageSize": 20,
+    "authentication": "anonymous",
+    "scope": "repository search only"
+  },
+  "queries": [
+    {
+      "query": "中文 agent skills",
+      "totalResults": 346,
+      "targetRankInTop20": null
+    },
+    {
+      "query": "chinese agent skills",
+      "totalResults": 464,
+      "targetRankInTop20": null
+    },
+    {
+      "query": "chinese ai skills",
+      "totalResults": 561,
+      "targetRankInTop20": null
+    },
+    {
+      "query": "codex skills chinese",
+      "totalResults": 850,
+      "targetRankInTop20": null
+    },
+    {
+      "query": "中文 AI skills",
+      "totalResults": 414,
+      "targetRankInTop20": null
+    },
+    {
+      "query": "awesome chinese ai tools",
+      "totalResults": 21,
+      "targetRankInTop20": 3
+    }
+  ],
+  "repositoryMetrics": {
+    "stars": 7,
+    "forks": 1
+  },
+  "repositoryProfile": {
+    "description": "中文 Agent Skills 合集：184 个条目、13 个本站原创；Codex 13/13 自动触发实测，Claude Code / Cursor 待测；每日自动复检",
+    "homepage": "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/",
+    "topics": [
+      "agent-skills",
+      "ai-agent",
+      "ai-agent-skills",
+      "ai-tools",
+      "awesome-list",
+      "chinese",
+      "chinese-ai",
+      "claude-code",
+      "claude-skills",
+      "codex",
+      "codex-skills",
+      "cursor",
+      "developer-tools",
+      "open-source",
+      "skill-md"
+    ]
+  },
+  "notes": "Observation only, not attribution evidence. GitHub search rankings and result totals can change with indexing, repository activity, Stars, query interpretation and other unknown factors. A later rank change cannot be attributed to one README phrase, and a top-20 absence does not mean the repository is absent from all results. This baseline does not promise discovery or Star growth."
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="ink">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中式网页主题库：8 套可切换 CSS 主题与中文排版规范</title>
+<meta name="description" content="在线切换水墨、青绿、宋韵、敦煌、朱砂、新中式、竹韵和夜宴 8 套中式 CSS 主题，查看中文排版规则、对比度实测、安装方式与 Codex 运行记录。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/themes/">
+<meta property="og:title" content="中式网页主题库：8 套可切换 CSS 主题">
+<meta property="og:description" content="真实浏览器预览 8 套中式主题，附中文排版规范、对比度边界、安装方式与 Codex 实测。">
+<meta property="og:url" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/themes/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/assets/shots/theme-ink.webp">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="1272">
+<meta property="og:image:alt" content="中式网页主题库：8 套可切换 CSS 主题">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="中式网页主题库：8 套可切换 CSS 主题">
+<meta name="twitter:description" content="真实浏览器预览 8 套中式主题，附中文排版规范、对比度边界、安装方式与 Codex 实测。">
+<meta name="twitter:image" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/assets/shots/theme-ink.webp">
+<meta name="twitter:image:alt" content="中式网页主题库：8 套可切换 CSS 主题">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"chinese-web-themes 中式网页主题库","description":"8 套可切换的中式 CSS 主题，内置中文排版规范与已记录的对比度实测。","url":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/themes/","codeRepository":"https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-web-themes","programmingLanguage":["CSS","HTML"],"license":"https://opensource.org/licenses/MIT","inLanguage":"zh-CN","image":"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/assets/shots/theme-ink.webp"}</script>
+<link rel="stylesheet" href="themes.css">
+<style>
+  .switcher {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; gap: .4rem; flex-wrap: wrap;
+    padding: .8rem 1.5rem;
+    background: var(--surface); border-bottom: 1px solid var(--line);
+  }
+  .switcher button {
+    font: inherit; font-size: 13px;
+    padding: .3rem .8rem; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--bg);
+    color: var(--ink); cursor: pointer; transition: all .2s;
+  }
+  .switcher button:hover { border-color: var(--accent); }
+  .switcher button[aria-pressed="true"] {
+    background: var(--accent); color: var(--bg); border-color: var(--accent);
+  }
+  .swatch { display: flex; gap: .5rem; margin: 1.5em 0; }
+  .swatch i {
+    width: 40px; height: 40px; border-radius: 6px;
+    border: 1px solid var(--line); display: block;
+  }
+  .evidence { margin-top: 2rem; padding: 1.25rem; border: 1px solid var(--line); background: var(--surface); }
+  .evidence h2 { margin-top: 0; }
+  footer { max-width: 38em; margin: 2.5rem auto; padding: 1.25rem 1.5rem; border-top: 1px solid var(--line); color: var(--ink-soft); }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav class="switcher" id="sw">
+  <button data-t="ink" aria-pressed="true">水墨</button>
+  <button data-t="azurite">青绿</button>
+  <button data-t="song">宋韵</button>
+  <button data-t="dunhuang">敦煌</button>
+  <button data-t="vermilion">朱砂</button>
+  <button data-t="neo">新中式</button>
+  <button data-t="bamboo">竹韵</button>
+  <button data-t="night">夜宴</button>
+</nav>
+
+<article>
+  <h1>中式网页主题库</h1>
+  <p>8 套基于中国传统美学的网页主题，内置中文排版规范。切换上方按钮查看效果。</p>
+
+  <div class="swatch">
+    <i style="background:var(--bg)"></i>
+    <i style="background:var(--surface)"></i>
+    <i style="background:var(--accent-weak)"></i>
+    <i style="background:var(--accent)"></i>
+    <i style="background:var(--ink)"></i>
+  </div>
+
+  <h2>为什么要单独做中式主题</h2>
+  <p>这套主题把中国美学配色与中文排版约束放在同一份 CSS 中。它解决的是行高、中英文间距、标点避头尾、行宽与着重方式等可检查问题，不声称覆盖所有中式视觉传统，也不替代具体项目的字体授权与无障碍复核。</p>
+
+  <blockquote>
+    这套主题把<em>中文排版规范</em>写进了基础样式：行高 1.75、行宽 38em、CJK 避头尾、着重号代替斜体。
+  </blockquote>
+
+  <h3>中英混排测试</h3>
+  <p>我用 Python 写了一个爬虫，部署在 Cloudflare Workers 上，每天抓取 100 条数据。这段文字用来检验中英文之间的间距是否舒适，以及 <a href="#">链接样式</a> 在当前主题下是否协调。</p>
+
+  <h3>代码块</h3>
+  <pre><code>&lt;html data-theme="azurite"&gt;
+  &lt;link rel="stylesheet" href="themes.css"&gt;
+&lt;/html&gt;</code></pre>
+
+  <h3>表格</h3>
+  <table>
+    <thead><tr><th>主题</th><th>色系</th><th class="num">适合</th></tr></thead>
+    <tbody>
+      <tr><td>水墨</td><td>素白 · 墨黑</td><td class="num">随笔 · 诗词</td></tr>
+      <tr><td>青绿</td><td>石青 · 石绿</td><td class="num">文旅 · 山水</td></tr>
+      <tr><td>敦煌</td><td>土红 · 石青</td><td class="num">文化 IP</td></tr>
+      <tr><td>夜宴</td><td>墨底 · 暗金</td><td class="num">深色模式</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+  <p style="color:var(--ink-soft);font-size:.9em">
+    切换主题只需改 <code>data-theme</code> 属性，无需重新加载样式。
+  </p>
+
+  <section class="evidence">
+    <h2>证据与边界</h2>
+    <p>仓库记录的 8 套主题正文对比度为 9.4–12.2，超过 WCAG AA 普通文字 4.5:1 的阈值；这不代表页面里所有自定义颜色组合都自动合格。真实浏览器截图、计算方式与 Codex 单任务记录均可单独核对。</p>
+    <p><a href="../shots/">查看 8 套真实渲染截图</a> · <a href="../cases/chinese-web-themes-codex.md">查看 Codex 自动触发记录</a> · <a href="../skills/chinese-web-themes/SKILL.md">阅读 Skill 源码</a></p>
+    <pre><code>npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-web-themes -g</code></pre>
+  </section>
+</article>
+
+<footer>
+  本页是可切换预览，不是生成效果保证。安装前请核对 Skill 内容与项目所用字体授权。 ·
+  <a href="../">返回中文 AI Skills 库</a> ·
+  <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools">查看 GitHub 仓库 · 觉得有用再 Star</a>
+<span><a href="../guides/">13 个原创 Skill 总览</a></span><span><a href="../try-agent-skills/">复制首次试用任务</a></span></footer>
+
+<script>
+document.getElementById('sw').addEventListener('click', e => {
+  const b = e.target.closest('button[data-t]');
+  if (!b) return;
+  document.documentElement.dataset.theme = b.dataset.t;
+  document.querySelectorAll('#sw button').forEach(x =>
+    x.setAttribute('aria-pressed', x === b));
+});
+</script>
+</body>
+</html>

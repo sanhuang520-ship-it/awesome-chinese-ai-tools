@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>国风 Three.js · 剪纸皮影渲染演示</title>
+<style>
+  body { margin:0; background:#1A0E0B; font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; }
+  #app { width:100vw; height:100vh; display:block; }
+  .hud {
+    position:fixed; top:16px; left:16px; z-index:5;
+    background:rgba(26,14,11,.86); border:1px solid #5C3A2E;
+    border-radius:8px; padding:12px 16px; max-width:300px;
+  }
+  .hud h1 { font-family:"Songti SC",serif; font-size:18px; margin:0 0 6px; color:#F4D9A8; }
+  .hud p { font-size:12px; line-height:1.7; color:#C29A78; margin:0 0 10px; }
+  .hud button {
+    font:inherit; font-size:12px; padding:4px 12px; margin:2px;
+    border:1px solid #5C3A2E; background:transparent; border-radius:999px;
+    color:#E8C48E; cursor:pointer;
+  }
+  .hud button.on { background:#E8C48E; color:#1A0E0B; border-color:#E8C48E; }
+  #err { position:fixed; bottom:16px; left:16px; color:#FF8A7A; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="hud">
+  <h1>剪纸皮影</h1>
+  <p>与水墨相反的一套做法：关掉光照做纯剪影，rim 不压深、改为背光透射的暖光。</p>
+  <div>
+    <button data-m="shadow" class="on">皮影</button>
+    <button data-m="window">窗花</button>
+    <button data-m="dunhuang">敦煌</button>
+  </div>
+</div>
+<canvas id="app"></canvas>
+<div id="err"></div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.170.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+const err = document.getElementById('err');
+window.addEventListener('error', e => err.textContent = '❌ ' + e.message);
+
+const canvas = document.getElementById('app');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(42, innerWidth/innerHeight, .1, 100);
+camera.lookAt(0, 0, 0);
+
+// 相机距离要随宽高比走：固定 z 在手机竖屏上会把图案裁掉一圈。
+// 最大半径约 1.75（见 LAYER_CFG），留 15% 余量。
+const FIT_R = 1.75 * 1.15;
+function fitCamera() {
+  const aspect = innerWidth / innerHeight;
+  const vFov = camera.fov * Math.PI / 180;
+  // 竖屏时受宽度约束，横屏时受高度约束，取更远的那个
+  const distV = FIT_R / Math.tan(vFov / 2);
+  const distH = FIT_R / (Math.tan(vFov / 2) * aspect);
+  camera.position.set(0, 0, Math.max(distV, distH));
+  camera.updateProjectionMatrix();
+}
+fitCamera();
+
+/* ── 剪纸皮影：核心三件事（与水墨方案正好相反）─────────
+   1. 完全平面化 —— 不做 dot(N,L)，颜色不随朝向变化，只有"有纸/没纸"
+   2. 纯剪影   —— 形体靠镂空的轮廓说话，不靠明暗塑造体积
+   3. 背光透射 —— rim 用暖光（灯在幕布后面），而不是水墨那样压深成墨
+   ──────────────────────────────────────────────── */
+const PALETTES = {
+  // paper=纸/皮的本色，glow=透光颜色，bg=幕布底，lamp=灯晕
+  // 对比要拉够：幕布压到近黑，纸色提饱和，否则整张图糊成一团暗红。
+  shadow:   { paper:'#C8321F', glow:'#FFD98A', bg:'#0D0705', lamp:'#B8641F' },
+  window:   { paper:'#E03A22', glow:'#FFF3D0', bg:'#12070A', lamp:'#D4791F' },
+  dunhuang: { paper:'#C06636', glow:'#FFDD93', bg:'#0F0908', lamp:'#9C5A24' },
+};
+
+const uniforms = {
+  uTime:  { value: 0 },
+  uPaper: { value: new THREE.Color(PALETTES.shadow.paper) },
+  uGlow:  { value: new THREE.Color(PALETTES.shadow.glow) },
+  uDepth: { value: 0 },
+};
+
+const papercutMaterial = new THREE.ShaderMaterial({
+  uniforms,
+  transparent: true,
+  side: THREE.DoubleSide,
+  vertexShader: `
+    varying vec3 vN;
+    varying vec3 vV;
+    varying vec3 vP;
+    void main() {
+      vN = normalize(normalMatrix * normal);
+      vec4 mv = modelViewMatrix * vec4(position, 1.0);
+      vV = normalize(-mv.xyz);
+      vP = position;
+      gl_Position = projectionMatrix * mv;
+    }`,
+  fragmentShader: `
+    uniform float uTime, uDepth;
+    uniform vec3  uPaper, uGlow;
+    varying vec3  vN, vV, vP;
+
+    float hash(vec3 p){ return fract(sin(dot(p, vec3(12.9898,78.233,45.164))) * 43758.5453); }
+    float noise(vec3 p){
+      vec3 i = floor(p), f = fract(p);
+      f = f*f*(3.0-2.0*f);
+      return mix(
+        mix(mix(hash(i), hash(i+vec3(1,0,0)), f.x), mix(hash(i+vec3(0,1,0)), hash(i+vec3(1,1,0)), f.x), f.y),
+        mix(mix(hash(i+vec3(0,0,1)), hash(i+vec3(1,0,1)), f.x), mix(hash(i+vec3(0,1,1)), hash(i+vec3(1,1,1)), f.x), f.y),
+        f.z);
+    }
+
+    void main() {
+      vec3 N = normalize(vN);
+
+      // ① 完全平面化：这里刻意不写 dot(N, uLight)。
+      //    皮影是一张平的皮子，正面背面一个色，没有"受光面/背光面"。
+      vec3 col = uPaper;
+
+      // ② 背光透射：视线越掠过边缘，灯光越容易从纸的薄边透出来。
+      //    与水墨的 edge 压深方向相反 —— 这里是往亮里走。
+      float rim  = 1.0 - max(dot(N, normalize(vV)), 0.0);
+      // 阈值放低、范围拉宽：让外轮廓也吃到透光，而不是只有镂空边缘亮
+      float bleed = smoothstep(0.05, 0.75, rim);
+      col = mix(col, uGlow, bleed * 0.95);
+
+      // ③ 皮子的纤维与手工染色不匀
+      float fiber = noise(vP * 26.0);
+      col *= 0.93 + 0.07 * fiber;
+      // 细微的刀口毛边：靠近边缘处再叠一层噪声，避免边线过于光洁
+      col = mix(col, uGlow, bleed * 0.25 * fiber);
+
+      // 越靠后的层，被前面的皮子挡掉更多光，整体压暗
+      col *= 1.0 - uDepth * 0.28;
+
+      // 皮影是半透的：边缘透光处更透，中心更实
+      // 叠三层时太透会糊成一团，这里把基础不透明度提高，只在透光边缘让它薄
+      float alpha = 0.96 - bleed * 0.14;
+      gl_FragColor = vec4(col, alpha);
+    }`,
+});
+
+/* ── 幕布与灯晕：皮影的光源在幕布后面 ── */
+const lampUniforms = {
+  uLamp: { value: new THREE.Color(PALETTES.shadow.lamp) },
+  uBg:   { value: new THREE.Color(PALETTES.shadow.bg) },
+};
+const screen = new THREE.Mesh(
+  new THREE.PlaneGeometry(26, 16),
+  new THREE.ShaderMaterial({
+    uniforms: lampUniforms,
+    vertexShader: `varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
+    fragmentShader: `
+      uniform vec3 uLamp, uBg;
+      varying vec2 vUv;
+      void main(){
+        // 灯在幕布中心偏上，径向衰减
+        float d = distance(vUv, vec2(0.5, 0.54));
+        // 灯晕要收着用：v2 时范围太大强度太高，整块背景过曝成橘色，
+        // 把剪影吞掉了 —— 皮影的画面是「暗幕布上一盏灯」，不是满屏发光。
+        float halo = smoothstep(0.34, 0.04, d);
+        float core = smoothstep(0.13, 0.00, d);
+        vec3 c = mix(uBg, uLamp, halo * 0.55);
+        c = mix(c, uLamp * 1.25, core * 0.35);
+        gl_FragColor = vec4(c, 1.0);
+      }`,
+    depthWrite: false,
+  })
+);
+screen.position.z = -4;
+scene.add(screen);
+
+/* ── 剪纸形体：镂空的窗花 ──
+   剪纸的信息量全在"镂空"上，所以用 Shape + holes，而不是实心几何体。 */
+function makeCutout(petals, rOuter, rInner, holeCount) {
+  const shape = new THREE.Shape();
+  const N = 480;
+  for (let i = 0; i <= N; i++) {
+    const t = (i / N) * Math.PI * 2;
+    // 尖瓣轮廓：pow 把余弦的峰压尖、谷压宽 —— 圆润的花瓣不像剪纸，
+    // 剪纸是刀剪出来的，瓣尖必须是尖的。再叠一层高频做锯齿小牙口。
+    const lobe  = Math.pow(Math.abs(Math.cos(petals * t / 2)), 1.9);
+    const teeth = 0.035 * Math.abs(Math.cos(petals * 3 * t / 2));
+    const r = rOuter * (0.55 + 0.45 * lobe + teeth);
+    const x = Math.cos(t) * r, y = Math.sin(t) * r;
+    i === 0 ? shape.moveTo(x, y) : shape.lineTo(x, y);
+  }
+
+  // 中心镂空：不是正圆，做成尖角星孔
+  const center = new THREE.Path();
+  const M = 160;
+  for (let i = 0; i <= M; i++) {
+    const t = (i / M) * Math.PI * 2;
+    const r = rInner * (0.62 + 0.38 * Math.pow(Math.abs(Math.cos(petals * t / 2)), 1.6));
+    const x = Math.cos(t) * r, y = Math.sin(t) * r;
+    i === 0 ? center.moveTo(x, y) : center.lineTo(x, y);
+  }
+  shape.holes.push(center);
+
+  // 放射长条槽 —— 剪纸最典型的"透"，比圆孔像得多
+  for (let k = 0; k < holeCount; k++) {
+    const a = (k / holeCount) * Math.PI * 2;
+    const slot = new THREE.Path();
+    slot.absellipse(
+      Math.cos(a) * rOuter * 0.60, Math.sin(a) * rOuter * 0.60,
+      rOuter * 0.055, rOuter * 0.20,     // 细长
+      0, Math.PI * 2, true,
+      a + Math.PI / 2                     // 长轴对准圆心，呈放射状
+    );
+    shape.holes.push(slot);
+  }
+
+  // 内圈再来一圈小水滴孔，制造疏密层次
+  const inner = Math.max(4, Math.round(holeCount / 2));
+  for (let k = 0; k < inner; k++) {
+    const a = (k / inner) * Math.PI * 2 + Math.PI / inner;
+    const h = new THREE.Path();
+    h.absellipse(
+      Math.cos(a) * rOuter * 0.34, Math.sin(a) * rOuter * 0.34,
+      rOuter * 0.045, rOuter * 0.085,
+      0, Math.PI * 2, true, a + Math.PI / 2
+    );
+    shape.holes.push(h);
+  }
+
+  return new THREE.ExtrudeGeometry(shape, { depth: 0.045, bevelEnabled: false, curveSegments: 24 });
+}
+
+// 三层叠放：皮影戏是多张皮子前后叠出层次
+const layers = [];
+// 三层错开：v1 时三层同心同大小，前面那张把后面全挡住了，"层"根本看不出来。
+// 现在让它们尺寸拉开、初始角度错开、并稍微偏移，才能看见叠透的效果。
+const LAYER_CFG = [
+  { petals: 16, rOuter: 1.70, rInner: 0.52, holes: 16, z: -0.60, spin:  0.00016, rot: 0.00, off: [ 0.00,  0.00] },
+  { petals: 10, rOuter: 1.15, rInner: 0.34, holes: 10, z:  0.00, spin: -0.00026, rot: 0.31, off: [ 0.10, -0.06] },
+  { petals:  6, rOuter: 0.62, rInner: 0.18, holes:  6, z:  0.55, spin:  0.00038, rot: 0.62, off: [-0.06,  0.08] },
+];
+LAYER_CFG.forEach((cfg, i) => {
+  const mat = papercutMaterial.clone();
+  mat.uniforms = THREE.UniformsUtils.clone(papercutMaterial.uniforms);
+  mat.uniforms.uPaper = uniforms.uPaper;
+  mat.uniforms.uGlow  = uniforms.uGlow;
+  mat.uniforms.uTime  = uniforms.uTime;
+  mat.uniforms.uDepth.value = i / (LAYER_CFG.length - 1);
+  const mesh = new THREE.Mesh(makeCutout(cfg.petals, cfg.rOuter, cfg.rInner, cfg.holes), mat);
+  mesh.position.set(cfg.off[0], cfg.off[1], cfg.z);
+  mesh.rotation.z = cfg.rot;
+  scene.add(mesh);
+  layers.push({ mesh, spin: cfg.spin, base: cfg.rot });
+});
+
+let raf;
+function loop(t) {
+  uniforms.uTime.value = t * .001;
+  // 皮影是被人用杆子操纵的：轻微摇摆，不是匀速自转
+  layers.forEach(({ mesh, spin, base }) => {
+    mesh.rotation.z = base + t * spin;
+    mesh.rotation.y = Math.sin(t * 0.00018 + mesh.position.z) * 0.22;
+  });
+  renderer.render(scene, camera);
+  raf = requestAnimationFrame(loop);
+}
+raf = requestAnimationFrame(loop);
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  fitCamera();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+document.querySelector('.hud').addEventListener('click', e => {
+  const b = e.target.closest('button[data-m]');
+  if (!b) return;
+  const p = PALETTES[b.dataset.m];
+  uniforms.uPaper.value.set(p.paper);
+  uniforms.uGlow.value.set(p.glow);
+  lampUniforms.uLamp.value.set(p.lamp);
+  lampUniforms.uBg.value.set(p.bg);
+  document.body.style.background = p.bg;
+  document.querySelectorAll('.hud button').forEach(x => x.classList.toggle('on', x === b));
+});
+
+// 供自动化检查
+window.__ready = true;
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/schemas/compatibility-result.schema.json",
+  "title": "Agent Skill compatibility result",
+  "description": "A single, privacy-scrubbed Agent Skill compatibility observation. Discovery, activation, completion and environment state are recorded separately.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "recordedAt",
+    "sourceType",
+    "client",
+    "skill",
+    "task",
+    "environment",
+    "activation",
+    "completion",
+    "observed",
+    "boundaries",
+    "privacy"
+  ],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{7,127}$"
+    },
+    "recordedAt": {"type": "string", "format": "date-time"},
+    "sourceType": {
+      "type": "string",
+      "enum": ["repository-self-test", "community-report"]
+    },
+    "client": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "os"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": ["codex", "claude-code", "cursor", "other"]
+        },
+        "version": {"type": "string", "minLength": 1},
+        "os": {"type": "string", "minLength": 1},
+        "details": {"type": "string"}
+      }
+    },
+    "skill": {"type": "string", "minLength": 1},
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verbatim", "namedSkill"],
+      "properties": {
+        "verbatim": {"type": "string", "minLength": 1},
+        "namedSkill": {
+          "type": "string",
+          "enum": ["yes", "no", "unknown"]
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["ok", "blocked", "unknown"]
+        },
+        "error": {"type": "string"}
+      }
+    },
+    "activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["verified", "not-triggered", "unknown"]
+        },
+        "evidence": {"type": "string", "minLength": 1}
+      }
+    },
+    "completion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "summary"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["completed", "partial", "waiting-input", "failed", "not-run", "unknown"]
+        },
+        "summary": {"type": "string", "minLength": 1}
+      }
+    },
+    "observed": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "value"],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["log", "output", "link", "note"]
+          },
+          "value": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scrubbed", "containsSensitiveData"],
+      "properties": {
+        "scrubbed": {"const": true},
+        "containsSensitiveData": {"const": false}
+      }
+    },
+    "caseUrl": {"type": "string", "format": "uri"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "environment": {
+            "properties": {"status": {"const": "blocked"}},
+            "required": ["status"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "environment": {"required": ["status", "error"]},
+          "activation": {
+            "properties": {"status": {"const": "unknown"}}
+          },
+          "completion": {
+            "properties": {"status": {"const": "not-run"}}
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "completion": {
+            "properties": {"status": {"const": "not-run"}},
+            "required": ["status"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "environment": {
+            "properties": {"status": {"const": "blocked"}}
+          }
+        }
+      }
+    }
+  ]
+}

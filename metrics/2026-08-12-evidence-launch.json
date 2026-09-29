@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-08-12T19:12:00+08:00",
+  "source": "GitHub public repository API and GitHub Pages HTTP checks",
+  "repository": "sanhuang520-ship-it/awesome-chinese-ai-tools",
+  "repositoryMetrics": {
+    "stars": 7,
+    "forks": 1,
+    "openIssues": 0,
+    "subscribers": 0
+  },
+  "releaseState": {
+    "head": "5d0b59f",
+    "pagesDeployment": "success",
+    "publicEndpointsChecked": 8,
+    "publicEndpointsOk": 8,
+    "localTests": 18,
+    "htmlPagesChecked": 22
+  },
+  "published": [
+    "13-skill Codex activation matrix and reproducible cases",
+    "compatibility evidence page",
+    "installation and troubleshooting guide",
+    "quality and safety labels",
+    "structured compatibility report issue form",
+    "verified-updates-only RSS feed",
+    "AI-readable llms.txt summary"
+  ],
+  "notes": "This is an observation point, not attribution evidence. Repository edits, Pages content and later promotion may overlap; Star changes cannot be assigned to one item without channel-level data."
+}

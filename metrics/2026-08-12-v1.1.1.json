@@ -1,0 +1,20 @@
+{
+  "recordedAt": "2026-08-12T20:11:04+08:00",
+  "source": "GitHub public repository and release APIs; local verification",
+  "repository": "sanhuang520-ship-it/awesome-chinese-ai-tools",
+  "repositoryMetrics": {
+    "stars": 7,
+    "forks": 1,
+    "openIssues": 0
+  },
+  "release": {
+    "tag": "v1.1.1",
+    "commit": "0d9e1bfb911ecd71359d4e2f82bb119ba92683e2",
+    "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/releases/tag/v1.1.1",
+    "localTests": 57,
+    "communityProfile": 100,
+    "dailyCheck": "success",
+    "pagesDeployment": "pending-at-observation"
+  },
+  "notes": "Observation only, not attribution evidence. Stars remained at 7 when v1.1.1 was published. The maintenance release, English overview, security policy, automation fixes and catalog corrections cannot be credited with Star growth unless later channel-level evidence supports that claim."
+}

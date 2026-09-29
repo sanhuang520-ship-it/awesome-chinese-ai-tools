@@ -1,0 +1,208 @@
+/* ══════════════════════════════════════════════════════════════
+   中式网页主题库 · chinese-web-themes
+   8 套基于中国传统美学的网页主题，内置中文排版规范
+   用法：<html data-theme="ink"> 切换主题
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── 基础：中文排版规范（所有主题共用）────────────────────── */
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+               "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+  --font-serif: "Songti SC", "SimSun", "Source Han Serif SC",
+                "Noto Serif SC", Georgia, "Times New Roman", serif;
+  --measure: 38em;
+  --leading: 1.75;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: var(--leading);
+  letter-spacing: 0.01em;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-spacing-trim: normal;
+  word-break: normal;
+  line-break: strict;
+  overflow-wrap: break-word;
+  transition: background .3s, color .3s;
+}
+
+article, .content { max-width: var(--measure); margin: 0 auto; padding: 0 1.5rem; }
+p { margin: 0 0 1.5em; }
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  line-height: 1.35;
+  letter-spacing: 0;
+  color: var(--ink-strong);
+  margin: 2em 0 .8em;
+  font-weight: 600;
+}
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.2em; }
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-weak); }
+a:hover { border-bottom-color: var(--accent); }
+
+em { font-style: normal; text-emphasis: dot; text-emphasis-position: under right; }
+strong { color: var(--ink-strong); font-weight: 600; }
+
+blockquote {
+  margin: 2em 0;
+  padding: .2em 0 .2em 1.2em;
+  border-left: 3px solid var(--accent);
+  color: var(--ink-soft);
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .9em;
+  background: var(--surface);
+  padding: .15em .4em;
+  border-radius: 3px;
+}
+pre {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1em 1.2em;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+pre code { background: none; padding: 0; }
+
+hr { border: 0; border-top: 1px solid var(--line); margin: 3em 0; }
+
+table { width: 100%; border-collapse: collapse; margin: 2em 0; }
+th, td { padding: .6em .8em; border-bottom: 1px solid var(--line); text-align: left; }
+th { color: var(--ink-strong); font-weight: 600; }
+td.num { font-variant-numeric: tabular-nums; text-align: right; }
+
+/* 印刷模式：首行缩进（与段间距二选一，不要同时用）*/
+[data-indent="print"] p { text-indent: 2em; margin-bottom: 0; }
+
+/* ══ 主题 1 · 水墨（默认）—— 素白宣纸、墨分五色、大留白 ══════ */
+:root, [data-theme="ink"] {
+  --bg:          #F7F5F0;
+  --surface:     #EFEBE3;
+  --line:        #DDD7CC;
+  --ink:         #3A3733;
+  --ink-strong:  #1C1A17;
+  --ink-soft:    #6E6860;
+  --accent:      #2E2A26;
+  --accent-weak: #C4BCAF;
+}
+
+/* ══ 主题 2 · 青绿 —— 石青石绿，《千里江山图》色系 ══════════ */
+[data-theme="azurite"] {
+  --bg:          #F2F5F2;
+  --surface:     #E3EBE5;
+  --line:        #C8D6CB;
+  --ink:         #2C3E38;
+  --ink-strong:  #14241F;
+  --ink-soft:    #5A6E66;
+  --accent:      #2F6B5E;
+  --accent-weak: #A8C4B8;
+}
+
+/* ══ 主题 3 · 宋韵 —— 天青、克制、留白 ═════════════════════ */
+[data-theme="song"] {
+  --bg:          #F4F6F5;
+  --surface:     #E8EDEC;
+  --line:        #D2DCDA;
+  --ink:         #37423F;
+  --ink-strong:  #1B2422;
+  --ink-soft:    #6B7875;
+  --accent:      #6E9C93;
+  --accent-weak: #BCD2CD;
+}
+
+/* ══ 主题 4 · 敦煌 —— 土红石青，壁画做旧感 ═════════════════ */
+[data-theme="dunhuang"] {
+  --bg:          #F5EFE3;
+  --surface:     #EBE0CD;
+  --line:        #D9C8AC;
+  --ink:         #4A3B2A;
+  --ink-strong:  #2A1F14;
+  --ink-soft:    #7A6750;
+  --accent:      #A8502F;
+  --accent-weak: #D4B08C;
+}
+
+/* ══ 主题 5 · 朱砂 —— 中国红 + 墨，喜庆有力 ════════════════ */
+[data-theme="vermilion"] {
+  --bg:          #FBF7F4;
+  --surface:     #F3E9E3;
+  --line:        #E0CCC3;
+  --ink:         #38302C;
+  --ink-strong:  #1A1412;
+  --ink-soft:    #6E5F58;
+  --accent:      #B23A2E;
+  --accent-weak: #E0B0A8;
+}
+
+/* ══ 主题 6 · 新中式 —— 木色素白，当代克制 ═════════════════ */
+[data-theme="neo"] {
+  --bg:          #FAF8F5;
+  --surface:     #F0EBE3;
+  --line:        #DFD6C9;
+  --ink:         #413B33;
+  --ink-strong:  #221E19;
+  --ink-soft:    #756C60;
+  --accent:      #8C6E4A;
+  --accent-weak: #C9B79E;
+}
+
+/* ══ 主题 7 · 竹韵 —— 竹青米白，清雅通透 ═══════════════════ */
+[data-theme="bamboo"] {
+  --bg:          #F6F8F3;
+  --surface:     #E9EFE3;
+  --line:        #D0DCC4;
+  --ink:         #333B2D;
+  --ink-strong:  #1A2114;
+  --ink-soft:    #667058;
+  --accent:      #5C7A44;
+  --accent-weak: #AEC49B;
+}
+
+/* ══ 主题 8 · 夜宴 —— 深色中式，墨底金线 ═══════════════════ */
+[data-theme="night"] {
+  --bg:          #16171A;
+  --surface:     #1F2125;
+  --line:        #33363C;
+  --ink:         #D9D5CC;
+  --ink-strong:  #F2EEE4;
+  --ink-soft:    #948E83;
+  --accent:      #C9A44C;
+  --accent-weak: #5C4E2C;
+}
+
+/* ── 跟随系统深色 ────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] {
+    --bg:          #16171A;
+    --surface:     #1F2125;
+    --line:        #33363C;
+    --ink:         #D9D5CC;
+    --ink-strong:  #F2EEE4;
+    --ink-soft:    #948E83;
+    --accent:      #C9A44C;
+    --accent-weak: #5C4E2C;
+  }
+}
+
+/* ── 可选装饰：宣纸纹理 ─────────────────────────────────── */
+[data-paper="on"] body {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,.012) 1px, transparent 1px),
+    radial-gradient(circle at 70% 60%, rgba(0,0,0,.010) 1px, transparent 1px);
+  background-size: 24px 24px, 31px 31px;
+}

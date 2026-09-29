@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "macos-cli-1.5.22-isolated-20260813",
+  "recordedAt": "2026-08-13T00:00:00+08:00",
+  "sourceType": "repository-self-test",
+  "environment": {
+    "os": "macOS (version not recorded)",
+    "terminal": "zsh",
+    "nodeVersion": "not recorded",
+    "skillsVersion": "1.5.22"
+  },
+  "command": "npx skills add <repository> --skill chinese-typography",
+  "skill": "chinese-typography",
+  "result": "installed",
+  "paths": [
+    {"path": "<user-home>/.agents/skills/chinese-typography", "type": "directory", "exists": true},
+    {"path": "<user-home>/.claude/skills/chinese-typography", "type": "symlink", "exists": true}
+  ],
+  "observed": ["This is a compact machine-readable projection of the published macOS CLI 1.5.22 installation evidence."],
+  "boundaries": ["It records installation layout only; it does not prove Claude Code activation or task completion.", "It does not establish behavior on Windows, WSL, Linux, other CLI versions, or global update commands."],
+  "privacy": {"scrubbed": true, "containsSensitiveData": false}
+}

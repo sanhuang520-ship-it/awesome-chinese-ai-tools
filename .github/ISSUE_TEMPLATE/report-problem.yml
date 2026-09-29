@@ -1,0 +1,52 @@
+name: 报告失效链接或事实错误
+description: 告诉我们哪个链接失效、数据过期或描述不准确
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        谢谢你帮这个列表保持可信。请提供可以复核的信息；不要附带账号密码、Token 或其他隐私数据。
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 问题类型
+      options:
+        - 链接失效或跳转错误
+        - 名称、描述或分类不准确
+        - 星数、更新时间等数据异常
+        - 安装命令或使用说明已经过期
+        - 其他事实错误
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: 出问题的页面或条目
+      description: 请贴本站页面、GitHub 仓库或官方页面地址
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: 你实际看到了什么
+      description: 包括错误文字、HTTP 状态、跳转目标或复现步骤；截图不是必需的
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 可以核对的正确信息
+      description: 如果知道正确内容，请附官方网站、官方文档或原仓库作为依据
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我没有在 Issue 中填写密码、Token、邮箱验证码等隐私信息
+          required: true

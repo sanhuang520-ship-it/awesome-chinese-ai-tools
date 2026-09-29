@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>国风 Three.js · 工笔渲染演示</title>
+<style>
+  body { margin:0; background:#EFE8DA; font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; }
+  #app { width:100vw; height:100vh; display:block; }
+  .hud {
+    position:fixed; top:16px; left:16px; z-index:5;
+    background:rgba(239,232,218,.92); border:1px solid #CBBFA6;
+    border-radius:8px; padding:12px 16px; max-width:310px;
+  }
+  .hud h1 { font-family:"Songti SC",serif; font-size:18px; margin:0 0 6px; color:#2A2419; }
+  .hud p { font-size:12px; line-height:1.7; color:#6B6252; margin:0 0 10px; }
+  .hud button {
+    font:inherit; font-size:12px; padding:4px 12px; margin:2px;
+    border:1px solid #CBBFA6; background:#FBF7EE; border-radius:999px;
+    color:#3A3428; cursor:pointer;
+  }
+  .hud button.on { background:#2A2419; color:#FBF7EE; border-color:#2A2419; }
+  .hud .stat { font:11px ui-monospace,Menlo,monospace; color:#8A7F6A; margin-top:8px; }
+  #err { position:fixed; bottom:16px; left:16px; color:#B23A2E; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="hud">
+  <h1>工笔</h1>
+  <p>比水墨多两件事：色阶提到 9 阶让过渡更细腻，再用矿物色 + 墨线勒边。勒线用反向外壳画（不引后处理），代价是每个物体多一个 draw call。</p>
+  <div>
+    <button data-m="azurite" class="on">石青</button>
+    <button data-m="malachite">石绿</button>
+    <button data-m="cinnabar">朱砂</button>
+  </div>
+  <div class="stat" id="stat">—</div>
+</div>
+<canvas id="app"></canvas>
+<div id="err"></div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.170.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+const err = document.getElementById('err');
+window.addEventListener('error', e => err.textContent = '❌ ' + e.message);
+
+const canvas = document.getElementById('app');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(42, innerWidth/innerHeight, .1, 100);
+camera.lookAt(0, 0, 0);
+
+// 相机距离随宽高比自适应（竖屏别把形体裁掉）。
+// 半径不要手写常数：物体一改、外壳一加就对不上，竖屏又会裁掉一圈。
+// 建完形体后用实际包围球算一次（group 只做旋转，半径是旋转不变量）。
+let FIT_R = 2.0;
+function fitCamera() {
+  const aspect = innerWidth / innerHeight;
+  camera.aspect = aspect;          // 必须同步给相机：只算局部变量的话，
+                                   // 投影矩阵还用着旧 aspect，算出来的距离对不上画面
+  const vFov = camera.fov * Math.PI / 180;
+  const distV = FIT_R / Math.tan(vFov / 2);
+  const distH = FIT_R / (Math.tan(vFov / 2) * aspect);
+  camera.position.set(0, 0, Math.max(distV, distH));
+  camera.updateProjectionMatrix();
+}
+
+/* ── 工笔：在水墨三件事之上再加两件 ─────────────────────
+   1. 色阶提到 9 阶 —— 水墨要「墨分五色」的概括，工笔要的是细腻过渡
+   2. 矿物色       —— 石青/石绿/朱砂，高饱和且色相稳定，不像墨那样只有明度
+   3. 细线勒边     —— 工笔的骨架是线。这里用屏幕空间导数在材质里算，
+                      不引 EffectComposer（见 SKILL.md 性能要点第 4 条）
+   ──────────────────────────────────────────────── */
+const PALETTES = {
+  // silk=绢底，deep=最重的矿物色，light=最淡的一阶，line=勒线颜色
+  // 勒线一律用墨色（工笔的线本来就是墨线），且必须明显深于 deep：
+  // v1 时 line 和 deep 太接近，而 rim 线恰好落在最暗处 —— 深色画在深色上，等于没画。
+  azurite:   { silk:'#EFE8DA', deep:'#3E6E96', light:'#CFE2EC', line:'#141210' },
+  malachite: { silk:'#EDEBDC', deep:'#3F7D5F', light:'#D2E6D4', line:'#121410' },
+  cinnabar:  { silk:'#F2E9DE', deep:'#B84530', light:'#F2D6C6', line:'#171010' },
+};
+
+const uniforms = {
+  uTime:  { value: 0 },
+  uDeep:  { value: new THREE.Color(PALETTES.azurite.deep) },
+  uLight: { value: new THREE.Color(PALETTES.azurite.light) },
+  uLine:  { value: new THREE.Color(PALETTES.azurite.line) },
+  uSilk:  { value: new THREE.Color(PALETTES.azurite.silk) },
+  uLightDir: { value: new THREE.Vector3(1.1, 1.5, 1.0).normalize() },
+};
+
+const gongbiMaterial = new THREE.ShaderMaterial({
+  uniforms,
+  vertexShader: `
+    varying vec3 vN;
+    varying vec3 vV;
+    varying vec3 vP;
+    void main() {
+      vN = normalize(normalMatrix * normal);
+      vec4 mv = modelViewMatrix * vec4(position, 1.0);
+      vV = normalize(-mv.xyz);
+      vP = position;
+      gl_Position = projectionMatrix * mv;
+    }`,
+  fragmentShader: `
+    uniform float uTime;
+    uniform vec3  uDeep, uLight, uLine, uSilk, uLightDir;
+    varying vec3  vN, vV, vP;
+
+    float hash(vec3 p){ return fract(sin(dot(p, vec3(12.9898,78.233,45.164))) * 43758.5453); }
+    float noise(vec3 p){
+      vec3 i = floor(p), f = fract(p);
+      f = f*f*(3.0-2.0*f);
+      return mix(
+        mix(mix(hash(i), hash(i+vec3(1,0,0)), f.x), mix(hash(i+vec3(0,1,0)), hash(i+vec3(1,1,0)), f.x), f.y),
+        mix(mix(hash(i+vec3(0,0,1)), hash(i+vec3(1,0,1)), f.x), mix(hash(i+vec3(0,1,1)), hash(i+vec3(1,1,1)), f.x), f.y),
+        f.z);
+    }
+
+    void main() {
+      vec3 N = normalize(vN);
+      vec3 V = normalize(vV);
+      float lam = max(dot(N, normalize(uLightDir)), 0.0);
+
+      // ① 九阶：比水墨的 5 阶细腻。工笔讲"三矾九染"，靠的是层层薄染，
+      //    阶数不够会显得生硬。扰动也要比水墨小一个量级，线条才立得住。
+      float n = noise(vP * 6.0 + uTime * 0.03);
+      lam += (n - 0.5) * 0.04;
+      float steps = 9.0;
+      float q = floor(clamp(lam, 0.0, 1.0) * steps) / (steps - 1.0);
+
+      // ② 矿物色：从最重的一阶过渡到最淡，色相保持不变（矿物颜料的特点）
+      vec3 col = mix(uDeep, uLight, q);
+      // 绢底会透上来一点，让淡处不至于死白
+      col = mix(col, uSilk, pow(q, 2.2) * 0.35);
+
+      // ③ 勒边（两条路都试过，结论写在这里）
+      //
+      // ❌ fwidth(N) 检测法线突变画"结构折边"：光滑有机形体上**基本无效**，
+      //    没有硬转折，length(fwidth(N)) 全场趋近 0，调阈值救不回来。
+      //    （调试办法：把它和 rim 分别输出到 r/g 通道，一眼看出哪个在工作。）
+      // ❌ 只靠 rim 画轮廓线：能压出暗边，但那是**渐变带不是线**，
+      //    宽度随曲率变化，达不到工笔"勒线"该有的等宽感。
+      // ✅ 主线改用反向外壳（见下方 outlineMaterial）：放大一圈只渲染背面。
+      //    仍然不需要后处理，代价是每个物体多一个 draw call。
+      //
+      // 这里的 rim 只保留很轻的一点，让转折处稍微沉下去。
+      float rim = 1.0 - max(dot(N, V), 0.0);
+      float rimLine = smoothstep(0.78, 0.97, rim);
+      col = mix(col, uLine, rimLine * 0.35);   // 只做辅助压边，主线由反向外壳画
+
+      // 绢的织纹：非常轻，只是打破纯色块
+      col *= 0.985 + 0.015 * noise(vP * 55.0);
+
+      gl_FragColor = vec4(col, 1.0);
+    }`,
+});
+
+/* ── 反向外壳描边 ──────────────────────────────────────
+   沿法线把顶点推出去一点，只渲染背面（side: BackSide），
+   于是正面被本体挡住、只在轮廓处露出一圈等宽的墨色。
+   这是不引后处理就能得到"真·线"的标准做法。 */
+const outlineMaterial = new THREE.ShaderMaterial({
+  uniforms: { uLine: uniforms.uLine, uThickness: { value: 0.018 } },
+  side: THREE.BackSide,
+  vertexShader: `
+    uniform float uThickness;
+    void main() {
+      vec3 p = position + normalize(normal) * uThickness;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
+    }`,
+  fragmentShader: `
+    uniform vec3 uLine;
+    void main() { gl_FragColor = vec4(uLine, 1.0); }`,
+});
+
+/* ── 形体：工笔多画花鸟，用几个有转折的形体才看得出勒线 ── */
+const group = new THREE.Group();
+function addShape(geo, pos, rot) {
+  const mesh = new THREE.Mesh(geo, gongbiMaterial);
+  if (pos) mesh.position.set(...pos);
+  if (rot) mesh.rotation.set(...rot);
+  group.add(mesh);
+  // 外壳与本体同变换，作为子对象跟着走
+  const outline = new THREE.Mesh(geo, outlineMaterial);
+  mesh.add(outline);
+  return mesh;
+}
+addShape(new THREE.TorusKnotGeometry(.78, .25, 220, 36));
+addShape(new THREE.SphereGeometry(.34, 56, 40), [1.28, -.62, .25]);
+addShape(new THREE.TorusGeometry(.42, .085, 28, 90), [-1.22, .68, -.15], [.9, .4, 0]);
+scene.add(group);
+scene.background = new THREE.Color(PALETTES.azurite.silk);
+
+// 用真实包围球定相机距离（含描边外壳撑出来的那一圈），留 12% 余量
+{
+  // 取「所有几何体离原点的最远距离」。
+  // 不要用 Box3.getBoundingSphere：它返回的是**外接盒的外接球**（半对角线），
+  // 比真实包围球大不少（实测这里 2.25 vs 实际约 1.8），会把画面推得过远。
+  let r = 0;
+  group.traverse(o => {
+    if (!o.isMesh) return;
+    o.updateWorldMatrix(true, false);
+    if (!o.geometry.boundingSphere) o.geometry.computeBoundingSphere();
+    const bs = o.geometry.boundingSphere.clone().applyMatrix4(o.matrixWorld);
+    r = Math.max(r, bs.center.length() + bs.radius);
+  });
+  FIT_R = (r + 0.02) * 1.08;   // +0.02 是描边外壳撑出来的那圈（CPU 侧包围球不含它）
+  fitCamera();
+}
+
+// 性能实测：把 draw call 和三角面数打在界面上，别只在文档里写"很快"
+const stat = document.getElementById('stat');
+let frames = 0, fpsT = performance.now(), fps = 0;
+
+let raf;
+function loop(t) {
+  uniforms.uTime.value = t * .001;
+  group.rotation.y = t * .00022;
+  group.rotation.x = Math.sin(t * .00018) * .16;
+  renderer.render(scene, camera);
+
+  frames++;
+  if (t - fpsT > 500) { fps = Math.round(frames * 1000 / (t - fpsT)); frames = 0; fpsT = t; }
+  const info = renderer.info.render;
+  stat.textContent = `${info.calls} draw call · ${info.triangles.toLocaleString()} 三角面 · ${fps} fps`;
+
+  raf = requestAnimationFrame(loop);
+}
+raf = requestAnimationFrame(loop);
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  fitCamera();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+document.querySelector('.hud').addEventListener('click', e => {
+  const b = e.target.closest('button[data-m]');
+  if (!b) return;
+  const p = PALETTES[b.dataset.m];
+  uniforms.uDeep.value.set(p.deep);
+  uniforms.uLight.value.set(p.light);
+  uniforms.uLine.value.set(p.line);
+  uniforms.uSilk.value.set(p.silk);
+  scene.background.set(p.silk);
+  document.body.style.background = p.silk;
+  document.querySelectorAll('.hud button').forEach(x => x.classList.toggle('on', x === b));
+});
+
+// 供自动化检查
+window.__ready = true;
+</script>
+</body>
+</html>

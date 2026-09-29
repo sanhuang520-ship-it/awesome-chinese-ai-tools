@@ -1,0 +1,66 @@
+name: 推荐一个 Skill 或工具
+description: 推荐收录新的 Agent Skill 或 AI 工具
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提交前请注意：**带推广或追踪参数的链接（`?from=` `?ref=` `utm_*`）一律不收录。**
+        如果这是你自己的产品，完全可以推荐，但请在下面勾选说明。
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 类型
+      options:
+        - Agent Skill（仓库里有 SKILL.md）
+        - AI 工具
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: 链接
+      description: 干净的官网或 GitHub 地址，不要带任何追踪参数
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 它做什么
+      description: 一两句话。如果是 Skill，请贴上对方 SKILL.md 里 frontmatter 的 description
+    validations:
+      required: true
+
+  - type: dropdown
+    id: checked
+    attributes:
+      label: 你核对到了哪一步
+      description: 如实选择即可；没有亲自使用不影响提交，但我们会区分证据强度
+      options:
+        - 我打开了官方页面或仓库，并核对了上述描述
+        - 我亲自安装或使用过
+        - 我只看到他人介绍，尚未独立核对
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 可复核依据
+      description: Skill 请贴 SKILL.md 的固定链接或仓库路径；工具请贴官方功能说明。没有时写“暂无”
+      placeholder: https://github.com/owner/repo/blob/commit/skills/example/SKILL.md
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: disclosure
+    attributes:
+      label: 利益相关声明
+      options:
+        - label: 这是我自己（或我所在团队）做的产品
+        - label: 链接不含推广、返利或追踪参数
+          required: true
