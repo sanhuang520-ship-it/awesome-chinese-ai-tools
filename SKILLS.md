@@ -1,6 +1,6 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **212 个 Skill 条目｜85 个中文条目｜✍️ 13 个本站原创**<br>
+> **213 个 Skill 条目｜85 个中文条目｜✍️ 13 个本站原创**<br>
 > 来源仓库经 GitHub API 核验真实存在；第三方说明来自上游资料或维护者摘要，不等于逐项功能实测<br>
 > 🔄 最近自动复检：**2026-10-05**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
@@ -82,7 +82,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 🎨 创意设计 | 16 | [查看](#catalog-design) |
 | 💼 办公协作 | 13 | [查看](#catalog-biz) |
 | 📊 数据研究 | 6 | [查看](#catalog-data) |
-| 🔐 安全取证 | 7 | [查看](#catalog-sec) |
+| 🔐 安全取证 | 8 | [查看](#catalog-sec) |
 | 🧊 3D 与图形 | 5 | [查看](#catalog-3d) |
 | 🎮 游戏开发 | 5 | [查看](#catalog-game) |
 
@@ -134,7 +134,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [Awesome-Journal-Skills](https://github.com/brycewang-stanford/Awesome-Journal-Skills) | ⭐1,210 | 主流期刊投稿技能包（AER、QJE 等经济学顶刊） |
 | [claude-skill-web-clone](https://github.com/Jane-xiaoer/claude-skill-web-clone) | ⭐1,034 | 网站复刻方法论：先拿真源码 → 判路径 → 逆向拆解 → 搭工程 → 替换内容。覆盖静态站/React/WebGL/Canvas/Three.js。作者强调不靠 AI 幻觉出来的代码 |
 | [speak-human-tw](https://github.com/Raymondhou0917/speak-human-tw) | ⭐1,027 | 繁体中文去 AI 味：抓 38 种 AI 写作痕迹，校正用语与标点 |
-| [higgsfield-seedance2-jineng](https://github.com/beshuaxian/higgsfield-seedance2-jineng) | ⭐880 | AI 视频生成 15 个 prompt skill（Seedance 2.0 × Higgsfield） |
+| [higgsfield-seedance2-jineng](https://github.com/beshuaxian/higgsfield-seedance2-jineng) | ⭐880 | AI 视频生成 15 个 prompt skill（Seedance 2.0 × Higgsfield） 🕰<sub>2026-04-09 后未更新</sub> |
 | [claude-code-skills-zh](https://github.com/laolaoshiren/claude-code-skills-zh) | ⭐876 | 面向中文开发者的技能库，按场景分类、复制即装 |
 | [webnovel-writing](https://github.com/Tomsawyerhu/Chinese-WebNovel-Skill) | ⭐841 | 用于根据一段中文小说简介，规划、起稿、续写、改写中文网文。重点覆盖选材、构思、分卷、章纲、开头、节奏、章末、模仿检索、去 AI 味。 |
 | [xiaohu-wechat-format](https://github.com/xiaohuailabs/xiaohu-wechat-format) | ⭐698 | 公众号一键排版发布：Markdown → 微信 HTML，30 套主题 |
@@ -150,7 +150,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [video-voiceover](https://github.com/zenstory-ai/video-recap-skills/tree/main/skills/video-voiceover) | ⭐549 | 把带时间戳的 narration.json 合成为中文解说音频。使用 MiMo TTS（mimo-v2.5-tts）或 Fish Audio（s2.1-pro-free）逐段生成语音， 按时间窗动态适配语速并处理响度； |
 | [cuimao-translator](https://github.com/Cuimao777/cuimao-translator) | ⭐485 | 一键把英文 PDF 翻译成流畅中文 |
 | [xiaohongshu-skills](https://github.com/vivy-yi/xiaohongshu-skills) | ⭐470 | 139 个小红书运营技能：内容创作、账号运营、电商转化等 9 大类 🕰<sub>2026-01-23 后未更新</sub> |
-| [yupi-skill](https://github.com/liyupi/yupi-skill) | ⭐442 | 程序员鱼皮技能包：编程学习、求职面试、技术选型、创业经验 |
+| [yupi-skill](https://github.com/liyupi/yupi-skill) | ⭐442 | 程序员鱼皮技能包：编程学习、求职面试、技术选型、创业经验 🕰<sub>2026-04-09 后未更新</sub> |
 | [docx-skill-4-cn-paper](https://github.com/Gostyan/docx-skill-4-cn-paper) | ⭐435 | 中文论文排版规范：课程论文、数模竞赛、毕业论文 |
 | [humanities-writing-companion](https://github.com/tizzy916/humanities-writing-companion) | ⭐431 | 人文学科写作助手：11 种模式覆盖构思到成稿 |
 | [JobOK](https://github.com/GresonKwan/JobOK) | ⭐410 | 中文求职：优势挖掘、岗位匹配、简历优化、面试训练 |
@@ -173,7 +173,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [openclaw-xhs](https://github.com/zhjiang22/openclaw-xhs) | ⭐123 | 小红书 MCP 工作流：搜索与读取笔记、评论互动、发布、热点跟踪及长图导出；写操作需复核上游配置与账号权限 🕰<sub>2026-03-08 后未更新</sub> |
 | [hermes-arxiv-agent](https://github.com/genggng/hermes-arxiv-agent) | ⭐121 | 每天自动抓 arXiv 论文，生成中文摘要推送到飞书 |
 | [stop-slop-zh](https://github.com/VincentOld/stop-slop-zh) | ⭐90 | 消除中文 AI 写作痕迹：拆排比、去名词化、换具体细节 |
-| [wechat-writing-style](https://github.com/yaoleifly/wechat-writing-style) | ⭐85 | 微信公众号中文写作风格 |
+| [wechat-writing-style](https://github.com/yaoleifly/wechat-writing-style) | ⭐85 | 微信公众号中文写作风格 🕰<sub>2026-04-10 后未更新</sub> |
 | [kc_ai_skills](https://github.com/KerberosClaw/kc_ai_skills) | ⭐79 | 中文优先的 Claude Code / Codex skills 合集 |
 | [awesome-skills-zh](https://github.com/yzfly/awesome-skills-zh) | ⭐54 | 精选 Claude / Agent / LLM Skills 中文资源列表 |
 | [cnki-aigc---skill](https://github.com/qingshanliuci/cnki-aigc---skill) | ⭐45 | 针对知网 AIGC 标记段落的中文改写工作流；效果数字仅为上游案例，本仓库未独立复现 |
@@ -338,7 +338,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [recursive-research](https://github.com/Anjos2/recursive-research) | ⭐48 | 跨领域递归研究，可深入到博士级别 |
 
 <a id="catalog-sec"></a>
-### 🔐 安全取证（7 个）
+### 🔐 安全取证（8 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -349,6 +349,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [file-deletion](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/file-deletion) | ⭐680 | 安全删除文件与数据清除方法 |
 | [metadata-extraction](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/metadata-extraction) | ⭐680 | 提取分析文件元数据用于取证 |
 | [FFUF Web Fuzzing](https://github.com/jthack/ffuf_claude_skill) | ⭐212 | 集成 ffuf 做 Web 模糊测试 🕰<sub>2025-10-16 后未更新</sub> |
+| [reverse-engineer-anything](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything) | — | 使用 REA 分析已发布程序及 JavaScript/Electron 应用，以制品或按需运行时证据解释功能、对比版本与指导重建；原生深度分析需自备 Hopper、Ghidra 或 IDA，普通完整源码架构分析不使用 REA |
 
 <a id="catalog-3d"></a>
 ### 🧊 3D 与图形（5 个）
@@ -396,5 +397,5 @@ Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts
 
 ---
 
-*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-10-05。*
+*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-10-10。*
 *收录有误或想推荐新 Skill？欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)*
