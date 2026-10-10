@@ -349,7 +349,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [file-deletion](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/file-deletion) | ⭐680 | 安全删除文件与数据清除方法 |
 | [metadata-extraction](https://github.com/mhattingpete/claude-skills-marketplace/tree/main/computer-forensics-skills/skills/metadata-extraction) | ⭐680 | 提取分析文件元数据用于取证 |
 | [FFUF Web Fuzzing](https://github.com/jthack/ffuf_claude_skill) | ⭐212 | 集成 ffuf 做 Web 模糊测试 🕰<sub>2025-10-16 后未更新</sub> |
-| [reverse-engineer-anything](https://github.com/morluto/rea/tree/main/skill-src/reverse-engineer-anything) | — | 使用 REA 分析已发布程序及 JavaScript/Electron 应用，以制品或按需运行时证据解释功能、对比版本与指导重建；原生深度分析需自备 Hopper、Ghidra 或 IDA，普通完整源码架构分析不使用 REA |
+| [reverse-engineer-anything](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything) | — | 使用 REA 分析已发布程序及 JavaScript/Electron 应用，以制品或按需运行时证据解释功能、对比版本与指导重建；原生深度分析需自备 Hopper、Ghidra 或 IDA，普通完整源码架构分析不使用 REA |
 
 <a id="catalog-3d"></a>
 ### 🧊 3D 与图形（5 个）

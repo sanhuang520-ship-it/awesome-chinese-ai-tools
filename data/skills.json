@@ -2931,7 +2931,7 @@
       "official": false,
       "desc": "使用 REA 分析已发布程序及 JavaScript/Electron 应用，以制品或按需运行时证据解释功能、对比版本与指导重建；原生深度分析需自备 Hopper、Ghidra 或 IDA，普通完整源码架构分析不使用 REA",
       "descEn": "Reverse engineer native, managed, Electron/JavaScript, packaged, firmware, and browser targets with REA. Use shipped-artifact or requested runtime evidence to explain features, compare versions, decompile code, or guide a reconstruction. Skip REA for ordinary source-repository architecture analysis.",
-      "url": "https://github.com/morluto/rea/tree/main/skill-src/reverse-engineer-anything"
+      "url": "https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything"
     }
   ],
   "resources": [
