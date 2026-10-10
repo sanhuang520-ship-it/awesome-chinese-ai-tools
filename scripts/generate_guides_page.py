@@ -40,16 +40,18 @@ def load_data():
 def render_card(skill, result, quality):
     name = skill["name"]
     title, scenario = COPY[name]
+    example = json.loads((ROOT / "data" / "skill-starter-examples.json").read_text(encoding="utf-8"))[name]
     outcome = result["outcome"]
     status_class = {"completed": "done", "waiting-input": "wait", "bounded-retest": "partial"}[outcome]
     boundary = quality.get("sensitiveBoundaryZh") or "未标记敏感决策边界；仍需按具体任务核对输出"
     network = quality.get("networkDetailZh") if quality.get("runtimeNetwork") else "Skill 本身不要求运行时联网"
-    return f'''<article class="guide-card" data-outcome="{status_class}">
+    return f'''<article class="guide-card" data-outcome="{status_class}" id="{html.escape(name)}">
   <div class="card-top"><span class="number">{html.escape(name)}</span><span class="status {status_class}">{html.escape(result["labelZh"])}</span></div>
   <h2><a href="../{html.escape(skill["explainer"])}">{html.escape(title)}</a></h2>
   <p class="scenario">{html.escape(scenario)}</p>
   <div class="evidence"><b>本次记录</b><span>{html.escape(result["summaryZh"])}</span></div>
   <div class="boundary"><b>质量边界</b><span>{html.escape(boundary)}；{html.escape(network)}。</span></div>
+  <details><summary>安装与试用示例</summary><p>先阅读 SKILL.md；将仓库的 <code>skills/{html.escape(name)}/</code> 完整目录复制到支持 Skills 的客户端个人技能目录（Codex 示例：<code>~/.agents/skills/</code>）。不要只复制 SKILL.md，保留引用文件。已有同名目录时先备份，勿覆盖。</p><p><a href="../codex-skill-not-triggering/">安装发现与排错说明</a></p><b>输入示例</b><pre style="white-space:pre-wrap;overflow-wrap:anywhere">{html.escape(example["prompt"])}</pre><b>预期输出（说明性示例，不是实测记录）</b><p>{html.escape(example["expected"])}</p><p>技能文件无需单独购买；执行任务仍会消耗客户端模型额度。联网、图片生成等额外服务按实际使用计费。</p></details>
   <div class="card-links"><a href="../{html.escape(skill["explainer"])}">看方法与证据</a><a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/{html.escape(result["case"])}">看原始案例</a><a href="../skills/{html.escape(name)}/SKILL.md">看 SKILL.md</a></div>
 </article>'''
 
