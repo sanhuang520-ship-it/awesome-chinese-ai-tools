@@ -6,7 +6,7 @@
 <title>Agent Skills 中文安装指南：Codex、Claude Code 与 Cursor 路径排错</title>
 <meta name="description" content="用 skills CLI 安装 Agent Skills 的中文实测指南：先列出、按名称安装、核对实际目录、判断是否自动触发，并区分 Codex、Claude Code 与 Cursor 的已测和待测结论。">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/">
+<link rel="canonical" href="https://1261398983.github.io/awesome-chinese-ai-tools/install/">
 <meta property="og:image" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,7 +19,7 @@
 <meta property="og:type" content="article"><meta property="og:locale" content="zh_CN">
 <meta property="og:title" content="Agent Skills 中文安装与排错指南">
 <meta property="og:description" content="安装成功、文件可见、自动触发、任务完成是四件不同的事。">
-<meta property="og:url" content="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/">
+<meta property="og:url" content="https://1261398983.github.io/awesome-chinese-ai-tools/install/">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"使用 skills CLI 安装并核对 Agent Skill","description":"安装前审计，再在本机列出、安装、核对和触发 Agent Skill。","inLanguage":"zh-CN","dateModified":"2026-08-13","step":[{"@type":"HowToStep","name":"安装前审计","text":"先阅读 SKILL.md 和 scripts；可用本站只读审计器定位需要人工复核的线索。"},{"@type":"HowToStep","name":"先列出 Skill","text":"运行 npx skills add 仓库地址 --list。"},{"@type":"HowToStep","name":"安装一个 Skill","text":"使用 --skill 名称，只安装当前需要的 Skill。"},{"@type":"HowToStep","name":"核对文件位置","text":"skills CLI 1.5.23 默认按项目级安装，把文件写入当前目录的 .agents/skills；加 -g 才写入用户级的 ~/.agents/skills。两种情况都会为支持的客户端建立入口。"},{"@type":"HowToStep","name":"用自然任务测试触发","text":"描述真实任务但不点名 Skill，观察客户端是否主动读取目标 SKILL.md。"}]}
 </script>
