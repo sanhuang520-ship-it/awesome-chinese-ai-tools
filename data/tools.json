@@ -835,7 +835,7 @@
       "linkFailCount": 0
     },
     {
-      "name": "DSH API",
+      "name": "removed",
       "url": "https://your-endpoint.example.com/",
       "cat": "llm",
       "free": false,
