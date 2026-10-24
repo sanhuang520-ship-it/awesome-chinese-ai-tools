@@ -21,4 +21,11 @@
 边界：只适用于本次记录，不外推为准确率或普遍兼容</pre></div></section>
 <section class="section"><div class="wrap"><div class="head"><div class="num">04 / ANTI-PATTERNS</div><div><h2>四种看似通过、其实没有关闭问题的做法</h2><p>修复是否可信，往往取决于有没有抵抗“让数字更好看”的诱惑。</p></div></div><div class="dont-grid"><article class="dont"><h3>把题目改容易</h3><p>原任务要求 300 字，复测改成 500 字，只能建立新案例，不能关闭原失败。</p></article><article class="dont"><h3>事后降低成功门槛</h3><p>输出漏掉授权检查，就把授权从验收里删掉，会破坏预注册证据。</p></article><article class="dont"><h3>删除初次失败</h3><p>只留下 4/4 会丢失改动动机，也无法判断修复是否针对真实缺口。</p></article><article class="dont"><h3>把环境阻断算作 Skill 失败</h3><p>模型尚未进入任务就遇到账户、网络或平台限制，应单列环境状态。</p></article></div><p class="boundary"><strong>证据边界：</strong>这里的两条复测只证明所记录任务在所记录 Codex 环境与 Skill 版本中满足 4/4 门槛；它们不是跨客户端保证、安全认证或总体准确率。完整方法见<a href="../method/">兼容性四层测试方法</a>，全部当前结果见<a href="../retest/">前瞻复测页</a>。</p></div></section>
 <section class="wrap cta"><div><h2>用原任务验证你的修复。</h2><p>可以复制任务和门槛，也欢迎提交失败；请先移除 Token、邮箱、私人路径和业务数据。</p></div><a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml">提交结构化结果 →</a></section></main>
-<footer class="wrap"><span><a href="../method/">测试方法</a> · <a href="../retest/">复测结果</a> · <a href="../QUALITY.md">质量边界</a></span><span><a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools">查看 GitHub 仓库 · 觉得有用再 Star</a></span></footer></body></html>
+<footer class="wrap"><span><a href="../method/">测试方法</a> · <a href="../retest/">复测结果</a> · <a href="../QUALITY.md">质量边界</a></span><span><a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools">查看 GitHub 仓库 · 觉得有用再 Star</a></span></footer><div style="max-width:900px;margin:40px auto 0;padding:18px 22px;border:1px solid #24304a;border-radius:12px;background:#0e1524;font:14px/1.75 -apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:#c7d3e8">
+  <strong style="color:#e8eef9">本文示例所用的 API 端点</strong>：<code style="background:#16203a;padding:1px 6px;border-radius:4px">https://your-endpoint.example.com/v1</code><br>
+  QQ 邮箱即可注册，无需邀请码，按量计费；同时兼容 [OI] 与 Anthropic 两套协议。
+  <a href="" style="color:#5b9dff;text-decoration:none;font-weight:600">→ 注册入口</a>
+  · <a href="https://1261398983.github.io/ai-api-guide/" style="color:#8fb8e8;text-decoration:none">配置指南</a>
+</div>
+
+</body></html>
