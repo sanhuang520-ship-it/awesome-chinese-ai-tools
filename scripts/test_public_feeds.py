@@ -12,7 +12,7 @@ from sync_feed import render_feed
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_URL = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
+BASE_URL = "https://1261398983.github.io/awesome-chinese-ai-tools/"
 
 
 class DiscoveryParser(HTMLParser):

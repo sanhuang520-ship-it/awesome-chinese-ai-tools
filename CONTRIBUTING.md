@@ -14,7 +14,7 @@
 
 ## 不会写代码，也可以贡献
 
-如果不想先研究仓库结构，可以从[三个 10—20 分钟的真实维护任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/contribute/)里选一个。每项都给出操作范围、提交入口和完成标准。
+如果不想先研究仓库结构，可以从[三个 10—20 分钟的真实维护任务](https://1261398983.github.io/awesome-chinese-ai-tools/contribute/)里选一个。每项都给出操作范围、提交入口和完成标准。
 
 不需要 Fork 仓库或编辑 JSON，选一个表单填写即可：
 

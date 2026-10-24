@@ -115,8 +115,8 @@
 ### 新增
 
 - 13 个本站原创 Skill 的 Codex 自动触发矩阵与逐项案例。
-- 独立的[兼容性实测页](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/)，区分 CLI 发现、文件安装、自动触发和任务完成。
-- 独立的[安装与排错页](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/)，记录 `skills` CLI 1.5.22 的本机路径结果。
+- 独立的[兼容性实测页](https://1261398983.github.io/awesome-chinese-ai-tools/compatibility/)，区分 CLI 发现、文件安装、自动触发和任务完成。
+- 独立的[安装与排错页](https://1261398983.github.io/awesome-chinese-ai-tools/install/)，记录 `skills` CLI 1.5.22 的本机路径结果。
 - 原创 Skill 的静态质量与安全标签，包括脚本、凭据、写文件与运行时网络能力。
 - 结构化兼容性 Issue 表单，接收 Codex、Claude Code、Cursor 的成功、失败或未触发结果。
 - `llms.txt`、可验证更新 RSS、站内链接检查、公开数据一致性和证据边界测试。

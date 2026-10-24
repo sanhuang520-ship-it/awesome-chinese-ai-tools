@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "reproduce" / "index.html"
-BASE = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
+BASE = "https://1261398983.github.io/awesome-chinese-ai-tools/"
 TITLES = {
     "ai-learning-coach": "两周 SQL 学习前校准",
     "bookkeeping-cn": "家庭流水与越界请求",

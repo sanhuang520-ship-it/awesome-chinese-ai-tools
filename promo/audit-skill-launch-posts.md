@@ -2,7 +2,7 @@
 
 > 准备日期：2026-08-13。状态：**未发布**。工具、源码、测试与说明页均已上线；本文件只准备可核验文案，不代表已发布到任何外部平台。Linux.do 不使用本稿。
 
-工具页：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/
+工具页：https://1261398983.github.io/awesome-chinese-ai-tools/audit-skill/
 
 源码：https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/scripts/audit_skill.py
 
@@ -36,7 +36,7 @@ python3 scripts/audit_skill.py /path/to/skill --json
 边界也写在输出里：这是规则驱动的静态线索，不是病毒查杀、沙箱、提示注入检测或安全认证。动态拼接、混淆代码和外部依赖行为可能漏掉；0 项命中绝不等于安全。
 
 工具、规则和限制：
-https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/
+https://1261398983.github.io/awesome-chinese-ai-tools/audit-skill/
 
 如果你有能最小复现的误报或漏报，欢迎提交规则和脱敏样例；不要上传真实 Token、私人路径或未公开业务代码。
 
@@ -47,7 +47,7 @@ https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/
 我开源了一个只依赖 Python 标准库的只读检查器：不执行目标、不跟随符号链接，支持 JSON 和 CI 退出码。
 
 它只报告人工复核线索，不做“安全认证”；0 项命中不等于安全：
-https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/
+https://1261398983.github.io/awesome-chinese-ai-tools/audit-skill/
 
 ## 发布与判断规则
 

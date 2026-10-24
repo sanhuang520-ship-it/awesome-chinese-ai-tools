@@ -1,6 +1,6 @@
 # Codex Agent Skills 兼容性实测：发布素材
 
-> 事实基线：2026-08-12 · Codex CLI `0.147.0-alpha.6.5` · 13 个本站原创 Skill · 公开页面：<https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/>
+> 事实基线：2026-08-12 · Codex CLI `0.147.0-alpha.6.5` · 13 个本站原创 Skill · 公开页面：<https://1261398983.github.io/awesome-chinese-ai-tools/compatibility/>
 
 所有版本都避免“全面兼容”“准确率 100%”“保证涨星”等无法支持的说法。发布前如客户端版本或案例数变化，应同步更新。
 
@@ -40,7 +40,7 @@
 
 成功、失败、7 条逐字任务原文、6 条任务摘要、客户端版本和限制都放在这里：
 
-https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/
+https://1261398983.github.io/awesome-chinese-ai-tools/compatibility/
 
 目前只实测了 Codex。Claude Code 和 Cursor 仍是待测，格式看起来兼容不能算实际通过。如果有人愿意复现其中一个，成功或失败结果都欢迎。
 ```
@@ -69,7 +69,7 @@ https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/
 所以：能发现 ≠ 能安装 ≠ 会触发 ≠ 能完成。
 
 成功、失败和任务记录都公开；其中 7 条保留逐字原文，6 条只有摘要：
-https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/
+https://1261398983.github.io/awesome-chinese-ai-tools/compatibility/
 
 目前只确认 Codex，Claude Code / Cursor 仍待测。
 ```
@@ -81,7 +81,7 @@ https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/
 
 但其中 2 个完整任务在首次执行时没有完成，缩小输出范围后复测通过。原始失败没有删除，也促成了 `guofeng-threejs` 审查流程的修订。
 
-完整记录：<https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/>
+完整记录：<https://1261398983.github.io/awesome-chinese-ai-tools/compatibility/>
 
 如果你在 Claude Code 或 Cursor 中使用过其中任何一个 Skill，欢迎回复客户端版本、原始任务和脱敏结果。失败结果同样有价值。
 ```

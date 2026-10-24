@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "guides" / "index.html"
-BASE = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
+BASE = "https://1261398983.github.io/awesome-chinese-ai-tools/"
 
 COPY = {
     "ai-learning-coach": ("AI 学习教练", "想系统学会一项技能，而不是只收集教程"),

@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        这个表单用于改进[四组中文 Skill 开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)。请描述一个真实、可公开的中文任务；不需要点赞或 Star，也不要提交 Token、邮箱、私人路径、客户资料或未公开业务数据。
+        这个表单用于改进[四组中文 Skill 开箱组合](https://1261398983.github.io/awesome-chinese-ai-tools/bundles/)。请描述一个真实、可公开的中文任务；不需要点赞或 Star，也不要提交 Token、邮箱、私人路径、客户资料或未公开业务数据。
 
   - type: textarea
     id: task

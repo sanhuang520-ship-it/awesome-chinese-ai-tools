@@ -2,7 +2,7 @@
 
 > 准备日期：2026-08-13。状态：**未发布**。页面、实验记录与命令均已上线；本文件只准备可核验文案，外部发布需要用户当时确认。
 
-实测页：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/update-agent-skill/
+实测页：https://1261398983.github.io/awesome-chinese-ai-tools/update-agent-skill/
 
 完整记录：https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/cases/skills-cli-isolated-install-2026-08-13.md
 
@@ -34,7 +34,7 @@ npx --yes skills@1.5.22 update -p -y
 边界也很重要：这次只验证了**有 `skills-lock.json` 的项目级复制安装**。历史内容是受控测试夹具，不是保留下来的旧版 CLI 安装现场；没有测试全局 `update -g`、无锁文件更新、自动触发或最终任务完成。
 
 命令、前置条件和逐层验证：
-https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/update-agent-skill/
+https://1261398983.github.io/awesome-chinese-ai-tools/update-agent-skill/
 
 如果你在其他系统或 CLI 版本复现，成功和失败都欢迎，但请保留版本、原始命令和脱敏结果。
 
@@ -45,7 +45,7 @@ Agent Skill 安装后不会自动跟随 GitHub 仓库同步。
 我用 13 个受控历史夹具实测 `skills@1.5.22 update -p -y`：更新前 13/13 与当前不同，更新后 13/13 完整文件夹一致；全局 Skill 哈希未变。
 
 只证明有锁文件的项目级更新，不外推到全局或无锁场景：
-https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/update-agent-skill/
+https://1261398983.github.io/awesome-chinese-ai-tools/update-agent-skill/
 
 ## 发布与判断规则
 

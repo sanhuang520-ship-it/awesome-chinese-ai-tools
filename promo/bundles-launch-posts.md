@@ -2,9 +2,9 @@
 
 > 准备日期：2026-08-13。状态：**未发布**。页面与 13 个方法/证据链接均已上线；本文件只准备可核验文案，外部发布需要用户当时确认。
 
-组合页：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/
+组合页：https://1261398983.github.io/awesome-chinese-ai-tools/bundles/
 
-证据总览：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guides/
+证据总览：https://1261398983.github.io/awesome-chinese-ai-tools/guides/
 
 ## 推荐标题
 
@@ -26,10 +26,10 @@ Agent Skills 目录越来越长，但第一次使用时真正的问题通常不�
 我的使用建议仍然是：先装当前任务真正需要的一项；只有当多个流程确实需要协同时，再使用组合。第三方 Skill 安装前先看 `SKILL.md` 和脚本，不要把 Star、收录或静态扫描当成质量与安全认证。
 
 组合与安装命令：
-https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/
+https://1261398983.github.io/awesome-chinese-ai-tools/bundles/
 
 13 项方法、案例与边界：
-https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guides/
+https://1261398983.github.io/awesome-chinese-ai-tools/guides/
 
 如果这四组没有覆盖你的任务，欢迎提交一个具体中文场景；比起“再收录 100 个”，我更想知道哪种工作流目前真的缺入口。
 
@@ -40,7 +40,7 @@ https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guides/
 我把仓库维护的 13 个中文 Skill 按任务整理成 4 组：中文表达、国风视觉、学习家庭、办公经营。每个名称直达方法、案例与边界，并提供逐项安装命令。
 
 组合是编辑入口，不代表同时触发或跨客户端认证：
-https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/
+https://1261398983.github.io/awesome-chinese-ai-tools/bundles/
 
 ## 发布与判断规则
 

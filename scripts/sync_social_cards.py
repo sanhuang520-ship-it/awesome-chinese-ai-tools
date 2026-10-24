@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
+BASE = "https://1261398983.github.io/awesome-chinese-ai-tools/"
 DEFAULT_IMAGE = BASE + "og.png"
 CUSTOM_IMAGES = {
     "guofeng-threejs": (BASE + "assets/shots/threejs-ink.webp", 1400, 933),

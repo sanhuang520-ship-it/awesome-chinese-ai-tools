@@ -26,7 +26,7 @@
 - **分类**：后端 / 人工智能（选「人工智能」）
 - **标签**（最多 5 个，按这个填）：`人工智能` `AI编程` `GitHub` `开源` `前端`
 - **封面**：可以用仓库里的 `og.png`
-  下载：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/og.png
+  下载：https://1261398983.github.io/awesome-chinese-ai-tools/og.png
 - **摘要**（发布弹窗里会让填）：
 
 ```

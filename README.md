@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/assets/readme-banner.webp" alt="chinese-web-themes 的 4 套中式主题与 guofeng-threejs 水墨 shader 的真实渲染" width="100%">
+<img src="https://1261398983.github.io/awesome-chinese-ai-tools/assets/readme-banner.webp" alt="chinese-web-themes 的 4 套中式主题与 guofeng-threejs 水墨 shader 的真实渲染" width="100%">
 
 # 中文 AI Skills 库
 
@@ -8,16 +8,16 @@
 
 <sub>中文 Agent Skills 合集：可搜索、可安装、带实测证据 · Chinese Agent Skills / Chinese AI Skills directory with reproducible Codex evidence and explicit Claude Code / Cursor test gaps.</sub>
 
-[English](README.en.md) · [English web guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/chinese-agent-skills/)
+[English](README.en.md) · [English web guide](https://1261398983.github.io/awesome-chinese-ai-tools/chinese-agent-skills/)
 
 [![原创](https://img.shields.io/badge/本站原创-13%20个-86b894?style=flat-square)](EXAMPLES.md)
-[![Skills](https://img.shields.io/badge/Skills-212%20个-e0795a?style=flat-square)](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)
+[![Skills](https://img.shields.io/badge/Skills-212%20个-e0795a?style=flat-square)](https://1261398983.github.io/awesome-chinese-ai-tools/)
 [![Weekly Check](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml/badge.svg)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
 
-**[🌐 在线浏览与搜索](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)**　·　[📦 安装与排错](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/)　·　[📋 看真实输出](EXAMPLES.md)　·　[🧪 看兼容性证据](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/compatibility/)
+**[🌐 在线浏览与搜索](https://1261398983.github.io/awesome-chinese-ai-tools/)**　·　[📦 安装与排错](https://1261398983.github.io/awesome-chinese-ai-tools/install/)　·　[📋 看真实输出](EXAMPLES.md)　·　[🧪 看兼容性证据](https://1261398983.github.io/awesome-chinese-ai-tools/compatibility/)
 
-<sub>[📚 无 JavaScript？浏览完整静态目录](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/catalog/)</sub>
+<sub>[📚 无 JavaScript？浏览完整静态目录](https://1261398983.github.io/awesome-chinese-ai-tools/catalog/)</sub>
 
 </div>
 
@@ -63,33 +63,33 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 这是这个仓库和其他 awesome 列表的区别：**下面这些是我们自己写的，不是搬运的。**
 
-**[→ 按使用场景比较 13 个 Skill、实测状态和安全边界](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guides/)**
+**[→ 按使用场景比较 13 个 Skill、实测状态和安全边界](https://1261398983.github.io/awesome-chinese-ai-tools/guides/)**
 
-**[→ 复制 7 条有逐字原文的首次测试任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reproduce/)**（另外 6 条只有摘要，不反向补写）
+**[→ 复制 7 条有逐字原文的首次测试任务](https://1261398983.github.io/awesome-chinese-ai-tools/reproduce/)**（另外 6 条只有摘要，不反向补写）
 
-**[→ 查看前瞻复测与修复闭环](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/retest/)**（6 条任务和门槛先公开；初次 4 条通过、2 条失败，针对性修复后两条用原任务均通过 4/4；旧失败不覆盖）
+**[→ 查看前瞻复测与修复闭环](https://1261398983.github.io/awesome-chinese-ai-tools/retest/)**（6 条任务和门槛先公开；初次 4 条通过、2 条失败，针对性修复后两条用原任务均通过 4/4；旧失败不覆盖）
 
-**[→ Agent Skill 测试失败后怎么修](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/fix-agent-skill/)**（不改题、不降门槛、不覆盖旧失败；含两条 3/4 → 4/4 的完整证据链）
+**[→ Agent Skill 测试失败后怎么修](https://1261398983.github.io/awesome-chinese-ai-tools/fix-agent-skill/)**（不改题、不降门槛、不覆盖旧失败；含两条 3/4 → 4/4 的完整证据链）
 
 **[→ 我们也测别人的 Skill](THIRD-PARTY-TESTING.md)**（只用对方自己声明的契约当标准；不打分、不排名）
 
-**[→ 在一页选择全部 13 个首次试用任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**（单项安装、复制任务、历史证据或前瞻成功门槛）
+**[→ 在一页选择全部 13 个首次试用任务](https://1261398983.github.io/awesome-chinese-ai-tools/try-agent-skills/)**（单项安装、复制任务、历史证据或前瞻成功门槛）
 
 | Skill | 做什么 |
 |-------|--------|
-| [`ai-learning-coach`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/learning/) | 学习教练：先校准目标、基础、时间和验收标准，再进入主动回忆 → 输出 → 纠错归因 → 间隔复习；不直接代做学习产出 |
-| [`book-digest-cn`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/reading/) | 拆书三层法：作者在回答什么问题 → 核心主张与论证 → 我的行动、质疑和边界；不编造书中内容，不抄目录式笔记 |
+| [`ai-learning-coach`](https://1261398983.github.io/awesome-chinese-ai-tools/learning/) | 学习教练：先校准目标、基础、时间和验收标准，再进入主动回忆 → 输出 → 纠错归因 → 间隔复习；不直接代做学习产出 |
+| [`book-digest-cn`](https://1261398983.github.io/awesome-chinese-ai-tools/reading/) | 拆书三层法：作者在回答什么问题 → 核心主张与论证 → 我的行动、质疑和边界；不编造书中内容，不抄目录式笔记 |
 | [`bookkeeping-cn`](skills/bookkeeping-cn/) | 记账整理。**明确不做**税务筹划、投资建议，不替代会计 |
 | [`chinese-design-md`](skills/chinese-design-md/) | 中式 DESIGN.md 设计系统（本站原创）：8 套可直接丢进项目根目录的设计文档，AI 读了就按规范生成界面。含中文排版规则（行高 1.75 / 不用 justify / 着重号代替斜体 / CJK 避头尾），对比度逐项实测并标出不达标项 |
-| [`chinese-lesson-plan`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/lesson-plan/) | 中小学教案：先核对学段、教材版本和适用课标，再按核心素养、学习任务与评价证据组织目标；公开完整任务失败与缩小复测 |
-| [`chinese-typography`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/) | 中文排版：中英间距、CJK 断行避头尾、字体栈、标点全半角，含错误对照与可直接复制的 CSS |
+| [`chinese-lesson-plan`](https://1261398983.github.io/awesome-chinese-ai-tools/lesson-plan/) | 中小学教案：先核对学段、教材版本和适用课标，再按核心素养、学习任务与评价证据组织目标；公开完整任务失败与缩小复测 |
+| [`chinese-typography`](https://1261398983.github.io/awesome-chinese-ai-tools/typography/) | 中文排版：中英间距、CJK 断行避头尾、字体栈、标点全半角，含错误对照与可直接复制的 CSS |
 | [`chinese-web-themes`](skills/chinese-web-themes/) | 8 套中式网页主题（水墨/青绿/宋韵/敦煌/朱砂/新中式/竹韵/夜宴），对比度全过 WCAG AA |
-| [`chinese-work-report`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/work-report/) | 周报 / 述职 / 项目汇报，讲清楚做了什么、结果如何、下一步；没有结果数据时明确留空，不编数字 |
-| [`ecommerce-copywriting`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/ecommerce-copywriting/) | 电商文案上架前校样：区分可写、待补与不应发布；**不编造**材质、成分、认证、销量或功效 |
-| [`github-readme-cn`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/readme-audit/) | GitHub 中文项目门面优化（本站原创）：首屏结构、真实截图怎么截、命名与 topics、发布前自查清单。附 15 个高增长仓库的结构观察，明确区分相关性与不可验证的部分，不承诺涨星 |
+| [`chinese-work-report`](https://1261398983.github.io/awesome-chinese-ai-tools/work-report/) | 周报 / 述职 / 项目汇报，讲清楚做了什么、结果如何、下一步；没有结果数据时明确留空，不编数字 |
+| [`ecommerce-copywriting`](https://1261398983.github.io/awesome-chinese-ai-tools/ecommerce-copywriting/) | 电商文案上架前校样：区分可写、待补与不应发布；**不编造**材质、成分、认证、销量或功效 |
+| [`github-readme-cn`](https://1261398983.github.io/awesome-chinese-ai-tools/readme-audit/) | GitHub 中文项目门面优化（本站原创）：首屏结构、真实截图怎么截、命名与 topics、发布前自查清单。附 15 个高增长仓库的结构观察，明确区分相关性与不可验证的部分，不承诺涨星 |
 | [`guochao-visual-cn`](skills/guochao-visual-cn/) | 12 种中国美学画风配方，输出可直接用的 AI 绘图提示词 |
 | [`guofeng-threejs`](skills/guofeng-threejs/) | 国风 Three.js 渲染：水墨 shader 三技法。只做中式渲染，不做通用 Three.js 教程 |
-| [`homework-tutor-cn`](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/homework/) | 家长辅导作业：**不生成给孩子直接抄写的成品**，先给引导话术，再单列家长核对结果；公开最终使用仍由人决定的边界 |
+| [`homework-tutor-cn`](https://1261398983.github.io/awesome-chinese-ai-tools/homework/) | 家长辅导作业：**不生成给孩子直接抄写的成品**，先给引导话术，再单列家长核对结果；公开最终使用仍由人决定的边界 |
 
 📋 **[看它们实际输出什么 → EXAMPLES.md](EXAMPLES.md)**
 
@@ -159,9 +159,9 @@ CLI 帮助原文：`-g, --global  Install skill globally (user-level) instead of
 
 ## 怎么装
 
-**[→ 不知道先试哪个？查看 13 个单项安装命令与可复制首次任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**：7 条来自历史逐字原文；6 条是运行前公开的前瞻任务，6 条均已执行，两类证据不会混写。
+**[→ 不知道先试哪个？查看 13 个单项安装命令与可复制首次任务](https://1261398983.github.io/awesome-chinese-ai-tools/try-agent-skills/)**：7 条来自历史逐字原文；6 条是运行前公开的前瞻任务，6 条均已执行，两类证据不会混写。
 
-**[→ 已有明确目标？按中文表达、国风视觉、学习家庭、办公经营选择 4 组开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)**：每个 Skill 名称直达方法、案例与边界页；组合是编辑入口，不代表会同时触发或已经跨客户端认证。
+**[→ 已有明确目标？按中文表达、国风视觉、学习家庭、办公经营选择 4 组开箱组合](https://1261398983.github.io/awesome-chinese-ai-tools/bundles/)**：每个 Skill 名称直达方法、案例与边界页；组合是编辑入口，不代表会同时触发或已经跨客户端认证。
 
 ```bash
 # 先看仓库里有哪些（只读，不写任何文件）
@@ -191,13 +191,13 @@ npx --yes skills@1.5.22 update -p -y
 
 安装与自动触发不是一回事。本站 13 个原创 Skill 已完成 CLI 发现、当前 Codex 安装核验和各 1 次不点名名称的自动触发测试；2 项大任务失败后通过缩小复测，原失败仍公开保留。详见 **[兼容性实测表](COMPATIBILITY.md)**。
 
-不知道怎样判断“兼容”的证据强度？查看 **[Agent Skills 兼容性四层测试法](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/method/)**：发现、安装、自动触发与任务完成分别记录，环境错误不归因给 Skill。
+不知道怎样判断“兼容”的证据强度？查看 **[Agent Skills 兼容性四层测试法](https://1261398983.github.io/awesome-chinese-ai-tools/method/)**：发现、安装、自动触发与任务完成分别记录，环境错误不归因给 Skill。
 
-已经安装但没有自动触发？按 **[Codex Skill 不触发的 5 步诊断树](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/codex-skill-not-triggering/)** 依次检查 CLI 发现、文件路径、客户端读取、任务完成和环境阻断。
+已经安装但没有自动触发？按 **[Codex Skill 不触发的 5 步诊断树](https://1261398983.github.io/awesome-chinese-ai-tools/codex-skill-not-triggering/)** 依次检查 CLI 发现、文件路径、客户端读取、任务完成和环境阻断。
 
-已经安装但内容可能过期？查看 **[Agent Skill 项目级更新实测](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/update-agent-skill/)**：先核对 `skills-lock.json`，再运行固定版本更新，并比较完整文件夹与全局边界。
+已经安装但内容可能过期？查看 **[Agent Skill 项目级更新实测](https://1261398983.github.io/awesome-chinese-ai-tools/update-agent-skill/)**：先核对 `skills-lock.json`，再运行固定版本更新，并比较完整文件夹与全局边界。
 
-想把重复工作变成 Skill？查看 **[创建 Codex Skill 中文实战](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/create-codex-skill/)**：从最小 SKILL.md、触发描述到安装与自动触发测试。
+想把重复工作变成 Skill？查看 **[创建 Codex Skill 中文实战](https://1261398983.github.io/awesome-chinese-ai-tools/create-codex-skill/)**：从最小 SKILL.md、触发描述到安装与自动触发测试。
 
 仓库也已被 [skills.sh 收录](https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools)，可查看 13 个 Skill 的独立页面和该平台记录的聚合安装次数。该数字来自 skills CLI 遥测，可能包含维护者安装核验，不等于独立用户、实际使用效果或质量认证。
 
@@ -225,15 +225,15 @@ npx --yes skills@1.5.22 update -p -y
 
 两个代码类 Skill 的产出可以直接截图验证（**headless Chrome 实跑生成，不是示意图**）：
 
-![chinese-web-themes 水墨主题真实渲染](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/assets/shots/theme-ink.webp)
+![chinese-web-themes 水墨主题真实渲染](https://1261398983.github.io/awesome-chinese-ai-tools/assets/shots/theme-ink.webp)
 
-![guofeng-threejs 水墨 shader 真实渲染](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/assets/shots/threejs-ink.webp)
+![guofeng-threejs 水墨 shader 真实渲染](https://1261398983.github.io/awesome-chinese-ai-tools/assets/shots/threejs-ink.webp)
 
-**[看全部 8 套主题 + shader →](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)**
+**[看全部 8 套主题 + shader →](https://1261398983.github.io/awesome-chinese-ai-tools/shots/)**
 
 > 为什么画风类 Skill 那一页没有效果图？因为它的产出是**提示词**，
 > 实际出图取决于你用哪个模型，我们没法用一张图替你保证结果，就不放。
-> 能给的是[配色体系与纹样对照](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/guochao/)——那些是可以直接验证的。
+> 能给的是[配色体系与纹样对照](https://1261398983.github.io/awesome-chinese-ai-tools/guochao/)——那些是可以直接验证的。
 
 ---
 
@@ -325,7 +325,7 @@ my-skill/
 ⚠️ **安全提醒**：Skills 可以包含**可执行脚本**。装第三方 skill 前，
 先看一眼它的 `SKILL.md` 和 `scripts/` 内容。
 
-也可以运行本站的**[只读安装前审计器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/)**，本地检查脚本、符号链接、联网、凭据词、文件写删和高风险命令。它不执行目标 Skill、不上传内容；结果只是人工复核线索，不是恶意代码检测或安全认证。
+也可以运行本站的**[只读安装前审计器](https://1261398983.github.io/awesome-chinese-ai-tools/audit-skill/)**，本地检查脚本、符号链接、联网、凭据词、文件写删和高风险命令。它不执行目标 Skill、不上传内容；结果只是人工复核线索，不是恶意代码检测或安全认证。
 
 本站原创的 13 个 Skill 已完成首轮静态文件检查；当前没有独立可执行脚本，`guofeng-threejs` 浏览器 Demo 存在已披露的 CDN 依赖。完整范围和限制见 **[质量与安全标签](QUALITY.md)**，结论不适用于其余第三方收录。
 
@@ -333,7 +333,7 @@ my-skill/
 
 ## 贡献
 
-**[→ 第一次贡献：选择一个 10—20 分钟的真实任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/contribute/)**（跨客户端复测、Windows/Linux 安装路径、第三方条目事实复核；每项都有完成标准）
+**[→ 第一次贡献：选择一个 10—20 分钟的真实任务](https://1261398983.github.io/awesome-chinese-ai-tools/contribute/)**（跨客户端复测、Windows/Linux 安装路径、第三方条目事实复核；每项都有完成标准）
 
 不会代码也可以贡献：[推荐 Skill 或工具](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml) · [报告事实错误](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml) · [改进原创 Skill](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=improve-skill.yml) · [提交兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)。不知道的字段可以如实写“不确定”或“暂无”，不需要为了填满表单而猜测。
 

@@ -329,7 +329,7 @@ col = mix(col, uGlow, bleed * 0.95);   // 水墨这里是 mix(col, uInk, ...)
 - 实测：headless Chrome 真 GPU 渲染无 WebGL 错误；1400×950 与 390×844
   两种尺寸都完整成像（相机距离按宽高比自适应，早期版本在竖屏会裁掉一圈）
 
-在线预览：https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/themes/ink3d.html
+在线预览：https://1261398983.github.io/awesome-chinese-ai-tools/themes/ink3d.html
 
 ### 只做方案审查时
 

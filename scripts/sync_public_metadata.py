@@ -157,7 +157,7 @@ def sync_index_text(body, stats):
 
 def sync_sitemap_text(body, checked):
     """核心页 lastmod 只向前推进，避免数据日期覆盖更晚的内容更新。"""
-    base = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
+    base = "https://1261398983.github.io/awesome-chinese-ai-tools/"
     core = {base, base + "SKILLS.md", base + "README.md", base + "README.en.md"}
     lines = []
     for line in body.splitlines():

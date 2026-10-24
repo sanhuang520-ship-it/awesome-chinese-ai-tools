@@ -70,7 +70,7 @@ typography:
 | 主色 / 底色 | 7.59:1 | ✅ |
 
 
-[8 套主题的真实渲染截图在这里](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)。
+[8 套主题的真实渲染截图在这里](https://1261398983.github.io/awesome-chinese-ai-tools/shots/)。
 
 ## Typography
 
@@ -280,4 +280,4 @@ input:focus {
 
 *来自 [中文 AI Skills 库](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools) ·
 生成于 2026-08-12 · MIT ·
-[8 套主题的真实渲染截图](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)*
+[8 套主题的真实渲染截图](https://1261398983.github.io/awesome-chinese-ai-tools/shots/)*

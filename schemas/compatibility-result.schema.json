@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/schemas/compatibility-result.schema.json",
+  "$id": "https://1261398983.github.io/awesome-chinese-ai-tools/schemas/compatibility-result.schema.json",
   "title": "Agent Skill compatibility result",
   "description": "A single, privacy-scrubbed Agent Skill compatibility observation. Discovery, activation, completion and environment state are recorded separately.",
   "type": "object",

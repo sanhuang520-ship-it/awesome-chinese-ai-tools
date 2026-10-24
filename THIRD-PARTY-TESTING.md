@@ -1,7 +1,7 @@
 # 测别人的 Skill：流程与规矩
 
 > 四层判定（CLI 发现 / 文件落盘 / 自动触发 / 任务完成）和前瞻登记的做法，
-> 见[兼容性四层测试法](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/method/)。
+> 见[兼容性四层测试法](https://1261398983.github.io/awesome-chinese-ai-tools/method/)。
 > **本页只写「测别人」比「测自己」多出来的那部分。**
 
 ## 为什么做这件事
@@ -51,7 +51,7 @@
 ### 4. 装之前先只读审查
 
 和我们要求别人对待我们的 Skill 一样：先看 `SKILL.md` 和目录里有没有脚本。
-可以用[本站的只读审计器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/)，
+可以用[本站的只读审计器](https://1261398983.github.io/awesome-chinese-ai-tools/audit-skill/)，
 但它只提供人工复核线索，不是安全认证。
 
 记录里要写明：协议、目录内有无可执行文件、是否与上游逐字节一致。

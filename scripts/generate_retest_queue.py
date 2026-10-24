@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "retest" / "index.html"
-BASE = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
+BASE = "https://1261398983.github.io/awesome-chinese-ai-tools/"
 
 
 def load_items():

@@ -11,7 +11,7 @@ from generate_reproduce_page import TITLES, original_task, validate_records
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "try-agent-skills" / "index.html"
-BASE = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
+BASE = "https://1261398983.github.io/awesome-chinese-ai-tools/"
 ISSUE = "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml"
 
 

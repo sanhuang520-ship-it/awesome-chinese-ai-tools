@@ -440,11 +440,11 @@ def build_skills_md():
     L.append("> 来源仓库经 GitHub API 核验真实存在；第三方说明来自上游资料或维护者摘要，不等于逐项功能实测<br>")
     L.append(f"> 🔄 最近自动复检：**{checked}**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）\n")
     L.append("🧪 **[Codex 13/13 自动触发实测 → COMPATIBILITY.md](COMPATIBILITY.md)**　"
-             "🧰 [4 组开箱组合](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/bundles/)　"
+             "🧰 [4 组开箱组合](https://1261398983.github.io/awesome-chinese-ai-tools/bundles/)　"
              "📋 [原创 Skill 输出示例](EXAMPLES.md)　"
              "🔎 [按场景找 Skill](#skill-catalog)　"
-             "🌐 [在线浏览（可搜索/筛选）](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/)\n")
-    L.append("🛡️ **[安装第三方 Skill 前：运行只读本地审计器](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/)**"
+             "🌐 [在线浏览（可搜索/筛选）](https://1261398983.github.io/awesome-chinese-ai-tools/)\n")
+    L.append("🛡️ **[安装第三方 Skill 前：运行只读本地审计器](https://1261398983.github.io/awesome-chinese-ai-tools/audit-skill/)**"
              "（检查脚本、联网、凭据词与高风险命令；不执行目标，0 项命中不等于安全）\n")
     L.append("> 兼容性边界：Codex 有任务级自动触发实测；Claude Code 已实测发现、加载与任务覆盖"
              "（13/13 发现，12/13 任务覆盖），但**自动触发未记录**（那一轮是自测）；Cursor 待测。"
@@ -478,7 +478,7 @@ def build_skills_md():
     L.append("> 📌 本页此前写的是「装到 `~/.agents/skills/`」，不准确——当初那次实测在家目录下跑，")
     L.append("> 把「当前目录恰好是家目录」当成了工具行为。2026-08-19 换目录交叉验证后更正。\n")
     L.append("装好后重启你使用的客户端，用一个**不点名 Skill 名称**的自然任务测试是否自动触发。不同客户端与版本的行为可能不同；当前只有 Codex 的任务级实测。"
-             "遇到问题先看[安装与排错页](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/)。\n")
+             "遇到问题先看[安装与排错页](https://1261398983.github.io/awesome-chinese-ai-tools/install/)。\n")
     L.append("安装第三方 Skill 前，可先运行 `python3 scripts/audit_skill.py /path/to/skill` 做只读静态扫描；"
              "它只提供人工复核线索，不是恶意代码检测或安全认证。\n")
     L.append("### 30 秒选一个真实任务\n")
@@ -489,7 +489,7 @@ def build_skills_md():
     L.append(f"| 整理不编数据的周报 | `npx skills add https://github.com/{REPO} --skill chinese-work-report -g` | `把这些工作素材整理成给老板看的周报；结果数据没有提供，不要编造。` | [Codex 单任务实测](cases/chinese-work-report-codex.md) |")
     L.append(f"| 校对商品文案事实边界 | `npx skills add https://github.com/{REPO} --skill ecommerce-copywriting -g` | `根据已知参数整理可写、待补和不应发布的信息；没有的参数、认证和功效不要编。` | [Codex 单任务实测](cases/ecommerce-copywriting-codex.md) |")
     L.append(f"| 制定能动手练习的学习计划 | `npx skills add https://github.com/{REPO} --skill ai-learning-coach -g` | `我想两周入门 SQL。先了解目标和基础，再制定有练习、输出和复盘的计划。` | [Codex 校准实测](cases/ai-learning-coach-codex.md) |\n")
-    L.append("**[→ 查看全部 13 个单项安装命令与可复制首次任务](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/try-agent-skills/)**：7 条历史逐字原文与 6 条前瞻任务严格分开；前瞻任务 6 条均已执行。\n")
+    L.append("**[→ 查看全部 13 个单项安装命令与可复制首次任务](https://1261398983.github.io/awesome-chinese-ai-tools/try-agent-skills/)**：7 条历史逐字原文与 6 条前瞻任务严格分开；前瞻任务 6 条均已执行。\n")
     L.append("这些链接只记录一次特定 Codex 版本与任务的结果，不保证其他客户端、版本或措辞得到相同结果。\n")
     L.append("---\n")
     L.append('<a id="skill-catalog"></a>')
@@ -515,7 +515,7 @@ def build_skills_md():
         L.append("|-------|--------|------------|")
         for s in sorted(ours, key=lambda x: x["name"]):
             quality = qualities[s["name"]]
-            page = f"https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/{s['explainer']}"
+            page = f"https://1261398983.github.io/awesome-chinese-ai-tools/{s['explainer']}"
             L.append(
                 f"| [{s['name']}]({page}) · [源码]({s['url']}) | {s.get('desc','')} | "
                 f"{catalog_quality_label(quality)} |"

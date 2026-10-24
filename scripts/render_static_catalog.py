@@ -13,7 +13,7 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data" / "skills.json"
 OUTPUT_PATH = ROOT / "catalog" / "index.html"
-BASE_URL = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
+BASE_URL = "https://1261398983.github.io/awesome-chinese-ai-tools/"
 
 
 def esc(value: object) -> str:

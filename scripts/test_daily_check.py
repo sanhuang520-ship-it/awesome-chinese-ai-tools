@@ -98,7 +98,7 @@ class DailyCheckTest(unittest.TestCase):
             "无独立可执行脚本",
             "未发现运行时联网",
             "浏览器 Demo 从 unpkg.com 加载 three@0.170.0",
-            "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/typography/",
+            "https://1261398983.github.io/awesome-chinese-ai-tools/typography/",
             "[源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-typography)",
         ):
             with self.subTest(phrase=phrase):

@@ -46,21 +46,21 @@ class PublicMetadataTest(unittest.TestCase):
 
     def test_sitemap_does_not_touch_static_directory_pages(self):
         original = (
-            "<url><loc>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/themes/</loc>"
+            "<url><loc>https://1261398983.github.io/awesome-chinese-ai-tools/themes/</loc>"
             "<lastmod>2026-01-01</lastmod></url>\n"
         )
         self.assertEqual(original, sync_sitemap_text(original, "2026-08-12"))
 
     def test_sitemap_core_lastmod_never_moves_backwards(self):
         original = (
-            "<url><loc>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/</loc>"
+            "<url><loc>https://1261398983.github.io/awesome-chinese-ai-tools/</loc>"
             "<lastmod>2026-08-13</lastmod></url>\n"
         )
         self.assertEqual(original, sync_sitemap_text(original, "2026-08-12"))
 
     def test_sitemap_core_lastmod_moves_forward_with_newer_data(self):
         original = (
-            "<url><loc>https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/</loc>"
+            "<url><loc>https://1261398983.github.io/awesome-chinese-ai-tools/</loc>"
             "<lastmod>2026-08-11</lastmod></url>\n"
         )
         expected = original.replace("2026-08-11", "2026-08-12")

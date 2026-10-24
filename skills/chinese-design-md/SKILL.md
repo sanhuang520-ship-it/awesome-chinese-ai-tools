@@ -91,7 +91,7 @@ Overview（含出处）· Colors（含**逐项对比度实测**）· **Typograph
 
 ## 配套
 
-- [8 套主题的真实渲染截图](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/) —— headless Chrome 实跑生成
-- [在线切换预览](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/themes/)
+- [8 套主题的真实渲染截图](https://1261398983.github.io/awesome-chinese-ai-tools/shots/) —— headless Chrome 实跑生成
+- [在线切换预览](https://1261398983.github.io/awesome-chinese-ai-tools/themes/)
 - 同源的 CSS 实现：`skills/chinese-web-themes/themes.css`
 - 更细的中文排版规则：`skills/chinese-typography/SKILL.md`

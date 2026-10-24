@@ -17,7 +17,7 @@ from urllib.parse import urljoin, urlsplit
 from check_internal_links import published_pages
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/"
+BASE = "https://1261398983.github.io/awesome-chinese-ai-tools/"
 
 # 内嵌 demo：由讲解页 iframe 或链接引用，本身不作为独立入口收录。
 # 新增 demo 必须显式加进来，避免"忘了登记"和"故意不登记"混为一谈。

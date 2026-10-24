@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/schemas/install-environment-result.schema.json",
+  "$id": "https://1261398983.github.io/awesome-chinese-ai-tools/schemas/install-environment-result.schema.json",
   "title": "Agent Skill installation environment result",
   "description": "A privacy-scrubbed observation of one skills CLI installation attempt. It records installation evidence only, not client activation or task completion.",
   "type": "object",

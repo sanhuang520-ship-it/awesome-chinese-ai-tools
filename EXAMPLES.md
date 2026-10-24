@@ -1,11 +1,11 @@
 # 📋 原创 Skill 效果展示
 
 > 📸 **想直接看图？** 两个代码类 Skill 的真实渲染结果在这里：
-> **[原创 Skill 的真实渲染结果 →](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/shots/)**
+> **[原创 Skill 的真实渲染结果 →](https://1261398983.github.io/awesome-chinese-ai-tools/shots/)**
 > （8 套中式主题 + 水墨 shader，全部 headless Chrome 实跑生成，非示意图）
 
-![chinese-web-themes 水墨主题真实渲染](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/assets/shots/theme-ink.webp)
-![guofeng-threejs 水墨 shader 真实渲染](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/assets/shots/threejs-ink.webp)
+![chinese-web-themes 水墨主题真实渲染](https://1261398983.github.io/awesome-chinese-ai-tools/assets/shots/theme-ink.webp)
+![guofeng-threejs 水墨 shader 真实渲染](https://1261398983.github.io/awesome-chinese-ai-tools/assets/shots/threejs-ink.webp)
 
 ---
 

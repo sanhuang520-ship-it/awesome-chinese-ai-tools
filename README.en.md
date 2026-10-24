@@ -2,9 +2,9 @@
 
 An evidence-first directory of **212 Agent Skill entries from 164 source repositories**, focused on Chinese-language workflows. This repository also maintains 13 first-party Skills and an archived snapshot of 47 AI tool links.
 
-[中文 README](README.md) · [Browsable directory](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/) · [Compatibility evidence](COMPATIBILITY.md) · [Failure repair guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/fix-agent-skill/) · [Pre-install audit](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/) · [Quality labels](QUALITY.md) · [Security policy](SECURITY.md)
+[中文 README](README.md) · [Browsable directory](https://1261398983.github.io/awesome-chinese-ai-tools/) · [Compatibility evidence](COMPATIBILITY.md) · [Failure repair guide](https://1261398983.github.io/awesome-chinese-ai-tools/fix-agent-skill/) · [Pre-install audit](https://1261398983.github.io/awesome-chinese-ai-tools/audit-skill/) · [Quality labels](QUALITY.md) · [Security policy](SECURITY.md)
 
-Prefer a concise web path? Open the [Chinese Agent Skills / Chinese AI Skills guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/chinese-agent-skills/) for browsing, first install, evidence, safety review, and contribution routes.
+Prefer a concise web path? Open the [Chinese Agent Skills / Chinese AI Skills guide](https://1261398983.github.io/awesome-chinese-ai-tools/chinese-agent-skills/) for browsing, first install, evidence, safety review, and contribution routes.
 
 ## What is different here?
 
@@ -30,7 +30,7 @@ Install one Skill:
 npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography -g
 ```
 
-Installation, discovery, automatic activation, and task completion are separate claims. Client behavior varies by version, install location, and task wording. See the [installation guide](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/install/) and [compatibility matrix](COMPATIBILITY.md).
+Installation, discovery, automatic activation, and task completion are separate claims. Client behavior varies by version, install location, and task wording. See the [installation guide](https://1261398983.github.io/awesome-chinese-ai-tools/install/) and [compatibility matrix](COMPATIBILITY.md).
 
 For a project-level installation that already has `skills-lock.json`, the isolated update test used:
 
@@ -53,7 +53,7 @@ python3 scripts/audit_skill.py /path/to/skill
 python3 scripts/audit_skill.py /path/to/skill --json
 ```
 
-The scanner is read-only: it does not import, install or execute the target, and it does not follow symlinks. A zero-finding result does **not** mean the Skill is safe; dynamic behavior, obfuscation, prompt injection and dependency behavior may remain undetected. See the [rules and limitations](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/audit-skill/).
+The scanner is read-only: it does not import, install or execute the target, and it does not follow symlinks. A zero-finding result does **not** mean the Skill is safe; dynamic behavior, obfuscation, prompt injection and dependency behavior may remain undetected. See the [rules and limitations](https://1261398983.github.io/awesome-chinese-ai-tools/audit-skill/).
 
 ### A 30-second first test
 
@@ -74,10 +74,10 @@ See [output examples](EXAMPLES.md), [reproducible Codex cases](cases/README.md),
 
 ## Contributing
 
-- Pick one scoped task from the [first-contribution page](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/contribute/): cross-client retesting, Windows/Linux installation-path evidence, or a read-only catalog fact check. Each task has an explicit completion gate.
+- Pick one scoped task from the [first-contribution page](https://1261398983.github.io/awesome-chinese-ai-tools/contribute/): cross-client retesting, Windows/Linux installation-path evidence, or a read-only catalog fact check. Each task has an explicit completion gate.
 - [Recommend a Skill or AI tool](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml); no code change is required.
 - Submit a real success, failure, or non-activation result through the [compatibility report form](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml).
-- For a machine-readable pull request, generate a private local JSON report in the [browser report builder](https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/report/), or copy the [validated example](examples/compatibility-result.example.json), then run `python3 scripts/check_compatibility_reports.py`.
+- For a machine-readable pull request, generate a private local JSON report in the [browser report builder](https://1261398983.github.io/awesome-chinese-ai-tools/report/), or copy the [validated example](examples/compatibility-result.example.json), then run `python3 scripts/check_compatibility_reports.py`.
 - Report stale links or factual errors through the [problem report form](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml).
 - Read [CONTRIBUTING.md](CONTRIBUTING.md) before changing catalog data.
 
