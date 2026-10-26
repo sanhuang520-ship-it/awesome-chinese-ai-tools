@@ -1,6 +1,6 @@
 # Chinese AI Agent Skills Directory
 
-An evidence-first directory of **212 Agent Skill entries from 164 source repositories**, focused on Chinese-language workflows. This repository also maintains 13 first-party Skills and an archived snapshot of 47 AI tool links.
+An evidence-first directory of **212 Agent Skill entries from 164 source repositories**, focused on Chinese-language workflows. This repository also maintains 13 first-party Skills and an archived snapshot of 48 AI tool links.
 
 [中文 README](README.md) · [Browsable directory](https://1261398983.github.io/awesome-chinese-ai-tools/) · [Compatibility evidence](COMPATIBILITY.md) · [Failure repair guide](https://1261398983.github.io/awesome-chinese-ai-tools/fix-agent-skill/) · [Pre-install audit](https://1261398983.github.io/awesome-chinese-ai-tools/audit-skill/) · [Quality labels](QUALITY.md) · [Security policy](SECURITY.md)
 
