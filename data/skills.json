@@ -2924,6 +2924,14 @@
       "skillStatus": "ok",
       "lastPush": "2026-10-23",
       "skillCheckedAt": "2026-10-26"
+    },
+    {
+      "name": "agent-qa-knowledge",
+      "cat": "dev",
+      "official": false,
+      "desc": "通过 agent-qa MCP 工具或 CLI 查询测试运行、截图、控制台与网络证据，以及持久记忆的学习、使用与来源；需另行安装 agent-qa 并配置模型。",
+      "descEn": "Use when asked what an agent-qa run did, why a step passed or failed, what a run's screenshots, console or network showed, what knowledge agent-qa learned or served, where a knowledge record came from, or which runs exist. Reads runs, evidence and knowledge through the agent-qa MCP tools or the agent-qa CLI with --json, never through .agent-qa files, SQLite or index files.",
+      "url": "https://github.com/vostride/agent-qa/tree/main/skills/agent-qa-knowledge"
     }
   ],
   "resources": [

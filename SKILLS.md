@@ -1,6 +1,6 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **212 个 Skill 条目｜85 个中文条目｜✍️ 13 个本站原创**<br>
+> **213 个 Skill 条目｜85 个中文条目｜✍️ 13 个本站原创**<br>
 > 来源仓库经 GitHub API 核验真实存在；第三方说明来自上游资料或维护者摘要，不等于逐项功能实测<br>
 > 🔄 最近自动复检：**2026-10-26**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
@@ -77,7 +77,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 🇨🇳 其他中文条目 | 74 | [查看](#catalog-cn) |
 | 📄 文档办公 | 10 | [查看](#catalog-doc) |
 | 📊 PPT 演示 | 19 | [查看](#catalog-ppt) |
-| 💻 开发工程 | 36 | [查看](#catalog-dev) |
+| 💻 开发工程 | 37 | [查看](#catalog-dev) |
 | 🤖 Agent 与调研 | 8 | [查看](#catalog-agent) |
 | 🎨 创意设计 | 16 | [查看](#catalog-design) |
 | 💼 办公协作 | 13 | [查看](#catalog-biz) |
@@ -149,7 +149,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [video-understanding](https://github.com/zenstory-ai/video-recap-skills/tree/main/skills/video-understanding) | ⭐591 | 把视频分析为结构化理解索引：场景检测、ASR 转写、逐场景 VLM 观察、静音窗口、融合时间线和写作 brief。 用于理解、索引或总结视频，也作为后续创作前的分析阶段。 |
 | [video-voiceover](https://github.com/zenstory-ai/video-recap-skills/tree/main/skills/video-voiceover) | ⭐591 | 把带时间戳的 narration.json 合成为中文解说音频。使用 MiMo TTS（mimo-v2.5-tts）或 Fish Audio（s2.1-pro-free）逐段生成语音， 按时间窗动态适配语速并处理响度； |
 | [xiaohongshu-skills](https://github.com/vivy-yi/xiaohongshu-skills) | ⭐504 | 139 个小红书运营技能：内容创作、账号运营、电商转化等 9 大类 🕰<sub>2026-01-23 后未更新</sub> |
-| [cuimao-translator](https://github.com/Cuimao777/cuimao-translator) | ⭐490 | 一键把英文 PDF 翻译成流畅中文 |
+| [cuimao-translator](https://github.com/Cuimao777/cuimao-translator) | ⭐490 | 一键把英文 PDF 翻译成流畅中文 🕰<sub>2026-04-29 后未更新</sub> |
 | [humanities-writing-companion](https://github.com/tizzy916/humanities-writing-companion) | ⭐467 | 人文学科写作助手：11 种模式覆盖构思到成稿 |
 | [docx-skill-4-cn-paper](https://github.com/Gostyan/docx-skill-4-cn-paper) | ⭐461 | 中文论文排版规范：课程论文、数模竞赛、毕业论文 |
 | [yupi-skill](https://github.com/liyupi/yupi-skill) | ⭐452 | 程序员鱼皮技能包：编程学习、求职面试、技术选型、创业经验 🕰<sub>2026-04-09 后未更新</sub> |
@@ -175,7 +175,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [wechat-writing-style](https://github.com/yaoleifly/wechat-writing-style) | ⭐86 | 微信公众号中文写作风格 🕰<sub>2026-04-10 后未更新</sub> |
 | [kc_ai_skills](https://github.com/KerberosClaw/kc_ai_skills) | ⭐79 | 中文优先的 Claude Code / Codex skills 合集 |
 | [awesome-skills-zh](https://github.com/yzfly/awesome-skills-zh) | ⭐60 | 精选 Claude / Agent / LLM Skills 中文资源列表 |
-| [cnki-aigc---skill](https://github.com/qingshanliuci/cnki-aigc---skill) | ⭐51 | 针对知网 AIGC 标记段落的中文改写工作流；效果数字仅为上游案例，本仓库未独立复现 |
+| [cnki-aigc---skill](https://github.com/qingshanliuci/cnki-aigc---skill) | ⭐51 | 针对知网 AIGC 标记段落的中文改写工作流；效果数字仅为上游案例，本仓库未独立复现 🕰<sub>2026-05-01 后未更新</sub> |
 | [niubiskill](https://github.com/nathanskill/niubiskill) | ⭐43 | 中文变现决策：判断一件事是否接近收入再投入 |
 | [awesome-claude-skills-zh-TW](https://github.com/ammosu/awesome-claude-skills-zh-TW) | ⭐29 | awesome-claude-skills 繁体中文化版本 🕰<sub>2025-12-15 后未更新</sub> |
 | [awesome-claude-skills-zh](https://github.com/shishirui/awesome-claude-skills-zh) | ⭐24 | 中文社区优先的 Claude skills 精选收录 |
@@ -229,7 +229,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [ppt-agent-skills](https://github.com/sunbigfly/ppt-agent-skills) | ⭐916 | 像做软件工程一样做演示：模拟顶级 PPT 设计公司的完整流程（需求调研→资料搜集→大纲策划→策划稿→设计稿），输出 HTML |
 
 <a id="catalog-dev"></a>
-### 💻 开发工程（36 个）
+### 💻 开发工程（37 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -269,6 +269,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [D3.js Visualization](https://github.com/chrisvoncsefalvay/claude-d3js-skill) | ⭐247 | 用 D3 做交互式数据可视化图表 🕰<sub>2025-10-18 后未更新</sub> |
 | [great_cto](https://github.com/avelikiy/great_cto) | ⭐106 | 7 个专业子智能体（技术负责人、资深工程师等）组成的技术团队 |
 | [clone-any-website-skill](https://github.com/promptwhisper/clone-any-website-skill) | ⭐66 | Codex 技能：把公开网站重建成干净可维护的本地项目，讲究视觉、交互、媒体与多端还原度 |
+| [agent-qa-knowledge](https://github.com/vostride/agent-qa/tree/main/skills/agent-qa-knowledge) | — | 通过 agent-qa MCP 工具或 CLI 查询测试运行、截图、控制台与网络证据，以及持久记忆的学习、使用与来源；需另行安装 agent-qa 并配置模型。 |
 
 <a id="catalog-agent"></a>
 ### 🤖 Agent 与调研（8 个）
@@ -302,7 +303,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [imagen](https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen) | ⭐447 | 调用 Google Gemini 图像生成 API 出图 |
 | [video-router](https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/video-router) | ⭐328 | OrkasVideoStudio 的入口 Skill：让编程 Agent 做视频，拿到需求先判断走哪条线——HTML 动效合成、剪辑真实素材、AI 生成画面，或端到端自动。整套共 14 个 Skill。⚠️ 纯英文文档，上游示例称支持中文配音与字幕，本站未实测；按维护者决定破例收录。 |
 | [anydesign](https://github.com/uxKero/anydesign) | ⭐229 | 分析任意图片/网址/Figma 文件，生成结构化设计规范 |
-| [swiftui-design-skill](https://github.com/wholiver/swiftui-design-skill) | ⭐209 | SwiftUI 前端设计（中文）：反 AI 味六条铁律、设计顾问、五维评审 |
+| [swiftui-design-skill](https://github.com/wholiver/swiftui-design-skill) | ⭐209 | SwiftUI 前端设计（中文）：反 AI 味六条铁律、设计顾问、五维评审 🕰<sub>2026-05-01 后未更新</sub> |
 | [zscc配图生成器](https://github.com/izscc/cc2image) | ⭐190 | zscc配图生成器；当用户提到封面、正文配图、配图、知识图解、内容拆图、批量生图、文章配图、手绘知识卡片、小红书、公众号配图，或说“生成一个 logo / 图标 / 小图标 / app icon”，或指定内置 49 套内容风格与 8 套 logo/图标风格时使用。 |
 | [pakco-html](https://github.com/pakco77/pakco-html) | ⭐74 | HTML 审美库（中文）：60+ 视觉风格、演示页/长页模板，一键复制 Prompt |
 
@@ -396,5 +397,5 @@ Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts
 
 ---
 
-*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-10-26。*
+*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-10-31。*
 *收录有误或想推荐新 Skill？欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)*
