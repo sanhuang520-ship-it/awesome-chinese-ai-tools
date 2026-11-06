@@ -1,6 +1,6 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **212 个 Skill 条目｜85 个中文条目｜✍️ 13 个本站原创**<br>
+> **213 个 Skill 条目｜85 个中文条目｜✍️ 13 个本站原创**<br>
 > 来源仓库经 GitHub API 核验真实存在；第三方说明来自上游资料或维护者摘要，不等于逐项功能实测<br>
 > 🔄 最近自动复检：**2026-11-02**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
@@ -77,7 +77,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 🇨🇳 其他中文条目 | 74 | [查看](#catalog-cn) |
 | 📄 文档办公 | 10 | [查看](#catalog-doc) |
 | 📊 PPT 演示 | 19 | [查看](#catalog-ppt) |
-| 💻 开发工程 | 36 | [查看](#catalog-dev) |
+| 💻 开发工程 | 37 | [查看](#catalog-dev) |
 | 🤖 Agent 与调研 | 8 | [查看](#catalog-agent) |
 | 🎨 创意设计 | 16 | [查看](#catalog-design) |
 | 💼 办公协作 | 13 | [查看](#catalog-biz) |
@@ -225,11 +225,11 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [CyberPPT](https://github.com/crazyykhllc-bit/CyberPPT) | ⭐1,848 | 把 DOCX/PDF/TXT/XLSX、研究报告、原始数据转成高密度、可编辑的咨询风格 PPTX，支持 SCR 叙事、风格确认与渲染质检 |
 | [ian-handdrawn-ppt](https://github.com/helloianneo/ian-handdrawn-ppt) | ⭐1,502 | 中文手绘技术 PPT 整页图像生成：21:9 封面 + 16:9 正文配图，PNG 输出 |
 | [gpt-image2-ppt-skills](https://github.com/JuneYaooo/gpt-image2-ppt-skills) | ⭐1,415 | 克隆任意 .pptx 的版式做成自己的稿子：gpt-image-2 模仿版式，你提供内容。内置 10 套风格，输出高清 PNG 与 16:9 .pptx |
-| [ppt-image-first](https://github.com/NyxTides/ppt-image-first) | ⭐1,233 | 对话优先的演示规划：先聊清楚要讲什么，再给多个视觉方向的预览图，最后才写稿 |
+| [ppt-image-first](https://github.com/NyxTides/ppt-image-first) | ⭐1,233 | 对话优先的演示规划：先聊清楚要讲什么，再给多个视觉方向的预览图，最后才写稿 🕰<sub>2026-05-08 后未更新</sub> |
 | [ppt-agent-skills](https://github.com/sunbigfly/ppt-agent-skills) | ⭐919 | 像做软件工程一样做演示：模拟顶级 PPT 设计公司的完整流程（需求调研→资料搜集→大纲策划→策划稿→设计稿），输出 HTML |
 
 <a id="catalog-dev"></a>
-### 💻 开发工程（36 个）
+### 💻 开发工程（37 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -269,6 +269,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [D3.js Visualization](https://github.com/chrisvoncsefalvay/claude-d3js-skill) | ⭐251 | 用 D3 做交互式数据可视化图表 🕰<sub>2025-10-18 后未更新</sub> |
 | [great_cto](https://github.com/avelikiy/great_cto) | ⭐113 | 7 个专业子智能体（技术负责人、资深工程师等）组成的技术团队 |
 | [clone-any-website-skill](https://github.com/promptwhisper/clone-any-website-skill) | ⭐67 | Codex 技能：把公开网站重建成干净可维护的本地项目，讲究视觉、交互、媒体与多端还原度 |
+| [agent-qa-knowledge](https://github.com/vostride/agent-qa/tree/main/skills/agent-qa-knowledge) | — | 通过 agent-qa MCP 工具或 CLI 查询测试运行、截图、控制台与网络证据，以及持久记忆的学习、使用与来源；需另行安装 agent-qa 并配置模型。 |
 
 <a id="catalog-agent"></a>
 ### 🤖 Agent 与调研（8 个）
@@ -396,5 +397,5 @@ Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts
 
 ---
 
-*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-11-02。*
+*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-11-07。*
 *收录有误或想推荐新 Skill？欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)*
