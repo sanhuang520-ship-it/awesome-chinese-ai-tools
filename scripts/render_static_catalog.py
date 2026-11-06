@@ -127,7 +127,7 @@ def render_catalog(data: dict) -> str:
 <section class="notice"><div class="wrap"><p><strong>怎么读：</strong>“本站原创”表示本仓库维护；“官方”表示上游来源身份；“第三方资料”只表示目录线索。安装前仍应检查 <code>SKILL.md</code>、脚本、联网与文件权限。想交互搜索请回到<a href="../">首页</a>。</p></div></section>
 <nav class="wrap category-nav" aria-label="按场景跳转">{''.join(category_nav)}</nav>
 <div class="wrap">{''.join(category_sections)}</div></main>
-<footer class="wrap"><span><a href="../audit-skill/">安装前只读审计</a> · <a href="../compatibility/">兼容性证据</a> · <a href="../SKILLS.md">Markdown 完整清单</a></span><span>数据源：<a href="../data/skills.json">skills.json</a> · <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools">觉得有用再 Star</a></span></footer></body></html>
+<footer class="wrap"><span><a href="../audit-skill/">安装前只读审计</a> · <a href="../compatibility/">兼容性证据</a> · <a href="../SKILLS.md">Markdown 完整清单</a></span><span>数据源：<a href="../data/skills.json">skills.json</a> · <a href="https://github.com/1261398983/awesome-chinese-ai-tools">觉得有用再 Star</a></span></footer></body></html>
 '''
 
 

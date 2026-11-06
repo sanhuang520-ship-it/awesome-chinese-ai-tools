@@ -138,8 +138,8 @@ class EvidenceClaimsTest(unittest.TestCase):
     def test_skills_sh_index_is_linked_without_calling_installs_users(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         english = (ROOT / "README.en.md").read_text(encoding="utf-8")
-        self.assertIn("https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools", readme)
-        self.assertNotIn("https://skills.sh/b/sanhuang520-ship-it/awesome-chinese-ai-tools", readme)
+        self.assertIn("https://skills.sh/1261398983/awesome-chinese-ai-tools", readme)
+        self.assertNotIn("https://skills.sh/b/1261398983/awesome-chinese-ai-tools", readme)
         self.assertIn("可能包含维护者安装核验", readme)
         self.assertIn("不等于独立用户、实际使用效果或质量认证", readme)
         self.assertIn("may include maintainer verification runs", english)
@@ -148,7 +148,7 @@ class EvidenceClaimsTest(unittest.TestCase):
     def test_agent_skills_directory_is_linked_with_evidence_boundaries(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         english = (ROOT / "README.en.md").read_text(encoding="utf-8")
-        author_url = "https://agent-skills.md/authors/sanhuang520-ship-it"
+        author_url = "https://agent-skills.md/authors/1261398983"
         self.assertIn(author_url, readme)
         self.assertIn(author_url, english)
         self.assertIn("不代表独立兼容性实测、内容审核或质量认证", readme)
@@ -216,7 +216,7 @@ class EvidenceClaimsTest(unittest.TestCase):
 
     def test_compatibility_page_routes_people_to_rendered_case_records(self):
         page = (ROOT / "compatibility" / "index.html").read_text(encoding="utf-8")
-        prefix = "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/cases/"
+        prefix = "https://github.com/1261398983/awesome-chinese-ai-tools/blob/main/cases/"
         for case in (ROOT / "cases").glob("*-codex.md"):
             with self.subTest(case=case.name):
                 self.assertIn(prefix + case.name, page)
@@ -393,7 +393,7 @@ class EvidenceClaimsTest(unittest.TestCase):
             with self.subTest(secondary=secondary):
                 self.assertNotIn(secondary, first_screen)
         self.assertIn(
-            "npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list",
+            "npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --list",
             first_screen,
         )
 

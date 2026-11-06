@@ -23,6 +23,6 @@
 
 维护者可提醒修改、隐藏或删除不符合规范的内容，关闭讨论，或限制持续违规者参与。处理时会尽量说明涉及的具体行为，而不是评价个人。
 
-一般事实错误请使用 [Issue 表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml)。可能被直接利用的安全问题请使用[私密漏洞报告](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/security/advisories/new)，不要公开披露敏感细节。GitHub 平台层面的骚扰或滥用也可通过 GitHub 自身的举报功能处理。
+一般事实错误请使用 [Issue 表单](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=report-problem.yml)。可能被直接利用的安全问题请使用[私密漏洞报告](https://github.com/1261398983/awesome-chinese-ai-tools/security/advisories/new)，不要公开披露敏感细节。GitHub 平台层面的骚扰或滥用也可通过 GitHub 自身的举报功能处理。
 
 参与本仓库即表示同意遵守本规范。本规范适用于仓库的 Issue、PR、Discussion 和其他由本项目维护者管理的公开协作空间。

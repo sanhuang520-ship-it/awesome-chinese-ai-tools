@@ -2,7 +2,7 @@
 name: chinese-lesson-plan
 description: 生成中国中小学教案与配套材料。当用户要"备课""写教案""设计一节课""做课件大纲""出分层作业""写说课稿""评课"时使用。覆盖语文/数学/英语/科学等学科，小学到高中；先确认学段、教材版本与适用课程标准，再按学科核心素养、可观察任务和评价证据组织目标。
 metadata:
-  author: sanhuang520-ship-it
+  author: 1261398983
   category: content-creation
   tags: education, learning, chinese, documentation
 ---

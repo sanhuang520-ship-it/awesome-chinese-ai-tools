@@ -136,7 +136,7 @@
 - Cursor：待任务级实测。
 - 本版本不声明准确率、正式安全认证或跨客户端全面兼容。
 
-[v1.1.0]: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/releases/tag/v1.1.0
-[v1.1.1]: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/releases/tag/v1.1.1
-[v1.2.0]: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/v1.2.0
-[Unreleased]: https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/compare/v1.2.0...HEAD
+[v1.1.0]: https://github.com/1261398983/awesome-chinese-ai-tools/releases/tag/v1.1.0
+[v1.1.1]: https://github.com/1261398983/awesome-chinese-ai-tools/releases/tag/v1.1.1
+[v1.2.0]: https://github.com/1261398983/awesome-chinese-ai-tools/tree/v1.2.0
+[Unreleased]: https://github.com/1261398983/awesome-chinese-ai-tools/compare/v1.2.0...HEAD

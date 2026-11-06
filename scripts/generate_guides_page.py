@@ -50,7 +50,7 @@ def render_card(skill, result, quality):
   <p class="scenario">{html.escape(scenario)}</p>
   <div class="evidence"><b>本次记录</b><span>{html.escape(result["summaryZh"])}</span></div>
   <div class="boundary"><b>质量边界</b><span>{html.escape(boundary)}；{html.escape(network)}。</span></div>
-  <div class="card-links"><a href="../{html.escape(skill["explainer"])}">看方法与证据</a><a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/{html.escape(result["case"])}">看原始案例</a><a href="../skills/{html.escape(name)}/SKILL.md">看 SKILL.md</a></div>
+  <div class="card-links"><a href="../{html.escape(skill["explainer"])}">看方法与证据</a><a href="https://github.com/1261398983/awesome-chinese-ai-tools/blob/main/{html.escape(result["case"])}">看原始案例</a><a href="../skills/{html.escape(name)}/SKILL.md">看 SKILL.md</a></div>
 </article>'''
 
 
@@ -85,7 +85,7 @@ def render():
 <section class="wrap grid" id="guide-grid">{cards}</section>
 <section class="wrap method"><h2>证据怎么读</h2><p>“能发现”“已安装”“自动触发”“完成任务”是四件事。这里的状态来自 <a href="../data/compatibility.json">compatibility.json</a>，文件构成、联网行为与敏感边界来自 <a href="../data/quality.json">quality.json</a>。第三方目录收录、安装次数或单次运行都不等于质量认证。</p></section>
 <section class="wrap cta"><div><h2>先审计，再装一个当前真需要的。</h2><p>第三方 Skill 先检查脚本、联网和文件操作；从小任务开始，保留客户端版本、原始任务和实际输出。</p></div><a href="../audit-skill/">先做安装前审计 →</a></section></main>
-<footer class="wrap"><span><a href="../compatibility/">兼容性实测</a> · <a href="../QUALITY.md">质量与安全标签</a> · <a href="../cases/README.md">全部案例</a></span><span><a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools">查看 GitHub 仓库 · 觉得有用再 Star</a></span></footer>
+<footer class="wrap"><span><a href="../compatibility/">兼容性实测</a> · <a href="../QUALITY.md">质量与安全标签</a> · <a href="../cases/README.md">全部案例</a></span><span><a href="https://github.com/1261398983/awesome-chinese-ai-tools">查看 GitHub 仓库 · 觉得有用再 Star</a></span></footer>
 <script>document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{{const value=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(item=>item.setAttribute('aria-pressed',item===button?'true':'false'));document.querySelectorAll('.guide-card').forEach(card=>card.hidden=value!=='all'&&card.dataset.outcome!==value);}}));</script></body></html>'''
 
 

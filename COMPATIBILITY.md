@@ -115,7 +115,7 @@ Codex 在隔离实测中报告：已安装 Skill 较多时，会为适应 skills
 
 13 个原创 Skill 已各完成一次自动触发测试：10 项当次任务完成，1 项按流程等待必要输入，两个失败项完成缩小复测。Claude Code 已于 2026-08-26 补上发现、加载与任务覆盖的证据，但自动触发仍缺同级证据（需盲测）。本机副本已于 2026-08-28 全部追平，7 项也已在当前版本上重跑完毕（13/13）。「有锁条目 + 上游有新提交」这条路径已于同日验证通过。下一步：① 由不知情执行者做盲测，取得与 Codex 同级的触发证据 ② 查明上述「无上游改动却被报告更新」的原因 ③ 补 Cursor。
 
-如果你能提供 Claude Code 或 Cursor 的实际结果，请用[结构化兼容性表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。表单会分别记录模型是否开始执行、是否点名 Skill、是否触发与任务是否完成；成功和失败都欢迎，但请先删除 Token、邮箱和私人路径。
+如果你能提供 Claude Code 或 Cursor 的实际结果，请用[结构化兼容性表单](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。表单会分别记录模型是否开始执行、是否点名 Skill、是否触发与任务是否完成；成功和失败都欢迎，但请先删除 Token、邮箱和私人路径。
 
 希望用 PR 提交机器可读结果时，复制[真实示例报告](examples/compatibility-result.example.json)，按 [JSON Schema](schemas/compatibility-result.schema.json)填写，再运行：
 

@@ -109,7 +109,7 @@ class CatalogIntegrityTest(unittest.TestCase):
                 self.assertTrue(data["description"].strip())
                 self.assertLessEqual(len(data["description"]), 1024)
                 metadata = data["metadata"]
-                self.assertEqual("sanhuang520-ship-it", metadata["author"])
+                self.assertEqual("1261398983", metadata["author"])
                 self.assertIn(metadata["category"], allowed_categories)
                 tags = [tag for tag in re.split(r"[,\s]+", metadata["tags"]) if tag]
                 self.assertGreaterEqual(len(tags), 3)

@@ -11,7 +11,7 @@ from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
-REPOSITORY = "sanhuang520-ship-it/awesome-chinese-ai-tools"
+REPOSITORY = "1261398983/awesome-chinese-ai-tools"
 TAG = "v1.2.0"
 EXPECTED_COMMIT = "ab44cd965d4167e6efb3849876ab5efef670f978"
 API = f"https://api.github.com/repos/{REPOSITORY}"

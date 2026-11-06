@@ -255,7 +255,7 @@ def _put_if_changed(github_api, repo, path, current, updated, sha, message):
             "message": message,
             "content": base64.b64encode(updated.encode("utf-8")).decode("ascii"),
             "sha": sha,
-            "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"},
+            "committer": {"name": "1261398983", "email": "noreply@github.com"},
         },
     )
     if "content" not in result:

@@ -18,12 +18,12 @@
 
 不需要 Fork 仓库或编辑 JSON，选一个表单填写即可：
 
-- [推荐一个 Skill 或 AI 工具](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml)
-- [报告失效链接或事实错误](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml)
-- [改进一个本站原创 Skill](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=improve-skill.yml)
-- [提交一次成功、失败或未触发的兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)
-- [提交一次 Windows、WSL、Linux 或 macOS 安装环境复测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=install-environment-result.yml)
-- [提议一个现有四组未覆盖的中文 Skill 组合](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=request-bundle.yml)
+- [推荐一个 Skill 或 AI 工具](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=add-entry.yml)
+- [报告失效链接或事实错误](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=report-problem.yml)
+- [改进一个本站原创 Skill](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=improve-skill.yml)
+- [提交一次成功、失败或未触发的兼容性实测](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)
+- [提交一次 Windows、WSL、Linux 或 macOS 安装环境复测](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=install-environment-result.yml)
+- [提议一个现有四组未覆盖的中文 Skill 组合](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=request-bundle.yml)
 
 不知道的字段可以如实写“不确定”或“暂无”。维护者会复核，不要求提交者先得出完整结论；请不要为了填满表单而猜测。
 
@@ -41,7 +41,7 @@ python3 scripts/check_install_environment_report.py <report>.json
 
 ## 分享一次真实使用结果（不需要提 PR）
 
-如果你已经使用过某个 Skill，优先用[兼容性实测表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。它会分别记录客户端版本、原始任务、是否点名 Skill、是否触发、任务是否完成、实际结果和证据边界；成功、失败和没有自动触发都欢迎。也可以在[置顶 Discussion](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)按下面的格式回复：
+如果你已经使用过某个 Skill，优先用[兼容性实测表单](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交。它会分别记录客户端版本、原始任务、是否点名 Skill、是否触发、任务是否完成、实际结果和证据边界；成功、失败和没有自动触发都欢迎。也可以在[置顶 Discussion](https://github.com/1261398983/awesome-chinese-ai-tools/discussions/4)按下面的格式回复：
 
 ```markdown
 ### 使用的 Skill
@@ -188,7 +188,7 @@ python3 scripts/check_repository_profile.py
 > 真正该守的不是投稿动机，而是**内容能不能核对**。所以处理方式是：
 > 按标准该收就收，核对不了的数字一律不写进描述并标明「上游自述，本站未逐项实测」，
 > 同时把观察到的投放背景记进提交信息留档。
-> 参见 [#6](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/6)。
+> 参见 [#6](https://github.com/1261398983/awesome-chinese-ai-tools/issues/6)。
 
 ## 关于新闻
 

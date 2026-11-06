@@ -55,6 +55,6 @@
 
 ## 如何贡献
 
-- 发现失效链接、事实错误或安装问题：[提交 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new/choose)。
+- 发现失效链接、事实错误或安装问题：[提交 Issue](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new/choose)。
 - 推荐 Skill 或工具：请提供干净官网链接，并按 [CONTRIBUTING.md](CONTRIBUTING.md) 说明来源和利益相关。
 - 只接受可复核的数据与使用案例；如果一项结论仅是推断，请明确标注。

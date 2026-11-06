@@ -12,7 +12,7 @@
 
 [![原创](https://img.shields.io/badge/本站原创-13%20个-86b894?style=flat-square)](EXAMPLES.md)
 [![Skills](https://img.shields.io/badge/Skills-212%20个-e0795a?style=flat-square)](https://1261398983.github.io/awesome-chinese-ai-tools/)
-[![Weekly Check](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml/badge.svg)](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)
+[![Weekly Check](https://github.com/1261398983/awesome-chinese-ai-tools/actions/workflows/daily-check.yml/badge.svg)](https://github.com/1261398983/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)
 [![License](https://img.shields.io/badge/License-MIT-83808d?style=flat-square)](LICENSE)
 
 **[🌐 在线浏览与搜索](https://1261398983.github.io/awesome-chinese-ai-tools/)**　·　[📦 安装与排错](https://1261398983.github.io/awesome-chinese-ai-tools/install/)　·　[📋 看真实输出](EXAMPLES.md)　·　[🧪 看兼容性证据](https://1261398983.github.io/awesome-chinese-ai-tools/compatibility/)
@@ -24,7 +24,7 @@
 ## 装一个，30 秒看到效果
 
 ```bash
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography -g
+npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --skill chinese-typography -g
 ```
 
 重启客户端，然后**不要提 Skill 的名字**，直接把下面这段话丢给 AI：
@@ -33,7 +33,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 > `body { font-family: Arial, sans-serif; font-size: 14px; line-height: 1.35; text-align: justify; word-break: break-all; }`
 
 它应该指出行高偏小、`justify` 不适合中文、`break-all` 会截断英文单词，并给出建议值。
-**如果它没有自动用上这个 Skill，那也是个有用的结果**——[按表单提交](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)，成功和失败都收。
+**如果它没有自动用上这个 Skill，那也是个有用的结果**——[按表单提交](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)，成功和失败都收。
 
 ### 换一个场景试
 
@@ -41,14 +41,14 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 
 | 你想试什么 | 安装 | 复制给 AI 的任务 | 本仓库记录 |
 |---|---|---|---|
-| 审查中文网页排版 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography -g` | `请检查下面这段网页 CSS 的中文排版问题，只做审查，不修改文件。明确列出问题、理由和建议值：body { font-family: Arial, sans-serif; font-size: 14px; line-height: 1.35; text-align: justify; word-break: break-all; }` | [Codex 单任务实测](cases/chinese-typography-codex.md) |
-| 整理一份不编数据的周报 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-work-report -g` | `帮我把下面素材整理成给老板看的中文周报：本周修复了登录问题，做了两个页面；结果数据暂时没有；下周继续优化。请按结论先行组织，不要编造数字。` | [Codex 单任务实测](cases/chinese-work-report-codex.md) |
-| 校对一版不编参数的商品文案 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ecommerce-copywriting -g` | `给一款普通保湿面霜写电商主图文案。已知只有：50g、无香型、89元。没有提供的参数、认证和功效不要编造；先列出可写、待补和不应发布的信息。` | [Codex 单任务实测](cases/ecommerce-copywriting-codex.md) |
-| 制定不靠刷视频的学习计划 | `npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ai-learning-coach -g` | `我想用两周入门 SQL，但不想再看完教程就忘。先了解我的目标和基础，再带我制定能动手练习的计划。` | [Codex 单任务实测](cases/ai-learning-coach-codex.md) |
+| 审查中文网页排版 | `npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --skill chinese-typography -g` | `请检查下面这段网页 CSS 的中文排版问题，只做审查，不修改文件。明确列出问题、理由和建议值：body { font-family: Arial, sans-serif; font-size: 14px; line-height: 1.35; text-align: justify; word-break: break-all; }` | [Codex 单任务实测](cases/chinese-typography-codex.md) |
+| 整理一份不编数据的周报 | `npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --skill chinese-work-report -g` | `帮我把下面素材整理成给老板看的中文周报：本周修复了登录问题，做了两个页面；结果数据暂时没有；下周继续优化。请按结论先行组织，不要编造数字。` | [Codex 单任务实测](cases/chinese-work-report-codex.md) |
+| 校对一版不编参数的商品文案 | `npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --skill ecommerce-copywriting -g` | `给一款普通保湿面霜写电商主图文案。已知只有：50g、无香型、89元。没有提供的参数、认证和功效不要编造；先列出可写、待补和不应发布的信息。` | [Codex 单任务实测](cases/ecommerce-copywriting-codex.md) |
+| 制定不靠刷视频的学习计划 | `npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --skill ai-learning-coach -g` | `我想用两周入门 SQL，但不想再看完教程就忘。先了解我的目标和基础，再带我制定能动手练习的计划。` | [Codex 单任务实测](cases/ai-learning-coach-codex.md) |
 
-这些任务在记录的 Codex 版本中发生过自动触发；它们不是“必定触发”的保证。若结果不同，请保留客户端版本和任务原文，按[兼容性实测表单](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交成功或失败结果。
+这些任务在记录的 Codex 版本中发生过自动触发；它们不是“必定触发”的保证。若结果不同，请保留客户端版本和任务原文，按[兼容性实测表单](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)提交成功或失败结果。
 
-想先看有哪些：`npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list`
+想先看有哪些：`npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --list`
 
 ---
 
@@ -165,16 +165,16 @@ CLI 帮助原文：`-g, --global  Install skill globally (user-level) instead of
 
 ```bash
 # 先看仓库里有哪些（只读，不写任何文件）
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
+npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --list
 
 # 装单个（推荐）。-g = 装到用户级 ~/.agents/skills/，任何目录下都能用
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography -g
+npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --skill chinese-typography -g
 
 # 全部装上（13 个）
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*' -g
+npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --skill '*' -g
 
 # 不加 -g 就是「项目级」：装进你当前所在的这个目录，只在这个项目里可用
-cd ~/my-project && npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography
+cd ~/my-project && npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --skill chinese-typography
 
 # 已在当前 Git 项目安装过：按锁文件更新项目副本
 npx --yes skills@1.5.22 update -p -y
@@ -199,9 +199,9 @@ npx --yes skills@1.5.22 update -p -y
 
 想把重复工作变成 Skill？查看 **[创建 Codex Skill 中文实战](https://1261398983.github.io/awesome-chinese-ai-tools/create-codex-skill/)**：从最小 SKILL.md、触发描述到安装与自动触发测试。
 
-仓库也已被 [skills.sh 收录](https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools)，可查看 13 个 Skill 的独立页面和该平台记录的聚合安装次数。该数字来自 skills CLI 遥测，可能包含维护者安装核验，不等于独立用户、实际使用效果或质量认证。
+仓库也已被 [skills.sh 收录](https://skills.sh/1261398983/awesome-chinese-ai-tools)，可查看 13 个 Skill 的独立页面和该平台记录的聚合安装次数。该数字来自 skills CLI 遥测，可能包含维护者安装核验，不等于独立用户、实际使用效果或质量认证。
 
-[Agent-Skills.md 作者页](https://agent-skills.md/authors/sanhuang520-ship-it)也已展示全部 13 个原创 Skill。它是第三方目录入口，不代表独立兼容性实测、内容审核或质量认证；分类与标签正在刷新复核。
+[Agent-Skills.md 作者页](https://agent-skills.md/authors/1261398983)也已展示全部 13 个原创 Skill。它是第三方目录入口，不代表独立兼容性实测、内容审核或质量认证；分类与标签正在刷新复核。
 
 ## 用过之后，留下一个可复现结果
 
@@ -213,7 +213,7 @@ npx --yes skills@1.5.22 update -p -y
 4. 实际发生了什么
 5. 哪一步有效，哪一步需要改进
 
-**[→ 用结构化表单提交一次兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)**　·　[在 Discussion 交流](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)
+**[→ 用结构化表单提交一次兼容性实测](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)**　·　[在 Discussion 交流](https://github.com/1261398983/awesome-chinese-ai-tools/discussions/4)
 
 准备提 PR 的贡献者也可以复制[机器可读示例](examples/compatibility-result.example.json)，按 [JSON Schema](schemas/compatibility-result.schema.json)填写，并用仓库内的无依赖校验器检查环境阻断、证据边界和常见敏感信息。
 
@@ -260,7 +260,7 @@ npx --yes skills@1.5.22 update -p -y
 | 2 | **164 个来源仓库复检**（覆盖 212 个 Skill 条目）：还在不在、星数、最后更新时间 |
 | 3 | 从数据重建 SKILLS.md，并同步公开统计 |
 
-这套流程跑在 **GitHub Actions** 上，[运行记录公开可查](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)——不依赖任何人的电脑，也不用你相信我说的话。
+这套流程跑在 **GitHub Actions** 上，[运行记录公开可查](https://github.com/1261398983/awesome-chinese-ai-tools/actions/workflows/daily-check.yml)——不依赖任何人的电脑，也不用你相信我说的话。
 
 > 触发方式：2026-08-18 前每天定时 → 之后只手动触发（结果一停 12 天没人跑）→ **2026-09-14 起每周一自动跑一次**，也可随时手动触发。每次运行的时间、结果和完整日志都公开可查，
 > 上方「最近复检」日期直接来自数据文件，所以你看到的永远是真实的上次复检时间，而不是一句「每天都在跑」的承诺。
@@ -335,13 +335,13 @@ my-skill/
 
 **[→ 第一次贡献：选择一个 10—20 分钟的真实任务](https://1261398983.github.io/awesome-chinese-ai-tools/contribute/)**（跨客户端复测、Windows/Linux 安装路径、第三方条目事实复核；每项都有完成标准）
 
-不会代码也可以贡献：[推荐 Skill 或工具](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml) · [报告事实错误](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml) · [改进原创 Skill](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=improve-skill.yml) · [提交兼容性实测](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)。不知道的字段可以如实写“不确定”或“暂无”，不需要为了填满表单而猜测。
+不会代码也可以贡献：[推荐 Skill 或工具](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=add-entry.yml) · [报告事实错误](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=report-problem.yml) · [改进原创 Skill](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=improve-skill.yml) · [提交兼容性实测](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml)。不知道的字段可以如实写“不确定”或“暂无”，不需要为了填满表单而猜测。
 
-使用问题和实际效果欢迎放到 [Discussions](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions)，想直接改数据请查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
+使用问题和实际效果欢迎放到 [Discussions](https://github.com/1261398983/awesome-chinese-ai-tools/discussions)，想直接改数据请查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 如果你用的是 Claude Code 或 Cursor，最有价值的贡献是提交一次成功或失败的真实结果：我们会把客户端版本、原始任务和证据边界整理进[兼容性实测表](COMPATIBILITY.md)，不会把单次体验包装成普遍结论。
 
-在文章、研究或其他目录中引用本项目时，可使用 GitHub 的 **Cite this repository** 入口或查看 [CITATION.cff](CITATION.cff)。当前稳定引用版本为 [v1.2.0](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/v1.2.0)；持续更新内容请链接仓库主页，并注明访问日期。
+在文章、研究或其他目录中引用本项目时，可使用 GitHub 的 **Cite this repository** 入口或查看 [CITATION.cff](CITATION.cff)。当前稳定引用版本为 [v1.2.0](https://github.com/1261398983/awesome-chinese-ai-tools/tree/v1.2.0)；持续更新内容请链接仓库主页，并注明访问日期。
 
 **发现事实错误请一定告诉我们** —— 这个项目全部的价值就在"可信"两个字上。
 

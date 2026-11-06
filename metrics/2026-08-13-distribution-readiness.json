@@ -1,10 +1,10 @@
 {
   "recordedAt": "2026-08-13T00:38:00+08:00",
-  "repository": "sanhuang520-ship-it/awesome-chinese-ai-tools",
+  "repository": "1261398983/awesome-chinese-ai-tools",
   "repositoryMetrics": {"stars": 7, "forks": 1},
   "verifiedListings": [
-    {"name": "Agent-Skills.md", "status": "indexed", "scope": "13 first-party skills", "url": "https://agent-skills.md/authors/sanhuang520-ship-it"},
-    {"name": "skills.sh", "status": "indexed", "scope": "repository and 13 first-party skills", "url": "https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools"}
+    {"name": "Agent-Skills.md", "status": "indexed", "scope": "13 first-party skills", "url": "https://agent-skills.md/authors/1261398983"},
+    {"name": "skills.sh", "status": "indexed", "scope": "repository and 13 first-party skills", "url": "https://skills.sh/1261398983/awesome-chinese-ai-tools"}
   ],
   "candidateChannels": [
     {"name": "kodustech/awesome-agent-skills", "status": "deferred-overlap-and-backlog", "reason": "A general web typography skill already exists and the repository had about 39 open pull requests at observation time."},

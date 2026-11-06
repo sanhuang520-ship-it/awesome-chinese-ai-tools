@@ -11,8 +11,8 @@
 
 
 
-> 本页是本站原创 Skill 的**仓库自测输出片段**，不是外部用户评价。想看或分享真实使用反馈，请前往[置顶 Discussion](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions/4)。
-> 完整源码：[skills/](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills)
+> 本页是本站原创 Skill 的**仓库自测输出片段**，不是外部用户评价。想看或分享真实使用反馈，请前往[置顶 Discussion](https://github.com/1261398983/awesome-chinese-ai-tools/discussions/4)。
+> 完整源码：[skills/](https://github.com/1261398983/awesome-chinese-ai-tools/tree/main/skills)
 
 ## 先看可复现证据
 
@@ -388,13 +388,13 @@ font-family:
 
 ```bash
 # 先看看仓库里有哪些（不安装）
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
+npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --list
 
 # 装单个（推荐）
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-lesson-plan -g
+npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --skill chinese-lesson-plan -g
 
 # 全部装上
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill '*' -g
+npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --skill '*' -g
 ```
 
 或手动复制 `skills/<名称>/` 到 `~/.claude/skills/`

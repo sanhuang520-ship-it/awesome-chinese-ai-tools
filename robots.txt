@@ -4,4 +4,4 @@ Allow: /
 Sitemap: https://1261398983.github.io/awesome-chinese-ai-tools/sitemap.xml
 
 # AI-readable project summary
-# https://sanhuang520-ship-it.github.io/awesome-chinese-ai-tools/llms.txt
+# https://1261398983.github.io/awesome-chinese-ai-tools/llms.txt

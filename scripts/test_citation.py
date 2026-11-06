@@ -15,7 +15,7 @@ class CitationTest(unittest.TestCase):
         self.assertIn("date-released: 2026-08-13", body)
         self.assertIn("license: MIT", body)
         self.assertIn(
-            'repository-code: "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools"',
+            'repository-code: "https://github.com/1261398983/awesome-chinese-ai-tools"',
             body,
         )
 
@@ -23,7 +23,7 @@ class CitationTest(unittest.TestCase):
         body = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("[CITATION.cff](CITATION.cff)", body)
         self.assertIn(
-            "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/v1.2.0",
+            "https://github.com/1261398983/awesome-chinese-ai-tools/tree/v1.2.0",
             body,
         )
         english = (ROOT / "README.en.md").read_text(encoding="utf-8")

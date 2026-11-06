@@ -4,7 +4,7 @@
 
 工具页：https://1261398983.github.io/awesome-chinese-ai-tools/audit-skill/
 
-源码：https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/scripts/audit_skill.py
+源码：https://github.com/1261398983/awesome-chinese-ai-tools/blob/main/scripts/audit_skill.py
 
 ## 推荐标题
 

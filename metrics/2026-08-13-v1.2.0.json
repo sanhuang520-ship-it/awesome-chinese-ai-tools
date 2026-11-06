@@ -1,7 +1,7 @@
 {
   "recordedAt": "2026-08-13T14:24:00+08:00",
   "source": "GitHub public repository and Actions APIs; local verification; public GitHub Pages",
-  "repository": "sanhuang520-ship-it/awesome-chinese-ai-tools",
+  "repository": "1261398983/awesome-chinese-ai-tools",
   "repositoryMetrics": {
     "stars": 7,
     "forks": 1,
@@ -10,7 +10,7 @@
   "release": {
     "tag": "v1.2.0",
     "commit": "resolved-by-annotated-tag-v1.2.0",
-    "url": "https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/v1.2.0",
+    "url": "https://github.com/1261398983/awesome-chinese-ai-tools/tree/v1.2.0",
     "localTests": 206,
     "testModules": 36,
     "publicHtmlPagesChecked": 44,

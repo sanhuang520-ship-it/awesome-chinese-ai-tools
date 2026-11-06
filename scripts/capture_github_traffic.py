@@ -13,7 +13,7 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 
 
-REPOSITORY = "sanhuang520-ship-it/awesome-chinese-ai-tools"
+REPOSITORY = "1261398983/awesome-chinese-ai-tools"
 API = f"https://api.github.com/repos/{REPOSITORY}"
 
 

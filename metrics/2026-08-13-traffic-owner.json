@@ -3,7 +3,7 @@
   "source": "GitHub owner Traffic API and public repository API",
   "windowDays": 14,
   "windowType": "rolling; exact first day is controlled by GitHub and may contain days with zero events",
-  "repository": "sanhuang520-ship-it/awesome-chinese-ai-tools",
+  "repository": "1261398983/awesome-chinese-ai-tools",
   "repositoryMetrics": {
     "stars": 7,
     "forks": 1,
@@ -23,16 +23,16 @@
       {"name": "Google", "views": 1, "uniqueVisitors": 1}
     ],
     "topPaths": [
-      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools", "title": "Overview", "views": 66, "uniqueVisitors": 41},
-      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/SKILLS.md", "title": "/blob/main/SKILLS.md", "views": 18, "uniqueVisitors": 8},
-      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/issues", "title": "/issues", "views": 3, "uniqueVisitors": 3},
-      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/pulls", "title": "/pulls", "views": 3, "uniqueVisitors": 3},
-      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main", "title": "/tree/main", "views": 3, "uniqueVisitors": 2},
-      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/discussions", "title": "/discussions", "views": 2, "uniqueVisitors": 2},
-      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/news", "title": "/tree/main/news", "views": 2, "uniqueVisitors": 2},
-      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills", "title": "/tree/main/skills", "views": 2, "uniqueVisitors": 2},
-      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/new/main", "title": "/new/main", "views": 2, "uniqueVisitors": 1},
-      {"path": "/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting", "title": "/tree/main/skills/ecommerce-copywriting", "views": 2, "uniqueVisitors": 1}
+      {"path": "/1261398983/awesome-chinese-ai-tools", "title": "Overview", "views": 66, "uniqueVisitors": 41},
+      {"path": "/1261398983/awesome-chinese-ai-tools/blob/main/SKILLS.md", "title": "/blob/main/SKILLS.md", "views": 18, "uniqueVisitors": 8},
+      {"path": "/1261398983/awesome-chinese-ai-tools/issues", "title": "/issues", "views": 3, "uniqueVisitors": 3},
+      {"path": "/1261398983/awesome-chinese-ai-tools/pulls", "title": "/pulls", "views": 3, "uniqueVisitors": 3},
+      {"path": "/1261398983/awesome-chinese-ai-tools/tree/main", "title": "/tree/main", "views": 3, "uniqueVisitors": 2},
+      {"path": "/1261398983/awesome-chinese-ai-tools/discussions", "title": "/discussions", "views": 2, "uniqueVisitors": 2},
+      {"path": "/1261398983/awesome-chinese-ai-tools/tree/main/news", "title": "/tree/main/news", "views": 2, "uniqueVisitors": 2},
+      {"path": "/1261398983/awesome-chinese-ai-tools/tree/main/skills", "title": "/tree/main/skills", "views": 2, "uniqueVisitors": 2},
+      {"path": "/1261398983/awesome-chinese-ai-tools/new/main", "title": "/new/main", "views": 2, "uniqueVisitors": 1},
+      {"path": "/1261398983/awesome-chinese-ai-tools/tree/main/skills/ecommerce-copywriting", "title": "/tree/main/skills/ecommerce-copywriting", "views": 2, "uniqueVisitors": 1}
     ]
   },
   "privacy": "Only aggregate counts and public path/referrer labels are stored; no token, IP address or visitor identity is written.",

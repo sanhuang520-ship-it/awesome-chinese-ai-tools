@@ -14,7 +14,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 
-REPOSITORY = "sanhuang520-ship-it/awesome-chinese-ai-tools"
+REPOSITORY = "1261398983/awesome-chinese-ai-tools"
 API = "https://api.github.com"
 QUERIES = (
     "中文 agent skills",

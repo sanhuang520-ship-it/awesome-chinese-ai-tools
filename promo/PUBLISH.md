@@ -1,6 +1,6 @@
 # 发布操作手册
 
-正文在同目录 `article.md`，也在仓库 [blog/skill-pitfalls.md](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/blog/skill-pitfalls.md)。
+正文在同目录 `article.md`，也在仓库 [blog/skill-pitfalls.md](https://github.com/1261398983/awesome-chinese-ai-tools/blob/main/blog/skill-pitfalls.md)。
 **三个平台的正文完全一样，只有标题/标签/开头一句不同。**
 
 ---

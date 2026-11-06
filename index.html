@@ -1275,7 +1275,7 @@ details[open] .sk-install-sum{margin-bottom:2px}
   <div class="nav-actions">
     <button class="nav-quick-btn" id="btn-free">🆓 有免费记录</button>
     <button class="nav-quick-btn" id="btn-cn">🇨🇳 国产</button>
-    <a class="gh-star-btn" href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank" rel="noopener" title="在 GitHub 上给我们一颗星">
+    <a class="gh-star-btn" href="https://github.com/1261398983/awesome-chinese-ai-tools" target="_blank" rel="noopener" title="在 GitHub 上给我们一颗星">
       <span>⭐</span><span class="gh-label">Star</span><span class="gh-count" id="gh-count">—</span>
     </a>
     <a class="nav-lang-btn" href="chinese-agent-skills/" hreflang="en" lang="en" title="English version" aria-label="Switch to English version">EN</a>
@@ -1396,11 +1396,11 @@ details[open] .sk-install-sum{margin-bottom:2px}
 <footer>
   <p style="margin-bottom:10px;font-size:13px">
     定期复检链接与 Skill 状态 · 已连续维护 <b id="ft-days" style="color:var(--accent)">30+</b> 天
-    · 觉得有用？<a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank" rel="noopener" style="font-weight:700">给个 ⭐ 让更多人看到 →</a>
+    · 觉得有用？<a href="https://github.com/1261398983/awesome-chinese-ai-tools" target="_blank" rel="noopener" style="font-weight:700">给个 ⭐ 让更多人看到 →</a>
   </p>
-  <p>数据来源：<a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools" target="_blank" rel="noopener">awesome-chinese-ai-tools</a>
-  · 发现遗漏？欢迎 <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues" target="_blank" rel="noopener">提交 Issue</a></p>
-  <p style="margin-top:5px">商业条款仅为历史记录；链接复检不等于价格复检，请到官网确认 · <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/DESIGN.md" target="_blank" rel="noopener">设计文档</a></p>
+  <p>数据来源：<a href="https://github.com/1261398983/awesome-chinese-ai-tools" target="_blank" rel="noopener">awesome-chinese-ai-tools</a>
+  · 发现遗漏？欢迎 <a href="https://github.com/1261398983/awesome-chinese-ai-tools/issues" target="_blank" rel="noopener">提交 Issue</a></p>
+  <p style="margin-top:5px">商业条款仅为历史记录；链接复检不等于价格复检，请到官网确认 · <a href="https://github.com/1261398983/awesome-chinese-ai-tools/blob/main/DESIGN.md" target="_blank" rel="noopener">设计文档</a></p>
 </footer>
 
 <!-- ══════════════════════════════════════
@@ -2055,7 +2055,7 @@ async function spOpen(name, url){
     vis.style.display = '';
   } else if (vis) { vis.style.display = 'none'; }
   e.panel.querySelector('#sp-cmd').textContent =
-    'npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill ' + name + ' -g';
+    'npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --skill ' + name + ' -g';
   const body = e.panel.querySelector('#sp-body');
   body.innerHTML = '<div class="sp-loading">正在读取 SKILL.md…</div>';
   e.mask.classList.add('show'); e.panel.classList.add('show');
@@ -2096,7 +2096,7 @@ function renderSkillGrid() {
   const oursHtml = (!skQuery && skFilter === 'all' && oursList.length) ? `
     <div class="sk-section sk-ours-wrap">
       <div class="sk-section-title sk-ours-title"><b>本站原创 · ${oursList.length} 个</b><span class="sk-ours-note">我们自己写的，不是搬运</span></div>
-      <div class="ours-groups"><div class="ours-group" data-g="evidence"><span class="ours-group-label">实测证据</span><span class="ours-group-pills"><a class="ours-pill" href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/EXAMPLES.md" target="_blank" rel="noopener">输出示例</a><a class="ours-pill" href="shots/">真实渲染截图</a><a class="ours-pill" href="compatibility/">Codex 自动触发实测</a><a class="ours-pill" href="reproduce/">7 个逐字测试任务</a><a class="ours-pill" href="retest/">6 个前瞻复测</a><a class="ours-pill" href="method/">兼容性测试方法</a></span></div><div class="ours-group" data-g="howto"><span class="ours-group-label">怎么装 · 怎么修</span><span class="ours-group-pills"><a class="ours-pill" href="install/">安装与排错指南</a><a class="ours-pill" href="audit-skill/">安装前只读审计</a><a class="ours-pill" href="codex-skill-not-triggering/">Skill 不触发诊断</a><a class="ours-pill" href="fix-agent-skill/">失败后怎么修：不改题、不降门槛</a><a class="ours-pill" href="create-codex-skill/">创建 Codex Skill</a><a class="ours-pill" href="readme-audit/">README 首屏自查</a><a class="ours-pill" href="contribute/">第一次贡献：3 个真实任务</a><a class="ours-pill" href="https://juejin.cn/post/7671196739655352339" target="_blank" rel="noopener">踩坑文章</a></span></div><div class="ours-group" data-g="assets"><span class="ours-group-label">现成可取用</span><span class="ours-group-pills"><a class="ours-pill" href="guides/">13 个原创 Skill 总览</a><a class="ours-pill" href="bundles/">中文 Skill 开箱组合</a><a class="ours-pill" href="guochao/">12 种画风对照</a><a class="ours-pill" href="design/">8 套中式 DESIGN.md</a><a class="ours-pill" href="typography/">中文排版实测</a></span></div></div>
+      <div class="ours-groups"><div class="ours-group" data-g="evidence"><span class="ours-group-label">实测证据</span><span class="ours-group-pills"><a class="ours-pill" href="https://github.com/1261398983/awesome-chinese-ai-tools/blob/main/EXAMPLES.md" target="_blank" rel="noopener">输出示例</a><a class="ours-pill" href="shots/">真实渲染截图</a><a class="ours-pill" href="compatibility/">Codex 自动触发实测</a><a class="ours-pill" href="reproduce/">7 个逐字测试任务</a><a class="ours-pill" href="retest/">6 个前瞻复测</a><a class="ours-pill" href="method/">兼容性测试方法</a></span></div><div class="ours-group" data-g="howto"><span class="ours-group-label">怎么装 · 怎么修</span><span class="ours-group-pills"><a class="ours-pill" href="install/">安装与排错指南</a><a class="ours-pill" href="audit-skill/">安装前只读审计</a><a class="ours-pill" href="codex-skill-not-triggering/">Skill 不触发诊断</a><a class="ours-pill" href="fix-agent-skill/">失败后怎么修：不改题、不降门槛</a><a class="ours-pill" href="create-codex-skill/">创建 Codex Skill</a><a class="ours-pill" href="readme-audit/">README 首屏自查</a><a class="ours-pill" href="contribute/">第一次贡献：3 个真实任务</a><a class="ours-pill" href="https://juejin.cn/post/7671196739655352339" target="_blank" rel="noopener">踩坑文章</a></span></div><div class="ours-group" data-g="assets"><span class="ours-group-label">现成可取用</span><span class="ours-group-pills"><a class="ours-pill" href="guides/">13 个原创 Skill 总览</a><a class="ours-pill" href="bundles/">中文 Skill 开箱组合</a><a class="ours-pill" href="guochao/">12 种画风对照</a><a class="ours-pill" href="design/">8 套中式 DESIGN.md</a><a class="ours-pill" href="typography/">中文排版实测</a></span></div></div>
       <div class="sk-grid">
         ${oursList.map(s => `
           <div class="sk-card ours" role="button" tabindex="0"
@@ -2193,7 +2193,7 @@ function renderSkills() {
     </div>
     <p style="font-size:12.5px;color:var(--muted);text-align:center;padding:8px 0 4px">
       完整中文指南（含「怎么自己写 Skill」模板）→
-      <a href="https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/SKILLS.md"
+      <a href="https://github.com/1261398983/awesome-chinese-ai-tools/blob/main/SKILLS.md"
          target="_blank" rel="noopener" style="color:var(--accent2)">SKILLS.md</a>
     </p>`;
   // 绑定搜索与筛选
@@ -2776,7 +2776,7 @@ function generateShareCard(top, catMt){
   x.fillStyle=P.accent; x.font=`700 31px ${SANS}`;
   x.fillText(`${tools.length} 个 AI 工具入口 · 商业条款为历史记录 · 链接自动复检`, W/2, fy-14);
   x.fillStyle=P.muted; x.font=`500 26px ${SANS}`;
-  x.fillText('⭐ github.com/sanhuang520-ship-it/awesome-chinese-ai-tools', W/2, fy+30);
+  x.fillText('⭐ github.com/1261398983/awesome-chinese-ai-tools', W/2, fy+30);
   x.textAlign='left';
   // 导出下载
   c.toBlob(b=>{
@@ -2954,7 +2954,7 @@ function generateStackCard(){
   x.fillStyle=P.accent; x.font=`700 30px ${SANS}`;
   x.fillText('我在用的 AI 工具栈', W/2, fy-14);
   x.fillStyle=P.muted; x.font=`500 24px ${SANS}`;
-  x.fillText('⭐ github.com/sanhuang520-ship-it/awesome-chinese-ai-tools', W/2, fy+30);
+  x.fillText('⭐ github.com/1261398983/awesome-chinese-ai-tools', W/2, fy+30);
   x.textAlign='left';
   c.toBlob(b => {
     const url=URL.createObjectURL(b);
@@ -3042,7 +3042,7 @@ function generateSkillsCard(){
   x.fillStyle=P.accent; x.font=`700 30px ${SANS}`;
   x.fillText('来源仓库每周复检 · 无广告无跟踪', W/2, fy-14);
   x.fillStyle=P.muted; x.font=`500 24px ${SANS}`;
-  x.fillText('⭐ github.com/sanhuang520-ship-it/awesome-chinese-ai-tools', W/2, fy+30);
+  x.fillText('⭐ github.com/1261398983/awesome-chinese-ai-tools', W/2, fy+30);
   x.textAlign='left';
   c.toBlob(b=>{
     const url=URL.createObjectURL(b);
@@ -3057,7 +3057,7 @@ function generateSkillsCard(){
 /* ══════════════════════════════════════
    GitHub 星数 + 维护天数
 ══════════════════════════════════════ */
-fetch('https://api.github.com/repos/sanhuang520-ship-it/awesome-chinese-ai-tools')
+fetch('https://api.github.com/repos/1261398983/awesome-chinese-ai-tools')
   .then(r => r.json())
   .then(d => {
     if (typeof d.stargazers_count === 'number')

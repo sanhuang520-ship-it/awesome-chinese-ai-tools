@@ -7,15 +7,15 @@
 ### 1. Agent-Skills.md
 
 - 状态：**已提交、已收录、已验证**。
-- 作者页：https://agent-skills.md/authors/sanhuang520-ship-it
-- 2026-08-13 验证：页面能找到 `sanhuang520-ship-it`，并展示 `chinese-typography`、`github-readme-cn` 等全部 13 个本站原创 Skill。
+- 作者页：https://agent-skills.md/authors/1261398983
+- 2026-08-13 验证：页面能找到 `1261398983`，并展示 `chinese-typography`、`github-readme-cn` 等全部 13 个本站原创 Skill。
 - 边界：自动解析成功不代表目录方完成内容审核、安全认证或跨客户端兼容测试。
 - 下一步：不重复提交；只有 Skill 增删或页面缺失时再处理。
 
 ### 2. skills.sh
 
 - 状态：**已索引、README 已公开说明**。
-- 仓库页：https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools
+- 仓库页：https://skills.sh/1261398983/awesome-chinese-ai-tools
 - 边界：平台展示的聚合安装次数可能包含维护者安装核验，不等于独立用户、实际效果或质量认证。
 - 下一步：不重复提交；只在索引缺失或名称错误时报告。
 
@@ -31,7 +31,7 @@
 若决定提交，严格只投一个 Skill：
 
 ```markdown
-| [chinese-typography](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-typography) | Audit CJK-specific typography: line breaking, full-width punctuation, Chinese font stacks, mixed Chinese-English spacing, and accessible emphasis. |
+| [chinese-typography](https://github.com/1261398983/awesome-chinese-ai-tools/tree/main/skills/chinese-typography) | Audit CJK-specific typography: line breaking, full-width punctuation, Chinese font stacks, mixed Chinese-English spacing, and accessible emphasis. |
 ```
 
 建议 PR 标题：

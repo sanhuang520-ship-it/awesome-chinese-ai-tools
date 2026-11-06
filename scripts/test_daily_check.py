@@ -99,7 +99,7 @@ class DailyCheckTest(unittest.TestCase):
             "未发现运行时联网",
             "浏览器 Demo 从 unpkg.com 加载 three@0.170.0",
             "https://1261398983.github.io/awesome-chinese-ai-tools/typography/",
-            "[源码](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/main/skills/chinese-typography)",
+            "[源码](https://github.com/1261398983/awesome-chinese-ai-tools/tree/main/skills/chinese-typography)",
         ):
             with self.subTest(phrase=phrase):
                 self.assertIn(phrase, catalog)

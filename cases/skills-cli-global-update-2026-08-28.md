@@ -69,7 +69,7 @@ npx --yes skills@1.5.23 update -g -y
 for s in bookkeeping-cn chinese-design-md chinese-web-themes \
          github-readme-cn guochao-visual-cn guofeng-threejs homework-tutor-cn; do
   npx --yes skills@1.5.23 add \
-    https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools \
+    https://github.com/1261398983/awesome-chinese-ai-tools \
     --skill "$s" -g -y
 done
 ```

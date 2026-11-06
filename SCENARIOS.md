@@ -11,4 +11,4 @@
 - [兼容性实测](COMPATIBILITY.md)：只发布有环境、步骤和结果的可复现实测。
 - [质量标准](QUALITY.md)：说明本站原创 Skill 的安全与质量门槛。
 
-如需补充可核验资料，请[提交 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)。
+如需补充可核验资料，请[提交 Issue](https://github.com/1261398983/awesome-chinese-ai-tools/issues)。

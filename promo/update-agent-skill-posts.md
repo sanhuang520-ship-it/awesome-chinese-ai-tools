@@ -4,7 +4,7 @@
 
 实测页：https://1261398983.github.io/awesome-chinese-ai-tools/update-agent-skill/
 
-完整记录：https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/blob/main/cases/skills-cli-isolated-install-2026-08-13.md
+完整记录：https://github.com/1261398983/awesome-chinese-ai-tools/blob/main/cases/skills-cli-isolated-install-2026-08-13.md
 
 ## 推荐标题
 

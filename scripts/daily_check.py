@@ -28,7 +28,7 @@ from generate_social_preview import build_preview_stats, render_svg
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
 if not GITHUB_TOKEN:
     raise SystemExit("缺少环境变量 GITHUB_TOKEN")
-REPO     = os.environ.get("GITHUB_REPOSITORY", "sanhuang520-ship-it/awesome-chinese-ai-tools")
+REPO     = os.environ.get("GITHUB_REPOSITORY", "1261398983/awesome-chinese-ai-tools")
 API_BASE = "https://api.github.com"
 # ──────────────────────────────────────────────────────────
 
@@ -98,7 +98,7 @@ def prepend_updates(new_events):
         "content": base64.b64encode(
             json.dumps(data, ensure_ascii=False, indent=2).encode("utf-8")).decode("ascii"),
         "sha": sha,
-        "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"}
+        "committer": {"name": "1261398983", "email": "noreply@github.com"}
     }
     res = github_api("PUT", f"/repos/{REPO}/contents/{path}", payload)
     print(f"[动态时间线] {'✅ 新增 ' + str(len(added)) + ' 条' if 'content' in res else '❌ ' + str(res.get('message', res))}")
@@ -263,7 +263,7 @@ def check_tool_links():
         "message": f"chore: {today_str} 链接检测 — {len(dead_names)} 个异常",
         "content": base64.b64encode(new_content.encode("utf-8")).decode("ascii"),
         "sha": sha,
-        "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"}
+        "committer": {"name": "1261398983", "email": "noreply@github.com"}
     }
     result = github_api("PUT", f"/repos/{REPO}/contents/{file_path}", payload)
 
@@ -359,7 +359,7 @@ def check_skills():
         "content": base64.b64encode(
             json.dumps(data, ensure_ascii=False, indent=2).encode("utf-8")).decode("ascii"),
         "sha": sha,
-        "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"},
+        "committer": {"name": "1261398983", "email": "noreply@github.com"},
     })
     ok = "content" in result
     total_repos = len(unique_skill_repositories(skills))
@@ -563,7 +563,7 @@ def build_skills_md():
         "message": f"docs: 自动重建 SKILLS.md — {len(S)} 个 skill / {len(ours)} 原创",
         "content": base64.b64encode(body.encode("utf-8")).decode("ascii"),
         "sha": cur.get("sha"),
-        "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"},
+        "committer": {"name": "1261398983", "email": "noreply@github.com"},
     })
     print(f"[SKILLS.md] {'✅' if 'content' in res else '❌'} {len(S)} 个 skill / {len(ours)} 原创 / {cn_n} 中文")
 
@@ -607,7 +607,7 @@ def sync_static_catalog():
         "message": f"chore: 自动重渲染 catalog/index.html — {len(data.get('skills', []))} 个 skill",
         "content": base64.b64encode(rendered.encode("utf-8")).decode("ascii"),
         "sha": cur.get("sha"),
-        "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"},
+        "committer": {"name": "1261398983", "email": "noreply@github.com"},
     })
     if "content" not in res:
         raise RuntimeError(f"[catalog] 写入失败: {res.get('message', res)}")
@@ -642,7 +642,7 @@ def sync_social_preview():
         "message": f"chore: 自动重渲染 og.svg — {len(catalog.get('skills', []))} 个 skill",
         "content": base64.b64encode(rendered.encode("utf-8")).decode("ascii"),
         "sha": cur.get("sha"),
-        "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"},
+        "committer": {"name": "1261398983", "email": "noreply@github.com"},
     })
     if "content" not in res:
         raise RuntimeError(f"[og.svg] 写入失败: {res.get('message', res)}")
@@ -706,7 +706,7 @@ def check_source_nav():
         "message": f"chore: {today_str} 核对官方信源链接（{len(urls)} 个，异常 {len(dead)}）",
         "content": base64.b64encode(updated.encode("utf-8")).decode("ascii"),
         "sha": info["sha"],
-        "committer": {"name": "sanhuang520-ship-it", "email": "noreply@github.com"},
+        "committer": {"name": "1261398983", "email": "noreply@github.com"},
     })
     if "content" not in res:
         raise RuntimeError(f"[信源导航] 写回失败: {res.get('message', res)}")

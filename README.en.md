@@ -21,13 +21,13 @@ Prefer a concise web path? Open the [Chinese Agent Skills / Chinese AI Skills gu
 List the available Skills before installing:
 
 ```bash
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --list
+npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --list
 ```
 
 Install one Skill:
 
 ```bash
-npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools --skill chinese-typography -g
+npx skills add https://github.com/1261398983/awesome-chinese-ai-tools --skill chinese-typography -g
 ```
 
 Installation, discovery, automatic activation, and task completion are separate claims. Client behavior varies by version, install location, and task wording. See the [installation guide](https://1261398983.github.io/awesome-chinese-ai-tools/install/) and [compatibility matrix](COMPATIBILITY.md).
@@ -40,9 +40,9 @@ npx --yes skills@1.5.22 update -p -y
 
 All 13 controlled historical fixture folders matched the current public repository after that run, while global Skill hashes remained unchanged. This does not verify global `update -g`, lockless installs, activation, or future CLI versions; see the [full test record](cases/skills-cli-isolated-install-2026-08-13.md).
 
-The repository is also [indexed by skills.sh](https://skills.sh/sanhuang520-ship-it/awesome-chinese-ai-tools). Its aggregated install count comes from skills CLI telemetry and may include maintainer verification runs; it is not a unique-user count, usage outcome, or quality certification.
+The repository is also [indexed by skills.sh](https://skills.sh/1261398983/awesome-chinese-ai-tools). Its aggregated install count comes from skills CLI telemetry and may include maintainer verification runs; it is not a unique-user count, usage outcome, or quality certification.
 
-The [Agent-Skills.md author page](https://agent-skills.md/authors/sanhuang520-ship-it) also lists all 13 first-party Skills. It is a third-party directory surface, not independent compatibility testing, content review, or quality certification; category and tag refreshes are still being verified.
+The [Agent-Skills.md author page](https://agent-skills.md/authors/1261398983) also lists all 13 first-party Skills. It is a third-party directory surface, not independent compatibility testing, content review, or quality certification; category and tag refreshes are still being verified.
 
 ### Review a Skill before installing it
 
@@ -64,7 +64,7 @@ Install only one Skill, restart the client, and give it a natural task without n
 body { font-family: Arial, sans-serif; font-size: 14px; line-height: 1.35; text-align: justify; word-break: break-all; }
 ```
 
-This task activated the Skill in the [recorded Codex test](cases/chinese-typography-codex.md). That single observation is not a guarantee for other clients, versions, or wording. Successful and failed reproductions are both welcome through the [compatibility report form](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml).
+This task activated the Skill in the [recorded Codex test](cases/chinese-typography-codex.md). That single observation is not a guarantee for other clients, versions, or wording. Successful and failed reproductions are both welcome through the [compatibility report form](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml).
 
 ## First-party Skills
 
@@ -75,17 +75,17 @@ See [output examples](EXAMPLES.md), [reproducible Codex cases](cases/README.md),
 ## Contributing
 
 - Pick one scoped task from the [first-contribution page](https://1261398983.github.io/awesome-chinese-ai-tools/contribute/): cross-client retesting, Windows/Linux installation-path evidence, or a read-only catalog fact check. Each task has an explicit completion gate.
-- [Recommend a Skill or AI tool](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=add-entry.yml); no code change is required.
-- Submit a real success, failure, or non-activation result through the [compatibility report form](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml).
+- [Recommend a Skill or AI tool](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=add-entry.yml); no code change is required.
+- Submit a real success, failure, or non-activation result through the [compatibility report form](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=compatibility-result.yml).
 - For a machine-readable pull request, generate a private local JSON report in the [browser report builder](https://1261398983.github.io/awesome-chinese-ai-tools/report/), or copy the [validated example](examples/compatibility-result.example.json), then run `python3 scripts/check_compatibility_reports.py`.
-- Report stale links or factual errors through the [problem report form](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues/new?template=report-problem.yml).
+- Report stale links or factual errors through the [problem report form](https://github.com/1261398983/awesome-chinese-ai-tools/issues/new?template=report-problem.yml).
 - Read [CONTRIBUTING.md](CONTRIBUTING.md) before changing catalog data.
 
 Remove tokens, private paths, email addresses, and unpublished business data before posting logs. Automated validation does not replace manual redaction or independent reproduction. Third-party inclusion, directory indexing, clone counts and Stars are not a security audit, usage proof or endorsement.
 
 ## Citation
 
-The current stable evidence boundary is [v1.2.0](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/tree/v1.2.0). Use [CITATION.cff](CITATION.cff) for versioned metadata; link the default branch with an access date when referring to continuously updated catalog data.
+The current stable evidence boundary is [v1.2.0](https://github.com/1261398983/awesome-chinese-ai-tools/tree/v1.2.0). Use [CITATION.cff](CITATION.cff) for versioned metadata; link the default branch with an access date when referring to continuously updated catalog data.
 
 ## License
 
