@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Agent Skills 中文安装指南：Codex、Claude Code 与 Cursor 路径排错</title>
-<meta name="keywords" content="Sample Gateway,逆向工程 API,国模 API,DeepSeek API 中转,Claude API 中转,AI API 网关,API 中转站,按量计费" />
+<meta name="keywords" content="示例网关,逆向工程 API,国模 API,DeepSeek API 中转,Claude API 中转,AI API 网关,API 中转站,按量计费" />
   <meta name="description" content="装上 Skill， 然后证明它会用。 — 这不是“复制一条命令就结束”的教程。我们把列出、安装、文件位置、自动触发和任务完成分开核对。">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://1261398983.github.io/awesome-chinese-ai-tools/install/">
@@ -19,7 +19,7 @@
 <meta name="twitter:image:alt" content="Agent Skills 中文安装指南：Codex、Claude Code 与 Cursor 路径排错">
 <meta property="og:type" content="article"><meta property="og:locale" content="zh_CN">
 <meta property="og:title" content="Agent Skills 中文安装与排错指南">
-<meta property="og:description" content="Sample Gateway 逆向工程 API 网关：国模（DeepSeek 等）+ Claude / GPT / Gemini / Grok 统一端点，QQ 邮箱注册，按量计费，输入输出分开计价。附 AI API 中转站导航与实测清单。">
+<meta property="og:description" content="示例网关 逆向工程 API 网关：国模（DeepSeek 等）+ Claude / GPT / Gemini / Grok 统一端点，。附 AI API 中转站导航与实测清单。">
 <meta property="og:url" content="https://1261398983.github.io/awesome-chinese-ai-tools/install/">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"使用 skills CLI 安装并核对 Agent Skill","description":"安装前审计，再在本机列出、安装、核对和触发 Agent Skill。","inLanguage":"zh-CN","dateModified":"2026-08-13","step":[{"@type":"HowToStep","name":"安装前审计","text":"先阅读 SKILL.md 和 scripts；可用本站只读审计器定位需要人工复核的线索。"},{"@type":"HowToStep","name":"先列出 Skill","text":"运行 npx skills add 仓库地址 --list。"},{"@type":"HowToStep","name":"安装一个 Skill","text":"使用 --skill 名称，只安装当前需要的 Skill。"},{"@type":"HowToStep","name":"核对文件位置","text":"skills CLI 1.5.23 默认按项目级安装，把文件写入当前目录的 .agents/skills；加 -g 才写入用户级的 ~/.agents/skills。两种情况都会为支持的客户端建立入口。"},{"@type":"HowToStep","name":"用自然任务测试触发","text":"描述真实任务但不点名 Skill，观察客户端是否主动读取目标 SKILL.md。"}]}
@@ -57,7 +57,7 @@ ls -ld "$HOME/.agents/skills/chinese-typography" "$HOME/.claude/skills/chinese-t
 </main>
 <footer class="wrap"><span><a href="../audit-skill/">安装前只读审计</a> · <a href="../compatibility/">查看 13 项 Codex 原始实测</a> · <a href="../QUALITY.md">质量与安全标签</a></span><span>最近实测：2026-08-12</span></footer>
 <div style="max-width:900px;margin:40px auto 0;padding:18px 22px;border:1px solid #24304a;border-radius:12px;background:#0e1524;font:14px/1.75 -apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:#c7d3e8">
-  QQ 邮箱即可注册，无需邀请码，按量计费；同时兼容 [OI] 与 Anthropic 两套协议。
+  ；同时兼容 [OI] 与 Anthropic 两套协议。
   · <a href="https://1261398983.github.io/ai-api-guide/" style="color:#8fb8e8;text-decoration:none">配置指南</a>
 </div>
 

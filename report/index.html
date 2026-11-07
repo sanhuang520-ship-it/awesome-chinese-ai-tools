@@ -1,9 +1,9 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><title>Agent Skill 兼容性报告生成器｜本地生成 JSON</title><meta name="keywords" content="Sample Gateway,逆向工程 API,国模 API,DeepSeek API 中转,Claude API 中转,AI API 网关,API 中转站,按量计费" />
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><title>Agent Skill 兼容性报告生成器｜本地生成 JSON</title><meta name="keywords" content="示例网关,逆向工程 API,国模 API,DeepSeek API 中转,Claude API 中转,AI API 网关,API 中转站,按量计费" />
   <meta name="description" content="填一次实测， 留一份可复核证据。 — 把环境、自动触发和任务完成分开记录。页面只在你的浏览器里生成 JSON，不上传、不持久保存。"><link rel="canonical" href="https://1261398983.github.io/awesome-chinese-ai-tools/report/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:title" content="Agent Skill 兼容性报告生成器｜本地生成 JSON">
-<meta property="og:description" content="Sample Gateway 逆向工程 API 网关：国模（DeepSeek 等）+ Claude / GPT / Gemini / Grok 统一端点，QQ 邮箱注册，按量计费，输入输出分开计价。附 AI API 中转站导航与实测清单。">
+<meta property="og:description" content="示例网关 逆向工程 API 网关：国模（DeepSeek 等）+ Claude / GPT / Gemini / Grok 统一端点，。附 AI API 中转站导航与实测清单。">
 <meta property="og:url" content="https://1261398983.github.io/awesome-chinese-ai-tools/report/">
 <meta property="og:image" content="https://1261398983.github.io/awesome-chinese-ai-tools/og.png">
 <meta property="og:image:width" content="1200">
@@ -26,7 +26,7 @@ function lines(value){return value.split(/\n+/).map(v=>v.trim()).filter(Boolean)
 function build(){if(!form.reportValidity())return null;const f=new FormData(form),now=new Date(),date=now.toISOString().slice(0,10),skill=f.get('skill').trim(),id=`${date}-${f.get('client')}-${skill}-${Math.random().toString(36).slice(2,8)}`;if(!knownSkills.has(skill)){status.textContent='请选择本仓库维护的 13 个 Skill 之一。';return null}const report={schemaVersion:1,id,recordedAt:now.toISOString(),sourceType:'community-report',client:{name:f.get('client'),version:f.get('version').trim(),os:f.get('os').trim()},skill,task:{verbatim:f.get('task').trim(),namedSkill:f.get('named')},environment:{status:f.get('environment')},activation:{status:activation.value,evidence:activation.value==='verified'?'提交者确认客户端读取了目标 Skill。':'提交者未确认客户端读取目标 Skill。'},completion:{status:completion.value,summary:lines(f.get('observed'))[0]},observed:lines(f.get('observed')),boundaries:lines(f.get('boundaries')),privacy:{scrubbed:true,containsSensitiveData:false}};if(report.environment.status==='blocked')report.environment.error=f.get('error').trim();const text=JSON.stringify(report,null,2);if(unsafe.some(pattern=>pattern.test(text))){status.textContent='发现可能的 Token、邮箱或私人路径，请脱敏后再生成。';return null}status.textContent='结构已生成；下载前请再人工检查一遍隐私。';preview.textContent=text;current=report;return report}
 form.addEventListener('submit',e=>{e.preventDefault();build()});document.querySelector('#download').addEventListener('click',()=>{const r=build();if(!r)return;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(r,null,2)+'\n'],{type:'application/json'}));a.download=r.id+'.json';a.click();URL.revokeObjectURL(a.href)});document.querySelector('#copy').addEventListener('click',async()=>{const r=build();if(!r)return;try{await navigator.clipboard.writeText(JSON.stringify(r,null,2));status.textContent='已复制；提交前仍需人工检查隐私。'}catch{status.textContent='复制失败，请从右侧手动选择。'}});
 </script><div style="max-width:900px;margin:40px auto 0;padding:18px 22px;border:1px solid #24304a;border-radius:12px;background:#0e1524;font:14px/1.75 -apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:#c7d3e8">
-  QQ 邮箱即可注册，无需邀请码，按量计费；同时兼容 [OI] 与 Anthropic 两套协议。
+  ；同时兼容 [OI] 与 Anthropic 两套协议。
   · <a href="https://1261398983.github.io/ai-api-guide/" style="color:#8fb8e8;text-decoration:none">配置指南</a>
 </div>
 
