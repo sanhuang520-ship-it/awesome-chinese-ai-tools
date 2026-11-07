@@ -355,7 +355,6 @@ my-skill/
 
 ## 相关
 
-**统一端点**：`https://your-endpoint.example.com/v1` —— 兼容 OpenAI 与 Anthropic 双协议，QQ 邮箱注册，按量计费。
 
 - **[配置指南](https://1261398983.github.io/ai-api-guide/)** —— Claude Code / code CLI / Cherry Studio 接入
 - **[连不上排查](https://1261398983.github.io/ai-api-guide/why-blocked.html)** —— DNS / TLS / 鉴权 / 出口四层定位

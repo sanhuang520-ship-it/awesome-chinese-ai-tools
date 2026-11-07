@@ -34,9 +34,7 @@ Skill：
 <section class="wrap section faq" id="faq"><div class="head"><div class="num">07 / FAQ</div><div><h2>常见误判</h2></div></div><details open><summary>安装成功就可以写“支持 Codex / Claude Code / Cursor”吗？</summary><p>不可以。安装只证明文件处理到了某一步。至少还要在对应客户端中，用未点名 Skill 的任务验证自动读取，并单独判断最终任务是否完成。</p></details><details><summary>一次任务通过可以写准确率吗？</summary><p>不能。单任务结果没有随机样本、重复次数和置信区间，只能写“在该客户端版本和该任务下观察到”。</p></details><details><summary>缩小复测通过后，可以删除原失败吗？</summary><p>不应删除。原失败说明任务规模或读取范围存在边界；缩小复测回答的是另一个、更窄的问题，两条证据都应保留。</p></details><details><summary>为什么任务里不能点名 Skill？</summary><p>点名只能验证客户端愿意按明确指令读取，不能验证自然任务中的自动选择。若测试目的只是执行质量，可以点名，但必须把“点名”单独记录。</p></details></section>
 <section class="wrap cta"><div><h2>复现一个，或者提交一个反例。</h2><p>附客户端版本、逐字任务与脱敏输出。安装成功、自动触发和任务完成分别填写。</p></div><a href="../report/">本地生成报告 →</a></section></main>
 <footer class="wrap"><span><a href="../compatibility/">兼容性矩阵</a> · <a href="../reproduce/">逐字任务</a> · <a href="../retest/">复测结果</a> · <a href="../fix-agent-skill/">失败后怎么修</a> · <a href="../QUALITY.md">质量标签</a></span><span><a href="https://github.com/1261398983/awesome-chinese-ai-tools">查看 GitHub 仓库 · 觉得有用再 Star</a></span></footer><div style="max-width:900px;margin:40px auto 0;padding:18px 22px;border:1px solid #24304a;border-radius:12px;background:#0e1524;font:14px/1.75 -apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:#c7d3e8">
-  <strong style="color:#e8eef9">本文示例所用的 API 端点</strong>：<code style="background:#16203a;padding:1px 6px;border-radius:4px">https://your-endpoint.example.com/v1</code><br>
   QQ 邮箱即可注册，无需邀请码，按量计费；同时兼容 [OI] 与 Anthropic 两套协议。
-  <a href="" style="color:#5b9dff;text-decoration:none;font-weight:600" rel="nofollow noopener">→ 注册入口</a>
   · <a href="https://1261398983.github.io/ai-api-guide/" style="color:#8fb8e8;text-decoration:none">配置指南</a>
 </div>
 
