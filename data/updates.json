@@ -1,6 +1,12 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-09",
   "events": [
+    {
+      "date": "2026-11-09",
+      "type": "alert",
+      "title": "1 个 Skill 仓库已失效",
+      "desc": "jianying-editor —— 已在站内标记"
+    },
     {
       "date": "2026-11-02",
       "type": "alert",
@@ -114,12 +120,6 @@
       "type": "alert",
       "title": "Midjourney 链接异常",
       "desc": "已连续检测失败，访问前请留意，或改用同类工具"
-    },
-    {
-      "date": "2026-07-07",
-      "type": "model",
-      "title": "Gemini 3.5 Pro 定档 7 月 17 日",
-      "desc": "200 万 token 上下文 + Deep Think 推理层，与 WAIC 开幕同日"
     }
   ]
 }
