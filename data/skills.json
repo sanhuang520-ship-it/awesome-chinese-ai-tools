@@ -2924,6 +2924,17 @@
       "skillStatus": "ok",
       "lastPush": "2026-11-06",
       "skillCheckedAt": "2026-11-09"
+    },
+    {
+      "name": "agent-qa-authoring",
+      "cat": "dev",
+      "official": false,
+      "desc": "为 agent-qa 编写、编辑、校验与运行测试或钩子；优先使用 MCP，遵循规范 ID 和内置 schema，减少配置字段猜测。需先安装并配置 agent-qa。",
+      "descEn": "Use when creating, editing, validating, or running agent-qa tests, suites, or hooks. Prefer agent-qa MCP tools, enforce canonical agent-qa IDs, and use the bundled schema reference to avoid hallucinated config keys or YAML fields.",
+      "url": "https://github.com/vostride/agent-qa/tree/main/skills/agent-qa-authoring",
+      "repo": "vostride/agent-qa/skills/agent-qa-authoring",
+      "skillOk": true,
+      "skillCheckedAt": "2026-11-10"
     }
   ],
   "resources": [

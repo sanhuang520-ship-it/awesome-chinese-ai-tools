@@ -1,6 +1,6 @@
 # 🧩 AI Agent Skills 中文合集
 
-> **212 个 Skill 条目｜85 个中文条目｜✍️ 13 个本站原创**<br>
+> **213 个 Skill 条目｜85 个中文条目｜✍️ 13 个本站原创**<br>
 > 来源仓库经 GitHub API 核验真实存在；第三方说明来自上游资料或维护者摘要，不等于逐项功能实测<br>
 > 🔄 最近自动复检：**2026-11-09**（复检仓库是否还在、星数是否变化；超半年没更新的标 🕰）
 
@@ -77,7 +77,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | 🇨🇳 其他中文条目 | 74 | [查看](#catalog-cn) |
 | 📄 文档办公 | 10 | [查看](#catalog-doc) |
 | 📊 PPT 演示 | 19 | [查看](#catalog-ppt) |
-| 💻 开发工程 | 36 | [查看](#catalog-dev) |
+| 💻 开发工程 | 37 | [查看](#catalog-dev) |
 | 🤖 Agent 与调研 | 8 | [查看](#catalog-agent) |
 | 🎨 创意设计 | 16 | [查看](#catalog-design) |
 | 💼 办公协作 | 13 | [查看](#catalog-biz) |
@@ -229,7 +229,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [ppt-agent-skills](https://github.com/sunbigfly/ppt-agent-skills) | ⭐917 | 像做软件工程一样做演示：模拟顶级 PPT 设计公司的完整流程（需求调研→资料搜集→大纲策划→策划稿→设计稿），输出 HTML |
 
 <a id="catalog-dev"></a>
-### 💻 开发工程（36 个）
+### 💻 开发工程（37 个）
 
 | Skill | 来源 | 说明 |
 |-------|------|------|
@@ -269,6 +269,7 @@ npx skills add https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools -
 | [D3.js Visualization](https://github.com/chrisvoncsefalvay/claude-d3js-skill) | ⭐253 | 用 D3 做交互式数据可视化图表 🕰<sub>2025-10-18 后未更新</sub> |
 | [great_cto](https://github.com/avelikiy/great_cto) | ⭐112 | 7 个专业子智能体（技术负责人、资深工程师等）组成的技术团队 |
 | [clone-any-website-skill](https://github.com/promptwhisper/clone-any-website-skill) | ⭐67 | Codex 技能：把公开网站重建成干净可维护的本地项目，讲究视觉、交互、媒体与多端还原度 |
+| [agent-qa-authoring](https://github.com/vostride/agent-qa/tree/main/skills/agent-qa-authoring) | — | 为 agent-qa 编写、编辑、校验与运行测试或钩子；优先使用 MCP，遵循规范 ID 和内置 schema，减少配置字段猜测。需先安装并配置 agent-qa。 |
 
 <a id="catalog-agent"></a>
 ### 🤖 Agent 与调研（8 个）
@@ -396,5 +397,5 @@ Skills 可含**可执行脚本**。装第三方前先看 `SKILL.md` 和 `scripts
 
 ---
 
-*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-11-09。*
+*本文件由脚本从 `data/skills.json` 自动生成，最后更新 2026-11-10。*
 *收录有误或想推荐新 Skill？欢迎 [提 Issue](https://github.com/sanhuang520-ship-it/awesome-chinese-ai-tools/issues)*
