@@ -1,6 +1,12 @@
 {
-  "updated": "2026-11-16",
+  "updated": "2026-11-23",
   "events": [
+    {
+      "date": "2026-11-23",
+      "type": "alert",
+      "title": "3 个 Skill 仓库已失效",
+      "desc": "Enterprise-ai-scenario-map-skill、jianying-editor、great_cto —— 已在站内标记"
+    },
     {
       "date": "2026-11-16",
       "type": "alert",
@@ -113,12 +119,6 @@
       "date": "2026-07-25",
       "type": "alert",
       "title": "Runway 链接异常",
-      "desc": "已连续检测失败，访问前请留意，或改用同类工具"
-    },
-    {
-      "date": "2026-07-16",
-      "type": "alert",
-      "title": "Midjourney 链接异常",
       "desc": "已连续检测失败，访问前请留意，或改用同类工具"
     }
   ]
